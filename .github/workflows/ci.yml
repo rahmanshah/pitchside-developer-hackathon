@@ -1,0 +1,23 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install
+        run: uv sync --python ${{ matrix.python-version }}
+      - name: Test
+        run: uv run pytest -q
+      - name: Schema is up to date
+        run: |
+          uv run pitchside schema > /tmp/event.schema.json
+          diff -u docs/event.schema.json /tmp/event.schema.json
