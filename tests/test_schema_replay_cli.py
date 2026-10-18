@@ -120,6 +120,30 @@ class CliTests(unittest.TestCase):
         self.assertEqual(code, 0)
         self.assertIn("comeback", out)
 
+    def test_findings_command(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            self._run("generate", "--seed", "4", "--storyline", "siege", "--out", tmp)
+            path = str(Path(tmp) / "aur_irv_siege_0004.jsonl")
+            code, out = self._run("findings", path)
+            self.assertEqual(code, 0)
+            self.assertEqual(out.count(" goal "), 3)
+            code, out = self._run("findings", path, "--json")
+            first = json.loads(out.splitlines()[0])
+            self.assertEqual(first["match_id"], "aur_irv_siege_0004")
+
+    def test_eval_stats_command(self) -> None:
+        code, out = self._run("eval-stats", "--seeds", "1-2", "--storylines", "balanced", "end_to_end")
+        self.assertIn(code, (0, 1))  # 1 = a bar failed; the table is printed either way
+        self.assertIn("Stats engine vs answer keys (seeds 1-2)", out)
+        self.assertIn("end_to_end", out)
+        self.assertIn("Bars:", out)
+
+    def test_bad_seed_range_is_a_clean_error(self) -> None:
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            self.assertEqual(main(["eval-stats", "--seeds", "9-3"]), 2)
+        self.assertIn("bad seed range", err.getvalue())
+
     def test_missing_file_is_a_clean_error(self) -> None:
         err = io.StringIO()
         with contextlib.redirect_stderr(err):
