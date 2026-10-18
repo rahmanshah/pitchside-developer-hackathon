@@ -13,7 +13,7 @@ The challenge asks for one pipeline with five stages. Our mapping:
 | Stage | Our component | Status |
 |---|---|---|
 | Ingest | Seeded match generator, event schema, replay | **Built** (v0.1.0) |
-| Interpret | Deterministic stats engine + key-moment detector | Next |
+| Interpret | Deterministic stats engine + key-moment detector | **Built** (v0.2.0); some recall below the 80% bar on held-out seeds, see README |
 | Explain | Explainer agent grounded in computed numbers, plus a verifier agent | Planned |
 | Render | Timed, machine-readable overlay JSON + simple web UI | Planned |
 | Personalize | Analyst / casual fan / favourite-player modes, multiple languages | Planned |
@@ -57,7 +57,17 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
 - `src/pitchside/schema.py`: event models (pass, shot, tackle, possession_change, pressure, period/match bookends)
 - `generator.py`, `storylines.py`, `teams.py`: seeded simulator, 4 storylines (`balanced`, `comeback`, `siege`, `end_to_end`)
 - `replay.py`, `jsonl.py`, `cli.py`: replay at adjustable speed, JSONL I/O, CLI (`pitchside generate|replay|summary|schema|storylines`)
-- `tests/`: 29 tests (determinism, schema, possession/score consistency, planted signals)
+- `src/pitchside/stats/`: the stats engine (no LLM). `StatsEngine.ingest(event) -> list[Finding]`, `snapshot()`;
+  `metrics.py` (rolling/cumulative numbers), `indices.py` (momentum, chaos), `detector.py` (all thresholds in
+  `DetectorConfig`), `findings.py` (`Finding` + evidence, schema in `docs/finding.schema.json`), `evaluate.py` (scores
+  findings against answer keys; `uv run pitchside eval-stats --seeds 201-220`; `pitchside findings <jsonl>`)
+- `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, and held-out answer-key
+  bars (`test_stats_heldout.py`: two known failures marked `xfail(strict=True)`; whole suite takes about 50 s)
+- `docs/DECISIONS.md`: decision log (newest at the bottom)
+
+Evaluation discipline for the stats engine: thresholds are tuned on seeds 1-40 only (spell rules were tuned on 1-6);
+held-out seeds are 101-120 and 201-220. Never tune on them, and never loosen the matching rules or the 80% bar. Real
+results on the held-out seeds: goals 100%, siege 95-100%, momentum shift 85-90%, chaos 70-85%, counter-attack 25-55%.
 
 Known simplifications: the home side always attacks towards x = 105; ball and shot speeds are estimated, not
 tracked. Do not describe them as real tracking data.
@@ -136,6 +146,8 @@ club logos or real names. Redact or recrop anything sensitive.
    objects (goal, big chance, momentum shift, pressure surge, siege, chaos spell, counter-attack) each carrying
    its **evidence numbers and time window**. Test it against the answer keys: the planted phases must be
    detected within a reasonable time tolerance, with few false positives on `balanced`. Tag `v0.2.0`.
+   **Done, with caveats:** tagged `v0.2.0`; recall bars are not all met on held-out seeds (counter-attack and chaos are
+   the weak spots), recorded in the README and `docs/DECISIONS.md` rather than hidden.
 2. **Model client and accounting:** interface, Foundry client (Entra auth), fake client, token/cost logger, per-role
    model config (see Model and Azure plan).
 3. **Agents** (Agent Framework): interpreter, explainer, verifier (retry with feedback, rejects unsupported
