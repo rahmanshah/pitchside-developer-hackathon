@@ -77,7 +77,12 @@ class ShotsPressureAndWindowTests(unittest.TestCase):
         self.assertAlmostEqual(state.pressure_rate(AWAY, short=True), 7 / 3)
         self.assertAlmostEqual(state.pressure_rate(AWAY), 9 / 5)
         self.assertAlmostEqual(state.pressure_rate_total(AWAY), 9 / 10)
+        self.assertAlmostEqual(state.pressure_rate_before(AWAY, short=True), 2 / 7)  # 400, 420 in 0-420 s
         self.assertEqual(state.team(AWAY).pressures, 9)
+
+    def test_no_baseline_without_a_minute_of_history(self) -> None:
+        state = _state(MatchBuilder().start().press(100, AWAY))
+        self.assertIsNone(state.pressure_rate_before(AWAY))
 
     def test_numbers_expire_with_the_window(self) -> None:
         b = MatchBuilder().start().shot(30, HOME, 95, xg=0.4).change(40, AWAY, 3, reason="shot_saved")
