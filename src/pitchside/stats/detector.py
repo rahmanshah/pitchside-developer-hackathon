@@ -24,7 +24,7 @@ from collections import deque
 from dataclasses import dataclass, field
 from typing import Callable, Optional
 
-from ..schema import Event, MatchEndEvent, ShotEvent
+from ..schema import PITCH_LENGTH_M, Event, MatchEndEvent, ShotEvent
 from .findings import Evidence, Finding, FindingKind, FindingStatus, Unit
 from .indices import (
     TYPICAL_COMPLETION_PCT,
@@ -34,7 +34,7 @@ from .indices import (
     chaos_parts,
     momentum,
 )
-from .metrics import MatchNumbers, MatchState, TeamNumbers
+from .metrics import MatchNumbers, MatchState, TeamNumbers, forward_m, progress
 
 
 @dataclass(frozen=True)
@@ -74,6 +74,12 @@ class DetectorConfig:
     chaos_min_completion_part: float = 0.5
     chaos_off: float = 0.5
     chaos_hold_s: float = 90.0
+
+    # Counter-attack: ball won in open play, then a quick, direct shot
+    counter_regains: tuple[str, ...] = ("tackle", "interception", "shot_blocked")
+    counter_max_s: float = 20.0
+    counter_max_passes: int = 4
+    counter_min_forward_m: float = 15.0
 
 
 @dataclass
@@ -131,6 +137,7 @@ class KeyMomentDetector:
         found: list[Finding] = []
         if isinstance(event, ShotEvent):
             found.extend(self._on_shot(event))
+            found.extend(self._counter_attack(event))
         if isinstance(event, MatchEndEvent):
             found.extend(self._close_all_spells())
         elif self.state.clock_s >= self.config.warmup_s:
@@ -224,6 +231,29 @@ class KeyMomentDetector:
             return [self._finding(FindingKind.BIG_CHANCE, "moment", team, move_start, shot.clock_s,
                                   0.4 + shot.xg, evidence, [shot.event_id])]
         return []
+
+    def _counter_attack(self, shot: ShotEvent) -> list[Finding]:
+        cfg, spell = self.config, self.state.spell
+        if spell is None or spell.team_id != shot.team_id or spell.reason not in cfg.counter_regains:
+            return []
+        seconds = shot.clock_s - spell.start_s
+        side = self.state.sides[shot.team_id]
+        gained = forward_m(side, spell.location, shot.location)
+        if (seconds > cfg.counter_max_s or spell.completed_passes > cfg.counter_max_passes
+                or gained < cfg.counter_min_forward_m):
+            return []
+        team, start = shot.team_id, spell.start_s
+        evidence = [
+            self._evidence("seconds_to_shot", seconds, "s", team, start, shot.clock_s),
+            self._evidence("passes_before_shot", spell.completed_passes, "count", team, start, shot.clock_s),
+            self._evidence("metres_gained", gained, "m", team, start, shot.clock_s),
+            self._evidence("regain_distance_from_own_goal", progress(side, spell.location.x) * PITCH_LENGTH_M, "m",
+                           team, start, start),
+            self._evidence("shot_xg", shot.xg, "xg", team, shot.clock_s, shot.clock_s),
+        ]
+        severity = 0.4 + shot.xg + (0.3 if shot.outcome == "goal" else 0.0)
+        return [self._finding(FindingKind.COUNTER_ATTACK, "moment", team, start, shot.clock_s, severity, evidence,
+                              [spell.event_id, shot.event_id])]
 
     # ------------------------------------------------------------------ #
     # Spells
