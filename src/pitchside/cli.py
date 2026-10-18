@@ -13,6 +13,7 @@ from .generator import generate_match
 from .jsonl import read_events, write_answer_key, write_events
 from .replay import replay
 from .schema import Event, PassEvent, ShotEvent, json_schema, to_json_line
+from .stats import findings_json_schema
 from .storylines import STORYLINES
 from .teams import CLUBS, DEFAULT_AWAY, DEFAULT_HOME
 
@@ -58,8 +59,8 @@ def _cmd_summary(args: argparse.Namespace) -> int:
     return 0
 
 
-def _cmd_schema(_: argparse.Namespace) -> int:
-    print(json.dumps(json_schema(), indent=2))
+def _cmd_schema(args: argparse.Namespace) -> int:
+    print(json.dumps(findings_json_schema() if args.findings else json_schema(), indent=2))
     return 0
 
 
@@ -91,7 +92,9 @@ def build_parser() -> argparse.ArgumentParser:
     summ.add_argument("path")
     summ.set_defaults(func=_cmd_summary)
 
-    sub.add_parser("schema", help="print the JSON Schema of all events").set_defaults(func=_cmd_schema)
+    sch = sub.add_parser("schema", help="print the JSON Schema of all events (or of findings)")
+    sch.add_argument("--findings", action="store_true", help="schema of stats-engine findings instead")
+    sch.set_defaults(func=_cmd_schema)
     sub.add_parser("storylines", help="list available storylines").set_defaults(func=_cmd_storylines)
     return parser
 
