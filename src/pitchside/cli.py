@@ -1,4 +1,4 @@
-"""Command line interface: ``pitchside generate | replay | summary | schema | storylines``."""
+"""Command line interface: ``pitchside generate | replay | summary | findings | eval-stats | schema | storylines``."""
 
 from __future__ import annotations
 
@@ -13,7 +13,8 @@ from .generator import generate_match
 from .jsonl import read_events, write_answer_key, write_events
 from .replay import replay
 from .schema import Event, PassEvent, ShotEvent, json_schema, to_json_line
-from .stats import findings_json_schema
+from .stats import Finding, StatsEngine, findings_json_schema
+from .stats.evaluate import check_bars, format_table, run_evaluation, summarise
 from .storylines import STORYLINES
 from .teams import CLUBS, DEFAULT_AWAY, DEFAULT_HOME
 
@@ -59,6 +60,44 @@ def _cmd_summary(args: argparse.Namespace) -> int:
     return 0
 
 
+def _parse_seeds(text: str) -> list[int]:
+    """'101-120' or '1,2,5' or '1-6,10' -> sorted unique seeds."""
+    seeds: set[int] = set()
+    for part in text.split(","):
+        part = part.strip()
+        if "-" in part:
+            low, high = (int(x) for x in part.split("-", 1))
+            if low > high:
+                raise ValueError(f"bad seed range {part!r}")
+            seeds.update(range(low, high + 1))
+        elif part:
+            seeds.add(int(part))
+    if not seeds:
+        raise ValueError("no seeds given")
+    return sorted(seeds)
+
+
+def _describe(finding: Finding) -> str:
+    minute = finding.detected_at_s / 60
+    team = finding.team_id or "both"
+    numbers = ", ".join(f"{e.metric}={e.value:g}" for e in finding.evidence[:3])
+    return f"{minute:5.1f}'  {finding.kind.value:<15} {finding.status:<6} {team:<5} sev {finding.severity:.2f}  {numbers}"
+
+
+def _cmd_findings(args: argparse.Namespace) -> int:
+    engine = StatsEngine()
+    for event in read_events(Path(args.path)):
+        for finding in engine.ingest(event):
+            print(finding.model_dump_json() if args.json else _describe(finding), flush=True)
+    return 0
+
+
+def _cmd_eval_stats(args: argparse.Namespace) -> int:
+    summaries = summarise(run_evaluation(_parse_seeds(args.seeds), args.storylines))
+    print(format_table(summaries, args.seeds))
+    return 0 if all(ok for _, ok in check_bars(summaries)) else 1
+
+
 def _cmd_schema(args: argparse.Namespace) -> int:
     print(json.dumps(findings_json_schema() if args.findings else json_schema(), indent=2))
     return 0
@@ -91,6 +130,16 @@ def build_parser() -> argparse.ArgumentParser:
     summ = sub.add_parser("summary", help="quick sanity summary of a recorded match")
     summ.add_argument("path")
     summ.set_defaults(func=_cmd_summary)
+
+    fnd = sub.add_parser("findings", help="run the stats engine over a recorded match and print its findings")
+    fnd.add_argument("path")
+    fnd.add_argument("--json", action="store_true", help="one JSON finding per line")
+    fnd.set_defaults(func=_cmd_findings)
+
+    ev = sub.add_parser("eval-stats", help="score the stats engine against generated answer keys")
+    ev.add_argument("--seeds", default="101-120", help="e.g. 101-120 (held out, default) or 1-6 (tuning)")
+    ev.add_argument("--storylines", nargs="+", default=list(STORYLINES), choices=sorted(STORYLINES))
+    ev.set_defaults(func=_cmd_eval_stats)
 
     sch = sub.add_parser("schema", help="print the JSON Schema of all events (or of findings)")
     sch.add_argument("--findings", action="store_true", help="schema of stats-engine findings instead")
