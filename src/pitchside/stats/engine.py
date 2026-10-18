@@ -19,7 +19,7 @@ from ..schema import Event, Score
 from .detector import DetectorConfig, KeyMomentDetector
 from .findings import Finding
 from .indices import chaos, momentum
-from .metrics import SHORT_WINDOW_S, WINDOW_S, MatchNumbers, MatchState, TeamNumbers
+from .metrics import MATCH_WINDOW_S, SHORT_WINDOW_S, WINDOW_S, MatchNumbers, MatchState, TeamNumbers
 
 
 class Snapshot(BaseModel):
@@ -42,8 +42,9 @@ class StatsEngine:
         config: Optional[DetectorConfig] = None,
         window_s: float = WINDOW_S,
         short_window_s: float = SHORT_WINDOW_S,
+        match_window_s: float = MATCH_WINDOW_S,
     ) -> None:
-        self.state = MatchState(window_s=window_s, short_window_s=short_window_s)
+        self.state = MatchState(window_s=window_s, short_window_s=short_window_s, match_window_s=match_window_s)
         self.detector = KeyMomentDetector(self.state, config)
         self.findings: list[Finding] = []
 
