@@ -92,6 +92,7 @@ class Spell:
     start_s: float
     reason: str
     location: Point
+    event_id: int  # the possession_change that started it
     completed_passes: int = 0
 
 
@@ -242,7 +243,8 @@ class MatchState:
             self._spell_lengths.add(e.clock_s, e.previous_spell_s)
             self._match_tot.turnovers += 1
             self._match_tot.spell_s += e.previous_spell_s
-        self.spell = Spell(team_id=e.team_id, start_s=e.clock_s, reason=e.reason, location=e.location)
+        self.spell = Spell(team_id=e.team_id, start_s=e.clock_s, reason=e.reason, location=e.location,
+                           event_id=e.event_id)
 
     # ------------------------------------------------------------------ #
     # Reading
