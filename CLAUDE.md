@@ -1,0 +1,157 @@
+# CLAUDE.md: project guide for Pitchside
+
+Read this first. It is the shared context for anyone (human or AI) working in this repo.
+
+## What this is
+
+**Pitchside** turns a live stream of *synthetic* football events into explainable, personalized match
+intelligence. It is a solo entry to the **Inside the Game: Developer Hackathon** (Microsoft + Premier League,
+challenge: "The Synthetic Match Insights Engine for Premier League Studio").
+
+The challenge asks for one pipeline with five stages. Our mapping:
+
+| Stage | Our component | Status |
+|---|---|---|
+| Ingest | Seeded match generator, event schema, replay | **Built** (v0.1.0) |
+| Interpret | Deterministic stats engine + key-moment detector | Next |
+| Explain | Explainer agent grounded in computed numbers, plus a verifier agent | Planned |
+| Render | Timed, machine-readable overlay JSON + simple web UI | Planned |
+| Personalize | Analyst / casual fan / favourite-player modes, multiple languages | Planned |
+
+## Hard constraints (from the Official Rules, do not violate)
+
+- **Deadline:** submissions close **Oct 27 2026, 11:59 pm Pacific** (about Oct 28 09:00 Helsinki). Target: submit the evening of **Oct 26**.
+- **Synthetic data only.** All clubs and players are invented. No real match data. **No Premier League logos, names of real players/clubs, or other third-party trademarks** in the repo, UI or demo video.
+- **Newly built project:** no reused old code. Commit small and often; history is our evidence.
+- **Public GitHub repo** is required for the entry. Never commit secrets (`.env` is git-ignored; keep `.env.example` current).
+- **Demo video** under 2 minutes, public URL; judges may judge from the video and text alone, so the first 30 seconds must show the best moment.
+- **Pitch/description must name the Microsoft and Azure technologies actually used.** The README may only claim what is built. Mark anything else "planned".
+- **The project must stay accessible to judges, free and unrestricted, until the Judging Period ends on Nov 10** (Rules 4.8), and must work as shown in the video (Rules 4.3). Judges may skip testing and judge from the video and text alone. We satisfy this with a near-zero-cost static demo of recorded runs plus a one-command local run (see "Recorded demo mode"). Do not tear the demo down before Nov 10.
+- After tagging `submission-v1`, **freeze `main`** (do any later work on a branch).
+
+## How we are judged (5 equal criteria, 20% each)
+
+1. Technological implementation (quality code, docs, effective use of hero technologies, creative synthetic data)
+2. Agentic design and innovation (distinct agent roles, shared state, handoffs, failure recovery, MCP integration)
+3. Real-world impact and applicability (production readiness)
+4. User experience and presentation (UI, demo clarity, balanced frontend and backend)
+5. Adherence to the challenge description
+
+Prizes we are aiming at with one architecture: Grand Prize, Best Use of Microsoft Foundry, Best Multi-Agent
+System, Best Azure Cloud Native Integration, Best Enterprise Solution (transparency, audit trail, controls).
+
+## Design principles
+
+1. **Numbers first, words second.** The stats engine is plain deterministic code. Agents only narrate figures it
+   computed. A **verifier agent** rejects any claim not supported by the evidence attached to a finding.
+2. **Ground truth for evaluation.** The generator writes an answer key (`*.key.json`) listing planted phases and
+   scripted goals. Agent output is *scored* against it, not eyeballed.
+3. **One event contract.** Everything uses the pydantic models in `src/pitchside/schema.py`
+   (JSON Schema in `docs/event.schema.json`; CI fails if it is stale).
+4. **Deterministic replays.** `(seed, clubs, storyline)` fully determines a match. Never break this.
+5. **Model names live in config**, never hard-coded, and the model client sits behind a small interface so a
+   fake or different endpoint can be swapped in for tests and development.
+
+## Current code
+
+- `src/pitchside/schema.py`: event models (pass, shot, tackle, possession_change, pressure, period/match bookends)
+- `generator.py`, `storylines.py`, `teams.py`: seeded simulator, 4 storylines (`balanced`, `comeback`, `siege`, `end_to_end`)
+- `replay.py`, `jsonl.py`, `cli.py`: replay at adjustable speed, JSONL I/O, CLI (`pitchside generate|replay|summary|schema|storylines`)
+- `tests/`: 29 tests (determinism, schema, possession/score consistency, planted signals)
+
+Known simplifications: the home side always attacks towards x = 105; ball and shot speeds are estimated, not
+tracked. Do not describe them as real tracking data.
+
+## Environment and commands
+
+Solo developer on **Windows (PowerShell)**. Use **uv**.
+
+```powershell
+uv sync                      # install (commit uv.lock)
+uv run pytest                # tests
+uv run pitchside generate --seed 7 --storyline comeback
+uv add <package>             # add a dependency
+```
+
+Conventions: Python 3.11+, type hints, pydantic v2, small focused modules, tests for every behaviour, no
+network calls in unit tests (use the fake model client). Regenerate the schema with
+`uv run pitchside schema > docs/event.schema.json` when models change. Do not run destructive git commands
+and do not push unless asked.
+
+## Model and Azure plan
+
+- **Models** (Microsoft Foundry, Global Standard deployment, Sweden Central): **GPT-6 Luna** (small, cheap) for
+  **every agent, including the explainer**. This is the owner's decision, made for cost: **do not switch to Sol or
+  any larger model, and do not propose it.** If output quality falls short, improve the prompts first: give each
+  agent a compact structured evidence list, a tight output format, two or three example outputs, and let the
+  verifier reject weak or unsupported claims. Each agent role still reads its own deployment name from an env var
+  (`MODEL_INTERPRETER`, `MODEL_EXPLAINER`, `MODEL_VERIFIER`, `MODEL_PERSONALIZER`), all set to the Luna deployment,
+  so the model client stays swappable for tests. Luna prices per 1M tokens (short context, Global Standard;
+  Microsoft's Foundry blog and Azure OpenAI pricing page, Oct 2026): $0.10 in / $0.01 cached / $0.50 out.
+  Use Global, not Data Zone (Data Zone costs more and our data is synthetic).
+- **Auth:** Microsoft Entra ID via `DefaultAzureCredential`, no API keys in code or git.
+  Endpoint in `FOUNDRY_ENDPOINT`. Check the current official Azure/Foundry Python SDK docs before coding.
+- **Agents:** Microsoft Agent Framework (open-source SDK) calling the model deployments directly. Avoid Foundry
+  Agent Service for now; its pricing is unconfirmed.
+- **Planned Azure services (free tiers mostly):** Container Apps (consumption, right-sized to 0.25 vCPU / 0.5 GiB,
+  scale to zero), Static Web Apps (Free), Functions, Cosmos DB free tier (shared agent state and audit log),
+  Event Grid (key-moment events only), Translator and Speech (multi-language, optional audio), Azure Monitor.
+  Event Hubs is optional because it bills hourly. Skip AKS.
+- **Unconfirmed, check before relying on them:** that the Foundry project can deploy Luna/Sol (quota or access),
+  Event Grid operation counting, and any Agent Service charges.
+
+## Cost controls (build these in)
+
+- Log token usage per call to JSONL (model, input, output, cached, agent role, match id) and print a cost
+  summary from a price table in config. Real measured cost replaces all estimates.
+- A deterministic detector decides which moments are worth LLM calls (about 30 per match, not every minute).
+- The public demo serves **recorded runs** by default (see "Recorded demo mode"); live generation is off or sits
+  behind a small rate limit. Judges clicking around must not burn the budget.
+- Keep deployment token quotas low. Set an Azure budget alert.
+- After Nov 10: delete the whole resource group (`az group delete --name <rg> --yes`). Keep the repo public.
+  Anything billed hourly (for example Event Hubs, if used) can be removed right after submission.
+
+## Recorded demo mode
+
+- The full pipeline can export a **run bundle**: the event stream, stats, findings, agent outputs (narratives per
+  persona and language), verifier decisions, overlay JSON and the token/cost log, as plain JSON files.
+- The public demo is a **static site (Azure Static Web Apps, Free plan)** that replays run bundles at adjustable
+  speed. No servers or model calls are needed to view it.
+- **Be honest in the UI:** label it "Recorded run generated by the live pipeline". Never present cached output as live.
+- A **live mode** exists for the demo video and local use. On the public link it is off or tightly rate-limited.
+- A **local mode** (`uv run ...`, one command) works with a fake or offline model client, so a judge can try the
+  project without Azure credentials.
+
+## README screenshot hygiene
+
+Screenshots go in `docs/img/` as compressed PNGs. Show overlays, persona views and the architecture diagram.
+Before committing each image, check it for subscription IDs, emails, tenant names, resource names or keys. No real
+club logos or real names. Redact or recrop anything sensitive.
+
+## Roadmap (do in order; each milestone ends with tests and a commit, tag as noted)
+
+1. **Stats engine** (`src/pitchside/stats/`, no LLM): incremental `ingest(event) -> findings`. Rolling and
+   cumulative windows for possession, field tilt, pressure index, pass completion and difficulty, shots and xG,
+   tempo/rhythm, a momentum score, and a control-vs-chaos index. A key-moment detector emits typed `Finding`
+   objects (goal, big chance, momentum shift, pressure surge, siege, chaos spell, counter-attack) each carrying
+   its **evidence numbers and time window**. Test it against the answer keys: the planted phases must be
+   detected within a reasonable time tolerance, with few false positives on `balanced`. Tag `v0.2.0`.
+2. **Model client and accounting:** interface, Foundry client (Entra auth), fake client, token/cost logger, per-role
+   model config (see Model and Azure plan).
+3. **Agents** (Agent Framework): interpreter, explainer, verifier (retry with feedback, rejects unsupported
+   claims), personalizer/translator. Shared state, explicit handoffs, failure recovery. An evaluation script
+   scores output against the answer key. Tag `v0.3.0`.
+4. **MCP server** exposing the stats engine as tools (possession, pressure, momentum, key moments).
+5. **Overlay renderer and web UI** (`web/`): timed overlay JSON schema plus a simple front end showing overlays on a
+   simulated match feed. Three personas side by side (analyst, casual fan, favourite-player mode), multi-language.
+   Optional spoken commentary via Speech. The UI must be able to replay a **run bundle** (see "Recorded demo mode").
+6. **Azure deployment** (`infra/`, Bicep or azd): Container Apps, Static Web Apps, Cosmos DB, cost controls, the
+   recorded demo mode as the public default. Verify a clean deploy from scratch, then record the final run bundles
+   and the demo video from the deployed system.
+7. **Submission:** honest README with architecture diagram, pitch naming real Microsoft/Azure tech, demo video
+   (under 2 minutes), repo link added to the project page, tag `submission-v1`, freeze `main`.
+
+## Definition of done for any change
+
+Tests pass (`uv run pytest`), schema doc is current, README status table is honest, no secrets, commit message
+says what and why.
