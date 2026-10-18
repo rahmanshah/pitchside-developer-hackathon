@@ -14,7 +14,8 @@ Built for the **Inside the Game: Developer Hackathon**. Everything here is synth
 | Render | Timed JSON overlays on a simulated match feed | Planned |
 | Personalize | Analyst / casual fan / favourite-player views, multi-language | Planned |
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the target design.
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the target design and [docs/DECISIONS.md](docs/DECISIONS.md)
+for the decision log (what we chose, why, and what we rejected).
 
 ## Quick start
 
