@@ -1,0 +1,214 @@
+{
+  "$defs": {
+    "Evidence": {
+      "additionalProperties": false,
+      "description": "One computed number backing a finding.",
+      "properties": {
+        "metric": {
+          "description": "Metric name, e.g. \"field_tilt\" or \"xg\".",
+          "title": "Metric",
+          "type": "string"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Team the number is about; None for match-wide.",
+          "title": "Team Id"
+        },
+        "value": {
+          "title": "Value",
+          "type": "number"
+        },
+        "unit": {
+          "enum": [
+            "pct",
+            "per_min",
+            "xg",
+            "index",
+            "s",
+            "count",
+            "m"
+          ],
+          "title": "Unit",
+          "type": "string"
+        },
+        "window_start_s": {
+          "minimum": 0,
+          "title": "Window Start S",
+          "type": "number"
+        },
+        "window_end_s": {
+          "minimum": 0,
+          "title": "Window End S",
+          "type": "number"
+        },
+        "baseline": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Reference value the number is compared against, if any.",
+          "title": "Baseline"
+        }
+      },
+      "required": [
+        "metric",
+        "value",
+        "unit",
+        "window_start_s",
+        "window_end_s"
+      ],
+      "title": "Evidence",
+      "type": "object"
+    },
+    "Finding": {
+      "additionalProperties": false,
+      "properties": {
+        "finding_id": {
+          "description": "Deterministic: <match_id>:<kind>:<sequence>.",
+          "title": "Finding Id",
+          "type": "string"
+        },
+        "match_id": {
+          "title": "Match Id",
+          "type": "string"
+        },
+        "kind": {
+          "$ref": "#/$defs/FindingKind"
+        },
+        "status": {
+          "description": "'moment' for point events, 'start'/'end' for spells.",
+          "enum": [
+            "moment",
+            "start",
+            "end"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Team the finding is about; None for both.",
+          "title": "Team Id"
+        },
+        "start_s": {
+          "description": "Start of the time window the claim covers.",
+          "minimum": 0,
+          "title": "Start S",
+          "type": "number"
+        },
+        "end_s": {
+          "description": "End of the time window the claim covers.",
+          "minimum": 0,
+          "title": "End S",
+          "type": "number"
+        },
+        "detected_at_s": {
+          "description": "Match clock when the engine emitted the finding.",
+          "minimum": 0,
+          "title": "Detected At S",
+          "type": "number"
+        },
+        "event_ids": {
+          "description": "Events that triggered the finding.",
+          "items": {
+            "type": "integer"
+          },
+          "title": "Event Ids",
+          "type": "array"
+        },
+        "severity": {
+          "description": "How notable the moment is, 0 to 1.",
+          "maximum": 1,
+          "minimum": 0,
+          "title": "Severity",
+          "type": "number"
+        },
+        "score": {
+          "$ref": "#/$defs/Score",
+          "description": "Score at detection time."
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/Evidence"
+          },
+          "minItems": 1,
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "finding_id",
+        "match_id",
+        "kind",
+        "status",
+        "start_s",
+        "end_s",
+        "detected_at_s",
+        "severity",
+        "score",
+        "evidence"
+      ],
+      "title": "Finding",
+      "type": "object"
+    },
+    "FindingKind": {
+      "enum": [
+        "goal",
+        "big_chance",
+        "momentum_shift",
+        "pressure_surge",
+        "siege",
+        "chaos_spell",
+        "counter_attack"
+      ],
+      "title": "FindingKind",
+      "type": "string"
+    },
+    "Score": {
+      "additionalProperties": false,
+      "properties": {
+        "home": {
+          "minimum": 0,
+          "title": "Home",
+          "type": "integer"
+        },
+        "away": {
+          "minimum": 0,
+          "title": "Away",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "home",
+        "away"
+      ],
+      "title": "Score",
+      "type": "object"
+    }
+  },
+  "items": {
+    "$ref": "#/$defs/Finding"
+  },
+  "type": "array"
+}
