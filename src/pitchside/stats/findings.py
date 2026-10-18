@@ -32,6 +32,14 @@ SPELL_KINDS = frozenset(
     {FindingKind.MOMENTUM_SHIFT, FindingKind.PRESSURE_SURGE, FindingKind.SIEGE, FindingKind.CHAOS_SPELL}
 )
 
+# A finding can trigger a model call on its own only at or above this severity. The call-selection
+# policy (about 30 moments per match) belongs to the agents milestone; this is the floor it builds on.
+LLM_TRIGGER_SEVERITY = 0.5
+# Counter-attack findings are context, not headlines: per-event detection cannot reliably tell planted
+# counters from ordinary quick transitions (see docs/DECISIONS.md), so they stay below the floor.
+# A counter that scores is narrated through its goal finding, which carries how the possession began.
+COUNTER_MAX_SEVERITY = 0.3
+
 Unit = Literal["pct", "per_min", "xg", "index", "s", "count", "m"]
 FindingStatus = Literal["moment", "start", "end"]
 
@@ -67,6 +75,11 @@ class Finding(_Model):
     severity: float = Field(ge=0, le=1, description="How notable the moment is, 0 to 1.")
     score: Score = Field(description="Score at detection time.")
     evidence: list[Evidence] = Field(min_length=1)
+
+    @property
+    def can_trigger_model_call(self) -> bool:
+        """True if this finding is severe enough to justify a model call on its own."""
+        return self.severity >= LLM_TRIGGER_SEVERITY
 
 
 FINDINGS_ADAPTER: TypeAdapter[list[Finding]] = TypeAdapter(list[Finding])

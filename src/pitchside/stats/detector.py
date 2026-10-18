@@ -26,7 +26,7 @@ from dataclasses import dataclass, field
 from typing import Callable, Optional
 
 from ..schema import PITCH_LENGTH_M, PITCH_WIDTH_M, Event, MatchEndEvent, PassEvent, ShotEvent
-from .findings import Evidence, Finding, FindingKind, FindingStatus, Unit
+from .findings import COUNTER_MAX_SEVERITY, Evidence, Finding, FindingKind, FindingStatus, Unit
 from .indices import (
     TYPICAL_COMPLETION_PCT,
     TYPICAL_SPELL_S,
@@ -83,7 +83,7 @@ class DetectorConfig:
     counter_max_passes: int = 4
     counter_min_forward_m: float = 30.0
     counter_box_entry: bool = True
-    counter_min_severity: float = 0.0  # severity is reported (box entry 0.3, shot 0.4 + xG, goal +0.3)
+    counter_min_severity: float = 0.0  # severity is reported, 0.1 to 0.3; never triggers a model call alone
 
 
 @dataclass
@@ -266,7 +266,12 @@ class KeyMomentDetector:
                 or gained < cfg.counter_min_forward_m):
             return []
         xg = shot.xg if shot is not None else 0.0
-        severity = 0.3 + (0.1 if shot is not None else 0.0) + xg + (0.3 if shot and shot.outcome == "goal" else 0.0)
+        # Low by design: base 0.1, +0.05 if it ended in a shot, up to +0.1 for xG, +0.05 if it scored.
+        severity = min(
+            0.1 + (0.05 if shot is not None else 0.0) + 0.1 * min(xg / 0.5, 1.0)
+            + (0.05 if shot and shot.outcome == "goal" else 0.0),
+            COUNTER_MAX_SEVERITY,
+        )
         if severity < cfg.counter_min_severity:
             return []
         spell.counter_emitted = True

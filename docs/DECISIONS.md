@@ -45,3 +45,9 @@ Add an entry in the same commit as any change that touches these areas.
 **Decision:** a counter-attack is an open-play regain followed within 12 s by a shot or a completed pass into the box, at most 4 passes and at least 30 m gained. We keep this rule, report its real recall, and do not tune further.
 **Why:** the first rule (any shot within 20 s) scored 6/20 on 101-120. Retuned on seeds 1-40 it hits 19/40 (48%), but only 5/20 (25%) on 101-120 and 11/20 (55%) on fresh 201-220, so about 40% pooled held-out. On a per-event basis the planted counters look like ordinary quick transitions; xG and regain-depth cuts lost hits faster than noise.
 **Rejected:** loosening the 80% bar or the matching window; accepting a rule that fires 5-8 times per balanced match. Open option, not done: detect counters as a *rate* over a window (a counter spell) instead of single moments.
+
+## 8. Counter-attack work is closed; counters are low-severity context (2026-10-18)
+
+**Decision:** `counter_attack` findings are kept but capped at severity 0.3 (0.1 base, up to 0.3 for a counter that ends in a high-xG goal), below the 0.5 floor (`LLM_TRIGGER_SEVERITY`) at which a finding can trigger a model call on its own. A counter that scores is narrated through its `goal` finding. No more tuning on counters.
+**Why:** per-event counters do not separate planted counters from normal quick transitions: 48% when tuned (seeds 1-40), 25-55% on held-out seeds, and about 3 outside planted windows per balanced match. Treating each one as a headline would spend model calls on noise.
+**Rejected:** dropping counters entirely (they are still cheap, useful context); raising severity to match how a counter looks; more tuning. Open option, not done: counter *spells* as a rate over a window.

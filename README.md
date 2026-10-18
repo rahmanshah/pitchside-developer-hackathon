@@ -89,7 +89,8 @@ Bold means below the bar (80% recall, or at most 1.0 spell findings per balanced
   phase starts, because the windows need time to fill. The median lag is +3 to +6 minutes and the worst +8.
 - **Counter-attacks are weak**: 25% and 55% on held-out seeds (about 40% pooled). On a per-event basis the planted
   counters look like ordinary quick transitions, so a rule that finds more of them also fires about 3 times per balanced
-  match outside the planted windows. We did not loosen the bar or the matching rules.
+  match outside the planted windows. We did not loosen the bar or the matching rules. Counter-attack findings are therefore kept as low-severity
+  context (severity 0.1 to 0.3) and never trigger a model call on their own; a counter that scores is narrated through its goal finding.
 - **Chaos spells** are found 70-85% of the time and sometimes fire in balanced play, which pushes balanced spell
   findings to 1.10 per match on the fresh seeds.
 
