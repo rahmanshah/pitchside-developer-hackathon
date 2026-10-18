@@ -225,6 +225,19 @@ class KeyMomentDetector:
             self._evidence("match_shots", totals.shots, "count", team, 0.0, baseline=opp_totals.shots),
             self._evidence("momentum", self._team_momentum(team), "index", team),
         ]
+        if spell is not None and spell.team_id == team:
+            # How the possession began, so a counter-goal can be described from verified numbers.
+            evidence += [
+                self._evidence("seconds_since_turnover", shot.clock_s - spell.start_s, "s", team, spell.start_s,
+                               shot.clock_s),
+                self._evidence("passes_in_spell", spell.completed_passes, "count", team, spell.start_s,
+                               shot.clock_s),
+                self._evidence("metres_gained", forward_m(self.state.sides[team], spell.location, shot.location),
+                               "m", team, spell.start_s, shot.clock_s),
+                self._evidence("possession_won_in_open_play",
+                               1.0 if spell.reason in self.config.counter_regains else 0.0, "count", team,
+                               spell.start_s, spell.start_s),
+            ]
         if shot.outcome == "goal":
             score = self.state.score
             mine, theirs = (score.home, score.away) if team == self.state.home_id else (score.away, score.home)
