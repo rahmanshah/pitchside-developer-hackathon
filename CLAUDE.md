@@ -62,12 +62,15 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   `DetectorConfig`), `findings.py` (`Finding` + evidence, schema in `docs/finding.schema.json`), `evaluate.py` (scores
   findings against answer keys; `uv run pitchside eval-stats --seeds 201-220`; `pitchside findings <jsonl>`)
 - `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, and held-out answer-key
-  bars (`test_stats_heldout.py`: two known failures marked `xfail(strict=True)`; whole suite takes about 50 s)
+  bars (`test_stats_heldout.py`: each recall shortfall marked `xfail(strict=True)` per storyline; whole suite takes about 75 s)
 - `docs/DECISIONS.md`: decision log (newest at the bottom)
 
-Evaluation discipline for the stats engine: thresholds are tuned on seeds 1-40 only (spell rules were tuned on 1-6);
-held-out seeds are 101-120 and 201-220. Never tune on them, and never loosen the matching rules or the 80% bar. Real
-results on the held-out seeds: goals 100%, siege 95-100%, momentum shift 85-90%, chaos 70-85%, counter-attack 25-55%.
+Evaluation discipline for the stats engine: thresholds are tuned on seeds 1-40 only (surge, siege and momentum were
+tuned on 1-6; counter-attack and chaos on 1-40); held-out seeds are 101-120, 201-220 and 301-320. Never tune on them,
+and never loosen the matching rules or the 80% bar. Real results on the held-out seeds: goals 100%, siege 95-100%,
+momentum shift 85-95%, chaos 60-80%, counter-attack 25-55%; the 80% recall bar is met in 1 of 9 storyline results, and the
+balanced spell-finding cap (1.0 per match) is met everywhere (0.45-0.50). Counter-attack findings are low-severity context
+(0.1 to 0.3) and never trigger a model call on their own; a goal finding carries how its possession began.
 
 Known simplifications: the home side always attacks towards x = 105; ball and shot speeds are estimated, not
 tracked. Do not describe them as real tracking data.

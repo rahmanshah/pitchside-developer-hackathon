@@ -64,7 +64,7 @@ agent output can be *scored* against ground truth instead of eyeballed.
 ## Stats engine and how well it works
 
 `src/pitchside/stats/` turns events into numbers and typed **findings**, with no LLM involved. `StatsEngine.ingest(event)`
-updates rolling (5 min) and since-kick-off numbers for possession, field tilt, pressure, pass completion and difficulty,
+updates rolling (5 min; 8 min for the match-wide chaos numbers) and since-kick-off numbers for possession, field tilt, pressure, pass completion and difficulty,
 shots and xG, tempo and a momentum and a control-vs-chaos index, and returns any new findings. A finding
 (`goal`, `big_chance`, `momentum_shift`, `pressure_surge`, `siege`, `chaos_spell`, `counter_attack`) always carries the
 evidence numbers behind it and their time window ([JSON Schema](docs/finding.schema.json)). Later, agents may only
@@ -73,30 +73,40 @@ narrate those numbers and a verifier checks them.
 It is scored against the answer keys the generator writes (`pitchside eval-stats`). A planted phase is **detected** if a
 matching finding fires from 1 minute before to 8 minutes after the phase starts (counter-attacks: from the phase start
 to 1 minute after it ends); a detection 1-2 minutes early is counted as premature, not as a hit. The `low_block`
-phases are not scored. The bar for each storyline is 80% recall. Thresholds were tuned on seeds 1-6 (spell rules) and
-1-40 (counter-attack rule) and **not** on the seeds below.
+phases are not scored. The bar for each storyline is 80% recall, and for `balanced` at most 1.0 spell finding per match.
+Thresholds were tuned on seeds 1-6 (momentum, pressure surge, siege) and 1-40 (counter-attack and chaos rules). They were
+**not** tuned on the seeds below.
 
 | Run | What it is | Comeback | End-to-end | Siege (siege / counter-attack) | Balanced spell findings per match | Goals found |
 |---|---|---|---|---|---|---|
-| Seeds 101-120 | **First held-out run** (first counter-attack rule) | 85% | 85% | 65% (100% / 30%) | 0.70 | 100% |
-| Seeds 101-120 | Same seeds, after the counter-attack retune (no longer pristine) | 85% | 85% | **62%** (100% / 25%) | 0.70 | 100% |
-| Seeds 201-220 | Fresh seeds, run once after the retune | **78%** | **75%** | **75%** (95% / 55%) | **1.10** | 100% |
+| Seeds 101-120 | **First held-out run** (first counter-attack rule, first chaos rule) | 85% | 85% | 65% (100% / 30%) | 0.70 | 100% |
+| Seeds 101-120 | Same seeds, after the counter-attack retune, first chaos rule (no longer pristine) | 85% | 85% | **62%** (100% / 25%) | 0.70 | 100% |
+| Seeds 201-220 | Fresh seeds, run once after the counter-attack retune, first chaos rule | **78%** | **75%** | **75%** (95% / 55%) | **1.10** | 100% |
+| Seeds 101-120 | Re-run after the chaos retune (no longer pristine) | **78%** (chaos 65%) | **70%** (chaos 70%) | **62%** (100% / 25%) | 0.50 | 100% |
+| Seeds 201-220 | Re-run after the chaos retune (no longer pristine) | **78%** (chaos 70%) | **75%** (chaos 75%) | **75%** (95% / 55%) | 0.50 | 100% |
+| Seeds 301-320 | **Fresh seeds, run once after the chaos retune** | **78%** (chaos 60%) | 80% (chaos 80%) | **65%** (100% / 30%) | 0.45 | 100% |
 
 Bold means below the bar (80% recall, or at most 1.0 spell findings per balanced match). Plainly:
 
-- **Goals are found exactly**, every time.
-- **Siege and momentum shifts are found reliably** (siege 95-100%, momentum shift 85-90%), typically 3-6 minutes after the
+- **The 80% recall bar is met in 1 of the 9 latest held-out checks** (end-to-end on seeds 301-320, at exactly 80%).
+  The other eight storyline results are 62-78%.
+- **Goals are found exactly**, every time. The balanced spell-finding cap is met on all three ranges (0.45-0.50 per match).
+- **Siege and momentum shifts are found reliably** (siege 95-100%, momentum shift 85-95%), typically 3-6 minutes after the
   phase starts, because the windows need time to fill. The median lag is +3 to +6 minutes and the worst +8.
-- **Counter-attacks are weak**: 25% and 55% on held-out seeds (about 40% pooled). On a per-event basis the planted
-  counters look like ordinary quick transitions, so a rule that finds more of them also fires about 3 times per balanced
-  match outside the planted windows. We did not loosen the bar or the matching rules. Counter-attack findings are therefore kept as low-severity
-  context (severity 0.1 to 0.3) and never trigger a model call on their own; a counter that scores is narrated through its goal finding.
-- **Chaos spells** are found 70-85% of the time and sometimes fire in balanced play, which pushes balanced spell
-  findings to 1.10 per match on the fresh seeds.
+- **Counter-attacks are weak**: 25%, 55% and 30% on the three held-out ranges (about 37% pooled). On a per-event basis the
+  planted counters look like ordinary quick transitions, so a rule that finds more of them also fires about 3 times per
+  balanced match outside the planted windows. We did not loosen the bar or the matching rules. Counter-attack findings are
+  therefore kept as low-severity context (severity 0.1 to 0.3) and never trigger a model call on their own; a counter that
+  scores is narrated through its goal finding, which says how the possession began (seconds since the turnover, passes,
+  metres gained).
+- **Chaos spells** are found 60-80% of the time (comeback 60-70%, end-to-end 70-80%). The chaos retune used an 8-minute
+  window to stop chaos firing on balanced play, which worked (balanced spell findings 0.70 and 1.10 down to 0.50 and 0.50),
+  but it cost recall: on seeds 101-120 and 201-220 combined, comeback chaos fell from 75% to 68% and end-to-end chaos
+  from 80% to 73%, and detection is slower (median +4 to +6 minutes).
 
-The held-out bar tests in [tests/test_stats_heldout.py](tests/test_stats_heldout.py) are marked as expected failures
-with these numbers so the suite stays honest. The full reasoning and the options we did not take are in
-[docs/DECISIONS.md](docs/DECISIONS.md).
+The held-out recall tests in [tests/test_stats_heldout.py](tests/test_stats_heldout.py) mark each shortfall above as an
+expected failure with its measured numbers; every other bar is a normal assertion. The full reasoning and the options we
+did not take are in [docs/DECISIONS.md](docs/DECISIONS.md).
 
 ## Technology
 
@@ -106,7 +116,7 @@ Current: Python 3.11+, pydantic v2. Azure and Microsoft components are listed in
 ## Development
 
 ```bash
-uv run pytest                # ~50 s: generator, schema, stats engine, held-out answer-key bars (2 known failures, see above)
+uv run pytest                # ~75 s: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above)
 uv add <package>             # add a dependency (updates pyproject.toml and uv.lock)
 ```
 
