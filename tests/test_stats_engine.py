@@ -55,6 +55,62 @@ class GoalAndBigChanceTests(unittest.TestCase):
         self.assertAlmostEqual(chances[0].severity, 0.65)
 
 
+class GoalOriginEvidenceTests(unittest.TestCase):
+    """A goal finding says how its possession began, so a counter-goal can be told from verified numbers."""
+
+    @staticmethod
+    def _goal(b: MatchBuilder):
+        return _kinds(detect(b.end(5400).events), FindingKind.GOAL)[0]
+
+    @staticmethod
+    def _ev(finding) -> dict:
+        return {e.metric: e for e in finding.evidence}
+
+    def test_counter_goal_carries_turnover_passes_and_metres(self) -> None:
+        b = MatchBuilder().start().pass_(10, HOME, 50, 60)
+        b.change(50, AWAY, 70, reason="interception", spell_s=40, passes=1)
+        b.pass_(54, AWAY, 70, 40).pass_(58, AWAY, 40, 22).shot(61, AWAY, 12, xg=0.35, outcome="goal")
+        ev = self._ev(self._goal(b))
+        self.assertEqual(ev["seconds_since_turnover"].value, 11)
+        self.assertEqual(ev["passes_in_spell"].value, 2)
+        self.assertEqual(ev["metres_gained"].value, 58)  # away attack towards x = 0: 70 -> 12
+        self.assertEqual(ev["possession_won_in_open_play"].value, 1)
+        for name in ("seconds_since_turnover", "passes_in_spell", "metres_gained"):
+            self.assertEqual((ev[name].window_start_s, ev[name].window_end_s), (50, 61), name)
+            self.assertEqual(ev[name].team_id, AWAY)
+
+    def test_goal_from_a_restart_says_it_was_not_won_in_open_play(self) -> None:
+        b = MatchBuilder().start()
+        b.change(50, HOME, 60, reason="goal_kick")
+        for i in range(8):
+            b.pass_(55 + 8 * i, HOME, 60 + 3 * i, 63 + 3 * i)
+        b.shot(125, HOME, 90, xg=0.2, outcome="goal")
+        ev = self._ev(self._goal(b))
+        self.assertEqual(ev["possession_won_in_open_play"].value, 0)
+        self.assertEqual(ev["passes_in_spell"].value, 8)
+        self.assertEqual(ev["seconds_since_turnover"].value, 75)
+        self.assertEqual(ev["metres_gained"].value, 30)
+
+    def test_numbers_agree_with_the_counter_finding_for_the_same_move(self) -> None:
+        b = MatchBuilder().start().pass_(10, HOME, 50, 60)
+        b.change(50, AWAY, 70, reason="tackle")
+        b.pass_(53, AWAY, 70, 40).shot(57, AWAY, 12, xg=0.35, outcome="goal")
+        findings = detect(b.end(5400).events)
+        goal = self._ev(_kinds(findings, FindingKind.GOAL)[0])
+        counter = {e.metric: e for e in _kinds(findings, FindingKind.COUNTER_ATTACK)[0].evidence}
+        self.assertEqual(goal["seconds_since_turnover"].value, counter["seconds_to_finish"].value)
+        self.assertEqual(goal["passes_in_spell"].value, counter["passes_in_move"].value)
+        self.assertEqual(goal["metres_gained"].value, counter["metres_gained"].value)
+
+    def test_big_chances_carry_it_too_and_real_goals_always_do(self) -> None:
+        for goal in _kinds(detect(generate_match(seed=4, storyline="comeback").events), FindingKind.GOAL):
+            ev = self._ev(goal)
+            for name in ("seconds_since_turnover", "passes_in_spell", "metres_gained", "possession_won_in_open_play"):
+                self.assertIn(name, ev, goal.finding_id)
+            self.assertGreaterEqual(ev["seconds_since_turnover"].value, 0)
+            self.assertEqual(goal.start_s, ev["seconds_since_turnover"].window_start_s)
+
+
 class GeneratedMatchTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:
