@@ -148,8 +148,11 @@ class ChaosTests(unittest.TestCase):
         self.assertEqual(len(starts), 1)
         self.assertIsNone(starts[0].team_id)
         ev = {e.metric: e for e in starts[0].evidence}
-        self.assertGreaterEqual(ev["chaos_index"].value, 0.8)
+        self.assertGreaterEqual(ev["chaos_index"].value, 0.75)
         self.assertLess(ev["pass_completion"].value, ev["pass_completion"].baseline)
+        # chaos is judged over the 8-minute match-wide window, and says so
+        self.assertEqual(starts[0].end_s - starts[0].start_s, 480)
+        self.assertEqual(ev["chaos_index"].window_end_s - ev["chaos_index"].window_start_s, 480)
         self.assertEqual(len(_of(findings, FindingKind.CHAOS_SPELL, "end")), 1)
 
 

@@ -34,6 +34,7 @@ from ..schema import (
 from .windows import PossessionClock, RollingWindow
 
 WINDOW_S = 300.0  # main rolling window
+MATCH_WINDOW_S = 480.0  # match-wide window (turnovers, completion, spell length): passes are noisy, so it is longer
 SHORT_WINDOW_S = 180.0  # quicker window for pressing
 BOX_DEPTH_M = 16.5
 BOX_HALF_WIDTH_M = 20.16
@@ -152,8 +153,14 @@ class _MatchTotals:
 class MatchState:
     """Running numbers for one match. Feed it every event, in order, with `update`."""
 
-    def __init__(self, window_s: float = WINDOW_S, short_window_s: float = SHORT_WINDOW_S) -> None:
+    def __init__(
+        self,
+        window_s: float = WINDOW_S,
+        short_window_s: float = SHORT_WINDOW_S,
+        match_window_s: float = MATCH_WINDOW_S,
+    ) -> None:
         self.window_s = window_s
+        self.match_window_s = match_window_s
         self.short_window_s = short_window_s
         self.match_id: Optional[str] = None
         self.clock_s = 0.0
@@ -166,10 +173,10 @@ class MatchState:
         self._win: dict[str, _TeamWindows] = {}
         self._tot: dict[str, _TeamTotals] = {}
         self._possession = PossessionClock(keep_s=max(window_s, short_window_s) * 2)
-        self._turnovers = RollingWindow(window_s)
-        self._spell_lengths = RollingWindow(window_s)
-        self._match_passes = RollingWindow(window_s)
-        self._match_completed = RollingWindow(window_s)
+        self._turnovers = RollingWindow(match_window_s)
+        self._spell_lengths = RollingWindow(match_window_s)
+        self._match_passes = RollingWindow(match_window_s)
+        self._match_completed = RollingWindow(match_window_s)
         self._match_tot = _MatchTotals()
 
     # ------------------------------------------------------------------ #
@@ -349,10 +356,10 @@ class MatchState:
         )
 
     def match(self) -> MatchNumbers:
-        """Rolling-window match-wide numbers."""
+        """Rolling-window match-wide numbers (over `match_window_s`)."""
         end = self.clock_s
         return MatchNumbers(
-            window_start_s=max(end - self.window_s, 0.0),
+            window_start_s=max(end - self.match_window_s, 0.0),
             window_end_s=end,
             passes=self._match_passes.count,
             pass_completion_pct=_ratio(self._match_completed.count, self._match_passes.count),

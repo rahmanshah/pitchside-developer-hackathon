@@ -96,6 +96,25 @@ class ShotsPressureAndWindowTests(unittest.TestCase):
         self.assertEqual(state.pressure_rate(HOME), 1.0)
 
 
+class MatchWindowTests(unittest.TestCase):
+    def test_match_wide_numbers_use_the_longer_window(self) -> None:
+        b = MatchBuilder().start()
+        b.change(100, AWAY, 50, spell_s=20).change(200, HOME, 50, spell_s=100)  # two turnovers
+        b.pass_(450, HOME, 50, 55)
+        state = _state(b)
+        # at t = 450 the 300 s team window starts at 150 (the first turnover has left it) but the
+        # 480 s match window still holds both
+        self.assertEqual(state.team(HOME).window_start_s, 150)
+        match = state.match()
+        self.assertEqual((match.window_start_s, match.turnovers, match.mean_spell_s), (0, 2, 60.0))
+        short = _state(b, match_window_s=300)
+        self.assertEqual(short.match().turnovers, 1)
+
+    def test_window_start_moves_with_the_clock(self) -> None:
+        b = MatchBuilder().start().pass_(1000, HOME, 50, 55)
+        self.assertEqual(_state(b).match().window_start_s, 520)
+
+
 class ValidationTests(unittest.TestCase):
     def test_needs_match_start_first(self) -> None:
         b = MatchBuilder().start()

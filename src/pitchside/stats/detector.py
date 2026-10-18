@@ -71,9 +71,10 @@ class DetectorConfig:
 
     # Chaos spell: match-wide chaos index, and passing must actually be breaking down
     # (pressing alone also raises turnovers and shortens spells)
-    chaos_on: float = 0.8
-    chaos_min_completion_part: float = 0.5
-    chaos_off: float = 0.5
+    # (tuned on seeds 1-40 with an 8-minute match-wide window; see docs/DECISIONS.md)
+    chaos_on: float = 0.75
+    chaos_min_completion_part: float = 0.3
+    chaos_off: float = 0.4
     chaos_hold_s: float = 90.0
 
     # Counter-attack: ball won in open play, then a quick, direct finish (a shot, or a completed
@@ -354,6 +355,7 @@ class KeyMomentDetector:
             off=chaos_now < cfg.chaos_off,
             strength=lambda: chaos_now,
             evidence=lambda: self._chaos_evidence(view),
+            window_s=state.match_window_s,
         )
         return found
 
@@ -366,6 +368,7 @@ class KeyMomentDetector:
         off: bool,
         strength: Callable[[], float],
         evidence: Callable[[], list[Evidence]],
+        window_s: Optional[float] = None,
     ) -> list[Finding]:
         tracker = self._spells.setdefault((kind, team_id), _SpellTracker())
         clock = self.state.clock_s
@@ -375,7 +378,7 @@ class KeyMomentDetector:
                 return []
             if tracker.on_fraction(clock, hold_s) < self.config.hold_duty:
                 return []
-            start = self._finding(kind, "start", team_id, max(clock - self.state.window_s, 0.0), clock,
+            start = self._finding(kind, "start", team_id, max(clock - (window_s or self.state.window_s), 0.0), clock,
                                   strength(), evidence())
             tracker.start, tracker.off_since = start, None
             tracker.history.clear()
@@ -451,9 +454,12 @@ class KeyMomentDetector:
 
     def _chaos_evidence(self, view: _View) -> list[Evidence]:
         m = view.match
+        start = m.window_start_s
         return [
-            self._evidence("chaos_index", chaos(m), "index"),
-            self._evidence("turnovers_per_min", m.turnovers_per_min, "per_min", baseline=TYPICAL_TURNOVERS_PER_MIN),
-            self._evidence("pass_completion", m.pass_completion_pct or 0.0, "pct", baseline=TYPICAL_COMPLETION_PCT),
-            self._evidence("mean_spell", m.mean_spell_s or 0.0, "s", baseline=TYPICAL_SPELL_S),
+            self._evidence("chaos_index", chaos(m), "index", start_s=start),
+            self._evidence("turnovers_per_min", m.turnovers_per_min, "per_min", start_s=start,
+                           baseline=TYPICAL_TURNOVERS_PER_MIN),
+            self._evidence("pass_completion", m.pass_completion_pct or 0.0, "pct", start_s=start,
+                           baseline=TYPICAL_COMPLETION_PCT),
+            self._evidence("mean_spell", m.mean_spell_s or 0.0, "s", start_s=start, baseline=TYPICAL_SPELL_S),
         ]
