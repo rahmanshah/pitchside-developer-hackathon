@@ -18,6 +18,7 @@ from pydantic import BaseModel, ConfigDict
 
 from ..schema import (
     PITCH_LENGTH_M,
+    PITCH_WIDTH_M,
     Event,
     MatchEndEvent,
     MatchStartEvent,
@@ -34,6 +35,8 @@ from .windows import PossessionClock, RollingWindow
 
 WINDOW_S = 300.0  # main rolling window
 SHORT_WINDOW_S = 180.0  # quicker window for pressing
+BOX_DEPTH_M = 16.5
+BOX_HALF_WIDTH_M = 20.16
 FINAL_THIRD = 2 / 3  # progress beyond which a pass is in the attacking third
 MIN_RATE_SPAN_S = 60.0  # never divide a count by less than a minute
 
@@ -41,6 +44,17 @@ MIN_RATE_SPAN_S = 60.0  # never divide a count by less than a minute
 def progress(side: Side, x: float) -> float:
     """0 at a team's own goal line, 1 at the opponent's."""
     return x / PITCH_LENGTH_M if side is Side.HOME else 1 - x / PITCH_LENGTH_M
+
+
+def goal_x(side: Side) -> float:
+    """x coordinate of the goal `side` attacks."""
+    return PITCH_LENGTH_M if side is Side.HOME else 0.0
+
+
+def in_box(side: Side, point: Point) -> bool:
+    """Is `point` inside the penalty area `side` attacks (16.5 m deep, 40.32 m wide)?"""
+    return (abs(goal_x(side) - point.x) <= BOX_DEPTH_M
+            and abs(point.y - PITCH_WIDTH_M / 2) <= BOX_HALF_WIDTH_M)
 
 
 def forward_m(side: Side, start: Point, end: Point) -> float:
@@ -94,6 +108,7 @@ class Spell:
     location: Point
     event_id: int  # the possession_change that started it
     completed_passes: int = 0
+    counter_emitted: bool = False
 
 
 class _TeamWindows:

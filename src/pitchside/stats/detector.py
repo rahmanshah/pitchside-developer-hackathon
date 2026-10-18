@@ -20,11 +20,12 @@ Momentum evidence is always given from the finding team's point of view
 
 from __future__ import annotations
 
+import math
 from collections import deque
 from dataclasses import dataclass, field
 from typing import Callable, Optional
 
-from ..schema import PITCH_LENGTH_M, Event, MatchEndEvent, ShotEvent
+from ..schema import PITCH_LENGTH_M, PITCH_WIDTH_M, Event, MatchEndEvent, PassEvent, ShotEvent
 from .findings import Evidence, Finding, FindingKind, FindingStatus, Unit
 from .indices import (
     TYPICAL_COMPLETION_PCT,
@@ -34,7 +35,7 @@ from .indices import (
     chaos_parts,
     momentum,
 )
-from .metrics import MatchNumbers, MatchState, TeamNumbers, forward_m, progress
+from .metrics import MatchNumbers, MatchState, TeamNumbers, forward_m, goal_x, in_box, progress
 
 
 @dataclass(frozen=True)
@@ -75,11 +76,14 @@ class DetectorConfig:
     chaos_off: float = 0.5
     chaos_hold_s: float = 90.0
 
-    # Counter-attack: ball won in open play, then a quick, direct shot
+    # Counter-attack: ball won in open play, then a quick, direct finish (a shot, or a completed
+    # pass into the box). Tuned on seeds 1-40 only; see docs/DECISIONS.md.
     counter_regains: tuple[str, ...] = ("tackle", "interception", "shot_blocked")
-    counter_max_s: float = 20.0
+    counter_max_s: float = 12.0
     counter_max_passes: int = 4
-    counter_min_forward_m: float = 15.0
+    counter_min_forward_m: float = 30.0
+    counter_box_entry: bool = True
+    counter_min_severity: float = 0.0  # severity is reported (box entry 0.3, shot 0.4 + xG, goal +0.3)
 
 
 @dataclass
@@ -137,6 +141,7 @@ class KeyMomentDetector:
         found: list[Finding] = []
         if isinstance(event, ShotEvent):
             found.extend(self._on_shot(event))
+        if isinstance(event, (ShotEvent, PassEvent)):
             found.extend(self._counter_attack(event))
         if isinstance(event, MatchEndEvent):
             found.extend(self._close_all_spells())
@@ -232,28 +237,53 @@ class KeyMomentDetector:
                                   0.4 + shot.xg, evidence, [shot.event_id])]
         return []
 
-    def _counter_attack(self, shot: ShotEvent) -> list[Finding]:
+    def _counter_attack(self, event: Event) -> list[Finding]:
+        """A quick, direct break: ball won in open play, then a shot or a pass into the box.
+
+        Fires at most once per possession spell, on whichever finish comes first.
+        """
         cfg, spell = self.config, self.state.spell
-        if spell is None or spell.team_id != shot.team_id or spell.reason not in cfg.counter_regains:
+        if spell is None or spell.counter_emitted or spell.team_id != event.team_id:
             return []
-        seconds = shot.clock_s - spell.start_s
-        side = self.state.sides[shot.team_id]
-        gained = forward_m(side, spell.location, shot.location)
+        if spell.reason not in cfg.counter_regains:
+            return []
+        if isinstance(event, ShotEvent):
+            shot, finish_xy, finish_dist = event, event.location, event.distance_to_goal_m
+        elif isinstance(event, PassEvent) and event.outcome == "complete" and cfg.counter_box_entry:
+            side = self.state.sides[event.team_id]
+            if not in_box(side, event.end):
+                return []
+            shot, finish_xy = None, event.end
+            finish_dist = math.hypot(goal_x(side) - event.end.x, event.end.y - PITCH_WIDTH_M / 2)
+        else:
+            return []
+
+        team, start = event.team_id, spell.start_s
+        seconds = event.clock_s - start
+        side = self.state.sides[team]
+        gained = forward_m(side, spell.location, finish_xy)
         if (seconds > cfg.counter_max_s or spell.completed_passes > cfg.counter_max_passes
                 or gained < cfg.counter_min_forward_m):
             return []
-        team, start = shot.team_id, spell.start_s
+        xg = shot.xg if shot is not None else 0.0
+        severity = 0.3 + (0.1 if shot is not None else 0.0) + xg + (0.3 if shot and shot.outcome == "goal" else 0.0)
+        if severity < cfg.counter_min_severity:
+            return []
+        spell.counter_emitted = True
         evidence = [
-            self._evidence("seconds_to_shot", seconds, "s", team, start, shot.clock_s),
-            self._evidence("passes_before_shot", spell.completed_passes, "count", team, start, shot.clock_s),
-            self._evidence("metres_gained", gained, "m", team, start, shot.clock_s),
+            self._evidence("seconds_to_finish", seconds, "s", team, start, event.clock_s),
+            self._evidence("passes_in_move", spell.completed_passes, "count", team, start, event.clock_s),
+            self._evidence("metres_gained", gained, "m", team, start, event.clock_s),
             self._evidence("regain_distance_from_own_goal", progress(side, spell.location.x) * PITCH_LENGTH_M, "m",
                            team, start, start),
-            self._evidence("shot_xg", shot.xg, "xg", team, shot.clock_s, shot.clock_s),
+            self._evidence("finish_distance_to_goal", finish_dist, "m", team, event.clock_s, event.clock_s),
+            self._evidence("ended_with_shot", 1.0 if shot is not None else 0.0, "count", team, event.clock_s,
+                           event.clock_s),
         ]
-        severity = 0.4 + shot.xg + (0.3 if shot.outcome == "goal" else 0.0)
-        return [self._finding(FindingKind.COUNTER_ATTACK, "moment", team, start, shot.clock_s, severity, evidence,
-                              [spell.event_id, shot.event_id])]
+        if shot is not None:
+            evidence.append(self._evidence("shot_xg", shot.xg, "xg", team, event.clock_s, event.clock_s))
+        return [self._finding(FindingKind.COUNTER_ATTACK, "moment", team, start, event.clock_s, severity, evidence,
+                              [spell.event_id, event.event_id])]
 
     # ------------------------------------------------------------------ #
     # Spells
