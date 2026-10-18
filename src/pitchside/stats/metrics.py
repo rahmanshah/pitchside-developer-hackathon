@@ -125,6 +125,14 @@ class _TeamTotals:
     tackles_won: int = 0
 
 
+@dataclass
+class _MatchTotals:
+    passes: int = 0
+    completed: int = 0
+    turnovers: int = 0
+    spell_s: float = 0.0
+
+
 class MatchState:
     """Running numbers for one match. Feed it every event, in order, with `update`."""
 
@@ -146,6 +154,7 @@ class MatchState:
         self._spell_lengths = RollingWindow(window_s)
         self._match_passes = RollingWindow(window_s)
         self._match_completed = RollingWindow(window_s)
+        self._match_tot = _MatchTotals()
 
     # ------------------------------------------------------------------ #
     # Updating
@@ -200,11 +209,13 @@ class MatchState:
         win.passes.add(e.clock_s)
         win.difficulty.add(e.clock_s, e.difficulty)
         self._match_passes.add(e.clock_s)
+        self._match_tot.passes += 1
         tot.passes += 1
         tot.difficulty += e.difficulty
         if complete:
             win.completed.add(e.clock_s)
             self._match_completed.add(e.clock_s)
+            self._match_tot.completed += 1
             tot.completed += 1
             if self.spell is not None and self.spell.team_id == e.team_id:
                 self.spell.completed_passes += 1
@@ -229,6 +240,8 @@ class MatchState:
         if e.reason != "kickoff":
             self._turnovers.add(e.clock_s)
             self._spell_lengths.add(e.clock_s, e.previous_spell_s)
+            self._match_tot.turnovers += 1
+            self._match_tot.spell_s += e.previous_spell_s
         self.spell = Spell(team_id=e.team_id, start_s=e.clock_s, reason=e.reason, location=e.location)
 
     # ------------------------------------------------------------------ #
@@ -257,6 +270,18 @@ class MatchState:
     def pressure_rate_total(self, team_id: str) -> float:
         """Pressure events per minute since kick-off."""
         return self._tot[team_id].pressures / (max(self.clock_s, MIN_RATE_SPAN_S) / 60)
+
+    def pressure_rate_before(self, team_id: str, short: bool = False) -> Optional[float]:
+        """Pressure events per minute from kick-off up to the start of the main (or short) window.
+
+        A fair baseline for "is this team pressing more than earlier?", because it
+        excludes the window being judged. None if less than a minute came before it.
+        """
+        w = self._win[team_id].pressures_short if short else self._win[team_id].pressures
+        before_s = self.clock_s - w.span_s
+        if before_s < MIN_RATE_SPAN_S:
+            return None
+        return (self._tot[team_id].pressures - w.count) / (before_s / 60)
 
     def team(self, team_id: str) -> TeamNumbers:
         """Rolling-window numbers for one team."""
@@ -317,6 +342,19 @@ class MatchState:
             turnovers=self._turnovers.count,
             turnovers_per_min=round(self._turnovers.count / (self._rate_span_s(self._turnovers) / 60), 3),
             mean_spell_s=_round(self._spell_lengths.mean),
+        )
+
+    def match_totals(self) -> MatchNumbers:
+        """Match-wide numbers since kick-off."""
+        tot = self._match_tot
+        return MatchNumbers(
+            window_start_s=0.0,
+            window_end_s=self.clock_s,
+            passes=tot.passes,
+            pass_completion_pct=_ratio(tot.completed, tot.passes),
+            turnovers=tot.turnovers,
+            turnovers_per_min=round(tot.turnovers / (max(self.clock_s, MIN_RATE_SPAN_S) / 60), 3),
+            mean_spell_s=_round(tot.spell_s / tot.turnovers) if tot.turnovers else None,
         )
 
 
