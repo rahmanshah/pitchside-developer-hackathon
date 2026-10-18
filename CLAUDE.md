@@ -154,4 +154,5 @@ club logos or real names. Redact or recrop anything sensitive.
 ## Definition of done for any change
 
 Tests pass (`uv run pytest`), schema doc is current, README status table is honest, no secrets, commit message
-says what and why.
+says what and why. Any decision that changes architecture, models, cost, or an evaluation rule gets an entry in
+`docs/DECISIONS.md` in the same commit.
