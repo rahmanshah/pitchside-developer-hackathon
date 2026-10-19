@@ -1,4 +1,4 @@
-"""Command line interface: ``pitchside generate | replay | summary | findings | eval-stats | schema | storylines``."""
+"""Command line interface: ``pitchside generate | replay | summary | findings | eval-stats | cost | schema | storylines``."""
 
 from __future__ import annotations
 
@@ -11,6 +11,9 @@ from typing import Optional, Sequence
 
 from .generator import generate_match
 from .jsonl import read_events, write_answer_key, write_events
+from .llm import load_settings
+from .llm.usage import UsageLog, format_summary
+from .llm.usage import summarise as summarise_usage
 from .replay import replay
 from .schema import Event, PassEvent, ShotEvent, json_schema, to_json_line
 from .stats import Finding, StatsEngine, findings_json_schema
@@ -98,6 +101,19 @@ def _cmd_eval_stats(args: argparse.Namespace) -> int:
     return 0 if all(ok for _, ok in check_bars(summaries)) else 1
 
 
+def _cmd_cost(args: argparse.Namespace) -> int:
+    log = UsageLog(Path(args.log) if args.log else load_settings().usage_log)
+    if not log.path.exists():
+        print(f"no model usage logged yet ({log.path})")
+        return 0
+    records = [r for r in log.read() if args.match is None or r.match_id == args.match]
+    rows, total = summarise_usage(records, by=args.by)
+    print(format_summary(rows, total, args.by))
+    if log.bad_lines:
+        print(f"warning: skipped {log.bad_lines} unreadable line(s) in {log.path}", file=sys.stderr)
+    return 0
+
+
 def _cmd_schema(args: argparse.Namespace) -> int:
     print(json.dumps(findings_json_schema() if args.findings else json_schema(), indent=2))
     return 0
@@ -141,7 +157,13 @@ def build_parser() -> argparse.ArgumentParser:
     ev.add_argument("--storylines", nargs="+", default=list(STORYLINES), choices=sorted(STORYLINES))
     ev.set_defaults(func=_cmd_eval_stats)
 
-    sch = sub.add_parser("schema", help="print the JSON Schema of all events (or of findings)")
+    cost = sub.add_parser("cost", help="summarise model token usage and cost from the usage log")
+    cost.add_argument("--log", help="usage log (default: PITCHSIDE_USAGE_LOG or runs/llm_usage.jsonl)")
+    cost.add_argument("--match", help="only this match id")
+    cost.add_argument("--by", default="role", choices=["role", "match", "model"])
+    cost.set_defaults(func=_cmd_cost)
+
+    sch = sub.add_parser("schema",help="print the JSON Schema of all events (or of findings)")
     sch.add_argument("--findings", action="store_true", help="schema of stats-engine findings instead")
     sch.set_defaults(func=_cmd_schema)
     sub.add_parser("storylines", help="list available storylines").set_defaults(func=_cmd_storylines)
@@ -152,7 +174,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
     args = build_parser().parse_args(argv)
     try:
         return args.func(args)
-    except (ValueError, FileNotFoundError) as error:
+    except (ValueError, FileNotFoundError) as error:  # includes llm.ConfigError
         print(f"error: {error}", file=sys.stderr)
         return 2
 
