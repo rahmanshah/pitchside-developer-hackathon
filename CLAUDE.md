@@ -61,8 +61,17 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   `metrics.py` (rolling/cumulative numbers), `indices.py` (momentum, chaos), `detector.py` (all thresholds in
   `DetectorConfig`), `findings.py` (`Finding` + evidence, schema in `docs/finding.schema.json`), `evaluate.py` (scores
   findings against answer keys; `uv run pitchside eval-stats --seeds 201-220`; `pitchside findings <jsonl>`)
-- `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, and held-out answer-key
-  bars (`test_stats_heldout.py`: each recall shortfall marked `xfail(strict=True)` per storyline; whole suite takes about 75 s)
+- `src/pitchside/llm/`: model client and accounting (DECISIONS 10-11). `config.py` (env settings, `Role`), `factory.py`
+  (`build_clients()` -> one guarded Agent Framework chat client per role, fake or Foundry), `foundry.py` (Entra ID,
+  `AIProjectClient.get_openai_client(max_retries=0)` -> `OpenAIChatClient`/`OpenAIChatCompletionClient`), `fake.py`
+  (`FakeChatClient` + scripted `Reply`/`Fail`/`Malformed`/`Delay`), `guard.py` (`ModelGuard` middleware: budget
+  reservation, concurrency slot, deadline, retry/backoff, usage log; `call_context(match_id, finding_id)` tags calls),
+  `budget.py`, `usage.py` (JSONL log, `pitchside cost`), `prices.py`, `errors.py` (`LLMError` types, `classify`,
+  `parse_json`). Keep `llm/__init__.py` free of Agent Framework imports so the CLI starts fast.
+- `scripts/smoke_foundry.py`: manual live check (not in the test suite)
+- `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, held-out answer-key
+  bars (`test_stats_heldout.py`: each recall shortfall marked `xfail(strict=True)` per storyline), and the model client
+  (`test_llm_*.py`, outbound network blocked by `tests/conftest.py`); whole suite takes about 75 s
 - `docs/DECISIONS.md`: decision log (newest at the bottom)
 
 Evaluation discipline for the stats engine: thresholds are tuned on seeds 1-40 only (surge, siege and momentum were
@@ -84,6 +93,8 @@ uv sync                      # install (commit uv.lock)
 uv run pytest                # tests
 uv run pitchside generate --seed 7 --storyline comeback
 uv add <package>             # add a dependency
+uv run pitchside cost        # model usage and cost from runs/llm_usage.jsonl
+uv run python scripts/smoke_foundry.py   # manual live check after az login (not in the test suite)
 ```
 
 Conventions: Python 3.11+, type hints, pydantic v2, small focused modules, tests for every behaviour, no
@@ -103,7 +114,11 @@ and do not push unless asked.
   Microsoft's Foundry blog and Azure OpenAI pricing page, Oct 2026): $0.10 in / $0.01 cached / $0.50 out.
   Use Global, not Data Zone (Data Zone costs more and our data is synthetic).
 - **Auth:** Microsoft Entra ID via `DefaultAzureCredential`, no API keys in code or git.
-  Endpoint in `FOUNDRY_ENDPOINT`. Check the current official Azure/Foundry Python SDK docs before coding.
+  `FOUNDRY_ENDPOINT` is the Foundry *project* endpoint (`https://<resource>.services.ai.azure.com/api/projects/<project>`).
+  The identity needs the Cognitive Services OpenAI User role (or Foundry User, formerly Azure AI User, on the project).
+  `FOUNDRY_API` picks the Responses API (default) or Chat Completions. Check the current official Azure/Foundry Python
+  SDK docs before coding; the Agent Framework Python API was renamed in 2026 (`Agent`, `Message`, `model`), and many
+  samples online still use old names.
 - **Agents:** Microsoft Agent Framework (open-source SDK) calling the model deployments directly. Avoid Foundry
   Agent Service for now; its pricing is unconfirmed.
 - **Planned Azure services (free tiers mostly):** Container Apps (consumption, right-sized to 0.25 vCPU / 0.5 GiB,
@@ -153,6 +168,8 @@ club logos or real names. Redact or recrop anything sensitive.
    the weak spots), recorded in the README and `docs/DECISIONS.md` rather than hidden.
 2. **Model client and accounting:** interface, Foundry client (Entra auth), fake client, token/cost logger, per-role
    model config (see Model and Azure plan).
+   **Done offline, live run pending:** `src/pitchside/llm/`, tested offline only. Run `scripts/smoke_foundry.py` once
+   the Foundry project and Luna deployments exist; record the API path and the measured cost.
 3. **Agents** (Agent Framework): interpreter, explainer, verifier (retry with feedback, rejects unsupported
    claims), personalizer/translator. Shared state, explicit handoffs, failure recovery. An evaluation script
    scores output against the answer key. Tag `v0.3.0`.

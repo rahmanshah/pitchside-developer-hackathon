@@ -40,6 +40,23 @@ flowchart LR
 | Personalizer | Re-voice for analyst, casual fan or favourite-player mode; translate | Per-audience text |
 | Renderer | Emit timed, machine-readable overlay JSON | Overlay messages |
 
+## Model client (built; tested offline, first live run pending)
+
+Every agent role gets a Microsoft Agent Framework chat client (`src/pitchside/llm/`). Live: `OpenAIChatClient`
+(Responses API, or Chat Completions via `FOUNDRY_API`) on the `AsyncOpenAI` client that the Azure AI Projects SDK
+builds for the Foundry project endpoint, authenticated with Microsoft Entra ID. Offline (the default):
+`FakeChatClient`, deterministic and scriptable. Each client carries one `ModelGuard` middleware, so every model
+round-trip, including tool-call loops, goes through the same steps:
+
+1. reserve the worst-case cost against the per-match, per-match-call and total caps (refuse without sending);
+2. wait for one of a shared number of call slots (default 4);
+3. call with a deadline;
+4. log tokens, cost and latency to the JSONL usage log, tagged with role, match and finding; settle the budget;
+5. on rate limit, timeout, connection or 5xx: back off (full jitter, honouring `retry-after`) and retry; otherwise
+   raise an `LLMError`, which agents turn into a deterministic template narrative.
+
+Why: [DECISIONS.md](DECISIONS.md) entries 10 and 11.
+
 ## Open decisions
 
 - Event transport for the demo (Event Hubs vs a lighter queue) versus the cost of keeping it running until the end of judging.
