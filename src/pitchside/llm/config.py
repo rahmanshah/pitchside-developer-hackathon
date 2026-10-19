@@ -32,6 +32,7 @@ ROLE_ENV = {
 ENV_VARS = {
     "PITCHSIDE_LLM": "mode",
     "FOUNDRY_ENDPOINT": "foundry_endpoint",
+    "FOUNDRY_API": "foundry_api",
     **{env: f"model_{role.value}" for role, env in ROLE_ENV.items()},
     "PITCHSIDE_PRICE_MODEL": "price_model",
     "PITCHSIDE_MATCH_BUDGET_USD": "match_budget_usd",
@@ -55,6 +56,9 @@ class LLMSettings(BaseModel):
         "fake", description="'fake' (offline, the default, never spends money) or 'foundry' (live calls)."
     )
     foundry_endpoint: Optional[str] = Field(None, description="Foundry *project* endpoint.")
+    foundry_api: Literal["responses", "chat_completions"] = Field(
+        "responses", description="Responses API (recommended) or Chat Completions, if the deployment lacks Responses."
+    )
     model_interpreter: Optional[str] = None
     model_explainer: Optional[str] = None
     model_verifier: Optional[str] = None
@@ -99,8 +103,9 @@ def load_settings(env: Optional[Mapping[str, str]] = None, env_file: Optional[Pa
             load_dotenv(env_file, override=False)
         env = os.environ
     values = {field: env[name].strip() for name, field in ENV_VARS.items() if env.get(name, "").strip()}
-    if "mode" in values:
-        values["mode"] = values["mode"].lower()
+    for key in ("mode", "foundry_api"):
+        if key in values:
+            values[key] = values[key].lower()
     try:
         settings = LLMSettings(**values)
     except ValidationError as error:

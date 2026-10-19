@@ -10,6 +10,7 @@ Built for the **Inside the Game: Developer Hackathon**. Everything here is synth
 |---|---|---|
 | Ingest | Seeded match generator, event schema, live replay | **Done** |
 | Interpret | Deterministic stats engine and key-moment detector (no LLM) | **Built (v0.2.0)**: goals found 100%, but some key-moment recall is below our 80% bar on held-out seeds, see [results](#stats-engine-and-how-well-it-works) |
+| (model access) | Agent Framework chat clients for Foundry model deployments (Entra ID), offline fake client, token and cost log, budget, concurrency and retry guard | **Built**: tested offline only; not yet run against a live Foundry deployment, see [model client](#model-client-and-cost-controls) |
 | Explain | Explainer agent grounded in computed numbers, plus verifier agent | Planned |
 | Render | Timed JSON overlays on a simulated match feed | Planned |
 | Personalize | Analyst / casual fan / favourite-player views, multi-language | Planned |
@@ -30,6 +31,7 @@ uv run pitchside summary matches/aur_irv_comeback_0007.jsonl
 uv run pitchside replay matches/aur_irv_comeback_0007.jsonl --speed 60   # 90 min in 90 s
 uv run pitchside findings matches/aur_irv_comeback_0007.jsonl            # key moments, with their numbers
 uv run pitchside eval-stats --seeds 201-220                              # score the stats engine against answer keys
+uv run pitchside cost --by role                                          # model token usage and cost from the usage log
 uv run pitchside schema > docs/event.schema.json             # regenerate the event JSON Schema
 uv run pitchside schema --findings > docs/finding.schema.json  # and the findings JSON Schema
 
@@ -108,15 +110,40 @@ The held-out recall tests in [tests/test_stats_heldout.py](tests/test_stats_held
 expected failure with its measured numbers; every other bar is a normal assertion. The full reasoning and the options we
 did not take are in [docs/DECISIONS.md](docs/DECISIONS.md).
 
+## Model client and cost controls
+
+`src/pitchside/llm/` gives each agent role (interpreter, explainer, verifier, personalizer) its own chat client. No
+agents use it yet (milestone 3).
+
+- **Offline by default.** `PITCHSIDE_LLM=fake` (the default) uses a deterministic fake client, so everything runs with
+  no Azure account and no cost. Tests can script failures: rate limits, timeouts, connection and server errors,
+  auth failures, malformed output.
+- **Live mode** (`PITCHSIDE_LLM=foundry`) calls model deployments in a Microsoft Foundry project, authenticated with
+  Microsoft Entra ID (`az login` locally, no API keys). Configure it from [.env.example](.env.example).
+- **Every call is logged** to `runs/llm_usage.jsonl`: role, match, finding, deployment, model, tokens (input, cached,
+  output), cost and latency. `uv run pitchside cost` summarises the log.
+- **Spending caps** are checked *before* each call: $0.10 and 200 calls per match, $10 across the log, at most 4 calls
+  at once. A refused call is never sent. Prices fail closed, and a timed-out call is charged the worst case.
+- **Failures** are retried with backoff where that can help; otherwise the caller gets a typed error and (from
+  milestone 3) falls back to a template narrative built from the stats engine's numbers.
+
+Status: tested offline, including the real Agent Framework clients against canned HTTP responses. It has **not yet
+been run against a live Foundry deployment**. The manual check for that is
+`uv run python scripts/smoke_foundry.py` (after `az login`), which reports the API path that works and the model
+the service returns.
+
 ## Technology
 
-Current: Python 3.11+, pydantic v2. Azure and Microsoft components are listed in
+Current: Python 3.11+, pydantic v2. Model access (wired and tested offline, not yet run live):
+**Microsoft Agent Framework** (Python), the **Azure AI Projects SDK** for the Microsoft Foundry project endpoint,
+and **Azure Identity** (Microsoft Entra ID, `DefaultAzureCredential`). Other Azure components are listed in
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) as *planned* and will move here once they are built.
 
 ## Development
 
 ```bash
-uv run pytest                # ~75 s: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above)
+uv run pytest                # ~75 s: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client (offline, network blocked)
+uv run python scripts/smoke_foundry.py   # manual, live, costs a fraction of a cent: not part of the test suite
 uv add <package>             # add a dependency (updates pyproject.toml and uv.lock)
 ```
 
