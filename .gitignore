@@ -9,3 +9,6 @@ dist/
 
 # generated matches (regenerate with `pitchside generate`)
 /matches/
+
+# model usage logs and run output
+/runs/
