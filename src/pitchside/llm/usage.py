@@ -22,8 +22,11 @@ class UsageRecord(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     ts: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat(timespec="milliseconds"))
+    run_id: Optional[str] = None
     match_id: Optional[str] = None
     finding_id: Optional[str] = None
+    step: Optional[str] = Field(None, description="Pipeline step, e.g. 'explain' (links the call to the audit trail).")
+    step_attempt: Optional[int] = Field(None, description="Attempt of that step; 'attempt' is the transport retry.")
     role: str
     deployment: str
     model: Optional[str] = Field(None, description="Model name the service reported, if any.")
@@ -31,6 +34,8 @@ class UsageRecord(BaseModel):
     status: Status
     error_kind: Optional[str] = None
     detail: Optional[str] = None
+    finish_reason: Optional[str] = None
+    injected: Optional[str] = Field(None, description="Set when the failure was injected on purpose (never billed).")
     input_tokens: int = 0
     cached_tokens: int = 0
     output_tokens: int = 0

@@ -40,6 +40,7 @@ class Reply:
     input_tokens: Optional[int] = None
     output_tokens: Optional[int] = None
     cached_tokens: int = 0
+    finish_reason: str = "stop"  # "length" simulates a reply cut off at the output cap
 
 
 @dataclass(frozen=True)
@@ -162,5 +163,5 @@ class FakeChatClient(FunctionInvocationLayer, ChatMiddlewareLayer, BaseChatClien
             messages=[Message(role="assistant", contents=[reply.text])],
             model=self.model,
             usage_details=usage,
-            finish_reason="stop",
+            finish_reason=reply.finish_reason,
         )

@@ -42,7 +42,12 @@ ENV_VARS = {
     "LLM_TIMEOUT_S": "timeout_s",
     "LLM_MAX_RETRIES": "max_retries",
     "PITCHSIDE_USAGE_LOG": "usage_log",
+    "PITCHSIDE_REASONING_EFFORT": "reasoning_effort",
+    **{f"PITCHSIDE_MAX_OUTPUT_{role.name}": f"max_output_{role.value}" for role in Role},
+    "PITCHSIDE_LANGUAGES": "languages",
 }
+
+ReasoningEffort = Literal["off", "none", "low", "medium", "high", "xhigh", "max"]
 
 
 class ConfigError(ValueError):
@@ -71,6 +76,23 @@ class LLMSettings(BaseModel):
     timeout_s: float = Field(20.0, gt=0)
     max_retries: int = Field(3, ge=0)
     usage_log: Path = Path("runs/llm_usage.jsonl")
+    reasoning_effort: ReasoningEffort = Field(
+        "low", description="Responses API reasoning effort for every agent; 'off' sends no reasoning option."
+    )
+    # Output caps include reasoning tokens, so they sit well above the size of the JSON each role returns.
+    max_output_interpreter: int = Field(1500, gt=0, le=32000)
+    max_output_explainer: int = Field(3000, gt=0, le=32000)
+    max_output_verifier: int = Field(1500, gt=0, le=32000)
+    max_output_personalizer: int = Field(4000, gt=0, le=32000)
+    languages: str = Field("en,es", pattern=r"^[a-z]{2}(,[a-z]{2})*$",
+                           description="Comma-separated language codes; each needs a phrase table.")
+
+    def max_output(self, role: Role) -> int:
+        return getattr(self, f"max_output_{role.value}")
+
+    @property
+    def language_codes(self) -> tuple[str, ...]:
+        return tuple(dict.fromkeys(self.languages.split(",")))
 
     def deployment(self, role: Role) -> str:
         name = getattr(self, f"model_{role.value}")
@@ -103,9 +125,11 @@ def load_settings(env: Optional[Mapping[str, str]] = None, env_file: Optional[Pa
             load_dotenv(env_file, override=False)
         env = os.environ
     values = {field: env[name].strip() for name, field in ENV_VARS.items() if env.get(name, "").strip()}
-    for key in ("mode", "foundry_api"):
+    for key in ("mode", "foundry_api", "reasoning_effort", "languages"):
         if key in values:
             values[key] = values[key].lower()
+    if "languages" in values:
+        values["languages"] = values["languages"].replace(" ", "")
     try:
         settings = LLMSettings(**values)
     except ValidationError as error:

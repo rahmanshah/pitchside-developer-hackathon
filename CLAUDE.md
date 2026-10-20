@@ -132,7 +132,10 @@ and do not push unless asked.
 
 - Log token usage per call to JSONL (model, input, output, cached, agent role, match id) and print a cost
   summary from a price table in config. Real measured cost replaces all estimates.
-- A deterministic detector decides which moments are worth LLM calls (about 30 per match, not every minute).
+- A deterministic detector decides which moments are worth LLM calls. Measured on seeds 1-10: about 4.5
+  model-eligible findings per balanced match and 12-13 per storyline match (goals, big chances and spell *starts*
+  with `can_trigger_model_call`; spell ends always get a template), plus 2 recaps (half-time, full-time). Each goes
+  through about 5 model calls.
 - The public demo serves **recorded runs** by default (see "Recorded demo mode"); live generation is off or sits
   behind a small rate limit. Judges clicking around must not burn the budget.
 - Keep deployment token quotas low. Set an Azure budget alert.
