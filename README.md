@@ -170,7 +170,7 @@ interesting offline numbers come from deliberately injected faults:
 | Offline run (seeds 1-3, 12 matches) | Result |
 |---|---|
 | Clean | Planted phases the stats engine detected: 13 of 13 narrated, naming the right club (10 by a model narrative, 3 by a template because their finding fell below the severity floor); goals: 35 of 35 narrated with the scoring club and the score; 24 of 24 recaps; 0 fallbacks |
-| `--inject-bad 0.3` (first explainer draft of 30% of jobs corrupted: wrong number, wrong club, no evidence, unknown id, unlisted number, minute outside the window, impossible score) | 42 of 42 corrupted drafts caught; 26% of jobs needed a retry; 0 shown claims fail a fresh re-check |
+| `--inject-bad 0.3` (first explainer draft of 30% of jobs corrupted: wrong number, wrong club, no evidence, unknown id, unlisted number, minute outside the window, impossible score) | 42 of 42 corrupted drafts caught; 28% of jobs needed a retry; 0 shown claims fail a fresh re-check |
 | `--inject-faults demo` (rate limit, malformed reply, verifier timeout, personalizer outage, claims rejected on every draft, semantic rejection) | every recovery path taken; 5% of model jobs ended in a template, each with its reason |
 
 The live evaluation (`--live`, run manually) reports the same metrics for a real model, plus a `spotcheck.md` of
