@@ -138,13 +138,19 @@ def explainer(transcript: str) -> str:
     if not any(r in items for r in focus):
         focus += [r for r in items if r.startswith("e")][:3] or list(items)[:3]
     label = _label(transcript)
+    score = re.search(r"\| score (.+)$", _field(transcript, "MOMENT") or "")
     claims = []
+    if label in ("half_time", "full_time") and score and items:
+        period = "Half-time" if label == "half_time" else "Full-time"
+        claims.append({"text": f"{period}: {score.group(1)}.", "team_id": None, "refs": [next(iter(items))],
+                       "numbers": []})
     for ref in [r for r in focus if r in players][:1]:
         p = players[ref]
         verb = {"scorer": "scored for", "shooter": "had the chance for", "ball_winner": "won the ball for"}.get(
             p.involvement, "featured for")
-        claims.append({"text": f"{p.name} {verb} {clubs.get(p.team, p.team)}.", "team_id": p.team, "refs": [ref],
-                       "numbers": []})
+        tail = f": {score.group(1)}" if label == "goal" and score else ""
+        claims.append({"text": f"{p.name} {verb} {clubs.get(p.team, p.team)}{tail}.", "team_id": p.team,
+                       "refs": [ref], "numbers": []})
     numbered = [items[r] for r in focus if r in items]
     by_team: dict[Optional[str], list[_Item]] = {}
     for item in numbered:

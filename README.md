@@ -11,9 +11,9 @@ Built for the **Inside the Game: Developer Hackathon**. Everything here is synth
 | Ingest | Seeded match generator, event schema, live replay | **Done** |
 | Interpret | Deterministic stats engine and key-moment detector (no LLM) | **Built (v0.2.0)**: goals found 100%, but some key-moment recall is below our 80% bar on held-out seeds, see [results](#stats-engine-and-how-well-it-works) |
 | (model access) | Agent Framework chat clients for Foundry model deployments (Entra ID), offline fake client, token and cost log, budget, concurrency and retry guard | **Built**: tested offline only; not yet run against a live Foundry deployment, see [model client](#model-client-and-cost-controls) |
-| Explain | Explainer agent grounded in computed numbers, plus verifier agent | Planned |
-| Render | Timed JSON overlays on a simulated match feed | Planned |
-| Personalize | Analyst / casual fan / favourite-player views, multi-language | Planned |
+| Explain | Interpreter, explainer and two-layer verifier (deterministic checker + semantic check) as an Agent Framework workflow, with recaps and an audit trail | **Built (offline-tested)**: runs end to end on the fake model client; **no live model run yet**, so there are no model-quality numbers, see [agents](#agents-explain-verify-personalize) |
+| Render | Run bundles with overlay timing (`pitchside run`); web UI that replays them | Bundles **built**; UI planned |
+| Personalize | Analyst / casual fan / favourite-player views, English and Spanish, one model call per moment | **Built (offline-tested)**; offline translations are tagged placeholders, not real translations |
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the target design and [docs/DECISIONS.md](docs/DECISIONS.md)
 for the decision log (what we chose, why, and what we rejected).
@@ -31,9 +31,13 @@ uv run pitchside summary matches/aur_irv_comeback_0007.jsonl
 uv run pitchside replay matches/aur_irv_comeback_0007.jsonl --speed 60   # 90 min in 90 s
 uv run pitchside findings matches/aur_irv_comeback_0007.jsonl            # key moments, with their numbers
 uv run pitchside eval-stats --seeds 201-220                              # score the stats engine against answer keys
+uv run pitchside run --seed 7 --storyline comeback                       # stats engine + agents (offline), writes a run bundle
+uv run pitchside run --seed 7 --storyline end_to_end --inject-faults demo # same, with deliberate failures to show recovery
+uv run pitchside eval-agents --seeds 1-3                                 # score agent runs against answer keys (offline: plumbing check)
 uv run pitchside cost --by role                                          # model token usage and cost from the usage log
 uv run pitchside schema > docs/event.schema.json             # regenerate the event JSON Schema
 uv run pitchside schema --findings > docs/finding.schema.json  # and the findings JSON Schema
+uv run pitchside schema --bundle > docs/run_bundle.schema.json # and the run bundle JSON Schema
 
 uv run pytest
 ```
@@ -110,10 +114,77 @@ The held-out recall tests in [tests/test_stats_heldout.py](tests/test_stats_held
 expected failure with its measured numbers; every other bar is a normal assertion. The full reasoning and the options we
 did not take are in [docs/DECISIONS.md](docs/DECISIONS.md).
 
+## Agents: explain, verify, personalize
+
+`src/pitchside/agents/` narrates the stats engine's findings with four **Microsoft Agent Framework** agents, each on
+its own guarded chat client. Every model-eligible finding (goals, big chances, the start of a siege, surge,
+momentum shift or chaotic spell, with severity at least 0.5), plus a **half-time and a full-time recap**, runs
+through its own Agent Framework **graph workflow** with typed handoffs:
+
+```mermaid
+flowchart LR
+  interpret["Interpreter agent<br/>picks the angle and evidence<br/>(stats tools)"] --> explain["Explainer agent<br/>structured claims citing evidence ids"]
+  explain -- draft --> check["Checker (code)<br/>numbers, club, score, minute, players"]
+  check -- "rejected: reasons as feedback" --> explain
+  check -- passed --> verify["Verifier agent<br/>does the evidence support it?"]
+  verify -- "unsupported: reasons as feedback" --> explain
+  verify -- supported --> personalize["Personalizer agent<br/>analyst / casual / favourite player<br/>x English, Spanish"]
+  explain -. "failed or 3 drafts rejected" .-> fallback["Template (code)"]
+  check -.-> fallback
+  verify -.-> fallback
+  personalize --> publish["Publish + audit trail"]
+  fallback --> publish
+```
+
+- **Numbers first.** Every number a model may use has an id in an evidence ledger (finding evidence, stats-tool
+  results, player numbers). Claims must cite ids and list each number they use.
+- **Two-layer verifier.** A deterministic checker rejects a claim whose number does not match its evidence (to the
+  precision written), gives a number to the wrong club, states a score the match never had, puts a minute outside
+  the evidence window, or names a player the evidence does not include. Only then does the verifier agent judge
+  overclaiming and unsupported causes. Rejection reasons go back to the explainer; at most three drafts.
+- **Failure recovery.** Interpreter down: rule-based brief. Explainer down, or every claim rejected: a template
+  narrative marked `source: template` with the reason. Verifier down: claims accepted on the deterministic check
+  alone, flagged `semantic_check: skipped: <reason>`. Personalizer down, or one of its texts fails the checks:
+  template text for those personas. Over budget: later moments go straight to templates, and the run says so.
+- **Recaps** at half-time and full-time are built from the claims already verified during the match, plus totals and
+  player numbers (scorers, each club's top xG, the featured players), through the same flow.
+- **Personalization in one call per moment**: analyst, casual fan and a favourite-player view for one featured player
+  per club, in every configured language (`PITCHSIDE_LANGUAGES=en,es`), with numbers kept as digits so the checker
+  verifies every language. Adding a language is one phrase table in `languages.py` plus a config entry.
+- **Audit trail.** Every step records its prompt version and digest, the claims, each verdict with its reason code,
+  the feedback, retries and fallbacks; usage rows link each model call to its job, step and attempt.
+- **Run bundles** (`pitchside run`): events, 30-second stats, findings, narratives with overlay timing, audit trail and
+  usage as plain JSON ([schema](docs/run_bundle.schema.json)), labelled honestly ("Recorded run generated by the live
+  pipeline", or an offline label; injected faults are always announced). Milestone 5 replays them.
+- **No coordinator agent.** Routing has one correct answer that code can compute, so a plain-code director does it;
+  see [decision 13](docs/DECISIONS.md).
+
+### Offline evaluation: a plumbing check, not model quality
+
+`uv run pitchside eval-agents --seeds 1-3` runs every storyline through the whole pipeline on the **fake model
+client** and scores the output against the answer keys. The fake agents are deterministic and correct by
+construction (they build claims only from the evidence phrases, and their Spanish is a tagged placeholder), so these
+numbers show that the pipeline is wired end to end. **They say nothing about how well a real model writes.** The
+interesting offline numbers come from deliberately injected faults:
+
+| Offline run (seeds 1-3, 12 matches) | Result |
+|---|---|
+| Clean | Planted phases the stats engine detected: 13 of 13 narrated, naming the right club (10 by a model narrative, 3 by a template because their finding fell below the severity floor); goals: 35 of 35 narrated with the scoring club and the score; 24 of 24 recaps; 0 fallbacks |
+| `--inject-bad 0.3` (first explainer draft of 30% of jobs corrupted: wrong number, wrong club, no evidence, unknown id, unlisted number, minute outside the window, impossible score) | 42 of 42 corrupted drafts caught; 26% of jobs needed a retry; 0 shown claims fail a fresh re-check |
+| `--inject-faults demo` (rate limit, malformed reply, verifier timeout, personalizer outage, claims rejected on every draft, semantic rejection) | every recovery path taken; 5% of model jobs ended in a template, each with its reason |
+
+The live evaluation (`--live`, run manually) reports the same metrics for a real model, plus a `spotcheck.md` of
+shown claims for a person to judge. See [docs/LIVE_EVAL.md](docs/LIVE_EVAL.md). **Not run yet.**
+
+**Estimated** cost at GPT-6 Luna prices ($0.10 in / $0.50 out per 1M tokens), to be replaced by measured cost:
+about 5 model calls per moment, about $0.0023 per moment, so about $0.015 per balanced match and $0.03-0.04 per
+storyline match (12-13 moments plus 2 recaps). Final recorded runs use `PITCHSIDE_MATCH_BUDGET_USD=0.25` so that no
+moment is downgraded to a template for budget reasons; the bundle manifest counts budget fallbacks (should be 0).
+
 ## Model client and cost controls
 
-`src/pitchside/llm/` gives each agent role (interpreter, explainer, verifier, personalizer) its own chat client. No
-agents use it yet (milestone 3).
+`src/pitchside/llm/` gives each agent role (interpreter, explainer, verifier, personalizer) its own chat client,
+which the agents above use.
 
 - **Offline by default.** `PITCHSIDE_LLM=fake` (the default) uses a deterministic fake client, so everything runs with
   no Azure account and no cost. Tests can script failures: rate limits, timeouts, connection and server errors,
@@ -134,9 +205,10 @@ the service returns.
 
 ## Technology
 
-Current: Python 3.11+, pydantic v2. Model access (wired and tested offline, not yet run live):
-**Microsoft Agent Framework** (Python), the **Azure AI Projects SDK** for the Microsoft Foundry project endpoint,
-and **Azure Identity** (Microsoft Entra ID, `DefaultAzureCredential`). Other Azure components are listed in
+Current: Python 3.11+, pydantic v2. Agents and model access (built and tested offline, not yet run live):
+**Microsoft Agent Framework** (Python: `Agent`, graph workflows with `WorkflowBuilder`, function tools, chat and
+function middleware), the **Azure AI Projects SDK** for the Microsoft Foundry project endpoint, and **Azure Identity**
+(Microsoft Entra ID, `DefaultAzureCredential`). Other Azure components are listed in
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) as *planned* and will move here once they are built.
 
 ## Development

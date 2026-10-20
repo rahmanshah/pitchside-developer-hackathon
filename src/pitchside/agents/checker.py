@@ -273,6 +273,10 @@ def check_claim(claim: Claim, ctx: CheckContext, attempt: int = 1, lang: Languag
             reasons.append(Reason(code="team_mismatch",
                                   detail=f"the claim is about {_name(ctx, claim.team_id)} but its evidence is "
                                          f"about {', '.join(sorted(_name(ctx, t) for t in teams_cited))}"))
+        elif cited and not teams_cited:
+            reasons.append(Reason(code="team_mismatch",
+                                  detail=f"the claim is about {_name(ctx, claim.team_id)} but its evidence is "
+                                         "match-wide (both clubs); set team_id to null"))
 
     scanned = scan(text, lang)
     found = mentions(text, ctx.facts, lang)
