@@ -26,6 +26,7 @@ from .fake_agents import RESPONDERS
 from .faults import FaultInjector, FaultPlan
 from .jobs import FindingPoint, RecapPoint, StartPoint, StatsPoint, walk_match
 from .languages import Language, resolve_languages
+from .mcp_tools import McpTools
 from .roles import AgentSet, build_agents
 from .templates import template_narrative
 from .workflow import MAX_ATTEMPTS, RunFlags, run_job
@@ -65,6 +66,7 @@ class MatchRun:
     wall_s: float
     usage_log: Any = None  # the UsageLog the run wrote to
     answer_key: Optional[dict[str, Any]] = None
+    tools_location: Optional[str] = None  # where the MCP server was ("in-process", or its URL); None = local tools
 
     def record(self, job_id: str) -> Optional[JobRecord]:
         return next((r for r in self.records if r.job_id == job_id), None)
@@ -77,13 +79,23 @@ class Pipeline:
     models: ModelClients
     agents: AgentSet
     injector: Optional[FaultInjector] = None
+    tools: Optional[McpTools] = None  # the interpreter's MCP tools, when PITCHSIDE_TOOLS=mcp
 
     async def aclose(self) -> None:
-        await self.models.aclose()
+        try:
+            if self.tools is not None:
+                await self.tools.aclose()
+        finally:
+            await self.models.aclose()
 
 
-def build_pipeline(settings: LLMSettings, fault_plan: Optional[FaultPlan] = None, **guard_kwargs: Any) -> Pipeline:
-    """Fake agents offline, Foundry deployments live; faults are injected only if a plan is given."""
+def build_pipeline(settings: LLMSettings, fault_plan: Optional[FaultPlan] = None, *,
+                   mcp_http_client: Optional[Any] = None, **guard_kwargs: Any) -> Pipeline:
+    """Fake agents offline, Foundry deployments live; faults are injected only if a plan is given.
+
+    With ``PITCHSIDE_TOOLS=mcp`` the interpreter uses MCP tools: an in-process server, or the one at
+    ``PITCHSIDE_MCP_URL`` (``mcp_http_client`` lets a test route that URL to an in-process app).
+    """
     injector = FaultInjector(fault_plan) if fault_plan else None
     if settings.mode == "fake":
         guard_kwargs = {"backoff_base_s": 0.0, "backoff_cap_s": 0.0, **guard_kwargs}  # no real waiting offline
@@ -93,7 +105,8 @@ def build_pipeline(settings: LLMSettings, fault_plan: Optional[FaultPlan] = None
         extra_middleware=(lambda role: [injector.middleware(role.value)]) if injector else (),
         **guard_kwargs,
     )
-    return Pipeline(models, build_agents(models), injector)
+    tools = McpTools(settings.mcp_url, http_client=mcp_http_client) if settings.tools == "mcp" else None
+    return Pipeline(models, build_agents(models, tools), injector, tools)
 
 
 def new_run_id(seed_text: str = "") -> str:
@@ -121,8 +134,21 @@ def _template_reason(finding: Finding) -> str:
 
 async def run_match(events: Iterable[Event], pipeline: Pipeline, config: RunConfig, *, run_id: str,
                     answer_key: Optional[dict[str, Any]] = None) -> MatchRun:
-    started, clock = datetime.now(timezone.utc).isoformat(timespec="seconds"), time.perf_counter()
+    """Run a whole match. MCP tools (if used) are opened and closed here, in this task."""
     events = list(events)
+    if pipeline.tools is not None:
+        pipeline.tools.register_match(events)
+        await pipeline.tools.open()
+    try:
+        return await _run_match(events, pipeline, config, run_id, answer_key)
+    finally:
+        if pipeline.tools is not None:
+            await pipeline.tools.aclose()
+
+
+async def _run_match(events: list[Event], pipeline: Pipeline, config: RunConfig, run_id: str,
+                     answer_key: Optional[dict[str, Any]]) -> MatchRun:
+    started, clock = datetime.now(timezone.utc).isoformat(timespec="seconds"), time.perf_counter()
     flags = RunFlags()
     slots = asyncio.Semaphore(config.max_parallel_jobs)
     ordered: dict[int, JobRecord] = {}
@@ -184,4 +210,5 @@ async def run_match(events: Iterable[Event], pipeline: Pipeline, config: RunConf
         faults_fired=[f.__dict__ for f in pipeline.injector.fired] if pipeline.injector else [],
         budget_exhausted=flags.budget_exhausted, started_utc=started, wall_s=round(time.perf_counter() - clock, 2),
         usage_log=pipeline.models.log, answer_key=answer_key,
+        tools_location=pipeline.tools.location if pipeline.tools is not None else None,
     )

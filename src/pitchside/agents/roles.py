@@ -10,9 +10,10 @@ number a model can cite is checkable.
 from __future__ import annotations
 
 import json
+from collections.abc import MutableMapping
 from contextvars import ContextVar
 from dataclasses import dataclass, field
-from typing import Any, Optional, TypeVar
+from typing import TYPE_CHECKING, Any, Optional, TypeVar
 
 from agent_framework import Agent, FunctionInvocationContext, FunctionMiddleware, Message, tool
 from pydantic import BaseModel
@@ -25,6 +26,9 @@ from ..stats.timeline import TimelineView
 from .contracts import Job, Ledger
 from .ledger import say
 from .prompting import instructions
+
+if TYPE_CHECKING:
+    from .mcp_tools import McpTools
 
 MAX_TOOL_CALLS = 2
 HARD_MAX_OUTPUT = 32000
@@ -116,34 +120,76 @@ class LedgerRecorder(FunctionMiddleware):
             context.result = json.dumps(data)
 
 
+class BoundToMoment(FunctionMiddleware):
+    """MCP tools take their time bound as arguments. The host sets them from the job, whatever the model passed.
+
+    The server only ever answers about what is known at ``as_of_s`` (see ``stats/timeline.py``), so this is what
+    makes the interpreter's tools see exactly the moment the finding was detected, and no later: a model that asks
+    for ``as_of_s=99999`` or another ``match_id`` is overridden. Arguments are validated after middleware runs, so a
+    model that omits the (required) bound still gets a valid call.
+    """
+
+    async def process(self, context: FunctionInvocationContext, call_next) -> None:
+        state = _TOOL_STATE.get()
+        if state is None:
+            raise RuntimeError("stats tools can only be called for a job: no moment to bound them to")
+        job = state.job
+        pins: dict[str, Any] = {"as_of_s": job.clock_s, "match_id": job.match_id,
+                                "as_of_event_id": job.as_of_event_id}
+        arguments = context.arguments
+        for name, value in pins.items():
+            if isinstance(arguments, MutableMapping):
+                if value is None:
+                    arguments.pop(name, None)
+                else:
+                    arguments[name] = value
+            elif name in type(arguments).model_fields:
+                setattr(arguments, name, value)
+        await call_next()
+
+
 # --------------------------------------------------------------------------- #
 # Agents
 # --------------------------------------------------------------------------- #
+
+LOCAL_TOOL_NAMES = tuple(stats_tools.LOCAL_TOOLS)
 
 
 @dataclass
 class AgentSet:
     agents: dict[Role, Agent]
     settings: LLMSettings
+    tool_names: tuple[str, ...] = LOCAL_TOOL_NAMES  # the interpreter's tools, for its prompt
 
     def __getitem__(self, role: Role) -> Agent:
         return self.agents[role]
 
 
-def build_agents(models: ModelClients) -> AgentSet:
-    """One Agent Framework ``Agent`` per role, each on its own guarded chat client (fake or Foundry)."""
+def build_agents(models: ModelClients, mcp_tools: Optional["McpTools"] = None) -> AgentSet:
+    """One Agent Framework ``Agent`` per role, each on its own guarded chat client (fake or Foundry).
+
+    The interpreter's tools are local function tools, or (``PITCHSIDE_TOOLS=mcp``) the MCP server's tools.
+    """
+    settings = models.settings
+    if settings.tools == "mcp" and mcp_tools is None:
+        raise ValueError("PITCHSIDE_TOOLS=mcp needs an McpTools (build_pipeline makes one)")
     agents: dict[Role, Agent] = {}
+    tool_names = LOCAL_TOOL_NAMES
     for role in Role:
         client = models[role]
         kwargs: dict[str, Any] = {}
         if role is Role.INTERPRETER:
-            kwargs = dict(tools=[match_totals_tool, recent_window_tool], middleware=[LedgerRecorder()])
+            if settings.tools == "mcp":
+                tool_names = mcp_tools.tool_names
+                kwargs = dict(tools=[mcp_tools.tool], middleware=[BoundToMoment(), LedgerRecorder()])
+            else:
+                kwargs = dict(tools=[match_totals_tool, recent_window_tool], middleware=[LedgerRecorder()])
             config = getattr(client, "function_invocation_configuration", None)
             if isinstance(config, dict):
                 config.update(max_function_calls=MAX_TOOL_CALLS, max_iterations=MAX_TOOL_CALLS + 1)
         agents[role] = Agent(client=client, instructions=instructions(role.value), name=f"pitchside-{role.value}",
                              description=f"Pitchside {role.value} agent", **kwargs)
-    return AgentSet(agents, models.settings)
+    return AgentSet(agents, settings, tuple(tool_names))
 
 
 @dataclass

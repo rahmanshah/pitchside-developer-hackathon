@@ -11,7 +11,7 @@ from pitchside.agents.contracts import ExplainerReply, InterpreterReply
 from pitchside.agents.fake_agents import RESPONDERS
 from pitchside.agents.faults import FaultInjector, parse_faults
 from pitchside.agents.prompting import explainer_prompt, interpreter_prompt, rule_brief
-from pitchside.agents.roles import ToolState, ask, build_agents
+from pitchside.agents.roles import LOCAL_TOOL_NAMES, ToolState, ask, build_agents
 from pitchside.llm import Role, load_settings
 from pitchside.llm.errors import MalformedOutput
 from pitchside.llm.factory import build_clients
@@ -50,7 +50,7 @@ class InterpreterToolTests(RolesTestCase):
         agents, models, _ = self.agents()
         ledger = self.goal.ledger.model_copy(deep=True)
         state = ToolState(job=self.goal, ledger=ledger)
-        answer = self.run_in_job(lambda: ask(agents, Role.INTERPRETER, interpreter_prompt(self.goal, tools=True),
+        answer = self.run_in_job(lambda: ask(agents, Role.INTERPRETER, interpreter_prompt(self.goal, tools=LOCAL_TOOL_NAMES),
                                              InterpreterReply, tool_state=state))
         added = [i for i in ledger.items if i.source == "context"]
         self.assertEqual(len(added), 8)  # 4 totals x 2 clubs

@@ -73,6 +73,8 @@ class PipelineInfo(_Frozen):
     max_output_tokens: dict[str, int]
     prompt_versions: dict[str, str]
     max_explainer_attempts: int
+    interpreter_tools: Literal["local", "mcp"] = Field(description="How the interpreter reached the stats tools.")
+    mcp_server: Optional[str] = Field(default=None, description="'in-process' or the server URL, when tools are mcp.")
 
 
 class FaultInfo(_Frozen):
@@ -212,7 +214,8 @@ def build_manifest(run: MatchRun, usage: list[UsageRecord]) -> BundleManifest:
             reasoning_effort=settings.reasoning_effort,
             max_output_tokens={r.value: settings.max_output(r) for r in Role},
             prompt_versions={role: prompt_version(role) for role in ROLES},
-            max_explainer_attempts=run.config.max_attempts,
+            max_explainer_attempts=run.config.max_attempts, interpreter_tools=settings.tools,
+            mcp_server=run.tools_location,
         ),
         faults=FaultInfo(injected=bool(run.fault_plan), plan=run.fault_plan.name if run.fault_plan else None,
                          rules=run.fault_plan.describe() if run.fault_plan else [],

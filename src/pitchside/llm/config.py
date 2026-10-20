@@ -45,6 +45,8 @@ ENV_VARS = {
     "PITCHSIDE_REASONING_EFFORT": "reasoning_effort",
     **{f"PITCHSIDE_MAX_OUTPUT_{role.name}": f"max_output_{role.value}" for role in Role},
     "PITCHSIDE_LANGUAGES": "languages",
+    "PITCHSIDE_TOOLS": "tools",
+    "PITCHSIDE_MCP_URL": "mcp_url",
 }
 
 ReasoningEffort = Literal["off", "none", "low", "medium", "high", "xhigh", "max"]
@@ -87,6 +89,14 @@ class LLMSettings(BaseModel):
     languages: str = Field("en,es", pattern=r"^[a-z]{2}(,[a-z]{2})*$",
                            description="Comma-separated language codes; each needs a phrase table.")
 
+    tools: Literal["local", "mcp"] = Field(
+        "local", description="How the interpreter reaches the stats tools: 'local' function tools, or 'mcp'."
+    )
+    mcp_url: Optional[str] = Field(
+        None, pattern=r"^https?://", description="Streamable HTTP endpoint of a deployed pitchside MCP server; "
+                                                  "empty = an in-process MCP server.",
+    )
+
     def max_output(self, role: Role) -> int:
         return getattr(self, f"max_output_{role.value}")
 
@@ -125,7 +135,7 @@ def load_settings(env: Optional[Mapping[str, str]] = None, env_file: Optional[Pa
             load_dotenv(env_file, override=False)
         env = os.environ
     values = {field: env[name].strip() for name, field in ENV_VARS.items() if env.get(name, "").strip()}
-    for key in ("mode", "foundry_api", "reasoning_effort", "languages"):
+    for key in ("mode", "foundry_api", "reasoning_effort", "languages", "tools"):
         if key in values:
             values[key] = values[key].lower()
     if "languages" in values:
