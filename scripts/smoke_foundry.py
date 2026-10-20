@@ -10,6 +10,8 @@ What it does:
 2. Makes one tiny call per agent role on that path and prints tokens, cost and latency (logged to the usage
    log under match id "smoke-<time>", so it counts toward PITCHSIDE_TOTAL_BUDGET_USD).
 3. Checks that a near-zero budget refuses a call without sending it.
+4. Runs one goal through the live agent pipeline (interpreter with tools, explainer, checker, verifier,
+   personalizer) and prints the claims, the audit trail and per-call tokens, including reasoning tokens.
 
 Exit codes: 0 ok, 2 configuration or auth problem, 3 service unavailable or no API path worked.
 """
@@ -113,9 +115,53 @@ async def main() -> int:
     finally:
         await models.aclose()
 
+    print("\n4. One goal through the live agent pipeline (structured output, reasoning option, all four agents)")
+    failures += await pipeline_check(settings.model_copy(update={"foundry_api": api}), match_id)
+
     print("\nRESULT:", "OK" if failures == 0 else f"{failures} problem(s)")
     print(f"API path: {api}. Summary: uv run pitchside cost --match {match_id}")
     return 0 if failures == 0 else 3
+
+
+async def pipeline_check(settings, match_id: str) -> int:
+    """Run the first goal of seed 7 (comeback) through the job workflow on the live deployments."""
+    from pitchside.agents.jobs import FindingPoint, walk_match
+    from pitchside.agents.pipeline import RunConfig, build_pipeline
+    from pitchside.agents.workflow import run_job
+    from pitchside.generator import generate_match
+
+    result = generate_match(seed=7, storyline="comeback")
+    job = next(p.job for p in walk_match(result.events) if isinstance(p, FindingPoint) and p.job.label == "goal")
+    pipeline = build_pipeline(settings)
+    config = RunConfig.from_settings(settings)
+    run_id = f"{match_id}-pipeline"
+    try:
+        with call_context(run_id=run_id, match_id=job.match_id, finding_id=job.job_id):
+            record = await run_job(job, pipeline.agents, config.languages)
+    finally:
+        await pipeline.aclose()
+    n = record.narrative
+    print(f"  narrative source: {n.source}; semantic check: {n.semantic_check}; drafts: {len(record.drafts)}")
+    for claim in n.claims:
+        print(f"    claim: {claim.text}")
+    print(f"  persona texts from the model: {sum(t.source == 'model' for t in n.texts)} of {len(n.texts)}")
+    for entry in record.audit:
+        notes = entry.data.get("notes") or []
+        print(f"    {entry.step:<12} {entry.outcome:<22} {entry.detail[:90]}" + (f"  {notes}" if notes else ""))
+    rows = [r for r in pipeline.models.log.read() if r.run_id == run_id]
+    for r in rows:
+        print(f"     {r.role:<13} {r.step or '-':<12} {r.status:<7} in {r.input_tokens:>5} out {r.output_tokens:>5} "
+              f"(reasoning {r.reasoning_tokens:>5})  ${r.cost_usd:.6f}  {r.latency_ms:.0f} ms"
+              + (f"  [{r.error_kind}: {r.detail}]" if r.error_kind else ""))
+    print(f"  pipeline check cost: ${sum(r.cost_usd for r in rows):.6f}")
+    if any(r.error_kind == "bad_request" for r in rows):
+        print("  hint: a bad_request may mean the deployment rejects the reasoning option or the JSON schema; "
+              "try PITCHSIDE_REASONING_EFFORT=off, then FOUNDRY_API=chat_completions")
+    if n.source != "model":
+        print(f"  FAIL  the goal fell back to a template: {n.reason}")
+        return 1
+    print("  OK    verified model narrative")
+    return 0
 
 
 if __name__ == "__main__":
