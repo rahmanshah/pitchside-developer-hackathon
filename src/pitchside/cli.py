@@ -124,6 +124,19 @@ def _cmd_schema(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_mcp(args: argparse.Namespace) -> int:
+    from .mcp_server import load_store, serve
+
+    store = load_store([Path(p) for p in args.events or []], args.generate or [])
+    options = {}
+    if args.transport == "streamable-http":
+        options = dict(host=args.host, port=args.port, stateless_http=args.stateless,
+                       json_response=args.json_response, allowed_hosts=args.allowed_host or [],
+                       allowed_origins=args.allowed_origin or [])
+    serve(store, args.transport, **options)
+    return 0
+
+
 def _agent_settings(args: argparse.Namespace, usage_log: Path):
     """Settings for an agent run. Live calls need both PITCHSIDE_LLM=foundry and --live; offline runs log usage
     inside their own output directory, so fake costs never count toward the live budgets."""
@@ -307,6 +320,24 @@ def build_parser() -> argparse.ArgumentParser:
     rn.add_argument("--out", default="runs/bundles", help="bundle output directory")
     _agent_args(rn)
     rn.set_defaults(func=_cmd_run)
+
+    mc = sub.add_parser("mcp", help="serve the stats engine as read-only MCP tools (stdio by default)")
+    mc.add_argument("--transport", default="stdio", choices=["stdio", "streamable-http"],
+                    help="stdio for local MCP clients; streamable-http for a deployed server")
+    mc.add_argument("--events", action="append", metavar="PATH",
+                    help="a recorded match (JSONL from `pitchside generate`); repeatable")
+    mc.add_argument("--generate", action="append", metavar="SEED[:STORYLINE]",
+                    help="generate a match (deterministic); repeatable. Default when nothing is given: 7:comeback")
+    mc.add_argument("--host", default="127.0.0.1", help="streamable-http only; 0.0.0.0 inside a container")
+    mc.add_argument("--port", type=int, default=8000, help="streamable-http only")
+    mc.add_argument("--allowed-host", action="append", metavar="HOST",
+                    help="streamable-http: Host header(s) to accept, e.g. the Container Apps FQDN (repeatable)")
+    mc.add_argument("--allowed-origin", action="append", metavar="ORIGIN",
+                    help="streamable-http: browser Origin(s) to accept (repeatable)")
+    mc.add_argument("--stateless", action="store_true",
+                    help="streamable-http: no server-side sessions (needed for several replicas / scale to zero)")
+    mc.add_argument("--json-response", action="store_true", help="streamable-http: plain JSON replies, not SSE")
+    mc.set_defaults(func=_cmd_mcp)
 
     ea = sub.add_parser("eval-agents", help="run matches through the agents and score them against answer keys "
                                             "(offline by default: a plumbing check, not model quality)")
