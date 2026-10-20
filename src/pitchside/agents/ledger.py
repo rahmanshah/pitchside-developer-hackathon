@@ -19,11 +19,16 @@ UNIT_DECIMALS = {"pct": 0, "xg": 2, "index": 2, "per_min": 1, "s": 0, "m": 0, "c
 MAX_RECAP_CLAIMS = 12
 
 
-def number_text(value: float, unit: str, lang: Language = ENGLISH) -> str:
+UNSIGNED_INDEX = frozenset({"pass_difficulty"})  # 0..1 ratings, not -1..+1 swings: no "+" sign
+
+
+def number_text(value: float, unit: str, lang: Language = ENGLISH, metric: str = "") -> str:
     """The number as a claim should write it: digits, unit-specific rounding, unit symbol where natural."""
     if unit == "pct":
         return f"{lang.number(value, 0)}%"
     if unit == "index":
+        if metric in UNSIGNED_INDEX:
+            return lang.number(value, 2)
         sign = "+" if value > 0.005 else "-" if value < -0.005 else ""
         return sign + lang.number(abs(value), 2)
     if unit == "s":
@@ -34,9 +39,16 @@ def number_text(value: float, unit: str, lang: Language = ENGLISH) -> str:
 
 
 def say(metric: str, value: float, unit: str, lang: Language = ENGLISH, team_name: str = "") -> str:
-    """A short phrase quoting the number, e.g. "71% field tilt" or "Ironvale completing 64% of their passes"."""
-    phrase = lang.phrases.get(f"fact.{metric}", "{v} " + metric.replace("_", " "))
-    return phrase.format(v=number_text(value, unit, lang), opponent=team_name)
+    """A short phrase quoting the number, e.g. "71% field tilt" or "Ironvale completing 64% of their passes".
+
+    Since-kick-off metrics end in ``_total``; those without their own phrase reuse the base metric's phrase.
+    """
+    v = number_text(value, unit, lang, metric)
+    phrase = lang.phrases.get(f"fact.{metric}")
+    if phrase is None and metric.endswith("_total") and f"fact.{metric[:-6]}" in lang.phrases:
+        base = lang.phrases[f"fact.{metric[:-6]}"].format(v=v, opponent=team_name)
+        return lang.phrases["fact.since_kickoff"].format(phrase=base)
+    return (phrase or "{v} " + metric.replace("_", " ")).format(v=v, opponent=team_name)
 
 
 # --------------------------------------------------------------------------- #

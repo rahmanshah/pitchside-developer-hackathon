@@ -129,6 +129,12 @@ ENGLISH = Language(
         "fact.shots_total": "{v} shots",
         "fact.xg_total": "{v} xG",
         "fact.pass_completion_total": "{v} pass completion",
+        "fact.passes": "{v} passes",
+        "fact.pass_difficulty": "pass difficulty {v}",
+        "fact.final_third_passes": "{v} passes into the final third",
+        "fact.goals": "{v} goals",
+        "fact.pressures": "{v} pressures",
+        "fact.since_kickoff": "{phrase} in the match",
     },
 )
 
@@ -213,6 +219,12 @@ SPANISH = Language(
         "fact.shots_total": "{v} tiros",
         "fact.xg_total": "{v} xG",
         "fact.pass_completion_total": "{v} de pases completados",
+        "fact.passes": "{v} pases",
+        "fact.pass_difficulty": "dificultad de pase {v}",
+        "fact.final_third_passes": "{v} pases al último tercio",
+        "fact.goals": "{v} goles",
+        "fact.pressures": "{v} presiones",
+        "fact.since_kickoff": "{phrase} en el partido",
     },
 )
 

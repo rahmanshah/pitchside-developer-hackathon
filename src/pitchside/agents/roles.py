@@ -21,6 +21,7 @@ from ..llm.config import LLMSettings, Role
 from ..llm.errors import MalformedOutput, parse_json
 from ..llm.factory import ModelClients
 from ..stats import tools as stats_tools
+from ..stats.timeline import TimelineView
 from .contracts import Job, Ledger
 from .ledger import say
 from .prompting import instructions
@@ -53,7 +54,8 @@ def _run_tool(name: str) -> str:
     state = _TOOL_STATE.get()
     if state is None or state.job.snapshot is None:
         return json.dumps({"items": [], "note": "no match context available"})
-    return json.dumps(stats_tools.TOOLS[name](state.job.snapshot))
+    view = TimelineView.from_snapshot(state.job.snapshot)
+    return stats_tools.LOCAL_TOOLS[name](view).model_dump_json()
 
 
 @tool(name="match_totals", description="Since kick-off, per club: possession, shots, xG and pass completion.")
@@ -67,32 +69,51 @@ def recent_window_tool() -> str:
     return _run_tool("recent_window")
 
 
+def result_text(raw: Any) -> str:
+    """A tool result as text, whether a local function returned a string or an MCP tool returned content items."""
+    if isinstance(raw, str):
+        return raw
+    return "".join(getattr(c, "text", None) or "" for c in (raw if isinstance(raw, (list, tuple)) else [raw]) if c)
+
+
 class LedgerRecorder(FunctionMiddleware):
-    """Give every number a tool returns a ledger id (``c*``) and a quote, and show the model those instead."""
+    """Give every number a tool returns a ledger id (``c*``) and a quote, and show the model those instead.
+
+    Works the same for local function tools (a JSON string) and MCP tools (a list of text content): both carry the
+    tool's JSON, whose ``items`` are the numbers. Everything else in the result (moments, notes) passes through.
+    """
 
     async def process(self, context: FunctionInvocationContext, call_next) -> None:
         await call_next()
         state = _TOOL_STATE.get()
         if state is None:
             return
-        raw = context.result
-        text = raw if isinstance(raw, str) else "".join(getattr(c, "text", "") or "" for c in (raw or []))
         try:
-            items = json.loads(text).get("items", [])
+            data = json.loads(result_text(context.result))
+            items = data.get("items", [])
         except (TypeError, ValueError, AttributeError):
             return
-        shown = []
+        if not isinstance(items, list):
+            return
+        shown, refs = [], []
         for entry in items:
             team = state.job.facts.team(entry.get("team_id"))
             phrase = say(entry["metric"], entry["value"], entry["unit"])
             item = state.ledger.add_item("c", metric=entry["metric"], team_id=entry.get("team_id"),
                                          value=entry["value"], unit=entry["unit"],
                                          window_start_s=entry["window_start_s"], window_end_s=entry["window_end_s"],
+                                         baseline=entry.get("baseline"),
                                          say=f"{team.name}: {phrase}" if team else phrase, source="context")
             shown.append({"ref": item.ref, "metric": item.metric, "team_id": item.team_id, "value": item.value,
                           "unit": item.unit, "say": item.say})
-        state.calls.append({"tool": context.function.name, "refs": [s["ref"] for s in shown]})
-        context.result = json.dumps({"items": shown})
+            refs.append(item.ref)
+        state.calls.append({"tool": context.function.name, "refs": refs})
+        if "items" in data:
+            data["items"] = shown
+            # The bound the host applied is not the model's business, and an echo of times invites confusion.
+            for key in ("as_of_s", "data_through_s", "match_id"):
+                data.pop(key, None)
+            context.result = json.dumps(data)
 
 
 # --------------------------------------------------------------------------- #

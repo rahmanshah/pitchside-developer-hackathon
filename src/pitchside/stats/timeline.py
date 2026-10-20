@@ -40,6 +40,11 @@ class TimelineView:
     def score(self) -> Score:
         return self.snapshot.score
 
+    @classmethod
+    def from_snapshot(cls, snapshot: Snapshot) -> "TimelineView":
+        """A view over a snapshot frozen earlier (the interpreter's local tools). It carries no findings."""
+        return cls(snapshot.match_id, snapshot.clock_s, snapshot.clock_s, snapshot, ())
+
 
 def check_bound(as_of_s: float, as_of_event_id: Optional[int] = None) -> None:
     if isinstance(as_of_s, bool) or not isinstance(as_of_s, (int, float)) or not math.isfinite(as_of_s) or as_of_s < 0:
