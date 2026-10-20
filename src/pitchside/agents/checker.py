@@ -25,8 +25,9 @@ from dataclasses import dataclass, field
 from typing import Iterable, Optional, Sequence
 
 from ..schema import Score
-from .contracts import Claim, ClaimCheck, GoalAt, Ledger, LedgerItem, MatchFacts, Reason
+from .contracts import Claim, ClaimCheck, GoalAt, Job, Ledger, LedgerItem, MatchFacts, Reason
 from .languages import ENGLISH, Language
+from .ledger import UNIT_DECIMALS
 
 _SENTENCE_END = re.compile(r"(?<!\d)[.!?;](?!\d)|[!?;]")
 _SCORE = re.compile(r"(?<![\d.,])(\d{1,2})\s*[-–]\s*(\d{1,2})(?!\d|[.,]\d|%)")
@@ -46,6 +47,12 @@ class CheckContext:
     window_start_s: float
     window_end_s: float
     extra_players: frozenset[str] = frozenset()  # player ids persona texts may name (featured players)
+
+    @classmethod
+    def for_job(cls, job: Job) -> "CheckContext":
+        return cls(ledger=job.ledger, facts=job.facts, score=job.score, goals=job.goals,
+                   window_start_s=job.window_start_s, window_end_s=job.window_end_s,
+                   extra_players=frozenset(job.featured))
 
     def scores(self) -> set[tuple[int, int]]:
         seen = {(0, 0), (self.score.home, self.score.away)}
@@ -199,13 +206,14 @@ def _comparable(item: LedgerItem, token: _Token) -> float:
 
 
 def number_matches(item: LedgerItem, token: _Token) -> bool:
-    """True if the written number is the ledger value rounded to the precision written (with a sanity bound)."""
-    target = _comparable(item, token)
-    error = abs(token.value - target)
-    if error > 0.5 * 10 ** (-token.decimals) + 1e-9:
+    """True if the written number is the ledger value rounded to the precision written.
+
+    The precision may be at most one decimal coarser than the unit's display precision: "0.4 xG" may stand for
+    0.39, but "0 xG" may not stand for 0.048 ("2 m" for 1.7 m and "71%" for 71.4 are fine).
+    """
+    if not token.minutes and token.decimals < UNIT_DECIMALS.get(item.unit, 0) - 1:
         return False
-    # "0" for 0.048 is within rounding but says something else: the error must also stay within 10% (or 0.005).
-    return error <= max(0.1 * abs(target), 0.005) + 1e-9
+    return abs(token.value - _comparable(item, token)) <= 0.5 * 10 ** (-token.decimals) + 1e-9
 
 
 def _same_value(a: float, token: _Token) -> bool:
@@ -269,11 +277,16 @@ def check_claim(claim: Claim, ctx: CheckContext, attempt: int = 1, lang: Languag
     scanned = scan(text, lang)
     found = mentions(text, ctx.facts, lang)
     for token in scanned.numbers:
-        listed = [n for n in claim.numbers if _same_value(n.value, token)]
+        # Numbers should be listed exactly as written; a listed value that rounds to the text is the fallback.
+        listed = [n for n in claim.numbers if abs(n.value - token.value) <= 1e-6] or [
+            n for n in claim.numbers if _same_value(n.value, token)]
         if not listed:
             reasons.append(Reason(code="unlisted_number",
                                   detail=f"{_shown(text, token)} appears in the text but not in the claim's numbers"))
             continue
+        given_to = _attributed_team(text, token, found, claim.team_id)
+        # Equal values ("4 shots each"): use the number that belongs to the club the text names.
+        listed.sort(key=lambda n: (getattr(ctx.ledger.item(n.ref), "team_id", None) != given_to))
         number = listed[0]
         if number.ref not in claim.refs:
             reasons.append(Reason(code="number_not_cited",
@@ -290,13 +303,11 @@ def check_claim(claim: Claim, ctx: CheckContext, attempt: int = 1, lang: Languag
                                   detail=f"{_shown(text, token)} does not match {item.ref} ({item.metric} = "
                                          f"{item.value:g} {item.unit}; write \"{item.say}\")"))
             continue
-        if item.team_id:
-            given_to = _attributed_team(text, token, found, claim.team_id)
-            if given_to is not None and given_to != item.team_id:
-                reasons.append(Reason(code="team_mismatch",
-                                      detail=f"{_shown(text, token)} ({item.ref}) belongs to "
-                                             f"{_name(ctx, item.team_id)}, but the text gives it to "
-                                             f"{_name(ctx, given_to)}; name the club right before its number"))
+        if item.team_id and given_to is not None and given_to != item.team_id:
+            reasons.append(Reason(code="team_mismatch",
+                                  detail=f"{_shown(text, token)} ({item.ref}) belongs to "
+                                         f"{_name(ctx, item.team_id)}, but the text gives it to "
+                                         f"{_name(ctx, given_to)}; name the club right before its number"))
 
     windows = [(i.window_start_s, i.window_end_s) for i in cited] + [(ctx.window_start_s, ctx.window_end_s)]
     reasons += _common_checks(text, scanned, ctx, lang, windows, cited_players)
