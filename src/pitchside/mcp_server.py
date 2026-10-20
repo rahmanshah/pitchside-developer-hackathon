@@ -48,12 +48,11 @@ as given. Tools are read-only.
 """
 
 AsOf = Annotated[float, Field(ge=0, description="The moment to answer for, in match seconds since kick-off "
-                                                "(45:00 = 2700). Nothing after it is used.")]
-MatchId = Annotated[Optional[str], Field(description="Which match; optional when the server holds only one.")]
-EventId = Annotated[Optional[int], Field(ge=0, description="Optional, tighter bound: also exclude events with a "
-                                                          "larger id (events can share a clock reading).")]
-Scope = Annotated[tools.Scope, Field(description="'rolling' = the last few minutes; 'since_kickoff' = the match so "
-                                                 "far (metric names then end in _total).")]
+                                                "(45:00 = 2700). Nothing later is used.")]
+MatchId = Annotated[Optional[str], Field(description="Which match; optional if the server holds one.")]
+EventId = Annotated[Optional[int], Field(ge=0, description="Optional tighter bound: also exclude events with a "
+                                                          "larger id.")]
+Scope = Annotated[tools.Scope, Field(description="rolling = last few minutes; since_kickoff = whole match so far.")]
 
 
 class _Model(BaseModel):

@@ -156,7 +156,7 @@ class InterpretStep(_Step):
     @handler
     async def start(self, job: Job, ctx: WorkflowContext[BriefReady]) -> None:
         work = Work(job=job, ledger=job.ledger.model_copy(deep=True))
-        prompt = interpreter_prompt(job, tools=True)
+        prompt = interpreter_prompt(job, tools=self.agents.tool_names)
         state = ToolState(job=job, ledger=work.ledger)
         try:
             with call_context(step="interpret", attempt=1):

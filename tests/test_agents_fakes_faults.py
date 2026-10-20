@@ -19,6 +19,7 @@ from pitchside.agents.prompting import (
     explainer_prompt, instructions, interpreter_prompt, personalizer_prompt, personas_for, prompt_version,
     rule_brief, to_claims, verifier_prompt,
 )
+from pitchside.agents.roles import LOCAL_TOOL_NAMES
 from pitchside.llm.fake import ToolCall
 from pitchside.llm.guard import call_context
 
@@ -36,7 +37,7 @@ def model_jobs(seed: int = 1, storyline: str = "comeback"):
 
 
 def fake_draft(job):
-    brief = InterpreterReply.model_validate_json(fake_agents.interpreter(interpreter_prompt(job, tools=False)))
+    brief = InterpreterReply.model_validate_json(fake_agents.interpreter(interpreter_prompt(job)))
     reply = ExplainerReply.model_validate_json(fake_agents.explainer(explainer_prompt(job, brief, [], 1)))
     return brief, reply, to_claims(reply, 1)
 
@@ -84,7 +85,7 @@ class FakeAgentTests(unittest.TestCase):
 
     def test_fake_interpreter_asks_for_match_totals_on_goals_once(self) -> None:
         goal = next(j for j in model_jobs() if j.label == "goal")
-        prompt = interpreter_prompt(goal, tools=True)
+        prompt = interpreter_prompt(goal, tools=LOCAL_TOOL_NAMES)
         self.assertEqual(fake_agents.interpreter(prompt), [ToolCall("match_totals")])
         answer = fake_agents.interpreter(prompt + '\ntool: {"items": [{"ref": "c4"}]}')
         self.assertIn("c4", json.loads(answer)["focus_refs"])

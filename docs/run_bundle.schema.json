@@ -230,6 +230,28 @@
             "max_explainer_attempts": {
               "title": "Max Explainer Attempts",
               "type": "integer"
+            },
+            "interpreter_tools": {
+              "description": "How the interpreter reached the stats tools.",
+              "enum": [
+                "local",
+                "mcp"
+              ],
+              "title": "Interpreter Tools",
+              "type": "string"
+            },
+            "mcp_server": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "default": null,
+              "description": "'in-process' or the server URL, when tools are mcp.",
+              "title": "Mcp Server"
             }
           },
           "required": [
@@ -243,7 +265,8 @@
             "reasoning_effort",
             "max_output_tokens",
             "prompt_versions",
-            "max_explainer_attempts"
+            "max_explainer_attempts",
+            "interpreter_tools"
           ],
           "title": "PipelineInfo",
           "type": "object"

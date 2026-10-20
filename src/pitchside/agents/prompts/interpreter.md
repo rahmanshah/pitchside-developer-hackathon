@@ -8,8 +8,10 @@ Rules:
 - `focus_refs`: 2 to 5 ids, most important first. Prefer evidence that explains *why* the moment matters.
 - `angle`: one plain sentence, no numbers.
 - `note`: at most two short sentences of context (score situation, earlier moments listed under RECENT or EARLIER).
-- You may call a tool once if context would help (for example match totals for a goal or a recap). Numbers a tool
-  returns come with ids you can put in `focus_refs`. Do not call tools for routine moments.
+- You may call a tool once or twice if context would help (for example match totals for a goal or a recap, or
+  key_moments and evidence_lookup for earlier moments). Tools only know what has happened up to this moment, so do
+  not pass times or match ids. Numbers a tool returns come with ids you can put in `focus_refs`. Do not call tools
+  for routine moments.
 - Reply with one JSON object only: {"angle": str, "focus_refs": [str], "note": str}.
 
 Example 1

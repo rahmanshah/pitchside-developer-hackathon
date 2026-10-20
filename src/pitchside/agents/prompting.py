@@ -101,7 +101,7 @@ def rule_brief(job: Job) -> InterpreterReply:
 # --------------------------------------------------------------------------- #
 
 
-def interpreter_prompt(job: Job, tools: bool) -> str:
+def interpreter_prompt(job: Job, tools: Sequence[str] = ()) -> str:
     lines = ["TASK: interpret this moment.", moment_line(job), clubs_line(job), scores_line(job)]
     if job.recent:
         lines.append("RECENT: " + "; ".join(f"{m.minute}' {m.kind} {m.status} {m.team_id or 'both'}"
@@ -111,7 +111,8 @@ def interpreter_prompt(job: Job, tools: bool) -> str:
     lines += _block("EVIDENCE", evidence_lines(job.ledger))
     lines += _block("PLAYERS", player_lines(job.ledger))
     if tools:
-        lines.append("TOOLS: match_totals() and recent_window() return context numbers with ids you can cite.")
+        lines.append("TOOLS: " + ", ".join(tools) + ". They return context numbers with ids you can cite, already "
+                     "limited to this moment of the match; do not pass times or match ids.")
     return "\n".join(lines)
 
 

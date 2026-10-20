@@ -141,6 +141,8 @@ def _agent_settings(args: argparse.Namespace, usage_log: Path):
     """Settings for an agent run. Live calls need both PITCHSIDE_LLM=foundry and --live; offline runs log usage
     inside their own output directory, so fake costs never count toward the live budgets."""
     settings = load_settings()
+    if args.tools:
+        settings = settings.model_copy(update={"tools": args.tools})
     if settings.mode == "foundry" and not args.live:
         raise ValueError("PITCHSIDE_LLM=foundry makes paid model calls: add --live to confirm")
     if args.live and settings.mode != "foundry":
@@ -261,6 +263,8 @@ def _cmd_eval_agents(args: argparse.Namespace) -> int:
 def _agent_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--live", action="store_true",
                         help="confirm paid model calls (needs PITCHSIDE_LLM=foundry); default is offline")
+    parser.add_argument("--tools", choices=["local", "mcp"],
+                        help="how the interpreter reaches the stats tools (default: PITCHSIDE_TOOLS, else local)")
     parser.add_argument("--inject-faults", metavar="SPEC",
                         help="opt-in fault injection to show recovery: 'demo' or role:kind[@target][#attempt][xN]")
     parser.add_argument("--inject-bad", type=float, metavar="RATE",

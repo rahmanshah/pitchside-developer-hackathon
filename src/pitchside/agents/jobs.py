@@ -84,7 +84,8 @@ def walk_match(events: Iterable[Event], featured: Optional[Sequence[str]] = None
             next_stats = (event.clock_s // stats_every_s + 1) * stats_every_s
         for finding in new:
             job = finding_job(finding, facts=facts, events_by_id=events_by_id, tally=tally,
-                              snapshot=engine.snapshot(), earlier=seen, goals=goals, featured=chosen)
+                              snapshot=engine.snapshot(), earlier=seen, goals=goals, featured=chosen,
+                              as_of_event_id=event.event_id)
             seen.append(finding)
             yield FindingPoint(finding, job, route(finding))
         recap: Optional[RecapKind] = None
@@ -94,7 +95,8 @@ def walk_match(events: Iterable[Event], featured: Optional[Sequence[str]] = None
             recap = "full_time"
         if recap is not None:
             frozen = dict(facts=facts, snapshot=engine.snapshot(), tally=copy.deepcopy(tally),
-                          score=engine.state.score, goals=list(goals), featured=list(chosen))
+                          score=engine.state.score, goals=list(goals), featured=list(chosen),
+                          as_of_event_id=event.event_id)
             yield RecapPoint(recap, lambda records, kind=recap, frozen=frozen: recap_job(kind, records=records,
                                                                                           **frozen))
 
@@ -105,7 +107,7 @@ def recap_job_id(match_id: str, kind: RecapKind) -> str:
 
 def finding_job(finding: Finding, *, facts: MatchFacts, events_by_id: dict[int, Event], tally: PlayerTally,
                 snapshot: Snapshot, earlier: Sequence[Finding], goals: Sequence[GoalAt],
-                featured: Sequence[str]) -> Job:
+                featured: Sequence[str], as_of_event_id: Optional[int] = None) -> Job:
     recent = [Moment(finding_id=f.finding_id, kind=f.kind.value, status=f.status, team_id=f.team_id,
                      minute=int(f.detected_at_s // 60) + 1)
               for f in earlier if f.status != "end"][-RECENT_MOMENTS:]
@@ -113,7 +115,8 @@ def finding_job(finding: Finding, *, facts: MatchFacts, events_by_id: dict[int, 
     involved = [p.player_id for p in ledger.players]
     return Job(
         job_id=finding.finding_id, kind="finding", label=finding.kind.value, match_id=finding.match_id,
-        finding=finding, team_id=finding.team_id, clock_s=finding.detected_at_s, window_start_s=finding.start_s,
+        finding=finding, team_id=finding.team_id, clock_s=finding.detected_at_s, as_of_event_id=as_of_event_id,
+        window_start_s=finding.start_s,
         window_end_s=finding.end_s, score=finding.score, goals=list(goals), recent=recent, ledger=ledger,
         snapshot=snapshot, player_stats=[tally.get(p, facts.player(p).team_id) for p in dict.fromkeys(
             [*involved, *featured])], featured=list(featured), facts=facts,
@@ -121,11 +124,13 @@ def finding_job(finding: Finding, *, facts: MatchFacts, events_by_id: dict[int, 
 
 
 def recap_job(kind: RecapKind, *, facts: MatchFacts, snapshot: Snapshot, tally: PlayerTally, score: Score,
-              goals: Sequence[GoalAt], featured: Sequence[str], records: Sequence[JobRecord]) -> Job:
+              goals: Sequence[GoalAt], featured: Sequence[str], records: Sequence[JobRecord],
+              as_of_event_id: Optional[int] = None) -> Job:
     ledger, earlier = recap_ledger(snapshot, facts, tally, featured, [g.player_id for g in goals], records)
     return Job(
         job_id=recap_job_id(facts.match_id, kind), kind="recap", label=kind, match_id=facts.match_id,
-        team_id=None, clock_s=snapshot.clock_s, window_start_s=0.0, window_end_s=snapshot.clock_s, score=score,
+        team_id=None, clock_s=snapshot.clock_s, as_of_event_id=as_of_event_id, window_start_s=0.0,
+        window_end_s=snapshot.clock_s, score=score,
         goals=list(goals), ledger=ledger, snapshot=snapshot,
         player_stats=[s for s in tally.all() if s.player_id in {p.player_id for p in ledger.players}],
         featured=list(featured), earlier=earlier, facts=facts,

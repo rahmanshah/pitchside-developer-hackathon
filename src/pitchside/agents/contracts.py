@@ -205,6 +205,8 @@ class Job(_Frozen):
     finding: Optional[Finding] = None
     team_id: Optional[str] = None
     clock_s: float
+    as_of_event_id: Optional[int] = Field(
+        None, description="Id of the event that triggered the job: with clock_s, the exact moment tools are bound to.")
     window_start_s: float
     window_end_s: float
     score: Score
