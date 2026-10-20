@@ -288,9 +288,9 @@ def corrupt(kind: str, data: dict[str, Any], job: Optional[Job] = None) -> dict[
     elif kind == "corrupt_unlisted_number":
         claim["text"] = text.rstrip(".") + ", and they won 9 corners."
     elif kind == "corrupt_window":
-        minute = 88 if job is not None and job.minute < 30 else 3
-        suffix = {3: "3rd"}.get(minute, f"{minute}th")
-        claim["text"] = text.rstrip(".") + f", in the {suffix} minute."
+        # A minute after the moment was detected: outside every evidence window, whatever the job.
+        minute = (job.minute if job is not None else 90) + 15
+        claim["text"] = text.rstrip(".") + f", in minute {minute}."
     elif kind == "corrupt_score":
         claim["text"] = text.rstrip(".") + ", making it 7-7."
     elif kind == "overclaim":

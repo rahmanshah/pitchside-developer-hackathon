@@ -205,6 +205,46 @@ def _cmd_storylines(_: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_eval_agents(args: argparse.Namespace) -> int:
+    import asyncio
+
+    from .agents.bundle import write_bundle
+    from .agents.evaluate import evaluate_run, format_report, spotcheck, summarise, to_json
+    from .agents.pipeline import RunConfig, build_pipeline, new_run_id
+
+    eval_id = new_run_id("eval")
+    out = Path(args.out) / eval_id
+    settings = _agent_settings(args, out / "usage.jsonl")
+    config = RunConfig.from_settings(settings)
+    runs, evals = [], []
+    for seed in _parse_seeds(args.seeds):
+        for storyline in args.storylines:
+            result = generate_match(seed=seed, storyline=storyline)
+            run_id = f"{eval_id}-{len(runs) + 1:02d}"
+            pipeline = build_pipeline(settings, _fault_plan(args))  # fresh per match: faults fire per match
+            run = asyncio.run(_run_one(result, pipeline, config, run_id))
+            ev = evaluate_run(run)
+            if not args.no_bundles:
+                write_bundle(run, out / "bundles", evaluation=to_json([ev], summarise(
+                    [ev], settings.match_budget_usd, bool(args.inject_faults), bool(args.inject_bad)))["matches"][0])
+            runs.append(run)
+            evals.append(ev)
+            print(f"  {run.match_id}: {ev.model_jobs} model jobs, {sum(ev.model_fallbacks.values())} fallbacks, "
+                  f"${ev.cost_usd:.4f}", flush=True)
+    summary = summarise(evals, settings.match_budget_usd, bool(args.inject_faults), bool(args.inject_bad))
+    notes = [f"faults: {args.inject_faults}" if args.inject_faults else "",
+             f"injected bad drafts: {args.inject_bad:g}" if args.inject_bad else ""]
+    report = format_report(evals, summary, args.seeds, [n for n in notes if n])
+    out.mkdir(parents=True, exist_ok=True)
+    (out / "report.txt").write_text(report + "\n", encoding="utf-8")
+    (out / "summary.json").write_text(json.dumps(to_json(evals, summary), indent=1) + "\n", encoding="utf-8")
+    if settings.mode == "foundry":
+        (out / "spotcheck.md").write_text(spotcheck(runs) + "\n", encoding="utf-8")
+    print(report)
+    print(f"written to {out}" + (" (includes spotcheck.md: label it by hand)" if settings.mode == "foundry" else ""))
+    return 0 if summary.passed else 1
+
+
 def _agent_args(parser: argparse.ArgumentParser) -> None:
     parser.add_argument("--live", action="store_true",
                         help="confirm paid model calls (needs PITCHSIDE_LLM=foundry); default is offline")
@@ -267,6 +307,15 @@ def build_parser() -> argparse.ArgumentParser:
     rn.add_argument("--out", default="runs/bundles", help="bundle output directory")
     _agent_args(rn)
     rn.set_defaults(func=_cmd_run)
+
+    ea = sub.add_parser("eval-agents", help="run matches through the agents and score them against answer keys "
+                                            "(offline by default: a plumbing check, not model quality)")
+    ea.add_argument("--seeds", default="1-3", help="e.g. 1-3 (offline default) or 201-205 (live, held out)")
+    ea.add_argument("--storylines", nargs="+", default=list(STORYLINES), choices=sorted(STORYLINES))
+    ea.add_argument("--out", default="runs/eval", help="output directory (report, summary, bundles)")
+    ea.add_argument("--no-bundles", action="store_true", help="do not write a bundle per match")
+    _agent_args(ea)
+    ea.set_defaults(func=_cmd_eval_agents)
     sub.add_parser("storylines", help="list available storylines").set_defaults(func=_cmd_storylines)
     return parser
 

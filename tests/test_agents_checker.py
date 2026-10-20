@@ -61,6 +61,18 @@ class BadClaimTests(unittest.TestCase):
         bad = claim("Aurora Rovers created a 0.05 xG chance.", numbers=((0.05, "e1"),), team_id="aur")
         self.assertEqual(sorted(set(codes(bad))), ["team_mismatch"])
 
+    def test_a_club_claim_backed_only_by_match_wide_evidence(self) -> None:
+        from pitchside.agents.contracts import Ledger
+        ledger = Ledger()
+        ledger.add_item("e", metric="chaos_index", team_id=None, value=0.8, unit="index", window_start_s=1000,
+                        window_end_s=1400, say="chaos index +0.80", source="finding")
+        ctx = CheckContext(**{**CTX.__dict__, "ledger": ledger, "window_start_s": 1000, "window_end_s": 1400})
+        bad = Claim(claim_id="k1", text="Ironvale Athletic: chaos index +0.80.", team_id="irv", refs=["e1"],
+                    numbers=[ClaimNumber(value=0.8, ref="e1")])
+        self.assertEqual([r.code for r in check_claim(bad, ctx).reasons], ["team_mismatch"])
+        good = bad.model_copy(update={"team_id": None, "text": "Chaos index +0.80 across both sides."})
+        self.assertTrue(check_claim(good, ctx).ok)
+
     def test_number_given_to_the_other_club_in_the_text(self) -> None:
         bad = claim("Ironvale Athletic scored, but Aurora Rovers had the 0.05 xG chance.", numbers=((0.05, "e1"),))
         self.assertEqual(codes(bad), ["team_mismatch"])
