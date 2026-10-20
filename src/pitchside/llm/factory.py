@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Callable, Mapping, Optional, Sequence
+from typing import Any, Callable, Mapping, Optional, Sequence, Union
 
 from .budget import BudgetGuard
 from .config import LLMSettings, Role, load_settings
@@ -35,13 +35,13 @@ def build_clients(
     *,
     fake_scripts: Optional[Mapping[Role, Sequence[Step]]] = None,
     fake_responders: Optional[Mapping[Role, Callable[[str], Any]]] = None,
-    extra_middleware: Sequence[Any] = (),
+    extra_middleware: Union[Sequence[Any], Callable[[Role], Sequence[Any]]] = (),
     credential: Optional[Any] = None,
     **guard_kwargs: Any,
 ) -> ModelClients:
     """Clients for every role. ``PITCHSIDE_LLM=fake`` (default) never touches the network.
 
-    ``extra_middleware`` runs inside the guard on every role (used for opt-in fault injection).
+    ``extra_middleware`` (a list, or a function of the role) runs inside the guard: used for opt-in fault injection.
     """
     settings = settings or load_settings()
     log = UsageLog(settings.usage_log)
@@ -72,7 +72,8 @@ def build_clients(
         guards[role] = guard
         # The guard is outermost: extra middleware (e.g. opt-in fault injection) sits between it and the service,
         # so injected failures go through the same retry, logging and budget path as real ones.
-        middleware = [guard, *extra_middleware]
+        extra = extra_middleware(role) if callable(extra_middleware) else extra_middleware
+        middleware = [guard, *extra]
         if live:
             clients[role] = foundry.chat_client(connection, deployment, api=settings.foundry_api,
                                                 middleware=middleware)

@@ -87,7 +87,19 @@ def _tokens(text: str) -> int:
 
 
 def _transcript(messages: Sequence[Message]) -> str:
-    return "\n".join(f"{m.role}: {m.text}" for m in messages)
+    """Role-prefixed text of every message, including tool calls and results ("tool: <result>")."""
+    lines = []
+    for m in messages:
+        if m.text:
+            lines.append(f"{m.role}: {m.text}")
+        for c in m.contents:
+            if c.type == "function_call":
+                lines.append(f"{m.role}: call {c.name}")
+            elif c.type == "function_result":
+                result = c.result if isinstance(c.result, str) else "".join(
+                    getattr(r, "text", "") or "" for r in (c.result or []))
+                lines.append(f"tool: {result}")
+    return "\n".join(lines)
 
 
 def default_responder(role: str) -> Callable[[str], str]:
