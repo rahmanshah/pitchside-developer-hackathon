@@ -20,6 +20,7 @@ from agent_framework import (
     BaseChatClient,
     ChatMiddlewareLayer,
     ChatResponse,
+    Content,
     FunctionInvocationLayer,
     Message,
     UsageDetails,
@@ -65,6 +66,14 @@ class Delay:
 
 
 Step = Union[Reply, Fail, Malformed, Delay]
+
+
+@dataclass(frozen=True)
+class ToolCall:
+    """A responder may ask for tool calls instead of answering; the function-invocation layer runs them."""
+
+    name: str
+    arguments: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -153,7 +162,18 @@ class FakeChatClient(FunctionInvocationLayer, ChatMiddlewareLayer, BaseChatClien
             ) from error
         if isinstance(step, Malformed):
             step = Reply(step.text)
-        reply = step if isinstance(step, Reply) else Reply(self.responder(transcript))
+        if step is None:
+            answer = self.responder(transcript)
+            if isinstance(answer, (list, tuple)):  # tool calls
+                calls = [Content.from_function_call(call_id=f"call_{len(self.calls)}_{n}", name=c.name,
+                                                    arguments=c.arguments) for n, c in enumerate(answer)]
+                return ChatResponse(
+                    messages=[Message(role="assistant", contents=calls)], model=self.model,
+                    usage_details=UsageDetails(input_token_count=_tokens(transcript), output_token_count=10),
+                    finish_reason="tool_calls",
+                )
+            step = Reply(answer)
+        reply = step
         usage = UsageDetails(
             input_token_count=reply.input_tokens if reply.input_tokens is not None else _tokens(transcript),
             output_token_count=reply.output_tokens if reply.output_tokens is not None else _tokens(reply.text),
