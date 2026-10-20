@@ -29,6 +29,10 @@ class Language:
     # Template phrases; see ``templates.py`` for the keys and their placeholders.
     phrases: dict[str, str] = field(default_factory=dict)
 
+    def possessive(self, name: str) -> str:
+        """English possessive ("Aurora Rovers'", "Westmere Town's"); other languages do not use it."""
+        return f"{name}'" if name.endswith("s") else f"{name}'s"
+
     def number(self, value: float, decimals: int) -> str:
         text = f"{value:.{decimals}f}"
         return text.replace(".", self.decimal_sep) if self.decimal_sep != "." else text
@@ -72,11 +76,11 @@ ENGLISH = Language(
         "spell.fav_team": "{player}'s side {team} are on top.",
         "spell.fav_other": "{player}'s side are under pressure from {team}.",
         "spell.fav_match": "{player}'s side are caught up in a frantic spell.",
-        "spell_end": "{team}'s {label_end} ends after {duration}.",
+        "spell_end": "{team_poss} {label_end} ends after {duration}.",
         "spell_end_match": "The chaotic spell ends after {duration}.",
         "siege.casual": "{team} have {opponent} pinned in their own half.",
         "pressure_surge.casual": "{team} are pressing high and hard.",
-        "momentum_shift.casual": "The game is swinging {team}'s way.",
+        "momentum_shift.casual": "The game is swinging {team_poss} way.",
         "chaos_spell.casual": "It's end-to-end and frantic out there.",
         "siege.label": "a siege", "siege.label_end": "siege",
         "pressure_surge.label": "a pressing surge", "pressure_surge.label_end": "pressing surge",

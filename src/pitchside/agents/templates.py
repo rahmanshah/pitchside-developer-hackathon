@@ -129,7 +129,8 @@ def _spell_start(b: _Builder, kind: str) -> TemplateOutput:
     for lang in b.languages:
         facts = ", ".join(say(i.metric, i.value, i.unit, lang, b.team_name(i.team_id)) for i in items)
         label = lang.phrases[f"{kind}.label"]
-        values = dict(team=b.team_name(team), opponent=b.facts.opponent(team).name if team else "",
+        values = dict(team=b.team_name(team), team_poss=lang.possessive(b.team_name(team)),
+                      opponent=b.facts.opponent(team).name if team else "",
                       label=label, label_cap=label[:1].upper() + label[1:], facts=facts)
         key = "spell.analyst" if team else "spell.analyst_match"
         analyst = lang.phrases[key].format(**values)
@@ -148,7 +149,8 @@ def _spell_end(b: _Builder, kind: str) -> TemplateOutput:
     team = b.job.team_id
     duration = b.item("spell_duration")
     for lang in b.languages:
-        values = dict(team=b.team_name(team), label_end=lang.phrases[f"{kind}.label_end"],
+        values = dict(team=b.team_name(team), team_poss=lang.possessive(b.team_name(team)),
+                      label_end=lang.phrases[f"{kind}.label_end"],
                       duration=b.num(duration, lang))
         text = lang.phrases["spell_end" if team else "spell_end_match"].format(**values)
         for persona in [ANALYST, CASUAL, *map(fav_persona, b.job.featured)]:

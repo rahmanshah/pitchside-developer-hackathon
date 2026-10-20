@@ -15,15 +15,18 @@ from pitchside.llm import load_settings
 from _agents import match
 
 
+_TMP = tempfile.TemporaryDirectory()  # usage logs outlive each run (bundles read them); removed at exit
+
+
 def run(seed: int = 1, storyline: str = "comeback", faults=None, run_id: str = "test-run", **env):
-    with tempfile.TemporaryDirectory() as tmp:
-        settings = load_settings({"PITCHSIDE_USAGE_LOG": str(Path(tmp) / "usage.jsonl"), **env})
-        pipeline = build_pipeline(settings, faults)
-        result = asyncio.run(run_match(match(seed, storyline).events, pipeline,
-                                       RunConfig.from_settings(settings, strict=True), run_id=run_id,
-                                       answer_key=match(seed, storyline).answer_key))
-        result.usage = list(pipeline.models.log.read())
-        return result
+    usage = Path(tempfile.mkdtemp(dir=_TMP.name)) / "usage.jsonl"
+    settings = load_settings({"PITCHSIDE_USAGE_LOG": str(usage), **env})
+    pipeline = build_pipeline(settings, faults)
+    result = asyncio.run(run_match(match(seed, storyline).events, pipeline,
+                                   RunConfig.from_settings(settings, strict=True), run_id=run_id,
+                                   answer_key=match(seed, storyline).answer_key))
+    result.usage = list(pipeline.models.log.read())
+    return result
 
 
 class PipelineTests(unittest.TestCase):
