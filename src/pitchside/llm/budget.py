@@ -22,6 +22,13 @@ from .usage import UsageLog
 NO_MATCH = "(no match)"
 
 
+def budget_key(run_id: Optional[str], match_id: Optional[str]) -> Optional[str]:
+    """The match budget applies per run of a match, so a re-run is not starved by an earlier run's spending."""
+    if match_id is None:
+        return None
+    return f"{run_id}/{match_id}" if run_id else match_id
+
+
 @dataclass(frozen=True)
 class Reservation:
     id: int
@@ -50,7 +57,7 @@ class BudgetGuard:
         for r in log.read():
             if r.status == "refused":
                 continue  # never sent, never billed
-            key = r.match_id or NO_MATCH
+            key = budget_key(r.run_id, r.match_id) or NO_MATCH
             self._spent[key] += r.cost_usd
             self._calls[key] += 1
             self._total += r.cost_usd

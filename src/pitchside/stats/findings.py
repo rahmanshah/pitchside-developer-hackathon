@@ -32,8 +32,8 @@ SPELL_KINDS = frozenset(
     {FindingKind.MOMENTUM_SHIFT, FindingKind.PRESSURE_SURGE, FindingKind.SIEGE, FindingKind.CHAOS_SPELL}
 )
 
-# A finding can trigger a model call on its own only at or above this severity. The call-selection
-# policy (about 30 moments per match) belongs to the agents milestone; this is the floor it builds on.
+# A finding can trigger a model call on its own only at or above this severity. The agents send such
+# findings to the models (spell ends excepted: they always get a template); see docs/DECISIONS.md entry 12.
 LLM_TRIGGER_SEVERITY = 0.5
 # Counter-attack findings are context, not headlines: per-event detection cannot reliably tell planted
 # counters from ordinary quick transitions (see docs/DECISIONS.md), so they stay below the floor.

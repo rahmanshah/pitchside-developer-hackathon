@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Any, Mapping, Optional, Sequence
+from typing import Any, Callable, Mapping, Optional, Sequence
 
 from .budget import BudgetGuard
 from .config import LLMSettings, Role, load_settings
@@ -34,10 +34,15 @@ def build_clients(
     settings: Optional[LLMSettings] = None,
     *,
     fake_scripts: Optional[Mapping[Role, Sequence[Step]]] = None,
+    fake_responders: Optional[Mapping[Role, Callable[[str], Any]]] = None,
+    extra_middleware: Sequence[Any] = (),
     credential: Optional[Any] = None,
     **guard_kwargs: Any,
 ) -> ModelClients:
-    """Clients for every role. ``PITCHSIDE_LLM=fake`` (default) never touches the network."""
+    """Clients for every role. ``PITCHSIDE_LLM=fake`` (default) never touches the network.
+
+    ``extra_middleware`` runs inside the guard on every role (used for opt-in fault injection).
+    """
     settings = settings or load_settings()
     log = UsageLog(settings.usage_log)
     budget = BudgetGuard(
@@ -58,15 +63,21 @@ def build_clients(
     guards: dict[Role, ModelGuard] = {}
     for role in Role:
         deployment = settings.deployment(role) if live else (getattr(settings, f"model_{role.value}") or "fake")
+        kwargs = {"max_output_tokens": settings.max_output(role), **guard_kwargs}
         guard = ModelGuard(
             role=role.value, deployment=deployment, log=log, budget=budget, limiter=limiter,
             price_model=settings.price_model, timeout_s=settings.timeout_s, max_retries=settings.max_retries,
-            **guard_kwargs,
+            **kwargs,
         )
         guards[role] = guard
+        # The guard is outermost: extra middleware (e.g. opt-in fault injection) sits between it and the service,
+        # so injected failures go through the same retry, logging and budget path as real ones.
+        middleware = [guard, *extra_middleware]
         if live:
-            clients[role] = foundry.chat_client(connection, deployment, api=settings.foundry_api, middleware=[guard])
+            clients[role] = foundry.chat_client(connection, deployment, api=settings.foundry_api,
+                                                middleware=middleware)
         else:
             script = (fake_scripts or {}).get(role, ())
-            clients[role] = FakeChatClient(role.value, script=script, middleware=[guard])
+            responder = (fake_responders or {}).get(role)
+            clients[role] = FakeChatClient(role.value, script=script, responder=responder, middleware=middleware)
     return ModelClients(settings, clients, guards, log, budget, limiter, connection)
