@@ -5,16 +5,19 @@ Status key: **built** exists in this repo today; *planned* is the target design.
 ```mermaid
 flowchart LR
     G["Match generator + replay<br/>(built)"] -->|events| B["Event stream<br/>(planned: Azure Event Hubs)"]
-    B --> S["Stats engine, deterministic<br/>(planned: Azure Functions / Container Apps)"]
-    S -->|"MCP tools: possession, pressure, rhythm"| A
-    subgraph A["Agents on Microsoft Foundry + Agent Framework (planned)"]
-        I["Interpreter<br/>finds patterns"] --> E["Explainer<br/>says why it matters"]
-        E --> V["Verifier<br/>rejects unsupported claims"]
+    B --> S["Stats engine + key-moment detector, deterministic<br/>(built; hosting planned: Container Apps)"]
+    S -->|"findings + stats tools<br/>(function tools built; MCP planned)"| A
+    subgraph A["Agents: Agent Framework workflow per moment (built, tested offline; live run pending)"]
+        I["Interpreter<br/>picks angle + evidence"] --> E["Explainer<br/>structured claims"]
+        E --> C["Checker (code)"]
+        C --> V["Verifier<br/>rejects unsupported claims"]
         V --> P["Personalizer / translator"]
+        C -. feedback .-> E
+        V -. feedback .-> E
     end
-    P --> R["Overlay renderer<br/>timed JSON"]
-    R --> UI["Match feed UI<br/>analyst / casual / player modes"]
-    K["Answer key from generator<br/>(built)"] -.->|evaluation| A
+    P --> R["Run bundle with overlay timing<br/>(built)"]
+    R --> UI["Match feed UI<br/>analyst / casual / player modes (planned)"]
+    K["Answer key from generator<br/>(built)"] -.->|"evaluation (built)"| A
 ```
 
 ## Design principles
@@ -30,15 +33,21 @@ flowchart LR
 4. **Deterministic replays.** `(seed, clubs, storyline)` fully determines a match, so demos, tests and
    evaluations are repeatable.
 
-## Planned agent roles
+## Agent roles (built; tested offline, live run pending)
 
-| Agent | Responsibility | Handoff |
+The stats engine detects the moments; the agents explain them. One Agent Framework graph workflow per moment
+(and per half-time / full-time recap), started by a plain-code director. Details: [DECISIONS.md](DECISIONS.md)
+entries 12-14 and the README's agents section.
+
+| Step | Responsibility | Handoff |
 |---|---|---|
-| Interpreter | Detect momentum shifts, siege / counter-attack spells, chaos vs control from stats windows | Structured findings with evidence |
-| Explainer | Turn a finding into a short narrative that says *why* it matters | Draft narrative plus the numbers it relies on |
-| Verifier | Check each claim against the stats engine; send back anything unsupported | Approved narrative, or a retry with feedback |
-| Personalizer | Re-voice for analyst, casual fan or favourite-player mode; translate | Per-audience text |
-| Renderer | Emit timed, machine-readable overlay JSON | Overlay messages |
+| Interpreter (agent) | Pick the angle and the evidence that matters; may call stats tools, whose numbers get evidence ids | Brief: angle, focus evidence ids, note |
+| Explainer (agent) | Write 1-3 claims, each citing evidence ids and listing its numbers | Draft of structured claims |
+| Checker (code) | Numbers match evidence, right club, valid score, minute in window, cited players | Pass, or reasons back to the explainer |
+| Verifier (agent) | Does the evidence support what each claim says (no overclaiming, no invented causes)? | Pass, or reasons back to the explainer (at most 3 drafts) |
+| Personalizer (agent) | Analyst, casual fan and favourite-player texts in every language, in one call; texts re-checked | Persona x language texts |
+| Fallback (code) | Template narrative from the same evidence when a step cannot recover | Narrative marked `source: template` with the reason |
+| Renderer | Run bundle with overlay timing (built); timed overlay UI (planned, milestone 5) | Bundle files |
 
 ## Model client (built; tested offline, first live run pending)
 
