@@ -6,7 +6,7 @@ Status key: **built** exists in this repo today; *planned* is the target design.
 flowchart LR
     G["Match generator + replay<br/>(built)"] -->|events| B["Event stream<br/>(planned: Azure Event Hubs)"]
     B --> S["Stats engine + key-moment detector, deterministic<br/>(built; hosting planned: Container Apps)"]
-    S -->|"findings + stats tools<br/>(function tools built; MCP planned)"| A
+    S -->|"findings + stats tools<br/>(function tools and MCP server built; MCP not deployed)"| A
     subgraph A["Agents: Agent Framework workflow per moment (built, tested offline; live run pending)"]
         I["Interpreter<br/>picks angle + evidence"] --> E["Explainer<br/>structured claims"]
         E --> C["Checker (code)"]

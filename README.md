@@ -12,6 +12,7 @@ Built for the **Inside the Game: Developer Hackathon**. Everything here is synth
 | Interpret | Deterministic stats engine and key-moment detector (no LLM) | **Built (v0.2.0)**: goals found 100%, but some key-moment recall is below our 80% bar on held-out seeds, see [results](#stats-engine-and-how-well-it-works) |
 | (model access) | Agent Framework chat clients for Foundry model deployments (Entra ID), offline fake client, token and cost log, budget, concurrency and retry guard | **Built**: tested offline only; not yet run against a live Foundry deployment, see [model client](#model-client-and-cost-controls) |
 | Explain | Interpreter, explainer and two-layer verifier (deterministic checker + semantic check) as an Agent Framework workflow, with recaps and an audit trail | **Built (offline-tested)**: runs end to end on the fake model client; **no live model run yet**, so there are no model-quality numbers, see [agents](#agents-explain-verify-personalize) |
+| (tools) | The stats engine as a read-only **MCP server** (`pitchside mcp`, stdio and Streamable HTTP) that the interpreter can use | **Built (offline-tested)**; not deployed, see [MCP server](#stats-engine-as-an-mcp-server) |
 | Render | Run bundles with overlay timing (`pitchside run`); web UI that replays them | Bundles **built**; UI planned |
 | Personalize | Analyst / casual fan / favourite-player views, English and Spanish, one model call per moment | **Built (offline-tested)**; offline translations are tagged placeholders, not real translations |
 
@@ -31,7 +32,9 @@ uv run pitchside summary matches/aur_irv_comeback_0007.jsonl
 uv run pitchside replay matches/aur_irv_comeback_0007.jsonl --speed 60   # 90 min in 90 s
 uv run pitchside findings matches/aur_irv_comeback_0007.jsonl            # key moments, with their numbers
 uv run pitchside eval-stats --seeds 201-220                              # score the stats engine against answer keys
+uv run pitchside mcp                                                     # the stats engine as a read-only MCP server (stdio)
 uv run pitchside run --seed 7 --storyline comeback                       # stats engine + agents (offline), writes a run bundle
+uv run pitchside run --seed 7 --storyline comeback --tools mcp           # same, the interpreter's tools served over MCP
 uv run pitchside run --seed 7 --storyline end_to_end --inject-faults demo # same, with deliberate failures to show recovery
 uv run pitchside eval-agents --seeds 1-3                                 # score agent runs against answer keys (offline: plumbing check)
 uv run pitchside cost --by role                                          # model token usage and cost from the usage log
@@ -181,6 +184,31 @@ about 5 model calls per moment, about $0.0023 per moment, so about $0.015 per ba
 storyline match (12-13 moments plus 2 recaps). Final recorded runs use `PITCHSIDE_MATCH_BUDGET_USD=0.25` so that no
 moment is downgraded to a template for budget reasons; the bundle manifest counts budget fallbacks (should be 0).
 
+## Stats engine as an MCP server
+
+`uv run pitchside mcp` serves the deterministic stats engine over the [Model Context Protocol](https://modelcontextprotocol.io)
+as twelve **read-only tools** with typed schemas: possession, field tilt, pressure, passing, shots and xG, momentum,
+control vs chaos, key moments, evidence lookup, match totals, recent window and a match list. Transports: stdio (local
+clients) and Streamable HTTP (`--transport streamable-http`), which is the shape a Container Apps deployment will use.
+Full reference, client notes and the deployment plan: [docs/MCP.md](docs/MCP.md).
+
+- **No future leakage.** Every stats tool requires `as_of_s` (match seconds) and computes only from events at or before it,
+  enforced server-side in one place. The tests replace everything after the bound with another match's events and require
+  identical answers from every tool, over the real protocol, and check that no timestamp in any response is later than
+  `as_of_s`; deliberately breaking the bound makes them fail.
+- **The interpreter can use it.** `PITCHSIDE_TOOLS=mcp` (default `local`) gives the interpreter the MCP tools through Agent
+  Framework's `MCPStreamableHTTPTool`: by default the real server runs in-process behind the real Streamable HTTP
+  transport, or `PITCHSIDE_MCP_URL` points at a deployed one. The host sets the time bound on every call, whatever the
+  model passes, and every number a tool returns gets an evidence id before the model sees it, so claims that use tool
+  numbers are checked like any other. A test runs the same matches in both modes and requires identical ledgers,
+  narratives and audit trails.
+- **Not deployed.** Container Apps deployment is milestone 6; the exact command and settings are in
+  [docs/MCP.md](docs/MCP.md), and the same flags were checked locally over a real socket (HTTP 200 for the allowed host,
+  421 for any other). Only Agent Framework's MCP clients and the SDK's in-memory client are tested; other MCP clients
+  are untested here.
+- **SDK version.** The MCP Python SDK is pinned below 2 (`mcp>=1.24,<2`): the latest Agent Framework (1.22.0) declares
+  `mcp<2` and fails against SDK 2.x. See [decision 15](docs/DECISIONS.md).
+
 ## Model client and cost controls
 
 `src/pitchside/llm/` gives each agent role (interpreter, explainer, verifier, personalizer) its own chat client,
@@ -206,15 +234,15 @@ the service returns.
 ## Technology
 
 Current: Python 3.11+, pydantic v2. Agents and model access (built and tested offline, not yet run live):
-**Microsoft Agent Framework** (Python: `Agent`, graph workflows with `WorkflowBuilder`, function tools, chat and
-function middleware), the **Azure AI Projects SDK** for the Microsoft Foundry project endpoint, and **Azure Identity**
+**Microsoft Agent Framework** (Python: `Agent`, graph workflows with `WorkflowBuilder`, function tools, MCP client tools,
+chat and function middleware), the **Model Context Protocol** Python SDK (the stats server), the **Azure AI Projects SDK** for the Microsoft Foundry project endpoint, and **Azure Identity**
 (Microsoft Entra ID, `DefaultAzureCredential`). Other Azure components are listed in
 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) as *planned* and will move here once they are built.
 
 ## Development
 
 ```bash
-uv run pytest                # ~100 s: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client and agents (offline, fake client)
+uv run pytest                # ~2 min: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client, agents and MCP server (offline, fake client)
 uv run python scripts/smoke_foundry.py   # manual, live, costs a few cents at most: not part of the test suite
 uv run pitchside eval-agents --seeds 201-205 --live   # manual live evaluation, see docs/LIVE_EVAL.md
 uv add <package>             # add a dependency (updates pyproject.toml and uv.lock)

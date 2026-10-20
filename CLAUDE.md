@@ -79,13 +79,19 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   `faults.py` (opt-in fault injection, `demo` plan, `--inject-bad`), `bundle.py` (run bundles, schema in
   `docs/run_bundle.schema.json`), `evaluate.py` (`pitchside eval-agents`). Commands: `pitchside run`, `eval-agents`.
   Offline evaluation numbers are a plumbing check, not model quality; always label them so.
-- `src/pitchside/stats/tools.py`: stats functions the interpreter calls as tools (milestone 4 serves them over MCP)
+- `src/pitchside/stats/timeline.py`: `MatchTimeline.as_of(as_of_s, as_of_event_id)`, the only read path to a recorded
+  match: returns the snapshot, findings and clock as of that moment (the no-future-leakage rule lives here);
+  `stats/tools.py`: typed read-only tool functions over a `TimelineView`, shared by the local function tools and the server
+- `src/pitchside/mcp_server.py` (`pitchside mcp`): FastMCP server, 12 read-only tools, every stats tool requires `as_of_s`;
+  `agents/mcp_tools.py`: the interpreter's MCP tool (in-process server, or `PITCHSIDE_MCP_URL`); `agents/roles.py`
+  `BoundToMoment` middleware pins the bound from the job. Docs: `docs/MCP.md`
 - `scripts/smoke_foundry.py`: manual live check (not in the test suite); step 4 runs one goal through the live
   agents. `docs/LIVE_EVAL.md`: the manual live evaluation and recording steps
 - `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, held-out answer-key
   bars (`test_stats_heldout.py`: each recall shortfall marked `xfail(strict=True)` per storyline), and the model client
-  (`test_llm_*.py`, outbound network blocked by `tests/conftest.py`), and the agents (`test_agents_*.py`, fake client
-  only); whole suite takes about 100 s
+  (`test_llm_*.py`, outbound network blocked by `tests/conftest.py`), the agents (`test_agents_*.py`, fake client
+  only) and the MCP server and its use by the interpreter (`test_stats_timeline.py`, `test_stats_tools.py`,
+  `test_mcp_*.py`; stdio runs a real local subprocess, HTTP runs in-process); whole suite takes about 2 minutes
 - `docs/DECISIONS.md`: decision log (newest at the bottom)
 
 Evaluation discipline for the stats engine: thresholds are tuned on seeds 1-40 only (surge, siege and momentum were
@@ -108,7 +114,8 @@ uv run pytest                # tests
 uv run pitchside generate --seed 7 --storyline comeback
 uv add <package>             # add a dependency
 uv run pitchside cost        # model usage and cost from runs/llm_usage.jsonl
-uv run pitchside run --seed 7 --storyline comeback [--inject-faults demo]   # agents offline, writes a run bundle
+uv run pitchside mcp [--transport streamable-http --stateless --json-response --allowed-host H]  # MCP server
+uv run pitchside run --seed 7 --storyline comeback [--inject-faults demo] [--tools mcp]   # agents offline, run bundle
 uv run pitchside eval-agents --seeds 1-3 [--inject-bad 0.3]                 # offline: plumbing check, not model quality
 uv run pitchside eval-agents --seeds 201-205 --live   # manual, needs PITCHSIDE_LLM=foundry; see docs/LIVE_EVAL.md
 uv run python scripts/smoke_foundry.py   # manual live check after az login (not in the test suite)
@@ -197,6 +204,8 @@ club logos or real names. Redact or recrop anything sensitive.
    Remaining: the smoke test and one manual live evaluation (`docs/LIVE_EVAL.md`); tag `v0.3.0` only after the owner
    has reviewed the evaluation results. Recorded runs use `PITCHSIDE_MATCH_BUDGET_USD=0.25`.
 4. **MCP server** exposing the stats engine as tools (possession, pressure, momentum, key moments).
+   **Done offline:** `uv run pitchside mcp` (stdio and Streamable HTTP), `PITCHSIDE_TOOLS=local|mcp` for the interpreter;
+   not deployed (milestone 6). SDK pinned `mcp>=1.24,<2` because Agent Framework 1.22 breaks on mcp 2.x (DECISIONS 15).
 5. **Overlay renderer and web UI** (`web/`): timed overlay JSON schema plus a simple front end showing overlays on a
    simulated match feed. Three personas side by side (analyst, casual fan, favourite-player mode), multi-language.
    Optional spoken commentary via Speech. The UI must be able to replay a **run bundle** (see "Recorded demo mode").
