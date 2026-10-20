@@ -115,7 +115,87 @@ def _cmd_cost(args: argparse.Namespace) -> int:
 
 
 def _cmd_schema(args: argparse.Namespace) -> int:
+    if args.bundle:
+        from .agents.bundle import bundle_json_schema
+
+        print(json.dumps(bundle_json_schema(), indent=2))
+        return 0
     print(json.dumps(findings_json_schema() if args.findings else json_schema(), indent=2))
+    return 0
+
+
+def _agent_settings(args: argparse.Namespace, usage_log: Path):
+    """Settings for an agent run. Live calls need both PITCHSIDE_LLM=foundry and --live; offline runs log usage
+    inside their own output directory, so fake costs never count toward the live budgets."""
+    settings = load_settings()
+    if settings.mode == "foundry" and not args.live:
+        raise ValueError("PITCHSIDE_LLM=foundry makes paid model calls: add --live to confirm")
+    if args.live and settings.mode != "foundry":
+        raise ValueError("--live needs PITCHSIDE_LLM=foundry and the Foundry settings (see .env.example)")
+    if settings.mode == "fake":
+        settings = settings.model_copy(update={"usage_log": usage_log})
+    return settings
+
+
+def _fault_plan(args: argparse.Namespace):
+    from .agents.faults import bad_claims_plan, combine, parse_faults
+
+    return combine(parse_faults(args.inject_faults) if args.inject_faults else None,
+                   bad_claims_plan(args.inject_bad) if args.inject_bad else None)
+
+
+def _format_run(run, path: Path) -> str:
+    lines = [f"== {run.match_id}  run {run.run_id}", f"   {_label(run)}"]
+    for r in run.records:
+        n = r.narrative
+        text = n.text("casual") or n.headline
+        semantic = "" if n.semantic_check in ("passed", "not_run") else f" [{n.semantic_check[:40]}]"
+        lines.append(f"{int(r.clock_s // 60) + 1:>4}' {r.label:<15} {r.route:<8} {n.source:<8}{semantic}  {text}")
+        if n.source == "template" and r.route == "model":
+            lines.append(f"{'':>6}fallback: {n.reason}")
+    model = [r for r in run.records if r.route == "model"]
+    usage = [u for u in run.usage_log.read() if u.run_id == run.run_id]
+    lines.append(f"   jobs {len(run.records)} (model {len(model)}, template {len(run.records) - len(model)}); "
+                 f"model fallbacks {sum(r.narrative.source == 'template' for r in model)}; calls "
+                 f"{sum(u.status != 'refused' for u in usage)}; cost ${sum(u.cost_usd for u in usage):.4f}"
+                 + (" (fake client: token estimates, not real spend)" if run.settings.mode == "fake" else ""))
+    if run.fault_plan:
+        lines.append(f"   faults injected ({run.fault_plan.name}): {len(run.faults_fired)} fired")
+    lines.append(f"   bundle: {path}")
+    return "\n".join(lines)
+
+
+def _label(run) -> str:
+    from .agents.bundle import label_for
+
+    return label_for(run.settings.mode, bool(run.fault_plan))
+
+
+async def _run_one(result, pipeline, config, run_id):
+    from .agents.pipeline import run_match
+
+    try:
+        return await run_match(result.events, pipeline, config, run_id=run_id, answer_key=result.answer_key)
+    finally:
+        await pipeline.aclose()
+
+
+def _cmd_run(args: argparse.Namespace) -> int:
+    import asyncio
+
+    from .agents.bundle import bundle_dir_name, write_bundle
+    from .agents.pipeline import RunConfig, build_pipeline, new_run_id
+
+    result = generate_match(seed=args.seed, home=args.home, away=args.away, storyline=args.storyline)
+    match_id = result.answer_key["match_id"]
+    run_id = new_run_id(match_id)
+    out = Path(args.out)
+    settings = _agent_settings(args, out / bundle_dir_name(match_id, run_id) / "usage.jsonl")
+    plan = _fault_plan(args)
+    config = RunConfig.from_settings(settings, featured=tuple(args.fav_player) if args.fav_player else None)
+    run = asyncio.run(_run_one(result, build_pipeline(settings, plan), config, run_id))
+    path = write_bundle(run, out)
+    print(_format_run(run, path))
     return 0
 
 
@@ -123,6 +203,17 @@ def _cmd_storylines(_: argparse.Namespace) -> int:
     for storyline in STORYLINES.values():
         print(f"{storyline.name:<12} {storyline.description}")
     return 0
+
+
+def _agent_args(parser: argparse.ArgumentParser) -> None:
+    parser.add_argument("--live", action="store_true",
+                        help="confirm paid model calls (needs PITCHSIDE_LLM=foundry); default is offline")
+    parser.add_argument("--inject-faults", metavar="SPEC",
+                        help="opt-in fault injection to show recovery: 'demo' or role:kind[@target][#attempt][xN]")
+    parser.add_argument("--inject-bad", type=float, metavar="RATE",
+                        help="corrupt the first explainer draft of this share of jobs (0-1), to test the verifier")
+    parser.add_argument("--fav-player", action="append", metavar="PLAYER_ID",
+                        help="favourite-player persona (repeatable; default: each club's striker)")
 
 
 def build_parser() -> argparse.ArgumentParser:
@@ -163,9 +254,19 @@ def build_parser() -> argparse.ArgumentParser:
     cost.add_argument("--by", default="role", choices=["role", "match", "model"])
     cost.set_defaults(func=_cmd_cost)
 
-    sch = sub.add_parser("schema",help="print the JSON Schema of all events (or of findings)")
+    sch = sub.add_parser("schema", help="print the JSON Schema of all events (or of findings, or of run bundles)")
     sch.add_argument("--findings", action="store_true", help="schema of stats-engine findings instead")
+    sch.add_argument("--bundle", action="store_true", help="schema of run bundles instead")
     sch.set_defaults(func=_cmd_schema)
+
+    rn = sub.add_parser("run", help="run a match through the stats engine and the agents; write a run bundle")
+    rn.add_argument("--seed", type=int, default=7)
+    rn.add_argument("--storyline", default="comeback", choices=sorted(STORYLINES))
+    rn.add_argument("--home", default=DEFAULT_HOME, choices=sorted(CLUBS))
+    rn.add_argument("--away", default=DEFAULT_AWAY, choices=sorted(CLUBS))
+    rn.add_argument("--out", default="runs/bundles", help="bundle output directory")
+    _agent_args(rn)
+    rn.set_defaults(func=_cmd_run)
     sub.add_parser("storylines", help="list available storylines").set_defaults(func=_cmd_storylines)
     return parser
 
