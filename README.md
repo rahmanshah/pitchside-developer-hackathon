@@ -214,8 +214,9 @@ function middleware), the **Azure AI Projects SDK** for the Microsoft Foundry pr
 ## Development
 
 ```bash
-uv run pytest                # ~75 s: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client (offline, network blocked)
-uv run python scripts/smoke_foundry.py   # manual, live, costs a fraction of a cent: not part of the test suite
+uv run pytest                # ~100 s: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client and agents (offline, fake client)
+uv run python scripts/smoke_foundry.py   # manual, live, costs a few cents at most: not part of the test suite
+uv run pitchside eval-agents --seeds 201-205 --live   # manual live evaluation, see docs/LIVE_EVAL.md
 uv add <package>             # add a dependency (updates pyproject.toml and uv.lock)
 ```
 

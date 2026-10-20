@@ -14,9 +14,9 @@ The challenge asks for one pipeline with five stages. Our mapping:
 |---|---|---|
 | Ingest | Seeded match generator, event schema, replay | **Built** (v0.1.0) |
 | Interpret | Deterministic stats engine + key-moment detector | **Built** (v0.2.0); some recall below the 80% bar on held-out seeds, see README |
-| Explain | Explainer agent grounded in computed numbers, plus a verifier agent | Planned |
-| Render | Timed, machine-readable overlay JSON + simple web UI | Planned |
-| Personalize | Analyst / casual fan / favourite-player modes, multiple languages | Planned |
+| Explain | Interpreter, explainer, two-layer verifier (deterministic checker + semantic agent), recaps, audit trail | **Built offline** (milestone 3); live run pending, so no model-quality numbers yet |
+| Render | Timed, machine-readable overlay JSON + simple web UI | Run bundles with overlay timing **built**; UI planned |
+| Personalize | Analyst / casual fan / favourite-player modes, multiple languages | **Built offline**: en + es in one personalizer call per moment |
 
 ## Hard constraints (from the Official Rules, do not violate)
 
@@ -68,10 +68,24 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   reservation, concurrency slot, deadline, retry/backoff, usage log; `call_context(match_id, finding_id)` tags calls),
   `budget.py`, `usage.py` (JSONL log, `pitchside cost`), `prices.py`, `errors.py` (`LLMError` types, `classify`,
   `parse_json`). Keep `llm/__init__.py` free of Agent Framework imports so the CLI starts fast.
-- `scripts/smoke_foundry.py`: manual live check (not in the test suite)
+- `src/pitchside/agents/`: milestone 3 (DECISIONS 12-14). `contracts.py` (ledger, job, strict reply models, claims,
+  checks, narrative, audit, record), `ledger.py` (evidence ids `e*`/`c*`/`p*`, number formatting, recap ledgers),
+  `languages.py` (phrase tables; add a language here + `PITCHSIDE_LANGUAGES`), `checker.py` (verifier layer 1),
+  `templates.py` (every fallback; a test runs all template output through the checker), `jobs.py` (`walk_match`:
+  findings, recap points, stats snapshots; context frozen at detection), `prompts/*.md` + `prompting.py` (versioned
+  instructions, compact prompts), `roles.py` (the four Agent Framework `Agent`s, stats function tools, `ask()` with
+  malformed/truncation recovery), `workflow.py` (per-job `WorkflowBuilder` graph, bounded verifier loop, recovery
+  per role), `pipeline.py` (the plain-code director), `fake_agents.py` (offline agents that parse the real prompts),
+  `faults.py` (opt-in fault injection, `demo` plan, `--inject-bad`), `bundle.py` (run bundles, schema in
+  `docs/run_bundle.schema.json`), `evaluate.py` (`pitchside eval-agents`). Commands: `pitchside run`, `eval-agents`.
+  Offline evaluation numbers are a plumbing check, not model quality; always label them so.
+- `src/pitchside/stats/tools.py`: stats functions the interpreter calls as tools (milestone 4 serves them over MCP)
+- `scripts/smoke_foundry.py`: manual live check (not in the test suite); step 4 runs one goal through the live
+  agents. `docs/LIVE_EVAL.md`: the manual live evaluation and recording steps
 - `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, held-out answer-key
   bars (`test_stats_heldout.py`: each recall shortfall marked `xfail(strict=True)` per storyline), and the model client
-  (`test_llm_*.py`, outbound network blocked by `tests/conftest.py`); whole suite takes about 75 s
+  (`test_llm_*.py`, outbound network blocked by `tests/conftest.py`), and the agents (`test_agents_*.py`, fake client
+  only); whole suite takes about 100 s
 - `docs/DECISIONS.md`: decision log (newest at the bottom)
 
 Evaluation discipline for the stats engine: thresholds are tuned on seeds 1-40 only (surge, siege and momentum were
@@ -94,6 +108,9 @@ uv run pytest                # tests
 uv run pitchside generate --seed 7 --storyline comeback
 uv add <package>             # add a dependency
 uv run pitchside cost        # model usage and cost from runs/llm_usage.jsonl
+uv run pitchside run --seed 7 --storyline comeback [--inject-faults demo]   # agents offline, writes a run bundle
+uv run pitchside eval-agents --seeds 1-3 [--inject-bad 0.3]                 # offline: plumbing check, not model quality
+uv run pitchside eval-agents --seeds 201-205 --live   # manual, needs PITCHSIDE_LLM=foundry; see docs/LIVE_EVAL.md
 uv run python scripts/smoke_foundry.py   # manual live check after az login (not in the test suite)
 ```
 
@@ -176,6 +193,9 @@ club logos or real names. Redact or recrop anything sensitive.
 3. **Agents** (Agent Framework): interpreter, explainer, verifier (retry with feedback, rejects unsupported
    claims), personalizer/translator. Shared state, explicit handoffs, failure recovery. An evaluation script
    scores output against the answer key. Tag `v0.3.0`.
+   **Built and tested offline, live run pending; not tagged yet.** Offline evaluation passes (a plumbing check).
+   Remaining: the smoke test and one manual live evaluation (`docs/LIVE_EVAL.md`); tag `v0.3.0` only after the owner
+   has reviewed the evaluation results. Recorded runs use `PITCHSIDE_MATCH_BUDGET_USD=0.25`.
 4. **MCP server** exposing the stats engine as tools (possession, pressure, momentum, key moments).
 5. **Overlay renderer and web UI** (`web/`): timed overlay JSON schema plus a simple front end showing overlays on a
    simulated match feed. Three personas side by side (analyst, casual fan, favourite-player mode), multi-language.
