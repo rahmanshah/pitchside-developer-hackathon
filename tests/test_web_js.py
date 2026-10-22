@@ -266,6 +266,20 @@ class HonestyTests(JsCase):
         for labels in (self.badge(fake)["sourceLabels"], self.badge({})["sourceLabels"]):
             self.assertFalse(any("model" == v.lower() for v in labels.values()))
 
+    def test_audit_text_never_says_model_for_the_fake_client(self) -> None:
+        fake = {"label": "F", "pipeline": {"llm_mode": "fake"}}
+        live = {"label": "L", "pipeline": {"llm_mode": "foundry"}}
+        audit = lambda m, text: self.js(f"auditText({json.dumps(text)}, honesty({json.dumps(m)}))")  # noqa: E731
+        self.assertEqual(audit(fake, "model"), "offline stand-in")
+        self.assertEqual(audit(fake, "shown: model narrative with 3 claim(s)"),
+                         "shown: offline stand-in narrative with 3 claim(s)")
+        self.assertEqual(audit(fake, "8 of 8 text(s) from the model"), "8 of 8 text(s) from the offline stand-in")
+        self.assertEqual(audit(fake, "Model calls; the fake model client"), "Offline stand-in calls; the fake model client")
+        self.assertEqual(audit(fake, "remodelled models"), "remodelled models")  # whole word only
+        self.assertEqual(audit({}, "model"), "unverified source")
+        self.assertEqual(audit(live, "shown: model narrative"), "shown: model narrative")
+        self.assertIsNone(self.js(f"auditText(null, honesty({json.dumps(fake)}))"))
+
     def test_injected_faults_are_counted(self) -> None:
         manifest = json.loads((WEB / "data" / "faults-demo" / "manifest.json").read_text(encoding="utf-8"))
         h = self.badge(manifest)

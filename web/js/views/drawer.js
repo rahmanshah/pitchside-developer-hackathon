@@ -1,4 +1,5 @@
 // Evidence drawer (provenance chain + audit trail for one overlay) and the run info sheet (the manifest).
+import { auditText } from "../honesty.js";
 import { kindLabel, personaLabel, t as tr } from "../i18n.js";
 import { minuteLabel } from "../replay.js";
 import { clear, h, mmss } from "./dom.js";
@@ -105,7 +106,7 @@ export function createDrawer(dialog, ctx) {
     const personaInfo = ctx.personas.find((x) => x.persona === persona);
     const hits = new Set(refs);
     const semantic = p.semantic_check === "passed" ? h("span", { class: "chip ok" }, "✓ semantic verifier")
-      : p.semantic_check.startsWith("skipped") ? h("span", { class: "chip warn" }, `⚠ ${p.semantic_check}`)
+      : p.semantic_check.startsWith("skipped") ? h("span", { class: "chip warn" }, `⚠ ${auditText(p.semantic_check, ctx.honesty)}`)
       : h("span", { class: "chip muted" }, "semantic verifier not run (template)");
 
     clear(dialog).append(h("div", { class: "drawer-inner" },
@@ -120,7 +121,7 @@ export function createDrawer(dialog, ctx) {
           ? h("span", { class: `chip ${ctx.honesty.mode === "foundry" ? "amber src-live" : "standin src-standin"}` },
             ctx.honesty.mode === "fake" ? `${ctx.honesty.sourceLabels.explainer} narrative (fake model client)`
               : `Narrative: ${ctx.honesty.sourceLabels.explainer}`)
-          : h("span", { class: "chip muted src-template" }, `Template narrative${p.reason ? `: ${p.reason}` : ""}`),
+          : h("span", { class: "chip muted src-template" }, `Template narrative${p.reason ? `: ${auditText(p.reason, ctx.honesty)}` : ""}`),
         h("span", { class: "chip ok" }, "✓ deterministic checker"), semantic,
         a.badges.filter((b) => b !== "template" && b !== "template_fallback" && b !== "semantic_check_skipped")
           .map((b) => h("span", { class: `chip ${b === "fault_injected" ? "fault" : "warn"}` }, BADGE_TEXT[b] ?? b))),
@@ -128,7 +129,7 @@ export function createDrawer(dialog, ctx) {
       h("section", { class: "drawer-sec" },
         h("h3", {}, `Shown text · ${personaInfo ? personaLabel(lang, personaInfo) : persona} · ${lang.toUpperCase()}`),
         h("p", { class: "shown", lang }, figuredText(variant)),
-        variant.source === "template" ? h("p", { class: "note" }, `Template text${variant.reason ? `: ${variant.reason}` : ""}`) : null,
+        variant.source === "template" ? h("p", { class: "note" }, `Template text${variant.reason ? `: ${auditText(variant.reason, ctx.honesty)}` : ""}`) : null,
         h("details", { class: "all-texts" }, h("summary", {}, "Every persona and language"),
           h("table", {}, h("tbody", {}, Object.entries(overlay.texts).flatMap(([pid, byLang]) => Object.entries(byLang).map(([code, v]) => {
             const info = ctx.personas.find((x) => x.persona === pid);
@@ -152,15 +153,16 @@ export function createDrawer(dialog, ctx) {
           h("span", { class: "seq" }, st.seq),
           h("div", {},
             h("div", { class: "step-head" }, h("strong", {}, st.step), st.attempt ? h("span", { class: "muted-s" }, `#${st.attempt}`) : null,
-              h("span", { class: "mono muted-s" }, st.actor), h("span", { class: `chip ${OUTCOME_TONE[st.outcome] ?? "muted"}` }, st.outcome),
+              h("span", { class: "mono muted-s" }, st.actor),
+              h("span", { class: `chip ${OUTCOME_TONE[st.outcome] ?? "muted"}` }, auditText(st.outcome, ctx.honesty)),
               st.next_step ? h("span", { class: "muted-s" }, `→ ${st.next_step}`) : null),
-            h("p", { class: "step-detail" }, st.detail),
+            h("p", { class: "step-detail" }, auditText(st.detail, ctx.honesty)),
             st.prompt_version ? h("span", { class: "mono muted-s" }, `prompt ${st.prompt_version}`) : null)))),
         a.rejected.length ? [h("h4", {}, `Rejected claims (${a.rejected.length})`),
           h("ul", { class: "rejected" }, a.rejected.map((r) => h("li", {},
             h("div", { class: "chips" }, h("span", { class: "chip muted" }, `draft ${r.attempt}`), h("span", { class: "chip fault" }, r.layer)),
             h("p", { class: "struck" }, r.text),
-            h("ul", { class: "reasons" }, r.reasons.map((x) => h("li", {}, h("span", { class: "mono" }, x.code), ` ${x.detail}`))))))] : null,
+            h("ul", { class: "reasons" }, r.reasons.map((x) => h("li", {}, h("span", { class: "mono" }, x.code), ` ${auditText(x.detail, ctx.honesty)}`))))))] : null,
         a.faults.length ? [h("h4", {}, "Injected faults (opt-in demo)"),
           h("ul", { class: "faults" }, a.faults.map((f) => h("li", {}, h("span", { class: "chip fault" }, `${f.role}: ${f.kind}`),
             ` ${f.step ?? ""}${f.attempt ? ` attempt ${f.attempt}` : ""}${f.count > 1 ? ` ×${f.count}` : ""}`)))] : null,

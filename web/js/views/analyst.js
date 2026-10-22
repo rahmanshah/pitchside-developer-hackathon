@@ -1,5 +1,6 @@
 // Analyst dashboard: 2D pitch with recent events, live stats strips, momentum and control-vs-chaos sparklines,
 // the current moment in three personas side by side, model usage, and the key-moment timeline.
+import { auditText } from "../honesty.js";
 import { kindLabel, personaLabel, t as tr } from "../i18n.js";
 import { minuteLabel } from "../replay.js";
 import { eventsBetween } from "../timeline.js";
@@ -223,7 +224,8 @@ export function createAnalyst(root, ctx) {
             if (fig) ctx.actions.openDrawer(overlay.overlay_id, { refs: fig.dataset.refs.split(" ") });
           } }, figuredText(variant)),
           h("div", { class: "persona-foot" }, provenanceChips(overlay, lang, variant, ctx.honesty).slice(0, 1),
-            variant.reason ? h("span", { class: "chip warn", title: variant.reason }, variant.reason.slice(0, 48)) : null));
+            variant.reason ? h("span", { class: "chip warn", title: auditText(variant.reason, ctx.honesty) },
+              auditText(variant.reason, ctx.honesty).slice(0, 48)) : null));
       })));
   }
 
