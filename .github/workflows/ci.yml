@@ -27,3 +27,27 @@ jobs:
           diff -u docs/run_bundle.schema.json /tmp/run_bundle.schema.json
           uv run pitchside schema --overlay > /tmp/overlay.schema.json
           diff -u docs/overlay.schema.json /tmp/overlay.schema.json
+
+  e2e:
+    # Browser end-to-end tests of the web UI. Non-blocking: a browser hiccup must not fail the build,
+    # but a failure is visible on the run and its Playwright traces are uploaded.
+    name: e2e (Chromium, non-blocking)
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install
+        run: uv sync --python 3.12
+      - name: Install Chromium
+        run: uv run playwright install --with-deps chromium
+      - name: End-to-end tests
+        run: uv run pytest -m e2e -q --tracing retain-on-failure --output test-results
+      - name: Upload traces
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: e2e-traces
+          path: test-results
+          retention-days: 7

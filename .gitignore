@@ -13,3 +13,6 @@ dist/
 
 # model usage logs and run output
 /runs/
+
+# Playwright traces and failure screenshots from `pytest -m e2e`
+/test-results/

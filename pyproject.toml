@@ -39,3 +39,5 @@ pitchside = ["agents/prompts/*.md"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 pythonpath = ["src"]
+markers = ["e2e: browser end-to-end tests (Playwright, Chromium); run with `uv run pytest -m e2e`"]
+addopts = "-m 'not e2e'"
