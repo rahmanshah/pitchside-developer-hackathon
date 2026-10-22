@@ -71,7 +71,7 @@ export function createBroadcast(root, ctx) {
     const variant = variantFor(o, persona, lang);
     const label = kindLabel(lang, o.kind, o.status);
     const button = h("button", {
-      type: "button", class: `lt kind-${o.kind} ${team ? "" : "neutral"}`,
+      type: "button", class: `lt kind-${o.kind} ${team ? "" : "neutral"}`, dataset: { overlay: o.overlay_id },
       style: team ? { "--team": team.colours.primary, "--team-text": team.colours.text } : {},
       "aria-label": `${label}, ${minuteLabel(o.clock_s)}. ${variant.text}. ${tr(lang, "evidence")}`,
       onclick: (e) => openFrom(e, o.overlay_id),
