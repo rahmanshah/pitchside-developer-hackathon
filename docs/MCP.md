@@ -8,13 +8,13 @@ what was rejected: [DECISIONS.md](DECISIONS.md) entry 15.
 
 ```powershell
 uv run pitchside mcp                                   # stdio, one demo match (seed 7, comeback)
-uv run pitchside mcp --generate 1:siege --generate 2   # choose matches: SEED[:STORYLINE], repeatable
+uv run pitchside mcp --generate 1:siege --generate 3:siege:har:wst   # choose matches: SEED[:STORYLINE[:HOME:AWAY]], repeatable
 uv run pitchside mcp --events matches/aur_irv_comeback_0007.jsonl   # or a recorded match file
-uv run pitchside mcp --transport streamable-http --port 8000        # Streamable HTTP at http://127.0.0.1:8000/mcp
+uv run pitchside mcp --transport streamable-http --port 8000        # Streamable HTTP at http://127.0.0.1:8000/mcp (rate limited, /healthz)
 ```
 
-The host loads the matches; clients cannot add any. Generated matches depend only on seed and storyline, so a server and
-a pipeline that agree on `7:comeback` agree on every event. Over stdio, only protocol messages go to stdout; the one-line
+The host loads the matches; clients cannot add any. Generated matches depend only on seed, storyline and clubs, so a
+server and a pipeline that agree on `3:siege:har:wst` agree on every event. Over stdio, only protocol messages go to stdout; the one-line
 banner goes to stderr.
 
 ## The tools
@@ -82,21 +82,22 @@ Only Agent Framework's `MCPStdioTool` and `MCPStreamableHTTPTool` and the SDK's 
 clients take the standard shape; for a stdio client the command is `uv` with arguments `run pitchside mcp` and the working
 directory set to this repository (for example the `servers` entry of a VS Code `mcp.json`, or the MCP Inspector).
 
-## Deploying on Azure Container Apps (planned for milestone 6; nothing is deployed)
+## Deploying on Azure Container Apps
 
-The server is built so that deployment needs no code change. The same flags, with a loopback host and allow-list, were
-checked locally over a real socket (uvicorn): HTTP 200 for the allowed Host, 421 for any other.
+The image ([`Dockerfile`](../Dockerfile)) and the template ([`infra/main.bicep`](../infra/main.bicep)) are written and
+validated offline; deployment steps are in [AZURE.md](AZURE.md). Until you have deployed, treat this section as the plan.
 
 | Setting | Why |
 |---|---|
-| Command `pitchside mcp --transport streamable-http --host 0.0.0.0 --port 8000 --stateless --json-response --allowed-host <app FQDN> --generate 7:comeback` | Streamable HTTP at `/mcp`. `--stateless` keeps no per-client server state, so replicas and scale-to-zero need no sticky sessions; `--json-response` returns plain JSON. |
-| `--allowed-host <the ingress FQDN>` | The SDK's DNS-rebinding protection refuses (HTTP 421) any Host header not on the list. Behind a real hostname the list is required. |
-| Container Apps consumption plan, 0.25 vCPU / 0.5 GiB, min replicas 0 | A replayed match takes about 0.3 s to load and about 11 MB of memory (measured), so 0.5 GiB holds dozens; the server makes no model calls, so it fits the free grant and scales to zero. |
-| Ingress: external, HTTPS, target port 8000 | The data is synthetic and every tool is read-only; the open question is abuse, not secrecy. |
-| Pipeline: `PITCHSIDE_TOOLS=mcp`, `PITCHSIDE_MCP_URL=https://<app FQDN>/mcp` | The agents then use the deployed server. Both sides must agree on the matches (same `--generate` specs). |
+| `pitchside mcp --transport streamable-http --host 0.0.0.0 --port 8000 --stateless --json-response` | Streamable HTTP at `/mcp`. `--stateless` keeps no per-client server state, so scale-to-zero needs no sticky sessions; `--json-response` returns plain JSON. |
+| `--allowed-host <app name>.<environment default domain>` (computed in Bicep) | The SDK's DNS-rebinding protection refuses (HTTP 421) any Host header not on the list. |
+| `--trust-forwarded --rate-limit 120 --burst 60 --global-rate-limit 300` | Container Apps has no built-in request rate limiting; the server limits itself per client (last `X-Forwarded-For` hop added by the ingress) and overall, answering 429 with `Retry-After`. A whole match makes about 10 requests offline. |
+| `--generate 7:comeback:aur:irv --generate 3:siege:har:wst --generate 4:end_to_end:wst:aur` | The published runs' matches (`SEED:STORYLINE:HOME:AWAY`); a test checks the template covers every run in `web/data`. Measured at 0.25 vCPU: ready in about 15 s, 89 MiB. |
+| 0.25 vCPU / 0.5 GiB, replicas 0..1, `/healthz` probes | Scales to zero inside the free grant; one replica keeps the in-memory rate limit global. |
+| Ingress: external HTTPS, **IP allow-list** | Only the addresses given to `deploy.ps1`; everyone else is refused. Entra ID built-in auth is the planned production option (AZURE.md). |
+| Pipeline: `PITCHSIDE_TOOLS=mcp`, `PITCHSIDE_MCP_URL=https://<app FQDN>/mcp` | The agents then use the deployed server; the run bundle records its URL. |
 
-Not decided yet (milestone 6): authentication in front of the server (Container Apps built-in auth with Microsoft Entra ID
-is the likely option; Agent Framework's HTTP tool supports static and per-run headers), and rate limits. The public demo
+Each request is logged as one JSON line (method, path, status, client, milliseconds) to Log Analytics. The public demo
 serves recorded run bundles and does not need this server to be reachable.
 
 ## Version note

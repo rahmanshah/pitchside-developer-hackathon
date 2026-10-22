@@ -17,6 +17,7 @@ The challenge asks for one pipeline with five stages. Our mapping:
 | Explain | Interpreter, explainer, two-layer verifier (deterministic checker + semantic agent), recaps, audit trail | **Built offline** (milestone 3); live run pending, so no model-quality numbers yet |
 | Render | Timed, machine-readable overlay JSON + simple web UI | **Built offline** (milestone 5): `overlay.json` contract, static web UI replaying offline sample runs, e2e smoke tests and README screenshots; deploy pending (milestone 6) |
 | Personalize | Analyst / casual fan / favourite-player modes, multiple languages | **Built offline**: en + es in one personalizer call per moment |
+| (hosting) | Azure: Static Web Apps + Container Apps (MCP server) + Log Analytics + budget, one Bicep template | **Written and validated offline** (milestone 6); **not deployed** until the owner runs `infra/deploy.ps1` |
 
 ## Hard constraints (from the Official Rules, do not violate)
 
@@ -84,7 +85,14 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   `stats/tools.py`: typed read-only tool functions over a `TimelineView`, shared by the local function tools and the server
 - `src/pitchside/mcp_server.py` (`pitchside mcp`): FastMCP server, 12 read-only tools, every stats tool requires `as_of_s`;
   `agents/mcp_tools.py`: the interpreter's MCP tool (in-process server, or `PITCHSIDE_MCP_URL`); `agents/roles.py`
-  `BoundToMoment` middleware pins the bound from the job. Docs: `docs/MCP.md`
+  `BoundToMoment` middleware pins the bound from the job. Docs: `docs/MCP.md`. Over Streamable HTTP it runs behind
+  `src/pitchside/ratelimit.py` (per-client + global token buckets, 429, JSON access log; DECISIONS 18), has `/healthz`,
+  and `--generate SEED:STORYLINE:HOME:AWAY` loads matches with non-default clubs
+- `infra/` (milestone 6, DECISIONS 18): `main.bicep` (+ `main.bicepparam`, which reads image/IP/e-mail from env vars;
+  `bicepconfig.json`), `deploy.ps1` (staged, idempotent, `-FromStage`), `teardown.ps1` (refuses before 2026-11-11).
+  `Dockerfile` (uv pattern, non-root). Workflows: `container.yml` (GHCR image), `static-web-app.yml` (manual deploy of
+  `web/`), `ci.yml` job `infra` (Bicep build + lint via `tests/test_infra.py`). Never run `az` commands that create,
+  change or delete resources from here; the owner deploys (`docs/AZURE.md`)
 - `src/pitchside/render/` (milestone 5, DECISIONS 16-17): `overlay.py` (the overlay contract `overlay.json`, built from a
   bundle: replay timeline with half-time/full-time segments, lower-third conflicts resolved here, evidence chain, audit
   badges; schema `docs/overlay.schema.json`, doc `docs/OVERLAY.md`), `provenance.py` (claims -> ledger -> events;
@@ -135,6 +143,9 @@ uv run pitchside demo-data                     # regenerate web/data samples (of
 uv run playwright install chromium             # once
 uv run pytest -m e2e                           # browser smoke tests (excluded from the default run by addopts)
 uv run python scripts/capture_screenshots.py   # docs/img/ screenshots, 1920x1080, reproducible
+bicep build infra/main.bicep; bicep lint infra/main.bicep   # offline template checks (winget install -e --id Microsoft.Bicep)
+docker build -t pitchside-mcp .                # MCP server image (Docker Desktop must be running)
+./infra/deploy.ps1 -Image ghcr.io/<owner>/pitchside-mcp:<sha> -AllowedIp <ip> -BudgetEmail <e-mail>   # OWNER ONLY
 uv run pitchside eval-agents --seeds 201-205 --live   # manual, needs PITCHSIDE_LLM=foundry; see docs/LIVE_EVAL.md
 uv run python scripts/smoke_foundry.py   # manual live check after az login (not in the test suite)
 ```
@@ -166,12 +177,13 @@ and do not push unless asked.
   samples online still use old names.
 - **Agents:** Microsoft Agent Framework (open-source SDK) calling the model deployments directly. Avoid Foundry
   Agent Service for now; its pricing is unconfirmed.
-- **Planned Azure services (free tiers mostly):** Container Apps (consumption, right-sized to 0.25 vCPU / 0.5 GiB,
-  scale to zero), Static Web Apps (Free), Functions, Cosmos DB free tier (shared agent state and audit log),
-  Event Grid (key-moment events only), Translator and Speech (multi-language, optional audio), Azure Monitor.
-  Event Hubs is optional because it bills hourly. Skip AKS.
-- **Unconfirmed, check before relying on them:** that the Foundry project can deploy Luna/Sol (quota or access),
-  Event Grid operation counting, and any Agent Service charges.
+- **Azure services (DECISIONS 18, template in `infra/`):** Static Web Apps (Free) for the UI and recorded runs;
+  Container Apps (Consumption, 0.25 vCPU / 0.5 GiB, 0..1 replicas) for the MCP server, protected by an IP allow-list
+  and the in-app rate limit; Log Analytics; a budget. Image on GHCR (public package). **Planned, not built:** managed
+  identity + cloud recorder job, Entra ID auth on the MCP server, Application Insights. **Not used:** Cosmos DB,
+  Event Grid, Event Hubs, Functions, Translator, Speech, AKS, ACR, Foundry Agent Service.
+- **Unconfirmed, check before relying on them:** that the Foundry project can deploy Luna (quota or access), and any
+  Agent Service charges.
 
 ## Cost controls (build these in)
 
@@ -233,9 +245,12 @@ club logos or real names. Redact or recrop anything sensitive.
    **Built offline:** contract, UI (broadcast, analyst, evidence drawer, honesty labels, URL params), offline samples,
    Playwright e2e suite (`uv run pytest -m e2e`, non-blocking CI job), `scripts/capture_screenshots.py` -> `docs/img/`.
    Re-run the screenshot script when the live bundles replace the samples (milestone 6).
-6. **Azure deployment** (`infra/`, Bicep or azd): Container Apps, Static Web Apps, Cosmos DB, cost controls, the
+6. **Azure deployment** (`infra/`, Bicep): Container Apps, Static Web Apps, cost controls, the
    recorded demo mode as the public default. Verify a clean deploy from scratch, then record the final run bundles
    and the demo video from the deployed system.
+   **Written and validated offline** (Bicep build/lint clean, image built and smoke-tested locally); the owner deploys
+   on Oct 24 following `docs/AZURE.md`, records the live runs through the cloud MCP server on Oct 24-25, video Oct 25,
+   submission Oct 26. The README may claim only services actually deployed.
 7. **Submission:** honest README with architecture diagram, pitch naming real Microsoft/Azure tech, demo video
    (under 2 minutes), repo link added to the project page, tag `submission-v1`, freeze `main`.
 

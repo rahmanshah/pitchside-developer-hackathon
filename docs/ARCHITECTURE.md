@@ -4,9 +4,8 @@ Status key: **built** exists in this repo today; *planned* is the target design.
 
 ```mermaid
 flowchart LR
-    G["Match generator + replay<br/>(built)"] -->|events| B["Event stream<br/>(planned: Azure Event Hubs)"]
-    B --> S["Stats engine + key-moment detector, deterministic<br/>(built; hosting planned: Container Apps)"]
-    S -->|"findings + stats tools<br/>(function tools and MCP server built; MCP not deployed)"| A
+    G["Match generator + replay<br/>(built)"] -->|"events (in process)"| S["Stats engine + key-moment detector, deterministic<br/>(built)"]
+    S -->|"findings + stats tools<br/>(function tools and MCP server built; MCP on Container Apps: template ready, not deployed)"| A
     subgraph A["Agents: Agent Framework workflow per moment (built, tested offline; live run pending)"]
         I["Interpreter<br/>picks angle + evidence"] --> E["Explainer<br/>structured claims"]
         E --> C["Checker (code)"]
@@ -15,8 +14,8 @@ flowchart LR
         C -. feedback .-> E
         V -. feedback .-> E
     end
-    P --> R["Run bundle with overlay timing<br/>(built)"]
-    R --> UI["Match feed UI<br/>analyst / casual / player modes (planned)"]
+    P --> R["Run bundle + overlay contract<br/>(built)"]
+    R --> UI["Web UI: broadcast view, analyst dashboard, evidence drawer<br/>(built; Static Web Apps: template ready, not deployed)"]
     K["Answer key from generator<br/>(built)"] -.->|"evaluation (built)"| A
 ```
 
@@ -47,7 +46,7 @@ entries 12-14 and the README's agents section.
 | Verifier (agent) | Does the evidence support what each claim says (no overclaiming, no invented causes)? | Pass, or reasons back to the explainer (at most 3 drafts) |
 | Personalizer (agent) | Analyst, casual fan and favourite-player texts in every language, in one call; texts re-checked | Persona x language texts |
 | Fallback (code) | Template narrative from the same evidence when a step cannot recover | Narrative marked `source: template` with the reason |
-| Renderer | Run bundle with overlay timing (built); timed overlay UI (planned, milestone 5) | Bundle files |
+| Renderer | Overlay contract (`overlay.json`) and the static web UI that replays run bundles (built) | Bundle files |
 
 ## Model client (built; tested offline, first live run pending)
 
@@ -66,8 +65,10 @@ round-trip, including tool-call loops, goes through the same steps:
 
 Why: [DECISIONS.md](DECISIONS.md) entries 10 and 11.
 
-## Open decisions
+## Hosting (template written and validated offline; not deployed yet)
 
-- Event transport for the demo (Event Hubs vs a lighter queue) versus the cost of keeping it running until the end of judging.
-- Which Azure services to host the always-on demo on, with a free-to-test link for judges.
-- Overlay schema details, since the challenge gives no format.
+One resource group from one Bicep template ([docs/AZURE.md](AZURE.md), [DECISIONS.md](DECISIONS.md) entry 18): Azure
+Static Web Apps (Free) serves the UI and the recorded runs to judges; Azure Container Apps hosts the read-only MCP
+server (IP allow-list, in-app rate limit, scale to zero) that the live recordings use; Log Analytics keeps its logs;
+a budget sends alerts. No event broker: matches are replayed in process and the public demo is static, so Event Hubs
+or Event Grid would cost money without a consumer. The overlay format is settled in [OVERLAY.md](OVERLAY.md).
