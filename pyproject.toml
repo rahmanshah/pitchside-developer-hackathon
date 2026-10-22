@@ -24,6 +24,7 @@ dev = [
     "jsonschema>=4.26.0",
     "mini-racer>=0.14.1",
     "pytest>=8",
+    "pytest-playwright>=0.10.0",
 ]
 
 [project.scripts]

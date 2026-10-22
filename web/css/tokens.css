@@ -1,0 +1,60 @@
+/* Floodlight: a night match. Ink-navy surfaces, chalk-white lines and text, one sodium-amber reserved for the
+   evidence layer (verified figures, provenance), coral for faults and warnings. Club colours appear only on crests,
+   team bars and pitch marks (generated per club, see src/pitchside/render/crests.py).
+   Contrast of every text pair below is checked by tests/test_web_static.py. */
+
+@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap;
+  src: url("../fonts/barlow-condensed-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap;
+  src: url("../fonts/barlow-condensed-latin-700-normal.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 400; font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 500; font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-500-normal.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Sans"; font-weight: 600; font-display: swap;
+  src: url("../fonts/ibm-plex-sans-latin-600-normal.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 400; font-display: swap;
+  src: url("../fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2"); }
+@font-face { font-family: "IBM Plex Mono"; font-weight: 500; font-display: swap;
+  src: url("../fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2"); }
+
+:root {
+  color-scheme: dark;
+
+  --ink-0: #070b16;
+  --ink-1: #0d1424;
+  --ink-2: #141d33;
+  --ink-3: #1d2945;
+  --line: #2a3756;
+  --line-strong: #3a4a70;
+
+  --chalk: #eef2f8;
+  --chalk-2: #b8c2d6;
+  --chalk-3: #919eb8;
+
+  --pitch: #0f2a24;
+  --pitch-stripe: #12302a;
+  --pitch-surround: #0a1d19;
+  --pitch-line: rgba(238, 242, 248, 0.38);
+
+  --amber: #ffb547;
+  --amber-ink: #241500;
+  --amber-soft: rgba(255, 181, 71, 0.14);
+  --amber-line: rgba(255, 181, 71, 0.55);
+
+  --ok: #62d6a0;
+  --fault: #ff8a66;
+  --fault-soft: rgba(255, 138, 102, 0.14);
+  --bad: #ff7b8f;
+
+  --font-display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --font-text: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+
+  --radius: 6px;
+  --radius-sm: 4px;
+  --gutter: 16px;
+  --focus: 0 0 0 2px var(--ink-0), 0 0 0 4px var(--amber);
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}

@@ -15,7 +15,7 @@ The challenge asks for one pipeline with five stages. Our mapping:
 | Ingest | Seeded match generator, event schema, replay | **Built** (v0.1.0) |
 | Interpret | Deterministic stats engine + key-moment detector | **Built** (v0.2.0); some recall below the 80% bar on held-out seeds, see README |
 | Explain | Interpreter, explainer, two-layer verifier (deterministic checker + semantic agent), recaps, audit trail | **Built offline** (milestone 3); live run pending, so no model-quality numbers yet |
-| Render | Timed, machine-readable overlay JSON + simple web UI | Run bundles with overlay timing **built**; UI planned |
+| Render | Timed, machine-readable overlay JSON + simple web UI | **Built offline** (milestone 5): `overlay.json` contract, static web UI replaying offline sample runs; e2e tests and deploy pending |
 | Personalize | Analyst / casual fan / favourite-player modes, multiple languages | **Built offline**: en + es in one personalizer call per moment |
 
 ## Hard constraints (from the Official Rules, do not violate)
@@ -85,6 +85,17 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
 - `src/pitchside/mcp_server.py` (`pitchside mcp`): FastMCP server, 12 read-only tools, every stats tool requires `as_of_s`;
   `agents/mcp_tools.py`: the interpreter's MCP tool (in-process server, or `PITCHSIDE_MCP_URL`); `agents/roles.py`
   `BoundToMoment` middleware pins the bound from the job. Docs: `docs/MCP.md`
+- `src/pitchside/render/` (milestone 5, DECISIONS 16-17): `overlay.py` (the overlay contract `overlay.json`, built from a
+  bundle: replay timeline with half-time/full-time segments, lower-third conflicts resolved here, evidence chain, audit
+  badges; schema `docs/overlay.schema.json`, doc `docs/OVERLAY.md`), `provenance.py` (claims -> ledger -> events;
+  `triggering` vs `in_window`), `crests.py` (generated, contrast-checked club colours), `demo_data.py`
+  (`pitchside demo-data`: offline samples + `web/data/index.json`; `--bundle` publishes a recorded run), `serve.py`
+  (`pitchside serve`)
+- `web/`: static UI, no build step. `js/replay.js`, `js/timeline.js`, `js/honesty.js` are pure (no DOM, no imports) and
+  unit-tested in V8 via mini-racer (`tests/test_web_js.py`); `js/main.js` (state, URL params, keyboard, `window.pitchside`
+  test hook), `js/views/` (broadcast, analyst, drawer, crest, pitch). `css/tokens.css` holds the colour tokens (contrast
+  checked by `tests/test_web_static.py`). `web/data/` is generated: regenerate with `uv run pitchside demo-data`, never
+  edit by hand; only one sample run has injected faults
 - `scripts/smoke_foundry.py`: manual live check (not in the test suite); step 4 runs one goal through the live
   agents. `docs/LIVE_EVAL.md`: the manual live evaluation and recording steps
 - `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, held-out answer-key
@@ -117,6 +128,8 @@ uv run pitchside cost        # model usage and cost from runs/llm_usage.jsonl
 uv run pitchside mcp [--transport streamable-http --stateless --json-response --allowed-host H]  # MCP server
 uv run pitchside run --seed 7 --storyline comeback [--inject-faults demo] [--tools mcp]   # agents offline, run bundle
 uv run pitchside eval-agents --seeds 1-3 [--inject-bad 0.3]                 # offline: plumbing check, not model quality
+uv run pitchside serve [--open] [--data DIR]   # web UI on http://127.0.0.1:8000 (recorded runs from web/data)
+uv run pitchside demo-data                     # regenerate web/data samples (offline); --bundle DIR --slug S --title T publishes one
 uv run pitchside eval-agents --seeds 201-205 --live   # manual, needs PITCHSIDE_LLM=foundry; see docs/LIVE_EVAL.md
 uv run python scripts/smoke_foundry.py   # manual live check after az login (not in the test suite)
 ```
@@ -209,6 +222,8 @@ club logos or real names. Redact or recrop anything sensitive.
 5. **Overlay renderer and web UI** (`web/`): timed overlay JSON schema plus a simple front end showing overlays on a
    simulated match feed. Three personas side by side (analyst, casual fan, favourite-player mode), multi-language.
    Optional spoken commentary via Speech. The UI must be able to replay a **run bundle** (see "Recorded demo mode").
+   **Built offline:** contract, UI (broadcast, analyst, evidence drawer, honesty labels, URL params), offline samples.
+   Remaining: Playwright e2e suite (`-m e2e`, non-blocking CI job) and the README screenshot script.
 6. **Azure deployment** (`infra/`, Bicep or azd): Container Apps, Static Web Apps, Cosmos DB, cost controls, the
    recorded demo mode as the public default. Verify a clean deploy from scratch, then record the final run bundles
    and the demo video from the deployed system.

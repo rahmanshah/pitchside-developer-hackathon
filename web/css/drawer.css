@@ -1,0 +1,96 @@
+/* Evidence drawer (right-hand sheet) and run info sheet. */
+
+dialog.drawer, dialog.sheet {
+  padding: 0; border: 0; color: var(--chalk); background: var(--ink-1);
+  margin: 0 0 0 auto; height: 100vh; max-height: 100vh; width: min(640px, 100vw); max-width: 100vw;
+  border-left: 1px solid var(--line-strong); box-shadow: var(--shadow);
+}
+dialog::backdrop { background: rgba(3, 6, 12, 0.6); }
+dialog[open] { animation: sheet-in 260ms var(--ease); }
+@keyframes sheet-in { from { transform: translateX(24px); opacity: 0; } }
+
+.drawer-inner, .sheet-inner { height: 100%; overflow: auto; padding: 0 22px 24px; }
+
+.drawer-head {
+  position: sticky; top: 0; z-index: 2; display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+  padding: 18px 0 12px; background: linear-gradient(var(--ink-1) 80%, transparent);
+}
+.drawer-head h2 { margin: 4px 0 0; font: 700 24px/1.15 var(--font-display); letter-spacing: 0.02em; }
+.drawer-head .kicker { margin: 0; color: var(--amber); }
+.icon-btn.close { flex: none; font-size: 16px; }
+
+.badges { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+.badges .chip, .chips .chip { white-space: normal; text-align: left; max-width: 100%; overflow-wrap: anywhere; }
+
+.drawer-sec { padding: 14px 0; border-top: 1px solid var(--line); }
+.drawer-sec h3 { margin: 0 0 8px; font: 700 15px/1.2 var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-2); }
+.drawer-sec h4 { margin: 14px 0 6px; font: 700 13px/1.2 var(--font-display); letter-spacing: 0.12em; text-transform: uppercase; color: var(--chalk-2); }
+.note { margin: 6px 0 0; font-size: 13px; color: var(--chalk-2); }
+.shown { margin: 0; font-size: 18px; line-height: 1.45; }
+.mono { font-family: var(--font-mono); font-size: 12.5px; }
+.muted-s { font-size: 12px; color: var(--chalk-3); }
+
+.all-texts { margin-top: 10px; font-size: 13px; }
+.all-texts summary { cursor: pointer; color: var(--chalk-2); }
+.all-texts table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+.all-texts th { text-align: left; vertical-align: top; width: 34%; padding: 6px 8px 6px 0; font-weight: 500; color: var(--chalk-2); }
+.all-texts td { padding: 6px 0; }
+.all-texts tr + tr > * { border-top: 1px solid var(--line); }
+
+.claims { list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 12px; counter-reset: claim; }
+.claim { background: var(--ink-2); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px; position: relative; }
+.claim-text { margin: 0 0 8px; font-size: 15px; font-weight: 500; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+
+/* The chain: claim -> evidence -> events, drawn as a rail. */
+.evidence-list { list-style: none; margin: 10px 0 0; padding: 0 0 0 14px; border-left: 2px solid var(--amber-line); display: grid; gap: 10px; }
+.evidence { position: relative; padding: 8px 10px; border-radius: var(--radius-sm); background: var(--ink-1); border: 1px solid var(--line); }
+.evidence::before { content: ""; position: absolute; left: -16px; top: 16px; width: 14px; height: 2px; background: var(--amber-line); }
+.evidence.hit { border-color: var(--amber); box-shadow: 0 0 0 1px var(--amber-line); }
+.evidence-head { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.ref { font: 500 12px/1 var(--font-mono); padding: 3px 6px; border-radius: 3px; background: var(--amber); color: var(--amber-ink); }
+.say { font-weight: 600; }
+.evidence-meta { display: flex; flex-wrap: wrap; gap: 4px 14px; margin-top: 6px; font-size: 12.5px; color: var(--chalk-2); }
+.events { margin-top: 8px; padding-top: 8px; border-top: 1px dashed var(--line); }
+.events-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px; margin-bottom: 6px; font-size: 12.5px; }
+.rel { font-weight: 600; }
+.rel-triggering .rel { color: var(--amber); }
+.rel-in_window .rel, .rel-player .rel { color: var(--chalk); }
+.filter-text { color: var(--chalk-3); font-family: var(--font-mono); font-size: 11.5px; }
+.ev-chip {
+  font: 500 11.5px/1 var(--font-mono); padding: 4px 6px; border-radius: 3px; border: 1px solid var(--line-strong);
+  background: var(--ink-2); color: var(--chalk-2); cursor: pointer;
+}
+.ev-chip:hover { color: var(--chalk); border-color: var(--chalk-3); }
+.rel-triggering .ev-chip { border-color: var(--amber-line); color: var(--amber); }
+.ev-more { font-size: 12px; color: var(--chalk-3); }
+.link-btn.small { font-size: 11.5px; padding: 2px 0; }
+
+.audit { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.step { display: grid; grid-template-columns: 28px minmax(0, 1fr); gap: 8px; }
+.seq {
+  width: 24px; height: 24px; border-radius: 50%; display: grid; place-items: center; font: 600 12px/1 var(--font-mono);
+  background: var(--ink-3); color: var(--chalk-2);
+}
+.step-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 8px; }
+.step-detail { margin: 3px 0 2px; font-size: 13px; color: var(--chalk-2); overflow-wrap: anywhere; }
+.rejected, .faults, .reasons { margin: 0; padding-left: 18px; display: grid; gap: 8px; font-size: 13px; }
+.rejected { list-style: none; padding: 0; }
+.rejected > li { padding: 10px; border: 1px solid var(--line); border-left: 3px solid var(--fault); border-radius: var(--radius-sm); background: var(--ink-2); }
+.struck { margin: 6px 0; text-decoration: line-through; text-decoration-color: var(--fault); color: var(--chalk-2); }
+.reasons { gap: 4px; color: var(--chalk-2); }
+.reasons .mono { color: var(--fault); }
+.faults.fired { list-style: none; padding: 0; margin-top: 8px; display: flex; flex-wrap: wrap; }
+.calls { margin: 0; font-size: 13px; color: var(--chalk-2); font-variant-numeric: tabular-nums; }
+
+.drawer-foot { padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--chalk-2); display: flex; flex-wrap: wrap; gap: 10px; }
+.drawer-foot a { color: var(--chalk); text-underline-offset: 3px; }
+
+.badge-static { display: inline-flex; align-items: center; gap: 8px; margin: 0; padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line-strong); font-weight: 600; }
+.badge-static::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--chalk-2); }
+.badge-static.mode-foundry::before { background: var(--ok); }
+.badge-static.mode-unknown::before { background: var(--bad); }
+.manifest-label { margin: 12px 0 0; padding: 10px 14px; border-left: 3px solid var(--chalk-3); background: var(--ink-2); font-size: 15px; }
+.kv { display: grid; grid-template-columns: minmax(120px, 30%) 1fr; gap: 6px 12px; margin: 0; font-size: 13.5px; }
+.kv dt { color: var(--chalk-2); }
+.kv dd { margin: 0; overflow-wrap: anywhere; }
