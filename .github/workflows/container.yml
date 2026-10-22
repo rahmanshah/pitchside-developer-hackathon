@@ -1,0 +1,55 @@
+name: MCP server image
+
+# Builds the MCP server image (Dockerfile) and pushes it to GitHub Container Registry as
+#   ghcr.io/<owner>/pitchside-mcp:<full commit sha>
+# Run it by hand (Actions > MCP server image > Run workflow) or push a tag like mcp-v1.
+# A new GHCR package is PRIVATE by default, even from a public repository; Azure Container Apps pulls it without
+# credentials, so make the package public once after the first push (docs/AZURE.md, step 4).
+# Action pins (commit SHAs) follow GitHub's "Publishing Docker images" guide.
+
+on:
+  workflow_dispatch:
+  push:
+    tags: ["mcp-v*"]
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository_owner }}/pitchside-mcp
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Log in to GitHub Container Registry
+        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Image name and tags
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          tags: |
+            type=sha,format=long,prefix=
+            type=ref,event=tag
+
+      - name: Build and push
+        uses: docker/build-push-action@f2a1d5e99d037542a71f64918e516c093c6f3fc4
+        with:
+          context: .
+          push: true
+          platforms: linux/amd64
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Image to deploy
+        run: |
+          echo "Deploy with: infra/deploy.ps1 -Image ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}" >> "$GITHUB_STEP_SUMMARY"

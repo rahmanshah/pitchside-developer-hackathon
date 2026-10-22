@@ -1,0 +1,8 @@
+# Allow-list: the image needs only the package source, its metadata and the lock file.
+*
+!pyproject.toml
+!uv.lock
+!README.md
+!src/
+**/__pycache__
+**/*.pyc
