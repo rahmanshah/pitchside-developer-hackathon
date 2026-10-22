@@ -18,21 +18,26 @@ Built on the MCP Python SDK 1.x (``FastMCP``). Agent Framework 1.22 requires ``m
 
 from __future__ import annotations
 
+import logging
 import sys
 from pathlib import Path
-from typing import Annotated, Optional, Sequence
+from typing import Annotated, NamedTuple, Optional, Sequence
 
 from mcp.server.fastmcp import FastMCP
 from mcp.server.transport_security import TransportSecuritySettings
 from mcp.types import ToolAnnotations
 from pydantic import BaseModel, ConfigDict, Field
+from starlette.requests import Request
+from starlette.responses import JSONResponse
 
 from .generator import generate_match
 from .jsonl import read_events
+from .ratelimit import RateLimit
 from .stats import tools
 from .stats.findings import FindingKind
 from .stats.timeline import MatchStore, TimelineError, TimelineView
 from .storylines import STORYLINES
+from .teams import CLUBS, DEFAULT_AWAY, DEFAULT_HOME
 
 SERVER_NAME = "pitchside-stats"
 DEFAULT_MATCH = "7:comeback"
@@ -102,6 +107,11 @@ def build_server(
 
     def view(match_id: Optional[str], as_of_s: float, as_of_event_id: Optional[int]) -> TimelineView:
         return store.get(match_id).as_of(as_of_s, as_of_event_id)
+
+    @mcp.custom_route("/healthz", methods=["GET"], include_in_schema=False)
+    async def healthz(_: Request) -> JSONResponse:
+        """Liveness/readiness probe for Container Apps: no match data, no Host check, never rate limited."""
+        return JSONResponse({"status": "ok", "server": SERVER_NAME, "matches": len(store.ids())})
 
     @mcp.tool(name="list_matches", annotations=READ_ONLY)
     def list_matches() -> MatchesResult:
@@ -194,41 +204,76 @@ def build_server(
 # --------------------------------------------------------------------------- #
 
 
-def parse_generate(spec: str) -> tuple[int, str]:
-    """'7:comeback' -> (7, 'comeback'); '7' -> (7, 'comeback')."""
-    seed_text, _, storyline = spec.partition(":")
-    storyline = storyline or "comeback"
+class MatchSpec(NamedTuple):
+    seed: int
+    storyline: str
+    home: str
+    away: str
+
+
+def parse_generate(spec: str) -> MatchSpec:
+    """'7:comeback' -> (7, 'comeback', home, away) with the default clubs; '3:siege:har:wst' sets the clubs."""
+    parts = spec.split(":")
+    usage = f"bad --generate {spec!r}: expected SEED[:STORYLINE[:HOME:AWAY]], e.g. 7:comeback or 3:siege:har:wst"
+    if len(parts) not in (1, 2, 4):
+        raise ValueError(usage)
     try:
-        seed = int(seed_text)
+        seed = int(parts[0])
     except ValueError:
-        raise ValueError(f"bad --generate {spec!r}: expected SEED or SEED:STORYLINE, e.g. 7:comeback") from None
+        raise ValueError(usage) from None
+    storyline = parts[1] if len(parts) > 1 and parts[1] else "comeback"
     if storyline not in STORYLINES:
         raise ValueError(f"unknown storyline {storyline!r}; choose from {', '.join(sorted(STORYLINES))}")
-    return seed, storyline
+    home, away = (parts[2], parts[3]) if len(parts) == 4 else (DEFAULT_HOME, DEFAULT_AWAY)
+    for club in (home, away):
+        if club not in CLUBS:
+            raise ValueError(f"unknown club {club!r}; choose from {', '.join(sorted(CLUBS))}")
+    if home == away:
+        raise ValueError(f"bad --generate {spec!r}: home and away must differ")
+    return MatchSpec(seed, storyline, home, away)
 
 
 def load_store(events: Sequence[Path] = (), generate: Sequence[str] = ()) -> MatchStore:
-    """Matches from recorded JSONL files and/or generated from (seed, storyline). Default: one demo match.
+    """Matches from recorded JSONL files and/or generated from (seed, storyline, clubs). Default: one demo match.
 
-    Generated matches are fully determined by their seed and storyline, so a deployed server and a pipeline that
-    agree on ``7:comeback`` agree on every event.
+    Generated matches are fully determined by seed, storyline and clubs, so a deployed server and a pipeline that
+    agree on ``3:siege:har:wst`` agree on every event.
     """
     store = MatchStore()
     for path in events:
         store.add(list(read_events(Path(path))))
     specs = list(generate) or ([] if events else [DEFAULT_MATCH])
     for spec in specs:
-        seed, storyline = parse_generate(spec)
-        store.add(generate_match(seed=seed, storyline=storyline).events)
+        m = parse_generate(spec)
+        store.add(generate_match(seed=m.seed, storyline=m.storyline, home=m.home, away=m.away).events)
     return store
 
 
-def serve(store: MatchStore, transport: str = "stdio", **options) -> None:
-    """Run the server until the client disconnects. Everything but protocol traffic goes to stderr."""
+def http_app(server: FastMCP, rate_limit: Optional[dict] = None):
+    """The Streamable HTTP ASGI app, behind the request rate limit unless ``rate_limit`` is None."""
+    app = server.streamable_http_app()
+    return app if rate_limit is None else RateLimit(app, **rate_limit)
+
+
+def serve(store: MatchStore, transport: str = "stdio", rate_limit: Optional[dict] = None, **options) -> None:
+    """Run the server until stopped. Everything but protocol traffic goes to stderr.
+
+    Over Streamable HTTP the app runs behind ``RateLimit`` (``rate_limit`` holds its options) and logs one JSON line
+    per request; stdio has neither (it is one local client).
+    """
     server = build_server(store, **options)
     print(f"{SERVER_NAME}: {len(store.ids())} match(es) [{', '.join(store.ids())}], transport {transport}",
           file=sys.stderr, flush=True)
-    server.run(transport)  # type: ignore[arg-type]
+    if transport != "streamable-http":
+        server.run(transport)  # type: ignore[arg-type]
+        return
+    import uvicorn
+
+    logging.basicConfig(level=logging.WARNING, format="%(message)s", stream=sys.stderr, force=True)
+    logging.getLogger("pitchside.http").setLevel(logging.INFO)
+    uvicorn.run(http_app(server, rate_limit or {}), host=server.settings.host, port=server.settings.port,
+                log_level="warning", access_log=False)
 
 
-__all__ = ["INSTRUCTIONS", "SERVER_NAME", "TimelineError", "build_server", "load_store", "parse_generate", "serve"]
+__all__ = ["INSTRUCTIONS", "SERVER_NAME", "MatchSpec", "TimelineError", "build_server", "http_app", "load_store",
+           "parse_generate", "serve"]

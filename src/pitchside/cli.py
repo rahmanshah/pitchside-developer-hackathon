@@ -15,6 +15,7 @@ from .jsonl import read_events, write_answer_key, write_events
 from .llm import load_settings
 from .llm.usage import UsageLog, format_summary
 from .llm.usage import summarise as summarise_usage
+from .ratelimit import DEFAULT_BURST, DEFAULT_GLOBAL_PER_MINUTE, DEFAULT_PER_MINUTE
 from .replay import replay
 from .schema import Event, PassEvent, ShotEvent, json_schema, to_json_line
 from .stats import Finding, StatsEngine, findings_json_schema
@@ -172,6 +173,9 @@ def _cmd_mcp(args: argparse.Namespace) -> int:
         options = dict(host=args.host, port=args.port, stateless_http=args.stateless,
                        json_response=args.json_response, allowed_hosts=args.allowed_host or [],
                        allowed_origins=args.allowed_origin or [])
+        options["rate_limit"] = None if args.no_rate_limit else dict(
+            per_minute=args.rate_limit, burst=args.burst, global_per_minute=args.global_rate_limit,
+            trust_forwarded=args.trust_forwarded)
     serve(store, args.transport, **options)
     return 0
 
@@ -391,8 +395,9 @@ def build_parser() -> argparse.ArgumentParser:
                     help="stdio for local MCP clients; streamable-http for a deployed server")
     mc.add_argument("--events", action="append", metavar="PATH",
                     help="a recorded match (JSONL from `pitchside generate`); repeatable")
-    mc.add_argument("--generate", action="append", metavar="SEED[:STORYLINE]",
-                    help="generate a match (deterministic); repeatable. Default when nothing is given: 7:comeback")
+    mc.add_argument("--generate", action="append", metavar="SEED[:STORYLINE[:HOME:AWAY]]",
+                    help="generate a match (deterministic), e.g. 3:siege:har:wst; repeatable. "
+                         "Default when nothing is given: 7:comeback")
     mc.add_argument("--host", default="127.0.0.1", help="streamable-http only; 0.0.0.0 inside a container")
     mc.add_argument("--port", type=int, default=8000, help="streamable-http only")
     mc.add_argument("--allowed-host", action="append", metavar="HOST",
@@ -402,6 +407,16 @@ def build_parser() -> argparse.ArgumentParser:
     mc.add_argument("--stateless", action="store_true",
                     help="streamable-http: no server-side sessions (needed for several replicas / scale to zero)")
     mc.add_argument("--json-response", action="store_true", help="streamable-http: plain JSON replies, not SSE")
+    mc.add_argument("--rate-limit", type=float, default=DEFAULT_PER_MINUTE, metavar="PER_MIN",
+                    help=f"streamable-http: requests per minute per client (default {DEFAULT_PER_MINUTE:g})")
+    mc.add_argument("--burst", type=int, default=DEFAULT_BURST,
+                    help=f"streamable-http: requests a client may make at once (default {DEFAULT_BURST})")
+    mc.add_argument("--global-rate-limit", type=float, default=DEFAULT_GLOBAL_PER_MINUTE, metavar="PER_MIN",
+                    help=f"streamable-http: requests per minute, all clients (default {DEFAULT_GLOBAL_PER_MINUTE:g})")
+    mc.add_argument("--trust-forwarded", action="store_true",
+                    help="streamable-http: behind a proxy (Container Apps ingress), key clients by the last "
+                         "X-Forwarded-For address")
+    mc.add_argument("--no-rate-limit", action="store_true", help="streamable-http: turn the rate limit off")
     mc.set_defaults(func=_cmd_mcp)
 
     ea = sub.add_parser("eval-agents", help="run matches through the agents and score them against answer keys "
