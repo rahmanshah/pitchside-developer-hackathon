@@ -14,7 +14,12 @@ storyline (tuning seeds 1-6), not real-world league figures.
 
 from __future__ import annotations
 
+import math
+
 from .metrics import MatchNumbers, TeamNumbers
+
+# Sums use math.fsum: built-in sum() over floats changed in Python 3.12, and a replay must give the same rounded
+# numbers on every supported Python version (requires-python >= 3.11).
 
 MOMENTUM_WEIGHTS = {"field_tilt": 0.35, "shots": 0.25, "xg": 0.20, "pressing": 0.20}
 
@@ -48,7 +53,7 @@ def momentum_parts(home: TeamNumbers, away: TeamNumbers) -> dict[str, float]:
 
 def momentum(home: TeamNumbers, away: TeamNumbers) -> float:
     parts = momentum_parts(home, away)
-    return round(sum(MOMENTUM_WEIGHTS[k] * v for k, v in parts.items()), 3)
+    return round(math.fsum(MOMENTUM_WEIGHTS[k] * v for k, v in parts.items()), 3)
 
 
 def chaos_parts(match: MatchNumbers) -> dict[str, float]:
@@ -64,4 +69,4 @@ def chaos_parts(match: MatchNumbers) -> dict[str, float]:
 
 def chaos(match: MatchNumbers) -> float:
     parts = chaos_parts(match)
-    return round(sum(parts.values()) / len(parts), 3)
+    return round(math.fsum(parts.values()) / len(parts), 3)

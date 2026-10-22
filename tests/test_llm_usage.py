@@ -11,7 +11,7 @@ from pathlib import Path
 from pitchside.cli import main
 from pitchside.llm import ConfigError
 from pitchside.llm.prices import PRICE_TABLE_VERSION, cost_usd, price_for
-from pitchside.llm.usage import UsageLog, UsageRecord, format_summary, summarise
+from pitchside.llm.usage import UsageLog, UsageRecord, format_summary, summarise, total_cost
 
 LUNA = price_for("gpt-6-luna")
 
@@ -118,6 +118,22 @@ class CostCommandTests(unittest.TestCase):
     def test_missing_log_is_not_an_error(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             self.assertIn("no model usage", self.run_cli("--log", str(Path(tmp) / "none.jsonl")))
+
+
+class TotalCostTests(unittest.TestCase):
+    def test_rounding_does_not_depend_on_the_python_version(self) -> None:
+        # The five calls of one goal in the siege sample. A left-to-right float sum is exactly 0.0004505 on
+        # Python 3.11 (rounds to 0.00045); 3.12+ sum() and math.fsum give 0.00045050000000000005 (0.000451).
+        # Bundles, overlays and evaluations must agree on every supported version (CI runs 3.11 and 3.13).
+        costs = [3.86e-05, 8.080000000000001e-05, 0.0001127, 3.990000000000001e-05, 0.0001785]
+        records = [UsageRecord(role="explainer", deployment="fake", status="ok", price_model="m", price_version="v",
+                               cost_usd=c) for c in costs]
+        naive = 0.0
+        for c in costs:
+            naive += c
+        self.assertEqual(round(naive, 6), 0.00045)  # the 3.11 behaviour that broke CI
+        self.assertEqual(total_cost(records), 0.000451)
+        self.assertEqual(total_cost([]), 0.0)
 
 
 if __name__ == "__main__":

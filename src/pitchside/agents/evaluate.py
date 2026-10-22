@@ -28,6 +28,7 @@ from collections import Counter
 from dataclasses import asdict, dataclass, field
 from typing import Any, Optional, Sequence
 
+from ..llm.usage import total_cost
 from ..schema import Score, ShotEvent
 from ..stats.evaluate import evaluate_match
 from ..stats.findings import FindingKind
@@ -180,7 +181,7 @@ def evaluate_run(run: MatchRun) -> MatchEval:
 
     # Cost
     usage = [u for u in (run.usage_log.read() if run.usage_log else []) if u.run_id == run.run_id]
-    ev.cost_usd = round(sum(u.cost_usd for u in usage), 6)
+    ev.cost_usd = total_cost(usage)
     ev.calls = sum(u.status != "refused" for u in usage)
     for u in usage:
         row = ev.tokens.setdefault(u.role, {"calls": 0, "input": 0, "output": 0, "reasoning": 0})

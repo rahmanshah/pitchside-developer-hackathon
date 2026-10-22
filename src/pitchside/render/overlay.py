@@ -28,7 +28,7 @@ from pydantic import BaseModel, ConfigDict, Field, TypeAdapter
 from ..agents.bundle import BundleManifest, NarrativeEntry, load_bundle
 from ..agents.contracts import FAV_PREFIX, AuditEntry, Reason
 from ..jsonl import read_events
-from ..llm.usage import UsageRecord
+from ..llm.usage import UsageRecord, total_cost
 from ..schema import PITCH_LENGTH_M, PITCH_WIDTH_M, Event
 from ..stats.findings import Finding
 from . import crests
@@ -343,7 +343,7 @@ def _audit(entry: NarrativeEntry, steps: list[AuditEntry], usage: list[UsageReco
                         transport_retries=sum(u.attempt > 1 for u in usage),
                         input_tokens=sum(u.input_tokens for u in usage),
                         output_tokens=sum(u.output_tokens for u in usage),
-                        cost_usd=round(sum(u.cost_usd for u in usage), 6))
+                        cost_usd=total_cost(usage))
     n = entry.narrative
     badges: list[Badge] = []
     if entry.route == "template":

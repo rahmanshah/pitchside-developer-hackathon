@@ -9,6 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
+        # Oldest and newest supported. They differ in float behaviour (sum() is compensated from 3.12), so a
+        # rounded number written to a bundle must come from math.fsum; the committed web/data must match on both.
         python-version: ["3.11", "3.13"]
     steps:
       - uses: actions/checkout@v4
