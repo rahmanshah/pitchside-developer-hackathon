@@ -13,7 +13,7 @@ Built for the **Inside the Game: Developer Hackathon**. Everything here is synth
 | (model access) | Agent Framework chat clients for Foundry model deployments (Entra ID), offline fake client, token and cost log, budget, concurrency and retry guard | **Built**: tested offline only; not yet run against a live Foundry deployment, see [model client](#model-client-and-cost-controls) |
 | Explain | Interpreter, explainer and two-layer verifier (deterministic checker + semantic check) as an Agent Framework workflow, with recaps and an audit trail | **Built (offline-tested)**: runs end to end on the fake model client; **no live model run yet**, so there are no model-quality numbers, see [agents](#agents-explain-verify-personalize) |
 | (tools) | The stats engine as a read-only **MCP server** (`pitchside mcp`, stdio and Streamable HTTP) that the interpreter can use | **Built (offline-tested)**; not deployed, see [MCP server](#stats-engine-as-an-mcp-server) |
-| Render | Run bundles with overlay timing (`pitchside run`); web UI that replays them | Bundles **built**; UI planned |
+| Render | Timed overlay contract (`overlay.json`) built from each run bundle; a static web UI that replays recorded runs (broadcast view, analyst dashboard, evidence drawer) | **Built (offline)**: replays offline sample runs from the fake model client; replay engine unit-tested, end-to-end browser tests pending, not deployed yet, see [web UI](#web-ui-replay-a-recorded-run) |
 | Personalize | Analyst / casual fan / favourite-player views, English and Spanish, one model call per moment | **Built (offline-tested)**; offline translations are tagged placeholders, not real translations |
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the target design and [docs/DECISIONS.md](docs/DECISIONS.md)
@@ -37,10 +37,14 @@ uv run pitchside run --seed 7 --storyline comeback                       # stats
 uv run pitchside run --seed 7 --storyline comeback --tools mcp           # same, the interpreter's tools served over MCP
 uv run pitchside run --seed 7 --storyline end_to_end --inject-faults demo # same, with deliberate failures to show recovery
 uv run pitchside eval-agents --seeds 1-3                                 # score agent runs against answer keys (offline: plumbing check)
+uv run pitchside serve --open                                            # web UI: replay the recorded runs in web/data (http://127.0.0.1:8000)
+uv run pitchside demo-data                                               # regenerate the offline sample runs in web/data
+uv run pitchside overlay <bundle-dir>                                    # rebuild a bundle's overlay.json
 uv run pitchside cost --by role                                          # model token usage and cost from the usage log
 uv run pitchside schema > docs/event.schema.json             # regenerate the event JSON Schema
 uv run pitchside schema --findings > docs/finding.schema.json  # and the findings JSON Schema
 uv run pitchside schema --bundle > docs/run_bundle.schema.json # and the run bundle JSON Schema
+uv run pitchside schema --overlay > docs/overlay.schema.json   # and the overlay contract JSON Schema
 
 uv run pytest
 ```
@@ -184,6 +188,39 @@ about 5 model calls per moment, about $0.0023 per moment, so about $0.015 per ba
 storyline match (12-13 moments plus 2 recaps). Final recorded runs use `PITCHSIDE_MATCH_BUDGET_USD=0.25` so that no
 moment is downgraded to a template for budget reasons; the bundle manifest counts budget fallbacks (should be 0).
 
+## Web UI: replay a recorded run
+
+`uv run pitchside serve --open` serves `web/`, a static site (plain HTML, CSS and ES modules, no build step and no
+server-side code) that replays the run bundles in `web/data` at adjustable speed. Nothing on the page calls a model:
+every text, check and number was produced when the run was recorded.
+
+- **Broadcast view:** a 16:9 simulated match feed with scoreboard, clock, a moments feed and lower thirds timed by the
+  overlay contract. The ball path is drawn from event locations; there is no tracking data. When the replay runs faster
+  than real time it holds briefly at each lower third so it can be read.
+- **Analyst dashboard:** a 2D pitch with the last two minutes of events, live stats strips (possession, field tilt,
+  pressures), momentum and control-vs-chaos sparklines drawn only up to the current moment, the current moment for the
+  analyst, casual fan and favourite-player personas side by side, model usage so far, and a key-moment timeline.
+- **Personalization:** analyst, casual fan, and a favourite-player view for each club's featured player (their events
+  are highlighted), in English or Spanish. The broadcast view shows one audience at a time, as a real broadcast would;
+  the dashboard shows three side by side so the difference is visible in one frame.
+- **Evidence drawer:** click any overlay, feed card or verified figure (amber tick) to see the chain behind it: shown
+  text, the verified claims it was written from, each claim's ledger numbers with metric and time window, and the
+  events they come from, with *triggering* events kept apart from *events in the window*. Below that, the audit trail:
+  every step, rejected drafts with the checker's reasons, injected faults, skipped semantic checks, fallbacks and model
+  calls.
+- **Honesty labels** come from the bundle manifest: "Recorded run generated by the live pipeline" only for a Foundry
+  run, "Offline demo (fake model client)" for the fake client, and a badge whenever faults were injected. The current
+  samples are all offline runs; one of them has faults injected on purpose, and the run picker says so.
+- **URL parameters** for the demo video: `run`, `view=broadcast|analyst`, `persona=analyst|casual|fav|fav:<player>`,
+  `lang=en|es`, `speed`, `autoplay=1`, `t=<seconds>` or `t=63:20` (match clock), `clean=1` (controls hidden; the honesty
+  label stays), `drawer=<overlay id>`, `motion=0`. Keyboard: Space, arrows, N/B (next/previous moment), [ ], 1/2, P, L, E.
+
+The overlay contract is documented in [docs/OVERLAY.md](docs/OVERLAY.md) (times are on a replay timeline with a
+half-time break, not the raw match clock). The replay engine (clock, holds, seeking, time to overlays, score and stats
+at any moment, honesty labels) is unit-tested inside `uv run pytest` by running the JavaScript modules in V8. Status:
+built and checked by hand in Chromium; the end-to-end browser tests, README screenshots and the Azure Static Web Apps
+deployment are still to come.
+
 ## Stats engine as an MCP server
 
 `uv run pitchside mcp` serves the deterministic stats engine over the [Model Context Protocol](https://modelcontextprotocol.io)
@@ -233,7 +270,8 @@ the service returns.
 
 ## Technology
 
-Current: Python 3.11+, pydantic v2. Agents and model access (built and tested offline, not yet run live):
+Current: Python 3.11+, pydantic v2; the web UI is plain HTML, CSS and JavaScript modules with self-hosted OFL fonts
+(no framework, no build step). Agents and model access (built and tested offline, not yet run live):
 **Microsoft Agent Framework** (Python: `Agent`, graph workflows with `WorkflowBuilder`, function tools, MCP client tools,
 chat and function middleware), the **Model Context Protocol** Python SDK (the stats server), the **Azure AI Projects SDK** for the Microsoft Foundry project endpoint, and **Azure Identity**
 (Microsoft Entra ID, `DefaultAzureCredential`). Other Azure components are listed in
@@ -242,7 +280,7 @@ chat and function middleware), the **Model Context Protocol** Python SDK (the st
 ## Development
 
 ```bash
-uv run pytest                # ~2 min: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client, agents and MCP server (offline, fake client)
+uv run pytest                # ~2.5 min: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client, agents, MCP server, overlay contract and the web replay engine (offline, fake client)
 uv run python scripts/smoke_foundry.py   # manual, live, costs a few cents at most: not part of the test suite
 uv run pitchside eval-agents --seeds 201-205 --live   # manual live evaluation, see docs/LIVE_EVAL.md
 uv add <package>             # add a dependency (updates pyproject.toml and uv.lock)

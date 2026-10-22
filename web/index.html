@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pitchside</title>
+  <meta name="description" content="Replays recorded runs of the Pitchside pipeline: synthetic football events turned into explainable, verified, personalized match intelligence.">
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/broadcast.css">
+  <link rel="stylesheet" href="css/analyst.css">
+  <link rel="stylesheet" href="css/drawer.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body data-ready="false">
+  <a class="skip" href="#views">Skip to the match</a>
+
+  <header class="topbar" id="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><use href="#mark"></use></svg>
+      <div class="brand-text">
+        <span class="wordmark">PITCHSIDE</span>
+        <span class="tagline" data-i18n="tagline">Synthetic match intelligence, verified</span>
+      </div>
+    </div>
+
+    <label class="field run-field">
+      <span class="field-label" data-i18n="run">Run</span>
+      <select id="run-select"></select>
+    </label>
+
+    <div class="honesty" id="honesty">
+      <button type="button" class="badge badge-mode" id="mode-badge" aria-haspopup="dialog">…</button>
+      <button type="button" class="badge badge-fault" id="fault-badge" aria-haspopup="dialog" hidden></button>
+    </div>
+
+    <div class="topbar-controls">
+      <div class="seg" role="group" aria-label="View" data-i18n-label="view" id="view-seg">
+        <button type="button" data-view="broadcast" data-i18n="broadcast">Broadcast</button>
+        <button type="button" data-view="analyst" data-i18n="analyst">Analyst</button>
+      </div>
+      <label class="field">
+        <span class="field-label" data-i18n="audience">Audience</span>
+        <select id="persona-select"></select>
+      </label>
+      <div class="seg" role="group" aria-label="Language" data-i18n-label="language" id="lang-seg"></div>
+    </div>
+  </header>
+
+  <main id="views" tabindex="-1">
+    <section class="view view-broadcast" id="view-broadcast" aria-label="Broadcast view"></section>
+    <section class="view view-analyst" id="view-analyst" aria-label="Analyst view" hidden></section>
+    <div class="load-error" id="load-error" role="alert" hidden></div>
+  </main>
+
+  <footer class="transport" id="transport">
+    <div class="transport-buttons">
+      <button type="button" class="icon-btn" id="prev-btn" aria-label="Previous moment" data-i18n-label="prev">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h2v14H6zM20 5v14L9 12z"/></svg>
+      </button>
+      <button type="button" class="icon-btn play" id="play-btn" aria-label="Play" data-i18n-label="play">
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="i-play"><path d="M7 4v16l13-8z"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true" class="i-pause"><path d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg>
+      </button>
+      <button type="button" class="icon-btn" id="next-btn" aria-label="Next moment" data-i18n-label="next">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 5h2v14h-2zM4 5v14l11-7z"/></svg>
+      </button>
+    </div>
+    <output class="time" id="time-label" aria-live="off">00:00</output>
+    <div class="scrub">
+      <div class="scrub-marks" id="scrub-marks" aria-hidden="true"></div>
+      <input type="range" id="scrubber" min="0" max="1" step="1" value="0" aria-label="Match time" data-i18n-label="time">
+    </div>
+    <div class="seg speed" role="group" aria-label="Speed" data-i18n-label="speed" id="speed-seg"></div>
+    <button type="button" class="link-btn" id="info-btn" aria-haspopup="dialog" data-i18n="runInfo">Run info</button>
+  </footer>
+
+  <div class="clean-bug" id="clean-bug" aria-hidden="true"></div>
+
+  <dialog class="drawer" id="drawer" aria-labelledby="drawer-title"></dialog>
+  <dialog class="sheet" id="runinfo" aria-labelledby="runinfo-title"></dialog>
+  <div class="sr-only" id="announcer" aria-live="polite" aria-atomic="true"></div>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="mark" viewBox="0 0 32 32">
+        <rect x="1.5" y="5.5" width="29" height="21" rx="2" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M16 5.5v21" stroke="currentColor" stroke-width="2"/>
+        <circle cx="16" cy="16" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M22 11l3 3 5-6" fill="none" stroke="#ffb547" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+</body>
+</html>
