@@ -1,0 +1,93 @@
+{
+ "kind": "pitchside-demo-index",
+ "index_version": "1.0",
+ "runs": [
+  {
+   "slug": "comeback",
+   "title": "Comeback: Aurora Rovers v Ironvale Athletic",
+   "description": "A goal down at half-time, the home side lays siege and turns it round.",
+   "match_id": "aur_irv_comeback_0007",
+   "run_id": "sample-comeback",
+   "created_utc": "2026-10-22T16:32:25+00:00",
+   "storyline": "comeback",
+   "seed": 7,
+   "home": {
+    "team_id": "aur",
+    "name": "Aurora Rovers",
+    "short_name": "AUR"
+   },
+   "away": {
+    "team_id": "irv",
+    "name": "Ironvale Athletic",
+    "short_name": "IRV"
+   },
+   "final_score": {
+    "home": 2,
+    "away": 1
+   },
+   "llm_mode": "fake",
+   "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
+   "faults_injected": false,
+   "faults_fired": 0,
+   "fault_plan": null
+  },
+  {
+   "slug": "siege",
+   "title": "Siege: Harbourton City v Westmere Town",
+   "description": "Long spells of pressure, a pressing surge and the goals that follow.",
+   "match_id": "har_wst_siege_0003",
+   "run_id": "sample-siege",
+   "created_utc": "2026-10-22T16:32:26+00:00",
+   "storyline": "siege",
+   "seed": 3,
+   "home": {
+    "team_id": "har",
+    "name": "Harbourton City",
+    "short_name": "HAR"
+   },
+   "away": {
+    "team_id": "wst",
+    "name": "Westmere Town",
+    "short_name": "WST"
+   },
+   "final_score": {
+    "home": 2,
+    "away": 1
+   },
+   "llm_mode": "fake",
+   "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
+   "faults_injected": false,
+   "faults_fired": 0,
+   "fault_plan": null
+  },
+  {
+   "slug": "faults-demo",
+   "title": "Recovery demo: Westmere Town v Aurora Rovers",
+   "description": "An end-to-end match. Faults were injected on purpose (opt-in) to show how the pipeline recovers.",
+   "match_id": "wst_aur_end_to_end_0004",
+   "run_id": "sample-faults-demo",
+   "created_utc": "2026-10-22T16:32:27+00:00",
+   "storyline": "end_to_end",
+   "seed": 4,
+   "home": {
+    "team_id": "wst",
+    "name": "Westmere Town",
+    "short_name": "WST"
+   },
+   "away": {
+    "team_id": "aur",
+    "name": "Aurora Rovers",
+    "short_name": "AUR"
+   },
+   "final_score": {
+    "home": 2,
+    "away": 2
+   },
+   "llm_mode": "fake",
+   "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output (faults were deliberately injected to show recovery)",
+   "faults_injected": true,
+   "faults_fired": 16,
+   "fault_plan": "demo"
+  }
+ ]
+}

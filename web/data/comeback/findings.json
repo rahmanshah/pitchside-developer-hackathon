@@ -1,0 +1,2334 @@
+[
+ {
+  "finding_id": "aur_irv_comeback_0007:chaos_spell:0",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "chaos_spell",
+  "status": "start",
+  "team_id": null,
+  "start_s": 0.0,
+  "end_s": 395.9,
+  "detected_at_s": 395.9,
+  "event_ids": [],
+  "severity": 0.793,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "chaos_index",
+    "team_id": null,
+    "value": 0.793,
+    "unit": "index",
+    "window_start_s": 0.0,
+    "window_end_s": 395.9,
+    "baseline": null
+   },
+   {
+    "metric": "turnovers_per_min",
+    "team_id": null,
+    "value": 2.728,
+    "unit": "per_min",
+    "window_start_s": 0.0,
+    "window_end_s": 395.9,
+    "baseline": 1.8
+   },
+   {
+    "metric": "pass_completion",
+    "team_id": null,
+    "value": 70.7,
+    "unit": "pct",
+    "window_start_s": 0.0,
+    "window_end_s": 395.9,
+    "baseline": 84.0
+   },
+   {
+    "metric": "mean_spell",
+    "team_id": null,
+    "value": 17.383,
+    "unit": "s",
+    "window_start_s": 0.0,
+    "window_end_s": 395.9,
+    "baseline": 32.0
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:counter_attack:0",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 461.1,
+  "end_s": 468.7,
+  "detected_at_s": 468.7,
+  "event_ids": [
+   107,
+   109
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "aur",
+    "value": 7.6,
+    "unit": "s",
+    "window_start_s": 461.1,
+    "window_end_s": 468.7,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 461.1,
+    "window_end_s": 468.7,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 30.0,
+    "unit": "m",
+    "window_start_s": 461.1,
+    "window_end_s": 468.7,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "aur",
+    "value": 66.6,
+    "unit": "m",
+    "window_start_s": 461.1,
+    "window_end_s": 461.1,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "aur",
+    "value": 8.429,
+    "unit": "m",
+    "window_start_s": 468.7,
+    "window_end_s": 468.7,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 468.7,
+    "window_end_s": 468.7,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:0",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 461.1,
+  "end_s": 492.5,
+  "detected_at_s": 492.5,
+  "event_ids": [
+   113
+  ],
+  "severity": 0.869,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.469,
+    "unit": "xg",
+    "window_start_s": 492.5,
+    "window_end_s": 492.5,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 5.3,
+    "unit": "m",
+    "window_start_s": 492.5,
+    "window_end_s": 492.5,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 0.525,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 492.5,
+    "baseline": 0.0
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 492.5,
+    "baseline": 0.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.203,
+    "unit": "index",
+    "window_start_s": 192.5,
+    "window_end_s": 492.5,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 31.4,
+    "unit": "s",
+    "window_start_s": 461.1,
+    "window_end_s": 492.5,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 4.0,
+    "unit": "count",
+    "window_start_s": 461.1,
+    "window_end_s": 492.5,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 33.6,
+    "unit": "m",
+    "window_start_s": 461.1,
+    "window_end_s": 492.5,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 461.1,
+    "window_end_s": 461.1,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:chaos_spell:1",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "chaos_spell",
+  "status": "end",
+  "team_id": null,
+  "start_s": 0.0,
+  "end_s": 628.3,
+  "detected_at_s": 749.8,
+  "event_ids": [],
+  "severity": 0.793,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "spell_duration",
+    "team_id": null,
+    "value": 628.3,
+    "unit": "s",
+    "window_start_s": 0.0,
+    "window_end_s": 628.3,
+    "baseline": null
+   },
+   {
+    "metric": "chaos_index",
+    "team_id": null,
+    "value": 0.068,
+    "unit": "index",
+    "window_start_s": 269.79999999999995,
+    "window_end_s": 749.8,
+    "baseline": null
+   },
+   {
+    "metric": "turnovers_per_min",
+    "team_id": null,
+    "value": 2.0,
+    "unit": "per_min",
+    "window_start_s": 269.79999999999995,
+    "window_end_s": 749.8,
+    "baseline": 1.8
+   },
+   {
+    "metric": "pass_completion",
+    "team_id": null,
+    "value": 83.3,
+    "unit": "pct",
+    "window_start_s": 269.79999999999995,
+    "window_end_s": 749.8,
+    "baseline": 84.0
+   },
+   {
+    "metric": "mean_spell",
+    "team_id": null,
+    "value": 31.5,
+    "unit": "s",
+    "window_start_s": 269.79999999999995,
+    "window_end_s": 749.8,
+    "baseline": 32.0
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:goal:0",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "goal",
+  "status": "moment",
+  "team_id": "irv",
+  "start_s": 1550.4,
+  "end_s": 1588.9,
+  "detected_at_s": 1588.9,
+  "event_ids": [
+   359
+  ],
+  "severity": 1.0,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "irv",
+    "value": 0.089,
+    "unit": "xg",
+    "window_start_s": 1588.9,
+    "window_end_s": 1588.9,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "irv",
+    "value": 15.4,
+    "unit": "m",
+    "window_start_s": 1588.9,
+    "window_end_s": 1588.9,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "irv",
+    "value": 0.232,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 1588.9,
+    "baseline": 0.584
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "irv",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 1588.9,
+    "baseline": 3.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "irv",
+    "value": 0.118,
+    "unit": "index",
+    "window_start_s": 1288.9,
+    "window_end_s": 1588.9,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "irv",
+    "value": 38.5,
+    "unit": "s",
+    "window_start_s": 1550.4,
+    "window_end_s": 1588.9,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "irv",
+    "value": 4.0,
+    "unit": "count",
+    "window_start_s": 1550.4,
+    "window_end_s": 1588.9,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "irv",
+    "value": 55.9,
+    "unit": "m",
+    "window_start_s": 1550.4,
+    "window_end_s": 1588.9,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "irv",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 1550.4,
+    "window_end_s": 1550.4,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:counter_attack:1",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 2447.5,
+  "end_s": 2456.1,
+  "detected_at_s": 2456.1,
+  "event_ids": [
+   551,
+   553
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "aur",
+    "value": 8.6,
+    "unit": "s",
+    "window_start_s": 2447.5,
+    "window_end_s": 2456.1,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 2447.5,
+    "window_end_s": 2456.1,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 54.9,
+    "unit": "m",
+    "window_start_s": 2447.5,
+    "window_end_s": 2456.1,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "aur",
+    "value": 38.0,
+    "unit": "m",
+    "window_start_s": 2447.5,
+    "window_end_s": 2447.5,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "aur",
+    "value": 12.102,
+    "unit": "m",
+    "window_start_s": 2456.1,
+    "window_end_s": 2456.1,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 2456.1,
+    "window_end_s": 2456.1,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:counter_attack:2",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 2471.8,
+  "end_s": 2481.8,
+  "detected_at_s": 2481.8,
+  "event_ids": [
+   560,
+   562
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "aur",
+    "value": 10.0,
+    "unit": "s",
+    "window_start_s": 2471.8,
+    "window_end_s": 2481.8,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 2471.8,
+    "window_end_s": 2481.8,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 48.9,
+    "unit": "m",
+    "window_start_s": 2471.8,
+    "window_end_s": 2481.8,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "aur",
+    "value": 45.7,
+    "unit": "m",
+    "window_start_s": 2471.8,
+    "window_end_s": 2471.8,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "aur",
+    "value": 10.4,
+    "unit": "m",
+    "window_start_s": 2481.8,
+    "window_end_s": 2481.8,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 2481.8,
+    "window_end_s": 2481.8,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:1",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "irv",
+  "start_s": 2995.2,
+  "end_s": 3009.1,
+  "detected_at_s": 3009.1,
+  "event_ids": [
+   671
+  ],
+  "severity": 0.687,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "irv",
+    "value": 0.287,
+    "unit": "xg",
+    "window_start_s": 3009.1,
+    "window_end_s": 3009.1,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "irv",
+    "value": 7.6,
+    "unit": "m",
+    "window_start_s": 3009.1,
+    "window_end_s": 3009.1,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "irv",
+    "value": 0.71,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 3009.1,
+    "baseline": 0.752
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "irv",
+    "value": 5.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 3009.1,
+    "baseline": 5.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "irv",
+    "value": -0.226,
+    "unit": "index",
+    "window_start_s": 2709.1,
+    "window_end_s": 3009.1,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "irv",
+    "value": 13.9,
+    "unit": "s",
+    "window_start_s": 2995.2,
+    "window_end_s": 3009.1,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "irv",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 2995.2,
+    "window_end_s": 3009.1,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "irv",
+    "value": 8.8,
+    "unit": "m",
+    "window_start_s": 2995.2,
+    "window_end_s": 3009.1,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "irv",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 2995.2,
+    "window_end_s": 2995.2,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:counter_attack:3",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "irv",
+  "start_s": 3034.9,
+  "end_s": 3044.2,
+  "detected_at_s": 3044.2,
+  "event_ids": [
+   677,
+   679
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "irv",
+    "value": 9.3,
+    "unit": "s",
+    "window_start_s": 3034.9,
+    "window_end_s": 3044.2,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "irv",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 3034.9,
+    "window_end_s": 3044.2,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "irv",
+    "value": 34.7,
+    "unit": "m",
+    "window_start_s": 3034.9,
+    "window_end_s": 3044.2,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "irv",
+    "value": 56.1,
+    "unit": "m",
+    "window_start_s": 3034.9,
+    "window_end_s": 3034.9,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "irv",
+    "value": 14.206,
+    "unit": "m",
+    "window_start_s": 3044.2,
+    "window_end_s": 3044.2,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "irv",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 3044.2,
+    "window_end_s": 3044.2,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:2",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 3208.8,
+  "end_s": 3232.8,
+  "detected_at_s": 3232.8,
+  "event_ids": [
+   719
+  ],
+  "severity": 0.799,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.399,
+    "unit": "xg",
+    "window_start_s": 3232.8,
+    "window_end_s": 3232.8,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 6.1,
+    "unit": "m",
+    "window_start_s": 3232.8,
+    "window_end_s": 3232.8,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 1.151,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 3232.8,
+    "baseline": 0.833
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 6.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 3232.8,
+    "baseline": 6.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": -0.08,
+    "unit": "index",
+    "window_start_s": 2932.8,
+    "window_end_s": 3232.8,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 24.0,
+    "unit": "s",
+    "window_start_s": 3208.8,
+    "window_end_s": 3232.8,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 3.0,
+    "unit": "count",
+    "window_start_s": 3208.8,
+    "window_end_s": 3232.8,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 41.6,
+    "unit": "m",
+    "window_start_s": 3208.8,
+    "window_end_s": 3232.8,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 3208.8,
+    "window_end_s": 3208.8,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:3",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 3332.8,
+  "end_s": 3381.6,
+  "detected_at_s": 3381.6,
+  "event_ids": [
+   754
+  ],
+  "severity": 0.747,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.347,
+    "unit": "xg",
+    "window_start_s": 3381.6,
+    "window_end_s": 3381.6,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 6.9,
+    "unit": "m",
+    "window_start_s": 3381.6,
+    "window_end_s": 3381.6,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 1.498,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 3381.6,
+    "baseline": 0.833
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 7.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 3381.6,
+    "baseline": 6.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.412,
+    "unit": "index",
+    "window_start_s": 3081.6,
+    "window_end_s": 3381.6,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 48.8,
+    "unit": "s",
+    "window_start_s": 3332.8,
+    "window_end_s": 3381.6,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 6.0,
+    "unit": "count",
+    "window_start_s": 3332.8,
+    "window_end_s": 3381.6,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 59.2,
+    "unit": "m",
+    "window_start_s": 3332.8,
+    "window_end_s": 3381.6,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 3332.8,
+    "window_end_s": 3332.8,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:siege:0",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "siege",
+  "status": "start",
+  "team_id": "aur",
+  "start_s": 3175.0,
+  "end_s": 3475.0,
+  "detected_at_s": 3475.0,
+  "event_ids": [],
+  "severity": 0.4,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "field_tilt",
+    "team_id": "aur",
+    "value": 70.0,
+    "unit": "pct",
+    "window_start_s": 3175.0,
+    "window_end_s": 3475.0,
+    "baseline": 50.0
+   },
+   {
+    "metric": "shots",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 3175.0,
+    "window_end_s": 3475.0,
+    "baseline": 0.0
+   },
+   {
+    "metric": "xg",
+    "team_id": "aur",
+    "value": 0.746,
+    "unit": "xg",
+    "window_start_s": 3175.0,
+    "window_end_s": 3475.0,
+    "baseline": 0.0
+   },
+   {
+    "metric": "possession",
+    "team_id": "aur",
+    "value": 55.7,
+    "unit": "pct",
+    "window_start_s": 3175.0,
+    "window_end_s": 3475.0,
+    "baseline": 50.0
+   },
+   {
+    "metric": "pressures_per_min",
+    "team_id": "aur",
+    "value": 3.2,
+    "unit": "per_min",
+    "window_start_s": 3175.0,
+    "window_end_s": 3475.0,
+    "baseline": 0.0
+   },
+   {
+    "metric": "opponent_final_third_passes",
+    "team_id": "irv",
+    "value": 3.0,
+    "unit": "count",
+    "window_start_s": 3175.0,
+    "window_end_s": 3475.0,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:pressure_surge:0",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "pressure_surge",
+  "status": "start",
+  "team_id": "aur",
+  "start_s": 3235.9,
+  "end_s": 3535.9,
+  "detected_at_s": 3535.9,
+  "event_ids": [],
+  "severity": 0.833,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "pressures_per_min",
+    "team_id": "aur",
+    "value": 4.333,
+    "unit": "per_min",
+    "window_start_s": 3355.9,
+    "window_end_s": 3535.9,
+    "baseline": 0.948
+   },
+   {
+    "metric": "tackles_won",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 3235.9,
+    "window_end_s": 3535.9,
+    "baseline": null
+   },
+   {
+    "metric": "opponent_pass_completion",
+    "team_id": "irv",
+    "value": 75.0,
+    "unit": "pct",
+    "window_start_s": 3235.9,
+    "window_end_s": 3535.9,
+    "baseline": 73.7
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.455,
+    "unit": "index",
+    "window_start_s": 3235.9,
+    "window_end_s": 3535.9,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:4",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 3861.1,
+  "end_s": 3871.9,
+  "detected_at_s": 3871.9,
+  "event_ids": [
+   885
+  ],
+  "severity": 0.687,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.287,
+    "unit": "xg",
+    "window_start_s": 3871.9,
+    "window_end_s": 3871.9,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 7.7,
+    "unit": "m",
+    "window_start_s": 3871.9,
+    "window_end_s": 3871.9,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 2.127,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 3871.9,
+    "baseline": 0.833
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 12.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 3871.9,
+    "baseline": 6.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.649,
+    "unit": "index",
+    "window_start_s": 3571.9,
+    "window_end_s": 3871.9,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 10.8,
+    "unit": "s",
+    "window_start_s": 3861.1,
+    "window_end_s": 3871.9,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 3861.1,
+    "window_end_s": 3871.9,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 8.5,
+    "unit": "m",
+    "window_start_s": 3861.1,
+    "window_end_s": 3871.9,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 3861.1,
+    "window_end_s": 3861.1,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:5",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 3878.1,
+  "end_s": 3881.3,
+  "detected_at_s": 3881.3,
+  "event_ids": [
+   890
+  ],
+  "severity": 1.0,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.64,
+    "unit": "xg",
+    "window_start_s": 3881.3,
+    "window_end_s": 3881.3,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 4.0,
+    "unit": "m",
+    "window_start_s": 3881.3,
+    "window_end_s": 3881.3,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 2.767,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 3881.3,
+    "baseline": 0.833
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 13.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 3881.3,
+    "baseline": 6.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.708,
+    "unit": "index",
+    "window_start_s": 3581.3,
+    "window_end_s": 3881.3,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 3.2,
+    "unit": "s",
+    "window_start_s": 3878.1,
+    "window_end_s": 3881.3,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 3878.1,
+    "window_end_s": 3881.3,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "m",
+    "window_start_s": 3878.1,
+    "window_end_s": 3881.3,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 3878.1,
+    "window_end_s": 3878.1,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:momentum_shift:0",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "momentum_shift",
+  "status": "start",
+  "team_id": "aur",
+  "start_s": 3588.8,
+  "end_s": 3888.8,
+  "detected_at_s": 3888.8,
+  "event_ids": [],
+  "severity": 0.706,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.706,
+    "unit": "index",
+    "window_start_s": 3588.8,
+    "window_end_s": 3888.8,
+    "baseline": null
+   },
+   {
+    "metric": "field_tilt",
+    "team_id": "aur",
+    "value": 86.7,
+    "unit": "pct",
+    "window_start_s": 3588.8,
+    "window_end_s": 3888.8,
+    "baseline": 50.0
+   },
+   {
+    "metric": "shots",
+    "team_id": "aur",
+    "value": 5.0,
+    "unit": "count",
+    "window_start_s": 3588.8,
+    "window_end_s": 3888.8,
+    "baseline": 0.0
+   },
+   {
+    "metric": "xg",
+    "team_id": "aur",
+    "value": 1.25,
+    "unit": "xg",
+    "window_start_s": 3588.8,
+    "window_end_s": 3888.8,
+    "baseline": 0.0
+   },
+   {
+    "metric": "pressures_per_min",
+    "team_id": "aur",
+    "value": 3.2,
+    "unit": "per_min",
+    "window_start_s": 3588.8,
+    "window_end_s": 3888.8,
+    "baseline": 0.0
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:6",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 3938.9,
+  "end_s": 3969.5,
+  "detected_at_s": 3969.5,
+  "event_ids": [
+   915
+  ],
+  "severity": 0.881,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.481,
+    "unit": "xg",
+    "window_start_s": 3969.5,
+    "window_end_s": 3969.5,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 5.2,
+    "unit": "m",
+    "window_start_s": 3969.5,
+    "window_end_s": 3969.5,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 3.248,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 3969.5,
+    "baseline": 0.833
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 14.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 3969.5,
+    "baseline": 6.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.788,
+    "unit": "index",
+    "window_start_s": 3669.5,
+    "window_end_s": 3969.5,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 30.6,
+    "unit": "s",
+    "window_start_s": 3938.9,
+    "window_end_s": 3969.5,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 4.0,
+    "unit": "count",
+    "window_start_s": 3938.9,
+    "window_end_s": 3969.5,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 31.0,
+    "unit": "m",
+    "window_start_s": 3938.9,
+    "window_end_s": 3969.5,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 3938.9,
+    "window_end_s": 3938.9,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:counter_attack:4",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 3997.8,
+  "end_s": 4007.0,
+  "detected_at_s": 4007.0,
+  "event_ids": [
+   926,
+   928
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "aur",
+    "value": 9.2,
+    "unit": "s",
+    "window_start_s": 3997.8,
+    "window_end_s": 4007.0,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 3997.8,
+    "window_end_s": 4007.0,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 62.0,
+    "unit": "m",
+    "window_start_s": 3997.8,
+    "window_end_s": 4007.0,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "aur",
+    "value": 37.0,
+    "unit": "m",
+    "window_start_s": 3997.8,
+    "window_end_s": 3997.8,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "aur",
+    "value": 6.294,
+    "unit": "m",
+    "window_start_s": 4007.0,
+    "window_end_s": 4007.0,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 4007.0,
+    "window_end_s": 4007.0,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:7",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 3997.8,
+  "end_s": 4017.6,
+  "detected_at_s": 4017.6,
+  "event_ids": [
+   929
+  ],
+  "severity": 0.785,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.385,
+    "unit": "xg",
+    "window_start_s": 4017.6,
+    "window_end_s": 4017.6,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 6.3,
+    "unit": "m",
+    "window_start_s": 4017.6,
+    "window_end_s": 4017.6,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 3.633,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 4017.6,
+    "baseline": 0.833
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 15.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 4017.6,
+    "baseline": 6.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.783,
+    "unit": "index",
+    "window_start_s": 3717.6,
+    "window_end_s": 4017.6,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 19.8,
+    "unit": "s",
+    "window_start_s": 3997.8,
+    "window_end_s": 4017.6,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 3997.8,
+    "window_end_s": 4017.6,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 62.0,
+    "unit": "m",
+    "window_start_s": 3997.8,
+    "window_end_s": 4017.6,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 3997.8,
+    "window_end_s": 3997.8,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:8",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 4020.9,
+  "end_s": 4023.5,
+  "detected_at_s": 4023.5,
+  "event_ids": [
+   934
+  ],
+  "severity": 0.785,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.385,
+    "unit": "xg",
+    "window_start_s": 4023.5,
+    "window_end_s": 4023.5,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 6.3,
+    "unit": "m",
+    "window_start_s": 4023.5,
+    "window_end_s": 4023.5,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 4.018,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 4023.5,
+    "baseline": 0.833
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 16.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 4023.5,
+    "baseline": 6.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.795,
+    "unit": "index",
+    "window_start_s": 3723.5,
+    "window_end_s": 4023.5,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 2.6,
+    "unit": "s",
+    "window_start_s": 4020.9,
+    "window_end_s": 4023.5,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 4020.9,
+    "window_end_s": 4023.5,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "m",
+    "window_start_s": 4020.9,
+    "window_end_s": 4023.5,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 4020.9,
+    "window_end_s": 4020.9,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:counter_attack:5",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 4270.9,
+  "end_s": 4280.1,
+  "detected_at_s": 4280.1,
+  "event_ids": [
+   1000,
+   1002
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 0,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "aur",
+    "value": 9.2,
+    "unit": "s",
+    "window_start_s": 4270.9,
+    "window_end_s": 4280.1,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 4270.9,
+    "window_end_s": 4280.1,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 43.6,
+    "unit": "m",
+    "window_start_s": 4270.9,
+    "window_end_s": 4280.1,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "aur",
+    "value": 57.5,
+    "unit": "m",
+    "window_start_s": 4270.9,
+    "window_end_s": 4270.9,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "aur",
+    "value": 3.92,
+    "unit": "m",
+    "window_start_s": 4280.1,
+    "window_end_s": 4280.1,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 4280.1,
+    "window_end_s": 4280.1,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:goal:1",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "goal",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 4270.9,
+  "end_s": 4285.4,
+  "detected_at_s": 4285.4,
+  "event_ids": [
+   1003
+  ],
+  "severity": 1.0,
+  "score": {
+   "home": 1,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.644,
+    "unit": "xg",
+    "window_start_s": 4285.4,
+    "window_end_s": 4285.4,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 4.0,
+    "unit": "m",
+    "window_start_s": 4285.4,
+    "window_end_s": 4285.4,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 4.662,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 4285.4,
+    "baseline": 0.833
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 17.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 4285.4,
+    "baseline": 6.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.576,
+    "unit": "index",
+    "window_start_s": 3985.3999999999996,
+    "window_end_s": 4285.4,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 14.5,
+    "unit": "s",
+    "window_start_s": 4270.9,
+    "window_end_s": 4285.4,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 4270.9,
+    "window_end_s": 4285.4,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 43.6,
+    "unit": "m",
+    "window_start_s": 4270.9,
+    "window_end_s": 4285.4,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 4270.9,
+    "window_end_s": 4270.9,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:9",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 4440.8,
+  "end_s": 4497.4,
+  "detected_at_s": 4497.4,
+  "event_ids": [
+   1045
+  ],
+  "severity": 0.755,
+  "score": {
+   "home": 1,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.355,
+    "unit": "xg",
+    "window_start_s": 4497.4,
+    "window_end_s": 4497.4,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 6.5,
+    "unit": "m",
+    "window_start_s": 4497.4,
+    "window_end_s": 4497.4,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 5.017,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 4497.4,
+    "baseline": 0.863
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 18.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 4497.4,
+    "baseline": 7.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.544,
+    "unit": "index",
+    "window_start_s": 4197.4,
+    "window_end_s": 4497.4,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 56.6,
+    "unit": "s",
+    "window_start_s": 4440.8,
+    "window_end_s": 4497.4,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 8.0,
+    "unit": "count",
+    "window_start_s": 4440.8,
+    "window_end_s": 4497.4,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 20.2,
+    "unit": "m",
+    "window_start_s": 4440.8,
+    "window_end_s": 4497.4,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 4440.8,
+    "window_end_s": 4440.8,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:big_chance:10",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 4952.2,
+  "end_s": 4961.7,
+  "detected_at_s": 4961.7,
+  "event_ids": [
+   1197
+  ],
+  "severity": 0.742,
+  "score": {
+   "home": 1,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.342,
+    "unit": "xg",
+    "window_start_s": 4961.7,
+    "window_end_s": 4961.7,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 5.7,
+    "unit": "m",
+    "window_start_s": 4961.7,
+    "window_end_s": 4961.7,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 5.767,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 4961.7,
+    "baseline": 0.863
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 23.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 4961.7,
+    "baseline": 7.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.523,
+    "unit": "index",
+    "window_start_s": 4661.7,
+    "window_end_s": 4961.7,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 9.5,
+    "unit": "s",
+    "window_start_s": 4952.2,
+    "window_end_s": 4961.7,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 4952.2,
+    "window_end_s": 4961.7,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 12.3,
+    "unit": "m",
+    "window_start_s": 4952.2,
+    "window_end_s": 4961.7,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 4952.2,
+    "window_end_s": 4952.2,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:chaos_spell:2",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "chaos_spell",
+  "status": "start",
+  "team_id": null,
+  "start_s": 4539.2,
+  "end_s": 5019.2,
+  "detected_at_s": 5019.2,
+  "event_ids": [],
+  "severity": 0.777,
+  "score": {
+   "home": 1,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "chaos_index",
+    "team_id": null,
+    "value": 0.777,
+    "unit": "index",
+    "window_start_s": 4539.2,
+    "window_end_s": 5019.2,
+    "baseline": null
+   },
+   {
+    "metric": "turnovers_per_min",
+    "team_id": null,
+    "value": 3.5,
+    "unit": "per_min",
+    "window_start_s": 4539.2,
+    "window_end_s": 5019.2,
+    "baseline": 1.8
+   },
+   {
+    "metric": "pass_completion",
+    "team_id": null,
+    "value": 77.9,
+    "unit": "pct",
+    "window_start_s": 4539.2,
+    "window_end_s": 5019.2,
+    "baseline": 84.0
+   },
+   {
+    "metric": "mean_spell",
+    "team_id": null,
+    "value": 17.204,
+    "unit": "s",
+    "window_start_s": 4539.2,
+    "window_end_s": 5019.2,
+    "baseline": 32.0
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:goal:2",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "goal",
+  "status": "moment",
+  "team_id": "aur",
+  "start_s": 5193.6,
+  "end_s": 5197.9,
+  "detected_at_s": 5197.9,
+  "event_ids": [
+   1277
+  ],
+  "severity": 1.0,
+  "score": {
+   "home": 2,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "aur",
+    "value": 0.685,
+    "unit": "xg",
+    "window_start_s": 5197.9,
+    "window_end_s": 5197.9,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "aur",
+    "value": 3.7,
+    "unit": "m",
+    "window_start_s": 5197.9,
+    "window_end_s": 5197.9,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "aur",
+    "value": 6.452,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 5197.9,
+    "baseline": 0.863
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "aur",
+    "value": 24.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 5197.9,
+    "baseline": 7.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "aur",
+    "value": 0.552,
+    "unit": "index",
+    "window_start_s": 4897.9,
+    "window_end_s": 5197.9,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "aur",
+    "value": 4.3,
+    "unit": "s",
+    "window_start_s": 5193.6,
+    "window_end_s": 5197.9,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 5193.6,
+    "window_end_s": 5197.9,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "aur",
+    "value": 0.0,
+    "unit": "m",
+    "window_start_s": 5193.6,
+    "window_end_s": 5197.9,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "aur",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 5193.6,
+    "window_end_s": 5193.6,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:pressure_surge:1",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "pressure_surge",
+  "status": "end",
+  "team_id": "aur",
+  "start_s": 3235.9,
+  "end_s": 5400.0,
+  "detected_at_s": 5400.0,
+  "event_ids": [],
+  "severity": 0.833,
+  "score": {
+   "home": 2,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "spell_duration",
+    "team_id": "aur",
+    "value": 2164.1,
+    "unit": "s",
+    "window_start_s": 3235.9,
+    "window_end_s": 5400.0,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:siege:1",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "siege",
+  "status": "end",
+  "team_id": "aur",
+  "start_s": 3175.0,
+  "end_s": 5400.0,
+  "detected_at_s": 5400.0,
+  "event_ids": [],
+  "severity": 0.4,
+  "score": {
+   "home": 2,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "spell_duration",
+    "team_id": "aur",
+    "value": 2225.0,
+    "unit": "s",
+    "window_start_s": 3175.0,
+    "window_end_s": 5400.0,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:momentum_shift:1",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "momentum_shift",
+  "status": "end",
+  "team_id": "aur",
+  "start_s": 3588.8,
+  "end_s": 5400.0,
+  "detected_at_s": 5400.0,
+  "event_ids": [],
+  "severity": 0.706,
+  "score": {
+   "home": 2,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "spell_duration",
+    "team_id": "aur",
+    "value": 1811.2,
+    "unit": "s",
+    "window_start_s": 3588.8,
+    "window_end_s": 5400.0,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "aur_irv_comeback_0007:chaos_spell:3",
+  "match_id": "aur_irv_comeback_0007",
+  "kind": "chaos_spell",
+  "status": "end",
+  "team_id": null,
+  "start_s": 4539.2,
+  "end_s": 5400.0,
+  "detected_at_s": 5400.0,
+  "event_ids": [],
+  "severity": 0.777,
+  "score": {
+   "home": 2,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "spell_duration",
+    "team_id": null,
+    "value": 860.8,
+    "unit": "s",
+    "window_start_s": 4539.2,
+    "window_end_s": 5400.0,
+    "baseline": null
+   }
+  ]
+ }
+]

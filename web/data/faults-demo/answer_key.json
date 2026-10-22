@@ -1,0 +1,95 @@
+{
+ "match_id": "wst_aur_end_to_end_0004",
+ "seed": 4,
+ "storyline": "end_to_end",
+ "description": "An open, high-tempo game where control gives way to chaos and goals trade.",
+ "phases": [
+  {
+   "label": "open_game",
+   "kind": "chaos",
+   "description": "Both teams push high; passing accuracy drops and turnovers pile up.",
+   "team_ids": [
+    "wst",
+    "aur"
+   ],
+   "start_s": 1800,
+   "end_s": 3600
+  }
+ ],
+ "scripted_goals": [
+  {
+   "description": "Home open the scoring in a stretched game.",
+   "team_id": "wst",
+   "scripted_minute": 34,
+   "event_id": 496,
+   "clock_s": 2079.7
+  },
+  {
+   "description": "Away hit back before half-time.",
+   "team_id": "aur",
+   "scripted_minute": 41,
+   "event_id": 776,
+   "clock_s": 2823.7
+  },
+  {
+   "description": "Home retake the lead.",
+   "team_id": "wst",
+   "scripted_minute": 58,
+   "event_id": 1056,
+   "clock_s": 3566.5
+  },
+  {
+   "description": "Away snatch a late equaliser.",
+   "team_id": "aur",
+   "scripted_minute": 83,
+   "event_id": 1359,
+   "clock_s": 5010.1
+  }
+ ],
+ "goals": [
+  {
+   "event_id": 496,
+   "clock_s": 2079.7,
+   "team_id": "wst",
+   "player_id": "wst_09",
+   "score_after": {
+    "home": 1,
+    "away": 0
+   }
+  },
+  {
+   "event_id": 776,
+   "clock_s": 2823.7,
+   "team_id": "aur",
+   "player_id": "aur_09",
+   "score_after": {
+    "home": 1,
+    "away": 1
+   }
+  },
+  {
+   "event_id": 1056,
+   "clock_s": 3566.5,
+   "team_id": "wst",
+   "player_id": "wst_07",
+   "score_after": {
+    "home": 2,
+    "away": 1
+   }
+  },
+  {
+   "event_id": 1359,
+   "clock_s": 5010.1,
+   "team_id": "aur",
+   "player_id": "aur_09",
+   "score_after": {
+    "home": 2,
+    "away": 2
+   }
+  }
+ ],
+ "final_score": {
+  "home": 2,
+  "away": 2
+ }
+}

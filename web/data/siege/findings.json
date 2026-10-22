@@ -1,0 +1,1238 @@
+[
+ {
+  "finding_id": "har_wst_siege_0003:big_chance:0",
+  "match_id": "har_wst_siege_0003",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "wst",
+  "start_s": 433.8,
+  "end_s": 437.6,
+  "detected_at_s": 437.6,
+  "event_ids": [
+   111
+  ],
+  "severity": 0.905,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "wst",
+    "value": 0.505,
+    "unit": "xg",
+    "window_start_s": 437.6,
+    "window_end_s": 437.6,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "wst",
+    "value": 5.1,
+    "unit": "m",
+    "window_start_s": 437.6,
+    "window_end_s": 437.6,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "wst",
+    "value": 0.6,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 437.6,
+    "baseline": 0.182
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "wst",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 437.6,
+    "baseline": 1.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "wst",
+    "value": 0.154,
+    "unit": "index",
+    "window_start_s": 137.60000000000002,
+    "window_end_s": 437.6,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "wst",
+    "value": 3.8,
+    "unit": "s",
+    "window_start_s": 433.8,
+    "window_end_s": 437.6,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "wst",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 433.8,
+    "window_end_s": 437.6,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "wst",
+    "value": -0.0,
+    "unit": "m",
+    "window_start_s": 433.8,
+    "window_end_s": 437.6,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "wst",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 433.8,
+    "window_end_s": 433.8,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:counter_attack:0",
+  "match_id": "har_wst_siege_0003",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "har",
+  "start_s": 556.7,
+  "end_s": 566.9,
+  "detected_at_s": 566.9,
+  "event_ids": [
+   137,
+   139
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "har",
+    "value": 10.2,
+    "unit": "s",
+    "window_start_s": 556.7,
+    "window_end_s": 566.9,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "har",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 556.7,
+    "window_end_s": 566.9,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "har",
+    "value": 62.0,
+    "unit": "m",
+    "window_start_s": 556.7,
+    "window_end_s": 566.9,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "har",
+    "value": 32.9,
+    "unit": "m",
+    "window_start_s": 556.7,
+    "window_end_s": 556.7,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "har",
+    "value": 11.098,
+    "unit": "m",
+    "window_start_s": 566.9,
+    "window_end_s": 566.9,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 566.9,
+    "window_end_s": 566.9,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:counter_attack:1",
+  "match_id": "har_wst_siege_0003",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "har",
+  "start_s": 798.6,
+  "end_s": 808.7,
+  "detected_at_s": 808.7,
+  "event_ids": [
+   196,
+   198
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "har",
+    "value": 10.1,
+    "unit": "s",
+    "window_start_s": 798.6,
+    "window_end_s": 808.7,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "har",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 798.6,
+    "window_end_s": 808.7,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "har",
+    "value": 40.4,
+    "unit": "m",
+    "window_start_s": 798.6,
+    "window_end_s": 808.7,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "har",
+    "value": 52.6,
+    "unit": "m",
+    "window_start_s": 798.6,
+    "window_end_s": 798.6,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "har",
+    "value": 12.081,
+    "unit": "m",
+    "window_start_s": 808.7,
+    "window_end_s": 808.7,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 808.7,
+    "window_end_s": 808.7,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:momentum_shift:0",
+  "match_id": "har_wst_siege_0003",
+  "kind": "momentum_shift",
+  "status": "start",
+  "team_id": "har",
+  "start_s": 1129.6,
+  "end_s": 1429.6,
+  "detected_at_s": 1429.6,
+  "event_ids": [],
+  "severity": 0.63,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "momentum",
+    "team_id": "har",
+    "value": 0.63,
+    "unit": "index",
+    "window_start_s": 1129.6,
+    "window_end_s": 1429.6,
+    "baseline": null
+   },
+   {
+    "metric": "field_tilt",
+    "team_id": "har",
+    "value": 88.9,
+    "unit": "pct",
+    "window_start_s": 1129.6,
+    "window_end_s": 1429.6,
+    "baseline": 50.0
+   },
+   {
+    "metric": "shots",
+    "team_id": "har",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 1129.6,
+    "window_end_s": 1429.6,
+    "baseline": 0.0
+   },
+   {
+    "metric": "xg",
+    "team_id": "har",
+    "value": 0.41,
+    "unit": "xg",
+    "window_start_s": 1129.6,
+    "window_end_s": 1429.6,
+    "baseline": 0.0
+   },
+   {
+    "metric": "pressures_per_min",
+    "team_id": "har",
+    "value": 2.8,
+    "unit": "per_min",
+    "window_start_s": 1129.6,
+    "window_end_s": 1429.6,
+    "baseline": 0.0
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:siege:0",
+  "match_id": "har_wst_siege_0003",
+  "kind": "siege",
+  "status": "start",
+  "team_id": "har",
+  "start_s": 1137.7,
+  "end_s": 1437.7,
+  "detected_at_s": 1437.7,
+  "event_ids": [],
+  "severity": 0.764,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "field_tilt",
+    "team_id": "har",
+    "value": 88.2,
+    "unit": "pct",
+    "window_start_s": 1137.7,
+    "window_end_s": 1437.7,
+    "baseline": 50.0
+   },
+   {
+    "metric": "shots",
+    "team_id": "har",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 1137.7,
+    "window_end_s": 1437.7,
+    "baseline": 0.0
+   },
+   {
+    "metric": "xg",
+    "team_id": "har",
+    "value": 0.41,
+    "unit": "xg",
+    "window_start_s": 1137.7,
+    "window_end_s": 1437.7,
+    "baseline": 0.0
+   },
+   {
+    "metric": "possession",
+    "team_id": "har",
+    "value": 72.0,
+    "unit": "pct",
+    "window_start_s": 1137.7,
+    "window_end_s": 1437.7,
+    "baseline": 50.0
+   },
+   {
+    "metric": "pressures_per_min",
+    "team_id": "har",
+    "value": 2.8,
+    "unit": "per_min",
+    "window_start_s": 1137.7,
+    "window_end_s": 1437.7,
+    "baseline": 0.0
+   },
+   {
+    "metric": "opponent_final_third_passes",
+    "team_id": "wst",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 1137.7,
+    "window_end_s": 1437.7,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:pressure_surge:0",
+  "match_id": "har_wst_siege_0003",
+  "kind": "pressure_surge",
+  "status": "start",
+  "team_id": "har",
+  "start_s": 1199.6,
+  "end_s": 1499.6,
+  "detected_at_s": 1499.6,
+  "event_ids": [],
+  "severity": 0.952,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "pressures_per_min",
+    "team_id": "har",
+    "value": 4.667,
+    "unit": "per_min",
+    "window_start_s": 1319.6,
+    "window_end_s": 1499.6,
+    "baseline": 1.455
+   },
+   {
+    "metric": "tackles_won",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 1199.6,
+    "window_end_s": 1499.6,
+    "baseline": null
+   },
+   {
+    "metric": "opponent_pass_completion",
+    "team_id": "wst",
+    "value": 78.6,
+    "unit": "pct",
+    "window_start_s": 1199.6,
+    "window_end_s": 1499.6,
+    "baseline": 80.7
+   },
+   {
+    "metric": "momentum",
+    "team_id": "har",
+    "value": 0.55,
+    "unit": "index",
+    "window_start_s": 1199.6,
+    "window_end_s": 1499.6,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:big_chance:1",
+  "match_id": "har_wst_siege_0003",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "har",
+  "start_s": 1777.3,
+  "end_s": 1807.4,
+  "detected_at_s": 1807.4,
+  "event_ids": [
+   443
+  ],
+  "severity": 0.927,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "har",
+    "value": 0.527,
+    "unit": "xg",
+    "window_start_s": 1807.4,
+    "window_end_s": 1807.4,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "har",
+    "value": 4.9,
+    "unit": "m",
+    "window_start_s": 1807.4,
+    "window_end_s": 1807.4,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "har",
+    "value": 1.27,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 1807.4,
+    "baseline": 0.788
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "har",
+    "value": 5.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 1807.4,
+    "baseline": 3.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "har",
+    "value": 0.52,
+    "unit": "index",
+    "window_start_s": 1507.4,
+    "window_end_s": 1807.4,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "har",
+    "value": 30.1,
+    "unit": "s",
+    "window_start_s": 1777.3,
+    "window_end_s": 1807.4,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "har",
+    "value": 4.0,
+    "unit": "count",
+    "window_start_s": 1777.3,
+    "window_end_s": 1807.4,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "har",
+    "value": 13.0,
+    "unit": "m",
+    "window_start_s": 1777.3,
+    "window_end_s": 1807.4,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "har",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 1777.3,
+    "window_end_s": 1777.3,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:big_chance:2",
+  "match_id": "har_wst_siege_0003",
+  "kind": "big_chance",
+  "status": "moment",
+  "team_id": "har",
+  "start_s": 2053.4,
+  "end_s": 2098.9,
+  "detected_at_s": 2098.9,
+  "event_ids": [
+   515
+  ],
+  "severity": 1.0,
+  "score": {
+   "home": 0,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "har",
+    "value": 0.712,
+    "unit": "xg",
+    "window_start_s": 2098.9,
+    "window_end_s": 2098.9,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "har",
+    "value": 3.5,
+    "unit": "m",
+    "window_start_s": 2098.9,
+    "window_end_s": 2098.9,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "har",
+    "value": 1.982,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 2098.9,
+    "baseline": 0.788
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "har",
+    "value": 6.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 2098.9,
+    "baseline": 3.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "har",
+    "value": 0.506,
+    "unit": "index",
+    "window_start_s": 1798.9,
+    "window_end_s": 2098.9,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "har",
+    "value": 45.5,
+    "unit": "s",
+    "window_start_s": 2053.4,
+    "window_end_s": 2098.9,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "har",
+    "value": 7.0,
+    "unit": "count",
+    "window_start_s": 2053.4,
+    "window_end_s": 2098.9,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "har",
+    "value": 38.8,
+    "unit": "m",
+    "window_start_s": 2053.4,
+    "window_end_s": 2098.9,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "har",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 2053.4,
+    "window_end_s": 2053.4,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:goal:0",
+  "match_id": "har_wst_siege_0003",
+  "kind": "goal",
+  "status": "moment",
+  "team_id": "har",
+  "start_s": 2177.6,
+  "end_s": 2194.3,
+  "detected_at_s": 2194.3,
+  "event_ids": [
+   546
+  ],
+  "severity": 1.0,
+  "score": {
+   "home": 1,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "har",
+    "value": 0.058,
+    "unit": "xg",
+    "window_start_s": 2194.3,
+    "window_end_s": 2194.3,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "har",
+    "value": 19.0,
+    "unit": "m",
+    "window_start_s": 2194.3,
+    "window_end_s": 2194.3,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "har",
+    "value": 2.04,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 2194.3,
+    "baseline": 0.788
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "har",
+    "value": 7.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 2194.3,
+    "baseline": 3.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "har",
+    "value": 0.532,
+    "unit": "index",
+    "window_start_s": 1894.3000000000002,
+    "window_end_s": 2194.3,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "har",
+    "value": 16.7,
+    "unit": "s",
+    "window_start_s": 2177.6,
+    "window_end_s": 2194.3,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "har",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 2177.6,
+    "window_end_s": 2194.3,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "har",
+    "value": 41.1,
+    "unit": "m",
+    "window_start_s": 2177.6,
+    "window_end_s": 2194.3,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 2177.6,
+    "window_end_s": 2177.6,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:pressure_surge:1",
+  "match_id": "har_wst_siege_0003",
+  "kind": "pressure_surge",
+  "status": "end",
+  "team_id": "har",
+  "start_s": 1199.6,
+  "end_s": 2573.9,
+  "detected_at_s": 2694.7,
+  "event_ids": [],
+  "severity": 0.952,
+  "score": {
+   "home": 1,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "spell_duration",
+    "team_id": "har",
+    "value": 1374.3,
+    "unit": "s",
+    "window_start_s": 1199.6,
+    "window_end_s": 2573.9,
+    "baseline": null
+   },
+   {
+    "metric": "pressures_per_min",
+    "team_id": "har",
+    "value": 1.0,
+    "unit": "per_min",
+    "window_start_s": 2514.7,
+    "window_end_s": 2694.7,
+    "baseline": 2.601
+   },
+   {
+    "metric": "tackles_won",
+    "team_id": "har",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 2394.7,
+    "window_end_s": 2694.7,
+    "baseline": null
+   },
+   {
+    "metric": "opponent_pass_completion",
+    "team_id": "wst",
+    "value": 89.5,
+    "unit": "pct",
+    "window_start_s": 2394.7,
+    "window_end_s": 2694.7,
+    "baseline": 82.8
+   },
+   {
+    "metric": "momentum",
+    "team_id": "har",
+    "value": 0.308,
+    "unit": "index",
+    "window_start_s": 2394.7,
+    "window_end_s": 2694.7,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:siege:1",
+  "match_id": "har_wst_siege_0003",
+  "kind": "siege",
+  "status": "end",
+  "team_id": "har",
+  "start_s": 1137.7,
+  "end_s": 2920.8,
+  "detected_at_s": 3041.9,
+  "event_ids": [],
+  "severity": 0.764,
+  "score": {
+   "home": 1,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "spell_duration",
+    "team_id": "har",
+    "value": 1783.1,
+    "unit": "s",
+    "window_start_s": 1137.7,
+    "window_end_s": 2920.8,
+    "baseline": null
+   },
+   {
+    "metric": "field_tilt",
+    "team_id": "har",
+    "value": 28.0,
+    "unit": "pct",
+    "window_start_s": 2741.9,
+    "window_end_s": 3041.9,
+    "baseline": 50.0
+   },
+   {
+    "metric": "shots",
+    "team_id": "har",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 2741.9,
+    "window_end_s": 3041.9,
+    "baseline": 1.0
+   },
+   {
+    "metric": "xg",
+    "team_id": "har",
+    "value": 0.345,
+    "unit": "xg",
+    "window_start_s": 2741.9,
+    "window_end_s": 3041.9,
+    "baseline": 0.018
+   },
+   {
+    "metric": "possession",
+    "team_id": "har",
+    "value": 46.8,
+    "unit": "pct",
+    "window_start_s": 2741.9,
+    "window_end_s": 3041.9,
+    "baseline": 50.0
+   },
+   {
+    "metric": "pressures_per_min",
+    "team_id": "har",
+    "value": 0.4,
+    "unit": "per_min",
+    "window_start_s": 2741.9,
+    "window_end_s": 3041.9,
+    "baseline": 1.4
+   },
+   {
+    "metric": "opponent_final_third_passes",
+    "team_id": "wst",
+    "value": 18.0,
+    "unit": "count",
+    "window_start_s": 2741.9,
+    "window_end_s": 3041.9,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:momentum_shift:1",
+  "match_id": "har_wst_siege_0003",
+  "kind": "momentum_shift",
+  "status": "end",
+  "team_id": "har",
+  "start_s": 1129.6,
+  "end_s": 2997.3,
+  "detected_at_s": 3117.7,
+  "event_ids": [],
+  "severity": 0.63,
+  "score": {
+   "home": 1,
+   "away": 0
+  },
+  "evidence": [
+   {
+    "metric": "spell_duration",
+    "team_id": "har",
+    "value": 1867.7,
+    "unit": "s",
+    "window_start_s": 1129.6,
+    "window_end_s": 2997.3,
+    "baseline": null
+   },
+   {
+    "metric": "momentum",
+    "team_id": "har",
+    "value": -0.434,
+    "unit": "index",
+    "window_start_s": 2817.7,
+    "window_end_s": 3117.7,
+    "baseline": null
+   },
+   {
+    "metric": "field_tilt",
+    "team_id": "har",
+    "value": 8.7,
+    "unit": "pct",
+    "window_start_s": 2817.7,
+    "window_end_s": 3117.7,
+    "baseline": 50.0
+   },
+   {
+    "metric": "shots",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 2817.7,
+    "window_end_s": 3117.7,
+    "baseline": 1.0
+   },
+   {
+    "metric": "xg",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "xg",
+    "window_start_s": 2817.7,
+    "window_end_s": 3117.7,
+    "baseline": 0.018
+   },
+   {
+    "metric": "pressures_per_min",
+    "team_id": "har",
+    "value": 0.4,
+    "unit": "per_min",
+    "window_start_s": 2817.7,
+    "window_end_s": 3117.7,
+    "baseline": 1.8
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:goal:1",
+  "match_id": "har_wst_siege_0003",
+  "kind": "goal",
+  "status": "moment",
+  "team_id": "wst",
+  "start_s": 3175.1,
+  "end_s": 3220.6,
+  "detected_at_s": 3220.6,
+  "event_ids": [
+   788
+  ],
+  "severity": 1.0,
+  "score": {
+   "home": 1,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "wst",
+    "value": 0.627,
+    "unit": "xg",
+    "window_start_s": 3220.6,
+    "window_end_s": 3220.6,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "wst",
+    "value": 4.1,
+    "unit": "m",
+    "window_start_s": 3220.6,
+    "window_end_s": 3220.6,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "wst",
+    "value": 1.451,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 3220.6,
+    "baseline": 2.446
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "wst",
+    "value": 6.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 3220.6,
+    "baseline": 10.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "wst",
+    "value": 0.554,
+    "unit": "index",
+    "window_start_s": 2920.6,
+    "window_end_s": 3220.6,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "wst",
+    "value": 45.5,
+    "unit": "s",
+    "window_start_s": 3175.1,
+    "window_end_s": 3220.6,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "wst",
+    "value": 8.0,
+    "unit": "count",
+    "window_start_s": 3175.1,
+    "window_end_s": 3220.6,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "wst",
+    "value": 76.4,
+    "unit": "m",
+    "window_start_s": 3175.1,
+    "window_end_s": 3220.6,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "wst",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 3175.1,
+    "window_end_s": 3175.1,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:counter_attack:2",
+  "match_id": "har_wst_siege_0003",
+  "kind": "counter_attack",
+  "status": "moment",
+  "team_id": "har",
+  "start_s": 4225.9,
+  "end_s": 4236.1,
+  "detected_at_s": 4236.1,
+  "event_ids": [
+   986,
+   988
+  ],
+  "severity": 0.1,
+  "score": {
+   "home": 1,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "seconds_to_finish",
+    "team_id": "har",
+    "value": 10.2,
+    "unit": "s",
+    "window_start_s": 4225.9,
+    "window_end_s": 4236.1,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_move",
+    "team_id": "har",
+    "value": 2.0,
+    "unit": "count",
+    "window_start_s": 4225.9,
+    "window_end_s": 4236.1,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "har",
+    "value": 41.8,
+    "unit": "m",
+    "window_start_s": 4225.9,
+    "window_end_s": 4236.1,
+    "baseline": null
+   },
+   {
+    "metric": "regain_distance_from_own_goal",
+    "team_id": "har",
+    "value": 49.5,
+    "unit": "m",
+    "window_start_s": 4225.9,
+    "window_end_s": 4225.9,
+    "baseline": null
+   },
+   {
+    "metric": "finish_distance_to_goal",
+    "team_id": "har",
+    "value": 13.73,
+    "unit": "m",
+    "window_start_s": 4236.1,
+    "window_end_s": 4236.1,
+    "baseline": null
+   },
+   {
+    "metric": "ended_with_shot",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 4236.1,
+    "window_end_s": 4236.1,
+    "baseline": null
+   }
+  ]
+ },
+ {
+  "finding_id": "har_wst_siege_0003:goal:2",
+  "match_id": "har_wst_siege_0003",
+  "kind": "goal",
+  "status": "moment",
+  "team_id": "har",
+  "start_s": 4752.9,
+  "end_s": 4755.7,
+  "detected_at_s": 4755.7,
+  "event_ids": [
+   1095
+  ],
+  "severity": 1.0,
+  "score": {
+   "home": 2,
+   "away": 1
+  },
+  "evidence": [
+   {
+    "metric": "shot_xg",
+    "team_id": "har",
+    "value": 0.041,
+    "unit": "xg",
+    "window_start_s": 4755.7,
+    "window_end_s": 4755.7,
+    "baseline": null
+   },
+   {
+    "metric": "shot_distance",
+    "team_id": "har",
+    "value": 21.5,
+    "unit": "m",
+    "window_start_s": 4755.7,
+    "window_end_s": 4755.7,
+    "baseline": null
+   },
+   {
+    "metric": "match_xg",
+    "team_id": "har",
+    "value": 2.666,
+    "unit": "xg",
+    "window_start_s": 0.0,
+    "window_end_s": 4755.7,
+    "baseline": 1.532
+   },
+   {
+    "metric": "match_shots",
+    "team_id": "har",
+    "value": 13.0,
+    "unit": "count",
+    "window_start_s": 0.0,
+    "window_end_s": 4755.7,
+    "baseline": 8.0
+   },
+   {
+    "metric": "momentum",
+    "team_id": "har",
+    "value": 0.063,
+    "unit": "index",
+    "window_start_s": 4455.7,
+    "window_end_s": 4755.7,
+    "baseline": null
+   },
+   {
+    "metric": "seconds_since_turnover",
+    "team_id": "har",
+    "value": 2.8,
+    "unit": "s",
+    "window_start_s": 4752.9,
+    "window_end_s": 4755.7,
+    "baseline": null
+   },
+   {
+    "metric": "passes_in_spell",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 4752.9,
+    "window_end_s": 4755.7,
+    "baseline": null
+   },
+   {
+    "metric": "metres_gained",
+    "team_id": "har",
+    "value": 0.0,
+    "unit": "m",
+    "window_start_s": 4752.9,
+    "window_end_s": 4755.7,
+    "baseline": null
+   },
+   {
+    "metric": "possession_won_in_open_play",
+    "team_id": "har",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 4752.9,
+    "window_end_s": 4752.9,
+    "baseline": null
+   }
+  ]
+ }
+]

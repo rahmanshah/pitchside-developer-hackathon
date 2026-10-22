@@ -1,0 +1,118 @@
+{
+ "kind": "pitchside-run-bundle",
+ "bundle_version": "1.1",
+ "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
+ "run_id": "sample-comeback",
+ "match_id": "aur_irv_comeback_0007",
+ "created_utc": "2026-10-22T16:32:25+00:00",
+ "wall_s": 1.01,
+ "generator": {
+  "seed": 7,
+  "storyline": "comeback",
+  "description": "Away side scores first and then sits deep. Home turn up the pressure after the hour, turn it around with two late goals, and the finish gets frantic."
+ },
+ "home": {
+  "team_id": "aur",
+  "name": "Aurora Rovers",
+  "short_name": "AUR",
+  "side": "home"
+ },
+ "away": {
+  "team_id": "irv",
+  "name": "Ironvale Athletic",
+  "short_name": "IRV",
+  "side": "away"
+ },
+ "final_score": {
+  "home": 2,
+  "away": 1
+ },
+ "languages": [
+  "en",
+  "es"
+ ],
+ "personas": [
+  "analyst",
+  "casual",
+  "fav:aur_09",
+  "fav:irv_09"
+ ],
+ "featured_players": [
+  {
+   "player_id": "aur_09",
+   "name": "Alden Brandt",
+   "team_id": "aur",
+   "persona": "fav:aur_09"
+  },
+  {
+   "player_id": "irv_09",
+   "name": "Rafa Yilmaz",
+   "team_id": "irv",
+   "persona": "fav:irv_09"
+  }
+ ],
+ "pipeline": {
+  "pitchside_version": "0.2.0",
+  "git_commit": "7ca4fe2",
+  "llm_mode": "fake",
+  "api": "fake",
+  "deployments": {
+   "interpreter": "fake",
+   "explainer": "fake",
+   "verifier": "fake",
+   "personalizer": "fake"
+  },
+  "price_model": "gpt-6-luna",
+  "price_table_version": "2026-10-18",
+  "reasoning_effort": "low",
+  "max_output_tokens": {
+   "interpreter": 1500,
+   "explainer": 3000,
+   "verifier": 1500,
+   "personalizer": 4000
+  },
+  "prompt_versions": {
+   "interpreter": "6dfd03259e73",
+   "explainer": "ddb820308421",
+   "verifier": "2d4b35846ad4",
+   "personalizer": "e813b633439d"
+  },
+  "max_explainer_attempts": 3,
+  "interpreter_tools": "local",
+  "mcp_server": null
+ },
+ "faults": {
+  "injected": false,
+  "plan": null,
+  "rules": [],
+  "fired": []
+ },
+ "budget": {
+  "match_budget_usd": 0.25,
+  "spent_usd": 0.007061,
+  "model_calls": 85,
+  "budget_fallbacks": 0,
+  "exhausted": null
+ },
+ "counts": {
+  "events": 1341,
+  "findings": 30,
+  "jobs": 32,
+  "model_jobs": 20,
+  "template_jobs": 12,
+  "model_fallbacks": 0,
+  "recaps": 2
+ },
+ "files": {
+  "manifest": "manifest.json",
+  "events": "events.jsonl",
+  "stats": "stats.jsonl",
+  "findings": "findings.json",
+  "narratives": "narratives.json",
+  "audit": "audit.jsonl",
+  "usage": "usage.jsonl",
+  "answer_key": "answer_key.json",
+  "evaluation": "evaluation.json",
+  "overlay": "overlay.json"
+ }
+}

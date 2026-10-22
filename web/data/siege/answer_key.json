@@ -1,0 +1,97 @@
+{
+ "match_id": "har_wst_siege_0003",
+ "seed": 3,
+ "storyline": "siege",
+ "description": "Home besiege a low block, finally break through, then get hit by a counter-attack against the run of play before settling it late.",
+ "phases": [
+  {
+   "label": "home_siege",
+   "kind": "siege",
+   "description": "Home camp in the away half; away defend in a compact low block.",
+   "team_ids": [
+    "har"
+   ],
+   "start_s": 1080,
+   "end_s": 2280
+  },
+  {
+   "label": "away_low_block",
+   "kind": "low_block",
+   "description": "Away drop off and defend their box.",
+   "team_ids": [
+    "wst"
+   ],
+   "start_s": 1080,
+   "end_s": 2280
+  },
+  {
+   "label": "away_counter_burst",
+   "kind": "counter_attack",
+   "description": "Away break quickly after winning the ball, at pace and with directness.",
+   "team_ids": [
+    "wst"
+   ],
+   "start_s": 2880,
+   "end_s": 3240
+  }
+ ],
+ "scripted_goals": [
+  {
+   "description": "Home finally break the low block.",
+   "team_id": "har",
+   "scripted_minute": 36,
+   "event_id": 546,
+   "clock_s": 2194.3
+  },
+  {
+   "description": "Away score on the counter, against the run of play.",
+   "team_id": "wst",
+   "scripted_minute": 52,
+   "event_id": 788,
+   "clock_s": 3220.6
+  },
+  {
+   "description": "Home restore the lead.",
+   "team_id": "har",
+   "scripted_minute": 79,
+   "event_id": 1095,
+   "clock_s": 4755.7
+  }
+ ],
+ "goals": [
+  {
+   "event_id": 546,
+   "clock_s": 2194.3,
+   "team_id": "har",
+   "player_id": "har_09",
+   "score_after": {
+    "home": 1,
+    "away": 0
+   }
+  },
+  {
+   "event_id": 788,
+   "clock_s": 3220.6,
+   "team_id": "wst",
+   "player_id": "wst_09",
+   "score_after": {
+    "home": 1,
+    "away": 1
+   }
+  },
+  {
+   "event_id": 1095,
+   "clock_s": 4755.7,
+   "team_id": "har",
+   "player_id": "har_11",
+   "score_after": {
+    "home": 2,
+    "away": 1
+   }
+  }
+ ],
+ "final_score": {
+  "home": 2,
+  "away": 1
+ }
+}
