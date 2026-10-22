@@ -155,7 +155,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": null,
    "headline": "Chaos spell: the match",
    "texts": {
@@ -1093,7 +1093,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -1861,7 +1861,7 @@
      "note": null
     }
    ],
-   "hold_ms": 4000,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "irv",
@@ -3381,7 +3381,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "irv",
@@ -4109,7 +4109,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -4497,7 +4497,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -5256,7 +5256,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "zone",
     "team_id": "aur",
@@ -5739,7 +5739,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -6133,7 +6133,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -6526,7 +6526,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "zone",
     "team_id": "aur",
@@ -7052,7 +7052,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -7789,7 +7789,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -8919,7 +8919,7 @@
      "note": null
     }
    ],
-   "hold_ms": 4000,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -9436,7 +9436,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -9836,7 +9836,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",
@@ -10233,7 +10233,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": null,
    "headline": "Chaos spell: the match",
    "texts": {
@@ -10884,7 +10884,7 @@
      "note": null
     }
    ],
-   "hold_ms": 4000,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "aur",

@@ -81,7 +81,7 @@ export function createBroadcast(root, ctx) {
         h("span", { class: "lt-kind" }, label),
         h("span", { class: "lt-min" }, o.status === "recap" ? "" : minuteLabel(o.clock_s))),
       h("span", { class: "lt-text", lang }, figuredText(variant)),
-      h("span", { class: "lt-rail" }, provenanceChips(o, lang, variant),
+      h("span", { class: "lt-rail" }, provenanceChips(o, lang, variant, ctx.honesty),
         h("span", { class: "lt-evidence" }, `${tr(lang, "evidence")} ›`)));
     lowerWrap.append(button);
   }

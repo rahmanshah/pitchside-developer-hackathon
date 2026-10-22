@@ -41,8 +41,8 @@ END_S = 45.0
 MAX_DELAY_S = 8.0
 SIDE_LINGER_S = 90.0
 SIDE_ONLY_PRIORITY = 0.4
-HOLD_MS = {"goal": 4000, "recap": 9000}
-DEFAULT_HOLD_MS = 2500
+HOLD_MS = {"recap": 9000}  # real time a fast replay holds at a lower third, so it can be read (about 6 s)
+DEFAULT_HOLD_MS = 6000
 
 
 class _Frozen(BaseModel):
