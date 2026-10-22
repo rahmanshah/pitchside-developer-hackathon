@@ -30,6 +30,23 @@ jobs:
           uv run pitchside schema --overlay > /tmp/overlay.schema.json
           diff -u docs/overlay.schema.json /tmp/overlay.schema.json
 
+  infra:
+    # Bicep template: compiles and lints with zero warnings, and stays in step with the code (tests/test_infra.py).
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install the Bicep CLI (Linux steps from the Bicep install docs)
+        run: |
+          curl -Lo bicep https://github.com/Azure/bicep/releases/latest/download/bicep-linux-x64
+          chmod +x ./bicep
+          sudo mv ./bicep /usr/local/bin/bicep
+          bicep --version
+      - name: Install
+        run: uv sync --python 3.12
+      - name: Template tests (build + lint + consistency)
+        run: uv run pytest -q tests/test_infra.py
+
   e2e:
     # Browser end-to-end tests of the web UI. Non-blocking: a browser hiccup must not fail the build,
     # but a failure is visible on the run and its Playwright traces are uploaded.
