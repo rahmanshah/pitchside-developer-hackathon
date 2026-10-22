@@ -5,6 +5,8 @@ The page is driven through its seek hook (?t=, window.pitchside.seek) so no test
 
 from __future__ import annotations
 
+import re
+
 import pytest
 from playwright.sync_api import expect
 
@@ -92,6 +94,8 @@ def test_evidence_drawer_shows_the_provenance_chain(open_page, site):
     expect(drawer.locator(".audit .step")).to_have_count(len(item["audit"]["steps"]))
     expect(drawer).to_contain_text("Fault injected on purpose")
     expect(drawer).not_to_contain_text("verified claims")
+    expect(drawer.locator(".audit")).not_to_contain_text(re.compile(r"\bmodel\b", re.I))  # fake run: never "model"
+    expect(drawer.locator(".audit")).to_contain_text("offline stand-in")
     drawer.locator(".rel-triggering .ev-chip").first.click()  # follow the chain to the pitch
     expect(drawer).to_be_hidden()
     expect(page.locator(".focus .ev")).to_have_count(1)

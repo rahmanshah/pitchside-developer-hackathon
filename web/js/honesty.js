@@ -9,6 +9,16 @@ export const STANDIN_SOURCE = "Offline stand-in";
 export const UNVERIFIED_SOURCE = "Unverified source";
 export const ROLES = ["interpreter", "explainer", "verifier", "personalizer"];
 
+// Audit-trail text as recorded by the pipeline ("publish · director · model", "8 of 8 text(s) from the model",
+// "shown: model narrative ..."), made honest for display: for the fake client every "model" becomes "offline
+// stand-in", for an unknown mode "unverified source"; a Foundry run is shown as recorded.
+export function auditText(text, h) {
+  if (text == null || h?.mode === "foundry") return text;
+  const replacement = h?.mode === "fake" ? "offline stand-in" : "unverified source";
+  return String(text).replace(/(?<!fake )\b([Mm])odel\b/g,
+    (_, m) => (m === "M" ? replacement[0].toUpperCase() + replacement.slice(1) : replacement));
+}
+
 // manifest: manifest.json; source: overlay.json's `source` (must agree with the manifest, or the run is unverified).
 export function honesty(manifest, source) {
   const mode = manifest?.pipeline?.llm_mode;
