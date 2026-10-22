@@ -13,6 +13,8 @@ const TYPES = ["pass", "shot", "tackle", "pressure", "possession_change"];
 const TYPE_LABEL = { pass: "passes", shot: "shots", tackle: "tackles", pressure: "pressuresShort", possession_change: "turnovers" };
 const SPARK_W = 320;
 const SPARK_H = 56;
+const SPELL_ROW = 15; // key-moment timeline: height of one row of spells (px)
+const SPELLS_TOP = 30; // must match .tl-lane.spells { top } in analyst.css
 
 export function createAnalyst(root, ctx) {
   const { home, away, teams, tl } = ctx;
@@ -220,7 +222,7 @@ export function createAnalyst(root, ctx) {
             const fig = e.target.closest(".fig");
             if (fig) ctx.actions.openDrawer(overlay.overlay_id, { refs: fig.dataset.refs.split(" ") });
           } }, figuredText(variant)),
-          h("div", { class: "persona-foot" }, provenanceChips(overlay, lang, variant).slice(0, 1),
+          h("div", { class: "persona-foot" }, provenanceChips(overlay, lang, variant, ctx.honesty).slice(0, 1),
             variant.reason ? h("span", { class: "chip warn", title: variant.reason }, variant.reason.slice(0, 48)) : null));
       })));
   }
@@ -282,7 +284,7 @@ export function createAnalyst(root, ctx) {
         if (row < 0) row = rowsEnd.push(0) - 1;
         rowsEnd[row] = until + tl.duration * 0.06; // room for the label
         const el = h("button", { type: "button", class: `tl-spell k-${o.kind}`, title: label, "aria-label": label,
-                                  style: { left: pct(o.show_at_s), width: pct(until - o.show_at_s), top: `${4 + row * 22}px`, "--c": colour },
+                                  style: { left: pct(o.show_at_s), width: pct(until - o.show_at_s), top: `${3 + row * SPELL_ROW}px`, "--c": colour },
                                   onclick: () => ctx.actions.seek(o.show_at_s) }, h("span", {}, kindLabel(lang, o.kind)));
         lanes.spells.append(el);
         markers.push({ el, t: o.show_at_s });
@@ -299,8 +301,9 @@ export function createAnalyst(root, ctx) {
     }));
     const breaks = tl.segments.filter((x) => x.kind !== "play").map((x) => h("div", { class: "tl-break", style: { left: pct(x.start_s), width: pct(x.end_s - x.start_s) } }));
     const rows = Math.max(1, rowsEnd.length);
-    lanes.spells.style.height = `${8 + rows * 22}px`;
-    const track = h("div", { class: "tl-track", style: { "--lanes-h": `${40 + 8 + rows * 22}px` } }, breaks, lanes.moments, lanes.spells, playhead, axis);
+    lanes.spells.style.height = `${6 + rows * SPELL_ROW}px`;
+    const lanesHeight = SPELLS_TOP + 6 + rows * SPELL_ROW;
+    const track = h("div", { class: "tl-track", style: { "--lanes-h": `${lanesHeight}px` } }, breaks, lanes.moments, lanes.spells, playhead, axis);
     clear(timelineCard).append(
       h("div", { class: "card-head" }, h("h2", { class: "card-title" }, tr(lang, "keyMoments")),
         h("span", { class: "legend-inline" }, h("span", { class: "tl-key goal" }), tr(lang, "k_goal"), h("span", { class: "tl-key chance" }), tr(lang, "k_big_chance"),

@@ -128,28 +128,30 @@ body.clean .an-head { padding-right: 320px; }
 .btn-evidence:hover { background: rgba(255, 181, 71, 0.22); }
 
 /* ---- timeline */
-.tl-track { --lanes-h: 70px; position: relative; height: calc(var(--lanes-h) + 30px); margin: 6px 4px 0; }
-.tl-lane { position: absolute; left: 0; right: 0; height: 30px; border-radius: 4px; background: var(--ink-0); top: 0; }
-.tl-lane.spells { top: 40px; }
+.an-timeline { padding: 10px 16px 6px; }
+.an-timeline .card-head { margin-bottom: 4px; }
+.tl-track { --lanes-h: 60px; position: relative; height: calc(var(--lanes-h) + 22px); margin: 4px 4px 0; }
+.tl-lane { position: absolute; left: 0; right: 0; height: 24px; border-radius: 4px; background: var(--ink-0); top: 0; }
+.tl-lane.spells { top: 30px; } /* SPELLS_TOP in analyst.js */
 .tl-break { position: absolute; top: 0; height: var(--lanes-h); background: repeating-linear-gradient(135deg, var(--ink-3) 0 3px, transparent 3px 7px); z-index: 1; }
 .tl-mark {
-  position: absolute; top: 7px; width: 16px; height: 16px; margin-left: -8px; padding: 0; border: 2px solid var(--c);
+  position: absolute; top: 5px; width: 14px; height: 14px; margin-left: -7px; padding: 0; border: 2px solid var(--c);
   background: var(--ink-1); border-radius: 50%; cursor: pointer; z-index: 2;
 }
 .tl-mark.k-goal { background: var(--c); box-shadow: 0 0 0 2px var(--amber); }
 .tl-mark.k-big_chance { border-radius: 2px; transform: rotate(45deg) scale(0.8); }
 .tl-mark.k-counter_attack { width: 6px; margin-left: -3px; border-radius: 2px; }
-.tl-mark[class*="k-recap"] { border-radius: 3px; border-color: var(--chalk); background: var(--chalk); width: 12px; height: 12px; top: 9px; margin-left: 0; }
+.tl-mark[class*="k-recap"] { border-radius: 3px; border-color: var(--chalk); background: var(--chalk); width: 11px; height: 11px; top: 6px; margin-left: 0; }
 .tl-spell {
-  position: absolute; height: 18px; line-height: 16px; min-width: 6px; padding: 0 6px; border: 1px solid var(--c); border-radius: 3px;
-  background: color-mix(in srgb, var(--c) 22%, transparent); color: var(--chalk); font-size: 11px; text-align: left;
+  position: absolute; height: 13px; line-height: 11px; min-width: 6px; padding: 0 5px; border: 1px solid var(--c); border-radius: 3px;
+  background: color-mix(in srgb, var(--c) 22%, transparent); color: var(--chalk); font-size: 10px; text-align: left;
   overflow: hidden; white-space: nowrap; cursor: pointer; z-index: 2;
 }
 .tl-mark.future, .tl-spell.future { opacity: 0.4; }
 .tl-mark:hover, .tl-spell:hover { opacity: 1; filter: brightness(1.2); }
 .tl-playhead { position: absolute; top: -4px; height: calc(var(--lanes-h) + 8px); width: 2px; margin-left: -1px; background: var(--amber); z-index: 3; pointer-events: none; }
-.tl-axis { position: absolute; left: 0; right: 0; top: calc(var(--lanes-h) + 8px); height: 24px; }
-.tl-axis span { position: absolute; transform: translateX(-50%); font-size: 12px; color: var(--chalk-2); white-space: nowrap; }
+.tl-axis { position: absolute; left: 0; right: 0; top: calc(var(--lanes-h) + 4px); height: 18px; }
+.tl-axis span { position: absolute; transform: translateX(-50%); font-size: 11.5px; color: var(--chalk-2); white-space: nowrap; }
 .tl-axis span:first-child { transform: none; }
 .tl-axis span:last-child { transform: translateX(-100%); }
 .legend-inline { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 6px; font-size: 12px; color: var(--chalk-2); }
@@ -157,6 +159,46 @@ body.clean .an-head { padding-right: 320px; }
 .tl-key.goal { background: var(--chalk-2); box-shadow: 0 0 0 2px var(--amber); }
 .tl-key.chance { border-radius: 2px; transform: rotate(45deg) scale(0.85); }
 .tl-key.spell { width: 18px; border-radius: 3px; }
+
+/* Large screens (1920 x 1080 and similar): the whole dashboard fits the window without scrolling. Three columns,
+   the pitch shrinks to the height that is left, and the persona cards stack in their own column. */
+@media (min-width: 1280px) and (min-height: 860px) {
+  .view-analyst { height: 100%; padding: 10px var(--gutter) 12px; }
+  .an {
+    height: 100%; max-width: 1840px; gap: 10px;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.8fr) minmax(0, 0.95fr);
+    grid-template-rows: auto auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "head head head"
+      "timeline timeline timeline"
+      "pitch stats compare"
+      "pitch usage compare";
+    align-items: stretch;
+  }
+  .card { padding: 10px 14px; }
+  .card-head { margin-bottom: 6px; }
+  .an-head { padding: 0 4px; }
+  .an-team { font-size: 20px; }
+  .an-team .crest { width: 24px; height: auto; }
+  .an-score { font-size: 26px; }
+  .an-clock { font-size: 24px; }
+  .an-pitch { display: flex; flex-direction: column; min-height: 0; }
+  .an-pitch-svg { flex: 1 1 auto; min-height: 0; height: 100%; }
+  .legend { margin-top: 4px; }
+  .strips { gap: 6px; }
+  .sparks { gap: 10px; margin-top: 14px; }
+  .spark { height: 64px; }
+  .strip { grid-template-columns: minmax(96px, 1fr) 46px minmax(60px, 1.6fr) 46px; }
+  .an-usage { grid-template-columns: minmax(0, 1fr); }
+  .usage-big { font-size: 22px; }
+  .usage-table { margin-top: 8px; font-size: 12.5px; }
+  .usage-table th, .usage-table td { padding: 3px 0; }
+  .an-compare { display: flex; flex-direction: column; min-height: 0; }
+  .persona-grid { flex: 1 1 auto; min-height: 0; align-content: start; }
+  .persona-card { grid-template-columns: minmax(0, 1fr); padding: 10px 12px; }
+  .persona-card .persona-foot { grid-column: 1; }
+  .persona-text { font-size: 15px; line-height: 1.4; }
+}
 
 @media (max-width: 1100px) {
   .an { grid-template-columns: minmax(0, 1fr); grid-template-areas: "head" "timeline" "pitch" "stats" "compare" "usage"; }

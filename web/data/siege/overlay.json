@@ -163,7 +163,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "wst",
@@ -1227,7 +1227,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "zone",
     "team_id": "har",
@@ -1758,7 +1758,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "zone",
     "team_id": "har",
@@ -2240,7 +2240,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "zone",
     "team_id": "har",
@@ -2717,7 +2717,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "har",
@@ -3104,7 +3104,7 @@
      "note": null
     }
    ],
-   "hold_ms": 2500,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "har",
@@ -3492,7 +3492,7 @@
      "note": null
     }
    ],
-   "hold_ms": 4000,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "har",
@@ -5754,7 +5754,7 @@
      "note": null
     }
    ],
-   "hold_ms": 4000,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "wst",
@@ -6483,7 +6483,7 @@
      "note": null
     }
    ],
-   "hold_ms": 4000,
+   "hold_ms": 6000,
    "highlight": {
     "shape": "arrow",
     "team_id": "har",

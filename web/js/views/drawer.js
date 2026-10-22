@@ -2,7 +2,7 @@
 import { kindLabel, personaLabel, t as tr } from "../i18n.js";
 import { minuteLabel } from "../replay.js";
 import { clear, h, mmss } from "./dom.js";
-import { figuredText, variantFor } from "./text.js";
+import { figuredText, sourceChip, variantFor } from "./text.js";
 
 const MAX_CHIPS = 12;
 const OUTCOME_TONE = {
@@ -23,6 +23,16 @@ const RELATION = {
   in_window: "Events in the window",
   player: "Player's events",
 };
+
+// "Verified" only when both layers passed: the deterministic checker always ran on shown claims, the semantic
+// verifier may have been skipped (outage, injected fault) or not run at all (templates).
+export function claimsHeading(provenance) {
+  const n = provenance.claims.length;
+  const noun = (word) => `${n} ${word} claim${n === 1 ? "" : "s"}`;
+  if (provenance.semantic_check === "passed") return `Written from ${noun("verified")}`;
+  if (provenance.semantic_check.startsWith("skipped")) return `Written from ${noun("checked")} (semantic check skipped)`;
+  return `Written from ${noun("checked")} (template: semantic check not run)`;
+}
 
 function closeOnBackdrop(dialog) {
   dialog.addEventListener("click", (e) => {
@@ -106,7 +116,11 @@ export function createDrawer(dialog, ctx) {
         h("button", { type: "button", class: "icon-btn close", "aria-label": tr(lang, "close"), onclick: () => dialog.close() }, "✕")),
 
       h("div", { class: "badges" },
-        h("span", { class: `chip ${p.source === "model" ? "amber" : "muted"}` }, p.source === "model" ? "Model narrative" : `Template narrative${p.reason ? `: ${p.reason}` : ""}`),
+        p.source === "model"
+          ? h("span", { class: `chip ${ctx.honesty.mode === "foundry" ? "amber src-live" : "standin src-standin"}` },
+            ctx.honesty.mode === "fake" ? `${ctx.honesty.sourceLabels.explainer} narrative (fake model client)`
+              : `Narrative: ${ctx.honesty.sourceLabels.explainer}`)
+          : h("span", { class: "chip muted src-template" }, `Template narrative${p.reason ? `: ${p.reason}` : ""}`),
         h("span", { class: "chip ok" }, "✓ deterministic checker"), semantic,
         a.badges.filter((b) => b !== "template" && b !== "template_fallback" && b !== "semantic_check_skipped")
           .map((b) => h("span", { class: `chip ${b === "fault_injected" ? "fault" : "warn"}` }, BADGE_TEXT[b] ?? b))),
@@ -119,12 +133,12 @@ export function createDrawer(dialog, ctx) {
           h("table", {}, h("tbody", {}, Object.entries(overlay.texts).flatMap(([pid, byLang]) => Object.entries(byLang).map(([code, v]) => {
             const info = ctx.personas.find((x) => x.persona === pid);
             return h("tr", {}, h("th", { scope: "row" }, `${info ? personaLabel(lang, info) : pid} · ${code}`),
-              h("td", { lang: code }, v.text, " ", h("span", { class: `chip ${v.source === "model" ? "amber" : "muted"}` }, v.source)));
+              h("td", { lang: code }, v.text, " ", sourceChip(v.source, ctx.honesty, "personalizer", lang)));
           })))))),
 
       h("section", { class: "drawer-sec" },
-        h("h3", {}, `Written from ${p.claims.length} verified claim${p.claims.length === 1 ? "" : "s"}`),
-        h("p", { class: "note" }, "Claims are shown in English, exactly as the checker verified them. Every number cites a ledger entry computed by the stats engine."),
+        h("h3", { class: "claims-heading" }, claimsHeading(p)),
+        h("p", { class: "note" }, "Claims are shown in English, exactly as they were checked. Every number cites a ledger entry computed by the stats engine."),
         h("ol", { class: "claims" }, p.claims.map((c) => h("li", { class: "claim" },
           h("p", { class: "claim-text" }, c.text),
           h("div", { class: "chips" }, h("span", { class: "chip ok" }, "✓ checker"),
@@ -150,7 +164,7 @@ export function createDrawer(dialog, ctx) {
         a.faults.length ? [h("h4", {}, "Injected faults (opt-in demo)"),
           h("ul", { class: "faults" }, a.faults.map((f) => h("li", {}, h("span", { class: "chip fault" }, `${f.role}: ${f.kind}`),
             ` ${f.step ?? ""}${f.attempt ? ` attempt ${f.attempt}` : ""}${f.count > 1 ? ` ×${f.count}` : ""}`)))] : null,
-        h("h4", {}, "Model calls"),
+        h("h4", {}, { foundry: "Model calls", fake: "Calls to the fake model client" }[ctx.honesty.mode] ?? "Model-client calls (mode unknown)"),
         h("p", { class: "calls" }, `${a.calls.calls} calls · ${a.calls.errors} errors · ${a.calls.transport_retries} transport retries · ` +
           `${a.calls.input_tokens.toLocaleString()} tokens in · ${a.calls.output_tokens.toLocaleString()} out · $${a.calls.cost_usd.toFixed(5)}` +
           (ctx.honesty.costIsEstimate ? " (token estimates, not real spend)" : ""))),

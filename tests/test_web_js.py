@@ -253,6 +253,19 @@ class HonestyTests(JsCase):
         self.assertEqual(self.badge(live, {"llm_mode": "fake", "label": "L"})["mode"], "unknown")
         self.assertEqual(self.badge(live, {"llm_mode": "foundry", "label": "L"})["mode"], "foundry")
 
+    def test_source_labels_never_call_fake_text_model_output(self) -> None:
+        roles = ["interpreter", "explainer", "verifier", "personalizer"]
+        fake = json.loads((WEB / "data" / "comeback" / "manifest.json").read_text(encoding="utf-8"))
+        self.assertEqual(self.badge(fake)["sourceLabels"], dict.fromkeys(roles, "Offline stand-in"))
+        live = {"label": "L", "pipeline": {"llm_mode": "foundry",
+                                           "deployments": {"explainer": "luna-eu", "personalizer": "luna-eu-2"}}}
+        labels = self.badge(live)["sourceLabels"]
+        self.assertEqual((labels["explainer"], labels["personalizer"]), ("luna-eu", "luna-eu-2"))
+        self.assertEqual(labels["verifier"], "unnamed deployment")
+        self.assertEqual(set(self.badge({})["sourceLabels"].values()), {"Unverified source"})
+        for labels in (self.badge(fake)["sourceLabels"], self.badge({})["sourceLabels"]):
+            self.assertFalse(any("model" == v.lower() for v in labels.values()))
+
     def test_injected_faults_are_counted(self) -> None:
         manifest = json.loads((WEB / "data" / "faults-demo" / "manifest.json").read_text(encoding="utf-8"))
         h = self.badge(manifest)

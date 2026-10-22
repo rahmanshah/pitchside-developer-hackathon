@@ -22,13 +22,19 @@ export function figuredText(variant) {
   return out;
 }
 
-export function provenanceChips(overlay, lang, variant) {
+// Label for who wrote a text: the honesty sourceLabels (deployment name for live runs, "Offline stand-in" for the
+// fake client), or "Template". Persona texts are written by the personalizer, narratives by the explainer.
+export function sourceChip(source, honesty, role, lang) {
+  if (source !== "model") return h("span", { class: "chip muted src-template" }, t(lang, "template"));
+  const live = honesty.mode === "foundry";
+  return h("span", { class: `chip ${live ? "amber src-live" : "standin src-standin"}` }, honesty.sourceLabels[role]);
+}
+
+export function provenanceChips(overlay, lang, variant, honesty) {
   const p = overlay.provenance;
   const badges = overlay.audit.badges;
   const chips = [];
-  const source = variant?.source ?? p.source;
-  chips.push(h("span", { class: `chip ${source === "model" ? "amber" : "muted"}` },
-    source === "model" ? t(lang, "model") : t(lang, "template")));
+  chips.push(sourceChip(variant?.source ?? p.source, honesty, variant ? "personalizer" : "explainer", lang));
   chips.push(h("span", { class: "chip ok" }, `✓ ${t(lang, "checked")}`));
   if (p.semantic_check === "passed") chips.push(h("span", { class: "chip ok" }, `✓ ${t(lang, "verified")}`));
   else if (p.semantic_check.startsWith("skipped")) chips.push(h("span", { class: "chip warn" }, `⚠ ${t(lang, "verifierSkipped")}`));

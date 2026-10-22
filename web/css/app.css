@@ -170,6 +170,7 @@ body.clean.view-is-analyst .clean-bug {
 .chip.warn, .chip.fault { border-color: var(--fault); color: var(--fault); }
 .chip.amber { border-color: var(--amber-line); color: var(--amber); }
 .chip.muted { color: var(--chalk-3); }
+.chip.standin { border-style: dashed; border-color: var(--chalk-3); color: var(--chalk-2); }
 
 /* Verified figures: amber underline with a tick, clickable to their evidence. */
 .fig {
