@@ -15,7 +15,7 @@ The challenge asks for one pipeline with five stages. Our mapping:
 | Ingest | Seeded match generator, event schema, replay | **Built** (v0.1.0) |
 | Interpret | Deterministic stats engine + key-moment detector | **Built** (v0.2.0); some recall below the 80% bar on held-out seeds, see README |
 | Explain | Interpreter, explainer, two-layer verifier (deterministic checker + semantic agent), recaps, audit trail | **Built offline** (milestone 3); live run pending, so no model-quality numbers yet |
-| Render | Timed, machine-readable overlay JSON + simple web UI | **Built offline** (milestone 5): `overlay.json` contract, static web UI replaying offline sample runs; e2e tests and deploy pending |
+| Render | Timed, machine-readable overlay JSON + simple web UI | **Built offline** (milestone 5): `overlay.json` contract, static web UI replaying offline sample runs, e2e smoke tests and README screenshots; deploy pending (milestone 6) |
 | Personalize | Analyst / casual fan / favourite-player modes, multiple languages | **Built offline**: en + es in one personalizer call per moment |
 
 ## Hard constraints (from the Official Rules, do not violate)
@@ -95,7 +95,9 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   unit-tested in V8 via mini-racer (`tests/test_web_js.py`); `js/main.js` (state, URL params, keyboard, `window.pitchside`
   test hook), `js/views/` (broadcast, analyst, drawer, crest, pitch). `css/tokens.css` holds the colour tokens (contrast
   checked by `tests/test_web_static.py`). `web/data/` is generated: regenerate with `uv run pitchside demo-data`, never
-  edit by hand; only one sample run has injected faults
+  edit by hand; only one sample run has injected faults. `tests/e2e/` (marked `e2e`, Chromium via pytest-playwright)
+  serves `web/` with a temporary copy of the data plus test-only `live-fixture` / `unknown-fixture` runs (never in
+  `web/data`); the page exposes `window.pitchside` and `?t=` so tests seek instead of waiting
 - `scripts/smoke_foundry.py`: manual live check (not in the test suite); step 4 runs one goal through the live
   agents. `docs/LIVE_EVAL.md`: the manual live evaluation and recording steps
 - `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, held-out answer-key
@@ -130,6 +132,9 @@ uv run pitchside run --seed 7 --storyline comeback [--inject-faults demo] [--too
 uv run pitchside eval-agents --seeds 1-3 [--inject-bad 0.3]                 # offline: plumbing check, not model quality
 uv run pitchside serve [--open] [--data DIR]   # web UI on http://127.0.0.1:8000 (recorded runs from web/data)
 uv run pitchside demo-data                     # regenerate web/data samples (offline); --bundle DIR --slug S --title T publishes one
+uv run playwright install chromium             # once
+uv run pytest -m e2e                           # browser smoke tests (excluded from the default run by addopts)
+uv run python scripts/capture_screenshots.py   # docs/img/ screenshots, 1920x1080, reproducible
 uv run pitchside eval-agents --seeds 201-205 --live   # manual, needs PITCHSIDE_LLM=foundry; see docs/LIVE_EVAL.md
 uv run python scripts/smoke_foundry.py   # manual live check after az login (not in the test suite)
 ```
@@ -222,8 +227,9 @@ club logos or real names. Redact or recrop anything sensitive.
 5. **Overlay renderer and web UI** (`web/`): timed overlay JSON schema plus a simple front end showing overlays on a
    simulated match feed. Three personas side by side (analyst, casual fan, favourite-player mode), multi-language.
    Optional spoken commentary via Speech. The UI must be able to replay a **run bundle** (see "Recorded demo mode").
-   **Built offline:** contract, UI (broadcast, analyst, evidence drawer, honesty labels, URL params), offline samples.
-   Remaining: Playwright e2e suite (`-m e2e`, non-blocking CI job) and the README screenshot script.
+   **Built offline:** contract, UI (broadcast, analyst, evidence drawer, honesty labels, URL params), offline samples,
+   Playwright e2e suite (`uv run pytest -m e2e`, non-blocking CI job), `scripts/capture_screenshots.py` -> `docs/img/`.
+   Re-run the screenshot script when the live bundles replace the samples (milestone 6).
 6. **Azure deployment** (`infra/`, Bicep or azd): Container Apps, Static Web Apps, Cosmos DB, cost controls, the
    recorded demo mode as the public default. Verify a clean deploy from scratch, then record the final run bundles
    and the demo video from the deployed system.

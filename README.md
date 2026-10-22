@@ -13,7 +13,7 @@ Built for the **Inside the Game: Developer Hackathon**. Everything here is synth
 | (model access) | Agent Framework chat clients for Foundry model deployments (Entra ID), offline fake client, token and cost log, budget, concurrency and retry guard | **Built**: tested offline only; not yet run against a live Foundry deployment, see [model client](#model-client-and-cost-controls) |
 | Explain | Interpreter, explainer and two-layer verifier (deterministic checker + semantic check) as an Agent Framework workflow, with recaps and an audit trail | **Built (offline-tested)**: runs end to end on the fake model client; **no live model run yet**, so there are no model-quality numbers, see [agents](#agents-explain-verify-personalize) |
 | (tools) | The stats engine as a read-only **MCP server** (`pitchside mcp`, stdio and Streamable HTTP) that the interpreter can use | **Built (offline-tested)**; not deployed, see [MCP server](#stats-engine-as-an-mcp-server) |
-| Render | Timed overlay contract (`overlay.json`) built from each run bundle; a static web UI that replays recorded runs (broadcast view, analyst dashboard, evidence drawer) | **Built (offline)**: replays offline sample runs from the fake model client; replay engine unit-tested, end-to-end browser tests pending, not deployed yet, see [web UI](#web-ui-replay-a-recorded-run) |
+| Render | Timed overlay contract (`overlay.json`) built from each run bundle; a static web UI that replays recorded runs (broadcast view, analyst dashboard, evidence drawer) | **Built (offline)**: replays offline sample runs from the fake model client; replay engine unit-tested, browser end-to-end smoke tests pass locally (Chromium); not deployed yet, see [web UI](#web-ui-replay-a-recorded-run) |
 | Personalize | Analyst / casual fan / favourite-player views, English and Spanish, one model call per moment | **Built (offline-tested)**; offline translations are tagged placeholders, not real translations |
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the target design and [docs/DECISIONS.md](docs/DECISIONS.md)
@@ -194,6 +194,15 @@ moment is downgraded to a template for budget reasons; the bundle manifest count
 server-side code) that replays the run bundles in `web/data` at adjustable speed. Nothing on the page calls a model:
 every text, check and number was produced when the run was recorded.
 
+![Broadcast view in clean mode: scoreboard, honesty label, moments feed and the 72nd-minute goal lower third](docs/img/broadcast.png)
+
+![Analyst dashboard: key-moment timeline, pitch with the last two minutes of events, live stats, three personas side by side, model usage](docs/img/analyst.png)
+
+![Evidence drawer for a moment whose semantic check was skipped by an injected verifier timeout: checked claims, ledger numbers, triggering events](docs/img/evidence-drawer.png)
+
+*Screenshots from the offline sample runs (fake model client: the texts are deterministic stand-ins, labelled as
+such), captured by `uv run python scripts/capture_screenshots.py` at 1920 x 1080.*
+
 - **Broadcast view:** a 16:9 simulated match feed with scoreboard, clock, a moments feed and lower thirds timed by the
   overlay contract. The ball path is drawn from event locations; there is no tracking data. When the replay runs faster
   than real time it holds briefly at each lower third so it can be read.
@@ -221,9 +230,11 @@ every text, check and number was produced when the run was recorded.
 
 The overlay contract is documented in [docs/OVERLAY.md](docs/OVERLAY.md) (times are on a replay timeline with a
 half-time break, not the raw match clock). The replay engine (clock, holds, seeking, time to overlays, score and stats
-at any moment, honesty labels) is unit-tested inside `uv run pytest` by running the JavaScript modules in V8. Status:
-built and checked by hand in Chromium; the end-to-end browser tests, README screenshots and the Azure Static Web Apps
-deployment are still to come.
+at any moment, honesty labels) is unit-tested inside `uv run pytest` by running the JavaScript modules in V8. A small
+Playwright suite (`uv run pytest -m e2e`, Chromium, a separate non-blocking CI job) checks the honesty label for each
+model mode, playback, overlay show and hide times, persona and language switching, the evidence drawer's chain, the
+faults badge, scrubbing backwards and that the dashboard fits a 1080p screen. Status: built and tested locally; the
+Azure Static Web Apps deployment is milestone 6.
 
 ## Stats engine as an MCP server
 
@@ -285,6 +296,9 @@ chat and function middleware), the **Model Context Protocol** Python SDK (the st
 
 ```bash
 uv run pytest                # ~2.5 min: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client, agents, MCP server, overlay contract and the web replay engine (offline, fake client)
+uv run playwright install chromium   # once, for the browser tests and screenshots
+uv run pytest -m e2e         # ~15 s: browser end-to-end smoke tests of the web UI (excluded from the default run)
+uv run python scripts/capture_screenshots.py   # regenerate docs/img/ (fixed runs, fixed times, 1920 x 1080)
 uv run python scripts/smoke_foundry.py   # manual, live, costs a few cents at most: not part of the test suite
 uv run pitchside eval-agents --seeds 201-205 --live   # manual live evaluation, see docs/LIVE_EVAL.md
 uv add <package>             # add a dependency (updates pyproject.toml and uv.lock)
