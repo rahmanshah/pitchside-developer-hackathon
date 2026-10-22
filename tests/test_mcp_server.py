@@ -197,8 +197,8 @@ class NoFutureOverTheProtocolTests(unittest.TestCase):
 class LoadingTests(unittest.TestCase):
     def test_the_default_store_holds_the_demo_match_and_specs_are_validated(self) -> None:
         self.assertEqual(load_store().ids(), ["aur_irv_comeback_0007"])
-        self.assertEqual(parse_generate("3"), (3, "comeback"))
-        self.assertEqual(parse_generate("4:siege"), (4, "siege"))
+        self.assertEqual(tuple(parse_generate("3"))[:2], (3, "comeback"))
+        self.assertEqual(tuple(parse_generate("4:siege"))[:2], (4, "siege"))
         for bad in ("x", "3:nonsense"):
             with self.assertRaises(ValueError):
                 parse_generate(bad)
