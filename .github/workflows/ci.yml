@@ -25,3 +25,5 @@ jobs:
           diff -u docs/finding.schema.json /tmp/finding.schema.json
           uv run pitchside schema --bundle > /tmp/run_bundle.schema.json
           diff -u docs/run_bundle.schema.json /tmp/run_bundle.schema.json
+          uv run pitchside schema --overlay > /tmp/overlay.schema.json
+          diff -u docs/overlay.schema.json /tmp/overlay.schema.json

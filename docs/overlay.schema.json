@@ -1,0 +1,1418 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OverlayDocument",
+  "description": "The overlay contract: timed, machine-readable overlays built from a run bundle (``overlay.json``).",
+  "$defs": {
+    "AuditStep": {
+      "additionalProperties": false,
+      "properties": {
+        "seq": {
+          "title": "Seq",
+          "type": "integer"
+        },
+        "step": {
+          "title": "Step",
+          "type": "string"
+        },
+        "actor": {
+          "title": "Actor",
+          "type": "string"
+        },
+        "attempt": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attempt"
+        },
+        "outcome": {
+          "title": "Outcome",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        },
+        "next_step": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Next Step"
+        },
+        "prompt_version": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Prompt Version"
+        }
+      },
+      "required": [
+        "seq",
+        "step",
+        "actor",
+        "outcome",
+        "detail"
+      ],
+      "title": "AuditStep",
+      "type": "object"
+    },
+    "CallSummary": {
+      "additionalProperties": false,
+      "properties": {
+        "calls": {
+          "description": "Model calls sent (refused ones are not sent).",
+          "title": "Calls",
+          "type": "integer"
+        },
+        "errors": {
+          "title": "Errors",
+          "type": "integer"
+        },
+        "refused": {
+          "title": "Refused",
+          "type": "integer"
+        },
+        "transport_retries": {
+          "title": "Transport Retries",
+          "type": "integer"
+        },
+        "input_tokens": {
+          "title": "Input Tokens",
+          "type": "integer"
+        },
+        "output_tokens": {
+          "title": "Output Tokens",
+          "type": "integer"
+        },
+        "cost_usd": {
+          "title": "Cost Usd",
+          "type": "number"
+        }
+      },
+      "required": [
+        "calls",
+        "errors",
+        "refused",
+        "transport_retries",
+        "input_tokens",
+        "output_tokens",
+        "cost_usd"
+      ],
+      "title": "CallSummary",
+      "type": "object"
+    },
+    "ClaimLink": {
+      "additionalProperties": false,
+      "properties": {
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "text": {
+          "description": "As checked (English).",
+          "title": "Text",
+          "type": "string"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Id"
+        },
+        "deterministic": {
+          "const": "passed",
+          "default": "passed",
+          "description": "Shown claims always passed the checker.",
+          "title": "Deterministic",
+          "type": "string"
+        },
+        "semantic": {
+          "enum": [
+            "passed",
+            "skipped",
+            "not_run"
+          ],
+          "title": "Semantic",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/EvidenceLink"
+          },
+          "title": "Evidence",
+          "type": "array"
+        }
+      },
+      "required": [
+        "claim_id",
+        "text",
+        "semantic",
+        "evidence"
+      ],
+      "title": "ClaimLink",
+      "type": "object"
+    },
+    "ClubColours": {
+      "additionalProperties": false,
+      "properties": {
+        "primary": {
+          "title": "Primary",
+          "type": "string"
+        },
+        "secondary": {
+          "title": "Secondary",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "accent": {
+          "title": "Accent",
+          "type": "string"
+        }
+      },
+      "required": [
+        "primary",
+        "secondary",
+        "text",
+        "accent"
+      ],
+      "title": "ClubColours",
+      "type": "object"
+    },
+    "Crest": {
+      "additionalProperties": false,
+      "properties": {
+        "pattern": {
+          "enum": [
+            "stripes",
+            "hoops",
+            "chevron",
+            "sash",
+            "quarters",
+            "plain"
+          ],
+          "title": "Pattern",
+          "type": "string"
+        },
+        "initials": {
+          "title": "Initials",
+          "type": "string"
+        }
+      },
+      "required": [
+        "pattern",
+        "initials"
+      ],
+      "title": "Crest",
+      "type": "object"
+    },
+    "EventFilter": {
+      "additionalProperties": false,
+      "properties": {
+        "types": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Types",
+          "type": "array"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Id"
+        },
+        "player_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Player Id"
+        },
+        "from_s": {
+          "description": "Match clock, inclusive.",
+          "title": "From S",
+          "type": "number"
+        },
+        "to_s": {
+          "description": "Match clock, inclusive.",
+          "title": "To S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "types",
+        "from_s",
+        "to_s"
+      ],
+      "title": "EventFilter",
+      "type": "object"
+    },
+    "EventLink": {
+      "additionalProperties": false,
+      "properties": {
+        "relation": {
+          "enum": [
+            "triggering",
+            "in_window",
+            "player"
+          ],
+          "title": "Relation",
+          "type": "string"
+        },
+        "event_ids": {
+          "description": "At most 200, in event order.",
+          "items": {
+            "type": "integer"
+          },
+          "title": "Event Ids",
+          "type": "array"
+        },
+        "count": {
+          "description": "All matching events, even if event_ids was capped.",
+          "title": "Count",
+          "type": "integer"
+        },
+        "filter": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/EventFilter"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "How in_window and player events were selected."
+        }
+      },
+      "required": [
+        "relation",
+        "event_ids",
+        "count"
+      ],
+      "title": "EventLink",
+      "type": "object"
+    },
+    "EvidenceLink": {
+      "additionalProperties": false,
+      "properties": {
+        "ref": {
+          "title": "Ref",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "number",
+            "player"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "metric": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Metric"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Id"
+        },
+        "player_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Player Id"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Player name, for player refs.",
+          "title": "Name"
+        },
+        "involvement": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Involvement"
+        },
+        "value": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Value"
+        },
+        "unit": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Unit"
+        },
+        "say": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Say"
+        },
+        "window_start_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Match clock.",
+          "title": "Window Start S"
+        },
+        "window_end_s": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Match clock.",
+          "title": "Window End S"
+        },
+        "baseline": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Baseline"
+        },
+        "source": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "finding, context, player or claim (a recap's earlier claim).",
+          "title": "Source"
+        },
+        "origin": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Job whose verified claim this number came from (recaps).",
+          "title": "Origin"
+        },
+        "events": {
+          "items": {
+            "$ref": "#/$defs/EventLink"
+          },
+          "title": "Events",
+          "type": "array"
+        },
+        "known": {
+          "default": true,
+          "description": "False if the ref is not in the ledger (should never happen for shown claims: the checker rejects them).",
+          "title": "Known",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "ref",
+        "kind"
+      ],
+      "title": "EvidenceLink",
+      "type": "object"
+    },
+    "FaultRef": {
+      "additionalProperties": false,
+      "properties": {
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "step": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Step"
+        },
+        "attempt": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Attempt"
+        },
+        "count": {
+          "default": 1,
+          "title": "Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "role",
+        "kind"
+      ],
+      "title": "FaultRef",
+      "type": "object"
+    },
+    "Highlight": {
+      "additionalProperties": false,
+      "description": "Pitch coordinates in metres (x 0-105, y 0-68; the home side always attacks towards x = 105).",
+      "properties": {
+        "shape": {
+          "enum": [
+            "arrow",
+            "zone"
+          ],
+          "title": "Shape",
+          "type": "string"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Id"
+        },
+        "x": {
+          "title": "X",
+          "type": "number"
+        },
+        "y": {
+          "title": "Y",
+          "type": "number"
+        },
+        "x2": {
+          "title": "X2",
+          "type": "number"
+        },
+        "y2": {
+          "title": "Y2",
+          "type": "number"
+        }
+      },
+      "required": [
+        "shape",
+        "x",
+        "y",
+        "x2",
+        "y2"
+      ],
+      "title": "Highlight",
+      "type": "object"
+    },
+    "NumberSpan": {
+      "additionalProperties": false,
+      "properties": {
+        "start": {
+          "title": "Start",
+          "type": "integer"
+        },
+        "end": {
+          "title": "End",
+          "type": "integer"
+        },
+        "refs": {
+          "description": "Ledger ids of the claim numbers with this value.",
+          "items": {
+            "type": "string"
+          },
+          "title": "Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "start",
+        "end",
+        "refs"
+      ],
+      "title": "NumberSpan",
+      "type": "object"
+    },
+    "Overlay": {
+      "additionalProperties": false,
+      "properties": {
+        "overlay_id": {
+          "title": "Overlay Id",
+          "type": "string"
+        },
+        "job_id": {
+          "title": "Job Id",
+          "type": "string"
+        },
+        "finding_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Finding Id"
+        },
+        "kind": {
+          "description": "Finding kind (goal, big_chance, siege ...) or recap_half_time / recap_full_time.",
+          "title": "Kind",
+          "type": "string"
+        },
+        "status": {
+          "enum": [
+            "moment",
+            "start",
+            "end",
+            "recap"
+          ],
+          "title": "Status",
+          "type": "string"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "title": "Team Id"
+        },
+        "player_ids": {
+          "description": "Players in the moment's evidence (favourite-player highlight).",
+          "items": {
+            "type": "string"
+          },
+          "title": "Player Ids",
+          "type": "array"
+        },
+        "clock_s": {
+          "description": "Match clock of the moment.",
+          "title": "Clock S",
+          "type": "number"
+        },
+        "period": {
+          "title": "Period",
+          "type": "integer"
+        },
+        "show_at_s": {
+          "description": "Replay timeline (not match clock).",
+          "title": "Show At S",
+          "type": "number"
+        },
+        "hide_at_s": {
+          "description": "Replay timeline (not match clock).",
+          "title": "Hide At S",
+          "type": "number"
+        },
+        "priority": {
+          "description": "0-1; higher wins the lower third.",
+          "title": "Priority",
+          "type": "number"
+        },
+        "anchor": {
+          "description": "Where the overlay was meant to appear.",
+          "enum": [
+            "lower_third",
+            "side_panel"
+          ],
+          "title": "Anchor",
+          "type": "string"
+        },
+        "placements": {
+          "description": "Resolved windows per anchor; show while show <= t < hide.",
+          "items": {
+            "$ref": "#/$defs/Placement"
+          },
+          "title": "Placements",
+          "type": "array"
+        },
+        "hold_ms": {
+          "description": "Real-time hold when replay crosses its lower-third start faster than 1x.",
+          "title": "Hold Ms",
+          "type": "integer"
+        },
+        "highlight": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/Highlight"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null
+        },
+        "headline": {
+          "description": "As written by the pipeline (English).",
+          "title": "Headline",
+          "type": "string"
+        },
+        "texts": {
+          "additionalProperties": {
+            "additionalProperties": {
+              "$ref": "#/$defs/TextVariant"
+            },
+            "type": "object"
+          },
+          "description": "persona -> language -> text.",
+          "title": "Texts",
+          "type": "object"
+        },
+        "provenance": {
+          "$ref": "#/$defs/Provenance"
+        },
+        "audit": {
+          "$ref": "#/$defs/OverlayAudit"
+        }
+      },
+      "required": [
+        "overlay_id",
+        "job_id",
+        "finding_id",
+        "kind",
+        "status",
+        "team_id",
+        "player_ids",
+        "clock_s",
+        "period",
+        "show_at_s",
+        "hide_at_s",
+        "priority",
+        "anchor",
+        "placements",
+        "hold_ms",
+        "headline",
+        "texts",
+        "provenance",
+        "audit"
+      ],
+      "title": "Overlay",
+      "type": "object"
+    },
+    "OverlayAudit": {
+      "additionalProperties": false,
+      "properties": {
+        "route": {
+          "enum": [
+            "model",
+            "template"
+          ],
+          "title": "Route",
+          "type": "string"
+        },
+        "drafts": {
+          "title": "Drafts",
+          "type": "integer"
+        },
+        "steps": {
+          "items": {
+            "$ref": "#/$defs/AuditStep"
+          },
+          "title": "Steps",
+          "type": "array"
+        },
+        "rejected": {
+          "items": {
+            "$ref": "#/$defs/RejectedClaim"
+          },
+          "title": "Rejected",
+          "type": "array"
+        },
+        "faults": {
+          "items": {
+            "$ref": "#/$defs/FaultRef"
+          },
+          "title": "Faults",
+          "type": "array"
+        },
+        "calls": {
+          "$ref": "#/$defs/CallSummary"
+        },
+        "badges": {
+          "items": {
+            "enum": [
+              "template",
+              "template_fallback",
+              "semantic_check_skipped",
+              "retried",
+              "persona_template",
+              "fault_injected",
+              "transport_retry"
+            ],
+            "type": "string"
+          },
+          "title": "Badges",
+          "type": "array"
+        }
+      },
+      "required": [
+        "route",
+        "drafts",
+        "steps",
+        "rejected",
+        "faults",
+        "calls",
+        "badges"
+      ],
+      "title": "OverlayAudit",
+      "type": "object"
+    },
+    "PersonaInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "persona": {
+          "description": "\"analyst\", \"casual\" or \"fav:<player_id>\".",
+          "title": "Persona",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "analyst",
+            "casual",
+            "favourite"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "player_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Player Id"
+        },
+        "name": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Name"
+        },
+        "team_id": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Id"
+        }
+      },
+      "required": [
+        "persona",
+        "kind"
+      ],
+      "title": "PersonaInfo",
+      "type": "object"
+    },
+    "Placement": {
+      "additionalProperties": false,
+      "properties": {
+        "anchor": {
+          "enum": [
+            "lower_third",
+            "side_panel",
+            "pitch_highlight"
+          ],
+          "title": "Anchor",
+          "type": "string"
+        },
+        "show_at_s": {
+          "title": "Show At S",
+          "type": "number"
+        },
+        "hide_at_s": {
+          "title": "Hide At S",
+          "type": "number"
+        },
+        "note": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Why this window differs from the overlay's, if it does.",
+          "title": "Note"
+        }
+      },
+      "required": [
+        "anchor",
+        "show_at_s",
+        "hide_at_s"
+      ],
+      "title": "Placement",
+      "type": "object"
+    },
+    "Provenance": {
+      "additionalProperties": false,
+      "properties": {
+        "source": {
+          "enum": [
+            "model",
+            "template"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "semantic_check": {
+          "title": "Semantic Check",
+          "type": "string"
+        },
+        "claims": {
+          "items": {
+            "$ref": "#/$defs/ClaimLink"
+          },
+          "title": "Claims",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source",
+        "semantic_check",
+        "claims"
+      ],
+      "title": "Provenance",
+      "type": "object"
+    },
+    "Reason": {
+      "additionalProperties": false,
+      "properties": {
+        "code": {
+          "enum": [
+            "empty_text",
+            "no_evidence",
+            "unknown_evidence",
+            "number_not_cited",
+            "number_mismatch",
+            "unlisted_number",
+            "team_mismatch",
+            "window_mismatch",
+            "score_mismatch",
+            "unreferenced_player",
+            "unsupported"
+          ],
+          "title": "Code",
+          "type": "string"
+        },
+        "detail": {
+          "title": "Detail",
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "detail"
+      ],
+      "title": "Reason",
+      "type": "object"
+    },
+    "RejectedClaim": {
+      "additionalProperties": false,
+      "properties": {
+        "attempt": {
+          "title": "Attempt",
+          "type": "integer"
+        },
+        "claim_id": {
+          "title": "Claim Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "layer": {
+          "enum": [
+            "deterministic",
+            "semantic"
+          ],
+          "title": "Layer",
+          "type": "string"
+        },
+        "reasons": {
+          "items": {
+            "$ref": "#/$defs/Reason"
+          },
+          "title": "Reasons",
+          "type": "array"
+        }
+      },
+      "required": [
+        "attempt",
+        "claim_id",
+        "text",
+        "layer",
+        "reasons"
+      ],
+      "title": "RejectedClaim",
+      "type": "object"
+    },
+    "Rules": {
+      "additionalProperties": false,
+      "description": "The timing rules this document was resolved with (for readers; consumers need not apply them).",
+      "properties": {
+        "break_s": {
+          "default": 45.0,
+          "title": "Break S",
+          "type": "number"
+        },
+        "end_s": {
+          "default": 45.0,
+          "title": "End S",
+          "type": "number"
+        },
+        "max_delay_s": {
+          "default": 8.0,
+          "title": "Max Delay S",
+          "type": "number"
+        },
+        "side_linger_s": {
+          "default": 90.0,
+          "title": "Side Linger S",
+          "type": "number"
+        },
+        "side_only_priority": {
+          "default": 0.4,
+          "title": "Side Only Priority",
+          "type": "number"
+        }
+      },
+      "title": "Rules",
+      "type": "object"
+    },
+    "Segment": {
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "description": "play: the clock runs; break/end: it is frozen.",
+          "enum": [
+            "play",
+            "break",
+            "end"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "period": {
+          "title": "Period",
+          "type": "integer"
+        },
+        "start_s": {
+          "description": "Replay timeline.",
+          "title": "Start S",
+          "type": "number"
+        },
+        "end_s": {
+          "description": "Replay timeline.",
+          "title": "End S",
+          "type": "number"
+        },
+        "clock_start_s": {
+          "description": "Match clock at start_s.",
+          "title": "Clock Start S",
+          "type": "number"
+        },
+        "clock_end_s": {
+          "description": "Match clock at end_s.",
+          "title": "Clock End S",
+          "type": "number"
+        }
+      },
+      "required": [
+        "kind",
+        "period",
+        "start_s",
+        "end_s",
+        "clock_start_s",
+        "clock_end_s"
+      ],
+      "title": "Segment",
+      "type": "object"
+    },
+    "SourceInfo": {
+      "additionalProperties": false,
+      "properties": {
+        "llm_mode": {
+          "enum": [
+            "fake",
+            "foundry"
+          ],
+          "title": "Llm Mode",
+          "type": "string"
+        },
+        "label": {
+          "description": "The manifest's label, verbatim.",
+          "title": "Label",
+          "type": "string"
+        },
+        "faults_injected": {
+          "title": "Faults Injected",
+          "type": "boolean"
+        },
+        "fault_plan": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Fault Plan"
+        },
+        "faults_fired": {
+          "title": "Faults Fired",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "llm_mode",
+        "label",
+        "faults_injected",
+        "faults_fired"
+      ],
+      "title": "SourceInfo",
+      "type": "object"
+    },
+    "TeamIdentity": {
+      "additionalProperties": false,
+      "properties": {
+        "team_id": {
+          "title": "Team Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "short_name": {
+          "title": "Short Name",
+          "type": "string"
+        },
+        "side": {
+          "enum": [
+            "home",
+            "away"
+          ],
+          "title": "Side",
+          "type": "string"
+        },
+        "colours": {
+          "$ref": "#/$defs/ClubColours"
+        },
+        "crest": {
+          "$ref": "#/$defs/Crest"
+        }
+      },
+      "required": [
+        "team_id",
+        "name",
+        "short_name",
+        "side",
+        "colours",
+        "crest"
+      ],
+      "title": "TeamIdentity",
+      "type": "object"
+    },
+    "TextVariant": {
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "source": {
+          "enum": [
+            "model",
+            "template"
+          ],
+          "title": "Source",
+          "type": "string"
+        },
+        "reason": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Reason"
+        },
+        "numbers": {
+          "description": "Verified figures in the text.",
+          "items": {
+            "$ref": "#/$defs/NumberSpan"
+          },
+          "title": "Numbers",
+          "type": "array"
+        }
+      },
+      "required": [
+        "text",
+        "source"
+      ],
+      "title": "TextVariant",
+      "type": "object"
+    },
+    "Timeline": {
+      "additionalProperties": false,
+      "properties": {
+        "duration_s": {
+          "title": "Duration S",
+          "type": "number"
+        },
+        "segments": {
+          "items": {
+            "$ref": "#/$defs/Segment"
+          },
+          "title": "Segments",
+          "type": "array"
+        }
+      },
+      "required": [
+        "duration_s",
+        "segments"
+      ],
+      "title": "Timeline",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "kind": {
+      "const": "pitchside-overlays",
+      "default": "pitchside-overlays",
+      "title": "Kind",
+      "type": "string"
+    },
+    "overlay_version": {
+      "default": "1.0",
+      "title": "Overlay Version",
+      "type": "string"
+    },
+    "match_id": {
+      "title": "Match Id",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "source": {
+      "$ref": "#/$defs/SourceInfo"
+    },
+    "teams": {
+      "items": {
+        "$ref": "#/$defs/TeamIdentity"
+      },
+      "title": "Teams",
+      "type": "array"
+    },
+    "final_score": {
+      "additionalProperties": {
+        "type": "integer"
+      },
+      "title": "Final Score",
+      "type": "object"
+    },
+    "languages": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Languages",
+      "type": "array"
+    },
+    "personas": {
+      "items": {
+        "$ref": "#/$defs/PersonaInfo"
+      },
+      "title": "Personas",
+      "type": "array"
+    },
+    "timeline": {
+      "$ref": "#/$defs/Timeline"
+    },
+    "rules": {
+      "$ref": "#/$defs/Rules"
+    },
+    "overlays": {
+      "description": "Ordered by show_at_s.",
+      "items": {
+        "$ref": "#/$defs/Overlay"
+      },
+      "title": "Overlays",
+      "type": "array"
+    }
+  },
+  "required": [
+    "match_id",
+    "run_id",
+    "source",
+    "teams",
+    "final_score",
+    "languages",
+    "personas",
+    "timeline",
+    "overlays"
+  ],
+  "type": "object"
+}

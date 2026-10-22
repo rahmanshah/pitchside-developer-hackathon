@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Pitchside run bundle",
   "description": "Run bundles: everything one match run produced, as plain JSON files the static demo (milestone 5) replays.",
-  "bundle_version": "1.0",
+  "bundle_version": "1.1",
   "files": {
     "manifest.json": {
       "$defs": {
@@ -314,7 +314,7 @@
           "type": "string"
         },
         "bundle_version": {
-          "default": "1.0",
+          "default": "1.1",
           "title": "Bundle Version",
           "type": "string"
         },
@@ -1548,6 +1548,10 @@
     "evaluation.json": {
       "description": "Scores against the answer key, see pitchside eval-agents.",
       "type": "object"
+    },
+    "overlay.json": {
+      "description": "Timed overlays derived from the bundle, see docs/OVERLAY.md.",
+      "$ref": "overlay.schema.json"
     }
   }
 }
