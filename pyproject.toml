@@ -20,7 +20,10 @@ dependencies = [
 ]
 
 [dependency-groups]
-dev = ["pytest>=8"]
+dev = [
+    "jsonschema>=4.26.0",
+    "pytest>=8",
+]
 
 [project.scripts]
 pitchside = "pitchside.cli:main"

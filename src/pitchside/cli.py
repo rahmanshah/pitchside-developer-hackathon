@@ -1,4 +1,5 @@
-"""Command line interface: ``pitchside generate | replay | summary | findings | eval-stats | cost | schema | storylines``."""
+"""Command line interface: ``pitchside generate | replay | summary | findings | eval-stats | cost | schema | run |
+overlay | demo-data | serve | mcp | eval-agents | storylines``."""
 
 from __future__ import annotations
 
@@ -120,7 +121,20 @@ def _cmd_schema(args: argparse.Namespace) -> int:
 
         print(json.dumps(bundle_json_schema(), indent=2))
         return 0
+    if args.overlay:
+        from .render.overlay import overlay_json_schema
+
+        print(json.dumps(overlay_json_schema(), indent=2))
+        return 0
     print(json.dumps(findings_json_schema() if args.findings else json_schema(), indent=2))
+    return 0
+
+
+def _cmd_overlay(args: argparse.Namespace) -> int:
+    from .render.overlay import write_overlay
+
+    path = write_overlay(Path(args.bundle))
+    print(f"wrote {path}")
     return 0
 
 
@@ -314,7 +328,12 @@ def build_parser() -> argparse.ArgumentParser:
     sch = sub.add_parser("schema", help="print the JSON Schema of all events (or of findings, or of run bundles)")
     sch.add_argument("--findings", action="store_true", help="schema of stats-engine findings instead")
     sch.add_argument("--bundle", action="store_true", help="schema of run bundles instead")
+    sch.add_argument("--overlay", action="store_true", help="schema of the overlay contract (overlay.json) instead")
     sch.set_defaults(func=_cmd_schema)
+
+    ov = sub.add_parser("overlay", help="(re)build a run bundle's overlay.json from its other files")
+    ov.add_argument("bundle", help="bundle directory")
+    ov.set_defaults(func=_cmd_overlay)
 
     rn = sub.add_parser("run", help="run a match through the stats engine and the agents; write a run bundle")
     rn.add_argument("--seed", type=int, default=7)
