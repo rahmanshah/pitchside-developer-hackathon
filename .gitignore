@@ -15,5 +15,8 @@ dist/
 # model usage logs and run output
 /runs/
 
+# infra/deploy.ps1 outputs (URLs and your allowed IP; regenerated on every deploy)
+/infra/.deploy-outputs.json
+
 # Playwright traces and failure screenshots from `pytest -m e2e`
 /test-results/
