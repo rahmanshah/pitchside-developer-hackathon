@@ -140,7 +140,10 @@ uv run python scripts/smoke_foundry.py   # manual live check after az login (not
 ```
 
 Conventions: Python 3.11+, type hints, pydantic v2, small focused modules, tests for every behaviour, no
-network calls in unit tests (use the fake model client). Regenerate the schema with
+network calls in unit tests (use the fake model client). Sum floats with `math.fsum` (costs: `llm.usage.total_cost`)
+whenever the result is rounded, written to a file or compared: built-in `sum()` changed in Python 3.12, and outputs
+must be identical on 3.11 and 3.13 (CI runs both). Reproduce 3.11 locally without touching `.venv`:
+`$env:UV_PROJECT_ENVIRONMENT=".venv311"; uv run --python 3.11 pytest` (never `uv run --python` on `.venv` itself). Regenerate the schema with
 `uv run pitchside schema > docs/event.schema.json` when models change. Do not run destructive git commands
 and do not push unless asked.
 

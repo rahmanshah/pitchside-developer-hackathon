@@ -6,6 +6,7 @@ does not reset what a match (or the whole log) has spent.
 
 from __future__ import annotations
 
+import math
 import statistics
 import threading
 from dataclasses import dataclass, field
@@ -44,6 +45,15 @@ class UsageRecord(BaseModel):
     latency_ms: float = 0.0
     price_model: str
     price_version: str
+
+
+def total_cost(records: Iterable[UsageRecord], digits: int = 6) -> float:
+    """Total cost, correctly rounded on every Python version.
+
+    Built-in ``sum()`` over floats changed in Python 3.12 (compensated summation), so a plain sum rounded to 6 digits
+    can differ between 3.11 and 3.12+ (0.0004505 vs 0.00045050000000000005). ``math.fsum`` is exact on all of them.
+    """
+    return round(math.fsum(r.cost_usd for r in records), digits)
 
 
 class UsageLog:

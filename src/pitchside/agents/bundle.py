@@ -31,7 +31,7 @@ from pydantic import BaseModel, ConfigDict, Field, TypeAdapter
 
 from ..llm.config import Role
 from ..llm.prices import PRICE_TABLE_VERSION
-from ..llm.usage import UsageRecord
+from ..llm.usage import UsageRecord, total_cost
 from ..schema import to_json_line
 from ..stats.engine import Snapshot
 from ..stats.findings import FINDINGS_ADAPTER, Finding
@@ -224,7 +224,7 @@ def build_manifest(run: MatchRun, usage: list[UsageRecord]) -> BundleManifest:
                          rules=run.fault_plan.describe() if run.fault_plan else [],
                          fired=sorted(run.faults_fired, key=lambda f: (f["job_id"], f["role"], f["attempt"] or 0))),
         budget=BudgetInfo(match_budget_usd=settings.match_budget_usd,
-                          spent_usd=round(sum(u.cost_usd for u in usage), 6),
+                          spent_usd=total_cost(usage),
                           model_calls=sum(u.status != "refused" for u in usage), budget_fallbacks=budget_fallbacks,
                           exhausted=run.budget_exhausted),
         counts=Counts(events=len(run.events), findings=len(run.findings), jobs=len(run.records),
