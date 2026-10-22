@@ -31,31 +31,13 @@ param mcpImage string
 @minLength(1)
 param allowedIpRanges array
 
+// Matches load at start-up. Measured locally at 0.25 vCPU: 3 matches are ready in about 15 s (89 MiB); 23 matches
+// took about 63 s (319 MiB), longer than the pipeline's 30 s MCP request timeout after a scale-from-zero.
 @description('Matches the MCP server holds, SEED:STORYLINE[:HOME:AWAY]. Must include every match a recorded run uses.')
 param mcpMatches array = [
   '7:comeback:aur:irv'
   '3:siege:har:wst'
   '4:end_to_end:wst:aur'
-  '201:balanced'
-  '201:comeback'
-  '201:siege'
-  '201:end_to_end'
-  '202:balanced'
-  '202:comeback'
-  '202:siege'
-  '202:end_to_end'
-  '203:balanced'
-  '203:comeback'
-  '203:siege'
-  '203:end_to_end'
-  '204:balanced'
-  '204:comeback'
-  '204:siege'
-  '204:end_to_end'
-  '205:balanced'
-  '205:comeback'
-  '205:siege'
-  '205:end_to_end'
 ]
 
 @description('Requests per minute per client (MCP server rate limit).')

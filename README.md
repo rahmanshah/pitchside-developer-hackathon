@@ -15,6 +15,17 @@ Built for the **Inside the Game: Developer Hackathon**. Everything here is synth
 | (tools) | The stats engine as a read-only **MCP server** (`pitchside mcp`, stdio and Streamable HTTP) that the interpreter can use | **Built (offline-tested)**; not deployed, see [MCP server](#stats-engine-as-an-mcp-server) |
 | Render | Timed overlay contract (`overlay.json`) built from each run bundle; a static web UI that replays recorded runs (broadcast view, analyst dashboard, evidence drawer) | **Built (offline)**: replays offline sample runs from the fake model client; replay engine unit-tested, browser end-to-end smoke tests pass locally (Chromium); not deployed yet, see [web UI](#web-ui-replay-a-recorded-run) |
 | Personalize | Analyst / casual fan / favourite-player views, English and Spanish, one model call per moment | **Built (offline-tested)**; offline translations are tagged placeholders, not real translations |
+| Deploy (Azure) | Bicep template for one resource group: Static Web Apps (Free) for the UI and recorded runs, Container Apps for the MCP server (IP allow-list, rate limit, scale to zero), Log Analytics, a budget alert; staged deploy and guarded teardown scripts; container image and Static Web Apps workflows | **Planned: written and validated offline, not deployed yet** (`bicep build`/`lint` clean, image built and smoke-tested locally), see [docs/AZURE.md](docs/AZURE.md) |
+
+**Try it without Azure, in one command** (no credentials, no cost; [uv](https://docs.astral.sh/uv/) installs everything
+on first run):
+
+```bash
+uv run pitchside serve --open
+```
+
+That serves the web UI with the recorded runs in `web/data`. The whole pipeline also runs offline on the fake model
+client, e.g. `uv run pitchside run --seed 7 --storyline comeback`, which writes a new run bundle.
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the target design and [docs/DECISIONS.md](docs/DECISIONS.md)
 for the decision log (what we chose, why, and what we rejected).
@@ -254,10 +265,11 @@ Full reference, client notes and the deployment plan: [docs/MCP.md](docs/MCP.md)
   model passes, and every number a tool returns gets an evidence id before the model sees it, so claims that use tool
   numbers are checked like any other. A test runs the same matches in both modes and requires identical ledgers,
   narratives and audit trails.
-- **Not deployed.** Container Apps deployment is milestone 6; the exact command and settings are in
-  [docs/MCP.md](docs/MCP.md), and the same flags were checked locally over a real socket (HTTP 200 for the allowed host,
-  421 for any other). Only Agent Framework's MCP clients and the SDK's in-memory client are tested; other MCP clients
-  are untested here.
+- **Not deployed yet.** The container image, the Container Apps template (IP allow-list, in-app rate limit of 120
+  requests per minute per client, `/healthz`, scale 0..1) and the deployment steps are ready
+  ([docs/MCP.md](docs/MCP.md), [docs/AZURE.md](docs/AZURE.md)); the image was built and smoke-tested locally with the
+  same arguments (421 for a wrong host, 429 after a burst). Only Agent Framework's MCP clients and the SDK's in-memory
+  client are tested; other MCP clients are untested here.
 - **SDK version.** The MCP Python SDK is pinned below 2 (`mcp>=1.24,<2`): the latest Agent Framework (1.22.0) declares
   `mcp<2` and fails against SDK 2.x. See [decision 15](docs/DECISIONS.md).
 
@@ -289,13 +301,18 @@ Current: Python 3.11+, pydantic v2; the web UI is plain HTML, CSS and JavaScript
 (no framework, no build step). Agents and model access (built and tested offline, not yet run live):
 **Microsoft Agent Framework** (Python: `Agent`, graph workflows with `WorkflowBuilder`, function tools, MCP client tools,
 chat and function middleware), the **Model Context Protocol** Python SDK (the stats server), the **Azure AI Projects SDK** for the Microsoft Foundry project endpoint, and **Azure Identity**
-(Microsoft Entra ID, `DefaultAzureCredential`). Other Azure components are listed in
-[docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) as *planned* and will move here once they are built.
+(Microsoft Entra ID, `DefaultAzureCredential`).
+
+Azure hosting, **planned (template written and validated, not deployed yet)**: Azure Static Web Apps (Free), Azure
+Container Apps (Consumption), Log Analytics, Cost Management budgets, defined in **Bicep** with GitHub Actions for the
+image (GitHub Container Registry) and the site; see [docs/AZURE.md](docs/AZURE.md). Further options (managed identity
+with a cloud recorder, Entra ID auth on the MCP server, Application Insights) are listed there as planned.
 
 ## Development
 
 ```bash
 uv run pytest                # ~2.5 min: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client, agents, MCP server, overlay contract and the web replay engine (offline, fake client)
+docker build -t pitchside-mcp .      # the MCP server image (as deployed on Container Apps)
 uv run playwright install chromium   # once, for the browser tests and screenshots
 uv run pytest -m e2e         # ~15 s: browser end-to-end smoke tests of the web UI (excluded from the default run)
 uv run python scripts/capture_screenshots.py   # regenerate docs/img/ (fixed runs, fixed times, 1920 x 1080)
