@@ -1,0 +1,7521 @@
+{
+ "kind": "pitchside-overlays",
+ "overlay_version": "1.0",
+ "match_id": "har_wst_siege_0003",
+ "run_id": "sample-siege",
+ "source": {
+  "llm_mode": "fake",
+  "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
+  "faults_injected": false,
+  "fault_plan": null,
+  "faults_fired": 0
+ },
+ "teams": [
+  {
+   "team_id": "har",
+   "name": "Harbourton City",
+   "short_name": "HAR",
+   "side": "home",
+   "colours": {
+    "primary": "#8c29ae",
+    "secondary": "#d8d0f1",
+    "text": "#ffffff",
+    "accent": "#be40e7"
+   },
+   "crest": {
+    "pattern": "stripes",
+    "initials": "HAR"
+   }
+  },
+  {
+   "team_id": "wst",
+   "name": "Westmere Town",
+   "short_name": "WST",
+   "side": "away",
+   "colours": {
+    "primary": "#2960ae",
+    "secondary": "#d2d0f1",
+    "text": "#ffffff",
+    "accent": "#4086e7"
+   },
+   "crest": {
+    "pattern": "chevron",
+    "initials": "WST"
+   }
+  }
+ ],
+ "final_score": {
+  "home": 2,
+  "away": 1
+ },
+ "languages": [
+  "en",
+  "es"
+ ],
+ "personas": [
+  {
+   "persona": "analyst",
+   "kind": "analyst",
+   "player_id": null,
+   "name": null,
+   "team_id": null
+  },
+  {
+   "persona": "casual",
+   "kind": "casual",
+   "player_id": null,
+   "name": null,
+   "team_id": null
+  },
+  {
+   "persona": "fav:har_09",
+   "kind": "favourite",
+   "player_id": "har_09",
+   "name": "Hugo Vidal",
+   "team_id": "har"
+  },
+  {
+   "persona": "fav:wst_09",
+   "kind": "favourite",
+   "player_id": "wst_09",
+   "name": "Xavi Uusitalo",
+   "team_id": "wst"
+  }
+ ],
+ "timeline": {
+  "duration_s": 5490.0,
+  "segments": [
+   {
+    "kind": "play",
+    "period": 1,
+    "start_s": 0.0,
+    "end_s": 2700.0,
+    "clock_start_s": 0.0,
+    "clock_end_s": 2700.0
+   },
+   {
+    "kind": "break",
+    "period": 1,
+    "start_s": 2700.0,
+    "end_s": 2745.0,
+    "clock_start_s": 2700.0,
+    "clock_end_s": 2700.0
+   },
+   {
+    "kind": "play",
+    "period": 2,
+    "start_s": 2745.0,
+    "end_s": 5445.0,
+    "clock_start_s": 2700.0,
+    "clock_end_s": 5400.0
+   },
+   {
+    "kind": "end",
+    "period": 2,
+    "start_s": 5445.0,
+    "end_s": 5490.0,
+    "clock_start_s": 5400.0,
+    "clock_end_s": 5400.0
+   }
+  ]
+ },
+ "rules": {
+  "break_s": 45.0,
+  "end_s": 45.0,
+  "max_delay_s": 8.0,
+  "side_linger_s": 90.0,
+  "side_only_priority": 0.4
+ },
+ "overlays": [
+  {
+   "overlay_id": "har_wst_siege_0003:big_chance:0",
+   "job_id": "har_wst_siege_0003:big_chance:0",
+   "finding_id": "har_wst_siege_0003:big_chance:0",
+   "kind": "big_chance",
+   "status": "moment",
+   "team_id": "wst",
+   "player_ids": [
+    "wst_09"
+   ],
+   "clock_s": 437.6,
+   "period": 1,
+   "show_at_s": 437.6,
+   "hide_at_s": 452.6,
+   "priority": 0.905,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 437.6,
+     "hide_at_s": 452.6,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 452.6,
+     "hide_at_s": 527.6,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 437.6,
+     "hide_at_s": 452.6,
+     "note": null
+    }
+   ],
+   "hold_ms": 2500,
+   "highlight": {
+    "shape": "arrow",
+    "team_id": "wst",
+    "x": 5.0,
+    "y": 35.1,
+    "x2": 0.0,
+    "y2": 34.0
+   },
+   "headline": "Big chance: Westmere Town",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 65,
+        "end": 69,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 86,
+        "end": 87,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 80,
+        "end": 84,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 101,
+        "end": 102,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "team_id": "wst",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "p1",
+        "kind": "player",
+        "metric": null,
+        "team_id": "wst",
+        "player_id": "wst_09",
+        "name": "Xavi Uusitalo",
+        "involvement": "shooter",
+        "value": null,
+        "unit": null,
+        "say": null,
+        "window_start_s": 437.6,
+        "window_end_s": 437.6,
+        "baseline": null,
+        "source": "player",
+        "origin": null,
+        "events": [
+         {
+          "relation": "player",
+          "event_ids": [
+           111
+          ],
+          "count": 1,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": null,
+           "player_id": "wst_09",
+           "from_s": 437.6,
+           "to_s": 437.6
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.51 xG chance, from 5 m.",
+      "team_id": "wst",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "shot_xg",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.505,
+        "unit": "xg",
+        "say": "a 0.51 xG chance",
+        "window_start_s": 437.6,
+        "window_end_s": 437.6,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           111
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "shot_distance",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 5.1,
+        "unit": "m",
+        "say": "from 5 m",
+        "window_start_s": 437.6,
+        "window_end_s": 437.6,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           111
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 0.60 xG in the match.",
+      "team_id": "wst",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "match_xg",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.6,
+        "unit": "xg",
+        "say": "0.60 xG in the match",
+        "window_start_s": 0.0,
+        "window_end_s": 437.6,
+        "baseline": 0.182,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           111
+          ],
+          "count": 1,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           35,
+           111
+          ],
+          "count": 2,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "wst",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 437.6
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A big chance worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "3 claim(s): Big chance: Westmere Town",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 3 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 4,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 874,
+     "output_tokens": 465,
+     "cost_usd": 0.00032
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:counter_attack:0",
+   "job_id": "har_wst_siege_0003:counter_attack:0",
+   "finding_id": "har_wst_siege_0003:counter_attack:0",
+   "kind": "counter_attack",
+   "status": "moment",
+   "team_id": "har",
+   "player_ids": [
+    "har_03"
+   ],
+   "clock_s": 566.9,
+   "period": 1,
+   "show_at_s": 566.9,
+   "hide_at_s": 576.9,
+   "priority": 0.1,
+   "anchor": "side_panel",
+   "placements": [
+    {
+     "anchor": "side_panel",
+     "show_at_s": 566.9,
+     "hide_at_s": 656.9,
+     "note": null
+    }
+   ],
+   "hold_ms": 0,
+   "highlight": null,
+   "headline": "Harbourton City break quickly: 62 m gained in 10 s.",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 62 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 62 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 62 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 62 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "template",
+    "reason": "severity 0.10 is below the model floor 0.5",
+    "semantic_check": "not_run",
+    "claims": [
+     {
+      "claim_id": "t1",
+      "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "not_run",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "metres_gained",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 62.0,
+        "unit": "m",
+        "say": "62 m gained",
+        "window_start_s": 556.7,
+        "window_end_s": 566.9,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           137,
+           139
+          ],
+          "count": 2,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           138,
+           139
+          ],
+          "count": 2,
+          "filter": {
+           "types": [
+            "pass"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 556.7,
+           "to_s": 566.9
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "seconds_to_finish",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 10.2,
+        "unit": "s",
+        "say": "in 10 s",
+        "window_start_s": 556.7,
+        "window_end_s": 566.9,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           137,
+           139
+          ],
+          "count": 2,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [],
+          "count": 0,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 556.7,
+           "to_s": 566.9
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "template",
+    "drafts": 0,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "template",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "template",
+      "detail": "severity 0.10 is below the model floor 0.5",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 0,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cost_usd": 0.0
+    },
+    "badges": [
+     "template"
+    ]
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:counter_attack:1",
+   "job_id": "har_wst_siege_0003:counter_attack:1",
+   "finding_id": "har_wst_siege_0003:counter_attack:1",
+   "kind": "counter_attack",
+   "status": "moment",
+   "team_id": "har",
+   "player_ids": [
+    "har_06"
+   ],
+   "clock_s": 808.7,
+   "period": 1,
+   "show_at_s": 808.7,
+   "hide_at_s": 818.7,
+   "priority": 0.1,
+   "anchor": "side_panel",
+   "placements": [
+    {
+     "anchor": "side_panel",
+     "show_at_s": 808.7,
+     "hide_at_s": 898.7,
+     "note": null
+    }
+   ],
+   "hold_ms": 0,
+   "highlight": null,
+   "headline": "Harbourton City break quickly: 40 m gained in 10 s.",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 40 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 40 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 40 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 40 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "template",
+    "reason": "severity 0.10 is below the model floor 0.5",
+    "semantic_check": "not_run",
+    "claims": [
+     {
+      "claim_id": "t1",
+      "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "not_run",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "metres_gained",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 40.4,
+        "unit": "m",
+        "say": "40 m gained",
+        "window_start_s": 798.6,
+        "window_end_s": 808.7,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           196,
+           198
+          ],
+          "count": 2,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           197,
+           198
+          ],
+          "count": 2,
+          "filter": {
+           "types": [
+            "pass"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 798.6,
+           "to_s": 808.7
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "seconds_to_finish",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 10.1,
+        "unit": "s",
+        "say": "in 10 s",
+        "window_start_s": 798.6,
+        "window_end_s": 808.7,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           196,
+           198
+          ],
+          "count": 2,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [],
+          "count": 0,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 798.6,
+           "to_s": 808.7
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "template",
+    "drafts": 0,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "template",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "template",
+      "detail": "severity 0.10 is below the model floor 0.5",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 0,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cost_usd": 0.0
+    },
+    "badges": [
+     "template"
+    ]
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:momentum_shift:0",
+   "job_id": "har_wst_siege_0003:momentum_shift:0",
+   "finding_id": "har_wst_siege_0003:momentum_shift:0",
+   "kind": "momentum_shift",
+   "status": "start",
+   "team_id": "har",
+   "player_ids": [],
+   "clock_s": 1429.6,
+   "period": 1,
+   "show_at_s": 1429.6,
+   "hide_at_s": 1449.6,
+   "priority": 0.63,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 1429.6,
+     "hide_at_s": 1437.7,
+     "note": "cut short by har_wst_siege_0003:siege:0"
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 1437.7,
+     "hide_at_s": 1519.6,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 1429.6,
+     "hide_at_s": 1449.6,
+     "note": null
+    }
+   ],
+   "hold_ms": 2500,
+   "highlight": {
+    "shape": "zone",
+    "team_id": "har",
+    "x": 52.5,
+    "y": 0.0,
+    "x2": 105.0,
+    "y2": 68.0
+   },
+   "headline": "Momentum shift: Harbourton City",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 27,
+        "end": 31,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 33,
+        "end": 35,
+        "refs": [
+         "e2"
+        ]
+       },
+       {
+        "start": 66,
+        "end": 67,
+        "refs": [
+         "e3"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 42,
+        "end": 46,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 48,
+        "end": 50,
+        "refs": [
+         "e2"
+        ]
+       },
+       {
+        "start": 81,
+        "end": 82,
+        "refs": [
+         "e3"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City: momentum +0.63, 89% field tilt.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 27,
+        "end": 31,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 33,
+        "end": 35,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 42,
+        "end": 46,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 48,
+        "end": 50,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 50,
+        "end": 54,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 56,
+        "end": 58,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 65,
+        "end": 69,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 71,
+        "end": 73,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 53,
+        "end": 57,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 59,
+        "end": 61,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 68,
+        "end": 72,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 74,
+        "end": 76,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Harbourton City: momentum +0.63, 89% field tilt.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "momentum",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.63,
+        "unit": "index",
+        "say": "momentum +0.63",
+        "window_start_s": 1129.6,
+        "window_end_s": 1429.6,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           273,
+           274,
+           276,
+           278,
+           281,
+           282,
+           283,
+           284,
+           286,
+           289,
+           290,
+           292,
+           295,
+           296,
+           297,
+           298,
+           299,
+           300,
+           301,
+           302,
+           303,
+           304,
+           305,
+           306,
+           308,
+           312,
+           313,
+           314,
+           315,
+           316,
+           317,
+           319,
+           321,
+           323,
+           325,
+           327,
+           329,
+           331,
+           333,
+           335,
+           338,
+           339,
+           340,
+           341,
+           342,
+           343,
+           344,
+           345,
+           346
+          ],
+          "count": 49,
+          "filter": {
+           "types": [
+            "pass",
+            "shot",
+            "pressure"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1129.6,
+           "to_s": 1429.6
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "field_tilt",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 88.9,
+        "unit": "pct",
+        "say": "89% field tilt",
+        "window_start_s": 1129.6,
+        "window_end_s": 1429.6,
+        "baseline": 50.0,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           273,
+           281,
+           282,
+           283,
+           284,
+           289,
+           290,
+           295,
+           296,
+           297,
+           298,
+           299,
+           300,
+           301,
+           302,
+           303,
+           304,
+           305,
+           306,
+           312,
+           313,
+           314,
+           315,
+           316,
+           338,
+           339,
+           340,
+           341,
+           342,
+           343,
+           344,
+           345,
+           346
+          ],
+          "count": 33,
+          "filter": {
+           "types": [
+            "pass"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1129.6,
+           "to_s": 1429.6
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: 2 shots.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "shots",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "2 shots",
+        "window_start_s": 1129.6,
+        "window_end_s": 1429.6,
+        "baseline": 0.0,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           274,
+           317
+          ],
+          "count": 2,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1129.6,
+           "to_s": 1429.6
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A momentum shift worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "2 claim(s): Momentum shift: Harbourton City",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 2 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 2 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 2 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 4,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 603,
+     "output_tokens": 418,
+     "cost_usd": 0.000269
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:siege:0",
+   "job_id": "har_wst_siege_0003:siege:0",
+   "finding_id": "har_wst_siege_0003:siege:0",
+   "kind": "siege",
+   "status": "start",
+   "team_id": "har",
+   "player_ids": [],
+   "clock_s": 1437.7,
+   "period": 1,
+   "show_at_s": 1437.7,
+   "hide_at_s": 1457.7,
+   "priority": 0.764,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 1437.7,
+     "hide_at_s": 1457.7,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 1457.7,
+     "hide_at_s": 1527.7,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 1437.7,
+     "hide_at_s": 1457.7,
+     "note": null
+    }
+   ],
+   "hold_ms": 2500,
+   "highlight": {
+    "shape": "zone",
+    "team_id": "har",
+    "x": 70.0,
+    "y": 0.0,
+    "x2": 105.0,
+    "y2": 68.0
+   },
+   "headline": "Siege: Harbourton City",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City: 88% field tilt, 2 shots. Harbourton City: 0.41 xG.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 17,
+        "end": 19,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 33,
+        "end": 34,
+        "refs": [
+         "e2"
+        ]
+       },
+       {
+        "start": 59,
+        "end": 63,
+        "refs": [
+         "e3"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots. Harbourton City: 0.41 xG.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 32,
+        "end": 34,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 48,
+        "end": 49,
+        "refs": [
+         "e2"
+        ]
+       },
+       {
+        "start": 74,
+        "end": 78,
+        "refs": [
+         "e3"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City: 88% field tilt, 2 shots.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 17,
+        "end": 19,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 33,
+        "end": 34,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 32,
+        "end": 34,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 48,
+        "end": 49,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 40,
+        "end": 42,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 56,
+        "end": 57,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 55,
+        "end": 57,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 71,
+        "end": 72,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 43,
+        "end": 45,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 59,
+        "end": 60,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 58,
+        "end": 60,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 74,
+        "end": 75,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Harbourton City: 88% field tilt, 2 shots.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "field_tilt",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 88.2,
+        "unit": "pct",
+        "say": "88% field tilt",
+        "window_start_s": 1137.7,
+        "window_end_s": 1437.7,
+        "baseline": 50.0,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           281,
+           282,
+           283,
+           284,
+           289,
+           290,
+           295,
+           296,
+           297,
+           298,
+           299,
+           300,
+           301,
+           302,
+           303,
+           304,
+           305,
+           306,
+           312,
+           313,
+           314,
+           315,
+           316,
+           338,
+           339,
+           340,
+           341,
+           342,
+           343,
+           344,
+           345,
+           346,
+           347
+          ],
+          "count": 33,
+          "filter": {
+           "types": [
+            "pass"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1137.7,
+           "to_s": 1437.7
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "shots",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "2 shots",
+        "window_start_s": 1137.7,
+        "window_end_s": 1437.7,
+        "baseline": 0.0,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           274,
+           317
+          ],
+          "count": 2,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1137.7,
+           "to_s": 1437.7
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: 0.41 xG.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.41,
+        "unit": "xg",
+        "say": "0.41 xG",
+        "window_start_s": 1137.7,
+        "window_end_s": 1437.7,
+        "baseline": 0.0,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           274,
+           317
+          ],
+          "count": 2,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1137.7,
+           "to_s": 1437.7
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A siege worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "2 claim(s): Siege: Harbourton City",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 2 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 2 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 2 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 4,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 644,
+     "output_tokens": 398,
+     "cost_usd": 0.000263
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:pressure_surge:0",
+   "job_id": "har_wst_siege_0003:pressure_surge:0",
+   "finding_id": "har_wst_siege_0003:pressure_surge:0",
+   "kind": "pressure_surge",
+   "status": "start",
+   "team_id": "har",
+   "player_ids": [],
+   "clock_s": 1499.6,
+   "period": 1,
+   "show_at_s": 1499.6,
+   "hide_at_s": 1519.6,
+   "priority": 0.952,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 1499.6,
+     "hide_at_s": 1519.6,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 1519.6,
+     "hide_at_s": 1589.6,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 1499.6,
+     "hide_at_s": 1519.6,
+     "note": null
+    }
+   ],
+   "hold_ms": 2500,
+   "highlight": {
+    "shape": "zone",
+    "team_id": "har",
+    "x": 70.0,
+    "y": 0.0,
+    "x2": 105.0,
+    "y2": 68.0
+   },
+   "headline": "Pressure surge: Harbourton City",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won. Westmere Town completing 79% of their passes.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 17,
+        "end": 20,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 43,
+        "end": 44,
+        "refs": [
+         "e2"
+        ]
+       },
+       {
+        "start": 83,
+        "end": 85,
+        "refs": [
+         "e3"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won. Westmere Town completing 79% of their passes.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 32,
+        "end": 35,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 58,
+        "end": 59,
+        "refs": [
+         "e2"
+        ]
+       },
+       {
+        "start": 98,
+        "end": 100,
+        "refs": [
+         "e3"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 17,
+        "end": 20,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 43,
+        "end": 44,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 32,
+        "end": 35,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 58,
+        "end": 59,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 40,
+        "end": 43,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 66,
+        "end": 67,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 55,
+        "end": 58,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 81,
+        "end": 82,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 43,
+        "end": 46,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 69,
+        "end": 70,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 58,
+        "end": 61,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 84,
+        "end": 85,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "pressures_per_min",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 4.667,
+        "unit": "per_min",
+        "say": "4.7 pressures per minute",
+        "window_start_s": 1319.6,
+        "window_end_s": 1499.6,
+        "baseline": 1.455,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           319,
+           321,
+           323,
+           325,
+           327,
+           329,
+           331,
+           333,
+           335,
+           349,
+           351,
+           354,
+           361,
+           363
+          ],
+          "count": 14,
+          "filter": {
+           "types": [
+            "pressure"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1319.6,
+           "to_s": 1499.6
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "tackles_won",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.0,
+        "unit": "count",
+        "say": "0 tackles won",
+        "window_start_s": 1199.6,
+        "window_end_s": 1499.6,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           352
+          ],
+          "count": 1,
+          "filter": {
+           "types": [
+            "tackle"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1199.6,
+           "to_s": 1499.6
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town completing 79% of their passes.",
+      "team_id": "wst",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "opponent_pass_completion",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 78.6,
+        "unit": "pct",
+        "say": "Westmere Town completing 79% of their passes",
+        "window_start_s": 1199.6,
+        "window_end_s": 1499.6,
+        "baseline": 80.7,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           309,
+           320,
+           322,
+           324,
+           326,
+           328,
+           330,
+           332,
+           334,
+           336,
+           350,
+           353,
+           355,
+           362,
+           364
+          ],
+          "count": 15,
+          "filter": {
+           "types": [
+            "pass"
+           ],
+           "team_id": "wst",
+           "player_id": null,
+           "from_s": 1199.6,
+           "to_s": 1499.6
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A pressure surge worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "2 claim(s): Pressure surge: Harbourton City",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 2 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 2 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 2 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 4,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 659,
+     "output_tokens": 453,
+     "cost_usd": 0.000292
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:big_chance:1",
+   "job_id": "har_wst_siege_0003:big_chance:1",
+   "finding_id": "har_wst_siege_0003:big_chance:1",
+   "kind": "big_chance",
+   "status": "moment",
+   "team_id": "har",
+   "player_ids": [
+    "har_09"
+   ],
+   "clock_s": 1807.4,
+   "period": 1,
+   "show_at_s": 1807.4,
+   "hide_at_s": 1822.4,
+   "priority": 0.927,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 1807.4,
+     "hide_at_s": 1822.4,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 1822.4,
+     "hide_at_s": 1897.4,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 1807.4,
+     "hide_at_s": 1822.4,
+     "note": null
+    }
+   ],
+   "hold_ms": 2500,
+   "highlight": {
+    "shape": "arrow",
+    "team_id": "har",
+    "x": 100.2,
+    "y": 33.1,
+    "x2": 105.0,
+    "y2": 34.0
+   },
+   "headline": "Big chance: Harbourton City",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 66,
+        "end": 70,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 87,
+        "end": 88,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 81,
+        "end": 85,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 102,
+        "end": 103,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "p1",
+        "kind": "player",
+        "metric": null,
+        "team_id": "har",
+        "player_id": "har_09",
+        "name": "Hugo Vidal",
+        "involvement": "shooter",
+        "value": null,
+        "unit": null,
+        "say": null,
+        "window_start_s": 1807.4,
+        "window_end_s": 1807.4,
+        "baseline": null,
+        "source": "player",
+        "origin": null,
+        "events": [
+         {
+          "relation": "player",
+          "event_ids": [
+           443
+          ],
+          "count": 1,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": null,
+           "player_id": "har_09",
+           "from_s": 1807.4,
+           "to_s": 1807.4
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: a 0.53 xG chance, from 5 m.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "shot_xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.527,
+        "unit": "xg",
+        "say": "a 0.53 xG chance",
+        "window_start_s": 1807.4,
+        "window_end_s": 1807.4,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           443
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "shot_distance",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 4.9,
+        "unit": "m",
+        "say": "from 5 m",
+        "window_start_s": 1807.4,
+        "window_end_s": 1807.4,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           443
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 1.27 xG in the match.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "match_xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.27,
+        "unit": "xg",
+        "say": "1.27 xG in the match",
+        "window_start_s": 0.0,
+        "window_end_s": 1807.4,
+        "baseline": 0.788,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           443
+          ],
+          "count": 1,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           73,
+           206,
+           274,
+           317,
+           443
+          ],
+          "count": 5,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 1807.4
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A big chance worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "3 claim(s): Big chance: Harbourton City",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 3 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 4,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 913,
+     "output_tokens": 465,
+     "cost_usd": 0.000324
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:big_chance:2",
+   "job_id": "har_wst_siege_0003:big_chance:2",
+   "finding_id": "har_wst_siege_0003:big_chance:2",
+   "kind": "big_chance",
+   "status": "moment",
+   "team_id": "har",
+   "player_ids": [
+    "har_09"
+   ],
+   "clock_s": 2098.9,
+   "period": 1,
+   "show_at_s": 2098.9,
+   "hide_at_s": 2113.9,
+   "priority": 1.0,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 2098.9,
+     "hide_at_s": 2113.9,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 2113.9,
+     "hide_at_s": 2188.9,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 2098.9,
+     "hide_at_s": 2113.9,
+     "note": null
+    }
+   ],
+   "hold_ms": 2500,
+   "highlight": {
+    "shape": "arrow",
+    "team_id": "har",
+    "x": 102.6,
+    "y": 36.5,
+    "x2": 105.0,
+    "y2": 34.0
+   },
+   "headline": "Big chance: Harbourton City",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 66,
+        "end": 70,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 87,
+        "end": 88,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 81,
+        "end": 85,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 102,
+        "end": 103,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "p1",
+        "kind": "player",
+        "metric": null,
+        "team_id": "har",
+        "player_id": "har_09",
+        "name": "Hugo Vidal",
+        "involvement": "shooter",
+        "value": null,
+        "unit": null,
+        "say": null,
+        "window_start_s": 2098.9,
+        "window_end_s": 2098.9,
+        "baseline": null,
+        "source": "player",
+        "origin": null,
+        "events": [
+         {
+          "relation": "player",
+          "event_ids": [
+           515
+          ],
+          "count": 1,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": null,
+           "player_id": "har_09",
+           "from_s": 2098.9,
+           "to_s": 2098.9
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: a 0.71 xG chance, from 4 m.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "shot_xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.712,
+        "unit": "xg",
+        "say": "a 0.71 xG chance",
+        "window_start_s": 2098.9,
+        "window_end_s": 2098.9,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           515
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "shot_distance",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 3.5,
+        "unit": "m",
+        "say": "from 4 m",
+        "window_start_s": 2098.9,
+        "window_end_s": 2098.9,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           515
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 1.98 xG in the match.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "match_xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.982,
+        "unit": "xg",
+        "say": "1.98 xG in the match",
+        "window_start_s": 0.0,
+        "window_end_s": 2098.9,
+        "baseline": 0.788,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           515
+          ],
+          "count": 1,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           73,
+           206,
+           274,
+           317,
+           443,
+           515
+          ],
+          "count": 6,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 2098.9
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A big chance worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "3 claim(s): Big chance: Harbourton City",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 3 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 4,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 916,
+     "output_tokens": 465,
+     "cost_usd": 0.000324
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:goal:0",
+   "job_id": "har_wst_siege_0003:goal:0",
+   "finding_id": "har_wst_siege_0003:goal:0",
+   "kind": "goal",
+   "status": "moment",
+   "team_id": "har",
+   "player_ids": [
+    "har_09"
+   ],
+   "clock_s": 2194.3,
+   "period": 1,
+   "show_at_s": 2194.3,
+   "hide_at_s": 2219.3,
+   "priority": 1.0,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 2194.3,
+     "hide_at_s": 2219.3,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 2219.3,
+     "hide_at_s": 2284.3,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 2194.3,
+     "hide_at_s": 2219.3,
+     "note": null
+    }
+   ],
+   "hold_ms": 4000,
+   "highlight": {
+    "shape": "arrow",
+    "team_id": "har",
+    "x": 86.1,
+    "y": 32.9,
+    "x2": 105.0,
+    "y2": 34.0
+   },
+   "headline": "Goal: Harbourton City",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 93,
+        "end": 97,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 114,
+        "end": 116,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 108,
+        "end": 112,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 129,
+        "end": 131,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "p1",
+        "kind": "player",
+        "metric": null,
+        "team_id": "har",
+        "player_id": "har_09",
+        "name": "Hugo Vidal",
+        "involvement": "scorer",
+        "value": null,
+        "unit": null,
+        "say": null,
+        "window_start_s": 2194.3,
+        "window_end_s": 2194.3,
+        "baseline": null,
+        "source": "player",
+        "origin": null,
+        "events": [
+         {
+          "relation": "player",
+          "event_ids": [
+           546
+          ],
+          "count": 1,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": null,
+           "player_id": "har_09",
+           "from_s": 2194.3,
+           "to_s": 2194.3
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: a 0.06 xG chance, from 19 m.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "shot_xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.058,
+        "unit": "xg",
+        "say": "a 0.06 xG chance",
+        "window_start_s": 2194.3,
+        "window_end_s": 2194.3,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           546
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "shot_distance",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 19.0,
+        "unit": "m",
+        "say": "from 19 m",
+        "window_start_s": 2194.3,
+        "window_end_s": 2194.3,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           546
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 2.04 xG in the match, Harbourton City: 50% possession.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "match_xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.04,
+        "unit": "xg",
+        "say": "2.04 xG in the match",
+        "window_start_s": 0.0,
+        "window_end_s": 2194.3,
+        "baseline": 0.788,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           546
+          ],
+          "count": 1,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           73,
+           206,
+           274,
+           317,
+           443,
+           515,
+           546
+          ],
+          "count": 7,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 2194.3
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "c4",
+        "kind": "number",
+        "metric": "possession_total",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 49.9,
+        "unit": "pct",
+        "say": "Harbourton City: 50% possession",
+        "window_start_s": 0.0,
+        "window_end_s": 2194.3,
+        "baseline": null,
+        "source": "context",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           2,
+           8,
+           24,
+           31,
+           36,
+           53,
+           66,
+           84,
+           92,
+           98,
+           106,
+           112,
+           119,
+           137,
+           156,
+           173,
+           182,
+           196,
+           226,
+           231,
+           246,
+           263,
+           270,
+           280,
+           288,
+           294,
+           310,
+           337,
+           356,
+           382,
+           392,
+           410,
+           430,
+           438,
+           451,
+           469,
+           507,
+           525,
+           532,
+           537,
+           544
+          ],
+          "count": 41,
+          "filter": {
+           "types": [
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 2194.3
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A goal worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "3 claim(s): Goal: Harbourton City",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 3 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 5,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 1745,
+     "output_tokens": 552,
+     "cost_usd": 0.000451
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:pressure_surge:1",
+   "job_id": "har_wst_siege_0003:pressure_surge:1",
+   "finding_id": "har_wst_siege_0003:pressure_surge:1",
+   "kind": "pressure_surge",
+   "status": "end",
+   "team_id": "har",
+   "player_ids": [],
+   "clock_s": 2694.7,
+   "period": 1,
+   "show_at_s": 2694.7,
+   "hide_at_s": 2706.7,
+   "priority": 0.4,
+   "anchor": "side_panel",
+   "placements": [
+    {
+     "anchor": "side_panel",
+     "show_at_s": 2694.7,
+     "hide_at_s": 2784.7,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 2694.7,
+     "hide_at_s": 2706.7,
+     "note": null
+    }
+   ],
+   "hold_ms": 0,
+   "highlight": {
+    "shape": "zone",
+    "team_id": "har",
+    "x": 70.0,
+    "y": 0.0,
+    "x2": 105.0,
+    "y2": 68.0
+   },
+   "headline": "Harbourton City's pressing surge ends after 23 min.",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City's pressing surge ends after 23 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 44,
+        "end": 46,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina la oleada de presión de Harbourton City tras 23 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 53,
+        "end": 55,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City's pressing surge ends after 23 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 44,
+        "end": 46,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina la oleada de presión de Harbourton City tras 23 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 53,
+        "end": 55,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "Harbourton City's pressing surge ends after 23 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 44,
+        "end": 46,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina la oleada de presión de Harbourton City tras 23 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 53,
+        "end": 55,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "Harbourton City's pressing surge ends after 23 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 44,
+        "end": 46,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina la oleada de presión de Harbourton City tras 23 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 53,
+        "end": 55,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "template",
+    "reason": "spell end: always a template (decision 12)",
+    "semantic_check": "not_run",
+    "claims": [
+     {
+      "claim_id": "t1",
+      "text": "Harbourton City's pressing surge ends after 23 min.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "not_run",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "spell_duration",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1374.3,
+        "unit": "s",
+        "say": "lasting 23 min",
+        "window_start_s": 1199.6,
+        "window_end_s": 2573.9,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           295,
+           296,
+           297,
+           298,
+           299,
+           300,
+           301,
+           302,
+           303,
+           304,
+           305,
+           306,
+           308,
+           310,
+           312,
+           313,
+           314,
+           315,
+           316,
+           317,
+           319,
+           321,
+           323,
+           325,
+           327,
+           329,
+           331,
+           333,
+           335,
+           337,
+           338,
+           339,
+           340,
+           341,
+           342,
+           343,
+           344,
+           345,
+           346,
+           347,
+           349,
+           351,
+           352,
+           354,
+           356,
+           357,
+           358,
+           359,
+           361,
+           363,
+           365,
+           367,
+           369,
+           370,
+           372,
+           374,
+           376,
+           378,
+           380,
+           382,
+           383,
+           384,
+           385,
+           386,
+           388,
+           390,
+           391,
+           392,
+           393,
+           394,
+           395,
+           396,
+           397,
+           398,
+           399,
+           400,
+           402,
+           404,
+           406,
+           408,
+           410,
+           411,
+           412,
+           413,
+           414,
+           416,
+           419,
+           421,
+           423,
+           425,
+           427,
+           430,
+           431,
+           432,
+           433,
+           436,
+           438,
+           439,
+           440,
+           441,
+           442,
+           443,
+           445,
+           447,
+           449,
+           450,
+           451,
+           452,
+           454,
+           456,
+           458,
+           460,
+           463,
+           465,
+           467,
+           468,
+           469,
+           470,
+           471,
+           472,
+           473,
+           474,
+           476,
+           477,
+           478,
+           479,
+           480,
+           481,
+           482,
+           483,
+           485,
+           487,
+           489,
+           491,
+           493,
+           495,
+           496,
+           497,
+           499,
+           504,
+           507,
+           508,
+           509,
+           510,
+           511,
+           512,
+           513,
+           514,
+           515,
+           517,
+           519,
+           521,
+           523,
+           524,
+           525,
+           526,
+           528,
+           530,
+           532,
+           533,
+           535,
+           537,
+           538,
+           539,
+           540,
+           542,
+           544,
+           545,
+           546,
+           549,
+           550,
+           553,
+           555,
+           557,
+           559,
+           561,
+           563,
+           564,
+           567,
+           569,
+           572,
+           578,
+           580,
+           581,
+           582,
+           583,
+           584,
+           585,
+           587,
+           590,
+           591,
+           592,
+           595,
+           598,
+           601,
+           603,
+           604,
+           605,
+           607,
+           609
+          ],
+          "count": 217,
+          "filter": {
+           "types": [
+            "pass",
+            "shot",
+            "tackle",
+            "pressure",
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1199.6,
+           "to_s": 2573.9
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "template",
+    "drafts": 0,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "template",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "template",
+      "detail": "spell end: always a template (decision 12)",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 0,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cost_usd": 0.0
+    },
+    "badges": [
+     "template"
+    ]
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:recap:half_time",
+   "job_id": "har_wst_siege_0003:recap:half_time",
+   "finding_id": null,
+   "kind": "recap_half_time",
+   "status": "recap",
+   "team_id": null,
+   "player_ids": [
+    "har_09",
+    "wst_09"
+   ],
+   "clock_s": 2700.0,
+   "period": 1,
+   "show_at_s": 2700.0,
+   "hide_at_s": 2745.0,
+   "priority": 1.0,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 2700.0,
+     "hide_at_s": 2745.0,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 2745.0,
+     "hide_at_s": 2790.0,
+     "note": null
+    }
+   ],
+   "hold_ms": 9000,
+   "highlight": null,
+   "headline": "Half time: the match",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidal scored for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidal scored for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Half-time: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Half-time: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Half-time: Harbourton City 1-0 Westmere Town.",
+      "team_id": null,
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "c1",
+        "kind": "number",
+        "metric": "possession_total",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 50.7,
+        "unit": "pct",
+        "say": "Harbourton City: 51% possession",
+        "window_start_s": 0.0,
+        "window_end_s": 2700.0,
+        "baseline": null,
+        "source": "context",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           2,
+           8,
+           24,
+           31,
+           36,
+           53,
+           66,
+           84,
+           92,
+           98,
+           106,
+           112,
+           119,
+           137,
+           156,
+           173,
+           182,
+           196,
+           226,
+           231,
+           246,
+           263,
+           270,
+           280,
+           288,
+           294,
+           310,
+           337,
+           356,
+           382,
+           392,
+           410,
+           430,
+           438,
+           451,
+           469,
+           507,
+           525,
+           532,
+           537,
+           544,
+           549,
+           563,
+           578,
+           590,
+           604,
+           617,
+           644,
+           655
+          ],
+          "count": 49,
+          "filter": {
+           "types": [
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 2700.0
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Hugo Vidal scored for Harbourton City.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "p1",
+        "kind": "player",
+        "metric": null,
+        "team_id": "har",
+        "player_id": "har_09",
+        "name": "Hugo Vidal",
+        "involvement": "scorer",
+        "value": null,
+        "unit": null,
+        "say": null,
+        "window_start_s": 0.0,
+        "window_end_s": 2700.0,
+        "baseline": null,
+        "source": "player",
+        "origin": null,
+        "events": [
+         {
+          "relation": "player",
+          "event_ids": [
+           73,
+           206,
+           274,
+           317,
+           443,
+           515,
+           546,
+           585
+          ],
+          "count": 8,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": null,
+           "player_id": "har_09",
+           "from_s": 0.0,
+           "to_s": 2700.0
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 51% possession, Harbourton City: 8 shots.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "c1",
+        "kind": "number",
+        "metric": "possession_total",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 50.7,
+        "unit": "pct",
+        "say": "Harbourton City: 51% possession",
+        "window_start_s": 0.0,
+        "window_end_s": 2700.0,
+        "baseline": null,
+        "source": "context",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           2,
+           8,
+           24,
+           31,
+           36,
+           53,
+           66,
+           84,
+           92,
+           98,
+           106,
+           112,
+           119,
+           137,
+           156,
+           173,
+           182,
+           196,
+           226,
+           231,
+           246,
+           263,
+           270,
+           280,
+           288,
+           294,
+           310,
+           337,
+           356,
+           382,
+           392,
+           410,
+           430,
+           438,
+           451,
+           469,
+           507,
+           525,
+           532,
+           537,
+           544,
+           549,
+           563,
+           578,
+           590,
+           604,
+           617,
+           644,
+           655
+          ],
+          "count": 49,
+          "filter": {
+           "types": [
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 2700.0
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "c2",
+        "kind": "number",
+        "metric": "shots_total",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 8.0,
+        "unit": "count",
+        "say": "Harbourton City: 8 shots",
+        "window_start_s": 0.0,
+        "window_end_s": 2700.0,
+        "baseline": null,
+        "source": "context",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           73,
+           206,
+           274,
+           317,
+           443,
+           515,
+           546,
+           585
+          ],
+          "count": 8,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 2700.0
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A half time worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "3 claim(s): Half time: the match",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 3 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 5,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 3191,
+     "output_tokens": 466,
+     "cost_usd": 0.000552
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:siege:1",
+   "job_id": "har_wst_siege_0003:siege:1",
+   "finding_id": "har_wst_siege_0003:siege:1",
+   "kind": "siege",
+   "status": "end",
+   "team_id": "har",
+   "player_ids": [],
+   "clock_s": 3041.9,
+   "period": 2,
+   "show_at_s": 3086.9,
+   "hide_at_s": 3098.9,
+   "priority": 0.4,
+   "anchor": "side_panel",
+   "placements": [
+    {
+     "anchor": "side_panel",
+     "show_at_s": 3086.9,
+     "hide_at_s": 3176.9,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 3086.9,
+     "hide_at_s": 3098.9,
+     "note": null
+    }
+   ],
+   "hold_ms": 0,
+   "highlight": {
+    "shape": "zone",
+    "team_id": "har",
+    "x": 70.0,
+    "y": 0.0,
+    "x2": 105.0,
+    "y2": 68.0
+   },
+   "headline": "Harbourton City's siege ends after 30 min.",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City's siege ends after 30 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 35,
+        "end": 37,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina el asedio de Harbourton City tras 30 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 42,
+        "end": 44,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City's siege ends after 30 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 35,
+        "end": 37,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina el asedio de Harbourton City tras 30 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 42,
+        "end": 44,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "Harbourton City's siege ends after 30 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 35,
+        "end": 37,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina el asedio de Harbourton City tras 30 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 42,
+        "end": 44,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "Harbourton City's siege ends after 30 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 35,
+        "end": 37,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina el asedio de Harbourton City tras 30 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 42,
+        "end": 44,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "template",
+    "reason": "spell end: always a template (decision 12)",
+    "semantic_check": "not_run",
+    "claims": [
+     {
+      "claim_id": "t1",
+      "text": "Harbourton City's siege ends after 30 min.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "not_run",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "spell_duration",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1783.1,
+        "unit": "s",
+        "say": "lasting 30 min",
+        "window_start_s": 1137.7,
+        "window_end_s": 2920.8,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           274,
+           276,
+           278,
+           280,
+           281,
+           282,
+           283,
+           284,
+           286,
+           288,
+           289,
+           290,
+           292,
+           293,
+           294,
+           295,
+           296,
+           297,
+           298,
+           299,
+           300,
+           301,
+           302,
+           303,
+           304,
+           305,
+           306,
+           308,
+           310,
+           312,
+           313,
+           314,
+           315,
+           316,
+           317,
+           319,
+           321,
+           323,
+           325,
+           327,
+           329,
+           331,
+           333,
+           335,
+           337,
+           338,
+           339,
+           340,
+           341,
+           342,
+           343,
+           344,
+           345,
+           346,
+           347,
+           349,
+           351,
+           352,
+           354,
+           356,
+           357,
+           358,
+           359,
+           361,
+           363,
+           365,
+           367,
+           369,
+           370,
+           372,
+           374,
+           376,
+           378,
+           380,
+           382,
+           383,
+           384,
+           385,
+           386,
+           388,
+           390,
+           391,
+           392,
+           393,
+           394,
+           395,
+           396,
+           397,
+           398,
+           399,
+           400,
+           402,
+           404,
+           406,
+           408,
+           410,
+           411,
+           412,
+           413,
+           414,
+           416,
+           419,
+           421,
+           423,
+           425,
+           427,
+           430,
+           431,
+           432,
+           433,
+           436,
+           438,
+           439,
+           440,
+           441,
+           442,
+           443,
+           445,
+           447,
+           449,
+           450,
+           451,
+           452,
+           454,
+           456,
+           458,
+           460,
+           463,
+           465,
+           467,
+           468,
+           469,
+           470,
+           471,
+           472,
+           473,
+           474,
+           476,
+           477,
+           478,
+           479,
+           480,
+           481,
+           482,
+           483,
+           485,
+           487,
+           489,
+           491,
+           493,
+           495,
+           496,
+           497,
+           499,
+           504,
+           507,
+           508,
+           509,
+           510,
+           511,
+           512,
+           513,
+           514,
+           515,
+           517,
+           519,
+           521,
+           523,
+           524,
+           525,
+           526,
+           528,
+           530,
+           532,
+           533,
+           535,
+           537,
+           538,
+           539,
+           540,
+           542,
+           544,
+           545,
+           546,
+           549,
+           550,
+           553,
+           555,
+           557,
+           559,
+           561,
+           563,
+           564,
+           567,
+           569,
+           572,
+           578,
+           580,
+           581,
+           582
+          ],
+          "count": 272,
+          "filter": {
+           "types": [
+            "pass",
+            "shot",
+            "tackle",
+            "pressure",
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1137.7,
+           "to_s": 2920.8
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "template",
+    "drafts": 0,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "template",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "template",
+      "detail": "spell end: always a template (decision 12)",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 0,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cost_usd": 0.0
+    },
+    "badges": [
+     "template"
+    ]
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:momentum_shift:1",
+   "job_id": "har_wst_siege_0003:momentum_shift:1",
+   "finding_id": "har_wst_siege_0003:momentum_shift:1",
+   "kind": "momentum_shift",
+   "status": "end",
+   "team_id": "har",
+   "player_ids": [],
+   "clock_s": 3117.7,
+   "period": 2,
+   "show_at_s": 3162.7,
+   "hide_at_s": 3174.7,
+   "priority": 0.4,
+   "anchor": "side_panel",
+   "placements": [
+    {
+     "anchor": "side_panel",
+     "show_at_s": 3162.7,
+     "hide_at_s": 3252.7,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 3162.7,
+     "hide_at_s": 3174.7,
+     "note": null
+    }
+   ],
+   "hold_ms": 0,
+   "highlight": {
+    "shape": "zone",
+    "team_id": "har",
+    "x": 52.5,
+    "y": 0.0,
+    "x2": 105.0,
+    "y2": 68.0
+   },
+   "headline": "Harbourton City's spell on top ends after 31 min.",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City's spell on top ends after 31 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 42,
+        "end": 44,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina la racha de dominio de Harbourton City tras 31 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 52,
+        "end": 54,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City's spell on top ends after 31 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 42,
+        "end": 44,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina la racha de dominio de Harbourton City tras 31 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 52,
+        "end": 54,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "Harbourton City's spell on top ends after 31 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 42,
+        "end": 44,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina la racha de dominio de Harbourton City tras 31 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 52,
+        "end": 54,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "Harbourton City's spell on top ends after 31 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 42,
+        "end": 44,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Termina la racha de dominio de Harbourton City tras 31 min.",
+      "source": "template",
+      "reason": "spell end: always a template (decision 12)",
+      "numbers": [
+       {
+        "start": 52,
+        "end": 54,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "template",
+    "reason": "spell end: always a template (decision 12)",
+    "semantic_check": "not_run",
+    "claims": [
+     {
+      "claim_id": "t1",
+      "text": "Harbourton City's spell on top ends after 31 min.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "not_run",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "spell_duration",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1867.7,
+        "unit": "s",
+        "say": "lasting 31 min",
+        "window_start_s": 1129.6,
+        "window_end_s": 2997.3,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           273,
+           274,
+           276,
+           278,
+           280,
+           281,
+           282,
+           283,
+           284,
+           286,
+           288,
+           289,
+           290,
+           292,
+           293,
+           294,
+           295,
+           296,
+           297,
+           298,
+           299,
+           300,
+           301,
+           302,
+           303,
+           304,
+           305,
+           306,
+           308,
+           310,
+           312,
+           313,
+           314,
+           315,
+           316,
+           317,
+           319,
+           321,
+           323,
+           325,
+           327,
+           329,
+           331,
+           333,
+           335,
+           337,
+           338,
+           339,
+           340,
+           341,
+           342,
+           343,
+           344,
+           345,
+           346,
+           347,
+           349,
+           351,
+           352,
+           354,
+           356,
+           357,
+           358,
+           359,
+           361,
+           363,
+           365,
+           367,
+           369,
+           370,
+           372,
+           374,
+           376,
+           378,
+           380,
+           382,
+           383,
+           384,
+           385,
+           386,
+           388,
+           390,
+           391,
+           392,
+           393,
+           394,
+           395,
+           396,
+           397,
+           398,
+           399,
+           400,
+           402,
+           404,
+           406,
+           408,
+           410,
+           411,
+           412,
+           413,
+           414,
+           416,
+           419,
+           421,
+           423,
+           425,
+           427,
+           430,
+           431,
+           432,
+           433,
+           436,
+           438,
+           439,
+           440,
+           441,
+           442,
+           443,
+           445,
+           447,
+           449,
+           450,
+           451,
+           452,
+           454,
+           456,
+           458,
+           460,
+           463,
+           465,
+           467,
+           468,
+           469,
+           470,
+           471,
+           472,
+           473,
+           474,
+           476,
+           477,
+           478,
+           479,
+           480,
+           481,
+           482,
+           483,
+           485,
+           487,
+           489,
+           491,
+           493,
+           495,
+           496,
+           497,
+           499,
+           504,
+           507,
+           508,
+           509,
+           510,
+           511,
+           512,
+           513,
+           514,
+           515,
+           517,
+           519,
+           521,
+           523,
+           524,
+           525,
+           526,
+           528,
+           530,
+           532,
+           533,
+           535,
+           537,
+           538,
+           539,
+           540,
+           542,
+           544,
+           545,
+           546,
+           549,
+           550,
+           553,
+           555,
+           557,
+           559,
+           561,
+           563,
+           564,
+           567,
+           569,
+           572,
+           578,
+           580,
+           581
+          ],
+          "count": 273,
+          "filter": {
+           "types": [
+            "pass",
+            "shot",
+            "tackle",
+            "pressure",
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 1129.6,
+           "to_s": 2997.3
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "template",
+    "drafts": 0,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "template",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "template",
+      "detail": "spell end: always a template (decision 12)",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 0,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cost_usd": 0.0
+    },
+    "badges": [
+     "template"
+    ]
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:goal:1",
+   "job_id": "har_wst_siege_0003:goal:1",
+   "finding_id": "har_wst_siege_0003:goal:1",
+   "kind": "goal",
+   "status": "moment",
+   "team_id": "wst",
+   "player_ids": [
+    "wst_09"
+   ],
+   "clock_s": 3220.6,
+   "period": 2,
+   "show_at_s": 3265.6,
+   "hide_at_s": 3290.6,
+   "priority": 1.0,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 3265.6,
+     "hide_at_s": 3290.6,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 3290.6,
+     "hide_at_s": 3355.6,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 3265.6,
+     "hide_at_s": 3290.6,
+     "note": null
+    }
+   ],
+   "hold_ms": 4000,
+   "highlight": {
+    "shape": "arrow",
+    "team_id": "wst",
+    "x": 4.1,
+    "y": 33.5,
+    "x2": 0.0,
+    "y2": 34.0
+   },
+   "headline": "Goal: Westmere Town",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 92,
+        "end": 96,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 113,
+        "end": 114,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 107,
+        "end": 111,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 128,
+        "end": 129,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "team_id": "wst",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "p1",
+        "kind": "player",
+        "metric": null,
+        "team_id": "wst",
+        "player_id": "wst_09",
+        "name": "Xavi Uusitalo",
+        "involvement": "scorer",
+        "value": null,
+        "unit": null,
+        "say": null,
+        "window_start_s": 3220.6,
+        "window_end_s": 3220.6,
+        "baseline": null,
+        "source": "player",
+        "origin": null,
+        "events": [
+         {
+          "relation": "player",
+          "event_ids": [
+           788
+          ],
+          "count": 1,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": null,
+           "player_id": "wst_09",
+           "from_s": 3220.6,
+           "to_s": 3220.6
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.63 xG chance, from 4 m.",
+      "team_id": "wst",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "shot_xg",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.627,
+        "unit": "xg",
+        "say": "a 0.63 xG chance",
+        "window_start_s": 3220.6,
+        "window_end_s": 3220.6,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           788
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "shot_distance",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 4.1,
+        "unit": "m",
+        "say": "from 4 m",
+        "window_start_s": 3220.6,
+        "window_end_s": 3220.6,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           788
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 1.45 xG in the match.",
+      "team_id": "wst",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "match_xg",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.451,
+        "unit": "xg",
+        "say": "1.45 xG in the match",
+        "window_start_s": 0.0,
+        "window_end_s": 3220.6,
+        "baseline": 2.446,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           788
+          ],
+          "count": 1,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           35,
+           111,
+           245,
+           577,
+           728,
+           788
+          ],
+          "count": 6,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "wst",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 3220.6
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A goal worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "3 claim(s): Goal: Westmere Town",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 3 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 5,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 1719,
+     "output_tokens": 534,
+     "cost_usd": 0.000439
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:counter_attack:2",
+   "job_id": "har_wst_siege_0003:counter_attack:2",
+   "finding_id": "har_wst_siege_0003:counter_attack:2",
+   "kind": "counter_attack",
+   "status": "moment",
+   "team_id": "har",
+   "player_ids": [
+    "har_10"
+   ],
+   "clock_s": 4236.1,
+   "period": 2,
+   "show_at_s": 4281.1,
+   "hide_at_s": 4291.1,
+   "priority": 0.1,
+   "anchor": "side_panel",
+   "placements": [
+    {
+     "anchor": "side_panel",
+     "show_at_s": 4281.1,
+     "hide_at_s": 4371.1,
+     "note": null
+    }
+   ],
+   "hold_ms": 0,
+   "highlight": null,
+   "headline": "Harbourton City break quickly: 42 m gained in 10 s.",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 42 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 42 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 42 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 31,
+        "end": 33,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 46,
+        "end": 48,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "Harbourton City sale rápido a la contra: 42 m en 10 s.",
+      "source": "template",
+      "reason": "severity 0.10 is below the model floor 0.5",
+      "numbers": [
+       {
+        "start": 41,
+        "end": 43,
+        "refs": [
+         "e3"
+        ]
+       },
+       {
+        "start": 49,
+        "end": 51,
+        "refs": [
+         "e1"
+        ]
+       }
+      ]
+     }
+    }
+   },
+   "provenance": {
+    "source": "template",
+    "reason": "severity 0.10 is below the model floor 0.5",
+    "semantic_check": "not_run",
+    "claims": [
+     {
+      "claim_id": "t1",
+      "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "not_run",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "metres_gained",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 41.8,
+        "unit": "m",
+        "say": "42 m gained",
+        "window_start_s": 4225.9,
+        "window_end_s": 4236.1,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           986,
+           988
+          ],
+          "count": 2,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           987,
+           988
+          ],
+          "count": 2,
+          "filter": {
+           "types": [
+            "pass"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 4225.9,
+           "to_s": 4236.1
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "seconds_to_finish",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 10.2,
+        "unit": "s",
+        "say": "in 10 s",
+        "window_start_s": 4225.9,
+        "window_end_s": 4236.1,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           986,
+           988
+          ],
+          "count": 2,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [],
+          "count": 0,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 4225.9,
+           "to_s": 4236.1
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "template",
+    "drafts": 0,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "template",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "template",
+      "detail": "severity 0.10 is below the model floor 0.5",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 0,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 0,
+     "output_tokens": 0,
+     "cost_usd": 0.0
+    },
+    "badges": [
+     "template"
+    ]
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:goal:2",
+   "job_id": "har_wst_siege_0003:goal:2",
+   "finding_id": "har_wst_siege_0003:goal:2",
+   "kind": "goal",
+   "status": "moment",
+   "team_id": "har",
+   "player_ids": [
+    "har_11"
+   ],
+   "clock_s": 4755.7,
+   "period": 2,
+   "show_at_s": 4800.7,
+   "hide_at_s": 4825.7,
+   "priority": 1.0,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 4800.7,
+     "hide_at_s": 4825.7,
+     "note": null
+    },
+    {
+     "anchor": "side_panel",
+     "show_at_s": 4825.7,
+     "hide_at_s": 4890.7,
+     "note": null
+    },
+    {
+     "anchor": "pitch_highlight",
+     "show_at_s": 4800.7,
+     "hide_at_s": 4825.7,
+     "note": null
+    }
+   ],
+   "hold_ms": 4000,
+   "highlight": {
+    "shape": "arrow",
+    "team_id": "har",
+    "x": 85.4,
+    "y": 25.2,
+    "x2": 105.0,
+    "y2": 34.0
+   },
+   "headline": "Goal: Harbourton City",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 99,
+        "end": 103,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 120,
+        "end": 122,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     },
+     "es": {
+      "text": "[es · offline] Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 114,
+        "end": 118,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 135,
+        "end": 137,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "p1",
+        "kind": "player",
+        "metric": null,
+        "team_id": "har",
+        "player_id": "har_11",
+        "name": "Joaquin Quintero",
+        "involvement": "scorer",
+        "value": null,
+        "unit": null,
+        "say": null,
+        "window_start_s": 4755.7,
+        "window_end_s": 4755.7,
+        "baseline": null,
+        "source": "player",
+        "origin": null,
+        "events": [
+         {
+          "relation": "player",
+          "event_ids": [
+           1095
+          ],
+          "count": 1,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": null,
+           "player_id": "har_11",
+           "from_s": 4755.7,
+           "to_s": 4755.7
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: a 0.04 xG chance, from 22 m.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e1",
+        "kind": "number",
+        "metric": "shot_xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.041,
+        "unit": "xg",
+        "say": "a 0.04 xG chance",
+        "window_start_s": 4755.7,
+        "window_end_s": 4755.7,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           1095
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e2",
+        "kind": "number",
+        "metric": "shot_distance",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 21.5,
+        "unit": "m",
+        "say": "from 22 m",
+        "window_start_s": 4755.7,
+        "window_end_s": 4755.7,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           1095
+          ],
+          "count": 1,
+          "filter": null
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 2.67 xG in the match, Harbourton City: 49% possession.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "e3",
+        "kind": "number",
+        "metric": "match_xg",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.666,
+        "unit": "xg",
+        "say": "2.67 xG in the match",
+        "window_start_s": 0.0,
+        "window_end_s": 4755.7,
+        "baseline": 1.532,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           1095
+          ],
+          "count": 1,
+          "filter": null
+         },
+         {
+          "relation": "in_window",
+          "event_ids": [
+           73,
+           206,
+           274,
+           317,
+           443,
+           515,
+           546,
+           585,
+           678,
+           685,
+           801,
+           934,
+           1095
+          ],
+          "count": 13,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 4755.7
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "c4",
+        "kind": "number",
+        "metric": "possession_total",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 49.2,
+        "unit": "pct",
+        "say": "Harbourton City: 49% possession",
+        "window_start_s": 0.0,
+        "window_end_s": 4755.7,
+        "baseline": null,
+        "source": "context",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           2,
+           8,
+           24,
+           31,
+           36,
+           53,
+           66,
+           84,
+           92,
+           98,
+           106,
+           112,
+           119,
+           137,
+           156,
+           173,
+           182,
+           196,
+           226,
+           231,
+           246,
+           263,
+           270,
+           280,
+           288,
+           294,
+           310,
+           337,
+           356,
+           382,
+           392,
+           410,
+           430,
+           438,
+           451,
+           469,
+           507,
+           525,
+           532,
+           537,
+           544,
+           549,
+           563,
+           578,
+           590,
+           604,
+           617,
+           644,
+           655,
+           670,
+           682,
+           688,
+           703,
+           729,
+           739,
+           762,
+           774,
+           789,
+           793,
+           813,
+           822,
+           826,
+           838,
+           844,
+           867,
+           881,
+           904,
+           910,
+           926,
+           943,
+           954,
+           971,
+           986,
+           1000,
+           1005,
+           1016,
+           1029,
+           1035,
+           1063,
+           1079,
+           1094
+          ],
+          "count": 81,
+          "filter": {
+           "types": [
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 4755.7
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A goal worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "3 claim(s): Goal: Harbourton City",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 3 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 5,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 1784,
+     "output_tokens": 566,
+     "cost_usd": 0.000461
+    },
+    "badges": []
+   }
+  },
+  {
+   "overlay_id": "har_wst_siege_0003:recap:full_time",
+   "job_id": "har_wst_siege_0003:recap:full_time",
+   "finding_id": null,
+   "kind": "recap_full_time",
+   "status": "recap",
+   "team_id": null,
+   "player_ids": [
+    "har_09",
+    "wst_09",
+    "har_11"
+   ],
+   "clock_s": 5400.0,
+   "period": 2,
+   "show_at_s": 5445.0,
+   "hide_at_s": 5490.0,
+   "priority": 1.0,
+   "anchor": "lower_third",
+   "placements": [
+    {
+     "anchor": "lower_third",
+     "show_at_s": 5445.0,
+     "hide_at_s": 5490.0,
+     "note": null
+    }
+   ],
+   "hold_ms": 9000,
+   "highlight": null,
+   "headline": "Full time: the match",
+   "texts": {
+    "analyst": {
+     "en": {
+      "text": "Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidal scored for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidal scored for Harbourton City.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "casual": {
+     "en": {
+      "text": "Full-time: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] Full-time: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:har_09": {
+     "en": {
+      "text": "For Hugo Vidal's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Hugo Vidal's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    },
+    "fav:wst_09": {
+     "en": {
+      "text": "For Xavi Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     },
+     "es": {
+      "text": "[es · offline] For Xavi Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+      "source": "model",
+      "reason": null,
+      "numbers": []
+     }
+    }
+   },
+   "provenance": {
+    "source": "model",
+    "reason": null,
+    "semantic_check": "passed",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Full-time: Harbourton City 2-1 Westmere Town.",
+      "team_id": null,
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "c1",
+        "kind": "number",
+        "metric": "possession_total",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 50.8,
+        "unit": "pct",
+        "say": "Harbourton City: 51% possession",
+        "window_start_s": 0.0,
+        "window_end_s": 5400.0,
+        "baseline": null,
+        "source": "context",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           2,
+           8,
+           24,
+           31,
+           36,
+           53,
+           66,
+           84,
+           92,
+           98,
+           106,
+           112,
+           119,
+           137,
+           156,
+           173,
+           182,
+           196,
+           226,
+           231,
+           246,
+           263,
+           270,
+           280,
+           288,
+           294,
+           310,
+           337,
+           356,
+           382,
+           392,
+           410,
+           430,
+           438,
+           451,
+           469,
+           507,
+           525,
+           532,
+           537,
+           544,
+           549,
+           563,
+           578,
+           590,
+           604,
+           617,
+           644,
+           655,
+           670,
+           682,
+           688,
+           703,
+           729,
+           739,
+           762,
+           774,
+           789,
+           793,
+           813,
+           822,
+           826,
+           838,
+           844,
+           867,
+           881,
+           904,
+           910,
+           926,
+           943,
+           954,
+           971,
+           986,
+           1000,
+           1005,
+           1016,
+           1029,
+           1035,
+           1063,
+           1079,
+           1094,
+           1102,
+           1112,
+           1121,
+           1131,
+           1144,
+           1154,
+           1160,
+           1169,
+           1180,
+           1192,
+           1196,
+           1205,
+           1218,
+           1230
+          ],
+          "count": 95,
+          "filter": {
+           "types": [
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 5400.0
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Hugo Vidal scored for Harbourton City.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "p1",
+        "kind": "player",
+        "metric": null,
+        "team_id": "har",
+        "player_id": "har_09",
+        "name": "Hugo Vidal",
+        "involvement": "scorer",
+        "value": null,
+        "unit": null,
+        "say": null,
+        "window_start_s": 0.0,
+        "window_end_s": 5400.0,
+        "baseline": null,
+        "source": "player",
+        "origin": null,
+        "events": [
+         {
+          "relation": "player",
+          "event_ids": [
+           73,
+           206,
+           274,
+           317,
+           443,
+           515,
+           546,
+           585,
+           678,
+           685,
+           801,
+           934,
+           1126,
+           1135
+          ],
+          "count": 14,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": null,
+           "player_id": "har_09",
+           "from_s": 0.0,
+           "to_s": 5400.0
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 51% possession, Harbourton City: 15 shots.",
+      "team_id": "har",
+      "deterministic": "passed",
+      "semantic": "passed",
+      "evidence": [
+       {
+        "ref": "c1",
+        "kind": "number",
+        "metric": "possession_total",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 50.8,
+        "unit": "pct",
+        "say": "Harbourton City: 51% possession",
+        "window_start_s": 0.0,
+        "window_end_s": 5400.0,
+        "baseline": null,
+        "source": "context",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           2,
+           8,
+           24,
+           31,
+           36,
+           53,
+           66,
+           84,
+           92,
+           98,
+           106,
+           112,
+           119,
+           137,
+           156,
+           173,
+           182,
+           196,
+           226,
+           231,
+           246,
+           263,
+           270,
+           280,
+           288,
+           294,
+           310,
+           337,
+           356,
+           382,
+           392,
+           410,
+           430,
+           438,
+           451,
+           469,
+           507,
+           525,
+           532,
+           537,
+           544,
+           549,
+           563,
+           578,
+           590,
+           604,
+           617,
+           644,
+           655,
+           670,
+           682,
+           688,
+           703,
+           729,
+           739,
+           762,
+           774,
+           789,
+           793,
+           813,
+           822,
+           826,
+           838,
+           844,
+           867,
+           881,
+           904,
+           910,
+           926,
+           943,
+           954,
+           971,
+           986,
+           1000,
+           1005,
+           1016,
+           1029,
+           1035,
+           1063,
+           1079,
+           1094,
+           1102,
+           1112,
+           1121,
+           1131,
+           1144,
+           1154,
+           1160,
+           1169,
+           1180,
+           1192,
+           1196,
+           1205,
+           1218,
+           1230
+          ],
+          "count": 95,
+          "filter": {
+           "types": [
+            "possession_change"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 5400.0
+          }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "c2",
+        "kind": "number",
+        "metric": "shots_total",
+        "team_id": "har",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 15.0,
+        "unit": "count",
+        "say": "Harbourton City: 15 shots",
+        "window_start_s": 0.0,
+        "window_end_s": 5400.0,
+        "baseline": null,
+        "source": "context",
+        "origin": null,
+        "events": [
+         {
+          "relation": "in_window",
+          "event_ids": [
+           73,
+           206,
+           274,
+           317,
+           443,
+           515,
+           546,
+           585,
+           678,
+           685,
+           801,
+           934,
+           1095,
+           1126,
+           1135
+          ],
+          "count": 15,
+          "filter": {
+           "types": [
+            "shot"
+           ],
+           "team_id": "har",
+           "player_id": null,
+           "from_s": 0.0,
+           "to_s": 5400.0
+          }
+         }
+        ],
+        "known": true
+       }
+      ]
+     }
+    ]
+   },
+   "audit": {
+    "route": "model",
+    "drafts": 1,
+    "steps": [
+     {
+      "seq": 1,
+      "step": "interpret",
+      "actor": "pitchside-interpreter",
+      "attempt": 1,
+      "outcome": "brief",
+      "detail": "angle: A full time worth explaining.",
+      "next_step": "explain",
+      "prompt_version": "6dfd03259e73"
+     },
+     {
+      "seq": 2,
+      "step": "explain",
+      "actor": "pitchside-explainer",
+      "attempt": 1,
+      "outcome": "draft",
+      "detail": "3 claim(s): Full time: the match",
+      "next_step": "check",
+      "prompt_version": "ddb820308421"
+     },
+     {
+      "seq": 3,
+      "step": "check",
+      "actor": "checker",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) passed",
+      "next_step": "verify",
+      "prompt_version": null
+     },
+     {
+      "seq": 4,
+      "step": "verify",
+      "actor": "pitchside-verifier",
+      "attempt": 1,
+      "outcome": "passed",
+      "detail": "all 3 claim(s) supported",
+      "next_step": "personalize",
+      "prompt_version": "2d4b35846ad4"
+     },
+     {
+      "seq": 5,
+      "step": "personalize",
+      "actor": "pitchside-personalizer",
+      "attempt": 1,
+      "outcome": "texts",
+      "detail": "8 of 8 text(s) from the model",
+      "next_step": "publish",
+      "prompt_version": "e813b633439d"
+     },
+     {
+      "seq": 6,
+      "step": "publish",
+      "actor": "director",
+      "attempt": null,
+      "outcome": "model",
+      "detail": "shown: model narrative with 3 claim(s); semantic check passed",
+      "next_step": null,
+      "prompt_version": null
+     }
+    ],
+    "rejected": [],
+    "faults": [],
+    "calls": {
+     "calls": 5,
+     "errors": 0,
+     "refused": 0,
+     "transport_retries": 0,
+     "input_tokens": 3357,
+     "output_tokens": 467,
+     "cost_usd": 0.000569
+    },
+    "badges": []
+   }
+  }
+ ]
+}

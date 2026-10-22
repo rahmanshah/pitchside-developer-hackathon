@@ -1,0 +1,98 @@
+{
+ "match_id": "aur_irv_comeback_0007",
+ "seed": 7,
+ "storyline": "comeback",
+ "description": "Away side scores first and then sits deep. Home turn up the pressure after the hour, turn it around with two late goals, and the finish gets frantic.",
+ "phases": [
+  {
+   "label": "away_low_block",
+   "kind": "low_block",
+   "description": "Away side protect their lead by dropping deep and ceding the ball.",
+   "team_ids": [
+    "irv"
+   ],
+   "start_s": 2400,
+   "end_s": 5400
+  },
+  {
+   "label": "home_press_surge",
+   "kind": "momentum_shift",
+   "description": "Home raise their line and press high; territory and shots swing their way.",
+   "team_ids": [
+    "aur"
+   ],
+   "start_s": 3300,
+   "end_s": 5400
+  },
+  {
+   "label": "frantic_finish",
+   "kind": "chaos",
+   "description": "Both sides trade blows in a stretched, error-prone finish.",
+   "team_ids": [
+    "aur",
+    "irv"
+   ],
+   "start_s": 4680,
+   "end_s": 5400
+  }
+ ],
+ "scripted_goals": [
+  {
+   "description": "Away take an early lead against the run of play.",
+   "team_id": "irv",
+   "scripted_minute": 23,
+   "event_id": 359,
+   "clock_s": 1588.9
+  },
+  {
+   "description": "Home equalise after sustained pressure.",
+   "team_id": "aur",
+   "scripted_minute": 71,
+   "event_id": 1003,
+   "clock_s": 4285.4
+  },
+  {
+   "description": "Home complete the comeback.",
+   "team_id": "aur",
+   "scripted_minute": 86,
+   "event_id": 1277,
+   "clock_s": 5197.9
+  }
+ ],
+ "goals": [
+  {
+   "event_id": 359,
+   "clock_s": 1588.9,
+   "team_id": "irv",
+   "player_id": "irv_09",
+   "score_after": {
+    "home": 0,
+    "away": 1
+   }
+  },
+  {
+   "event_id": 1003,
+   "clock_s": 4285.4,
+   "team_id": "aur",
+   "player_id": "aur_09",
+   "score_after": {
+    "home": 1,
+    "away": 1
+   }
+  },
+  {
+   "event_id": 1277,
+   "clock_s": 5197.9,
+   "team_id": "aur",
+   "player_id": "aur_09",
+   "score_after": {
+    "home": 2,
+    "away": 1
+   }
+  }
+ ],
+ "final_score": {
+  "home": 2,
+  "away": 1
+ }
+}

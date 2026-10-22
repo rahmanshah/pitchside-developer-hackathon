@@ -138,6 +138,31 @@ def _cmd_overlay(args: argparse.Namespace) -> int:
     return 0
 
 
+def _cmd_demo_data(args: argparse.Namespace) -> int:
+    from .render.demo_data import publish, regenerate_samples
+
+    if args.bundle:
+        if not (args.slug and args.title):
+            raise ValueError("--bundle needs --slug and --title")
+        entries = [publish(Path(args.bundle), Path(args.out), args.slug, args.title, args.description or "")]
+    else:
+        entries = regenerate_samples(Path(args.out))
+    for e in entries:
+        faults = f", faults injected ({e.faults_fired} fired)" if e.faults_injected else ""
+        print(f"{e.slug:<14} {e.llm_mode:<8} {e.home.short_name} {e.final_score.get('home')}-"
+              f"{e.final_score.get('away')} {e.away.short_name}{faults}")
+    print(f"index: {Path(args.out) / 'index.json'}")
+    return 0
+
+
+def _cmd_serve(args: argparse.Namespace) -> int:
+    from .render.serve import serve
+
+    serve(Path(args.root) if args.root else None, Path(args.data) if args.data else None, args.host, args.port,
+          open_browser=args.open, quiet=not args.verbose)
+    return 0
+
+
 def _cmd_mcp(args: argparse.Namespace) -> int:
     from .mcp_server import load_store, serve
 
@@ -334,6 +359,23 @@ def build_parser() -> argparse.ArgumentParser:
     ov = sub.add_parser("overlay", help="(re)build a run bundle's overlay.json from its other files")
     ov.add_argument("bundle", help="bundle directory")
     ov.set_defaults(func=_cmd_overlay)
+
+    dd = sub.add_parser("demo-data", help="regenerate the offline sample runs in web/data (or publish one bundle)")
+    dd.add_argument("--out", default="web/data", help="data directory (default: web/data)")
+    dd.add_argument("--bundle", help="publish this bundle directory instead of regenerating the samples")
+    dd.add_argument("--slug", help="with --bundle: directory name and ?run= value")
+    dd.add_argument("--title", help="with --bundle: title in the run picker")
+    dd.add_argument("--description", help="with --bundle: one-line description")
+    dd.set_defaults(func=_cmd_demo_data)
+
+    sv = sub.add_parser("serve", help="serve the web UI locally (recorded runs from web/data)")
+    sv.add_argument("--port", type=int, default=8000)
+    sv.add_argument("--host", default="127.0.0.1")
+    sv.add_argument("--root", help="web root (default: ./web)")
+    sv.add_argument("--data", help="serve this directory at /data/ instead of web/data")
+    sv.add_argument("--open", action="store_true", help="open the browser")
+    sv.add_argument("--verbose", action="store_true", help="log every request")
+    sv.set_defaults(func=_cmd_serve)
 
     rn = sub.add_parser("run", help="run a match through the stats engine and the agents; write a run bundle")
     rn.add_argument("--seed", type=int, default=7)

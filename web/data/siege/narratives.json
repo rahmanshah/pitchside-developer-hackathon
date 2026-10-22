@@ -1,0 +1,6329 @@
+[
+ {
+  "job_id": "har_wst_siege_0003:big_chance:0",
+  "kind": "finding",
+  "label": "big_chance",
+  "finding_id": "har_wst_siege_0003:big_chance:0",
+  "team_id": "wst",
+  "clock_s": 437.6,
+  "route": "model",
+  "display": {
+   "show_at_s": 437.6,
+   "hide_at_s": 452.6,
+   "priority": 0.905
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Big chance: Westmere Town",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Xavi Uusitalo had the chance for Westmere Town.",
+     "team_id": "wst",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Westmere Town: a 0.51 xG chance, from 5 m.",
+     "team_id": "wst",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.51,
+       "ref": "e1"
+      },
+      {
+       "value": 5.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Westmere Town: 0.60 xG in the match.",
+     "team_id": "wst",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 0.6,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.505,
+     "unit": "xg",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "a 0.51 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 5.1,
+     "unit": "m",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "from 5 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.6,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 437.6,
+     "baseline": 0.182,
+     "say": "0.60 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 437.6,
+     "baseline": 1.0,
+     "say": "2 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.154,
+     "unit": "index",
+     "window_start_s": 137.60000000000002,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "momentum +0.15",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.8,
+     "unit": "s",
+     "window_start_s": 433.8,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "4 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 433.8,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "0 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "wst",
+     "player_id": null,
+     "value": -0.0,
+     "unit": "m",
+     "window_start_s": 433.8,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "-0 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 433.8,
+     "window_end_s": 433.8,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 2",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 0.6,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 0.60",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "shooter",
+     "clock_s": 437.6
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Big chance: Westmere Town",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.51 xG chance, from 5 m.",
+      "team_id": "wst",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.51,
+        "ref": "e1"
+       },
+       {
+        "value": 5.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 0.60 xG in the match.",
+      "team_id": "wst",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 0.6,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:counter_attack:0",
+  "kind": "finding",
+  "label": "counter_attack",
+  "finding_id": "har_wst_siege_0003:counter_attack:0",
+  "team_id": "har",
+  "clock_s": 566.9,
+  "route": "template",
+  "display": {
+   "show_at_s": 566.9,
+   "hide_at_s": 576.9,
+   "priority": 0.1
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "severity 0.10 is below the model floor 0.5",
+   "headline": "Harbourton City break quickly: 62 m gained in 10 s.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+     "team_id": "har",
+     "refs": [
+      "e3",
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 62.0,
+       "ref": "e3"
+      },
+      {
+       "value": 10.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Harbourton City break quickly: 62 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 62 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 62 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 62 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 62 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "seconds_to_finish",
+     "team_id": "har",
+     "player_id": null,
+     "value": 10.2,
+     "unit": "s",
+     "window_start_s": 556.7,
+     "window_end_s": 566.9,
+     "baseline": null,
+     "say": "in 10 s",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "passes_in_move",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 556.7,
+     "window_end_s": 566.9,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 62.0,
+     "unit": "m",
+     "window_start_s": 556.7,
+     "window_end_s": 566.9,
+     "baseline": null,
+     "say": "62 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "regain_distance_from_own_goal",
+     "team_id": "har",
+     "player_id": null,
+     "value": 32.9,
+     "unit": "m",
+     "window_start_s": 556.7,
+     "window_end_s": 556.7,
+     "baseline": null,
+     "say": "ball won 33 m from their own goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "finish_distance_to_goal",
+     "team_id": "har",
+     "player_id": null,
+     "value": 11.098,
+     "unit": "m",
+     "window_start_s": 566.9,
+     "window_end_s": 566.9,
+     "baseline": null,
+     "say": "finished 11 m from goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "ended_with_shot",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 566.9,
+     "window_end_s": 566.9,
+     "baseline": null,
+     "say": "ended with a shot (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_03",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 566.9,
+     "baseline": null,
+     "say": "Kofi Uusitalo: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_03",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 566.9,
+     "baseline": null,
+     "say": "Kofi Uusitalo: shots 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_03",
+     "value": 0.0,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 566.9,
+     "baseline": null,
+     "say": "Kofi Uusitalo: xG 0.00",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_03",
+     "name": "Kofi Uusitalo",
+     "team_id": "har",
+     "involvement": "ball_winner",
+     "clock_s": 556.7
+    }
+   ]
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "har_wst_siege_0003:counter_attack:1",
+  "kind": "finding",
+  "label": "counter_attack",
+  "finding_id": "har_wst_siege_0003:counter_attack:1",
+  "team_id": "har",
+  "clock_s": 808.7,
+  "route": "template",
+  "display": {
+   "show_at_s": 808.7,
+   "hide_at_s": 818.7,
+   "priority": 0.1
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "severity 0.10 is below the model floor 0.5",
+   "headline": "Harbourton City break quickly: 40 m gained in 10 s.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+     "team_id": "har",
+     "refs": [
+      "e3",
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 40.0,
+       "ref": "e3"
+      },
+      {
+       "value": 10.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Harbourton City break quickly: 40 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 40 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 40 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 40 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 40 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "seconds_to_finish",
+     "team_id": "har",
+     "player_id": null,
+     "value": 10.1,
+     "unit": "s",
+     "window_start_s": 798.6,
+     "window_end_s": 808.7,
+     "baseline": null,
+     "say": "in 10 s",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "passes_in_move",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 798.6,
+     "window_end_s": 808.7,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 40.4,
+     "unit": "m",
+     "window_start_s": 798.6,
+     "window_end_s": 808.7,
+     "baseline": null,
+     "say": "40 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "regain_distance_from_own_goal",
+     "team_id": "har",
+     "player_id": null,
+     "value": 52.6,
+     "unit": "m",
+     "window_start_s": 798.6,
+     "window_end_s": 798.6,
+     "baseline": null,
+     "say": "ball won 53 m from their own goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "finish_distance_to_goal",
+     "team_id": "har",
+     "player_id": null,
+     "value": 12.081,
+     "unit": "m",
+     "window_start_s": 808.7,
+     "window_end_s": 808.7,
+     "baseline": null,
+     "say": "finished 12 m from goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "ended_with_shot",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 808.7,
+     "window_end_s": 808.7,
+     "baseline": null,
+     "say": "ended with a shot (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_06",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 808.7,
+     "baseline": null,
+     "say": "Niko Halvorsen: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_06",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 808.7,
+     "baseline": null,
+     "say": "Niko Halvorsen: shots 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_06",
+     "value": 0.0,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 808.7,
+     "baseline": null,
+     "say": "Niko Halvorsen: xG 0.00",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_06",
+     "name": "Niko Halvorsen",
+     "team_id": "har",
+     "involvement": "ball_winner",
+     "clock_s": 798.6
+    }
+   ]
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "har_wst_siege_0003:momentum_shift:0",
+  "kind": "finding",
+  "label": "momentum_shift",
+  "finding_id": "har_wst_siege_0003:momentum_shift:0",
+  "team_id": "har",
+  "clock_s": 1429.6,
+  "route": "model",
+  "display": {
+   "show_at_s": 1429.6,
+   "hide_at_s": 1449.6,
+   "priority": 0.63
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Momentum shift: Harbourton City",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Harbourton City: momentum +0.63, 89% field tilt.",
+     "team_id": "har",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.63,
+       "ref": "e1"
+      },
+      {
+       "value": 89.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Harbourton City: 2 shots.",
+     "team_id": "har",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 2.0,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City: momentum +0.63, 89% field tilt.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "momentum",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.63,
+     "unit": "index",
+     "window_start_s": 1129.6,
+     "window_end_s": 1429.6,
+     "baseline": null,
+     "say": "momentum +0.63",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "field_tilt",
+     "team_id": "har",
+     "player_id": null,
+     "value": 88.9,
+     "unit": "pct",
+     "window_start_s": 1129.6,
+     "window_end_s": 1429.6,
+     "baseline": 50.0,
+     "say": "89% field tilt",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 1129.6,
+     "window_end_s": 1429.6,
+     "baseline": 0.0,
+     "say": "2 shots",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.41,
+     "unit": "xg",
+     "window_start_s": 1129.6,
+     "window_end_s": 1429.6,
+     "baseline": 0.0,
+     "say": "0.41 xG",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "pressures_per_min",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.8,
+     "unit": "per_min",
+     "window_start_s": 1129.6,
+     "window_end_s": 1429.6,
+     "baseline": 0.0,
+     "say": "2.8 pressures per minute",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Momentum shift: Harbourton City",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Harbourton City: momentum +0.63, 89% field tilt.",
+      "team_id": "har",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.63,
+        "ref": "e1"
+       },
+       {
+        "value": 89.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: 2 shots.",
+      "team_id": "har",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 2.0,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:siege:0",
+  "kind": "finding",
+  "label": "siege",
+  "finding_id": "har_wst_siege_0003:siege:0",
+  "team_id": "har",
+  "clock_s": 1437.7,
+  "route": "model",
+  "display": {
+   "show_at_s": 1437.7,
+   "hide_at_s": 1457.7,
+   "priority": 0.764
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Siege: Harbourton City",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Harbourton City: 88% field tilt, 2 shots.",
+     "team_id": "har",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 88.0,
+       "ref": "e1"
+      },
+      {
+       "value": 2.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Harbourton City: 0.41 xG.",
+     "team_id": "har",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 0.41,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City: 88% field tilt, 2 shots. Harbourton City: 0.41 xG.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City: 88% field tilt, 2 shots.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Harbourton City: 88% field tilt, 2 shots.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots. Harbourton City: 0.41 xG.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: 88% field tilt, 2 shots.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "field_tilt",
+     "team_id": "har",
+     "player_id": null,
+     "value": 88.2,
+     "unit": "pct",
+     "window_start_s": 1137.7,
+     "window_end_s": 1437.7,
+     "baseline": 50.0,
+     "say": "88% field tilt",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 1137.7,
+     "window_end_s": 1437.7,
+     "baseline": 0.0,
+     "say": "2 shots",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.41,
+     "unit": "xg",
+     "window_start_s": 1137.7,
+     "window_end_s": 1437.7,
+     "baseline": 0.0,
+     "say": "0.41 xG",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "possession",
+     "team_id": "har",
+     "player_id": null,
+     "value": 72.0,
+     "unit": "pct",
+     "window_start_s": 1137.7,
+     "window_end_s": 1437.7,
+     "baseline": 50.0,
+     "say": "72% possession",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "pressures_per_min",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.8,
+     "unit": "per_min",
+     "window_start_s": 1137.7,
+     "window_end_s": 1437.7,
+     "baseline": 0.0,
+     "say": "2.8 pressures per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "opponent_final_third_passes",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 1137.7,
+     "window_end_s": 1437.7,
+     "baseline": null,
+     "say": "Westmere Town with 2 passes into the final third",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Siege: Harbourton City",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Harbourton City: 88% field tilt, 2 shots.",
+      "team_id": "har",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 88.0,
+        "ref": "e1"
+       },
+       {
+        "value": 2.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: 0.41 xG.",
+      "team_id": "har",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 0.41,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:pressure_surge:0",
+  "kind": "finding",
+  "label": "pressure_surge",
+  "finding_id": "har_wst_siege_0003:pressure_surge:0",
+  "team_id": "har",
+  "clock_s": 1499.6,
+  "route": "model",
+  "display": {
+   "show_at_s": 1499.6,
+   "hide_at_s": 1519.6,
+   "priority": 0.952
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Pressure surge: Harbourton City",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "team_id": "har",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 4.7,
+       "ref": "e1"
+      },
+      {
+       "value": 0.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Westmere Town completing 79% of their passes.",
+     "team_id": "wst",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 79.0,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won. Westmere Town completing 79% of their passes.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won. Westmere Town completing 79% of their passes.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "pressures_per_min",
+     "team_id": "har",
+     "player_id": null,
+     "value": 4.667,
+     "unit": "per_min",
+     "window_start_s": 1319.6,
+     "window_end_s": 1499.6,
+     "baseline": 1.455,
+     "say": "4.7 pressures per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "tackles_won",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 1199.6,
+     "window_end_s": 1499.6,
+     "baseline": null,
+     "say": "0 tackles won",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "opponent_pass_completion",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 78.6,
+     "unit": "pct",
+     "window_start_s": 1199.6,
+     "window_end_s": 1499.6,
+     "baseline": 80.7,
+     "say": "Westmere Town completing 79% of their passes",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "momentum",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.55,
+     "unit": "index",
+     "window_start_s": 1199.6,
+     "window_end_s": 1499.6,
+     "baseline": null,
+     "say": "momentum +0.55",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Pressure surge: Harbourton City",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "team_id": "har",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 4.7,
+        "ref": "e1"
+       },
+       {
+        "value": 0.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town completing 79% of their passes.",
+      "team_id": "wst",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 79.0,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:big_chance:1",
+  "kind": "finding",
+  "label": "big_chance",
+  "finding_id": "har_wst_siege_0003:big_chance:1",
+  "team_id": "har",
+  "clock_s": 1807.4,
+  "route": "model",
+  "display": {
+   "show_at_s": 1807.4,
+   "hide_at_s": 1822.4,
+   "priority": 0.927
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Big chance: Harbourton City",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Hugo Vidal had the chance for Harbourton City.",
+     "team_id": "har",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Harbourton City: a 0.53 xG chance, from 5 m.",
+     "team_id": "har",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.53,
+       "ref": "e1"
+      },
+      {
+       "value": 5.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Harbourton City: 1.27 xG in the match.",
+     "team_id": "har",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 1.27,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.527,
+     "unit": "xg",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "a 0.53 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 4.9,
+     "unit": "m",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "from 5 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.27,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 1807.4,
+     "baseline": 0.788,
+     "say": "1.27 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 1807.4,
+     "baseline": 3.0,
+     "say": "5 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.52,
+     "unit": "index",
+     "window_start_s": 1507.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "momentum +0.52",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 30.1,
+     "unit": "s",
+     "window_start_s": 1777.3,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "30 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 1777.3,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "4 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 13.0,
+     "unit": "m",
+     "window_start_s": 1777.3,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "13 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 1777.3,
+     "window_end_s": 1777.3,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "Hugo Vidal: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "Hugo Vidal: shots 5",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 1.27,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "Hugo Vidal: xG 1.27",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_09",
+     "name": "Hugo Vidal",
+     "team_id": "har",
+     "involvement": "shooter",
+     "clock_s": 1807.4
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Big chance: Harbourton City",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "team_id": "har",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: a 0.53 xG chance, from 5 m.",
+      "team_id": "har",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.53,
+        "ref": "e1"
+       },
+       {
+        "value": 5.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 1.27 xG in the match.",
+      "team_id": "har",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 1.27,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:big_chance:2",
+  "kind": "finding",
+  "label": "big_chance",
+  "finding_id": "har_wst_siege_0003:big_chance:2",
+  "team_id": "har",
+  "clock_s": 2098.9,
+  "route": "model",
+  "display": {
+   "show_at_s": 2098.9,
+   "hide_at_s": 2113.9,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Big chance: Harbourton City",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Hugo Vidal had the chance for Harbourton City.",
+     "team_id": "har",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Harbourton City: a 0.71 xG chance, from 4 m.",
+     "team_id": "har",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.71,
+       "ref": "e1"
+      },
+      {
+       "value": 4.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Harbourton City: 1.98 xG in the match.",
+     "team_id": "har",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 1.98,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.712,
+     "unit": "xg",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "a 0.71 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 3.5,
+     "unit": "m",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.982,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2098.9,
+     "baseline": 0.788,
+     "say": "1.98 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 6.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2098.9,
+     "baseline": 3.0,
+     "say": "6 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.506,
+     "unit": "index",
+     "window_start_s": 1798.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "momentum +0.51",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 45.5,
+     "unit": "s",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "46 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 7.0,
+     "unit": "count",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "7 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 38.8,
+     "unit": "m",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "39 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2053.4,
+     "window_end_s": 2053.4,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "Hugo Vidal: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 6.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "Hugo Vidal: shots 6",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 1.982,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "Hugo Vidal: xG 1.98",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_09",
+     "name": "Hugo Vidal",
+     "team_id": "har",
+     "involvement": "shooter",
+     "clock_s": 2098.9
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Big chance: Harbourton City",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "team_id": "har",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: a 0.71 xG chance, from 4 m.",
+      "team_id": "har",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.71,
+        "ref": "e1"
+       },
+       {
+        "value": 4.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 1.98 xG in the match.",
+      "team_id": "har",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 1.98,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:goal:0",
+  "kind": "finding",
+  "label": "goal",
+  "finding_id": "har_wst_siege_0003:goal:0",
+  "team_id": "har",
+  "clock_s": 2194.3,
+  "route": "model",
+  "display": {
+   "show_at_s": 2194.3,
+   "hide_at_s": 2219.3,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Goal: Harbourton City",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "team_id": "har",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Harbourton City: a 0.06 xG chance, from 19 m.",
+     "team_id": "har",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.06,
+       "ref": "e1"
+      },
+      {
+       "value": 19.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Harbourton City: 2.04 xG in the match, Harbourton City: 50% possession.",
+     "team_id": "har",
+     "refs": [
+      "e3",
+      "c4"
+     ],
+     "numbers": [
+      {
+       "value": 2.04,
+       "ref": "e3"
+      },
+      {
+       "value": 50.0,
+       "ref": "c4"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.058,
+     "unit": "xg",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "a 0.06 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 19.0,
+     "unit": "m",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "from 19 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.04,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": 0.788,
+     "say": "2.04 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 7.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": 3.0,
+     "say": "7 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.532,
+     "unit": "index",
+     "window_start_s": 1894.3000000000002,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "momentum +0.53",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 16.7,
+     "unit": "s",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "17 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "1 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 41.1,
+     "unit": "m",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "41 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 2177.6,
+     "window_end_s": 2177.6,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Hugo Vidal: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 7.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Hugo Vidal: shots 7",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 2.04,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Hugo Vidal: xG 2.04",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 49.9,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Harbourton City: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "shots_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 7.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Harbourton City: 7 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "xg_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.04,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Harbourton City: 2.04 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "pass_completion_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 82.4,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Harbourton City: 82% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 50.1,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Westmere Town: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Westmere Town: 3 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.788,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Westmere Town: 0.79 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 81.9,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Westmere Town: 82% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_09",
+     "name": "Hugo Vidal",
+     "team_id": "har",
+     "involvement": "scorer",
+     "clock_s": 2194.3
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Goal: Harbourton City",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "team_id": "har",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: a 0.06 xG chance, from 19 m.",
+      "team_id": "har",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.06,
+        "ref": "e1"
+       },
+       {
+        "value": 19.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 2.04 xG in the match, Harbourton City: 50% possession.",
+      "team_id": "har",
+      "refs": [
+       "e3",
+       "c4"
+      ],
+      "numbers": [
+       {
+        "value": 2.04,
+        "ref": "e3"
+       },
+       {
+        "value": 50.0,
+        "ref": "c4"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:pressure_surge:1",
+  "kind": "finding",
+  "label": "pressure_surge",
+  "finding_id": "har_wst_siege_0003:pressure_surge:1",
+  "team_id": "har",
+  "clock_s": 2694.7,
+  "route": "template",
+  "display": {
+   "show_at_s": 2694.7,
+   "hide_at_s": 2706.7,
+   "priority": 0.4
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "spell end: always a template (decision 12)",
+   "headline": "Harbourton City's pressing surge ends after 23 min.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Harbourton City's pressing surge ends after 23 min.",
+     "team_id": "har",
+     "refs": [
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 23.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City's pressing surge ends after 23 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City's pressing surge ends after 23 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "Harbourton City's pressing surge ends after 23 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Harbourton City's pressing surge ends after 23 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Termina la oleada de presión de Harbourton City tras 23 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Termina la oleada de presión de Harbourton City tras 23 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "Termina la oleada de presión de Harbourton City tras 23 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Termina la oleada de presión de Harbourton City tras 23 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "spell_duration",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1374.3,
+     "unit": "s",
+     "window_start_s": 1199.6,
+     "window_end_s": 2573.9,
+     "baseline": null,
+     "say": "lasting 23 min",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "pressures_per_min",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "per_min",
+     "window_start_s": 2514.7,
+     "window_end_s": 2694.7,
+     "baseline": 2.601,
+     "say": "1.0 pressures per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "tackles_won",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 2394.7,
+     "window_end_s": 2694.7,
+     "baseline": null,
+     "say": "2 tackles won",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "opponent_pass_completion",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 89.5,
+     "unit": "pct",
+     "window_start_s": 2394.7,
+     "window_end_s": 2694.7,
+     "baseline": 82.8,
+     "say": "Westmere Town completing 90% of their passes",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.308,
+     "unit": "index",
+     "window_start_s": 2394.7,
+     "window_end_s": 2694.7,
+     "baseline": null,
+     "say": "momentum +0.31",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "har_wst_siege_0003:recap:half_time",
+  "kind": "recap",
+  "label": "half_time",
+  "finding_id": null,
+  "team_id": null,
+  "clock_s": 2700.0,
+  "route": "model",
+  "display": {
+   "show_at_s": 2700.0,
+   "hide_at_s": 2745.0,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Half time: the match",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Half-time: Harbourton City 1-0 Westmere Town.",
+     "team_id": null,
+     "refs": [
+      "c1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Hugo Vidal scored for Harbourton City.",
+     "team_id": "har",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Harbourton City: 51% possession, Harbourton City: 8 shots.",
+     "team_id": "har",
+     "refs": [
+      "c1",
+      "c2"
+     ],
+     "numbers": [
+      {
+       "value": 51.0,
+       "ref": "c1"
+      },
+      {
+       "value": 8.0,
+       "ref": "c2"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidal scored for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Half-time: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidal scored for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Half-time: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "c1",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 50.7,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Harbourton City: 51% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "shots_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Harbourton City: 8 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "xg_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.101,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Harbourton City: 2.10 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "pass_completion_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 82.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Harbourton City: 82% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 49.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 49% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 4 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.806,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 0.81 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 82.9,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 83% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Hugo Vidal: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Hugo Vidal: shots 8",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 2.101,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Hugo Vidal: xG 2.10",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c12",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c13",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 3",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c14",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 0.788,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 0.79",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c15",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.058,
+     "unit": "xg",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "a 0.06 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c16",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 19.0,
+     "unit": "m",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "from 19 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c17",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.04,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": 0.788,
+     "say": "2.04 xG in the match",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c18",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 49.9,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Harbourton City: 50% possession",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c19",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.712,
+     "unit": "xg",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "a 0.71 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c20",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 3.5,
+     "unit": "m",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c21",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.982,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2098.9,
+     "baseline": 0.788,
+     "say": "1.98 xG in the match",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c22",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.527,
+     "unit": "xg",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "a 0.53 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:1"
+    },
+    {
+     "ref": "c23",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 4.9,
+     "unit": "m",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "from 5 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:1"
+    },
+    {
+     "ref": "c24",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.27,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 1807.4,
+     "baseline": 0.788,
+     "say": "1.27 xG in the match",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:1"
+    },
+    {
+     "ref": "c25",
+     "metric": "pressures_per_min",
+     "team_id": "har",
+     "player_id": null,
+     "value": 4.667,
+     "unit": "per_min",
+     "window_start_s": 1319.6,
+     "window_end_s": 1499.6,
+     "baseline": 1.455,
+     "say": "4.7 pressures per minute",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:pressure_surge:0"
+    },
+    {
+     "ref": "c26",
+     "metric": "tackles_won",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 1199.6,
+     "window_end_s": 1499.6,
+     "baseline": null,
+     "say": "0 tackles won",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:pressure_surge:0"
+    },
+    {
+     "ref": "c27",
+     "metric": "opponent_pass_completion",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 78.6,
+     "unit": "pct",
+     "window_start_s": 1199.6,
+     "window_end_s": 1499.6,
+     "baseline": 80.7,
+     "say": "Westmere Town completing 79% of their passes",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:pressure_surge:0"
+    },
+    {
+     "ref": "c28",
+     "metric": "field_tilt",
+     "team_id": "har",
+     "player_id": null,
+     "value": 88.2,
+     "unit": "pct",
+     "window_start_s": 1137.7,
+     "window_end_s": 1437.7,
+     "baseline": 50.0,
+     "say": "88% field tilt",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:siege:0"
+    },
+    {
+     "ref": "c29",
+     "metric": "shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 1137.7,
+     "window_end_s": 1437.7,
+     "baseline": 0.0,
+     "say": "2 shots",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:siege:0"
+    },
+    {
+     "ref": "c30",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 50.7,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Harbourton City: 51% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c31",
+     "metric": "shots_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Harbourton City: 8 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c32",
+     "metric": "xg_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.101,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Harbourton City: 2.10 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c33",
+     "metric": "pass_completion_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 82.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Harbourton City: 82% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c34",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 49.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 49% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c35",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 4 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c36",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.806,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 0.81 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c37",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 82.9,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 83% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_09",
+     "name": "Hugo Vidal",
+     "team_id": "har",
+     "involvement": "scorer",
+     "clock_s": null
+    },
+    {
+     "ref": "p2",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "top_xg",
+     "clock_s": null
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Half time: the match",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Half-time: Harbourton City 1-0 Westmere Town.",
+      "team_id": null,
+      "refs": [
+       "c1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Hugo Vidal scored for Harbourton City.",
+      "team_id": "har",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 51% possession, Harbourton City: 8 shots.",
+      "team_id": "har",
+      "refs": [
+       "c1",
+       "c2"
+      ],
+      "numbers": [
+       {
+        "value": 51.0,
+        "ref": "c1"
+       },
+       {
+        "value": 8.0,
+        "ref": "c2"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:siege:1",
+  "kind": "finding",
+  "label": "siege",
+  "finding_id": "har_wst_siege_0003:siege:1",
+  "team_id": "har",
+  "clock_s": 3041.9,
+  "route": "template",
+  "display": {
+   "show_at_s": 3041.9,
+   "hide_at_s": 3053.9,
+   "priority": 0.4
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "spell end: always a template (decision 12)",
+   "headline": "Harbourton City's siege ends after 30 min.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Harbourton City's siege ends after 30 min.",
+     "team_id": "har",
+     "refs": [
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 30.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City's siege ends after 30 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City's siege ends after 30 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "Harbourton City's siege ends after 30 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Harbourton City's siege ends after 30 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Termina el asedio de Harbourton City tras 30 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Termina el asedio de Harbourton City tras 30 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "Termina el asedio de Harbourton City tras 30 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Termina el asedio de Harbourton City tras 30 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "spell_duration",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1783.1,
+     "unit": "s",
+     "window_start_s": 1137.7,
+     "window_end_s": 2920.8,
+     "baseline": null,
+     "say": "lasting 30 min",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "field_tilt",
+     "team_id": "har",
+     "player_id": null,
+     "value": 28.0,
+     "unit": "pct",
+     "window_start_s": 2741.9,
+     "window_end_s": 3041.9,
+     "baseline": 50.0,
+     "say": "28% field tilt",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 2741.9,
+     "window_end_s": 3041.9,
+     "baseline": 1.0,
+     "say": "2 shots",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.345,
+     "unit": "xg",
+     "window_start_s": 2741.9,
+     "window_end_s": 3041.9,
+     "baseline": 0.018,
+     "say": "0.34 xG",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "possession",
+     "team_id": "har",
+     "player_id": null,
+     "value": 46.8,
+     "unit": "pct",
+     "window_start_s": 2741.9,
+     "window_end_s": 3041.9,
+     "baseline": 50.0,
+     "say": "47% possession",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "pressures_per_min",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.4,
+     "unit": "per_min",
+     "window_start_s": 2741.9,
+     "window_end_s": 3041.9,
+     "baseline": 1.4,
+     "say": "0.4 pressures per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "opponent_final_third_passes",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 18.0,
+     "unit": "count",
+     "window_start_s": 2741.9,
+     "window_end_s": 3041.9,
+     "baseline": null,
+     "say": "Westmere Town with 18 passes into the final third",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "har_wst_siege_0003:momentum_shift:1",
+  "kind": "finding",
+  "label": "momentum_shift",
+  "finding_id": "har_wst_siege_0003:momentum_shift:1",
+  "team_id": "har",
+  "clock_s": 3117.7,
+  "route": "template",
+  "display": {
+   "show_at_s": 3117.7,
+   "hide_at_s": 3129.7,
+   "priority": 0.4
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "spell end: always a template (decision 12)",
+   "headline": "Harbourton City's spell on top ends after 31 min.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Harbourton City's spell on top ends after 31 min.",
+     "team_id": "har",
+     "refs": [
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 31.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City's spell on top ends after 31 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City's spell on top ends after 31 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "Harbourton City's spell on top ends after 31 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Harbourton City's spell on top ends after 31 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Termina la racha de dominio de Harbourton City tras 31 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Termina la racha de dominio de Harbourton City tras 31 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "Termina la racha de dominio de Harbourton City tras 31 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Termina la racha de dominio de Harbourton City tras 31 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "spell_duration",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1867.7,
+     "unit": "s",
+     "window_start_s": 1129.6,
+     "window_end_s": 2997.3,
+     "baseline": null,
+     "say": "lasting 31 min",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "momentum",
+     "team_id": "har",
+     "player_id": null,
+     "value": -0.434,
+     "unit": "index",
+     "window_start_s": 2817.7,
+     "window_end_s": 3117.7,
+     "baseline": null,
+     "say": "momentum -0.43",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "field_tilt",
+     "team_id": "har",
+     "player_id": null,
+     "value": 8.7,
+     "unit": "pct",
+     "window_start_s": 2817.7,
+     "window_end_s": 3117.7,
+     "baseline": 50.0,
+     "say": "9% field tilt",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 2817.7,
+     "window_end_s": 3117.7,
+     "baseline": 1.0,
+     "say": "0 shots",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "xg",
+     "window_start_s": 2817.7,
+     "window_end_s": 3117.7,
+     "baseline": 0.018,
+     "say": "0.00 xG",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "pressures_per_min",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.4,
+     "unit": "per_min",
+     "window_start_s": 2817.7,
+     "window_end_s": 3117.7,
+     "baseline": 1.8,
+     "say": "0.4 pressures per minute",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "har_wst_siege_0003:goal:1",
+  "kind": "finding",
+  "label": "goal",
+  "finding_id": "har_wst_siege_0003:goal:1",
+  "team_id": "wst",
+  "clock_s": 3220.6,
+  "route": "model",
+  "display": {
+   "show_at_s": 3220.6,
+   "hide_at_s": 3245.6,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Goal: Westmere Town",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "team_id": "wst",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Westmere Town: a 0.63 xG chance, from 4 m.",
+     "team_id": "wst",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.63,
+       "ref": "e1"
+      },
+      {
+       "value": 4.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Westmere Town: 1.45 xG in the match.",
+     "team_id": "wst",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 1.45,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.627,
+     "unit": "xg",
+     "window_start_s": 3220.6,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "a 0.63 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.1,
+     "unit": "m",
+     "window_start_s": 3220.6,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.451,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": 2.446,
+     "say": "1.45 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 6.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": 10.0,
+     "say": "6 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.554,
+     "unit": "index",
+     "window_start_s": 2920.6,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "momentum +0.55",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 45.5,
+     "unit": "s",
+     "window_start_s": 3175.1,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "46 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 3175.1,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "8 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 76.4,
+     "unit": "m",
+     "window_start_s": 3175.1,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "76 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 3175.1,
+     "window_end_s": 3175.1,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 4",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.415,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 1.42",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 49.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Harbourton City: 49% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "shots_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 10.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Harbourton City: 10 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "xg_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.446,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Harbourton City: 2.45 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "pass_completion_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 82.6,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Harbourton City: 83% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 50.7,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Westmere Town: 51% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 6.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Westmere Town: 6 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.451,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Westmere Town: 1.45 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 83.9,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "Westmere Town: 84% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "scorer",
+     "clock_s": 3220.6
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Goal: Westmere Town",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.63 xG chance, from 4 m.",
+      "team_id": "wst",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.63,
+        "ref": "e1"
+       },
+       {
+        "value": 4.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 1.45 xG in the match.",
+      "team_id": "wst",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 1.45,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:counter_attack:2",
+  "kind": "finding",
+  "label": "counter_attack",
+  "finding_id": "har_wst_siege_0003:counter_attack:2",
+  "team_id": "har",
+  "clock_s": 4236.1,
+  "route": "template",
+  "display": {
+   "show_at_s": 4236.1,
+   "hide_at_s": 4246.1,
+   "priority": 0.1
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "severity 0.10 is below the model floor 0.5",
+   "headline": "Harbourton City break quickly: 42 m gained in 10 s.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+     "team_id": "har",
+     "refs": [
+      "e3",
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 42.0,
+       "ref": "e3"
+      },
+      {
+       "value": 10.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Harbourton City break quickly: 42 m gained in 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 42 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 42 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 42 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Harbourton City sale rápido a la contra: 42 m en 10 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "seconds_to_finish",
+     "team_id": "har",
+     "player_id": null,
+     "value": 10.2,
+     "unit": "s",
+     "window_start_s": 4225.9,
+     "window_end_s": 4236.1,
+     "baseline": null,
+     "say": "in 10 s",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "passes_in_move",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 4225.9,
+     "window_end_s": 4236.1,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 41.8,
+     "unit": "m",
+     "window_start_s": 4225.9,
+     "window_end_s": 4236.1,
+     "baseline": null,
+     "say": "42 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "regain_distance_from_own_goal",
+     "team_id": "har",
+     "player_id": null,
+     "value": 49.5,
+     "unit": "m",
+     "window_start_s": 4225.9,
+     "window_end_s": 4225.9,
+     "baseline": null,
+     "say": "ball won 50 m from their own goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "finish_distance_to_goal",
+     "team_id": "har",
+     "player_id": null,
+     "value": 13.73,
+     "unit": "m",
+     "window_start_s": 4236.1,
+     "window_end_s": 4236.1,
+     "baseline": null,
+     "say": "finished 14 m from goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "ended_with_shot",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 4236.1,
+     "window_end_s": 4236.1,
+     "baseline": null,
+     "say": "ended with a shot (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_10",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 4236.1,
+     "baseline": null,
+     "say": "Arman Ibarra: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_10",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 4236.1,
+     "baseline": null,
+     "say": "Arman Ibarra: shots 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_10",
+     "value": 0.0,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 4236.1,
+     "baseline": null,
+     "say": "Arman Ibarra: xG 0.00",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_10",
+     "name": "Arman Ibarra",
+     "team_id": "har",
+     "involvement": "ball_winner",
+     "clock_s": 4225.9
+    }
+   ]
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "har_wst_siege_0003:goal:2",
+  "kind": "finding",
+  "label": "goal",
+  "finding_id": "har_wst_siege_0003:goal:2",
+  "team_id": "har",
+  "clock_s": 4755.7,
+  "route": "model",
+  "display": {
+   "show_at_s": 4755.7,
+   "hide_at_s": 4780.7,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Goal: Harbourton City",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "team_id": "har",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Harbourton City: a 0.04 xG chance, from 22 m.",
+     "team_id": "har",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.04,
+       "ref": "e1"
+      },
+      {
+       "value": 22.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Harbourton City: 2.67 xG in the match, Harbourton City: 49% possession.",
+     "team_id": "har",
+     "refs": [
+      "e3",
+      "c4"
+     ],
+     "numbers": [
+      {
+       "value": 2.67,
+       "ref": "e3"
+      },
+      {
+       "value": 49.0,
+       "ref": "c4"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.041,
+     "unit": "xg",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "a 0.04 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 21.5,
+     "unit": "m",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "from 22 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.666,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": 1.532,
+     "say": "2.67 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "har",
+     "player_id": null,
+     "value": 13.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": 8.0,
+     "say": "13 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.063,
+     "unit": "index",
+     "window_start_s": 4455.7,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "momentum +0.06",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.8,
+     "unit": "s",
+     "window_start_s": 4752.9,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "3 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 4752.9,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "0 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "m",
+     "window_start_s": 4752.9,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "0 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4752.9,
+     "window_end_s": 4752.9,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_11",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Joaquin Quintero: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_11",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Joaquin Quintero: shots 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_11",
+     "value": 0.041,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Joaquin Quintero: xG 0.04",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 49.2,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Harbourton City: 49% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "shots_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 13.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Harbourton City: 13 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "xg_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.666,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Harbourton City: 2.67 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "pass_completion_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 82.8,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Harbourton City: 83% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 50.8,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Westmere Town: 51% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Westmere Town: 8 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.532,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Westmere Town: 1.53 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 83.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Westmere Town: 84% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_11",
+     "name": "Joaquin Quintero",
+     "team_id": "har",
+     "involvement": "scorer",
+     "clock_s": 4755.7
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Goal: Harbourton City",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "team_id": "har",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City: a 0.04 xG chance, from 22 m.",
+      "team_id": "har",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.04,
+        "ref": "e1"
+       },
+       {
+        "value": 22.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 2.67 xG in the match, Harbourton City: 49% possession.",
+      "team_id": "har",
+      "refs": [
+       "e3",
+       "c4"
+      ],
+      "numbers": [
+       {
+        "value": 2.67,
+        "ref": "e3"
+       },
+       {
+        "value": 49.0,
+        "ref": "c4"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "har_wst_siege_0003:recap:full_time",
+  "kind": "recap",
+  "label": "full_time",
+  "finding_id": null,
+  "team_id": null,
+  "clock_s": 5400.0,
+  "route": "model",
+  "display": {
+   "show_at_s": 5400.0,
+   "hide_at_s": 5445.0,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Full time: the match",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Full-time: Harbourton City 2-1 Westmere Town.",
+     "team_id": null,
+     "refs": [
+      "c1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Hugo Vidal scored for Harbourton City.",
+     "team_id": "har",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Harbourton City: 51% possession, Harbourton City: 15 shots.",
+     "team_id": "har",
+     "refs": [
+      "c1",
+      "c2"
+     ],
+     "numbers": [
+      {
+       "value": 51.0,
+       "ref": "c1"
+      },
+      {
+       "value": 15.0,
+       "ref": "c2"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidal scored for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Full-time: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "en",
+     "text": "For Hugo Vidal's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidal scored for Harbourton City.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Full-time: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:har_09",
+     "language": "es",
+     "text": "[es · offline] For Hugo Vidal's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "c1",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 50.8,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Harbourton City: 51% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "shots_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 15.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Harbourton City: 15 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "xg_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.845,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Harbourton City: 2.85 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "pass_completion_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 82.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Harbourton City: 82% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 49.2,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 49% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 8 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.532,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 1.53 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 82.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 82% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Hugo Vidal: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 14.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Hugo Vidal: shots 14",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_09",
+     "value": 2.804,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Hugo Vidal: xG 2.80",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c12",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c13",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 6.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 6",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c14",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.496,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 1.50",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c15",
+     "metric": "player_goals",
+     "team_id": "har",
+     "player_id": "har_11",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Joaquin Quintero: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c16",
+     "metric": "player_shots",
+     "team_id": "har",
+     "player_id": "har_11",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Joaquin Quintero: shots 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c17",
+     "metric": "player_xg",
+     "team_id": "har",
+     "player_id": "har_11",
+     "value": 0.041,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Joaquin Quintero: xG 0.04",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c18",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.041,
+     "unit": "xg",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "a 0.04 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c19",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 21.5,
+     "unit": "m",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "from 22 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c20",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.666,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": 1.532,
+     "say": "2.67 xG in the match",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c21",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 49.2,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "Harbourton City: 49% possession",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c22",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.627,
+     "unit": "xg",
+     "window_start_s": 3220.6,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "a 0.63 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c23",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.1,
+     "unit": "m",
+     "window_start_s": 3220.6,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c24",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.451,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3220.6,
+     "baseline": 2.446,
+     "say": "1.45 xG in the match",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c25",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.058,
+     "unit": "xg",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "a 0.06 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c26",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 19.0,
+     "unit": "m",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "from 19 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c27",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.04,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": 0.788,
+     "say": "2.04 xG in the match",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c28",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 49.9,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "Harbourton City: 50% possession",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c29",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.712,
+     "unit": "xg",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "a 0.71 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c30",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 3.5,
+     "unit": "m",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c31",
+     "metric": "match_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.982,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2098.9,
+     "baseline": 0.788,
+     "say": "1.98 xG in the match",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c32",
+     "metric": "possession_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 50.8,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Harbourton City: 51% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c33",
+     "metric": "shots_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 15.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Harbourton City: 15 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c34",
+     "metric": "xg_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.845,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Harbourton City: 2.85 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c35",
+     "metric": "pass_completion_total",
+     "team_id": "har",
+     "player_id": null,
+     "value": 82.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Harbourton City: 82% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c36",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 49.2,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 49% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c37",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 8 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c38",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.532,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 1.53 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c39",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 82.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 82% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "har_09",
+     "name": "Hugo Vidal",
+     "team_id": "har",
+     "involvement": "scorer",
+     "clock_s": null
+    },
+    {
+     "ref": "p2",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "scorer",
+     "clock_s": null
+    },
+    {
+     "ref": "p3",
+     "player_id": "har_11",
+     "name": "Joaquin Quintero",
+     "team_id": "har",
+     "involvement": "scorer",
+     "clock_s": null
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Full time: the match",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Full-time: Harbourton City 2-1 Westmere Town.",
+      "team_id": null,
+      "refs": [
+       "c1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Hugo Vidal scored for Harbourton City.",
+      "team_id": "har",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City: 51% possession, Harbourton City: 15 shots.",
+      "team_id": "har",
+      "refs": [
+       "c1",
+       "c2"
+      ],
+      "numbers": [
+       {
+        "value": 51.0,
+        "ref": "c1"
+       },
+       {
+        "value": 15.0,
+        "ref": "c2"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ }
+]

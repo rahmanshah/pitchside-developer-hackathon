@@ -1,0 +1,240 @@
+{
+ "kind": "pitchside-run-bundle",
+ "bundle_version": "1.1",
+ "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output (faults were deliberately injected to show recovery)",
+ "run_id": "sample-faults-demo",
+ "match_id": "wst_aur_end_to_end_0004",
+ "created_utc": "2026-10-22T16:32:27+00:00",
+ "wall_s": 0.98,
+ "generator": {
+  "seed": 4,
+  "storyline": "end_to_end",
+  "description": "An open, high-tempo game where control gives way to chaos and goals trade."
+ },
+ "home": {
+  "team_id": "wst",
+  "name": "Westmere Town",
+  "short_name": "WST",
+  "side": "home"
+ },
+ "away": {
+  "team_id": "aur",
+  "name": "Aurora Rovers",
+  "short_name": "AUR",
+  "side": "away"
+ },
+ "final_score": {
+  "home": 2,
+  "away": 2
+ },
+ "languages": [
+  "en",
+  "es"
+ ],
+ "personas": [
+  "analyst",
+  "casual",
+  "fav:wst_09",
+  "fav:aur_09"
+ ],
+ "featured_players": [
+  {
+   "player_id": "wst_09",
+   "name": "Xavi Uusitalo",
+   "team_id": "wst",
+   "persona": "fav:wst_09"
+  },
+  {
+   "player_id": "aur_09",
+   "name": "Alden Brandt",
+   "team_id": "aur",
+   "persona": "fav:aur_09"
+  }
+ ],
+ "pipeline": {
+  "pitchside_version": "0.2.0",
+  "git_commit": "7ca4fe2",
+  "llm_mode": "fake",
+  "api": "fake",
+  "deployments": {
+   "interpreter": "fake",
+   "explainer": "fake",
+   "verifier": "fake",
+   "personalizer": "fake"
+  },
+  "price_model": "gpt-6-luna",
+  "price_table_version": "2026-10-18",
+  "reasoning_effort": "low",
+  "max_output_tokens": {
+   "interpreter": 1500,
+   "explainer": 3000,
+   "verifier": 1500,
+   "personalizer": 4000
+  },
+  "prompt_versions": {
+   "interpreter": "6dfd03259e73",
+   "explainer": "ddb820308421",
+   "verifier": "2d4b35846ad4",
+   "personalizer": "e813b633439d"
+  },
+  "max_explainer_attempts": 3,
+  "interpreter_tools": "local",
+  "mcp_server": null
+ },
+ "faults": {
+  "injected": true,
+  "plan": "demo",
+  "rules": [
+   "interpreter: malformed on goal.1 (attempt 1, up to 1x per job)",
+   "explainer: rate_limit on goal.1 (attempt 1, up to 1x per job)",
+   "explainer: corrupt_number on goal.2 (attempt 1, up to 1x per job)",
+   "explainer: corrupt_team on big_chance.1 (attempt 1, up to 1x per job)",
+   "verifier: timeout on big_chance.2 (attempt 1, up to 4x per job)",
+   "personalizer: server_error on big_chance.3 (attempt 1, up to 4x per job)",
+   "explainer: corrupt_all on big_chance.4 (every attempt, up to 9x per job)",
+   "verifier: semantic_reject on half_time (attempt 1, up to 1x per job)"
+  ],
+  "fired": [
+   {
+    "role": "explainer",
+    "kind": "corrupt_team",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:0",
+    "step": "explain",
+    "attempt": 1
+   },
+   {
+    "role": "verifier",
+    "kind": "timeout",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:1",
+    "step": "verify",
+    "attempt": 1
+   },
+   {
+    "role": "verifier",
+    "kind": "timeout",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:1",
+    "step": "verify",
+    "attempt": 1
+   },
+   {
+    "role": "verifier",
+    "kind": "timeout",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:1",
+    "step": "verify",
+    "attempt": 1
+   },
+   {
+    "role": "verifier",
+    "kind": "timeout",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:1",
+    "step": "verify",
+    "attempt": 1
+   },
+   {
+    "role": "personalizer",
+    "kind": "server_error",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:2",
+    "step": "personalize",
+    "attempt": 1
+   },
+   {
+    "role": "personalizer",
+    "kind": "server_error",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:2",
+    "step": "personalize",
+    "attempt": 1
+   },
+   {
+    "role": "personalizer",
+    "kind": "server_error",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:2",
+    "step": "personalize",
+    "attempt": 1
+   },
+   {
+    "role": "personalizer",
+    "kind": "server_error",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:2",
+    "step": "personalize",
+    "attempt": 1
+   },
+   {
+    "role": "explainer",
+    "kind": "corrupt_all",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:3",
+    "step": "explain",
+    "attempt": 1
+   },
+   {
+    "role": "explainer",
+    "kind": "corrupt_all",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:3",
+    "step": "explain",
+    "attempt": 2
+   },
+   {
+    "role": "explainer",
+    "kind": "corrupt_all",
+    "job_id": "wst_aur_end_to_end_0004:big_chance:3",
+    "step": "explain",
+    "attempt": 3
+   },
+   {
+    "role": "explainer",
+    "kind": "rate_limit",
+    "job_id": "wst_aur_end_to_end_0004:goal:0",
+    "step": "explain",
+    "attempt": 1
+   },
+   {
+    "role": "interpreter",
+    "kind": "malformed",
+    "job_id": "wst_aur_end_to_end_0004:goal:0",
+    "step": "interpret",
+    "attempt": 1
+   },
+   {
+    "role": "explainer",
+    "kind": "corrupt_number",
+    "job_id": "wst_aur_end_to_end_0004:goal:1",
+    "step": "explain",
+    "attempt": 1
+   },
+   {
+    "role": "verifier",
+    "kind": "semantic_reject",
+    "job_id": "wst_aur_end_to_end_0004:recap:half_time",
+    "step": "verify",
+    "attempt": 1
+   }
+  ]
+ },
+ "budget": {
+  "match_budget_usd": 0.25,
+  "spent_usd": 0.005558,
+  "model_calls": 74,
+  "budget_fallbacks": 0,
+  "exhausted": null
+ },
+ "counts": {
+  "events": 1445,
+  "findings": 18,
+  "jobs": 20,
+  "model_jobs": 14,
+  "template_jobs": 6,
+  "model_fallbacks": 1,
+  "recaps": 2
+ },
+ "files": {
+  "manifest": "manifest.json",
+  "events": "events.jsonl",
+  "stats": "stats.jsonl",
+  "findings": "findings.json",
+  "narratives": "narratives.json",
+  "audit": "audit.jsonl",
+  "usage": "usage.jsonl",
+  "answer_key": "answer_key.json",
+  "evaluation": "evaluation.json",
+  "overlay": "overlay.json"
+ }
+}

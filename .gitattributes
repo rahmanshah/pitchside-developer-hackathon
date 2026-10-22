@@ -1,0 +1,4 @@
+# Generated run bundles for the static demo: LF everywhere, no line diffs (regenerate with `uv run pitchside demo-data`)
+web/data/** text eol=lf linguist-generated=true -diff
+*.woff2 binary
+*.png binary

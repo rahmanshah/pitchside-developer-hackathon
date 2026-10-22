@@ -1,0 +1,7920 @@
+[
+ {
+  "job_id": "wst_aur_end_to_end_0004:big_chance:0",
+  "kind": "finding",
+  "label": "big_chance",
+  "finding_id": "wst_aur_end_to_end_0004:big_chance:0",
+  "team_id": "aur",
+  "clock_s": 965.2,
+  "route": "model",
+  "display": {
+   "show_at_s": 965.2,
+   "hide_at_s": 980.2,
+   "priority": 0.839
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Big chance: Aurora Rovers",
+   "claims": [
+    {
+     "claim_id": "a2c1",
+     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "team_id": "aur",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a2c2",
+     "text": "Aurora Rovers: a 0.44 xG chance, from 6 m.",
+     "team_id": "aur",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.44,
+       "ref": "e1"
+      },
+      {
+       "value": 6.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a2c3",
+     "text": "Aurora Rovers: 0.44 xG in the match.",
+     "team_id": "aur",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 0.44,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.44 xG chance, from 6 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.44 xG chance, from 6 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.439,
+     "unit": "xg",
+     "window_start_s": 965.2,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "a 0.44 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 5.7,
+     "unit": "m",
+     "window_start_s": 965.2,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "from 6 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.439,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 965.2,
+     "baseline": 0.223,
+     "say": "0.44 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 965.2,
+     "baseline": 1.0,
+     "say": "1 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.174,
+     "unit": "index",
+     "window_start_s": 665.2,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "momentum +0.17",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 50.4,
+     "unit": "s",
+     "window_start_s": 914.8,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "50 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 7.0,
+     "unit": "count",
+     "window_start_s": 914.8,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "7 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 92.2,
+     "unit": "m",
+     "window_start_s": 914.8,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "92 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 914.8,
+     "window_end_s": 914.8,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "Alden Brandt: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "Alden Brandt: shots 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 0.439,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "Alden Brandt: xG 0.44",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "aur_09",
+     "name": "Alden Brandt",
+     "team_id": "aur",
+     "involvement": "shooter",
+     "clock_s": 965.2
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Big chance: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.44 xG chance, from 6 m.",
+      "team_id": "wst",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.44,
+        "ref": "e1"
+       },
+       {
+        "value": 6.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Aurora Rovers: 0.44 xG in the match.",
+      "team_id": "aur",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 0.44,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "attempt": 2,
+    "headline": "Big chance: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a2c1",
+      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a2c2",
+      "text": "Aurora Rovers: a 0.44 xG chance, from 6 m.",
+      "team_id": "aur",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.44,
+        "ref": "e1"
+       },
+       {
+        "value": 6.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a2c3",
+      "text": "Aurora Rovers: 0.44 xG in the match.",
+      "team_id": "aur",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 0.44,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "team_mismatch",
+      "detail": "the claim is about Westmere Town but its evidence is about Aurora Rovers"
+     },
+     {
+      "code": "team_mismatch",
+      "detail": "\"0.44\" (e1) belongs to Aurora Rovers, but the text gives it to Westmere Town; name the club right before its number"
+     },
+     {
+      "code": "team_mismatch",
+      "detail": "\"6\" (e2) belongs to Aurora Rovers, but the text gives it to Westmere Town; name the club right before its number"
+     }
+    ]
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:chaos_spell:0",
+  "kind": "finding",
+  "label": "chaos_spell",
+  "finding_id": "wst_aur_end_to_end_0004:chaos_spell:0",
+  "team_id": null,
+  "clock_s": 1989.7,
+  "route": "model",
+  "display": {
+   "show_at_s": 1989.7,
+   "hide_at_s": 2009.7,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Chaos spell: the match",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Chaos index +1.00, 3.9 turnovers per minute.",
+     "team_id": null,
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 1.0,
+       "ref": "e1"
+      },
+      {
+       "value": 3.9,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "65% pass completion.",
+     "team_id": null,
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 65.0,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Chaos index +1.00, 3.9 turnovers per minute. 65% pass completion.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Chaos index +1.00, 3.9 turnovers per minute.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Chaos index +1.00, 3.9 turnovers per minute. 65% pass completion.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Chaos index +1.00, 3.9 turnovers per minute.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "chaos_index",
+     "team_id": null,
+     "player_id": null,
+     "value": 1.0,
+     "unit": "index",
+     "window_start_s": 1509.7,
+     "window_end_s": 1989.7,
+     "baseline": null,
+     "say": "chaos index +1.00",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "turnovers_per_min",
+     "team_id": null,
+     "player_id": null,
+     "value": 3.875,
+     "unit": "per_min",
+     "window_start_s": 1509.7,
+     "window_end_s": 1989.7,
+     "baseline": 1.8,
+     "say": "3.9 turnovers per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "pass_completion",
+     "team_id": null,
+     "player_id": null,
+     "value": 65.2,
+     "unit": "pct",
+     "window_start_s": 1509.7,
+     "window_end_s": 1989.7,
+     "baseline": 84.0,
+     "say": "65% pass completion",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "mean_spell",
+     "team_id": null,
+     "player_id": null,
+     "value": 15.21,
+     "unit": "s",
+     "window_start_s": 1509.7,
+     "window_end_s": 1989.7,
+     "baseline": 32.0,
+     "say": "possessions lasting 15 s on average",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Chaos spell: the match",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Chaos index +1.00, 3.9 turnovers per minute.",
+      "team_id": null,
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 1.0,
+        "ref": "e1"
+       },
+       {
+        "value": 3.9,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "65% pass completion.",
+      "team_id": null,
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 65.0,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:pressure_surge:0",
+  "kind": "finding",
+  "label": "pressure_surge",
+  "finding_id": "wst_aur_end_to_end_0004:pressure_surge:0",
+  "team_id": "aur",
+  "clock_s": 2006.2,
+  "route": "model",
+  "display": {
+   "show_at_s": 2006.2,
+   "hide_at_s": 2026.2,
+   "priority": 0.833
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Pressure surge: Aurora Rovers",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "team_id": "aur",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 4.3,
+       "ref": "e1"
+      },
+      {
+       "value": 1.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Westmere Town completing 52% of their passes.",
+     "team_id": "wst",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 52.0,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won. Westmere Town completing 52% of their passes.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackles won. Westmere Town completing 52% of their passes.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "pressures_per_min",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 4.333,
+     "unit": "per_min",
+     "window_start_s": 1826.2,
+     "window_end_s": 2006.2,
+     "baseline": 0.789,
+     "say": "4.3 pressures per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "tackles_won",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 1706.2,
+     "window_end_s": 2006.2,
+     "baseline": null,
+     "say": "1 tackles won",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "opponent_pass_completion",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 52.4,
+     "unit": "pct",
+     "window_start_s": 1706.2,
+     "window_end_s": 2006.2,
+     "baseline": 76.6,
+     "say": "Westmere Town completing 52% of their passes",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "momentum",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.045,
+     "unit": "index",
+     "window_start_s": 1706.2,
+     "window_end_s": 2006.2,
+     "baseline": null,
+     "say": "momentum +0.04",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Pressure surge: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+      "team_id": "aur",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 4.3,
+        "ref": "e1"
+       },
+       {
+        "value": 1.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town completing 52% of their passes.",
+      "team_id": "wst",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 52.0,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:big_chance:1",
+  "kind": "finding",
+  "label": "big_chance",
+  "finding_id": "wst_aur_end_to_end_0004:big_chance:1",
+  "team_id": "aur",
+  "clock_s": 2056.2,
+  "route": "model",
+  "display": {
+   "show_at_s": 2056.2,
+   "hide_at_s": 2071.2,
+   "priority": 0.754
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Big chance: Aurora Rovers",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "team_id": "aur",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers: a 0.35 xG chance, from 7 m.",
+     "team_id": "aur",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.35,
+       "ref": "e1"
+      },
+      {
+       "value": 7.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Aurora Rovers: 0.85 xG in the match.",
+     "team_id": "aur",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 0.85,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "skipped: verifier timeout: verifier: model service unavailable after 4 attempts: timeout (APITimeoutError: Request timed out.)",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.354,
+     "unit": "xg",
+     "window_start_s": 2056.2,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "a 0.35 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 6.8,
+     "unit": "m",
+     "window_start_s": 2056.2,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "from 7 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.853,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2056.2,
+     "baseline": 0.223,
+     "say": "0.85 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2056.2,
+     "baseline": 1.0,
+     "say": "3 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.254,
+     "unit": "index",
+     "window_start_s": 1756.1999999999998,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "momentum +0.25",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 20.3,
+     "unit": "s",
+     "window_start_s": 2035.9,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "20 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 2035.9,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "4 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 21.3,
+     "unit": "m",
+     "window_start_s": 2035.9,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "21 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2035.9,
+     "window_end_s": 2035.9,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "Alden Brandt: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "Alden Brandt: shots 3",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 0.853,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "Alden Brandt: xG 0.85",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "aur_09",
+     "name": "Alden Brandt",
+     "team_id": "aur",
+     "involvement": "shooter",
+     "clock_s": 2056.2
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Big chance: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers: a 0.35 xG chance, from 7 m.",
+      "team_id": "aur",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.35,
+        "ref": "e1"
+       },
+       {
+        "value": 7.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Aurora Rovers: 0.85 xG in the match.",
+      "team_id": "aur",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 0.85,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:pressure_surge:1",
+  "kind": "finding",
+  "label": "pressure_surge",
+  "finding_id": "wst_aur_end_to_end_0004:pressure_surge:1",
+  "team_id": "wst",
+  "clock_s": 2073.5,
+  "route": "model",
+  "display": {
+   "show_at_s": 2073.5,
+   "hide_at_s": 2093.5,
+   "priority": 0.952
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Pressure surge: Westmere Town",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "team_id": "wst",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 4.7,
+       "ref": "e1"
+      },
+      {
+       "value": 5.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers completing 72% of their passes.",
+     "team_id": "aur",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 72.0,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won. Aurora Rovers completing 72% of their passes.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Westmere Town: 4.7 pressures per minute, 5 tackles won. Aurora Rovers completing 72% of their passes.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "pressures_per_min",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.667,
+     "unit": "per_min",
+     "window_start_s": 1893.5,
+     "window_end_s": 2073.5,
+     "baseline": 0.951,
+     "say": "4.7 pressures per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "tackles_won",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 1773.5,
+     "window_end_s": 2073.5,
+     "baseline": null,
+     "say": "5 tackles won",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "opponent_pass_completion",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 72.0,
+     "unit": "pct",
+     "window_start_s": 1773.5,
+     "window_end_s": 2073.5,
+     "baseline": 78.5,
+     "say": "Aurora Rovers completing 72% of their passes",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "momentum",
+     "team_id": "wst",
+     "player_id": null,
+     "value": -0.27,
+     "unit": "index",
+     "window_start_s": 1773.5,
+     "window_end_s": 2073.5,
+     "baseline": null,
+     "say": "momentum -0.27",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Pressure surge: Westmere Town",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+      "team_id": "wst",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 4.7,
+        "ref": "e1"
+       },
+       {
+        "value": 5.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers completing 72% of their passes.",
+      "team_id": "aur",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 72.0,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:goal:0",
+  "kind": "finding",
+  "label": "goal",
+  "finding_id": "wst_aur_end_to_end_0004:goal:0",
+  "team_id": "wst",
+  "clock_s": 2079.7,
+  "route": "model",
+  "display": {
+   "show_at_s": 2079.7,
+   "hide_at_s": 2104.7,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Goal: Westmere Town",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "team_id": "wst",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Westmere Town: a 0.15 xG chance, from 12 m.",
+     "team_id": "wst",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.15,
+       "ref": "e1"
+      },
+      {
+       "value": 12.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Westmere Town: 0.37 xG in the match, Westmere Town: 50% possession.",
+     "team_id": "wst",
+     "refs": [
+      "e3",
+      "c4"
+     ],
+     "numbers": [
+      {
+       "value": 0.37,
+       "ref": "e3"
+      },
+      {
+       "value": 50.0,
+       "ref": "c4"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers. Westmere Town: a 0.15 xG chance, from 12 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers. Westmere Town: a 0.15 xG chance, from 12 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.151,
+     "unit": "xg",
+     "window_start_s": 2079.7,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "a 0.15 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 11.5,
+     "unit": "m",
+     "window_start_s": 2079.7,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "from 12 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.374,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": 0.853,
+     "say": "0.37 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": 3.0,
+     "say": "2 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "wst",
+     "player_id": null,
+     "value": -0.116,
+     "unit": "index",
+     "window_start_s": 1779.6999999999998,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "momentum -0.12",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 19.3,
+     "unit": "s",
+     "window_start_s": 2060.4,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "19 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 2060.4,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "4 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 89.6,
+     "unit": "m",
+     "window_start_s": 2060.4,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "90 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 2060.4,
+     "window_end_s": 2060.4,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 2",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 0.374,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 0.37",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 50.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Westmere Town: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Westmere Town: 2 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.374,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Westmere Town: 0.37 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 76.9,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Westmere Town: 77% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "possession_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 49.7,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Aurora Rovers: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "shots_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Aurora Rovers: 3 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "xg_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.853,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Aurora Rovers: 0.85 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "pass_completion_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 78.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Aurora Rovers: 78% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "scorer",
+     "clock_s": 2079.7
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Goal: Westmere Town",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.15 xG chance, from 12 m.",
+      "team_id": "wst",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.15,
+        "ref": "e1"
+       },
+       {
+        "value": 12.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 0.37 xG in the match, Westmere Town: 50% possession.",
+      "team_id": "wst",
+      "refs": [
+       "e3",
+       "c4"
+      ],
+      "numbers": [
+       {
+        "value": 0.37,
+        "ref": "e3"
+       },
+       {
+        "value": 50.0,
+        "ref": "c4"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:counter_attack:0",
+  "kind": "finding",
+  "label": "counter_attack",
+  "finding_id": "wst_aur_end_to_end_0004:counter_attack:0",
+  "team_id": "aur",
+  "clock_s": 2209.7,
+  "route": "template",
+  "display": {
+   "show_at_s": 2209.7,
+   "hide_at_s": 2219.7,
+   "priority": 0.1
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "severity 0.10 is below the model floor 0.5",
+   "headline": "Aurora Rovers break quickly: 50 m gained in 9 s.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Aurora Rovers break quickly: 50 m gained in 9 s.",
+     "team_id": "aur",
+     "refs": [
+      "e3",
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 50.0,
+       "ref": "e3"
+      },
+      {
+       "value": 9.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Aurora Rovers break quickly: 50 m gained in 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Aurora Rovers break quickly: 50 m gained in 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Aurora Rovers break quickly: 50 m gained in 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "Aurora Rovers break quickly: 50 m gained in 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Aurora Rovers sale rápido a la contra: 50 m en 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Aurora Rovers sale rápido a la contra: 50 m en 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Aurora Rovers sale rápido a la contra: 50 m en 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "Aurora Rovers sale rápido a la contra: 50 m en 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "seconds_to_finish",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 8.6,
+     "unit": "s",
+     "window_start_s": 2201.1,
+     "window_end_s": 2209.7,
+     "baseline": null,
+     "say": "in 9 s",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "passes_in_move",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 2201.1,
+     "window_end_s": 2209.7,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 49.7,
+     "unit": "m",
+     "window_start_s": 2201.1,
+     "window_end_s": 2209.7,
+     "baseline": null,
+     "say": "50 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "regain_distance_from_own_goal",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 45.4,
+     "unit": "m",
+     "window_start_s": 2201.1,
+     "window_end_s": 2201.1,
+     "baseline": null,
+     "say": "ball won 45 m from their own goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "finish_distance_to_goal",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 9.985,
+     "unit": "m",
+     "window_start_s": 2209.7,
+     "window_end_s": 2209.7,
+     "baseline": null,
+     "say": "finished 10 m from goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "ended_with_shot",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 2209.7,
+     "window_end_s": 2209.7,
+     "baseline": null,
+     "say": "ended with a shot (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_10",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2209.7,
+     "baseline": null,
+     "say": "Tomas Okafor: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_10",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2209.7,
+     "baseline": null,
+     "say": "Tomas Okafor: shots 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_10",
+     "value": 0.0,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2209.7,
+     "baseline": null,
+     "say": "Tomas Okafor: xG 0.00",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "aur_10",
+     "name": "Tomas Okafor",
+     "team_id": "aur",
+     "involvement": "ball_winner",
+     "clock_s": 2201.1
+    }
+   ]
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:counter_attack:1",
+  "kind": "finding",
+  "label": "counter_attack",
+  "finding_id": "wst_aur_end_to_end_0004:counter_attack:1",
+  "team_id": "wst",
+  "clock_s": 2519.9,
+  "route": "template",
+  "display": {
+   "show_at_s": 2519.9,
+   "hide_at_s": 2529.9,
+   "priority": 0.1
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "severity 0.10 is below the model floor 0.5",
+   "headline": "Westmere Town break quickly: 38 m gained in 7 s.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Westmere Town break quickly: 38 m gained in 7 s.",
+     "team_id": "wst",
+     "refs": [
+      "e3",
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 38.0,
+       "ref": "e3"
+      },
+      {
+       "value": 7.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Westmere Town break quickly: 38 m gained in 7 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Westmere Town break quickly: 38 m gained in 7 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Westmere Town break quickly: 38 m gained in 7 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "Westmere Town break quickly: 38 m gained in 7 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Westmere Town sale rápido a la contra: 38 m en 7 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Westmere Town sale rápido a la contra: 38 m en 7 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Westmere Town sale rápido a la contra: 38 m en 7 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "Westmere Town sale rápido a la contra: 38 m en 7 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "seconds_to_finish",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 7.4,
+     "unit": "s",
+     "window_start_s": 2512.5,
+     "window_end_s": 2519.9,
+     "baseline": null,
+     "say": "in 7 s",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "passes_in_move",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 2512.5,
+     "window_end_s": 2519.9,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "metres_gained",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 38.0,
+     "unit": "m",
+     "window_start_s": 2512.5,
+     "window_end_s": 2519.9,
+     "baseline": null,
+     "say": "38 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "regain_distance_from_own_goal",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 57.5,
+     "unit": "m",
+     "window_start_s": 2512.5,
+     "window_end_s": 2512.5,
+     "baseline": null,
+     "say": "ball won 58 m from their own goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "finish_distance_to_goal",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 9.5,
+     "unit": "m",
+     "window_start_s": 2519.9,
+     "window_end_s": 2519.9,
+     "baseline": null,
+     "say": "finished 10 m from goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "ended_with_shot",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 2519.9,
+     "window_end_s": 2519.9,
+     "baseline": null,
+     "say": "ended with a shot (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_06",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2519.9,
+     "baseline": null,
+     "say": "Ilmari Abara: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_06",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2519.9,
+     "baseline": null,
+     "say": "Ilmari Abara: shots 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_06",
+     "value": 0.0,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2519.9,
+     "baseline": null,
+     "say": "Ilmari Abara: xG 0.00",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_06",
+     "name": "Ilmari Abara",
+     "team_id": "wst",
+     "involvement": "ball_winner",
+     "clock_s": 2512.5
+    }
+   ]
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:big_chance:2",
+  "kind": "finding",
+  "label": "big_chance",
+  "finding_id": "wst_aur_end_to_end_0004:big_chance:2",
+  "team_id": "wst",
+  "clock_s": 2613.4,
+  "route": "model",
+  "display": {
+   "show_at_s": 2613.4,
+   "hide_at_s": 2628.4,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Big chance: Westmere Town",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Xavi Uusitalo had the chance for Westmere Town.",
+     "team_id": "wst",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Westmere Town: a 0.66 xG chance, from 4 m.",
+     "team_id": "wst",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.66,
+       "ref": "e1"
+      },
+      {
+       "value": 4.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Westmere Town: 1.03 xG in the match.",
+     "team_id": "wst",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 1.03,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Big chance for Westmere Town: a 0.66 xG shot from 4 m, not converted. Westmere Town have 3 shots and 1.03 xG so far.",
+     "source": "template",
+     "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "So close! Westmere Town go near with a great chance.",
+     "source": "template",
+     "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Xavi Uusitalo goes close for Westmere Town with a big chance.",
+     "source": "template",
+     "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "Westmere Town go close, but Alden Brandt's side survive.",
+     "source": "template",
+     "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Ocasión clara de Westmere Town: un tiro de 0,66 xG desde 4 m, sin gol. Westmere Town suma 3 tiros y 1,03 xG.",
+     "source": "template",
+     "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "¡Uy! Westmere Town roza el gol con una gran ocasión.",
+     "source": "template",
+     "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Xavi Uusitalo roza el gol para Westmere Town con una ocasión clara.",
+     "source": "template",
+     "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "Westmere Town roza el gol, pero el equipo de Alden Brandt se salva.",
+     "source": "template",
+     "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.657,
+     "unit": "xg",
+     "window_start_s": 2613.4,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "a 0.66 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.8,
+     "unit": "m",
+     "window_start_s": 2613.4,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.031,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2613.4,
+     "baseline": 0.853,
+     "say": "1.03 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2613.4,
+     "baseline": 3.0,
+     "say": "3 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.408,
+     "unit": "index",
+     "window_start_s": 2313.4,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "momentum +0.41",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 24.2,
+     "unit": "s",
+     "window_start_s": 2589.2,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "24 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 2589.2,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "3 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 33.8,
+     "unit": "m",
+     "window_start_s": 2589.2,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "34 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 2589.2,
+     "window_end_s": 2589.2,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 3",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.031,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 1.03",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "shooter",
+     "clock_s": 2613.4
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Big chance: Westmere Town",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.66 xG chance, from 4 m.",
+      "team_id": "wst",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.66,
+        "ref": "e1"
+       },
+       {
+        "value": 4.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 1.03 xG in the match.",
+      "team_id": "wst",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 1.03,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:recap:half_time",
+  "kind": "recap",
+  "label": "half_time",
+  "finding_id": null,
+  "team_id": null,
+  "clock_s": 2700.0,
+  "route": "model",
+  "display": {
+   "show_at_s": 2700.0,
+   "hide_at_s": 2745.0,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Half time: the match",
+   "claims": [
+    {
+     "claim_id": "a2c1",
+     "text": "Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "team_id": null,
+     "refs": [
+      "c1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a2c2",
+     "text": "Xavi Uusitalo scored for Westmere Town.",
+     "team_id": "wst",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a2c3",
+     "text": "Westmere Town: 53% possession, Westmere Town: 3 shots.",
+     "team_id": "wst",
+     "refs": [
+      "c1",
+      "c2"
+     ],
+     "numbers": [
+      {
+       "value": 53.0,
+       "ref": "c1"
+      },
+      {
+       "value": 3.0,
+       "ref": "c2"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Half-time: Westmere Town 1-0 Aurora Rovers. Xavi Uusitalo scored for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Half-time: Westmere Town 1-0 Aurora Rovers. Xavi Uusitalo scored for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "c1",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 52.7,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 53% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 3 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.031,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 1.03 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 76.1,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 76% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "possession_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 47.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 47% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "shots_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 3 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "xg_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.853,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 0.85 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "pass_completion_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 74.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 74% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 3",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.031,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 1.03",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c12",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Alden Brandt: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c13",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Alden Brandt: shots 3",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c14",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 0.853,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Alden Brandt: xG 0.85",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c15",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.151,
+     "unit": "xg",
+     "window_start_s": 2079.7,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "a 0.15 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:0"
+    },
+    {
+     "ref": "c16",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 11.5,
+     "unit": "m",
+     "window_start_s": 2079.7,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "from 12 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:0"
+    },
+    {
+     "ref": "c17",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.374,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": 0.853,
+     "say": "0.37 xG in the match",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:0"
+    },
+    {
+     "ref": "c18",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 50.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Westmere Town: 50% possession",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:0"
+    },
+    {
+     "ref": "c19",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.657,
+     "unit": "xg",
+     "window_start_s": 2613.4,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "a 0.66 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:2"
+    },
+    {
+     "ref": "c20",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.8,
+     "unit": "m",
+     "window_start_s": 2613.4,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:2"
+    },
+    {
+     "ref": "c21",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.031,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2613.4,
+     "baseline": 0.853,
+     "say": "1.03 xG in the match",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:2"
+    },
+    {
+     "ref": "c22",
+     "metric": "pressures_per_min",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.667,
+     "unit": "per_min",
+     "window_start_s": 1893.5,
+     "window_end_s": 2073.5,
+     "baseline": 0.951,
+     "say": "4.7 pressures per minute",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:pressure_surge:1"
+    },
+    {
+     "ref": "c23",
+     "metric": "tackles_won",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 1773.5,
+     "window_end_s": 2073.5,
+     "baseline": null,
+     "say": "5 tackles won",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:pressure_surge:1"
+    },
+    {
+     "ref": "c24",
+     "metric": "opponent_pass_completion",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 72.0,
+     "unit": "pct",
+     "window_start_s": 1773.5,
+     "window_end_s": 2073.5,
+     "baseline": 78.5,
+     "say": "Aurora Rovers completing 72% of their passes",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:pressure_surge:1"
+    },
+    {
+     "ref": "c25",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.354,
+     "unit": "xg",
+     "window_start_s": 2056.2,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "a 0.35 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:1"
+    },
+    {
+     "ref": "c26",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 6.8,
+     "unit": "m",
+     "window_start_s": 2056.2,
+     "window_end_s": 2056.2,
+     "baseline": null,
+     "say": "from 7 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:1"
+    },
+    {
+     "ref": "c27",
+     "metric": "match_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.853,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2056.2,
+     "baseline": 0.223,
+     "say": "0.85 xG in the match",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:1"
+    },
+    {
+     "ref": "c28",
+     "metric": "pressures_per_min",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 4.333,
+     "unit": "per_min",
+     "window_start_s": 1826.2,
+     "window_end_s": 2006.2,
+     "baseline": 0.789,
+     "say": "4.3 pressures per minute",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:pressure_surge:0"
+    },
+    {
+     "ref": "c29",
+     "metric": "tackles_won",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 1706.2,
+     "window_end_s": 2006.2,
+     "baseline": null,
+     "say": "1 tackles won",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:pressure_surge:0"
+    },
+    {
+     "ref": "c30",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 52.7,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 53% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c31",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 3 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c32",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.031,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 1.03 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c33",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 76.1,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Westmere Town: 76% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c34",
+     "metric": "possession_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 47.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 47% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c35",
+     "metric": "shots_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 3 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c36",
+     "metric": "xg_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.853,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 0.85 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c37",
+     "metric": "pass_completion_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 74.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 74% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "scorer",
+     "clock_s": null
+    },
+    {
+     "ref": "p2",
+     "player_id": "aur_09",
+     "name": "Alden Brandt",
+     "team_id": "aur",
+     "involvement": "top_xg",
+     "clock_s": null
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Half time: the match",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "team_id": null,
+      "refs": [
+       "c1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Xavi Uusitalo scored for Westmere Town.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 53% possession, Westmere Town: 3 shots.",
+      "team_id": "wst",
+      "refs": [
+       "c1",
+       "c2"
+      ],
+      "numbers": [
+       {
+        "value": 53.0,
+        "ref": "c1"
+       },
+       {
+        "value": 3.0,
+        "ref": "c2"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "attempt": 2,
+    "headline": "Half time: the match",
+    "claims": [
+     {
+      "claim_id": "a2c1",
+      "text": "Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "team_id": null,
+      "refs": [
+       "c1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a2c2",
+      "text": "Xavi Uusitalo scored for Westmere Town.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a2c3",
+      "text": "Westmere Town: 53% possession, Westmere Town: 3 shots.",
+      "team_id": "wst",
+      "refs": [
+       "c1",
+       "c2"
+      ],
+      "numbers": [
+       {
+        "value": 53.0,
+        "ref": "c1"
+       },
+       {
+        "value": 3.0,
+        "ref": "c2"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "Injected rejection: says more than the evidence shows."
+     }
+    ]
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "Injected rejection: says more than the evidence shows."
+     }
+    ]
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "Injected rejection: says more than the evidence shows."
+     }
+    ]
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:goal:1",
+  "kind": "finding",
+  "label": "goal",
+  "finding_id": "wst_aur_end_to_end_0004:goal:1",
+  "team_id": "aur",
+  "clock_s": 2823.7,
+  "route": "model",
+  "display": {
+   "show_at_s": 2823.7,
+   "hide_at_s": 2848.7,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Goal: Aurora Rovers",
+   "claims": [
+    {
+     "claim_id": "a2c1",
+     "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "team_id": "aur",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a2c2",
+     "text": "Aurora Rovers: a 0.27 xG chance, from 8 m.",
+     "team_id": "aur",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.27,
+       "ref": "e1"
+      },
+      {
+       "value": 8.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a2c3",
+     "text": "Aurora Rovers: 1.13 xG in the match.",
+     "team_id": "aur",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 1.13,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers. Aurora Rovers: a 0.27 xG chance, from 8 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers. Aurora Rovers: a 0.27 xG chance, from 8 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.273,
+     "unit": "xg",
+     "window_start_s": 2823.7,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "a 0.27 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 7.9,
+     "unit": "m",
+     "window_start_s": 2823.7,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "from 8 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.126,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": 1.031,
+     "say": "1.13 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": 3.0,
+     "say": "4 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "aur",
+     "player_id": null,
+     "value": -0.089,
+     "unit": "index",
+     "window_start_s": 2523.7,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "momentum -0.09",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 18.4,
+     "unit": "s",
+     "window_start_s": 2805.3,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "18 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 2805.3,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 31.7,
+     "unit": "m",
+     "window_start_s": 2805.3,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "32 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2805.3,
+     "window_end_s": 2805.3,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Alden Brandt: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Alden Brandt: shots 4",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 1.126,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Alden Brandt: xG 1.13",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 51.8,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Westmere Town: 52% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Westmere Town: 3 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.031,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Westmere Town: 1.03 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 74.8,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Westmere Town: 75% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "possession_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 48.2,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Aurora Rovers: 48% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "shots_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Aurora Rovers: 4 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "xg_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.126,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Aurora Rovers: 1.13 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "pass_completion_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 74.0,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "Aurora Rovers: 74% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "aur_09",
+     "name": "Alden Brandt",
+     "team_id": "aur",
+     "involvement": "scorer",
+     "clock_s": 2823.7
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Goal: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers: a 2.41 xG chance, from 8 m.",
+      "team_id": "aur",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 2.41,
+        "ref": "e1"
+       },
+       {
+        "value": 8.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Aurora Rovers: 1.13 xG in the match.",
+      "team_id": "aur",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 1.13,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "attempt": 2,
+    "headline": "Goal: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a2c1",
+      "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a2c2",
+      "text": "Aurora Rovers: a 0.27 xG chance, from 8 m.",
+      "team_id": "aur",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.27,
+        "ref": "e1"
+       },
+       {
+        "value": 8.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a2c3",
+      "text": "Aurora Rovers: 1.13 xG in the match.",
+      "team_id": "aur",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 1.13,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "number_mismatch",
+      "detail": "\"2.41\" does not match e1 (shot_xg = 0.273 xg; write \"a 0.27 xG chance\")"
+     }
+    ]
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:counter_attack:2",
+  "kind": "finding",
+  "label": "counter_attack",
+  "finding_id": "wst_aur_end_to_end_0004:counter_attack:2",
+  "team_id": "aur",
+  "clock_s": 3208.1,
+  "route": "template",
+  "display": {
+   "show_at_s": 3208.1,
+   "hide_at_s": 3218.1,
+   "priority": 0.1
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "severity 0.10 is below the model floor 0.5",
+   "headline": "Aurora Rovers break quickly: 35 m gained in 9 s.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Aurora Rovers break quickly: 35 m gained in 9 s.",
+     "team_id": "aur",
+     "refs": [
+      "e3",
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 35.0,
+       "ref": "e3"
+      },
+      {
+       "value": 9.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Aurora Rovers break quickly: 35 m gained in 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Aurora Rovers break quickly: 35 m gained in 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Aurora Rovers break quickly: 35 m gained in 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "Aurora Rovers break quickly: 35 m gained in 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Aurora Rovers sale rápido a la contra: 35 m en 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Aurora Rovers sale rápido a la contra: 35 m en 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Aurora Rovers sale rápido a la contra: 35 m en 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "Aurora Rovers sale rápido a la contra: 35 m en 9 s.",
+     "source": "template",
+     "reason": "severity 0.10 is below the model floor 0.5"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "seconds_to_finish",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 8.9,
+     "unit": "s",
+     "window_start_s": 3199.2,
+     "window_end_s": 3208.1,
+     "baseline": null,
+     "say": "in 9 s",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "passes_in_move",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 3199.2,
+     "window_end_s": 3208.1,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 34.9,
+     "unit": "m",
+     "window_start_s": 3199.2,
+     "window_end_s": 3208.1,
+     "baseline": null,
+     "say": "35 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "regain_distance_from_own_goal",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 59.5,
+     "unit": "m",
+     "window_start_s": 3199.2,
+     "window_end_s": 3199.2,
+     "baseline": null,
+     "say": "ball won 60 m from their own goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "finish_distance_to_goal",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 10.826,
+     "unit": "m",
+     "window_start_s": 3208.1,
+     "window_end_s": 3208.1,
+     "baseline": null,
+     "say": "finished 11 m from goal",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "ended_with_shot",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 3208.1,
+     "window_end_s": 3208.1,
+     "baseline": null,
+     "say": "ended with a shot (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_08",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3208.1,
+     "baseline": null,
+     "say": "Idris Zielinski: goals 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_08",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3208.1,
+     "baseline": null,
+     "say": "Idris Zielinski: shots 0",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_08",
+     "value": 0.0,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3208.1,
+     "baseline": null,
+     "say": "Idris Zielinski: xG 0.00",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "aur_08",
+     "name": "Idris Zielinski",
+     "team_id": "aur",
+     "involvement": "ball_winner",
+     "clock_s": 3199.2
+    }
+   ]
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:big_chance:3",
+  "kind": "finding",
+  "label": "big_chance",
+  "finding_id": "wst_aur_end_to_end_0004:big_chance:3",
+  "team_id": "aur",
+  "clock_s": 3258.4,
+  "route": "model",
+  "display": {
+   "show_at_s": 3258.4,
+   "hide_at_s": 3273.4,
+   "priority": 0.778
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "checker rejected every claim after 3 attempt(s)",
+   "headline": "So close! Aurora Rovers go near with a great chance.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Big chance for Aurora Rovers: a 0.38 xG shot from 6 m, not converted. Aurora Rovers have 5 shots and 1.50 xG so far.",
+     "team_id": "aur",
+     "refs": [
+      "e1",
+      "e2",
+      "e4",
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 0.38,
+       "ref": "e1"
+      },
+      {
+       "value": 6.0,
+       "ref": "e2"
+      },
+      {
+       "value": 5.0,
+       "ref": "e4"
+      },
+      {
+       "value": 1.5,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Big chance for Aurora Rovers: a 0.38 xG shot from 6 m, not converted. Aurora Rovers have 5 shots and 1.50 xG so far.",
+     "source": "template",
+     "reason": "checker rejected every claim after 3 attempt(s)"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "So close! Aurora Rovers go near with a great chance.",
+     "source": "template",
+     "reason": "checker rejected every claim after 3 attempt(s)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Aurora Rovers go close, but Xavi Uusitalo's side survive.",
+     "source": "template",
+     "reason": "checker rejected every claim after 3 attempt(s)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "Alden Brandt goes close for Aurora Rovers with a big chance.",
+     "source": "template",
+     "reason": "checker rejected every claim after 3 attempt(s)"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Ocasión clara de Aurora Rovers: un tiro de 0,38 xG desde 6 m, sin gol. Aurora Rovers suma 5 tiros y 1,50 xG.",
+     "source": "template",
+     "reason": "checker rejected every claim after 3 attempt(s)"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "¡Uy! Aurora Rovers roza el gol con una gran ocasión.",
+     "source": "template",
+     "reason": "checker rejected every claim after 3 attempt(s)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Aurora Rovers roza el gol, pero el equipo de Xavi Uusitalo se salva.",
+     "source": "template",
+     "reason": "checker rejected every claim after 3 attempt(s)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "Alden Brandt roza el gol para Aurora Rovers con una ocasión clara.",
+     "source": "template",
+     "reason": "checker rejected every claim after 3 attempt(s)"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.378,
+     "unit": "xg",
+     "window_start_s": 3258.4,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "a 0.38 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 6.0,
+     "unit": "m",
+     "window_start_s": 3258.4,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "from 6 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.504,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3258.4,
+     "baseline": 1.031,
+     "say": "1.50 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3258.4,
+     "baseline": 3.0,
+     "say": "5 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.274,
+     "unit": "index",
+     "window_start_s": 2958.4,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "momentum +0.27",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 9.9,
+     "unit": "s",
+     "window_start_s": 3248.5,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "10 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 3248.5,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 14.5,
+     "unit": "m",
+     "window_start_s": 3248.5,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "14 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 3248.5,
+     "window_end_s": 3248.5,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "Alden Brandt: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "Alden Brandt: shots 5",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 1.504,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3258.4,
+     "baseline": null,
+     "say": "Alden Brandt: xG 1.50",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "aur_09",
+     "name": "Alden Brandt",
+     "team_id": "aur",
+     "involvement": "shooter",
+     "clock_s": 3258.4
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Big chance: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers: a 0.38 xG chance, from 6 m.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Aurora Rovers: 1.50 xG in the match.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     }
+    ]
+   },
+   {
+    "attempt": 2,
+    "headline": "Big chance: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a2c1",
+      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     },
+     {
+      "claim_id": "a2c2",
+      "text": "Aurora Rovers: a 0.38 xG chance, from 6 m.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     },
+     {
+      "claim_id": "a2c3",
+      "text": "Aurora Rovers: 1.50 xG in the match.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     }
+    ]
+   },
+   {
+    "attempt": 3,
+    "headline": "Big chance: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a3c1",
+      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     },
+     {
+      "claim_id": "a3c2",
+      "text": "Aurora Rovers: a 0.38 xG chance, from 6 m.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     },
+     {
+      "claim_id": "a3c3",
+      "text": "Aurora Rovers: 1.50 xG in the match.",
+      "team_id": "aur",
+      "refs": [],
+      "numbers": []
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unreferenced_player",
+      "detail": "Alden Brandt is named but is not a player in the cited evidence"
+     }
+    ]
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"0.38\" appears in the text but not in the claim's numbers"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"6\" appears in the text but not in the claim's numbers"
+     }
+    ]
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"1.50\" appears in the text but not in the claim's numbers"
+     }
+    ]
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unreferenced_player",
+      "detail": "Alden Brandt is named but is not a player in the cited evidence"
+     }
+    ]
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"0.38\" appears in the text but not in the claim's numbers"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"6\" appears in the text but not in the claim's numbers"
+     }
+    ]
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"1.50\" appears in the text but not in the claim's numbers"
+     }
+    ]
+   },
+   {
+    "claim_id": "a3c1",
+    "attempt": 3,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unreferenced_player",
+      "detail": "Alden Brandt is named but is not a player in the cited evidence"
+     }
+    ]
+   },
+   {
+    "claim_id": "a3c2",
+    "attempt": 3,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"0.38\" appears in the text but not in the claim's numbers"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"6\" appears in the text but not in the claim's numbers"
+     }
+    ]
+   },
+   {
+    "claim_id": "a3c3",
+    "attempt": 3,
+    "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "no_evidence",
+      "detail": "the claim cites no evidence"
+     },
+     {
+      "code": "unlisted_number",
+      "detail": "\"1.50\" appears in the text but not in the claim's numbers"
+     }
+    ]
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:big_chance:4",
+  "kind": "finding",
+  "label": "big_chance",
+  "finding_id": "wst_aur_end_to_end_0004:big_chance:4",
+  "team_id": "wst",
+  "clock_s": 3440.9,
+  "route": "model",
+  "display": {
+   "show_at_s": 3440.9,
+   "hide_at_s": 3455.9,
+   "priority": 0.784
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Big chance: Westmere Town",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Xavi Uusitalo had the chance for Westmere Town.",
+     "team_id": "wst",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Westmere Town: a 0.38 xG chance, from 6 m.",
+     "team_id": "wst",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.38,
+       "ref": "e1"
+      },
+      {
+       "value": 6.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Westmere Town: 1.42 xG in the match.",
+     "team_id": "wst",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 1.42,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.38 xG chance, from 6 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.38 xG chance, from 6 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.384,
+     "unit": "xg",
+     "window_start_s": 3440.9,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "a 0.38 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 6.4,
+     "unit": "m",
+     "window_start_s": 3440.9,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "from 6 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.415,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3440.9,
+     "baseline": 1.504,
+     "say": "1.42 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3440.9,
+     "baseline": 5.0,
+     "say": "4 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "wst",
+     "player_id": null,
+     "value": -0.117,
+     "unit": "index",
+     "window_start_s": 3140.9,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "momentum -0.12",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 34.7,
+     "unit": "s",
+     "window_start_s": 3406.2,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "35 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 3406.2,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "3 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 10.2,
+     "unit": "m",
+     "window_start_s": 3406.2,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "10 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 3406.2,
+     "window_end_s": 3406.2,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 0",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 4",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.415,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 1.42",
+     "source": "player",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "shooter",
+     "clock_s": 3440.9
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Big chance: Westmere Town",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.38 xG chance, from 6 m.",
+      "team_id": "wst",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.38,
+        "ref": "e1"
+       },
+       {
+        "value": 6.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 1.42 xG in the match.",
+      "team_id": "wst",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 1.42,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:goal:2",
+  "kind": "finding",
+  "label": "goal",
+  "finding_id": "wst_aur_end_to_end_0004:goal:2",
+  "team_id": "wst",
+  "clock_s": 3566.5,
+  "route": "model",
+  "display": {
+   "show_at_s": 3566.5,
+   "hide_at_s": 3591.5,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Goal: Westmere Town",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "team_id": "wst",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Westmere Town: a 0.02 xG chance, from 26 m.",
+     "team_id": "wst",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.02,
+       "ref": "e1"
+      },
+      {
+       "value": 26.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Westmere Town: 1.44 xG in the match, Westmere Town: 52% possession.",
+     "team_id": "wst",
+     "refs": [
+      "e3",
+      "c4"
+     ],
+     "numbers": [
+      {
+       "value": 1.44,
+       "ref": "e3"
+      },
+      {
+       "value": 52.0,
+       "ref": "c4"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers. Westmere Town: a 0.02 xG chance, from 26 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers. Westmere Town: a 0.02 xG chance, from 26 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.02,
+     "unit": "xg",
+     "window_start_s": 3566.5,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "a 0.02 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 25.7,
+     "unit": "m",
+     "window_start_s": 3566.5,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "from 26 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.435,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": 1.504,
+     "say": "1.44 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": 5.0,
+     "say": "5 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.339,
+     "unit": "index",
+     "window_start_s": 3266.5,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "momentum +0.34",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 18.9,
+     "unit": "s",
+     "window_start_s": 3547.6,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "19 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 3547.6,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "m",
+     "window_start_s": 3547.6,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "4 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 3547.6,
+     "window_end_s": 3547.6,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_07",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Niko Okafor: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_07",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Niko Okafor: shots 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_07",
+     "value": 0.02,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Niko Okafor: xG 0.02",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 52.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Westmere Town: 52% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Westmere Town: 5 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.435,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Westmere Town: 1.44 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 72.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Westmere Town: 72% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "possession_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 47.7,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Aurora Rovers: 48% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "shots_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Aurora Rovers: 5 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "xg_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.504,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Aurora Rovers: 1.50 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "pass_completion_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 71.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Aurora Rovers: 71% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_07",
+     "name": "Niko Okafor",
+     "team_id": "wst",
+     "involvement": "scorer",
+     "clock_s": 3566.5
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Goal: Westmere Town",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Niko Okafor scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Westmere Town: a 0.02 xG chance, from 26 m.",
+      "team_id": "wst",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.02,
+        "ref": "e1"
+       },
+       {
+        "value": 26.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 1.44 xG in the match, Westmere Town: 52% possession.",
+      "team_id": "wst",
+      "refs": [
+       "e3",
+       "c4"
+      ],
+      "numbers": [
+       {
+        "value": 1.44,
+        "ref": "e3"
+       },
+       {
+        "value": 52.0,
+        "ref": "c4"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:pressure_surge:2",
+  "kind": "finding",
+  "label": "pressure_surge",
+  "finding_id": "wst_aur_end_to_end_0004:pressure_surge:2",
+  "team_id": "wst",
+  "clock_s": 3814.6,
+  "route": "template",
+  "display": {
+   "show_at_s": 3814.6,
+   "hide_at_s": 3826.6,
+   "priority": 0.4
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "spell end: always a template (decision 12)",
+   "headline": "Westmere Town's pressing surge ends after 32 min.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Westmere Town's pressing surge ends after 32 min.",
+     "team_id": "wst",
+     "refs": [
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 32.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Westmere Town's pressing surge ends after 32 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Westmere Town's pressing surge ends after 32 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Westmere Town's pressing surge ends after 32 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "Westmere Town's pressing surge ends after 32 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Termina la oleada de presión de Westmere Town tras 32 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Termina la oleada de presión de Westmere Town tras 32 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Termina la oleada de presión de Westmere Town tras 32 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "Termina la oleada de presión de Westmere Town tras 32 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "spell_duration",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1917.6,
+     "unit": "s",
+     "window_start_s": 1773.5,
+     "window_end_s": 3691.1,
+     "baseline": null,
+     "say": "lasting 32 min",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "pressures_per_min",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.333,
+     "unit": "per_min",
+     "window_start_s": 3634.6,
+     "window_end_s": 3814.6,
+     "baseline": 1.948,
+     "say": "0.3 pressures per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "tackles_won",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 3514.6,
+     "window_end_s": 3814.6,
+     "baseline": null,
+     "say": "2 tackles won",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "opponent_pass_completion",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 89.5,
+     "unit": "pct",
+     "window_start_s": 3514.6,
+     "window_end_s": 3814.6,
+     "baseline": 72.6,
+     "say": "Aurora Rovers completing 90% of their passes",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.148,
+     "unit": "index",
+     "window_start_s": 3514.6,
+     "window_end_s": 3814.6,
+     "baseline": null,
+     "say": "momentum +0.15",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:pressure_surge:3",
+  "kind": "finding",
+  "label": "pressure_surge",
+  "finding_id": "wst_aur_end_to_end_0004:pressure_surge:3",
+  "team_id": "aur",
+  "clock_s": 3836.2,
+  "route": "template",
+  "display": {
+   "show_at_s": 3836.2,
+   "hide_at_s": 3848.2,
+   "priority": 0.4
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "spell end: always a template (decision 12)",
+   "headline": "Aurora Rovers' pressing surge ends after 33 min.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "Aurora Rovers' pressing surge ends after 33 min.",
+     "team_id": "aur",
+     "refs": [
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 33.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Aurora Rovers' pressing surge ends after 33 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Aurora Rovers' pressing surge ends after 33 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "Aurora Rovers' pressing surge ends after 33 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "Aurora Rovers' pressing surge ends after 33 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Termina la oleada de presión de Aurora Rovers tras 33 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Termina la oleada de presión de Aurora Rovers tras 33 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Termina la oleada de presión de Aurora Rovers tras 33 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "Termina la oleada de presión de Aurora Rovers tras 33 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "spell_duration",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 2002.2,
+     "unit": "s",
+     "window_start_s": 1706.2,
+     "window_end_s": 3708.4,
+     "baseline": null,
+     "say": "lasting 33 min",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "pressures_per_min",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.333,
+     "unit": "per_min",
+     "window_start_s": 3656.2,
+     "window_end_s": 3836.2,
+     "baseline": 2.265,
+     "say": "1.3 pressures per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "tackles_won",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 3536.2,
+     "window_end_s": 3836.2,
+     "baseline": null,
+     "say": "0 tackles won",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "opponent_pass_completion",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 82.4,
+     "unit": "pct",
+     "window_start_s": 3536.2,
+     "window_end_s": 3836.2,
+     "baseline": 73.1,
+     "say": "Westmere Town completing 82% of their passes",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "aur",
+     "player_id": null,
+     "value": -0.106,
+     "unit": "index",
+     "window_start_s": 3536.2,
+     "window_end_s": 3836.2,
+     "baseline": null,
+     "say": "momentum -0.11",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:chaos_spell:1",
+  "kind": "finding",
+  "label": "chaos_spell",
+  "finding_id": "wst_aur_end_to_end_0004:chaos_spell:1",
+  "team_id": null,
+  "clock_s": 4103.2,
+  "route": "template",
+  "display": {
+   "show_at_s": 4103.2,
+   "hide_at_s": 4115.2,
+   "priority": 0.4
+  },
+  "narrative": {
+   "source": "template",
+   "reason": "spell end: always a template (decision 12)",
+   "headline": "The chaotic spell ends after 41 min.",
+   "claims": [
+    {
+     "claim_id": "t1",
+     "text": "The chaotic spell ends after 41 min.",
+     "team_id": null,
+     "refs": [
+      "e1"
+     ],
+     "numbers": [
+      {
+       "value": 41.0,
+       "ref": "e1"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "not_run",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "The chaotic spell ends after 41 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "The chaotic spell ends after 41 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "The chaotic spell ends after 41 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "The chaotic spell ends after 41 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "Termina la fase caótica tras 41 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "Termina la fase caótica tras 41 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "Termina la fase caótica tras 41 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "Termina la fase caótica tras 41 min.",
+     "source": "template",
+     "reason": "spell end: always a template (decision 12)"
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "spell_duration",
+     "team_id": null,
+     "player_id": null,
+     "value": 2469.1,
+     "unit": "s",
+     "window_start_s": 1509.7,
+     "window_end_s": 3978.8,
+     "baseline": null,
+     "say": "lasting 41 min",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "chaos_index",
+     "team_id": null,
+     "player_id": null,
+     "value": 0.193,
+     "unit": "index",
+     "window_start_s": 3623.2,
+     "window_end_s": 4103.2,
+     "baseline": null,
+     "say": "chaos index +0.19",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "turnovers_per_min",
+     "team_id": null,
+     "player_id": null,
+     "value": 2.0,
+     "unit": "per_min",
+     "window_start_s": 3623.2,
+     "window_end_s": 4103.2,
+     "baseline": 1.8,
+     "say": "2.0 turnovers per minute",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "pass_completion",
+     "team_id": null,
+     "player_id": null,
+     "value": 80.6,
+     "unit": "pct",
+     "window_start_s": 3623.2,
+     "window_end_s": 4103.2,
+     "baseline": 84.0,
+     "say": "81% pass completion",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "mean_spell",
+     "team_id": null,
+     "player_id": null,
+     "value": 28.369,
+     "unit": "s",
+     "window_start_s": 3623.2,
+     "window_end_s": 4103.2,
+     "baseline": 32.0,
+     "say": "possessions lasting 28 s on average",
+     "source": "finding",
+     "origin": null
+    }
+   ],
+   "players": []
+  },
+  "drafts": [],
+  "checks": []
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:goal:3",
+  "kind": "finding",
+  "label": "goal",
+  "finding_id": "wst_aur_end_to_end_0004:goal:3",
+  "team_id": "aur",
+  "clock_s": 5010.1,
+  "route": "model",
+  "display": {
+   "show_at_s": 5010.1,
+   "hide_at_s": 5035.1,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Goal: Aurora Rovers",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "team_id": "aur",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers: a 0.06 xG chance, from 18 m.",
+     "team_id": "aur",
+     "refs": [
+      "e1",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.06,
+       "ref": "e1"
+      },
+      {
+       "value": 18.0,
+       "ref": "e2"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Aurora Rovers: 1.69 xG in the match.",
+     "team_id": "aur",
+     "refs": [
+      "e3"
+     ],
+     "numbers": [
+      {
+       "value": 1.69,
+       "ref": "e3"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers. Aurora Rovers: a 0.06 xG chance, from 18 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers. Aurora Rovers: a 0.06 xG chance, from 18 m.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "e1",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.061,
+     "unit": "xg",
+     "window_start_s": 5010.1,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "a 0.06 xG chance",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e2",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 18.0,
+     "unit": "m",
+     "window_start_s": 5010.1,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "from 18 m",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e3",
+     "metric": "match_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.694,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": 1.435,
+     "say": "1.69 xG in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e4",
+     "metric": "match_shots",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": 5.0,
+     "say": "8 shots in the match",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e5",
+     "metric": "momentum",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.145,
+     "unit": "index",
+     "window_start_s": 4710.1,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "momentum +0.14",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e6",
+     "metric": "seconds_since_turnover",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "s",
+     "window_start_s": 5006.1,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "4 s after winning the ball",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e7",
+     "metric": "passes_in_spell",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 5006.1,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "0 passes in the move",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e8",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": -0.0,
+     "unit": "m",
+     "window_start_s": 5006.1,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "-0 m gained",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "e9",
+     "metric": "possession_won_in_open_play",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 5006.1,
+     "window_end_s": 5006.1,
+     "baseline": null,
+     "say": "ball won in open play (1 = yes): 1",
+     "source": "finding",
+     "origin": null
+    },
+    {
+     "ref": "c1",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Alden Brandt: goals 2",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Alden Brandt: shots 8",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 1.694,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Alden Brandt: xG 1.69",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 50.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Westmere Town: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Westmere Town: 5 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.435,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Westmere Town: 1.44 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 73.1,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Westmere Town: 73% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "possession_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 49.7,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Aurora Rovers: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "shots_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Aurora Rovers: 8 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "xg_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.694,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Aurora Rovers: 1.69 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "pass_completion_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 74.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "Aurora Rovers: 74% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "aur_09",
+     "name": "Alden Brandt",
+     "team_id": "aur",
+     "involvement": "scorer",
+     "clock_s": 5010.1
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Goal: Aurora Rovers",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Alden Brandt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+      "team_id": "aur",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers: a 0.06 xG chance, from 18 m.",
+      "team_id": "aur",
+      "refs": [
+       "e1",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.06,
+        "ref": "e1"
+       },
+       {
+        "value": 18.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Aurora Rovers: 1.69 xG in the match.",
+      "team_id": "aur",
+      "refs": [
+       "e3"
+      ],
+      "numbers": [
+       {
+        "value": 1.69,
+        "ref": "e3"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ },
+ {
+  "job_id": "wst_aur_end_to_end_0004:recap:full_time",
+  "kind": "recap",
+  "label": "full_time",
+  "finding_id": null,
+  "team_id": null,
+  "clock_s": 5400.0,
+  "route": "model",
+  "display": {
+   "show_at_s": 5400.0,
+   "hide_at_s": 5445.0,
+   "priority": 1.0
+  },
+  "narrative": {
+   "source": "model",
+   "reason": null,
+   "headline": "Full time: the match",
+   "claims": [
+    {
+     "claim_id": "a1c1",
+     "text": "Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "team_id": null,
+     "refs": [
+      "c1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Xavi Uusitalo scored for Westmere Town.",
+     "team_id": "wst",
+     "refs": [
+      "p1"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Westmere Town: 50% possession, Westmere Town: 6 shots.",
+     "team_id": "wst",
+     "refs": [
+      "c1",
+      "c2"
+     ],
+     "numbers": [
+      {
+       "value": 50.0,
+       "ref": "c1"
+      },
+      {
+       "value": 6.0,
+       "ref": "c2"
+      }
+     ]
+    }
+   ],
+   "semantic_check": "passed",
+   "texts": [
+    {
+     "persona": "analyst",
+     "language": "en",
+     "text": "Full-time: Westmere Town 2-2 Aurora Rovers. Xavi Uusitalo scored for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "en",
+     "text": "Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "en",
+     "text": "For Xavi Uusitalo's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "en",
+     "text": "For Alden Brandt's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "analyst",
+     "language": "es",
+     "text": "[es · offline] Full-time: Westmere Town 2-2 Aurora Rovers. Xavi Uusitalo scored for Westmere Town.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "casual",
+     "language": "es",
+     "text": "[es · offline] Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:wst_09",
+     "language": "es",
+     "text": "[es · offline] For Xavi Uusitalo's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    },
+    {
+     "persona": "fav:aur_09",
+     "language": "es",
+     "text": "[es · offline] For Alden Brandt's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "source": "model",
+     "reason": null
+    }
+   ]
+  },
+  "ledger": {
+   "items": [
+    {
+     "ref": "c1",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 49.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 6.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 6 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c3",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.579,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 1.58 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c4",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 73.0,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 73% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c5",
+     "metric": "possession_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 50.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c6",
+     "metric": "shots_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 9.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 9 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c7",
+     "metric": "xg_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.714,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 1.71 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c8",
+     "metric": "pass_completion_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 75.0,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 75% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c9",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c10",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 5.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: shots 5",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c11",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_09",
+     "value": 1.559,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Xavi Uusitalo: xG 1.56",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c12",
+     "metric": "player_goals",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Alden Brandt: goals 2",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c13",
+     "metric": "player_shots",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 9.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Alden Brandt: shots 9",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c14",
+     "metric": "player_xg",
+     "team_id": "aur",
+     "player_id": "aur_09",
+     "value": 1.714,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Alden Brandt: xG 1.71",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c15",
+     "metric": "player_goals",
+     "team_id": "wst",
+     "player_id": "wst_07",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Niko Okafor: goals 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c16",
+     "metric": "player_shots",
+     "team_id": "wst",
+     "player_id": "wst_07",
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Niko Okafor: shots 1",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c17",
+     "metric": "player_xg",
+     "team_id": "wst",
+     "player_id": "wst_07",
+     "value": 0.02,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Niko Okafor: xG 0.02",
+     "source": "player",
+     "origin": null
+    },
+    {
+     "ref": "c18",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.061,
+     "unit": "xg",
+     "window_start_s": 5010.1,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "a 0.06 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:3"
+    },
+    {
+     "ref": "c19",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 18.0,
+     "unit": "m",
+     "window_start_s": 5010.1,
+     "window_end_s": 5010.1,
+     "baseline": null,
+     "say": "from 18 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:3"
+    },
+    {
+     "ref": "c20",
+     "metric": "match_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.694,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5010.1,
+     "baseline": 1.435,
+     "say": "1.69 xG in the match",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:3"
+    },
+    {
+     "ref": "c21",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.02,
+     "unit": "xg",
+     "window_start_s": 3566.5,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "a 0.02 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:2"
+    },
+    {
+     "ref": "c22",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 25.7,
+     "unit": "m",
+     "window_start_s": 3566.5,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "from 26 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:2"
+    },
+    {
+     "ref": "c23",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.435,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": 1.504,
+     "say": "1.44 xG in the match",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:2"
+    },
+    {
+     "ref": "c24",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 52.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 3566.5,
+     "baseline": null,
+     "say": "Westmere Town: 52% possession",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:2"
+    },
+    {
+     "ref": "c25",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.273,
+     "unit": "xg",
+     "window_start_s": 2823.7,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "a 0.27 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:1"
+    },
+    {
+     "ref": "c26",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 7.9,
+     "unit": "m",
+     "window_start_s": 2823.7,
+     "window_end_s": 2823.7,
+     "baseline": null,
+     "say": "from 8 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:1"
+    },
+    {
+     "ref": "c27",
+     "metric": "match_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.126,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2823.7,
+     "baseline": 1.031,
+     "say": "1.13 xG in the match",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:1"
+    },
+    {
+     "ref": "c28",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.151,
+     "unit": "xg",
+     "window_start_s": 2079.7,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "a 0.15 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:0"
+    },
+    {
+     "ref": "c29",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 11.5,
+     "unit": "m",
+     "window_start_s": 2079.7,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "from 12 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:0"
+    },
+    {
+     "ref": "c30",
+     "metric": "match_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.374,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": 0.853,
+     "say": "0.37 xG in the match",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:0"
+    },
+    {
+     "ref": "c31",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 50.3,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 2079.7,
+     "baseline": null,
+     "say": "Westmere Town: 50% possession",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:goal:0"
+    },
+    {
+     "ref": "c32",
+     "metric": "possession_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 49.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c33",
+     "metric": "shots_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 6.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 6 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c34",
+     "metric": "xg_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.579,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 1.58 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c35",
+     "metric": "pass_completion_total",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 73.0,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Westmere Town: 73% pass completion",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c36",
+     "metric": "possession_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 50.5,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 50% possession",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c37",
+     "metric": "shots_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 9.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 9 shots",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c38",
+     "metric": "xg_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.714,
+     "unit": "xg",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 1.71 xG",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c39",
+     "metric": "pass_completion_total",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 75.0,
+     "unit": "pct",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "Aurora Rovers: 75% pass completion",
+     "source": "context",
+     "origin": null
+    }
+   ],
+   "players": [
+    {
+     "ref": "p1",
+     "player_id": "wst_09",
+     "name": "Xavi Uusitalo",
+     "team_id": "wst",
+     "involvement": "scorer",
+     "clock_s": null
+    },
+    {
+     "ref": "p2",
+     "player_id": "aur_09",
+     "name": "Alden Brandt",
+     "team_id": "aur",
+     "involvement": "scorer",
+     "clock_s": null
+    },
+    {
+     "ref": "p3",
+     "player_id": "wst_07",
+     "name": "Niko Okafor",
+     "team_id": "wst",
+     "involvement": "scorer",
+     "clock_s": null
+    }
+   ]
+  },
+  "drafts": [
+   {
+    "attempt": 1,
+    "headline": "Full time: the match",
+    "claims": [
+     {
+      "claim_id": "a1c1",
+      "text": "Full-time: Westmere Town 2-2 Aurora Rovers.",
+      "team_id": null,
+      "refs": [
+       "c1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Xavi Uusitalo scored for Westmere Town.",
+      "team_id": "wst",
+      "refs": [
+       "p1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Westmere Town: 50% possession, Westmere Town: 6 shots.",
+      "team_id": "wst",
+      "refs": [
+       "c1",
+       "c2"
+      ],
+      "numbers": [
+       {
+        "value": 50.0,
+        "ref": "c1"
+       },
+       {
+        "value": 6.0,
+        "ref": "c2"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "checks": [
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c1",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   }
+  ]
+ }
+]
