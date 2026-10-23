@@ -1,8 +1,18 @@
-"""Helpers for the e2e tests: read the contract the page is replaying."""
+"""Helpers for the e2e tests: the fixture runs, and the contract the page is replaying."""
 
 from __future__ import annotations
 
 import json
+
+# Fixture slugs (built by conftest.site in a temporary directory, never in web/data).
+COMEBACK = "fixture-comeback"  # the comeback sample, offline
+FAULTS = "fixture-faults"  # the faults-demo sample, offline, faults injected
+LIVE_RUN = "live-fixture"  # COMEBACK relabelled as a Foundry run
+UNKNOWN_RUN = "unknown-fixture"  # COMEBACK with an unknown model mode
+
+
+def manifest(site, slug: str) -> dict:
+    return json.loads((site["data"] / slug / "manifest.json").read_text(encoding="utf-8"))
 
 
 def overlay_doc(site, slug: str) -> dict:

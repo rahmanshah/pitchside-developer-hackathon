@@ -104,8 +104,10 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   test hook), `js/views/` (broadcast, analyst, drawer, crest, pitch). `css/tokens.css` holds the colour tokens (contrast
   checked by `tests/test_web_static.py`). `web/data/` is generated: regenerate with `uv run pitchside demo-data`, never
   edit by hand; only one sample run has injected faults. `tests/e2e/` (marked `e2e`, Chromium via pytest-playwright)
-  serves `web/` with a temporary copy of the data plus test-only `live-fixture` / `unknown-fixture` runs (never in
-  `web/data`); the page exposes `window.pitchside` and `?t=` so tests seek instead of waiting
+  serves `web/` with its own fixture runs, built fresh on the fake client in a temporary directory
+  (`fixture-comeback`, `fixture-faults`, `live-fixture`, `unknown-fixture`; never in `web/data`), so replacing
+  `web/data` cannot break them; only `test_e2e_published.py` reads `web/data`, and it checks each run against its own
+  manifest. The page exposes `window.pitchside` and `?t=` so tests seek instead of waiting
 - `scripts/smoke_foundry.py`: manual live check (not in the test suite); step 4 runs one goal through the live
   agents. `docs/LIVE_EVAL.md`: the manual live evaluation and recording steps
 - `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, held-out answer-key

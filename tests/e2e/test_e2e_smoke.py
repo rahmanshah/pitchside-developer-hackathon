@@ -1,6 +1,7 @@
 """Browser smoke tests for the web UI (Chromium via pytest-playwright). Marked e2e: `uv run pytest -m e2e`.
 
 The page is driven through its seek hook (?t=, window.pitchside.seek) so no test waits for a match to play out.
+Every test here uses the fixture runs from conftest.site, never web/data.
 """
 
 from __future__ import annotations
@@ -10,7 +11,9 @@ import re
 import pytest
 from playwright.sync_api import expect
 
-from _site import expected_lower, first, lower_third, overlay, seek, state
+from _site import (
+    COMEBACK, FAULTS, LIVE_RUN, UNKNOWN_RUN, expected_lower, first, lower_third, manifest, overlay, seek, state,
+)
 
 pytestmark = pytest.mark.e2e
 
@@ -21,9 +24,9 @@ SKIPPED_JOB = "wst_aur_end_to_end_0004:big_chance:1"  # the demo plan's verifier
 
 
 @pytest.mark.parametrize("slug, badge, source", [
-    ("comeback", OFFLINE, "Offline stand-in"),
-    ("live-fixture", LIVE, "test-luna-deployment"),
-    ("unknown-fixture", UNKNOWN, "Unverified source"),
+    (COMEBACK, OFFLINE, "Offline stand-in"),
+    (LIVE_RUN, LIVE, "test-luna-deployment"),
+    (UNKNOWN_RUN, UNKNOWN, "Unverified source"),
 ])
 def test_honesty_label_and_text_source_follow_the_manifest(open_page, site, slug, badge, source):
     goal = first(site, slug, "goal")
@@ -31,14 +34,14 @@ def test_honesty_label_and_text_source_follow_the_manifest(open_page, site, slug
     expect(page.locator("#mode-badge")).to_have_text(badge)
     expect(page.locator(".corner-bug .bug-line")).to_have_text(badge)
     expect(page.locator(".lt .lt-rail .chip").first).to_have_text(source)
-    if slug != "live-fixture":
+    if slug != LIVE_RUN:
         expect(page.locator("body")).not_to_contain_text(LIVE)
         expect(page.locator(".lt-rail")).not_to_contain_text("Model")
 
 
 def test_play_advances_the_clock_and_the_score(open_page, site):
-    goal = first(site, "comeback", "goal")
-    page = open_page(f"?run=comeback&t={goal['show_at_s'] - 20}&speed=16&holds=0")
+    goal = first(site, COMEBACK, "goal")
+    page = open_page(f"?run={COMEBACK}&t={goal['show_at_s'] - 20}&speed=16&holds=0")
     before = state(page)
     assert before["score"] == {"home": 0, "away": 0}
     page.locator("#play-btn").click()
@@ -51,10 +54,10 @@ def test_play_advances_the_clock_and_the_score(open_page, site):
 
 
 def test_lower_third_shows_and_hides_at_its_contract_times(open_page, site):
-    goal = first(site, "comeback", "goal")
+    goal = first(site, COMEBACK, "goal")
     window = lower_third(goal)
     selector = f".lt[data-overlay='{goal['overlay_id']}']"
-    page = open_page(f"?run=comeback&t={window['show_at_s'] - 0.5}")
+    page = open_page(f"?run={COMEBACK}&t={window['show_at_s'] - 0.5}")
     expect(page.locator(selector)).to_have_count(0)
     seek(page, window["show_at_s"] + 0.5)
     expect(page.locator(selector)).to_be_visible()
@@ -66,8 +69,8 @@ def test_lower_third_shows_and_hides_at_its_contract_times(open_page, site):
 
 
 def test_persona_and_language_switching(open_page, site):
-    goal = first(site, "comeback", "goal")
-    page = open_page(f"?run=comeback&t={lower_third(goal)['show_at_s'] + 1}")
+    goal = first(site, COMEBACK, "goal")
+    page = open_page(f"?run={COMEBACK}&t={lower_third(goal)['show_at_s'] + 1}")
     expect(page.locator(".lt-text")).to_have_text(goal["texts"]["casual"]["en"]["text"])
     page.select_option("#persona-select", "analyst")
     page.locator("#lang-seg button[data-lang='es']").click()
@@ -81,8 +84,8 @@ def test_persona_and_language_switching(open_page, site):
 
 
 def test_evidence_drawer_shows_the_provenance_chain(open_page, site):
-    item = overlay(site, "faults-demo", SKIPPED_JOB)
-    page = open_page(f"?run=faults-demo&t={lower_third(item)['show_at_s'] + 1}")
+    item = overlay(site, FAULTS, SKIPPED_JOB)
+    page = open_page(f"?run={FAULTS}&t={lower_third(item)['show_at_s'] + 1}")
     page.locator(f".lt[data-overlay='{SKIPPED_JOB}']").click()
     drawer = page.locator("#drawer")
     expect(drawer).to_be_visible()
@@ -101,19 +104,19 @@ def test_evidence_drawer_shows_the_provenance_chain(open_page, site):
     expect(page.locator(".focus .ev")).to_have_count(1)
     assert state(page)["view"] == "analyst"
 
-    goal = first(site, "comeback", "goal")  # a moment both layers passed is "verified"
-    page = open_page(f"?run=comeback&t={lower_third(goal)['show_at_s'] + 1}&drawer={goal['overlay_id']}")
+    goal = first(site, COMEBACK, "goal")  # a moment both layers passed is "verified"
+    page = open_page(f"?run={COMEBACK}&t={lower_third(goal)['show_at_s'] + 1}&drawer={goal['overlay_id']}")
     expect(page.locator("#drawer .claims-heading")).to_contain_text("verified claim")
 
 
-def test_faults_badge_only_on_the_faulted_run_and_once_in_clean_mode(open_page):
-    page = open_page("?run=comeback")
+def test_faults_badge_only_on_the_faulted_run_and_once_in_clean_mode(open_page, site):
+    page = open_page(f"?run={COMEBACK}")
     expect(page.locator("#fault-badge")).to_be_hidden()
     expect(page.locator(".bug-fault")).to_have_count(0)
-    page = open_page("?run=faults-demo")
+    page = open_page(f"?run={FAULTS}")
     expect(page.locator("#fault-badge")).to_be_visible()
-    expect(page.locator("#fault-badge")).to_contain_text("16 fired")
-    page = open_page("?run=faults-demo&clean=1")
+    expect(page.locator("#fault-badge")).to_contain_text(f"{len(manifest(site, FAULTS)['faults']['fired'])} fired")
+    page = open_page(f"?run={FAULTS}&clean=1")
     expect(page.locator("#topbar")).to_be_hidden()
     expect(page.locator("#transport")).to_be_hidden()
     expect(page.locator(".bug-fault")).to_be_visible()
@@ -122,14 +125,14 @@ def test_faults_badge_only_on_the_faulted_run_and_once_in_clean_mode(open_page):
 
 
 def test_scrubbing_backwards_restores_score_and_overlays(open_page, site):
-    page = open_page("?run=comeback&t=5440")  # after both home goals (the second is in the 87th minute)
+    page = open_page(f"?run={COMEBACK}&t=5440")  # after both home goals (the second is in the 87th minute)
     assert state(page)["score"] == {"home": 2, "away": 1}
-    goal = overlay(site, "comeback", "aur_irv_comeback_0007:goal:1")
+    goal = overlay(site, COMEBACK, "aur_irv_comeback_0007:goal:1")
     for t in (1000, lower_third(goal)["show_at_s"] + 2, 300, 5440, 2720):
         page.locator("#scrubber").fill(str(int(t)))
         s = state(page)
         assert abs(s["t"] - int(t)) < 1, (t, s["t"])
-        assert s["lowerThird"] == expected_lower(site, "comeback", s["t"]), t
+        assert s["lowerThird"] == expected_lower(site, COMEBACK, s["t"]), t
     page.locator("#scrubber").fill("1000")
     assert state(page)["score"] == {"home": 0, "away": 0}
     expect(page.locator(".sb-score")).to_have_text(["0", "0"])
@@ -138,7 +141,7 @@ def test_scrubbing_backwards_restores_score_and_overlays(open_page, site):
 def test_analyst_dashboard_fits_1920x1080(open_page, page):
     page.set_viewport_size({"width": 1920, "height": 1080})
     for t in ("71:35", "5460", "26:30"):
-        open_page(f"?run=comeback&view=analyst&t={t}")
+        open_page(f"?run={COMEBACK}&view=analyst&t={t}")
         expect(page.locator(".persona-card")).to_have_count(3)
         sizes = page.evaluate("() => { const m = document.querySelector('main'); return [m.scrollHeight, m.clientHeight]; }")
         assert sizes[0] <= sizes[1] + 1, (t, sizes)
