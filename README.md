@@ -316,6 +316,7 @@ docker build -t pitchside-mcp .      # the MCP server image (as deployed on Cont
 uv run playwright install chromium   # once, for the browser tests and screenshots
 uv run pytest -m e2e         # ~15 s: browser end-to-end smoke tests of the web UI (excluded from the default run)
 uv run python scripts/capture_screenshots.py   # regenerate docs/img/ (fixed runs, fixed times, 1920 x 1080)
+uv run python scripts/check_submission.py      # before tagging submission-v1: placeholders, live runs, labels, links, names
 uv run python scripts/smoke_foundry.py   # manual, live, costs a few cents at most: not part of the test suite
 uv run pitchside eval-agents --seeds 201-205 --live   # manual live evaluation, see docs/LIVE_EVAL.md
 uv add <package>             # add a dependency (updates pyproject.toml and uv.lock)
