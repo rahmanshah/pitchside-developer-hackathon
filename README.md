@@ -197,7 +197,7 @@ shown claims for a person to judge. See [docs/LIVE_EVAL.md](docs/LIVE_EVAL.md). 
 **Estimated** cost at gpt-5-mini prices ($0.25 in / $2.00 out per 1M tokens, reasoning tokens billed as output), to
 be replaced by measured cost: about 5 model calls per moment, about $0.0083 per moment, so about $0.05 per balanced
 match and $0.12 per storyline match (12-13 moments plus 2 recaps), plus about $0.01 when the interpreter uses the MCP
-tools. At GPT-6 Luna prices the same token plan was about $0.0023 per moment. The default match budget,
+tools. The same token plan was estimated at about $0.0023 per moment at GPT-6 Luna prices. The default match budget,
 `PITCHSIDE_MATCH_BUDGET_USD=0.25`, is about twice a storyline match, so no moment in a recorded run is downgraded to a
 template for budget reasons; the bundle manifest counts budget fallbacks (should be 0). See
 [decision 19](docs/DECISIONS.md).

@@ -42,7 +42,8 @@ NOT_A_CLAIM = re.compile(
     r"\bcan\b|\bcould\b|\bwould\b|\bif\b|\bwhen\b|\bonce\b|\bmilestone\b", re.I)
 DEPLOY_CLAIM = re.compile(r"Container Apps|Static Web Apps?\b|\bdeployed\b", re.I)
 MCP_CLAIM = re.compile(r"Container Apps|MCP server", re.I)
-LIVE_CLAIM = re.compile(r"live pipeline|GPT-6 Luna|\bFoundry\b|\blive (?:runs?|bundles?|recordings?)\b", re.I)
+LIVE_CLAIM = re.compile(r"live pipeline|GPT-6 Luna|GPT-5[ -]mini|\bFoundry\b|\blive (?:runs?|bundles?|recordings?)\b",
+                        re.I)
 
 # Real clubs (current and recent top-flight English sides) and well-known players. Matched case-sensitively as
 # whole phrases, so ordinary words are not caught. Players are matched by full name, plus a few unmistakable

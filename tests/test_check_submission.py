@@ -129,6 +129,13 @@ class CheckSubmissionTests(unittest.TestCase):
         self.assertIn("README.md:4:", results["README claims"].details[0])
         self.assertIn("MCP server", results["README claims"].details[0])
 
+    def test_naming_the_working_model_is_a_live_claim(self) -> None:
+        offline = make_repo(Path(self._tmp.name) / "offline", mode="fake")
+        write(offline / "README.md", "# Demo\n\nThe recorded runs were written by gpt-5-mini.\n")
+        results = {r.name: r for r in cs.run_checks(offline)}
+        self.assertFalse(results["README claims"].ok)
+        self.assertIn("README.md:3:", results["README claims"].details[0])
+
     def test_negated_wrapped_and_quoted_mentions_are_not_claims(self) -> None:
         offline = make_repo(Path(self._tmp.name) / "offline", mode="fake")
         write(offline / "README.md", "\n".join([
