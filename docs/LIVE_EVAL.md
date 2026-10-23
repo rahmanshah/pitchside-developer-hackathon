@@ -1,14 +1,17 @@
 # Live runs: smoke test, live evaluation, recorded bundles
 
 Everything in milestone 3 is built and tested on the fake model client. These are the manual steps that need the
-Foundry project and the GPT-6 Luna deployments. They spend real (small) amounts of money; every call is logged to
-`runs/llm_usage.jsonl` and capped by the budgets in `.env`.
+Foundry project and the model deployments: gpt-5-mini for now, because the trial subscription has no GPT-6 Luna quota
+(decision 19). They spend real (small) amounts of money; every call is logged to `runs/llm_usage.jsonl` and capped by
+the budgets in `.env`. Set `PITCHSIDE_PRICE_MODEL` to the model behind the deployments (`gpt-5-mini`, or `gpt-6-luna`
+if Luna quota is granted), so the log prices the calls correctly.
 
 ## 1. Smoke test (a few cents at most)
 
 ```powershell
 az login
-# .env: PITCHSIDE_LLM=foundry, FOUNDRY_ENDPOINT, MODEL_INTERPRETER/EXPLAINER/VERIFIER/PERSONALIZER (all Luna)
+# .env: PITCHSIDE_LLM=foundry, FOUNDRY_ENDPOINT, MODEL_INTERPRETER/EXPLAINER/VERIFIER/PERSONALIZER (all the
+#       gpt-5-mini deployment), PITCHSIDE_PRICE_MODEL=gpt-5-mini, PITCHSIDE_REASONING_EFFORT=low
 uv run python scripts/smoke_foundry.py
 ```
 
@@ -19,10 +22,12 @@ guard refuses before sending, and runs one goal through the whole agent pipeline
 - no `truncated` notes (if there are, raise the role's `PITCHSIDE_MAX_OUTPUT_<ROLE>`);
 - the reasoning-token counts (they show how much of each output cap reasoning uses);
 - a `bad_request` hint, if any (set `PITCHSIDE_REASONING_EFFORT=off`, then try `FOUNDRY_API=chat_completions`).
+  gpt-5-mini accepts `minimal`, `low`, `medium` and `high` (not `none`; the settings refuse it at startup). With
+  `off` it reasons at its default, `medium`, which costs more.
 
 Record the API path and the measured cost of step 4 in `docs/DECISIONS.md`.
 
-## 2. Live evaluation (about $0.60-0.80 estimated, 20 matches)
+## 2. Live evaluation (about $2.10-2.30 estimated at gpt-5-mini prices, 20 matches)
 
 Held-out seeds 201-205, all four storylines. Prompts were written against seeds 1-40 only.
 
@@ -39,7 +44,7 @@ automatic one 0 by construction.
 
 Then:
 
-- replace the estimated cost in the README and decision 14 with the measured cost per match;
+- replace the estimated cost in the README and decisions 14 and 19 with the measured cost per match;
 - put the live numbers in the README next to the offline ones, labelled as live, with the seeds;
 - if quality falls short, improve the prompts (decision 1: no larger model), re-run on seeds 1-40, and only then
   re-run the held-out seeds once.
@@ -49,7 +54,8 @@ To measure how much the verifier catches from a real model on purpose-made bad d
 
 ## 3. Recorded bundles for the demo
 
-Use a higher match budget so no moment in a recorded run is downgraded to a template for budget reasons:
+Keep the match budget at $0.25 (the default; about twice the estimated $0.12-0.13 of a storyline match on
+gpt-5-mini) so no moment in a recorded run is downgraded to a template for budget reasons:
 
 ```powershell
 $env:PITCHSIDE_LLM = "foundry"

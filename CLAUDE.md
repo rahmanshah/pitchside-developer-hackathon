@@ -163,14 +163,20 @@ and do not push unless asked.
 
 ## Model and Azure plan
 
-- **Models** (Microsoft Foundry, Global Standard deployment, Sweden Central): **GPT-6 Luna** (small, cheap) for
-  **every agent, including the explainer**. This is the owner's decision, made for cost: **do not switch to Sol or
-  any larger model, and do not propose it.** If output quality falls short, improve the prompts first: give each
-  agent a compact structured evidence list, a tight output format, two or three example outputs, and let the
-  verifier reject weak or unsupported claims. Each agent role still reads its own deployment name from an env var
-  (`MODEL_INTERPRETER`, `MODEL_EXPLAINER`, `MODEL_VERIFIER`, `MODEL_PERSONALIZER`), all set to the Luna deployment,
-  so the model client stays swappable for tests. Luna prices per 1M tokens (short context, Global Standard;
-  Microsoft's Foundry blog and Azure OpenAI pricing page, Oct 2026): $0.10 in / $0.01 cached / $0.50 out.
+- **Models** (Microsoft Foundry, Global Standard deployment, Sweden Central): one small model for **every agent,
+  including the explainer**. The target is **GPT-6 Luna**, but the trial subscription has 0 Luna quota, so **for
+  now every role runs on gpt-5-mini** (DECISIONS 19); switch back to Luna if quota is granted. This is the owner's
+  decision, made for cost: **do not switch to Sol or any larger model, and do not propose it.** If output quality
+  falls short, improve the prompts first: give each agent a compact structured evidence list, a tight output format,
+  two or three example outputs, and let the verifier reject weak or unsupported claims. Each agent role still reads
+  its own deployment name from an env var (`MODEL_INTERPRETER`, `MODEL_EXPLAINER`, `MODEL_VERIFIER`,
+  `MODEL_PERSONALIZER`), all set to the same deployment, so the model client stays swappable for tests;
+  `PITCHSIDE_PRICE_MODEL` names the model behind it (`gpt-5-mini` or `gpt-6-luna`). Prices per 1M tokens (price table
+  version 2026-10-23 in `llm/prices.py`): gpt-5-mini $0.25 in / $0.03 cached / $2.00 out (Azure OpenAI pricing page
+  in EUR, Sweden Central Global, at 1 USD = 0.88 EUR); Luna $0.10 / $0.01 / $0.50 (short context, Global Standard;
+  Microsoft's Foundry blog and Azure OpenAI pricing page, Oct 2026). gpt-5-mini accepts reasoning effort `minimal`,
+  `low`, `medium` or `high`, not `none`; the default is `low`. Name the model in docs only where it is true;
+  `docs/PITCH.md` uses `{{model_name}}`, filled in from the recorded runs.
   Use Global, not Data Zone (Data Zone costs more and our data is synthetic).
 - **Auth:** Microsoft Entra ID via `DefaultAzureCredential`, no API keys in code or git.
   `FOUNDRY_ENDPOINT` is the Foundry *project* endpoint (`https://<resource>.services.ai.azure.com/api/projects/<project>`).
@@ -185,7 +191,8 @@ and do not push unless asked.
   and the in-app rate limit; Log Analytics; a budget. Image on GHCR (public package). **Planned, not built:** managed
   identity + cloud recorder job, Entra ID auth on the MCP server, Application Insights. **Not used:** Cosmos DB,
   Event Grid, Event Hubs, Functions, Translator, Speech, AKS, ACR, Foundry Agent Service.
-- **Unconfirmed, check before relying on them:** that the Foundry project can deploy Luna (quota or access), and any
+- **Unconfirmed, check before relying on them:** that the gpt-5-mini deployments serve the Responses API with our
+  structured output and reasoning option (`scripts/smoke_foundry.py`), whether Luna quota will be granted, and any
   Agent Service charges.
 
 ## Cost controls (build these in)
@@ -195,7 +202,8 @@ and do not push unless asked.
 - A deterministic detector decides which moments are worth LLM calls. Measured on seeds 1-10: about 4.5
   model-eligible findings per balanced match and 12-13 per storyline match (goals, big chances and spell *starts*
   with `can_trigger_model_call`; spell ends always get a template), plus 2 recaps (half-time, full-time). Each goes
-  through about 5 model calls.
+  through about 5 model calls. Estimated at gpt-5-mini prices (DECISIONS 19): about $0.0083 per moment, $0.05 per
+  balanced and $0.12 per storyline match, so the default match budget is $0.25; never lower it to $0.10 for live runs.
 - The public demo serves **recorded runs** by default (see "Recorded demo mode"); live generation is off or sits
   behind a small rate limit. Judges clicking around must not burn the budget.
 - Keep deployment token quotas low. Set an Azure budget alert.
@@ -232,7 +240,7 @@ club logos or real names. Redact or recrop anything sensitive.
 2. **Model client and accounting:** interface, Foundry client (Entra auth), fake client, token/cost logger, per-role
    model config (see Model and Azure plan).
    **Done offline, live run pending:** `src/pitchside/llm/`, tested offline only. Run `scripts/smoke_foundry.py` once
-   the Foundry project and Luna deployments exist; record the API path and the measured cost.
+   the Foundry project and the gpt-5-mini deployments exist; record the API path and the measured cost.
 3. **Agents** (Agent Framework): interpreter, explainer, verifier (retry with feedback, rejects unsupported
    claims), personalizer/translator. Shared state, explicit handoffs, failure recovery. An evaluation script
    scores output against the answer key. Tag `v0.3.0`.
