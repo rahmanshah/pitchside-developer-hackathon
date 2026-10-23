@@ -19,15 +19,26 @@ class Price:
     source: str
 
 
-PRICE_TABLE_VERSION = "2026-10-18"
+PRICE_TABLE_VERSION = "2026-10-23"
 
 PRICE_TABLE: dict[str, Price] = {
-    # Short context, Global Standard deployment. Source as recorded in CLAUDE.md (Oct 2026).
+    # Short context, Global Standard deployment. Source as recorded in CLAUDE.md (Oct 2026). The target model if
+    # quota is granted (decision 19).
     "gpt-6-luna": Price(
         input_per_m=0.10,
         cached_input_per_m=0.01,
         output_per_m=0.50,
         source="Microsoft Foundry blog and Azure OpenAI pricing page, Oct 2026 (Global Standard, short context)",
+    ),
+    # The working model while the subscription has no Luna quota (decision 19). Listed in EUR (0.22 / 0.03 / 1.76)
+    # and converted at the page's rate of 1 USD = 0.88 EUR: input and output convert exactly; cached is EUR 0.03 / 0.88
+    # = USD 0.034, recorded as 0.03 (under half a cent per million cached tokens).
+    "gpt-5-mini": Price(
+        input_per_m=0.25,
+        cached_input_per_m=0.03,
+        output_per_m=2.00,
+        source="Azure OpenAI pricing page, EUR, Sweden Central, Global, read 2026-10-23; "
+               "EUR 0.22 / 0.03 / 1.76 at 1 USD = 0.88 EUR",
     ),
 }
 
