@@ -70,14 +70,14 @@
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Chaos index +0.79, 2.7 turnovers per minute.",
+     "text": "For Alden Brannholt's fans: Chaos index +0.79, 2.7 turnovers per minute.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Chaos index +0.79, 2.7 turnovers per minute.",
+     "text": "For Rafa Yaldiran's fans: Chaos index +0.79, 2.7 turnovers per minute.",
      "source": "model",
      "reason": null
     },
@@ -98,14 +98,14 @@
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Chaos index +0.79, 2.7 turnovers per minute.",
+     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.79, 2.7 turnovers per minute.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Chaos index +0.79, 2.7 turnovers per minute.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.79, 2.7 turnovers per minute.",
      "source": "model",
      "reason": null
     }
@@ -438,7 +438,7 @@
      "window_start_s": 0.0,
      "window_end_s": 468.7,
      "baseline": null,
-     "say": "Tomas Okafor: goals 0",
+     "say": "Tomas Okeloro: goals 0",
      "source": "player",
      "origin": null
     },
@@ -452,7 +452,7 @@
      "window_start_s": 0.0,
      "window_end_s": 468.7,
      "baseline": null,
-     "say": "Tomas Okafor: shots 0",
+     "say": "Tomas Okeloro: shots 0",
      "source": "player",
      "origin": null
     },
@@ -466,7 +466,7 @@
      "window_start_s": 0.0,
      "window_end_s": 468.7,
      "baseline": null,
-     "say": "Tomas Okafor: xG 0.00",
+     "say": "Tomas Okeloro: xG 0.00",
      "source": "player",
      "origin": null
     }
@@ -475,7 +475,7 @@
     {
      "ref": "p1",
      "player_id": "aur_10",
-     "name": "Tomas Okafor",
+     "name": "Tomas Okeloro",
      "team_id": "aur",
      "involvement": "ball_winner",
      "clock_s": 461.1
@@ -505,7 +505,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -551,56 +551,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.47 xG chance, from 5 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.47 xG chance, from 5 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.47 xG chance, from 5 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.47 xG chance, from 5 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -744,7 +744,7 @@
      "window_start_s": 0.0,
      "window_end_s": 492.5,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -758,7 +758,7 @@
      "window_start_s": 0.0,
      "window_end_s": 492.5,
      "baseline": null,
-     "say": "Alden Brandt: shots 2",
+     "say": "Alden Brannholt: shots 2",
      "source": "player",
      "origin": null
     },
@@ -772,7 +772,7 @@
      "window_start_s": 0.0,
      "window_end_s": 492.5,
      "baseline": null,
-     "say": "Alden Brandt: xG 0.53",
+     "say": "Alden Brannholt: xG 0.53",
      "source": "player",
      "origin": null
     }
@@ -781,7 +781,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 492.5
@@ -795,7 +795,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -1074,7 +1074,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
      "team_id": "irv",
      "refs": [
       "p1"
@@ -1120,56 +1120,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "For Alden Brannholt's fans: Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "For Rafa Yaldiran's fans: Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
+     "text": "[es · offline] Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "[es · offline] Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "[es · offline] For Alden Brannholt's fans: Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     }
@@ -1313,7 +1313,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "Rafa Yilmaz: goals 1",
+     "say": "Rafa Yaldiran: goals 1",
      "source": "player",
      "origin": null
     },
@@ -1327,7 +1327,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "Rafa Yilmaz: shots 2",
+     "say": "Rafa Yaldiran: shots 2",
      "source": "player",
      "origin": null
     },
@@ -1341,7 +1341,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "Rafa Yilmaz: xG 0.23",
+     "say": "Rafa Yaldiran: xG 0.23",
      "source": "player",
      "origin": null
     },
@@ -1462,7 +1462,7 @@
     {
      "ref": "p1",
      "player_id": "irv_09",
-     "name": "Rafa Yilmaz",
+     "name": "Rafa Yaldiran",
      "team_id": "irv",
      "involvement": "scorer",
      "clock_s": 1588.9
@@ -1476,7 +1476,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Rafa Yilmaz scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
       "team_id": "irv",
       "refs": [
        "p1"
@@ -1758,7 +1758,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2456.1,
      "baseline": null,
-     "say": "Tomas Okafor: goals 0",
+     "say": "Tomas Okeloro: goals 0",
      "source": "player",
      "origin": null
     },
@@ -1772,7 +1772,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2456.1,
      "baseline": null,
-     "say": "Tomas Okafor: shots 0",
+     "say": "Tomas Okeloro: shots 0",
      "source": "player",
      "origin": null
     },
@@ -1786,7 +1786,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2456.1,
      "baseline": null,
-     "say": "Tomas Okafor: xG 0.00",
+     "say": "Tomas Okeloro: xG 0.00",
      "source": "player",
      "origin": null
     }
@@ -1795,7 +1795,7 @@
     {
      "ref": "p1",
      "player_id": "aur_10",
-     "name": "Tomas Okafor",
+     "name": "Tomas Okeloro",
      "team_id": "aur",
      "involvement": "ball_winner",
      "clock_s": 2447.5
@@ -2075,7 +2075,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Rafa Yilmaz scored for Ironvale Athletic.",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic.",
      "team_id": "irv",
      "refs": [
       "p1"
@@ -2107,7 +2107,7 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Half-time: Aurora Rovers 0-1 Ironvale Athletic. Rafa Yilmaz scored for Ironvale Athletic.",
+     "text": "Half-time: Aurora Rovers 0-1 Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
@@ -2121,21 +2121,21 @@
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "For Alden Brannholt's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "For Rafa Yaldiran's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Half-time: Aurora Rovers 0-1 Ironvale Athletic. Rafa Yilmaz scored for Ironvale Athletic.",
+     "text": "[es · offline] Half-time: Aurora Rovers 0-1 Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
@@ -2149,14 +2149,14 @@
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "[es · offline] For Alden Brannholt's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     }
@@ -2286,7 +2286,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Rafa Yilmaz: goals 1",
+     "say": "Rafa Yaldiran: goals 1",
      "source": "player",
      "origin": null
     },
@@ -2300,7 +2300,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Rafa Yilmaz: shots 4",
+     "say": "Rafa Yaldiran: shots 4",
      "source": "player",
      "origin": null
     },
@@ -2314,7 +2314,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Rafa Yilmaz: xG 0.42",
+     "say": "Rafa Yaldiran: xG 0.42",
      "source": "player",
      "origin": null
     },
@@ -2328,7 +2328,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -2342,7 +2342,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brandt: shots 3",
+     "say": "Alden Brannholt: shots 3",
      "source": "player",
      "origin": null
     },
@@ -2356,7 +2356,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brandt: xG 0.58",
+     "say": "Alden Brannholt: xG 0.58",
      "source": "player",
      "origin": null
     },
@@ -2603,7 +2603,7 @@
     {
      "ref": "p1",
      "player_id": "irv_09",
-     "name": "Rafa Yilmaz",
+     "name": "Rafa Yaldiran",
      "team_id": "irv",
      "involvement": "scorer",
      "clock_s": null
@@ -2611,7 +2611,7 @@
     {
      "ref": "p2",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "top_xg",
      "clock_s": null
@@ -2634,7 +2634,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Rafa Yilmaz scored for Ironvale Athletic.",
+      "text": "Rafa Yaldiran scored for Ironvale Athletic.",
       "team_id": "irv",
       "refs": [
        "p1"
@@ -2728,7 +2728,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Rafa Yilmaz had the chance for Ironvale Athletic.",
+     "text": "Rafa Yaldiran had the chance for Ironvale Athletic.",
      "team_id": "irv",
      "refs": [
       "p1"
@@ -2774,56 +2774,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Rafa Yilmaz had the chance for Ironvale Athletic. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
+     "text": "Rafa Yaldiran had the chance for Ironvale Athletic. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Rafa Yilmaz had the chance for Ironvale Athletic.",
+     "text": "Rafa Yaldiran had the chance for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Rafa Yilmaz had the chance for Ironvale Athletic.",
+     "text": "For Alden Brannholt's fans: Rafa Yaldiran had the chance for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Rafa Yilmaz had the chance for Ironvale Athletic.",
+     "text": "For Rafa Yaldiran's fans: Rafa Yaldiran had the chance for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Rafa Yilmaz had the chance for Ironvale Athletic. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
+     "text": "[es · offline] Rafa Yaldiran had the chance for Ironvale Athletic. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Rafa Yilmaz had the chance for Ironvale Athletic.",
+     "text": "[es · offline] Rafa Yaldiran had the chance for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Rafa Yilmaz had the chance for Ironvale Athletic.",
+     "text": "[es · offline] For Alden Brannholt's fans: Rafa Yaldiran had the chance for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Rafa Yilmaz had the chance for Ironvale Athletic.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Rafa Yaldiran had the chance for Ironvale Athletic.",
      "source": "model",
      "reason": null
     }
@@ -2967,7 +2967,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3009.1,
      "baseline": null,
-     "say": "Rafa Yilmaz: goals 1",
+     "say": "Rafa Yaldiran: goals 1",
      "source": "player",
      "origin": null
     },
@@ -2981,7 +2981,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3009.1,
      "baseline": null,
-     "say": "Rafa Yilmaz: shots 5",
+     "say": "Rafa Yaldiran: shots 5",
      "source": "player",
      "origin": null
     },
@@ -2995,7 +2995,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3009.1,
      "baseline": null,
-     "say": "Rafa Yilmaz: xG 0.71",
+     "say": "Rafa Yaldiran: xG 0.71",
      "source": "player",
      "origin": null
     }
@@ -3004,7 +3004,7 @@
     {
      "ref": "p1",
      "player_id": "irv_09",
-     "name": "Rafa Yilmaz",
+     "name": "Rafa Yaldiran",
      "team_id": "irv",
      "involvement": "shooter",
      "clock_s": 3009.1
@@ -3018,7 +3018,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Rafa Yilmaz had the chance for Ironvale Athletic.",
+      "text": "Rafa Yaldiran had the chance for Ironvale Athletic.",
       "team_id": "irv",
       "refs": [
        "p1"
@@ -3367,7 +3367,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -3413,56 +3413,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.40 xG chance, from 6 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.40 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.40 xG chance, from 6 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.40 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -3606,7 +3606,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3232.8,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -3620,7 +3620,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3232.8,
      "baseline": null,
-     "say": "Alden Brandt: shots 6",
+     "say": "Alden Brannholt: shots 6",
      "source": "player",
      "origin": null
     },
@@ -3634,7 +3634,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3232.8,
      "baseline": null,
-     "say": "Alden Brandt: xG 1.15",
+     "say": "Alden Brannholt: xG 1.15",
      "source": "player",
      "origin": null
     }
@@ -3643,7 +3643,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 3232.8
@@ -3657,7 +3657,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -3765,7 +3765,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -3811,56 +3811,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -4004,7 +4004,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3381.6,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -4018,7 +4018,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3381.6,
      "baseline": null,
-     "say": "Alden Brandt: shots 7",
+     "say": "Alden Brannholt: shots 7",
      "source": "player",
      "origin": null
     },
@@ -4032,7 +4032,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3381.6,
      "baseline": null,
-     "say": "Alden Brandt: xG 1.50",
+     "say": "Alden Brannholt: xG 1.50",
      "source": "player",
      "origin": null
     }
@@ -4041,7 +4041,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 3381.6
@@ -4055,7 +4055,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -4210,14 +4210,14 @@
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "Alden Brandt's side Aurora Rovers are on top.",
+     "text": "Alden Brannholt's side Aurora Rovers are on top.",
      "source": "template",
      "reason": "severity 0.40 is below the model floor 0.5"
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "Rafa Yilmaz's side are under pressure from Aurora Rovers.",
+     "text": "Rafa Yaldiran's side are under pressure from Aurora Rovers.",
      "source": "template",
      "reason": "severity 0.40 is below the model floor 0.5"
     },
@@ -4238,14 +4238,14 @@
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "El equipo de Alden Brandt, Aurora Rovers, manda ahora.",
+     "text": "El equipo de Alden Brannholt, Aurora Rovers, manda ahora.",
      "source": "template",
      "reason": "severity 0.40 is below the model floor 0.5"
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "El equipo de Rafa Yilmaz sufre ante Aurora Rovers.",
+     "text": "El equipo de Rafa Yaldiran sufre ante Aurora Rovers.",
      "source": "template",
      "reason": "severity 0.40 is below the model floor 0.5"
     }
@@ -4414,14 +4414,14 @@
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "For Rafa Yaldiran's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
      "source": "model",
      "reason": null
     },
@@ -4442,14 +4442,14 @@
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
      "source": "model",
      "reason": null
     }
@@ -4608,7 +4608,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -4654,56 +4654,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.29 xG chance, from 8 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.29 xG chance, from 8 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.29 xG chance, from 8 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.29 xG chance, from 8 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -4847,7 +4847,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3871.9,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -4861,7 +4861,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3871.9,
      "baseline": null,
-     "say": "Alden Brandt: shots 10",
+     "say": "Alden Brannholt: shots 10",
      "source": "player",
      "origin": null
     },
@@ -4875,7 +4875,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3871.9,
      "baseline": null,
-     "say": "Alden Brandt: xG 2.08",
+     "say": "Alden Brannholt: xG 2.08",
      "source": "player",
      "origin": null
     }
@@ -4884,7 +4884,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 3871.9
@@ -4898,7 +4898,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -5006,7 +5006,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -5052,56 +5052,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.64 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.64 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -5245,7 +5245,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3881.3,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -5259,7 +5259,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3881.3,
      "baseline": null,
-     "say": "Alden Brandt: shots 11",
+     "say": "Alden Brannholt: shots 11",
      "source": "player",
      "origin": null
     },
@@ -5273,7 +5273,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3881.3,
      "baseline": null,
-     "say": "Alden Brandt: xG 2.73",
+     "say": "Alden Brannholt: xG 2.73",
      "source": "player",
      "origin": null
     }
@@ -5282,7 +5282,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 3881.3
@@ -5296,7 +5296,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -5455,14 +5455,14 @@
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "For Alden Brannholt's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "For Rafa Yaldiran's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
      "source": "model",
      "reason": null
     },
@@ -5483,14 +5483,14 @@
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "[es · offline] For Alden Brannholt's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
      "source": "model",
      "reason": null
     }
@@ -5663,7 +5663,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -5709,56 +5709,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.48 xG chance, from 5 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.48 xG chance, from 5 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.48 xG chance, from 5 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.48 xG chance, from 5 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -5902,7 +5902,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3969.5,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -5916,7 +5916,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3969.5,
      "baseline": null,
-     "say": "Alden Brandt: shots 12",
+     "say": "Alden Brannholt: shots 12",
      "source": "player",
      "origin": null
     },
@@ -5930,7 +5930,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3969.5,
      "baseline": null,
-     "say": "Alden Brandt: xG 3.21",
+     "say": "Alden Brannholt: xG 3.21",
      "source": "player",
      "origin": null
     }
@@ -5939,7 +5939,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 3969.5
@@ -5953,7 +5953,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -6235,7 +6235,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4007.0,
      "baseline": null,
-     "say": "Idris Zielinski: goals 0",
+     "say": "Idris Zielmark: goals 0",
      "source": "player",
      "origin": null
     },
@@ -6249,7 +6249,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4007.0,
      "baseline": null,
-     "say": "Idris Zielinski: shots 0",
+     "say": "Idris Zielmark: shots 0",
      "source": "player",
      "origin": null
     },
@@ -6263,7 +6263,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4007.0,
      "baseline": null,
-     "say": "Idris Zielinski: xG 0.00",
+     "say": "Idris Zielmark: xG 0.00",
      "source": "player",
      "origin": null
     }
@@ -6272,7 +6272,7 @@
     {
      "ref": "p1",
      "player_id": "aur_08",
-     "name": "Idris Zielinski",
+     "name": "Idris Zielmark",
      "team_id": "aur",
      "involvement": "ball_winner",
      "clock_s": 3997.8
@@ -6302,7 +6302,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -6348,56 +6348,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -6541,7 +6541,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4017.6,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -6555,7 +6555,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4017.6,
      "baseline": null,
-     "say": "Alden Brandt: shots 13",
+     "say": "Alden Brannholt: shots 13",
      "source": "player",
      "origin": null
     },
@@ -6569,7 +6569,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4017.6,
      "baseline": null,
-     "say": "Alden Brandt: xG 3.59",
+     "say": "Alden Brannholt: xG 3.59",
      "source": "player",
      "origin": null
     }
@@ -6578,7 +6578,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 4017.6
@@ -6592,7 +6592,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -6700,7 +6700,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -6746,56 +6746,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -6939,7 +6939,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4023.5,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -6953,7 +6953,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4023.5,
      "baseline": null,
-     "say": "Alden Brandt: shots 14",
+     "say": "Alden Brannholt: shots 14",
      "source": "player",
      "origin": null
     },
@@ -6967,7 +6967,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4023.5,
      "baseline": null,
-     "say": "Alden Brandt: xG 3.98",
+     "say": "Alden Brannholt: xG 3.98",
      "source": "player",
      "origin": null
     }
@@ -6976,7 +6976,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 4023.5
@@ -6990,7 +6990,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -7272,7 +7272,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4280.1,
      "baseline": null,
-     "say": "Alden Brandt: goals 0",
+     "say": "Alden Brannholt: goals 0",
      "source": "player",
      "origin": null
     },
@@ -7286,7 +7286,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4280.1,
      "baseline": null,
-     "say": "Alden Brandt: shots 14",
+     "say": "Alden Brannholt: shots 14",
      "source": "player",
      "origin": null
     },
@@ -7300,7 +7300,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4280.1,
      "baseline": null,
-     "say": "Alden Brandt: xG 3.98",
+     "say": "Alden Brannholt: xG 3.98",
      "source": "player",
      "origin": null
     }
@@ -7309,7 +7309,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "ball_winner",
      "clock_s": 4270.9
@@ -7339,7 +7339,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+     "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -7390,56 +7390,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+     "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic. Aurora Rovers: a 0.64 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+     "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+     "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic. Aurora Rovers: a 0.64 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+     "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     }
@@ -7583,7 +7583,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4285.4,
      "baseline": null,
-     "say": "Alden Brandt: goals 1",
+     "say": "Alden Brannholt: goals 1",
      "source": "player",
      "origin": null
     },
@@ -7597,7 +7597,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4285.4,
      "baseline": null,
-     "say": "Alden Brandt: shots 15",
+     "say": "Alden Brannholt: shots 15",
      "source": "player",
      "origin": null
     },
@@ -7611,7 +7611,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4285.4,
      "baseline": null,
-     "say": "Alden Brandt: xG 4.62",
+     "say": "Alden Brannholt: xG 4.62",
      "source": "player",
      "origin": null
     },
@@ -7732,7 +7732,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "scorer",
      "clock_s": 4285.4
@@ -7746,7 +7746,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -7859,7 +7859,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -7905,56 +7905,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 6 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 6 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -8098,7 +8098,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4497.4,
      "baseline": null,
-     "say": "Alden Brandt: goals 1",
+     "say": "Alden Brannholt: goals 1",
      "source": "player",
      "origin": null
     },
@@ -8112,7 +8112,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4497.4,
      "baseline": null,
-     "say": "Alden Brandt: shots 16",
+     "say": "Alden Brannholt: shots 16",
      "source": "player",
      "origin": null
     },
@@ -8126,7 +8126,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4497.4,
      "baseline": null,
-     "say": "Alden Brandt: xG 4.97",
+     "say": "Alden Brannholt: xG 4.97",
      "source": "player",
      "origin": null
     }
@@ -8135,7 +8135,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 4497.4
@@ -8149,7 +8149,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -8257,7 +8257,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -8303,56 +8303,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.34 xG chance, from 6 m.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.34 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt had the chance for Aurora Rovers.",
+     "text": "Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers. Aurora Rovers: a 0.34 xG chance, from 6 m.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.34 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -8496,7 +8496,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4961.7,
      "baseline": null,
-     "say": "Alden Brandt: goals 1",
+     "say": "Alden Brannholt: goals 1",
      "source": "player",
      "origin": null
     },
@@ -8510,7 +8510,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4961.7,
      "baseline": null,
-     "say": "Alden Brandt: shots 21",
+     "say": "Alden Brannholt: shots 21",
      "source": "player",
      "origin": null
     },
@@ -8524,7 +8524,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4961.7,
      "baseline": null,
-     "say": "Alden Brandt: xG 5.72",
+     "say": "Alden Brannholt: xG 5.72",
      "source": "player",
      "origin": null
     }
@@ -8533,7 +8533,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "shooter",
      "clock_s": 4961.7
@@ -8547,7 +8547,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -8706,14 +8706,14 @@
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Chaos index +0.78, 3.5 turnovers per minute.",
+     "text": "For Alden Brannholt's fans: Chaos index +0.78, 3.5 turnovers per minute.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Chaos index +0.78, 3.5 turnovers per minute.",
+     "text": "For Rafa Yaldiran's fans: Chaos index +0.78, 3.5 turnovers per minute.",
      "source": "model",
      "reason": null
     },
@@ -8734,14 +8734,14 @@
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Chaos index +0.78, 3.5 turnovers per minute.",
+     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.78, 3.5 turnovers per minute.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Chaos index +0.78, 3.5 turnovers per minute.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.78, 3.5 turnovers per minute.",
      "source": "model",
      "reason": null
     }
@@ -8900,7 +8900,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
      "team_id": "aur",
      "refs": [
       "p1"
@@ -8951,56 +8951,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic. Aurora Rovers: a 0.69 xG chance, from 4 m.",
+     "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic. Aurora Rovers: a 0.69 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic. Aurora Rovers: a 0.69 xG chance, from 4 m.",
+     "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic. Aurora Rovers: a 0.69 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     }
@@ -9144,7 +9144,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5197.9,
      "baseline": null,
-     "say": "Alden Brandt: goals 2",
+     "say": "Alden Brannholt: goals 2",
      "source": "player",
      "origin": null
     },
@@ -9158,7 +9158,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5197.9,
      "baseline": null,
-     "say": "Alden Brandt: shots 22",
+     "say": "Alden Brannholt: shots 22",
      "source": "player",
      "origin": null
     },
@@ -9172,7 +9172,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5197.9,
      "baseline": null,
-     "say": "Alden Brandt: xG 6.41",
+     "say": "Alden Brannholt: xG 6.41",
      "source": "player",
      "origin": null
     },
@@ -9293,7 +9293,7 @@
     {
      "ref": "p1",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "scorer",
      "clock_s": 5197.9
@@ -9307,7 +9307,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brandt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
       "team_id": "aur",
       "refs": [
        "p1"
@@ -9889,7 +9889,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Rafa Yilmaz scored for Ironvale Athletic.",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic.",
      "team_id": "irv",
      "refs": [
       "p1"
@@ -9921,7 +9921,7 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Full-time: Aurora Rovers 2-1 Ironvale Athletic. Rafa Yilmaz scored for Ironvale Athletic.",
+     "text": "Full-time: Aurora Rovers 2-1 Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
@@ -9935,21 +9935,21 @@
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brandt's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "For Alden Brannholt's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yilmaz's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "For Rafa Yaldiran's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Full-time: Aurora Rovers 2-1 Ironvale Athletic. Rafa Yilmaz scored for Ironvale Athletic.",
+     "text": "[es · offline] Full-time: Aurora Rovers 2-1 Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
@@ -9963,14 +9963,14 @@
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brandt's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "[es · offline] For Alden Brannholt's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yilmaz's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
      "source": "model",
      "reason": null
     }
@@ -10100,7 +10100,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Rafa Yilmaz: goals 1",
+     "say": "Rafa Yaldiran: goals 1",
      "source": "player",
      "origin": null
     },
@@ -10114,7 +10114,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Rafa Yilmaz: shots 7",
+     "say": "Rafa Yaldiran: shots 7",
      "source": "player",
      "origin": null
     },
@@ -10128,7 +10128,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Rafa Yilmaz: xG 0.86",
+     "say": "Rafa Yaldiran: xG 0.86",
      "source": "player",
      "origin": null
     },
@@ -10142,7 +10142,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brandt: goals 2",
+     "say": "Alden Brannholt: goals 2",
      "source": "player",
      "origin": null
     },
@@ -10156,7 +10156,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brandt: shots 22",
+     "say": "Alden Brannholt: shots 22",
      "source": "player",
      "origin": null
     },
@@ -10170,7 +10170,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brandt: xG 6.41",
+     "say": "Alden Brannholt: xG 6.41",
      "source": "player",
      "origin": null
     },
@@ -10487,7 +10487,7 @@
     {
      "ref": "p1",
      "player_id": "irv_09",
-     "name": "Rafa Yilmaz",
+     "name": "Rafa Yaldiran",
      "team_id": "irv",
      "involvement": "scorer",
      "clock_s": null
@@ -10495,7 +10495,7 @@
     {
      "ref": "p2",
      "player_id": "aur_09",
-     "name": "Alden Brandt",
+     "name": "Alden Brannholt",
      "team_id": "aur",
      "involvement": "scorer",
      "clock_s": null
@@ -10518,7 +10518,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Rafa Yilmaz scored for Ironvale Athletic.",
+      "text": "Rafa Yaldiran scored for Ironvale Athletic.",
       "team_id": "irv",
       "refs": [
        "p1"

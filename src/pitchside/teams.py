@@ -58,12 +58,14 @@ _FIRST_NAMES = (
     "Soren", "Tomas", "Ugo", "Viktor", "Wen", "Xavi", "Yusuf", "Zane", "Arman",
     "Benji", "Cem", "Dani", "Emil", "Farid", "Gio", "Hanno", "Idris", "Joaquin",
 )
+# Invented, or common enough not to point at one footballer. Surnames closely tied to a well-known footballer were
+# replaced in place (same size and order), so every seed draws the same slots and only the names differ.
 _SURNAMES = (
-    "Aaltio", "Brandt", "Carvalho", "Dumont", "Eklund", "Fonseca", "Grau",
-    "Halvorsen", "Ibarra", "Jovanic", "Kallio", "Lindqvist", "Moreau", "Nakamura",
-    "Okafor", "Petrovic", "Quintero", "Rinne", "Salvi", "Tanaka", "Uusitalo",
-    "Vidal", "Werner", "Yilmaz", "Zielinski", "Abara", "Bellamy", "Costa",
-    "Devereux", "Esposito", "Falk", "Garrido", "Hasegawa", "Ivanov", "Kovacs",
+    "Aaltio", "Brannholt", "Carvenna", "Dumont", "Eklund", "Fonseca", "Grau",
+    "Halvorsen", "Ibarra", "Jovanic", "Kallio", "Lindqvist", "Moreau", "Nakaseri",
+    "Okeloro", "Petrovic", "Quenvara", "Rinne", "Salvi", "Takenaro", "Uusitalo",
+    "Vidrelle", "Wendholm", "Yaldiran", "Zielmark", "Abara", "Bellcroft", "Corvane",
+    "Devereux", "Esposito", "Falk", "Garrido", "Hasemori", "Ivanov", "Kovacs",
 )
 
 

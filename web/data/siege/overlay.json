@@ -71,7 +71,7 @@
    "persona": "fav:har_09",
    "kind": "favourite",
    "player_id": "har_09",
-   "name": "Hugo Vidal",
+   "name": "Hugo Vidrelle",
    "team_id": "har"
   },
   {
@@ -234,13 +234,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "For Hugo Vidrelle's fans: Xavi Uusitalo had the chance for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Xavi Uusitalo had the chance for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -504,8 +504,8 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 874,
-     "output_tokens": 465,
+     "input_tokens": 875,
+     "output_tokens": 466,
      "cost_usd": 0.00032
     },
     "badges": []
@@ -1342,20 +1342,20 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+      "text": "For Hugo Vidrelle's fans: Harbourton City: momentum +0.63, 89% field tilt.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 50,
-        "end": 54,
+        "start": 53,
+        "end": 57,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 56,
-        "end": 58,
+        "start": 59,
+        "end": 61,
         "refs": [
          "e2"
         ]
@@ -1363,20 +1363,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: momentum +0.63, 89% field tilt.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 65,
-        "end": 69,
+        "start": 68,
+        "end": 72,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 71,
-        "end": 73,
+        "start": 74,
+        "end": 76,
         "refs": [
          "e2"
         ]
@@ -1717,9 +1717,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 603,
-     "output_tokens": 418,
-     "cost_usd": 0.000269
+     "input_tokens": 604,
+     "output_tokens": 420,
+     "cost_usd": 0.00027
     },
     "badges": []
    }
@@ -1873,20 +1873,20 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "text": "For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 40,
-        "end": 42,
+        "start": 43,
+        "end": 45,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 56,
-        "end": 57,
+        "start": 59,
+        "end": 60,
         "refs": [
          "e2"
         ]
@@ -1894,20 +1894,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 55,
-        "end": 57,
+        "start": 58,
+        "end": 60,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 71,
-        "end": 72,
+        "start": 74,
+        "end": 75,
         "refs": [
          "e2"
         ]
@@ -2199,9 +2199,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 644,
-     "output_tokens": 398,
-     "cost_usd": 0.000263
+     "input_tokens": 645,
+     "output_tokens": 400,
+     "cost_usd": 0.000264
     },
     "badges": []
    }
@@ -2355,20 +2355,20 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 40,
-        "end": 43,
+        "start": 43,
+        "end": 46,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 66,
-        "end": 67,
+        "start": 69,
+        "end": 70,
         "refs": [
          "e2"
         ]
@@ -2376,20 +2376,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 55,
-        "end": 58,
+        "start": 58,
+        "end": 61,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 81,
-        "end": 82,
+        "start": 84,
+        "end": 85,
         "refs": [
          "e2"
         ]
@@ -2675,8 +2675,8 @@
      "refused": 0,
      "transport_retries": 0,
      "input_tokens": 659,
-     "output_tokens": 453,
-     "cost_usd": 0.000292
+     "output_tokens": 455,
+     "cost_usd": 0.000293
     },
     "badges": []
    }
@@ -2730,20 +2730,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
+      "text": "Hugo Vidrelle had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 66,
-        "end": 70,
+        "start": 69,
+        "end": 73,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 87,
-        "end": 88,
+        "start": 90,
+        "end": 91,
         "refs": [
          "e2"
         ]
@@ -2751,20 +2751,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
+      "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 81,
-        "end": 85,
+        "start": 84,
+        "end": 88,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 102,
-        "end": 103,
+        "start": 105,
+        "end": 106,
         "refs": [
          "e2"
         ]
@@ -2774,13 +2774,13 @@
     },
     "casual": {
      "en": {
-      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "text": "Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Hugo Vidal had the chance for Harbourton City.",
+      "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2788,13 +2788,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+      "text": "For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2802,13 +2802,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+      "text": "For Xavi Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2822,7 +2822,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "text": "Hugo Vidrelle had the chance for Harbourton City.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -2833,7 +2833,7 @@
         "metric": null,
         "team_id": "har",
         "player_id": "har_09",
-        "name": "Hugo Vidal",
+        "name": "Hugo Vidrelle",
         "involvement": "shooter",
         "value": null,
         "unit": null,
@@ -3061,9 +3061,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 913,
-     "output_tokens": 465,
-     "cost_usd": 0.000324
+     "input_tokens": 922,
+     "output_tokens": 473,
+     "cost_usd": 0.000329
     },
     "badges": []
    }
@@ -3117,20 +3117,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
+      "text": "Hugo Vidrelle had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 66,
-        "end": 70,
+        "start": 69,
+        "end": 73,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 87,
-        "end": 88,
+        "start": 90,
+        "end": 91,
         "refs": [
          "e2"
         ]
@@ -3138,20 +3138,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Hugo Vidal had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
+      "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 81,
-        "end": 85,
+        "start": 84,
+        "end": 88,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 102,
-        "end": 103,
+        "start": 105,
+        "end": 106,
         "refs": [
          "e2"
         ]
@@ -3161,13 +3161,13 @@
     },
     "casual": {
      "en": {
-      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "text": "Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Hugo Vidal had the chance for Harbourton City.",
+      "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3175,13 +3175,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+      "text": "For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal had the chance for Harbourton City.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3189,13 +3189,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+      "text": "For Xavi Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal had the chance for Harbourton City.",
+      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3209,7 +3209,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidal had the chance for Harbourton City.",
+      "text": "Hugo Vidrelle had the chance for Harbourton City.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -3220,7 +3220,7 @@
         "metric": null,
         "team_id": "har",
         "player_id": "har_09",
-        "name": "Hugo Vidal",
+        "name": "Hugo Vidrelle",
         "involvement": "shooter",
         "value": null,
         "unit": null,
@@ -3449,9 +3449,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 916,
-     "output_tokens": 465,
-     "cost_usd": 0.000324
+     "input_tokens": 924,
+     "output_tokens": 473,
+     "cost_usd": 0.000329
     },
     "badges": []
    }
@@ -3505,20 +3505,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
+      "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 93,
-        "end": 97,
+        "start": 96,
+        "end": 100,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 114,
-        "end": 116,
+        "start": 117,
+        "end": 119,
         "refs": [
          "e2"
         ]
@@ -3526,20 +3526,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
+      "text": "[es · offline] Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 108,
-        "end": 112,
+        "start": 111,
+        "end": 115,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 129,
-        "end": 131,
+        "start": 132,
+        "end": 134,
         "refs": [
          "e2"
         ]
@@ -3549,13 +3549,13 @@
     },
     "casual": {
      "en": {
-      "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "[es · offline] Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3563,13 +3563,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "For Hugo Vidrelle's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3577,13 +3577,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "For Xavi Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3597,7 +3597,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidal scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -3608,7 +3608,7 @@
         "metric": null,
         "team_id": "har",
         "player_id": "har_09",
-        "name": "Hugo Vidal",
+        "name": "Hugo Vidrelle",
         "involvement": "scorer",
         "value": null,
         "unit": null,
@@ -3914,9 +3914,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1745,
-     "output_tokens": 552,
-     "cost_usd": 0.000451
+     "input_tokens": 1757,
+     "output_tokens": 561,
+     "cost_usd": 0.000456
     },
     "badges": []
    }
@@ -4404,13 +4404,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidal scored for Harbourton City.",
+      "text": "Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidrelle scored for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidal scored for Harbourton City.",
+      "text": "[es · offline] Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidrelle scored for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4432,13 +4432,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+      "text": "For Hugo Vidrelle's fans: Half-time: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Half-time: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4559,7 +4559,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Hugo Vidal scored for Harbourton City.",
+      "text": "Hugo Vidrelle scored for Harbourton City.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -4570,7 +4570,7 @@
         "metric": null,
         "team_id": "har",
         "player_id": "har_09",
-        "name": "Hugo Vidal",
+        "name": "Hugo Vidrelle",
         "involvement": "scorer",
         "value": null,
         "unit": null,
@@ -4819,9 +4819,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3191,
-     "output_tokens": 466,
-     "cost_usd": 0.000552
+     "input_tokens": 3210,
+     "output_tokens": 470,
+     "cost_usd": 0.000556
     },
     "badges": []
    }
@@ -5825,13 +5825,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "For Hugo Vidrelle's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6100,7 +6100,7 @@
      "refused": 0,
      "transport_retries": 0,
      "input_tokens": 1719,
-     "output_tokens": 534,
+     "output_tokens": 535,
      "cost_usd": 0.000439
     },
     "badges": []
@@ -6496,7 +6496,7 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
+      "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -6517,7 +6517,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
+      "text": "[es · offline] Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -6540,13 +6540,13 @@
     },
     "casual": {
      "en": {
-      "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "[es · offline] Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6554,13 +6554,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "For Hugo Vidrelle's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6568,13 +6568,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "For Xavi Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "[es · offline] For Xavi Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6588,7 +6588,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Joaquin Quintero scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -6599,7 +6599,7 @@
         "metric": null,
         "team_id": "har",
         "player_id": "har_11",
-        "name": "Joaquin Quintero",
+        "name": "Joaquin Quenvara",
         "involvement": "scorer",
         "value": null,
         "unit": null,
@@ -6951,9 +6951,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1784,
-     "output_tokens": 566,
-     "cost_usd": 0.000461
+     "input_tokens": 1785,
+     "output_tokens": 568,
+     "cost_usd": 0.000463
     },
     "badges": []
    }
@@ -6990,13 +6990,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidal scored for Harbourton City.",
+      "text": "Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidrelle scored for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidal scored for Harbourton City.",
+      "text": "[es · offline] Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidrelle scored for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7018,13 +7018,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidal's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+      "text": "For Hugo Vidrelle's fans: Full-time: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidal's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Full-time: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7191,7 +7191,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Hugo Vidal scored for Harbourton City.",
+      "text": "Hugo Vidrelle scored for Harbourton City.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -7202,7 +7202,7 @@
         "metric": null,
         "team_id": "har",
         "player_id": "har_09",
-        "name": "Hugo Vidal",
+        "name": "Hugo Vidrelle",
         "involvement": "scorer",
         "value": null,
         "unit": null,
@@ -7510,9 +7510,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3357,
-     "output_tokens": 467,
-     "cost_usd": 0.000569
+     "input_tokens": 3373,
+     "output_tokens": 471,
+     "cost_usd": 0.000573
     },
     "badges": []
    }

@@ -45,8 +45,8 @@ MCP_CLAIM = re.compile(r"Container Apps|MCP server", re.I)
 LIVE_CLAIM = re.compile(r"live pipeline|GPT-6 Luna|\bFoundry\b|\blive (?:runs?|bundles?|recordings?)\b", re.I)
 
 # Real clubs (current and recent top-flight English sides) and well-known players. Matched case-sensitively as
-# whole phrases, so ordinary words are not caught. The invented squads reuse a few real surnames (e.g. Werner, Costa)
-# with invented first names, so players are matched by full name, plus a few unmistakable surnames.
+# whole phrases, so ordinary words are not caught. Players are matched by full name, plus a few unmistakable
+# surnames: the invented squads keep some common surnames (e.g. Petrovic, Esposito) that real players also have.
 REAL_CLUBS = (
     "Arsenal", "Aston Villa", "Bournemouth", "Brentford", "Brighton & Hove Albion", "Brighton and Hove Albion",
     "Burnley", "Chelsea", "Crystal Palace", "Everton", "Fulham", "Leeds United", "Liverpool", "Manchester City",
