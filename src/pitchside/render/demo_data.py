@@ -4,6 +4,9 @@
 ``pitchside demo-data --bundle DIR --slug S --title T`` publishes one recorded bundle, e.g. a live run after the
 Azure milestone. Index entries copy their honesty fields (model mode, the manifest label, injected faults) from the
 bundle's manifest, so the index cannot describe a run differently from the run itself.
+
+A published live run (``llm_mode: foundry``) cost money and cannot be re-recorded for free, so neither command
+replaces one unless asked to with ``overwrite_live`` (``--overwrite-live``).
 """
 
 from __future__ import annotations
@@ -25,6 +28,10 @@ INDEX_FILE = "index.json"
 INDEX_VERSION = "1.0"
 COPIED = [name for key, name in FILES.items() if key != "overlay"]
 FAULTS_NOTE = "Faults were injected on purpose (opt-in) to show how the pipeline recovers."
+
+
+class LiveRunError(ValueError):
+    """Publishing would replace a published live run, and overwriting live runs was not asked for."""
 
 
 class _Frozen(BaseModel):
@@ -110,12 +117,41 @@ def write_index(data_dir: Path, index: DemoIndex) -> Path:
     return path
 
 
-def publish(bundle: Path, data_dir: Path, slug: str, title: str, description: str = "") -> IndexEntry:
-    """Copy one bundle into ``data_dir/slug`` (replacing it), rebuild its overlay and upsert the index entry."""
+def live_run_at(target: Path) -> Optional[str]:
+    """Why ``target`` must not be replaced without ``overwrite_live``, or None if it holds no live run.
+
+    A manifest that exists but cannot be read counts as live: it cannot be shown to be safe to replace.
+    """
+    path = Path(target) / FILES["manifest"]
+    if not path.exists():
+        return None
+    try:
+        raw = json.loads(path.read_text(encoding="utf-8"))
+        mode, run_id = raw["pipeline"]["llm_mode"], raw.get("run_id")
+    except (ValueError, KeyError, TypeError, OSError) as error:
+        return f"{path} cannot be read ({type(error).__name__}), so it may be a live run"
+    return f"{target} holds a live run (llm_mode foundry, run {run_id})" if mode == "foundry" else None
+
+
+def _refuse_live(targets: list[Path], overwrite_live: bool) -> None:
+    if overwrite_live:
+        return
+    reasons = [r for r in map(live_run_at, targets) if r]
+    if reasons:
+        raise LiveRunError("; ".join(reasons) + ". Nothing was changed. Pass --overwrite-live to replace it.")
+
+
+def publish(bundle: Path, data_dir: Path, slug: str, title: str, description: str = "", *,
+            overwrite_live: bool = False) -> IndexEntry:
+    """Copy one bundle into ``data_dir/slug`` (replacing it), rebuild its overlay and upsert the index entry.
+
+    Raises ``LiveRunError`` instead of replacing a published live run, unless ``overwrite_live``.
+    """
     if not slug or not all(c.isalnum() or c in "-_" for c in slug):
         raise ValueError(f"bad slug {slug!r}: use letters, digits, '-' and '_'")
     bundle, data_dir = Path(bundle), Path(data_dir)
     target = data_dir / slug
+    _refuse_live([target], overwrite_live)
     if target.exists():
         shutil.rmtree(target)
     target.mkdir(parents=True)
@@ -153,14 +189,20 @@ def _run_sample(sample: Sample, work: Path) -> Path:
     return write_bundle(asyncio.run(go()), work)
 
 
-def regenerate_samples(data_dir: Path) -> list[IndexEntry]:
-    """Run every offline sample and publish it; the index then lists exactly the samples."""
+def regenerate_samples(data_dir: Path, *, overwrite_live: bool = False) -> list[IndexEntry]:
+    """Run every offline sample and publish it; the index then lists exactly the samples.
+
+    Checks every sample slug first and raises ``LiveRunError`` before changing anything if one holds a live run,
+    unless ``overwrite_live``.
+    """
     data_dir = Path(data_dir)
+    _refuse_live([data_dir / sample.slug for sample in SAMPLES], overwrite_live)
     data_dir.mkdir(parents=True, exist_ok=True)
     write_index(data_dir, DemoIndex(runs=[r for r in read_index(data_dir).runs if r.llm_mode == "foundry"]))
     entries = []
     with tempfile.TemporaryDirectory() as tmp:
         for sample in SAMPLES:
             path = _run_sample(sample, Path(tmp))
-            entries.append(publish(path, data_dir, sample.slug, sample.title, sample.description))
+            entries.append(publish(path, data_dir, sample.slug, sample.title, sample.description,
+                                   overwrite_live=overwrite_live))
     return entries

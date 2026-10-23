@@ -151,8 +151,9 @@ Work through it in order. Nothing here is done yet (2026-10-23): the samples are
       `uv run pitchside demo-data --bundle runs/bundles/<dir> --slug comeback --title "Comeback: Aurora Rovers v Ironvale Athletic" --description "A goal down at half-time, the home side lays siege and turns it round."`;
       `--slug siege --title "Siege: Harbourton City v Westmere Town" --description "Long spells of pressure, a pressing surge and the goals that follow."`;
       `--slug faults-demo --title "Recovery demo: Westmere Town v Aurora Rovers" --description "An end-to-end match. Faults were injected on purpose (opt-in) to show how the pipeline recovers."`.
-- [ ] From then on, **never run plain `uv run pitchside demo-data`**. It regenerates the offline samples under the same
-      slugs and replaces the live bundles.
+- [ ] From then on, `uv run pitchside demo-data` (with or without `--bundle`) refuses to replace a published live run
+      and changes nothing. Pass `--overwrite-live` only to replace a live run on purpose, for example with a better
+      recording of the same match.
 - [ ] Read the published `manifest.json` and `usage.jsonl` files before committing them. They become public on the
       Static Web App. Look for subscription ids, tenant names, e-mail addresses, keys or endpoints, and decide whether
       the MCP server URL and deployment names in `pipeline` may be published.

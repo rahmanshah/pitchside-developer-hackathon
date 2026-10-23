@@ -139,7 +139,7 @@ uv run pitchside mcp [--transport streamable-http --stateless --json-response --
 uv run pitchside run --seed 7 --storyline comeback [--inject-faults demo] [--tools mcp]   # agents offline, run bundle
 uv run pitchside eval-agents --seeds 1-3 [--inject-bad 0.3]                 # offline: plumbing check, not model quality
 uv run pitchside serve [--open] [--data DIR]   # web UI on http://127.0.0.1:8000 (recorded runs from web/data)
-uv run pitchside demo-data                     # regenerate web/data samples (offline); --bundle DIR --slug S --title T publishes one
+uv run pitchside demo-data                     # regenerate web/data samples (offline); --bundle DIR --slug S --title T publishes one; never replaces a live (foundry) run without --overwrite-live
 uv run playwright install chromium             # once
 uv run pytest -m e2e                           # browser smoke tests (excluded from the default run by addopts)
 uv run python scripts/capture_screenshots.py   # docs/img/ screenshots, 1920x1080, reproducible

@@ -7,10 +7,15 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import contextlib
+import io
+import shutil
+
 import jsonschema
 
-from pitchside.agents.bundle import FILES, BundleManifest, load_bundle
-from pitchside.render.demo_data import FAULTS_NOTE, INDEX_FILE, publish, read_index
+from pitchside.agents.bundle import FILES, LIVE_LABEL, BundleManifest, load_bundle
+from pitchside.cli import main
+from pitchside.render.demo_data import FAULTS_NOTE, INDEX_FILE, LiveRunError, publish, read_index, regenerate_samples
 from pitchside.render.overlay import OVERLAY_FILE, dump_overlay, overlay_from_dir
 
 from _render import bundle_dir
@@ -83,6 +88,76 @@ class PublishTests(unittest.TestCase):
             for slug in ("", "../x", "a/b", "a b"):
                 with self.assertRaises(ValueError):
                     publish(bundle_dir(), Path(tmp), slug, "x")
+
+
+def live_copy(dst: Path, run_id: str = "live-run-1") -> Path:
+    """A sample bundle relabelled as a Foundry run (test-only; never published to web/data)."""
+    shutil.copytree(bundle_dir(), dst)
+    manifest = json.loads((dst / FILES["manifest"]).read_text(encoding="utf-8"))
+    manifest["pipeline"]["llm_mode"] = "foundry"
+    manifest["label"] = LIVE_LABEL
+    manifest["run_id"] = run_id
+    (dst / FILES["manifest"]).write_text(json.dumps(manifest, indent=1), encoding="utf-8")
+    return dst
+
+
+def snapshot(data: Path) -> dict[str, bytes]:
+    return {str(p.relative_to(data)): p.read_bytes() for p in sorted(data.rglob("*")) if p.is_file()}
+
+
+class LiveRunGuardTests(unittest.TestCase):
+    def setUp(self) -> None:
+        self._tmp = tempfile.TemporaryDirectory()
+        self.tmp = Path(self._tmp.name)
+        self.data = self.tmp / "data"
+        publish(live_copy(self.tmp / "live"), self.data, "comeback", "Live comeback")
+
+    def tearDown(self) -> None:
+        self._tmp.cleanup()
+
+    def test_publishing_over_a_live_run_is_refused_and_changes_nothing(self) -> None:
+        before = snapshot(self.data)
+        for bundle in (bundle_dir(), live_copy(self.tmp / "another", "live-run-2")):
+            with self.assertRaises(LiveRunError) as caught:
+                publish(bundle, self.data, "comeback", "Replacement")
+            self.assertIn("live-run-1", str(caught.exception))
+            self.assertIn("--overwrite-live", str(caught.exception))
+        self.assertEqual(snapshot(self.data), before)
+
+    def test_overwrite_live_replaces_it(self) -> None:
+        entry = publish(bundle_dir(), self.data, "comeback", "Offline again", overwrite_live=True)
+        self.assertEqual(entry.llm_mode, "fake")
+        self.assertEqual(read_index(self.data).runs[0].title, "Offline again")
+
+    def test_offline_runs_and_new_slugs_are_not_guarded(self) -> None:
+        publish(bundle_dir(), self.data, "offline", "Offline")
+        publish(bundle_dir(), self.data, "offline", "Offline, replaced")
+        publish(live_copy(self.tmp / "new"), self.data, "other-live", "Another live run")
+        self.assertEqual([r.slug for r in read_index(self.data).runs], ["comeback", "offline", "other-live"])
+
+    def test_an_unreadable_manifest_counts_as_live(self) -> None:
+        (self.data / "broken").mkdir()
+        (self.data / "broken" / FILES["manifest"]).write_text("{not json", encoding="utf-8")
+        with self.assertRaises(LiveRunError):
+            publish(bundle_dir(), self.data, "broken", "x")
+
+    def test_regenerating_the_samples_is_refused_before_anything_runs(self) -> None:
+        before = snapshot(self.data)
+        with self.assertRaises(LiveRunError):
+            regenerate_samples(self.data)
+        self.assertEqual(snapshot(self.data), before)
+
+    def test_the_cli_refuses_without_the_flag_and_obeys_it(self) -> None:
+        args = ["demo-data", "--out", str(self.data), "--bundle", str(bundle_dir()), "--slug", "comeback",
+                "--title", "Offline"]
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err), contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(main(args), 2)
+        self.assertIn("--overwrite-live", err.getvalue())
+        self.assertEqual(read_index(self.data).runs[0].llm_mode, "foundry")
+        with contextlib.redirect_stdout(io.StringIO()):
+            self.assertEqual(main([*args, "--overwrite-live"]), 0)
+        self.assertEqual(read_index(self.data).runs[0].llm_mode, "fake")
 
 
 if __name__ == "__main__":
