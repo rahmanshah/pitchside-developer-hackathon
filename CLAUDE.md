@@ -145,6 +145,7 @@ uv run pitchside demo-data                     # regenerate web/data samples (of
 uv run playwright install chromium             # once
 uv run pytest -m e2e                           # browser smoke tests (excluded from the default run by addopts)
 uv run python scripts/capture_screenshots.py   # docs/img/ screenshots, 1920x1080, reproducible
+uv run python scripts/check_submission.py      # gate before tagging submission-v1 (fails until live runs are published)
 bicep build infra/main.bicep; bicep lint infra/main.bicep   # offline template checks (winget install -e --id Microsoft.Bicep)
 docker build -t pitchside-mcp .                # MCP server image (Docker Desktop must be running)
 ./infra/deploy.ps1 -Image ghcr.io/<owner>/pitchside-mcp:<sha> -AllowedIp <ip> -BudgetEmail <e-mail>   # OWNER ONLY

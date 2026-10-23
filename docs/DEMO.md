@@ -199,12 +199,15 @@ Work through it in order. Nothing here is done yet (2026-10-23): the samples are
 - [ ] `docs/AZURE.md`: the "What is deployed" table and the measured costs in the cost table.
 - [ ] `docs/DECISIONS.md`: the API path and measured cost from the smoke test ([LIVE_EVAL.md](LIVE_EVAL.md) step 1),
       and the measured cost per match in place of the estimate in decision 14.
-- [ ] `docs/PITCH.md`: fill every `{{...}}` and resolve every `{{PENDING ...}}`.
-      `Select-String -Path docs/PITCH.md -Pattern '\{\{'` must find nothing in the pasted text.
+- [ ] `docs/PITCH.md`: fill every placeholder and resolve every PENDING marker in place, so no double brace is left.
 
 ### 6. Submission
 
 - [ ] Tag `v0.3.0` only after the owner has reviewed the live evaluation.
+- [ ] `uv run python scripts/check_submission.py` passes. It fails on any placeholder left in the pitch or README,
+      published runs that are not live, README deployment or live-model claims the manifests do not back, labels that
+      disagree between index, manifest and overlay, broken relative links, and "Premier League" or real club or
+      player names. Read every line it reports: the README claim detection is a heuristic.
 - [ ] Tag `submission-v1`, then freeze `main` (later work goes on a branch).
 - [ ] Keep the Static Web App and the repository up until the judging period ends on Nov 10. `infra/teardown.ps1`
       refuses before 2026-11-11.
