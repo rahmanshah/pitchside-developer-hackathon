@@ -41,6 +41,7 @@ class Reply:
     input_tokens: Optional[int] = None
     output_tokens: Optional[int] = None
     cached_tokens: int = 0
+    reasoning_tokens: int = 0  # part of output_tokens, as the service reports them
     finish_reason: str = "stop"  # "length" simulates a reply cut off at the output cap
 
 
@@ -190,6 +191,7 @@ class FakeChatClient(FunctionInvocationLayer, ChatMiddlewareLayer, BaseChatClien
             input_token_count=reply.input_tokens if reply.input_tokens is not None else _tokens(transcript),
             output_token_count=reply.output_tokens if reply.output_tokens is not None else _tokens(reply.text),
             cache_read_input_token_count=reply.cached_tokens,
+            reasoning_output_token_count=reply.reasoning_tokens,
         )
         return ChatResponse(
             messages=[Message(role="assistant", contents=[reply.text])],

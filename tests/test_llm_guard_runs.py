@@ -14,7 +14,7 @@ from pitchside.llm import Role, load_settings
 from pitchside.llm.budget import BudgetGuard, budget_key
 from pitchside.llm.errors import BudgetExhausted, MalformedOutput
 from pitchside.llm.fake import FakeChatClient, Reply, openai_error
-from pitchside.llm.guard import INJECTED, ModelGuard, call_context, current_call_context
+from pitchside.llm.guard import INJECTED, ModelGuard, call_context, current_call_context, truncation_message
 from pitchside.llm.usage import UsageLog
 from test_llm_guard import Harness, ask
 
@@ -77,6 +77,26 @@ class TruncationTests(unittest.TestCase):
             [r] = h.records()
             self.assertEqual((r.status, r.finish_reason), ("ok", "length"))
             self.assertGreater(r.cost_usd, 0)  # the tokens were produced and billed
+            self.assertIn("the reply is longer than the cap", str(ctx.exception))
+
+    def test_a_cap_spent_on_reasoning_says_so(self) -> None:
+        # The live smoke failure: gpt-5-mini spent the whole 32-token cap reasoning and wrote nothing.
+        with tempfile.TemporaryDirectory() as tmp:
+            h = Harness(Path(tmp))
+            client = h.client(script=[Reply("", output_tokens=32, reasoning_tokens=32, finish_reason="length")],
+                              max_output_tokens=32)
+            with self.assertRaises(MalformedOutput) as ctx:
+                asyncio.run(ask(client))
+            self.assertEqual(ctx.exception.kind, "truncated")
+            self.assertIn("explainer: output cap reached while reasoning: raise the cap or lower the reasoning "
+                          "effort (max_tokens=32; 32 reasoning and 0 visible output tokens)", str(ctx.exception))
+            [r] = h.records()
+            self.assertEqual((r.output_tokens, r.reasoning_tokens), (32, 32))
+
+    def test_truncation_message_picks_the_cause(self) -> None:
+        self.assertIn("while reasoning", truncation_message("verifier", 1500, 1500, 900))
+        self.assertIn("longer than the cap", truncation_message("verifier", 1500, 1500, 400))
+        self.assertIn("longer than the cap", truncation_message("verifier", 1500, 1500, 0))
 
 
 class InjectedFaultTests(unittest.TestCase):
