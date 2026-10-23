@@ -8,7 +8,7 @@
    "description": "A goal down at half-time, the home side lays siege and turns it round.",
    "match_id": "aur_irv_comeback_0007",
    "run_id": "sample-comeback",
-   "created_utc": "2026-10-23T12:02:05+00:00",
+   "created_utc": "2026-10-23T12:09:27+00:00",
    "storyline": "comeback",
    "seed": 7,
    "home": {
@@ -37,7 +37,7 @@
    "description": "Long spells of pressure, a pressing surge and the goals that follow.",
    "match_id": "har_wst_siege_0003",
    "run_id": "sample-siege",
-   "created_utc": "2026-10-23T12:02:07+00:00",
+   "created_utc": "2026-10-23T12:09:29+00:00",
    "storyline": "siege",
    "seed": 3,
    "home": {
@@ -66,7 +66,7 @@
    "description": "An end-to-end match. Faults were injected on purpose (opt-in) to show how the pipeline recovers.",
    "match_id": "wst_aur_end_to_end_0004",
    "run_id": "sample-faults-demo",
-   "created_utc": "2026-10-23T12:02:08+00:00",
+   "created_utc": "2026-10-23T12:09:30+00:00",
    "storyline": "end_to_end",
    "seed": 4,
    "home": {

@@ -4,8 +4,8 @@
  "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output (faults were deliberately injected to show recovery)",
  "run_id": "sample-faults-demo",
  "match_id": "wst_aur_end_to_end_0004",
- "created_utc": "2026-10-23T12:02:08+00:00",
- "wall_s": 0.78,
+ "created_utc": "2026-10-23T12:09:30+00:00",
+ "wall_s": 0.79,
  "generator": {
   "seed": 4,
   "storyline": "end_to_end",
@@ -40,7 +40,7 @@
  "featured_players": [
   {
    "player_id": "wst_09",
-   "name": "Xavi Uusitalo",
+   "name": "Xarno Uusitalo",
    "team_id": "wst",
    "persona": "fav:wst_09"
   },
@@ -53,7 +53,7 @@
  ],
  "pipeline": {
   "pitchside_version": "0.2.0",
-  "git_commit": "edc3db0",
+  "git_commit": "20941d9",
   "llm_mode": "fake",
   "api": "fake",
   "deployments": {
@@ -211,7 +211,7 @@
  },
  "budget": {
   "match_budget_usd": 0.25,
-  "spent_usd": 0.005594,
+  "spent_usd": 0.005602,
   "model_calls": 74,
   "budget_fallbacks": 0,
   "exhausted": null
