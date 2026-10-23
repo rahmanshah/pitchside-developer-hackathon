@@ -4,8 +4,8 @@
  "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
  "run_id": "sample-comeback",
  "match_id": "aur_irv_comeback_0007",
- "created_utc": "2026-10-22T17:19:55+00:00",
- "wall_s": 1.18,
+ "created_utc": "2026-10-23T12:02:05+00:00",
+ "wall_s": 1.13,
  "generator": {
   "seed": 7,
   "storyline": "comeback",
@@ -40,20 +40,20 @@
  "featured_players": [
   {
    "player_id": "aur_09",
-   "name": "Alden Brandt",
+   "name": "Alden Brannholt",
    "team_id": "aur",
    "persona": "fav:aur_09"
   },
   {
    "player_id": "irv_09",
-   "name": "Rafa Yilmaz",
+   "name": "Rafa Yaldiran",
    "team_id": "irv",
    "persona": "fav:irv_09"
   }
  ],
  "pipeline": {
   "pitchside_version": "0.2.0",
-  "git_commit": "6b39518",
+  "git_commit": "edc3db0",
   "llm_mode": "fake",
   "api": "fake",
   "deployments": {
@@ -89,7 +89,7 @@
  },
  "budget": {
   "match_budget_usd": 0.25,
-  "spent_usd": 0.007061,
+  "spent_usd": 0.007145,
   "model_calls": 85,
   "budget_fallbacks": 0,
   "exhausted": null
