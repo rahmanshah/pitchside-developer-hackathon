@@ -145,9 +145,10 @@ def _cmd_demo_data(args: argparse.Namespace) -> int:
     if args.bundle:
         if not (args.slug and args.title):
             raise ValueError("--bundle needs --slug and --title")
-        entries = [publish(Path(args.bundle), Path(args.out), args.slug, args.title, args.description or "")]
+        entries = [publish(Path(args.bundle), Path(args.out), args.slug, args.title, args.description or "",
+                           overwrite_live=args.overwrite_live)]
     else:
-        entries = regenerate_samples(Path(args.out))
+        entries = regenerate_samples(Path(args.out), overwrite_live=args.overwrite_live)
     for e in entries:
         faults = f", faults injected ({e.faults_fired} fired)" if e.faults_injected else ""
         print(f"{e.slug:<14} {e.llm_mode:<8} {e.home.short_name} {e.final_score.get('home')}-"
@@ -370,6 +371,8 @@ def build_parser() -> argparse.ArgumentParser:
     dd.add_argument("--slug", help="with --bundle: directory name and ?run= value")
     dd.add_argument("--title", help="with --bundle: title in the run picker")
     dd.add_argument("--description", help="with --bundle: one-line description")
+    dd.add_argument("--overwrite-live", action="store_true",
+                    help="allow replacing a published live run (llm_mode foundry); refused by default")
     dd.set_defaults(func=_cmd_demo_data)
 
     sv = sub.add_parser("serve", help="serve the web UI locally (recorded runs from web/data)")
