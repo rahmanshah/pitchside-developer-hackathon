@@ -1,7 +1,8 @@
 # Demo video: shot list and narration
 
 The video must run under 2 minutes, and judges may judge from it alone, so the best moment comes first. The plan below
-runs 1:55: about 110 seconds of narration and a 5-second end card.
+runs 1:45: about 100 seconds of narration (about 230 words) and a 5-second end card. That leaves 15 seconds of slack
+under the limit. If a take runs long, cut a shot rather than read faster.
 
 Every shot is a URL on the web UI, so each take can be repeated exactly. Append the query string to the base URL:
 
@@ -29,37 +30,39 @@ tests/test_demo_doc.py` checks every URL in this file against `web/data`.
 
 | # | Time | URL (append to the base URL) | Action | On screen (offline sample) |
 |---|---|---|---|---|
-| 1 | 0:00-0:19 | `?run=comeback&view=broadcast&t=86:15&speed=4&autoplay=1&clean=1&persona=casual&lang=en` | None. At 4x the goal arrives after about 6 s and the replay holds on the lower third for 6 s | Clean broadcast view, AUR 1-1 IRV at 86:15, then 2-1 and the lower third "GOAL 87'" with its ✓ checked and ✓ verified chips. The honesty label stays visible in clean mode |
-| 2 | 0:19-0:30 | `?run=comeback&view=broadcast&t=86:40&persona=casual&lang=en&drawer=aur_irv_comeback_0007:goal:2` (or press `E` at the end of take 1) | Scroll slowly through the first two claims | Evidence drawer: narrative source chip, ✓ deterministic checker, ✓ semantic verifier; "Written from 3 verified claims"; e1 "a 0.69 xG chance", `shot_xg = 0.685 xg`, triggering event `#1277 shot` |
-| 3 | 0:30-0:48 | `?run=comeback&view=analyst&t=86:40&persona=analyst&lang=en` | Move the pointer from the key-moment timeline to the persona cards | Analyst dashboard at the same moment: key-moment timeline with the siege, pressure-surge and momentum bands from the 58th minute, live stats, momentum and control-vs-chaos sparklines, "Current moment · 87' Goal" with three cards: Analyst, Casual fan, Favourite: Alden Brandt |
-| 4 | 0:48-1:00 | same take; `?run=comeback&view=analyst&t=86:40&persona=analyst&lang=es` gives the end state | Click `ES` (or press `L`) | The interface switches to Spanish (Retransmisión, Analista, Momentos clave). **Offline:** the model texts show as `[es · offline] <English text>` placeholders. Only template texts are real Spanish |
-| 5 | 1:00-1:05 | `?run=faults-demo&view=broadcast&t=47:10&persona=analyst&lang=en` | Point at the red badge | "Faults injected · 16 fired" badge next to the honesty label; lower third "GOAL 48'" (WST 1-1 AUR) with a "fault injected" chip |
-| 6 | 1:05-1:17 | `?run=faults-demo&view=broadcast&t=47:10&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:goal:1` | Scroll to "Audit trail" and "Rejected claims (1)" | Chips "Explainer retried", "Fault injected on purpose"; audit: explain #1 → check rejected → explain #2 → check passed → verify passed; struck-through draft "Aurora Rovers: a 2.41 xG chance, from 8 m." with `number_mismatch`: does not match e1 (`shot_xg = 0.273 xg`; write "a 0.27 xG chance") |
-| 7 | 1:17-1:30 | `?run=faults-demo&view=broadcast&t=54:20&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:big_chance:3` | Scroll to the audit trail; optionally `Esc`, then `I` and scroll to "Injected faults" | Chip "Template narrative: checker rejected every claim after 3 attempt(s)"; three explainer drafts rejected (`no_evidence`, `unlisted_number`), then fallback → template; the shown text is the template: "Big chance for Aurora Rovers: a 0.38 xG shot from 6 m, not converted. Aurora Rovers have 5 shots and 1.50 xG so far." |
-| 8 | 1:30-1:50 | the README's agent workflow diagram on GitHub (rendered Mermaid), then a title card | Slow zoom on the diagram; cut to the card | Card text: the technologies in the narration for this shot, and nothing that is not deployed on recording day. A cropped Azure portal view of the resource list is optional (see "Honesty" below) |
-| 9 | 1:50-1:55 | end card | none | "Pitchside", `{{repo_url}}`, `{{static_web_app_url}}`, "All clubs, players and matches are synthetic." |
+| 1 | 0:00-0:18 | `?run=comeback&view=broadcast&t=86:15&speed=4&autoplay=1&clean=1&persona=casual&lang=en` | None. At 4x the goal arrives after about 6 s and the replay holds on the lower third for 6 s | Clean broadcast view, AUR 1-1 IRV at 86:15, then 2-1 and the lower third "GOAL 87'" with its ✓ checked and ✓ verified chips. The honesty label stays visible in clean mode |
+| 2 | 0:18-0:28 | `?run=comeback&view=broadcast&t=86:40&persona=casual&lang=en&drawer=aur_irv_comeback_0007:goal:2` (or press `E` at the end of take 1) | Scroll slowly through the first claim | Evidence drawer: narrative source chip, ✓ deterministic checker, ✓ semantic verifier; "Written from 3 verified claims"; e1 "a 0.69 xG chance", `shot_xg = 0.685 xg`, triggering event `#1277 shot` |
+| 3 | 0:28-0:44 | `?run=comeback&view=analyst&t=86:40&persona=analyst&lang=en` | Move the pointer from the key-moment timeline to the persona cards | Analyst dashboard at the same moment: key-moment timeline with the siege, pressure-surge and momentum bands from the 58th minute, live stats, momentum and control-vs-chaos sparklines, "Current moment · 87' Goal" with three cards: Analyst, Casual fan, Favourite: Alden Brandt |
+| 4 | 0:44-0:54 | same take; `?run=comeback&view=analyst&t=86:40&persona=analyst&lang=es` gives the end state | Click `ES` (or press `L`) | The interface switches to Spanish (Retransmisión, Analista, Momentos clave). **Offline:** the model texts show as `[es · offline] <English text>` placeholders. Only template texts are real Spanish |
+| 5 | 0:54-1:08 | `?run=faults-demo&view=broadcast&t=47:10&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:goal:1` | Hold on the header for a second, then scroll to "Audit trail" and "Rejected claims (1)" | The "Faults injected · 16 fired" badge stays visible in the header beside the drawer. Chips "Explainer retried", "Fault injected on purpose"; audit: explain #1 → check rejected → explain #2 → check passed → verify passed; struck-through draft "Aurora Rovers: a 2.41 xG chance, from 8 m." with `number_mismatch`: does not match e1 (`shot_xg = 0.273 xg`; write "a 0.27 xG chance") |
+| 6 | 1:08-1:20 | `?run=faults-demo&view=broadcast&t=54:20&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:big_chance:3` | Scroll to the audit trail | Chip "Template narrative: checker rejected every claim after 3 attempt(s)"; three explainer drafts rejected (`no_evidence`, `unlisted_number`), then fallback → template; the shown text is the template: "Big chance for Aurora Rovers: a 0.38 xG shot from 6 m, not converted. Aurora Rovers have 5 shots and 1.50 xG so far." |
+| 7 | 1:20-1:40 | the README's agent workflow diagram on GitHub (rendered Mermaid), then a title card | Slow zoom on the diagram; cut to the card | Card text: the technologies in the narration for this shot, and nothing that is not deployed on recording day. A cropped Azure portal view of the resource list is optional (see "Honesty" below) |
+| 8 | 1:40-1:45 | end card | none | "Pitchside", `{{repo_url}}`, `{{static_web_app_url}}`, "All clubs, players and matches are synthetic." |
 
 Notes on the shots:
 
 - **Shot 2:** the claims and chips come from the bundle. Before recording from a live bundle, check that the drawer
   for `goal:2` still shows both ✓ chips. If it does not, use the 72nd-minute equaliser instead
   (`t=71:30` and `drawer=aur_irv_comeback_0007:goal:1`), or change the narration line.
-- **Shot 6:** the wrong number is made by the fault injector from the explainer's own first number (×1.5 + 2), so in a
+- **Shot 5:** the wrong number is made by the fault injector from the explainer's own first number (×1.5 + 2), so in a
   live run it differs from 2.41. Read it off the screen and do not script it.
-- **Shot 7:** in a live run the shown text is the same template (templates use only stats-engine numbers), but the
+- **Shot 6:** in a live run the shown text is the same template (templates use only stats-engine numbers), but the
   rejected drafts are the model's.
+- **Cut first, if a take runs long:** shot 4 (the Spanish toggle). Shot 3 already shows the personas, and the pitch
+  names both languages.
 - Speed: in shot 1, `speed=4` with the default holds gives the lower third about 12 s on screen. Use `speed=16` for a
   faster build-up (the hold stays 6 s).
 
-## Narration (about 110 seconds, word for word)
+## Narration (about 100 seconds, about 230 words, word for word)
 
-Read about 2.4 words a second. Where a line has two versions, read the one that matches the badge on screen
-(**LIVE** = "Recorded run generated by the live pipeline", **OFFLINE** = "Offline demo (fake model client)"), and for
-shot 8 the one that matches what is deployed on recording day.
+Read about 2.3 words a second. No segment needs more than 2.5. Where a line has two versions, read the one that
+matches the badge on screen (**LIVE** = "Recorded run generated by the live pipeline", **OFFLINE** = "Offline demo
+(fake model client)"), and for shot 7 the one that matches what is deployed on recording day.
+`tests/test_demo_doc.py` checks the length, the pace and that the segments line up with the shots.
 
-**0:00-0:19 (shot 1)**
+**0:00-0:18 (shot 1)**
 > Eighty-seven minutes, one-all. Aurora Rovers win it, two-one, from a goal down. Every club, player and event here
-> is synthetic, generated from a seed.
+> is synthetic.
 
 LIVE:
 > This is a recorded run of the live pipeline: GPT-6 Luna on Microsoft Foundry wrote the words.
@@ -67,32 +70,31 @@ LIVE:
 OFFLINE:
 > This is an offline recording: a fake model client stands in for the model, so the wording is a placeholder.
 
-**0:19-0:30 (shot 2)**
-> Press E for the evidence. Every number cites a figure the stats engine computed, linked to the shot behind it. A
-> checker and a verifier passed each claim.
+**0:18-0:28 (shot 2)**
+> Press E for the evidence: every number is a stats-engine figure, linked to the shot behind it. A checker and a
+> verifier passed each claim.
 
-**0:30-0:48 (shot 3)**
-> Same moment, analyst dashboard. The numbers come from deterministic code, not the model: possession, field
-> tilt, pressure, momentum, control versus chaos. On the right, one moment for three audiences: the analyst gets the
-> figures, the casual fan the story, and the favourite-player view follows Alden Brandt.
+**0:28-0:44 (shot 3)**
+> Same moment, analyst dashboard. The numbers come from deterministic code, not the model. On the right, one moment
+> for three audiences: the analyst gets the figures, the casual fan the story, and the favourite-player view follows
+> Alden Brandt.
 
-**0:48-1:00 (shot 4)**
+**0:44-0:54 (shot 4)**
 
 LIVE:
-> One click, and it's Spanish, written in the same personalizer call, with every number re-checked in both
-> languages. Adding a language is one phrase table.
+> One click, and it's Spanish, written in the same personalizer call, with every number re-checked.
 
 OFFLINE:
-> One click switches the page to Spanish. Offline, the model's Spanish is a tagged placeholder; live, the
-> personalizer writes it in the same call, and every number is re-checked.
+> One click switches to Spanish. Offline, the model's Spanish is a tagged placeholder; live, it is written in the
+> same call and re-checked.
 
-**1:00-1:30 (shots 5 to 7)**
-> Now we break it on purpose. This run has faults injected deliberately: rate limits, malformed replies, a verifier
-> timeout, a personalizer outage. Here the explainer's first draft got the xG wrong. The checker caught it, sent the
-> reason back, and the second draft passed. Here every draft failed, so a template built from the same numbers went
-> out, labelled as a template, with the reason in the audit trail.
+**0:54-1:20 (shots 5 and 6)**
+> Now we break it on purpose. This run has faults injected deliberately: rate limits, a verifier timeout, a
+> personalizer outage. Here the explainer's first draft got the xG wrong. The checker caught it, sent the reason
+> back, and the second draft passed. Here every draft failed, so a template built from the same numbers went out,
+> labelled, with its reason in the audit trail.
 
-**1:30-1:50 (shot 8)**
+**1:20-1:40 (shot 7)**
 
 Deployed (Container Apps and Static Web Apps running, live bundles recorded through the cloud MCP server):
 > Under the hood: four Microsoft Agent Framework agents on GPT-6 Luna in Microsoft Foundry, signed in with Entra ID.
@@ -104,7 +106,7 @@ Not deployed:
 > GPT-6 Luna on Microsoft Foundry. The stats engine is also an MCP server, and the whole replay runs locally with one
 > command. Numbers first, words second.
 
-**1:50-1:55 (shot 9):** no narration.
+**1:40-1:45 (shot 8):** no narration.
 
 ## Honesty: what to say about offline and live runs
 
@@ -171,7 +173,7 @@ Work through it in order. Nothing here is done yet (2026-10-23): the samples are
       Check every image for subscription ids, e-mails, tenant or resource names, keys and the MCP server URL before
       committing.
 - [ ] Walk through the shot list on the deployed site. Update every "On screen" note to the live texts (shot 2's
-      chips, real Spanish in shot 4, the faults count in shot 5, the wrong number in shot 6) and the date of the check.
+      chips, real Spanish in shot 4, the faults count and the wrong number in shot 5) and the date of the check.
 - [ ] Record the video from the deployed site, reading the LIVE and "Deployed" lines. Keep it under 2:00 and upload
       it to a public URL.
 
