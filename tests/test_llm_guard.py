@@ -69,6 +69,15 @@ class AccountingTests(GuardTestCase):
         self.assertEqual(r.price_version, PRICE_TABLE_VERSION)
         self.assertAlmostEqual(h.budget.spent("m1"), r.cost_usd)
 
+    def test_the_price_model_prices_the_call_and_is_logged(self) -> None:
+        h = Harness(self.dir)
+        client = h.client(script=[Reply("ok", input_tokens=2000, cached_tokens=1500, output_tokens=100)],
+                          price_model="gpt-5-mini")
+        asyncio.run(ask(client))
+        [r] = h.records()
+        self.assertEqual(r.price_model, "gpt-5-mini")
+        self.assertAlmostEqual(r.cost_usd, (500 * 0.25 + 1500 * 0.03 + 100 * 2.00) / 1e6)
+
     def test_every_call_gets_an_output_cap(self) -> None:
         h = Harness(self.dir)
         client = h.client(max_output_tokens=300)
