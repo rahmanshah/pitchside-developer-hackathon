@@ -194,10 +194,13 @@ interesting offline numbers come from deliberately injected faults:
 The live evaluation (`--live`, run manually) reports the same metrics for a real model, plus a `spotcheck.md` of
 shown claims for a person to judge. See [docs/LIVE_EVAL.md](docs/LIVE_EVAL.md). **Not run yet.**
 
-**Estimated** cost at GPT-6 Luna prices ($0.10 in / $0.50 out per 1M tokens), to be replaced by measured cost:
-about 5 model calls per moment, about $0.0023 per moment, so about $0.015 per balanced match and $0.03-0.04 per
-storyline match (12-13 moments plus 2 recaps). Final recorded runs use `PITCHSIDE_MATCH_BUDGET_USD=0.25` so that no
-moment is downgraded to a template for budget reasons; the bundle manifest counts budget fallbacks (should be 0).
+**Estimated** cost at gpt-5-mini prices ($0.25 in / $2.00 out per 1M tokens, reasoning tokens billed as output), to
+be replaced by measured cost: about 5 model calls per moment, about $0.0083 per moment, so about $0.05 per balanced
+match and $0.12 per storyline match (12-13 moments plus 2 recaps), plus about $0.01 when the interpreter uses the MCP
+tools. At GPT-6 Luna prices the same token plan was about $0.0023 per moment. The default match budget,
+`PITCHSIDE_MATCH_BUDGET_USD=0.25`, is about twice a storyline match, so no moment in a recorded run is downgraded to a
+template for budget reasons; the bundle manifest counts budget fallbacks (should be 0). See
+[decision 19](docs/DECISIONS.md).
 
 ## Web UI: replay a recorded run
 
@@ -282,10 +285,12 @@ which the agents above use.
   no Azure account and no cost. Tests can script failures: rate limits, timeouts, connection and server errors,
   auth failures, malformed output.
 - **Live mode** (`PITCHSIDE_LLM=foundry`) calls model deployments in a Microsoft Foundry project, authenticated with
-  Microsoft Entra ID (`az login` locally, no API keys). Configure it from [.env.example](.env.example).
+  Microsoft Entra ID (`az login` locally, no API keys). Configure it from [.env.example](.env.example). Every role
+  uses the same model: gpt-5-mini (Global Standard, Sweden Central) while our trial subscription has no GPT-6 Luna
+  quota, and Luna if that quota is granted ([decision 19](docs/DECISIONS.md)).
 - **Every call is logged** to `runs/llm_usage.jsonl`: role, match, finding, deployment, model, tokens (input, cached,
   output), cost and latency. `uv run pitchside cost` summarises the log.
-- **Spending caps** are checked *before* each call: $0.10 and 200 calls per match, $10 across the log, at most 4 calls
+- **Spending caps** are checked *before* each call: $0.25 and 200 calls per match, $10 across the log, at most 4 calls
   at once. A refused call is never sent. Prices fail closed, and a timed-out call is charged the worst case.
 - **Failures** are retried with backoff where that can help; otherwise the caller gets a typed error and (from
   milestone 3) falls back to a template narrative built from the stats engine's numbers.
