@@ -25,7 +25,7 @@ class SettingsTests(unittest.TestCase):
         self.assertEqual(s.mode, "fake")
         self.assertEqual((s.match_budget_usd, s.match_max_calls, s.total_budget_usd), (0.10, 200, 10.0))
         self.assertEqual(s.max_concurrency, 4)
-        self.assertEqual(s.price_model, "gpt-6-luna")
+        self.assertEqual((s.price_model, s.reasoning_effort), ("gpt-5-mini", "low"))
 
     def test_live_mode_reads_one_deployment_per_role(self) -> None:
         s = load_settings(LIVE)
@@ -49,6 +49,19 @@ class SettingsTests(unittest.TestCase):
         self.assertIn("PITCHSIDE_MATCH_BUDGET_USD", str(ctx.exception))
         with self.assertRaises(ConfigError):
             load_settings({"PITCHSIDE_LLM": "openai"})
+
+    def test_gpt_5_mini_accepts_only_its_own_reasoning_efforts(self) -> None:
+        for effort in ("minimal", "low", "medium", "high", "off"):
+            s = load_settings(dict(LIVE, PITCHSIDE_PRICE_MODEL="gpt-5-mini", PITCHSIDE_REASONING_EFFORT=effort))
+            self.assertEqual(s.reasoning_effort, effort)
+        for effort in ("none", "xhigh", "max"):
+            with self.assertRaises(ConfigError) as ctx:
+                load_settings({"PITCHSIDE_PRICE_MODEL": "gpt-5-mini", "PITCHSIDE_REASONING_EFFORT": effort})
+            self.assertIn("minimal, low, medium, high", str(ctx.exception))
+
+    def test_unlisted_models_keep_every_effort(self) -> None:
+        s = load_settings({"PITCHSIDE_PRICE_MODEL": "gpt-6-luna", "PITCHSIDE_REASONING_EFFORT": "none"})
+        self.assertEqual(s.reasoning_effort, "none")
 
     def test_fake_mode_without_a_deployment_name_fails_only_when_asked(self) -> None:
         with self.assertRaises(ConfigError):

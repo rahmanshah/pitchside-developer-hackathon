@@ -9,7 +9,7 @@ from __future__ import annotations
 import os
 from enum import Enum
 from pathlib import Path
-from typing import Literal, Mapping, Optional
+from typing import Literal, Mapping, Optional, get_args
 
 from pydantic import BaseModel, ConfigDict, Field, ValidationError
 
@@ -49,7 +49,13 @@ ENV_VARS = {
     "PITCHSIDE_MCP_URL": "mcp_url",
 }
 
-ReasoningEffort = Literal["off", "none", "low", "medium", "high", "xhigh", "max"]
+ReasoningEffort = Literal["off", "none", "minimal", "low", "medium", "high", "xhigh", "max"]
+
+# Reasoning efforts a model accepts, keyed by price model, for models where we checked the docs. gpt-5-mini predates
+# gpt-5.1, so it has no "none" (Microsoft Foundry reasoning docs, read 2026-10-23). Unlisted models are not checked.
+REASONING_EFFORTS: dict[str, frozenset[str]] = {
+    "gpt-5-mini": frozenset({"minimal", "low", "medium", "high"}),
+}
 
 
 class ConfigError(ValueError):
@@ -70,7 +76,7 @@ class LLMSettings(BaseModel):
     model_explainer: Optional[str] = None
     model_verifier: Optional[str] = None
     model_personalizer: Optional[str] = None
-    price_model: str = "gpt-6-luna"
+    price_model: str = "gpt-5-mini"
     match_budget_usd: float = Field(0.10, gt=0)
     match_max_calls: int = Field(200, gt=0)
     total_budget_usd: float = Field(10.0, gt=0)
@@ -110,6 +116,15 @@ class LLMSettings(BaseModel):
             raise ConfigError(f"{ROLE_ENV[role]} is not set (the model deployment name for the {role.value} agent)")
         return name
 
+    def check_reasoning_effort(self) -> None:
+        """Fail at startup, not on the first live call, if the model does not accept the effort."""
+        allowed = REASONING_EFFORTS.get(self.price_model)
+        if allowed is not None and self.reasoning_effort != "off" and self.reasoning_effort not in allowed:
+            raise ConfigError(
+                f"PITCHSIDE_REASONING_EFFORT={self.reasoning_effort} is not accepted by {self.price_model}; "
+                f"use off or one of: {', '.join(e for e in get_args(ReasoningEffort) if e in allowed)}"
+            )
+
     def require_live(self) -> None:
         """Fail early, with every problem at once, if live mode is not fully configured."""
         missing = [] if self.foundry_endpoint else ["FOUNDRY_ENDPOINT"]
@@ -147,6 +162,7 @@ def load_settings(env: Optional[Mapping[str, str]] = None, env_file: Optional[Pa
             f"{_env_name(str(e['loc'][0]))}: {e['msg']}" for e in error.errors()
         )
         raise ConfigError(f"invalid model settings: {problems}") from None
+    settings.check_reasoning_effort()
     if settings.mode == "foundry":
         settings.require_live()
     return settings
