@@ -78,7 +78,7 @@
    "persona": "fav:wst_09",
    "kind": "favourite",
    "player_id": "wst_09",
-   "name": "Xavi Uusitalo",
+   "name": "Xarno Uusitalo",
    "team_id": "wst"
   }
  ],
@@ -176,20 +176,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 65,
-        "end": 69,
+        "start": 66,
+        "end": 70,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 86,
-        "end": 87,
+        "start": 87,
+        "end": 88,
         "refs": [
          "e2"
         ]
@@ -197,20 +197,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
+      "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 80,
-        "end": 84,
+        "start": 81,
+        "end": 85,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 101,
-        "end": 102,
+        "start": 102,
+        "end": 103,
         "refs": [
          "e2"
         ]
@@ -220,13 +220,13 @@
     },
     "casual": {
      "en": {
-      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -234,13 +234,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidrelle's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "For Hugo Vidrelle's fans: Xarno Uusitalo had the chance for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidrelle's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Xarno Uusitalo had the chance for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -248,13 +248,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -268,7 +268,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town.",
       "team_id": "wst",
       "deterministic": "passed",
       "semantic": "passed",
@@ -279,7 +279,7 @@
         "metric": null,
         "team_id": "wst",
         "player_id": "wst_09",
-        "name": "Xavi Uusitalo",
+        "name": "Xarno Uusitalo",
         "involvement": "shooter",
         "value": null,
         "unit": null,
@@ -504,9 +504,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 875,
-     "output_tokens": 466,
-     "cost_usd": 0.00032
+     "input_tokens": 879,
+     "output_tokens": 469,
+     "cost_usd": 0.000322
     },
     "badges": []
    }
@@ -1386,20 +1386,20 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+      "text": "For Xarno Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 53,
-        "end": 57,
+        "start": 54,
+        "end": 58,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 59,
-        "end": 61,
+        "start": 60,
+        "end": 62,
         "refs": [
          "e2"
         ]
@@ -1407,20 +1407,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 68,
-        "end": 72,
+        "start": 69,
+        "end": 73,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 74,
-        "end": 76,
+        "start": 75,
+        "end": 77,
         "refs": [
          "e2"
         ]
@@ -1917,20 +1917,20 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "text": "For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 43,
-        "end": 45,
+        "start": 44,
+        "end": 46,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 59,
-        "end": 60,
+        "start": 60,
+        "end": 61,
         "refs": [
          "e2"
         ]
@@ -1938,20 +1938,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 58,
-        "end": 60,
+        "start": 59,
+        "end": 61,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 74,
-        "end": 75,
+        "start": 75,
+        "end": 76,
         "refs": [
          "e2"
         ]
@@ -2399,20 +2399,20 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 43,
-        "end": 46,
+        "start": 44,
+        "end": 47,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 69,
-        "end": 70,
+        "start": 70,
+        "end": 71,
         "refs": [
          "e2"
         ]
@@ -2420,20 +2420,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 58,
-        "end": 61,
+        "start": 59,
+        "end": 62,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 84,
-        "end": 85,
+        "start": 85,
+        "end": 86,
         "refs": [
          "e2"
         ]
@@ -2674,9 +2674,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 659,
+     "input_tokens": 660,
      "output_tokens": 455,
-     "cost_usd": 0.000293
+     "cost_usd": 0.000294
     },
     "badges": []
    }
@@ -2802,13 +2802,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
+      "text": "For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3061,8 +3061,8 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 922,
-     "output_tokens": 473,
+     "input_tokens": 923,
+     "output_tokens": 474,
      "cost_usd": 0.000329
     },
     "badges": []
@@ -3189,13 +3189,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
+      "text": "For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3449,8 +3449,8 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 924,
-     "output_tokens": 473,
+     "input_tokens": 925,
+     "output_tokens": 474,
      "cost_usd": 0.000329
     },
     "badges": []
@@ -3577,13 +3577,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "For Xarno Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4446,13 +4446,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+      "text": "For Xarno Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4819,7 +4819,7 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3210,
+     "input_tokens": 3213,
      "output_tokens": 470,
      "cost_usd": 0.000556
     },
@@ -5767,20 +5767,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
+      "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 92,
-        "end": 96,
+        "start": 93,
+        "end": 97,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 113,
-        "end": 114,
+        "start": 114,
+        "end": 115,
         "refs": [
          "e2"
         ]
@@ -5788,20 +5788,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
+      "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 107,
-        "end": 111,
+        "start": 108,
+        "end": 112,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 128,
-        "end": 129,
+        "start": 129,
+        "end": 130,
         "refs": [
          "e2"
         ]
@@ -5811,13 +5811,13 @@
     },
     "casual": {
      "en": {
-      "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -5825,13 +5825,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidrelle's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "For Hugo Vidrelle's fans: Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidrelle's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -5839,13 +5839,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -5859,7 +5859,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xavi Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "team_id": "wst",
       "deterministic": "passed",
       "semantic": "passed",
@@ -5870,7 +5870,7 @@
         "metric": null,
         "team_id": "wst",
         "player_id": "wst_09",
-        "name": "Xavi Uusitalo",
+        "name": "Xarno Uusitalo",
         "involvement": "scorer",
         "value": null,
         "unit": null,
@@ -6099,9 +6099,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1719,
-     "output_tokens": 535,
-     "cost_usd": 0.000439
+     "input_tokens": 1724,
+     "output_tokens": 538,
+     "cost_usd": 0.000441
     },
     "badges": []
    }
@@ -6568,13 +6568,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "For Xarno Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7032,13 +7032,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xavi Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+      "text": "For Xarno Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xavi Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7510,7 +7510,7 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3373,
+     "input_tokens": 3378,
      "output_tokens": 471,
      "cost_usd": 0.000573
     },

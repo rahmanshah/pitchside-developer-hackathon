@@ -52,10 +52,11 @@ _PROFILE: dict[str, tuple[float, float, float, float]] = {
     "ST": (0.76, 0.62, 0.86, 0.34),
 }
 
+# Same rule as the surnames below: a first name closely tied to a well-known footballer was replaced in place.
 _FIRST_NAMES = (
     "Alden", "Bram", "Caio", "Dario", "Elio", "Finn", "Gael", "Hugo", "Ilmari",
     "Jonas", "Kofi", "Leif", "Mateo", "Niko", "Otso", "Pavel", "Quinn", "Rafa",
-    "Soren", "Tomas", "Ugo", "Viktor", "Wen", "Xavi", "Yusuf", "Zane", "Arman",
+    "Soren", "Tomas", "Ugo", "Viktor", "Wen", "Xarno", "Yusuf", "Zane", "Arman",
     "Benji", "Cem", "Dani", "Emil", "Farid", "Gio", "Hanno", "Idris", "Joaquin",
 )
 # Invented, or common enough not to point at one footballer. Surnames closely tied to a well-known footballer were

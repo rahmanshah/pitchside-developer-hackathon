@@ -79,7 +79,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
+     "text": "For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -107,7 +107,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -550,7 +550,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "For Xarno Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
      "source": "model",
      "reason": null
     },
@@ -578,7 +578,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
      "source": "model",
      "reason": null
     },
@@ -795,7 +795,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "For Xarno Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
      "source": "model",
      "reason": null
     },
@@ -823,7 +823,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
      "source": "model",
      "reason": null
     },
@@ -1049,7 +1049,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
+     "text": "For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -1077,7 +1077,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -1417,7 +1417,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "For Xarno Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
      "source": "model",
      "reason": null
     },
@@ -1445,7 +1445,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
      "source": "model",
      "reason": null
     },
@@ -1611,7 +1611,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "text": "Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
      "team_id": "wst",
      "refs": [
       "p1"
@@ -1662,56 +1662,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers. Westmere Town: a 0.15 xG chance, from 12 m.",
+     "text": "Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers. Westmere Town: a 0.15 xG chance, from 12 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "text": "Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "text": "For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers. Westmere Town: a 0.15 xG chance, from 12 m.",
+     "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers. Westmere Town: a 0.15 xG chance, from 12 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -1855,7 +1855,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2079.7,
      "baseline": null,
-     "say": "Xavi Uusitalo: goals 1",
+     "say": "Xarno Uusitalo: goals 1",
      "source": "player",
      "origin": null
     },
@@ -1869,7 +1869,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2079.7,
      "baseline": null,
-     "say": "Xavi Uusitalo: shots 2",
+     "say": "Xarno Uusitalo: shots 2",
      "source": "player",
      "origin": null
     },
@@ -1883,7 +1883,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2079.7,
      "baseline": null,
-     "say": "Xavi Uusitalo: xG 0.37",
+     "say": "Xarno Uusitalo: xG 0.37",
      "source": "player",
      "origin": null
     },
@@ -2004,7 +2004,7 @@
     {
      "ref": "p1",
      "player_id": "wst_09",
-     "name": "Xavi Uusitalo",
+     "name": "Xarno Uusitalo",
      "team_id": "wst",
      "involvement": "scorer",
      "clock_s": 2079.7
@@ -2018,7 +2018,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xavi Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "text": "Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
       "team_id": "wst",
       "refs": [
        "p1"
@@ -2613,7 +2613,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Xavi Uusitalo had the chance for Westmere Town.",
+     "text": "Xarno Uusitalo had the chance for Westmere Town.",
      "team_id": "wst",
      "refs": [
       "p1"
@@ -2673,7 +2673,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "Xavi Uusitalo goes close for Westmere Town with a big chance.",
+     "text": "Xarno Uusitalo goes close for Westmere Town with a big chance.",
      "source": "template",
      "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
     },
@@ -2701,7 +2701,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "Xavi Uusitalo roza el gol para Westmere Town con una ocasión clara.",
+     "text": "Xarno Uusitalo roza el gol para Westmere Town con una ocasión clara.",
      "source": "template",
      "reason": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error)"
     },
@@ -2852,7 +2852,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2613.4,
      "baseline": null,
-     "say": "Xavi Uusitalo: goals 1",
+     "say": "Xarno Uusitalo: goals 1",
      "source": "player",
      "origin": null
     },
@@ -2866,7 +2866,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2613.4,
      "baseline": null,
-     "say": "Xavi Uusitalo: shots 3",
+     "say": "Xarno Uusitalo: shots 3",
      "source": "player",
      "origin": null
     },
@@ -2880,7 +2880,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2613.4,
      "baseline": null,
-     "say": "Xavi Uusitalo: xG 1.03",
+     "say": "Xarno Uusitalo: xG 1.03",
      "source": "player",
      "origin": null
     }
@@ -2889,7 +2889,7 @@
     {
      "ref": "p1",
      "player_id": "wst_09",
-     "name": "Xavi Uusitalo",
+     "name": "Xarno Uusitalo",
      "team_id": "wst",
      "involvement": "shooter",
      "clock_s": 2613.4
@@ -2903,7 +2903,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town.",
       "team_id": "wst",
       "refs": [
        "p1"
@@ -3020,7 +3020,7 @@
     },
     {
      "claim_id": "a2c2",
-     "text": "Xavi Uusitalo scored for Westmere Town.",
+     "text": "Xarno Uusitalo scored for Westmere Town.",
      "team_id": "wst",
      "refs": [
       "p1"
@@ -3052,7 +3052,7 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Half-time: Westmere Town 1-0 Aurora Rovers. Xavi Uusitalo scored for Westmere Town.",
+     "text": "Half-time: Westmere Town 1-0 Aurora Rovers. Xarno Uusitalo scored for Westmere Town.",
      "source": "model",
      "reason": null
     },
@@ -3066,7 +3066,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "text": "For Xarno Uusitalo's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -3080,7 +3080,7 @@
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Half-time: Westmere Town 1-0 Aurora Rovers. Xavi Uusitalo scored for Westmere Town.",
+     "text": "[es · offline] Half-time: Westmere Town 1-0 Aurora Rovers. Xarno Uusitalo scored for Westmere Town.",
      "source": "model",
      "reason": null
     },
@@ -3094,7 +3094,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -3231,7 +3231,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xavi Uusitalo: goals 1",
+     "say": "Xarno Uusitalo: goals 1",
      "source": "player",
      "origin": null
     },
@@ -3245,7 +3245,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xavi Uusitalo: shots 3",
+     "say": "Xarno Uusitalo: shots 3",
      "source": "player",
      "origin": null
     },
@@ -3259,7 +3259,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xavi Uusitalo: xG 1.03",
+     "say": "Xarno Uusitalo: xG 1.03",
      "source": "player",
      "origin": null
     },
@@ -3632,7 +3632,7 @@
     {
      "ref": "p1",
      "player_id": "wst_09",
-     "name": "Xavi Uusitalo",
+     "name": "Xarno Uusitalo",
      "team_id": "wst",
      "involvement": "scorer",
      "clock_s": null
@@ -3663,7 +3663,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Xavi Uusitalo scored for Westmere Town.",
+      "text": "Xarno Uusitalo scored for Westmere Town.",
       "team_id": "wst",
       "refs": [
        "p1"
@@ -3706,7 +3706,7 @@
      },
      {
       "claim_id": "a2c2",
-      "text": "Xavi Uusitalo scored for Westmere Town.",
+      "text": "Xarno Uusitalo scored for Westmere Town.",
       "team_id": "wst",
       "refs": [
        "p1"
@@ -3917,7 +3917,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "text": "For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -3945,7 +3945,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -4729,7 +4729,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "Aurora Rovers go close, but Xavi Uusitalo's side survive.",
+     "text": "Aurora Rovers go close, but Xarno Uusitalo's side survive.",
      "source": "template",
      "reason": "checker rejected every claim after 3 attempt(s)"
     },
@@ -4757,7 +4757,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "Aurora Rovers roza el gol, pero el equipo de Xavi Uusitalo se salva.",
+     "text": "Aurora Rovers roza el gol, pero el equipo de Xarno Uusitalo se salva.",
      "source": "template",
      "reason": "checker rejected every claim after 3 attempt(s)"
     },
@@ -5214,7 +5214,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Xavi Uusitalo had the chance for Westmere Town.",
+     "text": "Xarno Uusitalo had the chance for Westmere Town.",
      "team_id": "wst",
      "refs": [
       "p1"
@@ -5260,56 +5260,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.38 xG chance, from 6 m.",
+     "text": "Xarno Uusitalo had the chance for Westmere Town. Westmere Town: a 0.38 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Xavi Uusitalo had the chance for Westmere Town.",
+     "text": "Xarno Uusitalo had the chance for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "text": "For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "text": "For Alden Brannholt's fans: Xarno Uusitalo had the chance for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town. Westmere Town: a 0.38 xG chance, from 6 m.",
+     "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town. Westmere Town: a 0.38 xG chance, from 6 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Xavi Uusitalo had the chance for Westmere Town.",
+     "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Xavi Uusitalo had the chance for Westmere Town.",
+     "text": "[es · offline] For Alden Brannholt's fans: Xarno Uusitalo had the chance for Westmere Town.",
      "source": "model",
      "reason": null
     }
@@ -5453,7 +5453,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3440.9,
      "baseline": null,
-     "say": "Xavi Uusitalo: goals 1",
+     "say": "Xarno Uusitalo: goals 1",
      "source": "player",
      "origin": null
     },
@@ -5467,7 +5467,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3440.9,
      "baseline": null,
-     "say": "Xavi Uusitalo: shots 4",
+     "say": "Xarno Uusitalo: shots 4",
      "source": "player",
      "origin": null
     },
@@ -5481,7 +5481,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3440.9,
      "baseline": null,
-     "say": "Xavi Uusitalo: xG 1.42",
+     "say": "Xarno Uusitalo: xG 1.42",
      "source": "player",
      "origin": null
     }
@@ -5490,7 +5490,7 @@
     {
      "ref": "p1",
      "player_id": "wst_09",
-     "name": "Xavi Uusitalo",
+     "name": "Xarno Uusitalo",
      "team_id": "wst",
      "involvement": "shooter",
      "clock_s": 3440.9
@@ -5504,7 +5504,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xavi Uusitalo had the chance for Westmere Town.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town.",
       "team_id": "wst",
       "refs": [
        "p1"
@@ -5677,7 +5677,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "text": "For Xarno Uusitalo's fans: Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -5705,7 +5705,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -6705,7 +6705,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "text": "For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -6733,7 +6733,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -7164,7 +7164,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Xavi Uusitalo scored for Westmere Town.",
+     "text": "Xarno Uusitalo scored for Westmere Town.",
      "team_id": "wst",
      "refs": [
       "p1"
@@ -7196,7 +7196,7 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Full-time: Westmere Town 2-2 Aurora Rovers. Xavi Uusitalo scored for Westmere Town.",
+     "text": "Full-time: Westmere Town 2-2 Aurora Rovers. Xarno Uusitalo scored for Westmere Town.",
      "source": "model",
      "reason": null
     },
@@ -7210,7 +7210,7 @@
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xavi Uusitalo's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "text": "For Xarno Uusitalo's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -7224,7 +7224,7 @@
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Full-time: Westmere Town 2-2 Aurora Rovers. Xavi Uusitalo scored for Westmere Town.",
+     "text": "[es · offline] Full-time: Westmere Town 2-2 Aurora Rovers. Xarno Uusitalo scored for Westmere Town.",
      "source": "model",
      "reason": null
     },
@@ -7238,7 +7238,7 @@
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xavi Uusitalo's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
      "source": "model",
      "reason": null
     },
@@ -7375,7 +7375,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xavi Uusitalo: goals 1",
+     "say": "Xarno Uusitalo: goals 1",
      "source": "player",
      "origin": null
     },
@@ -7389,7 +7389,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xavi Uusitalo: shots 5",
+     "say": "Xarno Uusitalo: shots 5",
      "source": "player",
      "origin": null
     },
@@ -7403,7 +7403,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xavi Uusitalo: xG 1.56",
+     "say": "Xarno Uusitalo: xG 1.56",
      "source": "player",
      "origin": null
     },
@@ -7804,7 +7804,7 @@
     {
      "ref": "p1",
      "player_id": "wst_09",
-     "name": "Xavi Uusitalo",
+     "name": "Xarno Uusitalo",
      "team_id": "wst",
      "involvement": "scorer",
      "clock_s": null
@@ -7843,7 +7843,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Xavi Uusitalo scored for Westmere Town.",
+      "text": "Xarno Uusitalo scored for Westmere Town.",
       "team_id": "wst",
       "refs": [
        "p1"
