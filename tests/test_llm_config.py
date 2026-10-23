@@ -23,7 +23,7 @@ class SettingsTests(unittest.TestCase):
     def test_defaults_are_offline_and_capped(self) -> None:
         s = load_settings({})
         self.assertEqual(s.mode, "fake")
-        self.assertEqual((s.match_budget_usd, s.match_max_calls, s.total_budget_usd), (0.10, 200, 10.0))
+        self.assertEqual((s.match_budget_usd, s.match_max_calls, s.total_budget_usd), (0.25, 200, 10.0))
         self.assertEqual(s.max_concurrency, 4)
         self.assertEqual((s.price_model, s.reasoning_effort), ("gpt-5-mini", "low"))
 

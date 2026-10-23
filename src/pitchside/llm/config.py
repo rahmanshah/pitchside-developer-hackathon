@@ -77,7 +77,7 @@ class LLMSettings(BaseModel):
     model_verifier: Optional[str] = None
     model_personalizer: Optional[str] = None
     price_model: str = "gpt-5-mini"
-    match_budget_usd: float = Field(0.10, gt=0)
+    match_budget_usd: float = Field(0.25, gt=0)
     match_max_calls: int = Field(200, gt=0)
     total_budget_usd: float = Field(10.0, gt=0)
     max_concurrency: int = Field(4, gt=0)
