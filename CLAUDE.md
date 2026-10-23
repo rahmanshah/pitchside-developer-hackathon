@@ -108,8 +108,10 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   (`fixture-comeback`, `fixture-faults`, `live-fixture`, `unknown-fixture`; never in `web/data`), so replacing
   `web/data` cannot break them; only `test_e2e_published.py` reads `web/data`, and it checks each run against its own
   manifest. The page exposes `window.pitchside` and `?t=` so tests seek instead of waiting
-- `scripts/smoke_foundry.py`: manual live check (not in the test suite); step 4 runs one goal through the live
-  agents. `docs/LIVE_EVAL.md`: the manual live evaluation and recording steps
+- `scripts/smoke_foundry.py`: manual live check (not in the test suite; its offline parts are tested in
+  `tests/test_smoke_script.py`); step 4 sends one explainer request with the real cap, step 5 runs one goal through the
+  live agents, step 6 checks each role's output cap against the largest output seen (reasoning tokens count toward
+  it). `docs/LIVE_EVAL.md`: the manual live evaluation and recording steps
 - `tests/`: determinism, schema, possession/score consistency, planted signals, stats engine, held-out answer-key
   bars (`test_stats_heldout.py`: each recall shortfall marked `xfail(strict=True)` per storyline), and the model client
   (`test_llm_*.py`, outbound network blocked by `tests/conftest.py`), the agents (`test_agents_*.py`, fake client

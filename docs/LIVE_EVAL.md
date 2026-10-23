@@ -18,14 +18,16 @@ uv run python scripts/smoke_foundry.py
 It reports which API path works (Responses or Chat Completions), makes one call per role, checks that the budget
 guard refuses before sending, and runs one goal through the whole agent pipeline. Check in its output:
 
-- step 4 ends with `OK  verified model narrative`;
-- no `truncated` notes (if there are, raise the role's `PITCHSIDE_MAX_OUTPUT_<ROLE>`);
-- the reasoning-token counts (they show how much of each output cap reasoning uses);
+- step 4 (one explainer request with the real cap, no retry) prints `OK  valid JSON`;
+- step 5 ends with `OK  verified model narrative`;
+- step 6 says `ok` for every role. `TOO TIGHT` names the `PITCHSIDE_MAX_OUTPUT_<ROLE>` value to set: a reply hit the
+  cap, or the largest output (reasoning included) left less than twice the room. "Output cap reached while
+  reasoning" means the model spent the cap thinking: raise the cap or lower the reasoning effort;
 - a `bad_request` hint, if any (set `PITCHSIDE_REASONING_EFFORT=off`, then try `FOUNDRY_API=chat_completions`).
   gpt-5-mini accepts `minimal`, `low`, `medium` and `high` (not `none`; the settings refuse it at startup). With
   `off` it reasons at its default, `medium`, which costs more.
 
-Record the API path and the measured cost of step 4 in `docs/DECISIONS.md`.
+Record the API path, the measured cost of steps 4-5 and the step 6 table in `docs/DECISIONS.md`.
 
 ## 2. Live evaluation (about $2.10-2.30 estimated at gpt-5-mini prices, 20 matches)
 
