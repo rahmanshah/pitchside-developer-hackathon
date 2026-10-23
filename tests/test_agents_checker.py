@@ -103,6 +103,20 @@ class BadClaimTests(unittest.TestCase):
     def test_number_words_cannot_slip_past(self) -> None:
         self.assertEqual(codes(claim("Ironvale Athletic needed three passes.")), ["unlisted_number"])
 
+    def test_a_score_joined_to_the_word_before_it(self) -> None:
+        # What gpt-5-mini wrote in the first live smoke test: the right score, but no space before it.
+        reasons = check_claim(claim("Ironvale Athletic scored, and it is0-1."), CTX).reasons
+        self.assertEqual([r.code for r in reasons], ["glued_number"])
+        self.assertIn('"is0-1" joins a word and a number; write "is 0-1" with a space', reasons[0].detail)
+        self.assertEqual(codes(claim("Ironvale Athletic scored, and it is 0-1.")), [])
+
+    def test_a_joined_number_does_not_slip_past_the_number_checks(self) -> None:
+        # The number scan skips digits that follow a letter, so without this check "a0.48" went unchecked.
+        self.assertEqual(codes(claim("Ironvale Athletic scored from a0.48 xG chance.")), ["glued_number"])
+
+    def test_ledger_ids_are_not_joined_numbers(self) -> None:
+        self.assertEqual(codes(claim("Ironvale Athletic scored (e1).")), [])
+
 
 class PersonaTextTests(unittest.TestCase):
     def test_spanish_text_with_verified_numbers_passes(self) -> None:
@@ -112,6 +126,10 @@ class PersonaTextTests(unittest.TestCase):
     def test_persona_text_with_a_new_number_is_rejected(self) -> None:
         reasons = check_text("Ironvale Athletic score from 0.30 xG.", CTX, ["e1"])
         self.assertEqual([r.code for r in reasons], ["unlisted_number"])
+
+    def test_persona_text_with_a_joined_score_is_rejected_in_any_language(self) -> None:
+        self.assertEqual([r.code for r in check_text("¡GOL! Marca Ironvale Athletic. Va0-1.", CTX, ["e1"], SPANISH)],
+                         ["glued_number"])
 
     def test_featured_players_may_be_named_in_persona_texts(self) -> None:
         striker = next(p for p in F.roster if p.team_id == "aur" and p.position == "ST")

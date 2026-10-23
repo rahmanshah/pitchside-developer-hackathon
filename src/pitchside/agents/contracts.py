@@ -43,6 +43,7 @@ ReasonCode = Literal[
     "window_mismatch",
     "score_mismatch",
     "unreferenced_player",
+    "glued_number",
     "unsupported",  # semantic layer
 ]
 

@@ -11,7 +11,10 @@ A claim passes only if
 * every score written ("2-1") is a score the match actually had by then (``score_mismatch``);
 * every match minute written ("71st minute", "71'") lies in the time window of its evidence or of the job
   (``window_mismatch``);
-* every player named is a player in the ledger that the claim cites (``unreferenced_player``).
+* every player named is a player in the ledger that the claim cites (``unreferenced_player``);
+* no number is joined to the word before it, as in "it is0-1" or "a0.31 xG" (``glued_number``): the number scan
+  skips digits that follow a letter, so such a number would otherwise go unchecked. Models do drop spaces
+  (gpt-5-mini wrote "it is0-1" in the first live smoke test). Ledger ids such as "e1" are not numbers.
 
 Persona texts get the same checks in their own language, against the numbers the shown claims cite. Numbers are
 always digits; a few number words ("three", "tres") are recognised so they cannot slip past.
@@ -33,6 +36,7 @@ _SENTENCE_END = re.compile(r"(?<!\d)[.!?;](?!\d)|[!?;]")
 _SCORE = re.compile(r"(?<![\d.,])(\d{1,2})\s*[-–]\s*(\d{1,2})(?!\d|[.,]\d|%)")
 _STOPPAGE = re.compile(r"\b(\d{2,3})\s*\+\s*(\d{1,2})'")
 _ORDINAL_SUFFIX = re.compile(r"^(?:st|nd|rd|th|º|ª|\.º)\b")
+_GLUED = re.compile(r"(?<![\w])([A-Za-zÀ-ÿ]+)(\d+(?:[.,]\d+)?(?:\s*[-–]\s*\d+)?)")
 _WINDOW_SLACK_S = 60.0
 
 
@@ -233,6 +237,11 @@ def _minute_ok(minute: int, windows: Iterable[tuple[float, float]]) -> bool:
 def _common_checks(text: str, scanned: _Scan, ctx: CheckContext, lang: Language,
                    windows: list[tuple[float, float]], allowed_players: set[str]) -> list[Reason]:
     reasons: list[Reason] = []
+    for m in _GLUED.finditer(text):
+        if not ctx.ledger.has(m.group(0)):
+            reasons.append(Reason(code="glued_number",
+                                  detail=f'"{m.group(0)}" joins a word and a number; write '
+                                         f'"{m.group(1)} {m.group(2)}" with a space'))
     valid_scores = ctx.scores()
     for a, b, _ in scanned.scores:
         if (a, b) not in valid_scores and (b, a) not in valid_scores:
