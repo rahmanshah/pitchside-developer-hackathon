@@ -214,6 +214,8 @@ class ModelGuard(ChatMiddleware):
         finish = str(finish) if finish is not None else None
         injected = (getattr(result, "additional_properties", None) or {}).get(INJECTED)
         usage = dict(getattr(result, "usage_details", None) or {})
+        tokens_out = int(usage.get("output_token_count") or 0)
+        reasoning = int(usage.get("reasoning_output_token_count") or 0)
         if injected and not usage:
             self.budget.settle(reservation, 0.0)
             self._write(ctx, attempt, "ok", model=model, latency_ms=latency_ms, finish_reason=finish,
@@ -226,17 +228,16 @@ class ModelGuard(ChatMiddleware):
         else:
             tokens_in = int(usage.get("input_token_count") or 0)
             cached = int(usage.get("cache_read_input_token_count") or 0)
-            tokens_out = int(usage.get("output_token_count") or 0)
             cost = cost_usd(self.price, tokens_in, cached, tokens_out)
             self.budget.settle(reservation, cost)
             self._write(
                 ctx, attempt, "ok", model=model, cost=cost, latency_ms=latency_ms, finish_reason=finish,
                 injected=injected, input_tokens=tokens_in, cached_tokens=cached, output_tokens=tokens_out,
-                reasoning_tokens=int(usage.get("reasoning_output_token_count") or 0),
+                reasoning_tokens=reasoning,
             )
         if finish == "length":
             # Cut off at the cap: the JSON is incomplete. The caller decides whether to retry with a larger cap.
-            raise MalformedOutput(f"{self.role}: reply truncated at the output cap (max_tokens={max_out})",
+            raise MalformedOutput(truncation_message(self.role, max_out, tokens_out, reasoning),
                                   role=self.role, kind="truncated")
 
     def _write(self, ctx: CallContext, attempt: int, status: str, *, error_kind: Optional[str] = None,
@@ -250,6 +251,17 @@ class ModelGuard(ChatMiddleware):
             cost_usd=cost, latency_ms=round(latency_ms, 1), price_model=self.price_model,
             price_version=PRICE_TABLE_VERSION, **tokens,
         ))
+
+
+def truncation_message(role: str, max_tokens: int, output_tokens: int, reasoning_tokens: int) -> str:
+    """Why a reply stopped at the cap. Reasoning tokens count toward it, so a reasoning model can spend the whole cap
+    thinking and leave no room for the reply; that needs a different fix from a reply that is simply too long."""
+    visible = max(output_tokens - reasoning_tokens, 0)
+    counts = f"max_tokens={max_tokens}; {reasoning_tokens} reasoning and {visible} visible output tokens"
+    if reasoning_tokens and reasoning_tokens >= visible:
+        return (f"{role}: output cap reached while reasoning: raise the cap or lower the reasoning effort "
+                f"({counts})")
+    return f"{role}: reply truncated at the output cap: the reply is longer than the cap, raise it ({counts})"
 
 
 def _injected(error: BaseException) -> Optional[str]:
