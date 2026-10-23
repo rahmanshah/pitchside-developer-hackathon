@@ -53,7 +53,9 @@ entries 12-14 and the README's agents section.
 Every agent role gets a Microsoft Agent Framework chat client (`src/pitchside/llm/`). Live: `OpenAIChatClient`
 (Responses API, or Chat Completions via `FOUNDRY_API`) on the `AsyncOpenAI` client that the Azure AI Projects SDK
 builds for the Foundry project endpoint, authenticated with Microsoft Entra ID. Offline (the default):
-`FakeChatClient`, deterministic and scriptable. Each client carries one `ModelGuard` middleware, so every model
+`FakeChatClient`, deterministic and scriptable. Every role uses the same small model: gpt-5-mini for now (our trial
+subscription has no GPT-6 Luna quota), Luna if quota is granted ([DECISIONS.md](DECISIONS.md) entry 19); each role
+reads its deployment name from configuration. Each client carries one `ModelGuard` middleware, so every model
 round-trip, including tool-call loops, goes through the same steps:
 
 1. reserve the worst-case cost against the per-match, per-match-call and total caps (refuse without sending);

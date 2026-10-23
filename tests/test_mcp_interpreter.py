@@ -235,7 +235,7 @@ class FakeInterpreterOnMcpTests(unittest.TestCase):
         specs = asyncio.run(go())
         self.assertEqual({s["function"]["name"] for s in specs}, set(INTERPRETER_TOOLS))
         tokens = len(json.dumps(specs)) / 4  # rough: what 11 tool schemas add to every interpreter call
-        self.assertLess(tokens, 3000)  # measured about 2,800: about $0.0003 per call at Luna input prices
+        self.assertLess(tokens, 3000)  # measured about 2,800: about $0.0007 per call at gpt-5-mini input prices
 
 
 class RemoteServerTests(unittest.TestCase):

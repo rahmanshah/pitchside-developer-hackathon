@@ -69,7 +69,7 @@ way to read a match is `as_of(as_of_s)`, which returns the snapshot, findings an
 - Every number a tool returns gets a ledger id (`c*`) and a quote before the model sees it, exactly as for local tools, so
   claims that use them go through the same checker. A test runs the same matches in both modes and requires identical
   ledgers, drafts, checks, narratives and audit trails.
-- Eleven tool schemas add about 2,800 tokens to each interpreter call (about $0.0003 at Luna input prices).
+- Eleven tool schemas add about 2,800 tokens to each interpreter call (about $0.0007 at gpt-5-mini input prices, $0.0003 at Luna's).
 
 ```powershell
 uv run pitchside run --seed 7 --storyline comeback --tools mcp

@@ -16,15 +16,18 @@ no credentials (`uv run pitchside serve --open`, see the README).
  │   └─ pitchside-mcp  0.25 vCPU / 0.5 GiB, 0..1 replicas, IP allow-list, rate limit
  │        ▲  Streamable HTTP /mcp (PITCHSIDE_MCP_URL)
  │ Log Analytics (container logs, 1 GB/day cap)       Budget (e-mail alerts)
- │ Microsoft Foundry: Luna deployments (created in the portal, same group recommended)
+ │ Microsoft Foundry: gpt-5-mini deployments (created in the portal, same group recommended)
  └──────────────────────────────────────────────────────────────────────────────────────────
           ▲                                   ▲
           └── your machine: `uv run pitchside run --live --tools mcp` (az login, Entra ID)
 ```
 
 The live recordings run on your machine under `az login`: the interpreter reaches the stats engine through the
-**deployed** MCP server, the agents call the Luna deployments with Entra ID, and the run bundle records the server
+**deployed** MCP server, the agents call the model deployments with Entra ID, and the run bundle records the server
 URL (`pipeline.mcp_server`, shown in the UI's run info). The bundles are then published to the Static Web App.
+
+The model is **gpt-5-mini** for now: the trial subscription has 0 quota for GPT-6 Luna, the target model, which
+replaces it if quota is granted (decision 19). Only the deployments and `PITCHSIDE_PRICE_MODEL` change.
 
 ## What is deployed, and what is not
 
@@ -34,7 +37,7 @@ URL (`pipeline.mcp_server`, shown in the UI's run info). The bundles are then pu
 | Azure Container Apps, Consumption | In the template | Hosts the read-only MCP server; scales to zero |
 | Log Analytics (Azure Monitor) | In the template | Container logs, one JSON line per MCP request |
 | Cost Management budget | In the template | E-mail at 50% and 100% of actual, 100% of forecast |
-| Microsoft Foundry (Luna) | Created by you in the portal | Model names and quota are account-specific; not guessed in code |
+| Microsoft Foundry (gpt-5-mini) | Created by you in the portal | Model names and quota are account-specific; not guessed in code |
 | Managed identity + cloud recorder | **Planned** | The production path: a Container Apps Job running the pipeline with a user-assigned identity holding Cognitive Services OpenAI User (`5e0bd9bd-7b93-4f28-af87-19fc36ad61bd`) on the Foundry account, writing bundles to Blob Storage. Not built: nothing deployed calls a model today, so an identity would be unused privilege |
 | Entra ID built-in auth on the MCP server | **Planned** | The production way to protect it (app registration, app roles checked in code). Today: IP allow-list + rate limit, no keys |
 | Application Insights (OpenTelemetry) | **Planned** | `microsoft-opentelemetry` with `APPLICATIONINSIGHTS_CONNECTION_STRING`; logs and platform metrics cover the demo |
@@ -58,7 +61,7 @@ Only services that are actually deployed may be claimed in the README; everythin
 | Task | Role (scope) |
 |---|---|
 | Run `deploy.ps1` (providers, resource group, deployment, budget) | **Contributor** on the subscription. With Contributor on the resource group only, someone with subscription rights must register the four providers first |
-| Live recording (your user calls the Luna deployments) | **Cognitive Services OpenAI User** (`5e0bd9bd-7b93-4f28-af87-19fc36ad61bd`) or **Foundry User** (`53ca6127-db72-4b80-b1b0-d745d6d5456d`) on the Foundry resource, assigned in the portal by an Owner |
+| Live recording (your user calls the model deployments) | **Cognitive Services OpenAI User** (`5e0bd9bd-7b93-4f28-af87-19fc36ad61bd`) or **Foundry User** (`53ca6127-db72-4b80-b1b0-d745d6d5456d`) on the Foundry resource, assigned in the portal by an Owner |
 | Make the GHCR package public, add the repository secret, run workflows | Admin of the GitHub repository |
 
 The template creates no role assignments, so User Access Administrator is not needed.
@@ -94,11 +97,11 @@ Each step says what it does. No command here deletes anything except `teardown.p
    (`az deployment group what-if`, then `az deployment group create --parameters infra/main.bicepparam`), `verify`
    (waits for `/healthz`, writes `infra/.deploy-outputs.json`, git-ignored). Every stage is idempotent: if one fails,
    fix the cause and re-run with `-FromStage <stage>`; re-running the whole script is also safe.
-7. **Create Foundry and the Luna deployments** in the portal, in `rg-pitchside` (Sweden Central, Global Standard), and
-   assign yourself one of the roles above. Fill `.env` from `.env.example` (`PITCHSIDE_LLM=foundry`,
-   `FOUNDRY_ENDPOINT`, `MODEL_*`), then `uv run python scripts/smoke_foundry.py`.
+7. **Create Foundry and the gpt-5-mini deployments** in the portal, in `rg-pitchside` (Sweden Central, Global
+   Standard), and assign yourself one of the roles above. Fill `.env` from `.env.example` (`PITCHSIDE_LLM=foundry`,
+   `FOUNDRY_ENDPOINT`, `MODEL_*`, `PITCHSIDE_PRICE_MODEL=gpt-5-mini`), then `uv run python scripts/smoke_foundry.py`.
 8. **Record the live runs through the cloud MCP server.** In `.env`: `PITCHSIDE_TOOLS=mcp` and
-   `PITCHSIDE_MCP_URL=<mcpUrl from step 6>`, `PITCHSIDE_MATCH_BUDGET_USD=0.25`. The app scales to zero after about 5
+   `PITCHSIDE_MCP_URL=<mcpUrl from step 6>`, `PITCHSIDE_MATCH_BUDGET_USD=0.25` (the default). The app scales to zero after about 5
    idle minutes and a cold start takes about 15 s (measured at 0.25 vCPU), so wake it first and record the runs one
    after another:
    ```powershell
@@ -156,7 +159,8 @@ billing (all read 2026-10-23). Measured numbers replace these after the deployme
 | Log Analytics | First 5 GB/month per billing account free, 31 days retention included | $0 (megabytes of logs; capped at 1 GB/day) |
 | Budget alerts | No charge | $0 |
 | GHCR (public package) | Free for public packages | $0 |
-| Foundry, GPT-6 Luna (Global Standard) | $0.10 in / $0.01 cached / $0.50 out per 1M tokens | About $0.04 per storyline match (estimate, decision 14); measured cost goes here after the runs |
+| Foundry, gpt-5-mini (Global Standard, Sweden Central) | $0.25 in / $0.03 cached / $2.00 out per 1M tokens (Azure OpenAI pricing page in EUR, at 1 USD = 0.88 EUR) | About $0.12-0.13 per storyline match with the MCP tools, about $2.10-2.30 for the 20-match live evaluation (estimates, decision 19); measured cost goes here after the runs |
+| Foundry, GPT-6 Luna (if quota is granted) | $0.10 in / $0.01 cached / $0.50 out per 1M tokens | About $0.04 per storyline match (estimate, decision 14) |
 
 The budget defaults to 10 (in your billing currency); change it with `-BudgetAmount`.
 

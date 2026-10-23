@@ -356,7 +356,7 @@ def format_report(evals: Sequence[MatchEval], summary: Summary, seeds: str, note
               f"{v['fallbacks_by_reason'] or ''}",
               f"  semantic check skipped: {_pct(v['semantic_check_skipped_rate'])}; persona texts replaced by a "
               f"template: {_pct(v['persona_texts_replaced_by_template'])}",
-              "", "Cost" + (" (fake client: token estimates priced at Luna rates, not real spend)"
+              "", "Cost" + (" (fake client: token estimates priced at PITCHSIDE_PRICE_MODEL rates, not real spend)"
                             if summary.mode == "fake" else " (measured)"),
               f"  per match: mean ${v['cost_per_match_mean_usd']:.4f}, max ${v['cost_per_match_max_usd']:.4f}; "
               f"calls per match {v['calls_per_match_mean']:.1f}; reasoning share of output tokens "
