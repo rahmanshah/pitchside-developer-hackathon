@@ -168,7 +168,8 @@ def publish(bundle: Path, data_dir: Path, slug: str, title: str, description: st
     return entry
 
 
-def _run_sample(sample: Sample, work: Path) -> Path:
+def run_sample(sample: Sample, work: Path) -> Path:
+    """Run one sample offline (fake model client) and write its bundle under ``work``; returns the bundle path."""
     from ..agents.faults import parse_faults
     from ..agents.pipeline import RunConfig, build_pipeline, run_match
     from ..generator import generate_match
@@ -202,7 +203,7 @@ def regenerate_samples(data_dir: Path, *, overwrite_live: bool = False) -> list[
     entries = []
     with tempfile.TemporaryDirectory() as tmp:
         for sample in SAMPLES:
-            path = _run_sample(sample, Path(tmp))
+            path = run_sample(sample, Path(tmp))
             entries.append(publish(path, data_dir, sample.slug, sample.title, sample.description,
                                    overwrite_live=overwrite_live))
     return entries
