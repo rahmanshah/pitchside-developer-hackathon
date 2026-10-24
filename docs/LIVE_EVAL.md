@@ -220,3 +220,63 @@ The 35 claims behind retries, grouped by hand:
 
 In 3 of the 8 shot-outcome cases the job was a goal: the verifier wanted evidence that the shot was scored, and the
 cited items did not include it.
+
+### Published-run check
+
+The three demo matches were recorded live twice, and each recording was checked in full. The first set was recorded
+on `90ee028`. After that check, Commit D (decisions 24-26) changed the prompts, the ledger and the checker. The second
+set, recorded on `77d8c6b`, is the one published in `web/data` (`comeback`, `siege`, `faults-demo`).
+
+What each check covered:
+
+- Every headline and every shown claim, both recaps, and all four English personas in full.
+- The Spanish analyst and casual texts.
+- Each cited number, recomputed from the match's event stream: shot, goal and possession-change events, plus a
+  stats-engine replay stopped at the emitting event.
+- Each text's club, scope, window, score and tense.
+
+Verdicts are supported, unsupported, or wording only (the facts are right but the phrasing is not). The counts below
+sum the three matches. For other English personas and Spanish, only the flagged texts are counted.
+
+| | First recording: unsupported / wording only | Published recording: unsupported / wording only |
+|---|---|---|
+| Headlines | 1 / 4 | 1 / 2 |
+| Shown claims | 5 / 7 | 0 / 8 |
+| Casual persona, English (the default view) | 3 / 16 | 1 / 13 |
+| Other English personas (flagged) | 12 / 6 | 0 / 4 |
+| Spanish analyst and casual (flagged) | 3 / 5 | 0 / 9 |
+| **Total unsupported** | **24** | **2** |
+
+**Remaining issues in the published runs**
+
+- **Unsupported (2):**
+  - the comeback headline "Early chaos in midfield", which gives match-wide chaos a location;
+  - the siege 24' casual text "dominating possession with 89% field tilt", which calls field tilt possession.
+- **Wording only:**
+  - a garbled tally, "This is Joaquin Quenvara's 1 goal in this match", in a siege claim and both analyst texts;
+  - the siege full-time headline "late scramble winner", for a 22 m shot;
+  - two faults-demo casual recaps that tell a goal as if it happened at the whistle ("puts Westmere Town 1-0 up at
+    half-time", "drags Aurora Rovers back to 2-2");
+  - tone words in casual texts ("rattles" five times, "wasted", "spurn");
+  - one 5-minute possession share with no window, in a favourite-player text;
+  - in Spanish, "recuperar la posesión" for possessions that began with a restart or a save, "pressures/min" left in
+    English, and "recuperaciones" for tackles won.
+
+**How to read this**
+
+- **One recording per match per code version.** These are three runs, each recorded once, and the model is not
+  deterministic: a re-recording can differ.
+- **Some fixes hold by construction:**
+  - the score at the whistle and earlier goals told in the past tense;
+  - recap numbers recomputed at the whistle;
+  - outcome words from the shot event;
+  - the scoreline written as a clause;
+  - the checker rules.
+- **Others may be luck.** The model simply did not write "rattles the bar" or "first goal for the club" this time.
+- **The published runs were not the first try.** Each is the second recording of its match, made after the first set
+  had been checked, so they were not chosen blind.
+- **The guard has only offline evidence.** The `invented_detail` guard (decision 26) fired 0 times in these runs. Its
+  only evidence is the offline replay over earlier live runs' stored texts, where it found 36 genuine invented details
+  (and one false positive, since excluded).
+- **No reviewer has checked these verdicts.** Claude Code drafted them by recomputing from the event stream. They are
+  recorded only in this section, not in a `spotcheck.md`, and no human review of them is recorded.
