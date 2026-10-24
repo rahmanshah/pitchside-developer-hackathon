@@ -159,7 +159,7 @@ def evaluate_run(run: MatchRun) -> MatchEval:
             ev.persona_template += sum(t.source == "template" for t in n.texts)
             ctx = CheckContext(ledger=record.ledger, facts=run.facts, score=_score_of(run, record),
                                goals=_goals_until(run, record.clock_s), window_start_s=_window(run, record)[0],
-                               window_end_s=_window(run, record)[1])
+                               window_end_s=_window(run, record)[1], minute=int(record.clock_s // 60) + 1)
             ev.shown_claims += len(n.claims)
             ev.shown_recheck_failures += sum(not check_claim(c, ctx).ok for c in n.claims)
         if record.drafts:

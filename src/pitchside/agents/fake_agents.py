@@ -145,13 +145,15 @@ def explainer(transcript: str) -> str:
         period = "Half-time" if label == "half_time" else "Full-time"
         claims.append({"text": f"{period}: {score.group(1)}.", "team_id": None, "refs": [next(iter(items))],
                        "numbers": []})
+    margin = next((i.ref for i in items.values() if i.metric == "goal_margin"), None)
     for ref in [r for r in focus if r in players][:1]:
         p = players[ref]
         verb = {"scorer": "scored for", "shooter": "had the chance for", "ball_winner": "won the ball for"}.get(
             p.involvement, "featured for")
         tail = f": {score.group(1)}" if label == "goal" and score else ""
+        refs = [ref, margin] if tail and margin else [ref]  # the score is cited from goal_margin, as the prompt asks
         claims.append({"text": f"{p.name} {verb} {clubs.get(p.team, p.team)}{tail}.", "team_id": p.team,
-                       "refs": [ref], "numbers": []})
+                       "refs": refs, "numbers": []})
     numbered = [items[r] for r in focus if r in items]
     by_team: dict[Optional[str], list[_Item]] = {}
     for item in numbered:

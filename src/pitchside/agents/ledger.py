@@ -9,7 +9,9 @@ from __future__ import annotations
 
 from typing import Iterable, Optional, Sequence
 
-from ..schema import Event, MatchStartEvent, PassEvent, PossessionChangeEvent, PressureEvent, ShotEvent, TackleEvent
+from ..schema import (
+    Event, MatchStartEvent, PassEvent, PossessionChangeEvent, PressureEvent, Score, ShotEvent, TackleEvent,
+)
 from ..stats.engine import Snapshot
 from ..stats.findings import Finding, FindingKind
 from .contracts import EarlierClaim, JobRecord, Ledger, MatchFacts, PlayerRef, PlayerStats, TeamRef
@@ -56,6 +58,26 @@ def say(metric: str, value: float, unit: str, lang: Language = ENGLISH, team_nam
         base = lang.phrases[f"fact.{metric[:-6]}"].format(v=v, opponent=team_name)
         return lang.phrases["fact.since_kickoff"].format(phrase=base)
     return (phrase or "{v} " + metric.replace("_", " ")).format(v=v, opponent=team_name)
+
+
+def goal_effect(margin_after: float, goals_in_match: int) -> str:
+    """What a goal did, from the scoring club's margin after it: opener, equaliser, ahead, extend or back."""
+    if margin_after == 1 and goals_in_match == 1:
+        return "opener"
+    if margin_after == 0:
+        return "equaliser"
+    if margin_after == 1:
+        return "ahead"
+    return "extend" if margin_after > 1 else "back"
+
+
+def goal_margin_say(margin_after: float, team_name: str, score: Score, facts: MatchFacts,
+                    lang: Language = ENGLISH) -> str:
+    """The scoreline after a goal, with what it did: "Aurora Rovers equalise: Aurora Rovers 1-1 Ironvale Athletic"."""
+    effect = lang.phrases[f"goal_effect.{goal_effect(margin_after, score.home + score.away)}"].format(team=team_name)
+    line = lang.phrases["score"].format(home=facts.home.name, home_goals=score.home, away_goals=score.away,
+                                        away=facts.away.name)
+    return lang.phrases["goal_margin.line"].format(effect=effect, score=line)
 
 
 # --------------------------------------------------------------------------- #
@@ -115,14 +137,19 @@ class PlayerTally:
         return [PlayerStats(**row) for _, row in sorted(self._stats.items())]
 
 
-def _add_player_numbers(ledger: Ledger, stats: PlayerStats, clock_s: float, facts: MatchFacts) -> None:
+def _add_player_numbers(ledger: Ledger, stats: PlayerStats, clock_s: float, facts: MatchFacts,
+                        scored_this: bool = False) -> None:
     name = (facts.player(stats.player_id) or PlayerRef(player_id=stats.player_id, name=stats.player_id,
                                                        team_id=stats.team_id, position="CM")).name
     for metric, value, unit in (("player_goals", stats.goals, "count"), ("player_shots", stats.shots, "count"),
                                 ("player_xg", stats.xg, "xg")):
+        phrase = say(metric, value, unit)
+        if metric == "player_goals" and scored_this:
+            # The tally's window ends at this goal's second; say so, or "his second goal" reads as unsupported.
+            phrase = ENGLISH.phrases["fact.player_goals_this"].format(v=number_text(value, unit))
         ledger.add_item("c", metric=metric, team_id=stats.team_id, player_id=stats.player_id, value=float(value),
                         unit=unit, window_start_s=0.0, window_end_s=clock_s,
-                        say=f"{name}: {say(metric, value, unit)}", source="player")
+                        say=f"{name}: {phrase}", source="player")
 
 
 # --------------------------------------------------------------------------- #
@@ -138,6 +165,8 @@ def finding_ledger(finding: Finding, facts: MatchFacts, events_by_id: dict[int, 
         phrase = say(ev.metric, ev.value, ev.unit, ENGLISH, team.name if team else "")
         if ev.metric in SPELL_WINDOW_METRICS and ev.team_id is None:
             phrase = ENGLISH.phrases["fact.in_this_spell"].format(phrase=phrase)
+        elif ev.metric == "goal_margin" and team is not None:
+            phrase = goal_margin_say(ev.value, team.name, finding.score, facts)
         ledger.add_item("e", metric=ev.metric, team_id=ev.team_id, value=ev.value, unit=ev.unit,
                         window_start_s=ev.window_start_s, window_end_s=ev.window_end_s, baseline=ev.baseline,
                         say=phrase, source="finding")
@@ -159,7 +188,8 @@ def _involve(ledger: Ledger, facts: MatchFacts, player_id: str, involvement: str
     ledger.add_player(player_id=player_id, name=player.name, team_id=player.team_id, involvement=involvement,
                       clock_s=clock_s)
     if tally is not None:
-        _add_player_numbers(ledger, tally.get(player_id, player.team_id), now_s, facts)
+        _add_player_numbers(ledger, tally.get(player_id, player.team_id), now_s, facts,
+                            scored_this=involvement == "scorer")
 
 
 def totals_items(ledger: Ledger, snapshot: Snapshot, facts: MatchFacts) -> list[str]:

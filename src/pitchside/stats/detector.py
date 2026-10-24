@@ -242,6 +242,10 @@ class KeyMomentDetector:
         if shot.outcome == "goal":
             score = self.state.score
             mine, theirs = (score.home, score.away) if team == self.state.home_id else (score.away, score.home)
+            # The scoring club's margin after the goal (baseline: before it), so "equalised" or "went ahead" can be
+            # cited, not inferred. The score is the state at this event, so nothing later can leak in.
+            evidence.append(self._evidence("goal_margin", mine - theirs, "count", team, shot.clock_s, shot.clock_s,
+                                           baseline=mine - 1 - theirs))
             # Equalisers and go-ahead goals change the result; others extend or narrow a margin.
             severity = 1.0 if mine - theirs in (0, 1) else 0.85
             return [self._finding(FindingKind.GOAL, "moment", team, move_start, shot.clock_s, severity, evidence,

@@ -9,11 +9,13 @@ from pitchside.agents.contracts import (
 )
 from pitchside.agents.languages import ENGLISH, LANGUAGES, SPANISH, resolve_languages
 from pitchside.agents.ledger import (
-    FLAG_METRICS, SPELL_WINDOW_METRICS, default_featured, finding_ledger, number_text, recap_ledger, say,
+    FLAG_METRICS, SPELL_WINDOW_METRICS, default_featured, finding_ledger, goal_effect, goal_margin_say, number_text,
+    recap_ledger, say,
 )
+from pitchside.schema import Score
 from pitchside.stats.engine import StatsEngine
 
-from _agents import events_by_id, facts, first, match, tally_until
+from _agents import events_by_id, facts, findings, first, match, tally_until
 
 
 class NumberFormatTests(unittest.TestCase):
@@ -68,6 +70,38 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual((scorer.ref, scorer.involvement), ("p1", "scorer"))
         player_goals = next(i for i in ledger.items if i.metric == "player_goals")
         self.assertEqual((player_goals.player_id, player_goals.value), (scorer.player_id, 1.0))
+
+    def test_goal_evidence_carries_the_margin_from_that_goals_own_score(self) -> None:
+        # Bounded by the goal's own event: the margin is the score after this goal, never a later one.
+        for seed, story in ((1, "comeback"), (2, "siege"), (3, "end_to_end"), (4, "balanced")):
+            key = {g["event_id"]: g for g in match(seed, story).answer_key["goals"]}
+            home = facts(seed, story).home.team_id
+            goals = [f for f in findings(seed, story) if f.kind.value == "goal"]
+            self.assertEqual(len(goals), len(key))
+            for goal in goals:
+                g = key[goal.event_ids[0]]
+                after = g["score_after"]
+                mine, theirs = (after["home"], after["away"]) if g["team_id"] == home else (after["away"], after["home"])
+                margin = {e.metric: e for e in goal.evidence}["goal_margin"]
+                self.assertEqual((margin.team_id, margin.value, margin.baseline), (g["team_id"], mine - theirs,
+                                                                                  mine - theirs - 1), goal.finding_id)
+                self.assertEqual(margin.window_start_s, margin.window_end_s)
+
+    def test_a_goal_ledger_says_what_the_goal_did_and_counts_it_for_the_scorer(self) -> None:
+        goal = first("goal")  # seed 1 comeback: Ironvale Athletic open the scoring, 0-1
+        ledger = finding_ledger(goal, facts(), events_by_id(), tally_until(1, "comeback", goal.detected_at_s))
+        margin = next(i for i in ledger.items if i.metric == "goal_margin")
+        self.assertEqual(margin.say, "Ironvale Athletic open the scoring: Aurora Rovers 0-1 Ironvale Athletic")
+        scorer = ledger.players[0]
+        goals = next(i for i in ledger.items if i.metric == "player_goals" and i.player_id == scorer.player_id)
+        self.assertEqual(goals.say, f"{scorer.name}: goals 1, including this one")
+
+    def test_goal_effects_follow_the_margin(self) -> None:
+        self.assertEqual([goal_effect(m, n) for m, n in ((1, 1), (0, 2), (1, 3), (2, 2), (-1, 3))],
+                         ["opener", "equaliser", "ahead", "extend", "back"])
+        f = facts()
+        self.assertEqual(goal_margin_say(0, "Ironvale Athletic", Score(home=1, away=1), f, SPANISH),
+                         "Ironvale Athletic empata: Aurora Rovers 1-1 Ironvale Athletic")
 
     def test_match_wide_chaos_numbers_name_their_window(self) -> None:
         # "79% pass completion" alone was written as "match pass completion": it is the spell's window, not the match.

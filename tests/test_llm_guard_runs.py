@@ -15,6 +15,7 @@ from pitchside.llm.budget import BudgetGuard, budget_key
 from pitchside.llm.errors import BudgetExhausted, MalformedOutput
 from pitchside.llm.fake import FakeChatClient, Reply, openai_error
 from pitchside.llm.guard import INJECTED, ModelGuard, call_context, current_call_context, truncation_message
+from pitchside.llm.prices import cost_usd, price_for
 from pitchside.llm.usage import UsageLog
 from test_llm_guard import Harness, ask
 
@@ -117,12 +118,20 @@ class InjectedFaultTests(unittest.TestCase):
 class SettingsTests(unittest.TestCase):
     def test_per_role_output_caps_reasoning_and_languages(self) -> None:
         s = load_settings({})
-        self.assertEqual([s.max_output(r) for r in Role], [1500, 3000, 1500, 4000])
+        self.assertEqual([s.max_output(r) for r in Role], [1500, 3700, 2400, 4200])
         self.assertEqual((s.reasoning_effort, s.language_codes), ("low", ("en", "es")))
         s = load_settings({"PITCHSIDE_MAX_OUTPUT_EXPLAINER": "5000", "PITCHSIDE_LANGUAGES": "en, es, fr",
                            "PITCHSIDE_REASONING_EFFORT": "OFF"})
         self.assertEqual((s.max_output(Role.EXPLAINER), s.language_codes, s.reasoning_effort),
                          (5000, ("en", "es", "fr"), "off"))
+
+    def test_worst_case_holds_at_the_default_caps_fit_the_match_budget(self) -> None:
+        # Every slot in flight on a truncation retry (twice the cap) with a generous input, on top of the most expensive
+        # match measured live ($0.1388, decision 22), must still fit the match budget: the caps never starve a match.
+        s = load_settings({})
+        price = price_for(s.price_model)
+        hold = max(cost_usd(price, 4000, 0, 2 * s.max_output(r)) for r in Role)
+        self.assertLess(0.1388 + s.max_concurrency * hold, s.match_budget_usd)
 
     def test_bad_language_list_names_the_variable(self) -> None:
         with self.assertRaises(ValueError) as ctx:

@@ -739,6 +739,15 @@
     "window_start_s": 2177.6,
     "window_end_s": 2177.6,
     "baseline": null
+   },
+   {
+    "metric": "goal_margin",
+    "team_id": "har",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 2194.3,
+    "window_end_s": 2194.3,
+    "baseline": 0.0
    }
   ]
  },
@@ -1056,6 +1065,15 @@
     "window_start_s": 3175.1,
     "window_end_s": 3175.1,
     "baseline": null
+   },
+   {
+    "metric": "goal_margin",
+    "team_id": "wst",
+    "value": 0.0,
+    "unit": "count",
+    "window_start_s": 3220.6,
+    "window_end_s": 3220.6,
+    "baseline": -1.0
    }
   ]
  },
@@ -1232,6 +1250,15 @@
     "window_start_s": 4752.9,
     "window_end_s": 4752.9,
     "baseline": null
+   },
+   {
+    "metric": "goal_margin",
+    "team_id": "har",
+    "value": 1.0,
+    "unit": "count",
+    "window_start_s": 4755.7,
+    "window_end_s": 4755.7,
+    "baseline": 0.0
    }
   ]
  }

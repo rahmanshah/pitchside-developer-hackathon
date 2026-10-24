@@ -1077,7 +1077,8 @@
      "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
      "team_id": "irv",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -1304,6 +1305,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "goal_margin",
+     "team_id": "irv",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 1588.9,
+     "window_end_s": 1588.9,
+     "baseline": 0.0,
+     "say": "Ironvale Athletic open the scoring: Aurora Rovers 0-1 Ironvale Athletic",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "irv",
@@ -1313,7 +1328,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "Rafa Yaldiran: goals 1",
+     "say": "Rafa Yaldiran: goals 1, including this one",
      "source": "player",
      "origin": null
     },
@@ -1479,7 +1494,8 @@
       "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
       "team_id": "irv",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -2362,6 +2378,20 @@
     },
     {
      "ref": "c15",
+     "metric": "goal_margin",
+     "team_id": "irv",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 1588.9,
+     "window_end_s": 1588.9,
+     "baseline": 0.0,
+     "say": "Ironvale Athletic open the scoring: Aurora Rovers 0-1 Ironvale Athletic",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:0"
+    },
+    {
+     "ref": "c16",
      "metric": "shot_xg",
      "team_id": "irv",
      "player_id": null,
@@ -2375,7 +2405,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "shot_distance",
      "team_id": "irv",
      "player_id": null,
@@ -2389,7 +2419,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "match_xg",
      "team_id": "irv",
      "player_id": null,
@@ -2403,7 +2433,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c18",
+     "ref": "c19",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -2417,7 +2447,7 @@
      "origin": "aur_irv_comeback_0007:big_chance:0"
     },
     {
-     "ref": "c19",
+     "ref": "c20",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -2431,7 +2461,7 @@
      "origin": "aur_irv_comeback_0007:big_chance:0"
     },
     {
-     "ref": "c20",
+     "ref": "c21",
      "metric": "match_xg",
      "team_id": "aur",
      "player_id": null,
@@ -2445,7 +2475,7 @@
      "origin": "aur_irv_comeback_0007:big_chance:0"
     },
     {
-     "ref": "c21",
+     "ref": "c22",
      "metric": "chaos_index",
      "team_id": null,
      "player_id": null,
@@ -2459,7 +2489,7 @@
      "origin": "aur_irv_comeback_0007:chaos_spell:0"
     },
     {
-     "ref": "c22",
+     "ref": "c23",
      "metric": "turnovers_per_min",
      "team_id": null,
      "player_id": null,
@@ -2473,7 +2503,7 @@
      "origin": "aur_irv_comeback_0007:chaos_spell:0"
     },
     {
-     "ref": "c23",
+     "ref": "c24",
      "metric": "pass_completion",
      "team_id": null,
      "player_id": null,
@@ -2487,7 +2517,7 @@
      "origin": "aur_irv_comeback_0007:chaos_spell:0"
     },
     {
-     "ref": "c24",
+     "ref": "c25",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -2501,7 +2531,7 @@
      "origin": null
     },
     {
-     "ref": "c25",
+     "ref": "c26",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -2515,7 +2545,7 @@
      "origin": null
     },
     {
-     "ref": "c26",
+     "ref": "c27",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -2529,7 +2559,7 @@
      "origin": null
     },
     {
-     "ref": "c27",
+     "ref": "c28",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -2543,7 +2573,7 @@
      "origin": null
     },
     {
-     "ref": "c28",
+     "ref": "c29",
      "metric": "possession_total",
      "team_id": "irv",
      "player_id": null,
@@ -2557,7 +2587,7 @@
      "origin": null
     },
     {
-     "ref": "c29",
+     "ref": "c30",
      "metric": "shots_total",
      "team_id": "irv",
      "player_id": null,
@@ -2571,7 +2601,7 @@
      "origin": null
     },
     {
-     "ref": "c30",
+     "ref": "c31",
      "metric": "xg_total",
      "team_id": "irv",
      "player_id": null,
@@ -2585,7 +2615,7 @@
      "origin": null
     },
     {
-     "ref": "c31",
+     "ref": "c32",
      "metric": "pass_completion_total",
      "team_id": "irv",
      "player_id": null,
@@ -7342,7 +7372,8 @@
      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
      "team_id": "aur",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -7574,6 +7605,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "goal_margin",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 4285.4,
+     "window_end_s": 4285.4,
+     "baseline": -1.0,
+     "say": "Aurora Rovers equalise: Aurora Rovers 1-1 Ironvale Athletic",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "aur",
@@ -7583,7 +7628,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4285.4,
      "baseline": null,
-     "say": "Alden Brannholt: goals 1",
+     "say": "Alden Brannholt: goals 1, including this one",
      "source": "player",
      "origin": null
     },
@@ -7749,7 +7794,8 @@
       "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
       "team_id": "aur",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -8903,7 +8949,8 @@
      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
      "team_id": "aur",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -9135,6 +9182,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "goal_margin",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 5197.9,
+     "window_end_s": 5197.9,
+     "baseline": 0.0,
+     "say": "Aurora Rovers go ahead: Aurora Rovers 2-1 Ironvale Athletic",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "aur",
@@ -9144,7 +9205,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5197.9,
      "baseline": null,
-     "say": "Alden Brannholt: goals 2",
+     "say": "Alden Brannholt: goals 2, including this one",
      "source": "player",
      "origin": null
     },
@@ -9310,7 +9371,8 @@
       "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
       "team_id": "aur",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -10176,6 +10238,20 @@
     },
     {
      "ref": "c15",
+     "metric": "goal_margin",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 5197.9,
+     "window_end_s": 5197.9,
+     "baseline": 0.0,
+     "say": "Aurora Rovers go ahead: Aurora Rovers 2-1 Ironvale Athletic",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:2"
+    },
+    {
+     "ref": "c16",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10189,7 +10265,7 @@
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10203,7 +10279,7 @@
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "match_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10217,7 +10293,7 @@
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c18",
+     "ref": "c19",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -10231,7 +10307,21 @@
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c19",
+     "ref": "c20",
+     "metric": "goal_margin",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 4285.4,
+     "window_end_s": 4285.4,
+     "baseline": -1.0,
+     "say": "Aurora Rovers equalise: Aurora Rovers 1-1 Ironvale Athletic",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:1"
+    },
+    {
+     "ref": "c21",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10245,7 +10335,7 @@
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c20",
+     "ref": "c22",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10259,7 +10349,7 @@
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c21",
+     "ref": "c23",
      "metric": "match_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10273,7 +10363,7 @@
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c22",
+     "ref": "c24",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -10287,7 +10377,21 @@
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c23",
+     "ref": "c25",
+     "metric": "goal_margin",
+     "team_id": "irv",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 1588.9,
+     "window_end_s": 1588.9,
+     "baseline": 0.0,
+     "say": "Ironvale Athletic open the scoring: Aurora Rovers 0-1 Ironvale Athletic",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:0"
+    },
+    {
+     "ref": "c26",
      "metric": "shot_xg",
      "team_id": "irv",
      "player_id": null,
@@ -10301,7 +10405,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c24",
+     "ref": "c27",
      "metric": "shot_distance",
      "team_id": "irv",
      "player_id": null,
@@ -10315,7 +10419,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c25",
+     "ref": "c28",
      "metric": "match_xg",
      "team_id": "irv",
      "player_id": null,
@@ -10329,7 +10433,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c26",
+     "ref": "c29",
      "metric": "chaos_index",
      "team_id": null,
      "player_id": null,
@@ -10343,7 +10447,7 @@
      "origin": "aur_irv_comeback_0007:chaos_spell:2"
     },
     {
-     "ref": "c27",
+     "ref": "c30",
      "metric": "turnovers_per_min",
      "team_id": null,
      "player_id": null,
@@ -10357,7 +10461,7 @@
      "origin": "aur_irv_comeback_0007:chaos_spell:2"
     },
     {
-     "ref": "c28",
+     "ref": "c31",
      "metric": "pass_completion",
      "team_id": null,
      "player_id": null,
@@ -10371,7 +10475,7 @@
      "origin": "aur_irv_comeback_0007:chaos_spell:2"
     },
     {
-     "ref": "c29",
+     "ref": "c32",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -10385,7 +10489,7 @@
      "origin": null
     },
     {
-     "ref": "c30",
+     "ref": "c33",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -10399,7 +10503,7 @@
      "origin": null
     },
     {
-     "ref": "c31",
+     "ref": "c34",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -10413,7 +10517,7 @@
      "origin": null
     },
     {
-     "ref": "c32",
+     "ref": "c35",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -10427,7 +10531,7 @@
      "origin": null
     },
     {
-     "ref": "c33",
+     "ref": "c36",
      "metric": "possession_total",
      "team_id": "irv",
      "player_id": null,
@@ -10441,7 +10545,7 @@
      "origin": null
     },
     {
-     "ref": "c34",
+     "ref": "c37",
      "metric": "shots_total",
      "team_id": "irv",
      "player_id": null,
@@ -10455,7 +10559,7 @@
      "origin": null
     },
     {
-     "ref": "c35",
+     "ref": "c38",
      "metric": "xg_total",
      "team_id": "irv",
      "player_id": null,
@@ -10469,7 +10573,7 @@
      "origin": null
     },
     {
-     "ref": "c36",
+     "ref": "c39",
      "metric": "pass_completion_total",
      "team_id": "irv",
      "player_id": null,

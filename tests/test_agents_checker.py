@@ -165,6 +165,47 @@ class FlagClaimTests(unittest.TestCase):
                                      numbers=((29, "e6"),))), [])
 
 
+class ScorelineTests(unittest.TestCase):
+    MARGIN = next(i for i in LEDGER.items if i.metric == "goal_margin")
+
+    def test_a_goal_claim_cites_the_scoreline_with_no_number(self) -> None:
+        text = "Ironvale Athletic open the scoring, and it is 0-1."
+        self.assertEqual(codes(claim(text, refs=(self.MARGIN.ref,))), [])
+        self.assertEqual(codes(claim(f"{SCORER.name} scored his 1st goal: Aurora Rovers 0-1 Ironvale Athletic.",
+                                     refs=(self.MARGIN.ref, SCORER.ref))), [])
+
+    def test_a_wrong_score_is_still_rejected_even_when_the_scoreline_is_cited(self) -> None:
+        self.assertEqual(codes(claim("Ironvale Athletic go ahead: it is 2-0.", refs=(self.MARGIN.ref,))),
+                         ["score_mismatch"])
+
+
+class MinuteTests(unittest.TestCase):
+    CTX24 = CheckContext(**{**CTX.__dict__, "minute": 24})  # GOAL is detected at 23:11, minute 24
+
+    def reasons(self, text: str, ctx=None) -> list[str]:
+        return [r.code for r in check_claim(claim(text), ctx or self.CTX24).reasons]
+
+    def test_the_jobs_own_minute_in_natural_forms(self) -> None:
+        for text in ("Ironvale Athletic scored in the 24th minute.", "Ironvale Athletic scored in minute 24.",
+                     "Ironvale Athletic scored at 24'.", "Ironvale Athletic scored after 24 minutes.",
+                     "Ironvale Athletic scored on 24 mins."):
+            self.assertEqual(self.reasons(text), [], text)
+        self.assertEqual(check_text("Ironvale Athletic marca a los 24 minutos.", self.CTX24, ["e1"], SPANISH), [])
+
+    def test_other_minutes_written_as_durations_are_still_numbers(self) -> None:
+        self.assertEqual(self.reasons("Ironvale Athletic scored after 30 minutes."), ["unlisted_number"])
+        self.assertEqual(self.reasons("Ironvale Athletic scored after 24 minutes.", CTX), ["unlisted_number"])  # no minute
+        self.assertEqual(check_text("Ironvale Athletic marca a los 30 minutos.", self.CTX24, ["e1"], SPANISH)[0].code,
+                         "unlisted_number")
+
+    def test_a_clock_range_is_a_window_not_numbers_or_a_score(self) -> None:
+        s = scan("During 81:01–89:01 the match had a chaos index +0.86.")
+        self.assertEqual(([(a, b) for a, b, _ in s.scores], sorted(m for m, _ in s.minutes)), ([], [82, 90]))
+        self.assertEqual([t.value for t in s.numbers], [0.86])
+        self.assertEqual(self.reasons("Ironvale Athletic scored at 23:11."), [])
+        self.assertEqual(self.reasons("Ironvale Athletic pressed during 81:01–89:01."), ["window_mismatch"] * 2)
+
+
 class PersonaTextTests(unittest.TestCase):
     def test_spanish_text_with_verified_numbers_passes(self) -> None:
         text = f"¡{SCORER.name} marca para Ironvale Athletic con una ocasión de 0,05 xG! Aurora Rovers 0-1 Ironvale Athletic."

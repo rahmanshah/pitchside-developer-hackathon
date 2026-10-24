@@ -81,8 +81,9 @@ class OutputRecoveryTests(RolesTestCase):
         agents, models, _ = self.agents("explainer:truncated")
         prompt = explainer_prompt(self.goal, rule_brief(self.goal), [], 1)
         answer = self.run_in_job(lambda: ask(agents, Role.EXPLAINER, prompt, ExplainerReply))
-        self.assertEqual(answer.max_tokens, 6000)
-        self.assertIn("max_tokens=6000", answer.notes[0])
+        doubled = 2 * agents.settings.max_output(Role.EXPLAINER)
+        self.assertEqual(answer.max_tokens, doubled)
+        self.assertIn(f"max_tokens={doubled}", answer.notes[0])
         first, second = list(models.log.read())
         self.assertEqual((first.finish_reason, first.injected, first.cost_usd), ("length", "truncated", 0.0))
         self.assertEqual(second.status, "ok")
@@ -92,7 +93,7 @@ class OutputRecoveryTests(RolesTestCase):
         prompt = explainer_prompt(self.goal, rule_brief(self.goal), [], 1)
         self.run_in_job(lambda: ask(agents, Role.EXPLAINER, prompt, ExplainerReply))
         options = models[Role.EXPLAINER].calls[0].options
-        self.assertEqual(options["max_tokens"], 3000)
+        self.assertEqual(options["max_tokens"], agents.settings.max_output(Role.EXPLAINER))
         self.assertEqual(options["reasoning"], {"effort": "low"})
         self.assertIs(options["response_format"], ExplainerReply)
 

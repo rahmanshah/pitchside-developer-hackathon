@@ -11,6 +11,9 @@ Mark a claim unsupported if it
 - compares with something not in the evidence;
 - describes the evidence wrongly in words (calls 0.05 xG a "big chance", or a 52% share "dominant").
 Plain descriptions of what the evidence shows are supported, even if they are short.
+`goal_margin` evidence is this goal and the score after it ("Aurora Rovers equalise: Aurora Rovers 1-1 Ironvale
+Athletic"): a claim citing it may say the club scored, equalised, went ahead, extended or cut a lead, as its say
+puts it, and may give that score. A scorer's "goals 2, including this one" supports "his second goal".
 
 `reason`: one sentence the explainer can act on; "ok" when supported.
 Reply with one JSON object only: {"verdicts": [{"claim": int, "supported": bool, "reason": str}]}, one verdict per
