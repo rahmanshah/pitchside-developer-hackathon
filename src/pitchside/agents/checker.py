@@ -25,7 +25,7 @@ from __future__ import annotations
 import math
 import re
 from dataclasses import dataclass, field
-from typing import Iterable, Optional, Sequence
+from typing import Iterable, Literal, Optional, Sequence
 
 from ..schema import Score
 from .contracts import Claim, ClaimCheck, GoalAt, Job, Ledger, LedgerItem, MatchFacts, Reason
@@ -186,16 +186,29 @@ def _sentence_bounds(text: str, position: int) -> tuple[int, int]:
     return start, len(text)
 
 
-def _attributed_team(text: str, token: _Token, found: list[_Mention], default: Optional[str]) -> Optional[str]:
-    """The club the text gives this number to: nearest club/player named before it in its sentence, else after."""
+Attribution = Literal["before", "after", "default"]
+
+
+def _attributed_team(text: str, token: _Token, found: list[_Mention],
+                     default: Optional[str]) -> tuple[Optional[str], Attribution]:
+    """The club the text gives this number to: nearest club/player named before it in its sentence, else after,
+    else ``default``; and which of the three it was, for the feedback."""
     lo, hi = _sentence_bounds(text, token.start)
     before = [m for m in found if lo <= m.start < token.start]
     if before:
-        return before[-1].team_id
+        return before[-1].team_id, "before"
     after = [m for m in found if token.end <= m.start < hi]
     if after:
-        return after[0].team_id
-    return default
+        return after[0].team_id, "after"
+    return default, "default"
+
+
+def _misattributed(shown: str, ref: str, owner: str, given: str, how: Attribution) -> str:
+    """Feedback for a number given to the wrong club: what the checker read, and the one fix that is needed."""
+    read = {"before": f"the club named last before it in this sentence is {given}",
+            "after": f"no club is named before it, and the club named after it is {given}",
+            "default": f"no club is named in its sentence, and the claim's team_id is {given}"}[how]
+    return f"{shown} ({ref}) belongs to {owner}, but {read}; name {owner} before this number (once per sentence)"
 
 
 # --------------------------------------------------------------------------- #
@@ -297,7 +310,7 @@ def check_claim(claim: Claim, ctx: CheckContext, attempt: int = 1, lang: Languag
             reasons.append(Reason(code="unlisted_number",
                                   detail=f"{_shown(text, token)} appears in the text but not in the claim's numbers"))
             continue
-        given_to = _attributed_team(text, token, found, claim.team_id)
+        given_to, how = _attributed_team(text, token, found, claim.team_id)
         # Equal values ("4 shots each"): use the number that belongs to the club the text names.
         listed.sort(key=lambda n: (getattr(ctx.ledger.item(n.ref), "team_id", None) != given_to))
         number = listed[0]
@@ -318,9 +331,8 @@ def check_claim(claim: Claim, ctx: CheckContext, attempt: int = 1, lang: Languag
             continue
         if item.team_id and given_to is not None and given_to != item.team_id:
             reasons.append(Reason(code="team_mismatch",
-                                  detail=f"{_shown(text, token)} ({item.ref}) belongs to "
-                                         f"{_name(ctx, item.team_id)}, but the text gives it to "
-                                         f"{_name(ctx, given_to)}; name the club right before its number"))
+                                  detail=_misattributed(_shown(text, token), item.ref, _name(ctx, item.team_id),
+                                                        _name(ctx, given_to), how)))
 
     windows = [(i.window_start_s, i.window_end_s) for i in cited] + [(ctx.window_start_s, ctx.window_end_s)]
     reasons += _common_checks(text, scanned, ctx, lang, windows, cited_players)
@@ -342,7 +354,7 @@ def check_text(text: str, ctx: CheckContext, refs: Iterable[str], lang: Language
             reasons.append(Reason(code="unlisted_number",
                                   detail=f"{_shown(text, token)} is not one of the verified numbers"))
             continue
-        given_to = _attributed_team(text, token, found, None)
+        given_to, _ = _attributed_team(text, token, found, None)
         if given_to is not None and all(i.team_id is not None and i.team_id != given_to for i in matching):
             reasons.append(Reason(code="team_mismatch",
                                   detail=f"{_shown(text, token)} is given to {_name(ctx, given_to)}, but that "

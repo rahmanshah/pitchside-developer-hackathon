@@ -20,6 +20,10 @@ MAX_RECAP_CLAIMS = 12
 
 
 UNSIGNED_INDEX = frozenset({"pass_difficulty"})  # 0..1 ratings, not -1..+1 swings: no "+" sign
+# Yes/no facts stored as 1/0: quoted in words, never as a digit ("(1)" read as a count in live output).
+FLAG_METRICS = frozenset({"possession_won_in_open_play", "ended_with_shot"})
+# Match-wide numbers over the chaos window: without it named, "79% pass completion" reads as the whole match.
+SPELL_WINDOW_METRICS = frozenset({"chaos_index", "turnovers_per_min", "pass_completion", "mean_spell"})
 
 
 def number_text(value: float, unit: str, lang: Language = ENGLISH, metric: str = "") -> str:
@@ -41,8 +45,11 @@ def number_text(value: float, unit: str, lang: Language = ENGLISH, metric: str =
 def say(metric: str, value: float, unit: str, lang: Language = ENGLISH, team_name: str = "") -> str:
     """A short phrase quoting the number, e.g. "71% field tilt" or "Ironvale completing 64% of their passes".
 
-    Since-kick-off metrics end in ``_total``; those without their own phrase reuse the base metric's phrase.
+    Since-kick-off metrics end in ``_total``; those without their own phrase reuse the base metric's phrase. Flags
+    are words with no number ("ball won in open play").
     """
+    if metric in FLAG_METRICS:
+        return lang.phrases[f"fact.{metric}" if value >= 0.5 else f"fact.{metric}.no"]
     v = number_text(value, unit, lang, metric)
     phrase = lang.phrases.get(f"fact.{metric}")
     if phrase is None and metric.endswith("_total") and f"fact.{metric[:-6]}" in lang.phrases:
@@ -128,9 +135,12 @@ def finding_ledger(finding: Finding, facts: MatchFacts, events_by_id: dict[int, 
     ledger = Ledger()
     for ev in finding.evidence:
         team = facts.team(ev.team_id)
+        phrase = say(ev.metric, ev.value, ev.unit, ENGLISH, team.name if team else "")
+        if ev.metric in SPELL_WINDOW_METRICS and ev.team_id is None:
+            phrase = ENGLISH.phrases["fact.in_this_spell"].format(phrase=phrase)
         ledger.add_item("e", metric=ev.metric, team_id=ev.team_id, value=ev.value, unit=ev.unit,
                         window_start_s=ev.window_start_s, window_end_s=ev.window_end_s, baseline=ev.baseline,
-                        say=say(ev.metric, ev.value, ev.unit, ENGLISH, team.name if team else ""), source="finding")
+                        say=phrase, source="finding")
     for event_id in finding.event_ids:
         event = events_by_id.get(event_id)
         if isinstance(event, ShotEvent):

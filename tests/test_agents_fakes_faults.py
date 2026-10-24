@@ -15,9 +15,10 @@ from pitchside.agents.contracts import ExplainerReply, InterpreterReply, Persona
 from pitchside.agents.faults import FaultInjector, bad_claims_plan, corrupt, demo_plan, parse_faults
 from pitchside.agents.jobs import FindingPoint, RecapPoint, walk_match
 from pitchside.agents.languages import LANGUAGES, resolve_languages
+from pitchside.agents.ledger import FLAG_METRICS
 from pitchside.agents.prompting import (
-    explainer_prompt, instructions, interpreter_prompt, personalizer_prompt, personas_for, prompt_version,
-    rule_brief, to_claims, verifier_prompt,
+    evidence_lines, explainer_prompt, instructions, interpreter_prompt, personalizer_prompt, personas_for,
+    prompt_version, rule_brief, to_claims, verifier_prompt,
 )
 from pitchside.agents.roles import LOCAL_TOOL_NAMES
 from pitchside.llm.fake import ToolCall
@@ -56,6 +57,17 @@ class PromptTests(unittest.TestCase):
         for item in job.ledger.items:
             self.assertIn(f"{item.ref} | {item.metric}", prompt)
         self.assertIn("FEEDBACK (attempt 2):\nclaim 1: number_mismatch: wrong", prompt)
+
+    def test_evidence_lines_say_both_clubs_and_give_flags_as_yes_or_no(self) -> None:
+        jobs = list(model_jobs())
+        lines = [line for job in jobs for line in evidence_lines(job.ledger)]
+        match_wide = [line for line in lines if " | both clubs | " in line]
+        self.assertTrue(match_wide)
+        self.assertFalse([line for line in lines if " | match | " in line])
+        flags = [line for line in lines if line.split(" | ")[1] in FLAG_METRICS]
+        self.assertTrue(flags)
+        for line in flags:
+            self.assertIn(line.split(" | ")[3], ("yes", "no"), line)
 
 
 class FakeAgentTests(unittest.TestCase):

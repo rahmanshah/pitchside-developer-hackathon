@@ -67,6 +67,29 @@ class PressureSurgeTests(unittest.TestCase):
         self.assertLess(rate.baseline, 0.5)
         self.assertEqual(rate.window_end_s - rate.window_start_s, 180)
 
+    def test_opponent_pass_completion_is_the_pressed_clubs_own(self) -> None:
+        start = _of(self.findings, FindingKind.PRESSURE_SURGE, "start")[0]
+        item = {e.metric: e for e in start.evidence}["opponent_pass_completion"]
+        self.assertEqual((start.team_id, item.team_id), (AWAY, HOME))  # away press, home's passes
+        self.assertEqual(item.value, 100.0)  # the home side's calm passes all complete
+
+    def test_opponent_pass_completion_in_a_generated_match(self) -> None:
+        # Stop at the event that emits the surge: the number must be the pressed club's window figure then.
+        from pitchside.generator import generate_match
+        from pitchside.stats.engine import StatsEngine
+
+        engine = StatsEngine()
+        for event in generate_match(seed=1, storyline="comeback").events:
+            found = [f for f in engine.ingest(event) if f.kind is FindingKind.PRESSURE_SURGE and f.status == "start"]
+            if found:
+                break
+        surge = found[0]
+        pressed = engine.state.opponent(surge.team_id)
+        item = {e.metric: e for e in surge.evidence}["opponent_pass_completion"]
+        self.assertEqual(item.team_id, pressed)
+        self.assertEqual(item.value, engine.state.team(pressed).pass_completion_pct)
+        self.assertEqual(item.baseline, engine.state.totals(pressed).pass_completion_pct)
+
     def test_calm_play_alone_produces_no_findings(self) -> None:
         s = Script()
         s.calm_play(1, 1800)

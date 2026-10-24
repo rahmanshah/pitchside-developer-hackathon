@@ -14,7 +14,8 @@ Rules:
 - Keep every number as digits in every language, with the same value (in Spanish 0.31 may be written 0,31).
 - Keep club and player names exactly as written (they are invented proper names; do not translate them).
 - Scores keep the form "1-1".
-- Name the club right before each of its numbers.
+- A number belongs to the club or player named last before it in its sentence: name the club once, before its
+  first number, and again only to switch clubs. Never put a club name between a word and its number.
 - Write natural, idiomatic text in each language, not a word-for-word translation.
 - Reply with one JSON object only: {"texts": [{"persona": str, "language": str, "text": str}]}, one entry for every
   persona in every language.

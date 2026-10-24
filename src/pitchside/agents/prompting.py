@@ -14,8 +14,10 @@ from typing import Iterable, Optional, Sequence
 
 from .contracts import ANALYST, CASUAL, FAV_PREFIX, Claim, ClaimCheck, ExplainerReply, InterpreterReply, Job, Ledger
 from .languages import Language
+from .ledger import FLAG_METRICS
 
 ROLES = ("interpreter", "explainer", "verifier", "personalizer")
+BOTH_CLUBS = "both clubs"  # the club column of a match-wide number ("match" was copied as "the whole match")
 
 
 @lru_cache(maxsize=None)
@@ -71,7 +73,8 @@ def evidence_lines(ledger: Ledger, refs: Optional[Iterable[str]] = None, windows
         if wanted is not None and item.ref not in wanted:
             continue
         window = f" | {clock(item.window_start_s)}-{clock(item.window_end_s)}" if windows else ""
-        lines.append(f"{item.ref} | {item.metric} | {item.team_id or 'match'} | {item.value:g} {item.unit}{window} "
+        value = ("yes" if item.value >= 0.5 else "no") if item.metric in FLAG_METRICS else f"{item.value:g} {item.unit}"
+        lines.append(f"{item.ref} | {item.metric} | {item.team_id or BOTH_CLUBS} | {value}{window} "
                      f"| say \"{item.say}\"")
     return lines
 

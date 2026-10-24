@@ -455,7 +455,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -475,7 +475,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 5,
@@ -505,7 +505,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 8,
@@ -531,11 +531,11 @@
        },
        {
         "code": "team_mismatch",
-        "detail": "\"0.44\" (e1) belongs to Aurora Rovers, but the text gives it to Westmere Town; name the club right before its number"
+        "detail": "\"0.44\" (e1) belongs to Aurora Rovers, but the club named last before it in this sentence is Westmere Town; name Aurora Rovers before this number (once per sentence)"
        },
        {
         "code": "team_mismatch",
-        "detail": "\"6\" (e2) belongs to Aurora Rovers, but the text gives it to Westmere Town; name the club right before its number"
+        "detail": "\"6\" (e2) belongs to Aurora Rovers, but the club named last before it in this sentence is Westmere Town; name Aurora Rovers before this number (once per sentence)"
        }
       ]
      }
@@ -554,9 +554,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1273,
+     "input_tokens": 1283,
      "output_tokens": 587,
-     "cost_usd": 0.000421
+     "cost_usd": 0.001495
     },
     "badges": [
      "retried",
@@ -598,7 +598,7 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Chaos index +1.00, 3.9 turnovers per minute. 65% pass completion.",
+      "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell. 65% pass completion in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -610,15 +610,15 @@
         ]
        },
        {
-        "start": 19,
-        "end": 22,
+        "start": 33,
+        "end": 36,
         "refs": [
          "e2"
         ]
        },
        {
-        "start": 45,
-        "end": 47,
+        "start": 73,
+        "end": 75,
         "refs": [
          "e3"
         ]
@@ -626,7 +626,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Chaos index +1.00, 3.9 turnovers per minute. 65% pass completion.",
+      "text": "[es · offline] Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell. 65% pass completion in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -638,15 +638,15 @@
         ]
        },
        {
-        "start": 34,
-        "end": 37,
+        "start": 48,
+        "end": 51,
         "refs": [
          "e2"
         ]
        },
        {
-        "start": 60,
-        "end": 62,
+        "start": 88,
+        "end": 90,
         "refs": [
          "e3"
         ]
@@ -656,7 +656,7 @@
     },
     "casual": {
      "en": {
-      "text": "Chaos index +1.00, 3.9 turnovers per minute.",
+      "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -668,8 +668,8 @@
         ]
        },
        {
-        "start": 19,
-        "end": 22,
+        "start": 33,
+        "end": 36,
         "refs": [
          "e2"
         ]
@@ -677,7 +677,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Chaos index +1.00, 3.9 turnovers per minute.",
+      "text": "[es · offline] Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -689,8 +689,8 @@
         ]
        },
        {
-        "start": 34,
-        "end": 37,
+        "start": 48,
+        "end": 51,
         "refs": [
          "e2"
         ]
@@ -700,7 +700,7 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+      "text": "For Xarno Uusitalo's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -712,8 +712,8 @@
         ]
        },
        {
-        "start": 46,
-        "end": 49,
+        "start": 60,
+        "end": 63,
         "refs": [
          "e2"
         ]
@@ -721,13 +721,36 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
         "start": 55,
         "end": 59,
+        "refs": [
+         "e1"
+        ]
+       },
+       {
+        "start": 75,
+        "end": 78,
+        "refs": [
+         "e2"
+        ]
+       }
+      ]
+     }
+    },
+    "fav:aur_09": {
+     "en": {
+      "text": "For Alden Brannholt's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+      "source": "model",
+      "reason": null,
+      "numbers": [
+       {
+        "start": 41,
+        "end": 45,
         "refs": [
          "e1"
         ]
@@ -740,32 +763,9 @@
         ]
        }
       ]
-     }
-    },
-    "fav:aur_09": {
-     "en": {
-      "text": "For Alden Brannholt's fans: Chaos index +1.00, 3.9 turnovers per minute.",
-      "source": "model",
-      "reason": null,
-      "numbers": [
-       {
-        "start": 41,
-        "end": 45,
-        "refs": [
-         "e1"
-        ]
-       },
-       {
-        "start": 47,
-        "end": 50,
-        "refs": [
-         "e2"
-        ]
-       }
-      ]
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+      "text": "[es · offline] For Alden Brannholt's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -777,8 +777,8 @@
         ]
        },
        {
-        "start": 62,
-        "end": 65,
+        "start": 76,
+        "end": 79,
         "refs": [
          "e2"
         ]
@@ -794,7 +794,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +1.00, 3.9 turnovers per minute.",
+      "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -809,7 +809,7 @@
         "involvement": null,
         "value": 1.0,
         "unit": "index",
-        "say": "chaos index +1.00",
+        "say": "chaos index +1.00 in this spell",
         "window_start_s": 1509.7,
         "window_end_s": 1989.7,
         "baseline": null,
@@ -943,7 +943,7 @@
         "involvement": null,
         "value": 3.875,
         "unit": "per_min",
-        "say": "3.9 turnovers per minute",
+        "say": "3.9 turnovers per minute in this spell",
         "window_start_s": 1509.7,
         "window_end_s": 1989.7,
         "baseline": 1.8,
@@ -1003,7 +1003,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "65% pass completion.",
+      "text": "65% pass completion in this spell.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -1018,7 +1018,7 @@
         "involvement": null,
         "value": 65.2,
         "unit": "pct",
-        "say": "65% pass completion",
+        "say": "65% pass completion in this spell",
         "window_start_s": 1509.7,
         "window_end_s": 1989.7,
         "baseline": 84.0,
@@ -1136,7 +1136,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Chaos spell: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -1166,7 +1166,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -1186,9 +1186,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 575,
-     "output_tokens": 404,
-     "cost_usd": 0.00026
+     "input_tokens": 648,
+     "output_tokens": 478,
+     "cost_usd": 0.001118
     },
     "badges": []
    }
@@ -1619,7 +1619,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -1649,7 +1649,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -1671,7 +1671,7 @@
      "transport_retries": 0,
      "input_tokens": 633,
      "output_tokens": 451,
-     "cost_usd": 0.000289
+     "cost_usd": 0.00106
     },
     "badges": []
    }
@@ -2004,7 +2004,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -2034,7 +2034,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -2062,9 +2062,9 @@
      "errors": 4,
      "refused": 0,
      "transport_retries": 3,
-     "input_tokens": 752,
+     "input_tokens": 742,
      "output_tokens": 431,
-     "cost_usd": 0.000291
+     "cost_usd": 0.001048
     },
     "badges": [
      "semantic_check_skipped",
@@ -2506,7 +2506,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Westmere Town",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -2536,7 +2536,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -2558,7 +2558,7 @@
      "transport_retries": 0,
      "input_tokens": 646,
      "output_tokens": 451,
-     "cost_usd": 0.00029
+     "cost_usd": 0.001063
     },
     "badges": []
    }
@@ -2967,7 +2967,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Westmere Town",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -2997,7 +2997,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -3032,9 +3032,9 @@
      "errors": 1,
      "refused": 0,
      "transport_retries": 1,
-     "input_tokens": 1831,
+     "input_tokens": 1833,
      "output_tokens": 552,
-     "cost_usd": 0.000459
+     "cost_usd": 0.001562
     },
     "badges": [
      "fault_injected",
@@ -4066,7 +4066,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Westmere Town",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -4096,7 +4096,7 @@
       "outcome": "failed",
       "detail": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error); template texts used",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -4124,9 +4124,9 @@
      "errors": 4,
      "refused": 0,
      "transport_retries": 3,
-     "input_tokens": 788,
+     "input_tokens": 790,
      "output_tokens": 191,
-     "cost_usd": 0.000174
+     "cost_usd": 0.00058
     },
     "badges": [
      "persona_template",
@@ -4555,7 +4555,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -4585,7 +4585,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 6,
@@ -4615,7 +4615,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 9,
@@ -4682,7 +4682,7 @@
      "transport_retries": 0,
      "input_tokens": 4405,
      "output_tokens": 615,
-     "cost_usd": 0.000748
+     "cost_usd": 0.002331
     },
     "badges": [
      "retried",
@@ -5019,7 +5019,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -5039,7 +5039,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 5,
@@ -5069,7 +5069,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 8,
@@ -5110,9 +5110,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 2190,
+     "input_tokens": 2174,
      "output_tokens": 657,
-     "cost_usd": 0.000548
+     "cost_usd": 0.001857
     },
     "badges": [
      "retried",
@@ -5813,7 +5813,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -5833,7 +5833,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 5,
@@ -5853,7 +5853,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 7,
@@ -6072,9 +6072,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1484,
+     "input_tokens": 1468,
      "output_tokens": 380,
-     "cost_usd": 0.000338
+     "cost_usd": 0.001127
     },
     "badges": [
      "template_fallback",
@@ -6412,7 +6412,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Westmere Town",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -6442,7 +6442,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -6462,9 +6462,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 929,
+     "input_tokens": 931,
      "output_tokens": 470,
-     "cost_usd": 0.000328
+     "cost_usd": 0.001173
     },
     "badges": []
    }
@@ -6930,7 +6930,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Westmere Town",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -6960,7 +6960,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -6980,9 +6980,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1752,
+     "input_tokens": 1739,
      "output_tokens": 548,
-     "cost_usd": 0.000449
+     "cost_usd": 0.001531
     },
     "badges": []
    }
@@ -8645,7 +8645,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -8675,7 +8675,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -8695,9 +8695,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1728,
+     "input_tokens": 1716,
      "output_tokens": 538,
-     "cost_usd": 0.000442
+     "cost_usd": 0.001505
     },
     "badges": []
    }
@@ -9254,7 +9254,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Full time: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -9284,7 +9284,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -9306,7 +9306,7 @@
      "transport_retries": 0,
      "input_tokens": 3333,
      "output_tokens": 465,
-     "cost_usd": 0.000566
+     "cost_usd": 0.001763
     },
     "badges": []
    }

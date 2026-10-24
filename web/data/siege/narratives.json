@@ -244,7 +244,7 @@
      "window_start_s": 433.8,
      "window_end_s": 433.8,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -577,7 +577,7 @@
      "window_start_s": 566.9,
      "window_end_s": 566.9,
      "baseline": null,
-     "say": "ended with a shot (1 = yes): 0",
+     "say": "did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -818,7 +818,7 @@
      "window_start_s": 808.7,
      "window_end_s": 808.7,
      "baseline": null,
-     "say": "ended with a shot (1 = yes): 0",
+     "say": "did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -1901,7 +1901,7 @@
      "window_start_s": 1777.3,
      "window_end_s": 1777.3,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -2299,7 +2299,7 @@
      "window_start_s": 2053.4,
      "window_end_s": 2053.4,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -2702,7 +2702,7 @@
      "window_start_s": 2177.6,
      "window_end_s": 2177.6,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 0",
+     "say": "possession began from a restart or a save",
      "source": "finding",
      "origin": null
     },
@@ -4518,7 +4518,7 @@
      "window_start_s": 3175.1,
      "window_end_s": 3175.1,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -4963,7 +4963,7 @@
      "window_start_s": 4236.1,
      "window_end_s": 4236.1,
      "baseline": null,
-     "say": "ended with a shot (1 = yes): 0",
+     "say": "did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -5274,7 +5274,7 @@
      "window_start_s": 4752.9,
      "window_end_s": 4752.9,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },

@@ -9,8 +9,12 @@ Rules:
   as in the text (for "71%" write 71, for "0.31 xG" write 0.31, for "6 min" write 6).
 - Quote numbers the way each evidence line says ("say ..."). Write numbers as digits. Do not add numbers that are
   not in the evidence (no minutes, no counts of your own, no percentages you worked out).
-- Name the club right before each of its numbers ("Aurora Rovers had 74% field tilt"), and set `team_id` to the
-  club the claim is about (or null for both clubs).
+- A number belongs to the club or player named last before it in its sentence. Name the club once, before its
+  first number, and let the numbers after it share it ("Aurora Rovers had a 0.31 xG chance from 11 m, 9 s after
+  winning the ball"); name a club again only to switch to the other club's numbers. Never put a club name between
+  a word and its number ("from 11 m", not "from Aurora Rovers 11 m"). Set `team_id` to the club the claim is about
+  (or null for both clubs).
+- A fact with no number ("ball won in open play") is cited in `refs` only; write it in words.
 - A score may only be written as a score the match has had ("1-1"). Never join two other numbers with a hyphen.
 - Only name players listed under PLAYERS, and cite their p* id when you do.
 - No speculation about the future, no causes the evidence does not show, no superlatives like "best ever".
