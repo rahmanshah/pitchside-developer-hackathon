@@ -31,6 +31,10 @@ class Language:
     # Regexes whose two groups are a score given as the current one ("it is 1-0"); in a recap it must be the score
     # at the whistle, an earlier goal "made it 1-0" (decision 25).
     present_score_patterns: tuple[str, ...] = ()
+    # (kind, regex) for details no evidence can hold (decision 26): the woodwork and body parts (shot events record
+    # neither) and club, season or career records (the evidence covers one match). "{clubs}" stands for the two
+    # club names. Matched case-insensitively on claims, headlines and persona texts.
+    invented_patterns: tuple[tuple[str, str], ...] = ()
 
     def possessive(self, name: str) -> str:
         """English possessive ("Aurora Rovers'", "Westmere Town's"); other languages do not use it."""
@@ -201,6 +205,18 @@ ENGLISH = Language(
         "combined.mean_spell": "possessions lasting {v} on average across both teams {window}",
     },
     present_score_patterns=(r"\b(?:it is|it's|it stands at|now)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})(?!\d)",),
+    invented_patterns=(
+        ("woodwork", r"\b(?:woodwork|crossbar|cross-bar|the bar|the post|the posts|the upright|uprights)\b"),
+        ("body part", r"\b(?:headers?|headed (?:home|in|it|wide|over|goalwards|the ball)"
+                      r"|a headed (?:goal|effort|chance|finish)|heads (?:home|in|it|wide|over|goalwards)"
+                      r"|with (?:his|her|a) head"
+                      r"|(?:left|right|weaker|stronger)[- ]foot(?:ed)?|volley(?:s|ed)?|bicycle kick|overhead kick"
+                      r"|back-?heel(?:s|ed)?|chest(?:s|ed)? (?:down|it|home))\b"),
+        ("body part", r"\bheads (?:{clubs}) (?:in front|ahead|level)\b"),
+        ("record", r"\b(?:for (?:the|his|her|their) club(?! of\b)|debuts?|this season|season's|career|all-time"
+                   r"|club record"
+                   r"|(?:first|second|third|\d+(?:st|nd|rd|th)) goals? for (?:{clubs}))\b"),
+    ),
 )
 
 SPANISH = Language(
@@ -346,6 +362,13 @@ SPANISH = Language(
         "combined.mean_spell": "posesiones de {v} de media entre ambos equipos {window}",
     },
     present_score_patterns=(r"\b(?:va|está|ahora)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})(?!\d)",),
+    invented_patterns=(
+        ("woodwork", r"\b(?:larguero|travesaño|poste|postes|(?:al|el|del|en el) palo|la madera)\b"),
+        ("body part", r"\b(?:cabezazos?|de cabeza|cabece\w*|voleas?|de volea|chilena|tacón|taconazo|de pecho"
+                      r"|(?:pie|pierna) (?:izquierd[oa]|derech[oa])|zurdazo|derechazo)\b"),
+        ("record", r"\b(?:(?:para|con) el club(?! de\b)|debut\w*|esta temporada|(?:en|de) su carrera|récord del club"
+                   r"|(?:primer|segundo|tercer) gol (?:para|con) (?:{clubs}))\b"),
+    ),
 )
 
 LANGUAGES: dict[str, Language] = {lang.code: lang for lang in (ENGLISH, SPANISH)}

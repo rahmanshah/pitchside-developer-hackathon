@@ -226,3 +226,24 @@ The brief's "between the two teams" became "across both teams": "two" is a numbe
 **Evaluation discipline:** found by reading the recorded demo bundles and the 301-305 evaluation; validated offline on seeds 1-40 (a plumbing check). No live evaluation was run on this change.
 
 **Rejected:** recomputing an earlier claim's window figures at the whistle (a spell's numbers have no meaning at the whistle; the recap's own totals say what is true then); a deterministic check for "puts … ahead" (tone, not a number or a score).
+
+## 26. A deterministic guard against invented details (2026-10-24)
+
+**Decision:** The checker rejects details no evidence in this pipeline can hold, with a new reason code `invented_detail`, in claims, headlines and persona texts:
+- the woodwork ("the bar", "the post", "crossbar", "woodwork"; Spanish "larguero", "poste", "palo");
+- body parts ("header", "headed home", "heads Ironvale Athletic in front", "volley", "left-footed", "backheel"; Spanish "de cabeza", "cabezazo", "volea", "zurdazo"), since shot events record none;
+- club, season or career records ("for the club", "first goal for Harbourton City", "debut", "this season", "career"; Spanish "para el club", "primer gol para …", "debut", "esta temporada").
+
+Each language holds its own list in `languages.py`; club names are filled in per match. Not on the list, by decision: "conceded" and tone words ("rattles", "gilt-edged", "spurns"). A rejected claim is retried with the feedback; a rejected persona text is replaced by the template, as for any other check. The headline gets the same check: an invented headline is sent back with "headline: invented_detail: …", and on the last attempt the template's headline replaces it (recorded in the check step's audit detail).
+
+**Why:** the check of the three recorded demo bundles: "Rafa rattles the bar" (a headline, for a blocked shot), "heads Ironvale in front", and "his first goal for Harbourton City" in a claim the semantic verifier passed and in five persona texts. Prompt rules alone (decision 24) did not stop the verifier from passing it.
+
+**False positives:** before shipping, the guard ran over every committed `web/data` bundle at the last 12 commits that changed it (6,912 shown texts), the offline evaluation on seeds 1-40 (35,876 texts), every template narrative and every ledger label of seeds 1-40 × 4 storylines plus the three demo club pairs (33,840 and 33,392 texts), and every phrase in the language tables (264): no hit. On the git-ignored live runs (201-210, 301-305 and the three demo bundles, 14,248 texts) it found 37 hits; 36 are invented details (14 woodwork, 3 volleys, 1 header, 18 club records) and one was a false positive, "una señal de control para el club de Alden Brannholt" ("for Alden Brannholt's club"), now excluded ("para el club de", "for the club of"). The "Nth goal for <club>" form also catches "his second goal for Aurora Rovers" in live claims: ambiguous within one match, and now rewritten as "in this match".
+
+**Schemas:** `ReasonCode` gains `invented_detail`; `docs/run_bundle.schema.json` and `docs/overlay.schema.json` regenerated (one enum value each).
+
+**Deployment:** client-side only; the deployed MCP server image (built from `90ee028`) can stay.
+
+**Tests:** live inventions caught in both languages, near misses passing ("headed into the break", "para el club de …", "first goal in this match"), no phrase of the tables tripping it, claims and persona texts rejected with the reason, an invented headline sent back and fixed, one invented on every draft replaced by the template's, an invented persona text replaced.
+
+**Evaluation discipline:** the word list comes from the demo bundles and the live evaluations' text, not tuned on held-out numbers; validated offline on seeds 1-40. No live evaluation was run on it.

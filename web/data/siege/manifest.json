@@ -4,8 +4,8 @@
  "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
  "run_id": "sample-siege",
  "match_id": "har_wst_siege_0003",
- "created_utc": "2026-10-24T16:40:30+00:00",
- "wall_s": 0.64,
+ "created_utc": "2026-10-24T17:00:04+00:00",
+ "wall_s": 0.66,
  "generator": {
   "seed": 3,
   "storyline": "siege",
@@ -53,7 +53,7 @@
  ],
  "pipeline": {
   "pitchside_version": "0.2.0",
-  "git_commit": "96efd98",
+  "git_commit": "34ab797",
   "llm_mode": "fake",
   "api": "fake",
   "deployments": {

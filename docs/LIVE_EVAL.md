@@ -72,14 +72,16 @@ Check `manifest.json`: `budget.budget_fallbacks` must be 0 and `label` must read
 ## 4. Results: three live blocks (one clean)
 
 Three live evaluations ran on 24 October 2026, each covering 20 matches (5 seeds × 4 storylines). Every role ran on
-gpt-5-mini through Microsoft Foundry, with reasoning effort `low` and a match budget of $0.25. The code was frozen after
-commit `2a208c4` (decision 23), and no further prompt, checker or ledger changes, and no further full evaluations, are
-planned. Seeds 301-305 are the last block measured on the final code.
+gpt-5-mini through Microsoft Foundry, with reasoning effort `low` and a match budget of $0.25. Seeds 301-305 are the
+last block measured, on commit `2a208c4` (decision 23). Commit D (decisions 24-26: a shot's outcome as evidence, recaps
+that say what is true at the whistle, a guard against invented details) changed prompts, ledger and checker after the
+check of the recorded demo bundles; it was validated offline only, and no full live evaluation was run on it. The
+deployed MCP server image is still the one built from `90ee028`; Commit D is client-side only.
 
 | | Seeds 201-205 | Seeds 206-210 | Seeds 301-305 |
 |---|---|---|---|
 | Eval id | `20261024T063706Z-f0cd52` | `20261024T095425Z-7f0ec5` | `20261024T121448Z-cf60a3` |
-| Code | `0a03664`, before decisions 21-23 | `02057f8` (`c706a90` plus a `.gitignore` change), decisions 21-22 | `2a208c4`, decisions 21-23 (final) |
+| Code | `0a03664`, before decisions 21-23 | `02057f8` (`c706a90` plus a `.gitignore` change), decisions 21-22 | `2a208c4`, decisions 21-23 (last evaluated) |
 | Output caps: interpreter / explainer / verifier / personalizer | 1500 / 3000 / 1500 / 4000 | 1500 / 3700 / 2400 / 4200 | 1500 / 3700 / 2400 / 4200 |
 
 **How to read these numbers**
@@ -87,7 +89,7 @@ planned. Seeds 301-305 are the last block measured on the final code.
 - **Tuned blocks.** The wording was tuned after reading the output of 201-210. Decisions 21 and 22 came from reading
   201-205, and decision 23 from reading 206-210. Those two blocks no longer test the wording without bias.
 - **The clean block.** Seeds 301-305 had not been read before decision 23 was measured on them. They are the only
-  unbiased measure of the final code, and one block of 20 matches is all there is.
+  unbiased measure of the code as of `2a208c4`, and one block of 20 matches is all there is.
 - **The stats engine was not tuned.** None of its thresholds changed; they are still tuned on seeds 1-40 only.
 - **Spot-check labels.** Each block's `spotcheck.md` samples 20 shown claims, 60 in all. Claude Code drafted the
   labels by recomputing every cited number from the event stream, using a stats-engine replay stopped at the cited
@@ -188,7 +190,7 @@ Notes on the classes:
   spell") was drafted as NEEDS HUMAN and labelled supported in review. The 66.2% is a 5-minute share (their match
   possession was 52.7%), and only the sentence-final "in this spell" names the window.
 
-**Known residuals** (present in the final code, not fixed)
+**Known residuals** (as measured on `2a208c4`)
 
 - **Possession cause in Spanish persona texts.** In 301-305, 55 of 670 cause mentions in persona texts are wrong and
   Spanish: the personalizer writes "recuperar la posesión" (won the ball back) for restarts, and "fuera de juego"
@@ -197,7 +199,12 @@ Notes on the classes:
   pressure_surge:1) the verifier rejected "in this spell", taking the detection minute as the spell's start. The
   rewrite that was shown says "In the 46:49–51:49 window Ironvale Athletic had 4.0 pressures per minute", but that
   rate covers 48:49–51:49.
-- **Present-tense score in a recap** (3 claims in 301-305, error class above).
+- **Present-tense score in a recap** (3 claims in 301-305, error class above). Decision 25 adds the recap's own
+  score and a checker rule for it; validated offline only, not measured live.
+- **Not addressed by Commit D** (decisions 24-26): no semantic check of persona texts; combined figures given to one
+  club in persona texts; the Spanish possession wording above; tone words ("rattles", "gilt-edged", "spurns");
+  "puts … ahead" at the whistle is a prompt rule only. The woodwork, body-part and record phrases are now rejected
+  deterministically (decision 26), also validated offline only.
 
 **Why the verifier rejected claims (301-305 only)**
 

@@ -27,7 +27,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from ..llm.config import Role
 from ..llm.errors import BudgetExhausted, LLMError
 from ..llm.guard import call_context
-from .checker import CheckContext, check_claim, check_text, missing_goal_score
+from .checker import CheckContext, check_claim, check_text, invented_details, missing_goal_score
 from .contracts import (
     AuditEntry, Claim, ClaimCheck, Draft, ExplainerReply, InterpreterReply, Job, JobRecord, Ledger, Narrative,
     PersonalizerReply, PersonaText, Reason, VerifierReply,
@@ -62,6 +62,7 @@ class Work(BaseModel):
     checks: list[ClaimCheck] = Field(default_factory=list)
     audit: list[AuditEntry] = Field(default_factory=list)
     semantic_check: str = "not_run"
+    headline_replaced: Optional[str] = None  # why the template's headline is shown instead of the model's
 
     def view(self) -> Job:
         """The job as the prompts see it, with the ledger including numbers the tools added."""
@@ -231,18 +232,25 @@ class CheckStep(_Step):
             [] if draft.claims else ["the reply had no claims: write 1 to 3 claims"])
         # A goal must keep one claim that cites goal_margin and states the score (decision 23).
         score_gap = missing_goal_score(work.view(), passed) if passed else None
-        if draft.claims and not rejected and score_gap is None:
+        # The headline gets the invented-detail check too; on the last attempt the template's replaces it (26).
+        headline = [f"headline: {r.code}: {r.detail}" for r in invented_details(draft.headline, context.facts)]
+        last = message.attempt >= self.max_attempts
+        work.headline_replaced = "; ".join(headline) if headline and last else None
+        replaced = f"; headline replaced by the template's ({headline[0]})" if work.headline_replaced else ""
+        if draft.claims and not rejected and score_gap is None and (not headline or last):
             out: Union[Revise, ToVerify, Fallback] = ToVerify(attempt=message.attempt, claims=passed)
-            outcome, detail, nxt = "passed", f"all {len(passed)} claim(s) passed", "verify"
-        elif message.attempt < self.max_attempts:
-            feedback = feedback + ([f"all claims: {score_gap}"] if score_gap else [])
+            outcome, detail, nxt = "passed", f"all {len(passed)} claim(s) passed{replaced}", "verify"
+        elif not last:
+            feedback = feedback + ([f"all claims: {score_gap}"] if score_gap else []) + headline
             out = Revise(attempt=message.attempt + 1, feedback=feedback)
             detail = (f"{rejected} of {len(draft.claims)} claim(s) rejected; retry" if rejected
-                      else "no claim states the score with goal_margin; retry")
+                      else "no claim states the score with goal_margin; retry" if score_gap
+                      else "the headline adds a detail the evidence cannot hold; retry")
             outcome, nxt = "rejected", "explain"
         elif passed and score_gap is None:
             out = ToVerify(attempt=message.attempt, claims=passed)
-            outcome, detail, nxt = "partial", f"last attempt: keeping {len(passed)} claim(s), dropping {rejected}", "verify"
+            outcome, detail, nxt = ("partial", f"last attempt: keeping {len(passed)} claim(s), dropping "
+                                               f"{rejected}{replaced}", "verify")
         elif passed:
             out = Fallback(reason=f"checker rejected the goal claims after {message.attempt} attempt(s): none "
                                   "stated the score")
@@ -361,7 +369,9 @@ class PersonalizeStep(_Step):
             texts = [template_text(p, lang, reason) for p, lang in wanted]
             work.log("personalize", "pitchside-personalizer", "failed", f"{reason}; template texts used",
                      attempt=1, next_step="publish", prompt=prompt, role="personalizer")
-        narrative = Narrative(source="model", headline=work.drafts[-1].headline, claims=claims,
+        headline = (template_narrative(job, self.languages).headline if work.headline_replaced
+                    else work.drafts[-1].headline)
+        narrative = Narrative(source="model", headline=headline, claims=claims,
                               semantic_check=work.semantic_check, texts=texts)
         ctx.set_state(WORK, work)
         await ctx.send_message(Done(narrative=narrative))

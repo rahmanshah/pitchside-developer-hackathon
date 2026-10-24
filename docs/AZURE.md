@@ -133,6 +133,9 @@ The Static Web Apps workflow runs only when started by hand, so pushes (or no pu
 site, and the last upload stays up until the resource group is deleted. The MCP server keeps running the image it was
 deployed with (an immutable commit-sha tag). After tagging `submission-v1`, do any further work on a branch.
 
+The deployed MCP server image is still the one built from `90ee028`. Commit D (decisions 24-26) is client-side only
+(ledger, checker, prompts; the stats engine and the MCP tools are unchanged), so it needs no new image.
+
 ### Your IP changed
 
 Re-run step 6 with the new `-AllowedIp` (it replaces the rule list), or update one rule (Container Apps IP

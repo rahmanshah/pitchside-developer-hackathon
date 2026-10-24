@@ -14,6 +14,8 @@ A claim passes only if
   the time window of its evidence or of the job (``window_mismatch``); a clock time is never read as numbers or a
   score, and "71 minutes" counts as the job's own minute when it is that minute (otherwise it is a duration);
 * every player named is a player in the ledger that the claim cites (``unreferenced_player``);
+* it adds no detail the evidence cannot hold: the woodwork, a header or a foot (shot events record neither), or a
+  club, season or career record (``invented_detail``); headlines get this check too;
 * no number is joined to the word before it, as in "it is0-1" or "a0.31 xG" (``glued_number``): the number scan
   skips digits that follow a letter, so such a number would otherwise go unchecked. Models do drop spaces
   (gpt-5-mini wrote "it is0-1" in the first live smoke test). Ledger ids such as "e1" are not numbers.
@@ -292,6 +294,24 @@ def _common_checks(text: str, scanned: _Scan, ctx: CheckContext, lang: Language,
             name = ctx.facts.player(mention.player_id).name
             reasons.append(Reason(code="unreferenced_player",
                                   detail=f"{name} is named but is not a player in the cited evidence"))
+    return reasons + invented_details(text, ctx.facts, lang)
+
+
+INVENTED_WHY = {
+    "woodwork": "the evidence records no woodwork: say how the shot ended only as its shot_outcome says",
+    "body part": "shot events record no header or foot: say how the shot ended only as its shot_outcome says",
+    "record": "the evidence covers this match only: no club, season or career records",
+}
+
+
+def invented_details(text: str, facts: MatchFacts, lang: Language = ENGLISH) -> list[Reason]:
+    """Details no evidence can hold (decision 26): the woodwork, body parts, club, season or career records."""
+    names = [n for t in facts.teams for n in dict.fromkeys((t.name, t.name.split()[0]))]
+    clubs = "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True))
+    reasons = []
+    for kind, pattern in lang.invented_patterns:
+        for m in re.finditer(pattern.replace("{clubs}", clubs), text, re.IGNORECASE):
+            reasons.append(Reason(code="invented_detail", detail=f'"{m.group(0)}": {INVENTED_WHY[kind]}'))
     return reasons
 
 
