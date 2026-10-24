@@ -3,8 +3,8 @@
 //   Log Analytics workspace      Container Apps logs (daily ingestion cap)
 //   Container Apps environment   Consumption workload profile
 //   Container app (MCP server)   0.25 vCPU / 0.5 GiB, scale 0..1, IP allow-list, in-app rate limit
-//   Static Web App (Free)        the web UI and its recorded run bundles (content deployed by a GitHub workflow)
-//   Budget                       e-mail alerts on the resource group's cost
+//   Static Web App (Free)        the web UI and its recorded run bundles (content deployed by a GitHub workflow), eastus2
+//   Budget                       25 a month in the billing currency; e-mail alerts on the resource group's cost
 //
 // Not here on purpose: a managed identity (nothing in this deployment calls a model; the live recording runs
 // locally under `az login`) and the Foundry resource (created in the portal; model names are not guessed).
@@ -16,8 +16,9 @@ targetScope = 'resourceGroup'
 @description('Region for Container Apps and Log Analytics (next to the Foundry deployment).')
 param location string = 'swedencentral'
 
+// eastus2, as deployed: westeurope refused new Static Web Apps for this subscription (decision 27).
 @description('Region for the Static Web App. deploy.ps1 checks it against the regions Azure offers for Microsoft.Web/staticSites before deploying.')
-param staticWebAppLocation string = 'westeurope'
+param staticWebAppLocation string = 'eastus2'
 
 @description('Prefix for every resource name.')
 @minLength(3)
@@ -56,9 +57,10 @@ param globalRateLimitPerMinute int = 300
 @minValue(1)
 param logDailyCapGb int = 1
 
+// 25, as deployed (the billing currency is EUR for this subscription).
 @description('Monthly budget for the resource group, in the billing currency.')
 @minValue(1)
-param budgetAmount int = 10
+param budgetAmount int = 25
 
 @description('Who gets the budget alert e-mails.')
 @minLength(1)

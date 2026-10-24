@@ -37,10 +37,10 @@ replaces it if quota is granted (decision 19). Only the deployments and `PITCHSI
 | Service | Status | Why |
 |---|---|---|
 | Azure Static Web Apps, Free | Deployed, in `eastus2` | Hosts the UI and recorded runs at $0; no server needed |
-| Azure Container Apps, Consumption | In the template | Hosts the read-only MCP server; scales to zero |
-| Log Analytics (Azure Monitor) | In the template | Container logs, one JSON line per MCP request |
+| Azure Container Apps, Consumption | Deployed: the environment and the `pitchside-mcp` app (0.25 vCPU / 0.5 GiB, 0-1 replicas, IP allow-list) | Hosts the read-only MCP server; scales to zero |
+| Log Analytics (Azure Monitor) | Deployed | Container logs, one JSON line per MCP request |
 | Cost Management budget | Deployed: 25 EUR a month on the resource group | E-mail at 50% and 100% of actual cost, and at 100% of forecast cost |
-| Microsoft Foundry (gpt-5-mini) | Created by you in the portal | Model names and quota are account-specific; not guessed in code |
+| Microsoft Foundry (gpt-5-mini) | Deployed (created separately, not by this template): resource `pitchside-foundry`, project `pitchside` | Used by the pipeline for the live recordings; model names and quota are account-specific, not guessed in code |
 | Managed identity + cloud recorder | **Planned** | The production path: a Container Apps Job running the pipeline with a user-assigned identity holding Cognitive Services OpenAI User (`5e0bd9bd-7b93-4f28-af87-19fc36ad61bd`) on the Foundry account, writing bundles to Blob Storage. Not built: nothing deployed calls a model today, so an identity would be unused privilege |
 | Entra ID built-in auth on the MCP server | **Planned** | The production way to protect it (app registration, app roles checked in code). Today: IP allow-list + rate limit, no keys |
 | Application Insights (OpenTelemetry) | **Planned** | `microsoft-opentelemetry` with `APPLICATIONINSIGHTS_CONNECTION_STRING`; logs and platform metrics cover the demo |
