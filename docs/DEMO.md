@@ -9,11 +9,11 @@ Every shot is a URL on the web UI, so each take can be repeated exactly. Append 
 - local: `uv run pitchside serve`, then `http://127.0.0.1:8000/` + the query;
 - deployed: `{{static_web_app_url}}` + the query (once the Static Web App exists, see [AZURE.md](AZURE.md)).
 
-The URLs below use the three sample runs in `web/data` (`comeback`, `faults-demo`, `siege`). The "On screen" notes
-describe the **offline samples (fake model client)** as they are today, checked in Chromium on 2026-10-23. Moment ids
-and times come from the deterministic stats engine, so they stay the same when live bundles of the same matches
-(same seed, storyline and clubs) replace the samples. Only the model-written texts change. `uv run pytest
-tests/test_demo_doc.py` checks every URL in this file against `web/data`.
+The URLs below use the three runs in `web/data` (`comeback`, `faults-demo`, `siege`). Since 2026-10-24 these are the
+**recorded live runs** (GPT-5 mini on Microsoft Foundry, stats tools on the cloud MCP server). The "On screen" notes
+describe them as published. They were checked against `web/data`, but not yet walked through in a browser. Moment ids
+and times come from the deterministic stats engine, so they match the offline samples of the same matches; only the
+model-written texts differ. `uv run pytest tests/test_demo_doc.py` checks every URL in this file against `web/data`.
 
 ## Setup
 
@@ -28,14 +28,14 @@ tests/test_demo_doc.py` checks every URL in this file against `web/data`.
 
 ## Shot list
 
-| # | Time | URL (append to the base URL) | Action | On screen (offline sample) |
+| # | Time | URL (append to the base URL) | Action | On screen (published live run) |
 |---|---|---|---|---|
 | 1 | 0:00-0:18 | `?run=comeback&view=broadcast&t=86:15&speed=4&autoplay=1&clean=1&persona=casual&lang=en` | None. At 4x the goal arrives after about 6 s and the replay holds on the lower third for 6 s | Clean broadcast view, AUR 1-1 IRV at 86:15, then 2-1 and the lower third "GOAL 87'" with its ✓ checked and ✓ verified chips. The honesty label stays visible in clean mode |
 | 2 | 0:18-0:28 | `?run=comeback&view=broadcast&t=86:40&persona=casual&lang=en&drawer=aur_irv_comeback_0007:goal:2` (or press `E` at the end of take 1) | Scroll slowly through the first claim | Evidence drawer: narrative source chip, ✓ deterministic checker, ✓ semantic verifier; "Written from 3 verified claims"; e1 "a 0.69 xG chance", `shot_xg = 0.685 xg`, triggering event `#1277 shot` |
 | 3 | 0:28-0:44 | `?run=comeback&view=analyst&t=86:40&persona=analyst&lang=en` | Move the pointer from the key-moment timeline to the persona cards | Analyst dashboard at the same moment: key-moment timeline with the siege, pressure-surge and momentum bands from the 58th minute, live stats, momentum and control-vs-chaos sparklines, "Current moment · 87' Goal" with three cards: Analyst, Casual fan, Favourite: Alden Brannholt |
-| 4 | 0:44-0:54 | same take; `?run=comeback&view=analyst&t=86:40&persona=analyst&lang=es` gives the end state | Click `ES` (or press `L`) | The interface switches to Spanish (Retransmisión, Analista, Momentos clave). **Offline:** the model texts show as `[es · offline] <English text>` placeholders. Only template texts are real Spanish |
-| 5 | 0:54-1:08 | `?run=faults-demo&view=broadcast&t=47:10&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:goal:1` | Hold on the header for a second, then scroll to "Audit trail" and "Rejected claims (1)" | The "Faults injected · 16 fired" badge stays visible in the header beside the drawer. Chips "Explainer retried", "Fault injected on purpose"; audit: explain #1 → check rejected → explain #2 → check passed → verify passed; struck-through draft "Aurora Rovers: a 2.41 xG chance, from 8 m." with `number_mismatch`: does not match e1 (`shot_xg = 0.273 xg`; write "a 0.27 xG chance") |
-| 6 | 1:08-1:20 | `?run=faults-demo&view=broadcast&t=54:20&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:big_chance:3` | Scroll to the audit trail | Chip "Template narrative: checker rejected every claim after 3 attempt(s)"; three explainer drafts rejected (`no_evidence`, `unlisted_number`), then fallback → template; the shown text is the template: "Big chance for Aurora Rovers: a 0.38 xG shot from 6 m, not converted. Aurora Rovers have 5 shots and 1.50 xG so far." |
+| 4 | 0:44-0:54 | same take; `?run=comeback&view=analyst&t=86:40&persona=analyst&lang=es` gives the end state | Click `ES` (or press `L`) | The interface switches to Spanish (Retransmisión, Analista, Momentos clave), and the cards show the personalizer's own Spanish: casual "¡Alden Brannholt pone a Aurora Rovers 2-1!", analyst "Aurora Rovers pasa 2-1: Alden Brannholt aprovechó una pérdida rápida…" |
+| 5 | 0:54-1:08 | `?run=faults-demo&view=broadcast&t=47:10&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:goal:1` | Hold on the header for a second, then scroll to "Audit trail" and "Rejected claims (1)" | The "Faults injected · 17 fired" badge stays visible in the header beside the drawer. Chips "Explainer retried", "Fault injected on purpose"; audit: explain #1 → check rejected → explain #2 → check passed → verify passed; struck-through draft "Alden Brannholt equalised for Aurora Rovers with a 2.41 xG chance from 8 m." with `number_mismatch`: does not match e1 (`shot_xg = 0.273 xg`; write "a 0.27 xG chance") |
+| 6 | 1:08-1:20 | `?run=faults-demo&view=broadcast&t=54:20&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:big_chance:3` | Scroll to the audit trail | Chip "Template narrative: checker rejected every claim after 3 attempt(s)"; three explainer drafts rejected (`no_evidence`, `unlisted_number`, `unreferenced_player`), then fallback → template; the shown text is the template: "Big chance for Aurora Rovers: a 0.38 xG shot from 6 m, not converted. Aurora Rovers have 5 shots and 1.50 xG so far." |
 | 7 | 1:20-1:40 | the README's agent workflow diagram on GitHub (rendered Mermaid), then a title card | Slow zoom on the diagram; cut to the card | Card text: the technologies in the narration for this shot, and nothing that is not deployed on recording day. A cropped Azure portal view of the resource list is optional (see "Honesty" below) |
 | 8 | 1:40-1:45 | end card | none | "Pitchside", `{{repo_url}}`, `{{static_web_app_url}}`, "All clubs, players and matches are synthetic." |
 
@@ -44,10 +44,17 @@ Notes on the shots:
 - **Shot 2:** the claims and chips come from the bundle. Before recording from a live bundle, check that the drawer
   for `goal:2` still shows both ✓ chips. If it does not, use the 72nd-minute equaliser instead
   (`t=71:30` and `drawer=aur_irv_comeback_0007:goal:1`), or change the narration line.
-- **Shot 5:** the wrong number is made by the fault injector from the explainer's own first number (×1.5 + 2), so in a
-  live run it differs from 2.41. Read it off the screen and do not script it.
+- **Shot 5:** the wrong number is made by the fault injector from the explainer's own first number (×1.5 + 2), so a
+  re-recording can show a different one. In the published run it is 2.41 (0.27 × 1.5 + 2). Read it off the screen
+  and do not script it.
 - **Shot 6:** in a live run the shown text is the same template (templates use only stats-engine numbers), but the
   rejected drafts are the model's.
+- **Two moments to keep out of frame.** The published-run check (LIVE_EVAL.md, "Published-run check") found two
+  unsupported texts: the comeback's 7' headline "Early chaos in midfield" (chaos is match-wide, not located) and the
+  siege's 24' casual text "Harbourton City are dominating possession with 89% field tilt" (field tilt is not
+  possession). No shot above shows them: the comeback shots start at 86:15 and none uses the siege run. Do not
+  autoplay the comeback from 0:00, and do not open either moment from the key-moment timeline. Any new siege shot
+  starts after 26:00, or uses the analyst persona for the 24' momentum shift.
 - **Cut first, if a take runs long:** shot 4 (the Spanish toggle). Shot 3 already shows the personas, and the pitch
   names both languages.
 - Speed: in shot 1, `speed=4` with the default holds gives the lower third about 12 s on screen. Use `speed=16` for a
@@ -112,10 +119,12 @@ Not deployed:
 
 ## Honesty: what to say about offline and live runs
 
-- **Today every sample in `web/data` is an offline run** on the fake model client. If the video uses them, read the
-  OFFLINE lines, never say that a model wrote the texts, and do not present the `[es · offline]` texts as Spanish.
-  The stats, findings, checker, workflow, fallbacks and audit trail in those runs are real code. Only the wording is
-  a stand-in.
+- **Since 2026-10-24 every run in `web/data` is a recorded live run**: GPT-5 mini on Microsoft Foundry wrote the
+  texts, and the interpreter used the stats tools on the cloud MCP server. Read the LIVE lines. Offline samples
+  (`uv run pitchside demo-data` without `--bundle`, which now refuses to replace the live runs) still need the
+  OFFLINE lines: never say a model wrote their texts, and do not present `[es · offline]` texts as Spanish.
+- **The run info panel shows the MCP server URL** of the live runs (it is in each published `manifest.json`); crop
+  or blur that row, as below.
 - **A live bundle is still a recording.** Say "recorded run", not "live": the page replays a bundle and calls no model
   (the run info panel says so). The badge "Recorded run generated by the live pipeline" appears only for a Foundry run.
 - **Faults are injected on purpose.** The failures in `faults-demo` are simulated by the fault injector. The recovery
@@ -137,46 +146,54 @@ Not deployed:
 
 ## Checklist: what to redo once the live runs and the Azure deployment exist
 
-Work through it in order. Nothing here is done yet (2026-10-23): the samples are offline, and nothing is deployed.
+Work through it in order. Status on 2026-10-24: the three live bundles are recorded through the deployed MCP server
+and published (commit `2ba3e38`), the tests pass and the screenshots are re-captured. The walk-through on the deployed
+site, the video, the README and the other docs are still to do, and so is the decision on publishing the MCP server
+URL.
 
 ### 1. Bundles in `web/data`
 
-- [ ] Record the three live bundles through the deployed MCP server, with the same seeds, storylines and clubs as the
+- [x] Record the three live bundles through the deployed MCP server, with the same seeds, storylines and clubs as the
       samples, so the moment ids and the URLs above stay valid ([AZURE.md](AZURE.md) step 8):
       `uv run pitchside run --live --seed 7 --storyline comeback --home aur --away irv`,
       `--seed 3 --storyline siege --home har --away wst`, and
       `--seed 4 --storyline end_to_end --home wst --away aur --inject-faults demo`.
-- [ ] Check each `manifest.json`: `label` reads "Recorded run generated by the live pipeline" (the faults run adds that
+- [x] Check each `manifest.json`: `label` reads "Recorded run generated by the live pipeline" (the faults run adds that
       faults were deliberately injected), `pipeline.llm_mode` is `foundry`, `budget.budget_fallbacks` is 0,
       `pipeline.interpreter_tools` is `mcp` with `pipeline.mcp_server` set, and the faults run has `faults.fired`.
-- [ ] Publish each bundle under its existing slug, keeping the current titles and descriptions:
+      Checked 2026-10-24: all true; 0 budget fallbacks in each, 17 faults fired in `faults-demo`.
+- [x] Publish each bundle under its existing slug, keeping the current titles and descriptions:
       `uv run pitchside demo-data --bundle runs/bundles/<dir> --slug comeback --title "Comeback: Aurora Rovers v Ironvale Athletic" --description "A goal down at half-time, the home side lays siege and turns it round."`;
       `--slug siege --title "Siege: Harbourton City v Westmere Town" --description "Long spells of pressure, a pressing surge and the goals that follow."`;
       `--slug faults-demo --title "Recovery demo: Westmere Town v Aurora Rovers" --description "An end-to-end match. Faults were injected on purpose (opt-in) to show how the pipeline recovers."`.
-- [ ] From then on, `uv run pitchside demo-data` (with or without `--bundle`) refuses to replace a published live run
+- [x] From then on, `uv run pitchside demo-data` (with or without `--bundle`) refuses to replace a published live run
       and changes nothing. Pass `--overwrite-live` only to replace a live run on purpose, for example with a better
       recording of the same match.
 - [ ] Read the published `manifest.json` and `usage.jsonl` files before committing them. They become public on the
       Static Web App. Look for subscription ids, tenant names, e-mail addresses, keys or endpoints, and decide whether
-      the MCP server URL and deployment names in `pipeline` may be published.
+      the MCP server URL and deployment names in `pipeline` may be published. Read 2026-10-24: no keys, ids, e-mails
+      or Foundry endpoints. The deployment names are `gpt-5-mini`. **Open:** each manifest has the MCP server URL
+      (`pipeline.mcp_server`, also shown in the run info panel); decide before pushing whether it may be public.
 
 ### 2. Tests
 
-- [ ] `uv run pytest`: `tests/test_demo_doc.py` (the URLs in this file still resolve), `tests/test_infra.py`
+- [x] `uv run pytest`: `tests/test_demo_doc.py` (the URLs in this file still resolve), `tests/test_infra.py`
       (`mcpMatches` in `infra/main.bicep` covers every published run), `tests/test_render_demo_data.py`.
-- [ ] `uv run pytest -m e2e`. The smoke tests run on their own fixture runs, built fresh on the fake client, so no
+- [x] `uv run pytest -m e2e`. The smoke tests run on their own fixture runs, built fresh on the fake client, so no
       change is needed for the live bundles. `tests/e2e/test_e2e_published.py` opens every run in `web/data` and
       checks that it shows the badge its manifest calls for: "Recorded run generated by the live pipeline" for each
       live bundle, and the faults badge with the fired count on the faults run.
 
 ### 3. Screenshots and the video
 
-- [ ] `uv run python scripts/capture_screenshots.py` regenerates `docs/img/broadcast.png`, `analyst.png` and
+- [x] `uv run python scripts/capture_screenshots.py` regenerates `docs/img/broadcast.png`, `analyst.png` and
       `evidence-drawer.png` from the live bundles. Check that the drawer shot still shows the skipped semantic check.
       Check every image for subscription ids, e-mails, tenant or resource names, keys and the MCP server URL before
-      committing.
-- [ ] Walk through the shot list on the deployed site. Update every "On screen" note to the live texts (shot 2's
-      chips, real Spanish in shot 4, the faults count and the wrong number in shot 5) and the date of the check.
+      committing. Done 2026-10-24: the drawer shot shows the skipped semantic check, and none of the three images
+      shows any of these.
+- [ ] Walk through the shot list on the deployed site. The "On screen" notes were updated from the published data on
+      2026-10-24 (shot 2's chips, real Spanish in shot 4, 17 faults and the 2.41 draft in shot 5, the rejection codes
+      in shot 6); confirm them in the browser and record the date of the check.
 - [ ] Record the video from the deployed site, reading the LIVE and "Deployed" lines. Keep it under 2:00 and upload
       it to a public URL.
 
