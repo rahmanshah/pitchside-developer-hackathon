@@ -45,7 +45,10 @@ class EvaluationTests(unittest.TestCase):
 
 class CliTests(unittest.TestCase):
     def test_eval_agents_runs_offline_and_writes_its_report(self) -> None:
-        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(os.environ, {"PITCHSIDE_LLM": "fake"}):
+        # Offline whatever the developer's environment holds: fake client, local tools, no MCP server URL.
+        offline = {"PITCHSIDE_LLM": "fake", "PITCHSIDE_TOOLS": "local"}
+        with tempfile.TemporaryDirectory() as tmp, mock.patch.dict(os.environ, offline):
+            os.environ.pop("PITCHSIDE_MCP_URL", None)  # restored by patch.dict on exit
             out = io.StringIO()
             with redirect_stdout(out):
                 code = main(["eval-agents", "--seeds", "1", "--storylines", "comeback", "--out", tmp])
