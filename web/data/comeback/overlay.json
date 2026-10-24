@@ -649,7 +649,7 @@
       "outcome": "brief",
       "detail": "angle: A chaos spell worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -659,7 +659,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Chaos spell: the match",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -679,7 +679,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -689,7 +689,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -709,9 +709,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 711,
+     "input_tokens": 687,
      "output_tokens": 536,
-     "cost_usd": 0.00125
+     "cost_usd": 0.001244
     },
     "badges": []
    }
@@ -1106,20 +1106,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.47 xG chance, from 5 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.47 xG chance, from 5 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 91,
+        "end": 95,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 112,
+        "end": 113,
         "refs": [
          "e2"
         ]
@@ -1127,20 +1127,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.47 xG chance, from 5 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.47 xG chance, from 5 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 106,
+        "end": 110,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 127,
+        "end": 128,
         "refs": [
          "e2"
         ]
@@ -1150,13 +1150,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1164,13 +1164,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1178,13 +1178,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1198,7 +1198,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -1235,6 +1235,34 @@
            "from_s": 492.5,
            "to_s": 492.5
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "the shot was saved",
+        "window_start_s": 492.5,
+        "window_end_s": 492.5,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           113
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -1374,7 +1402,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -1384,7 +1412,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -1404,7 +1432,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -1414,7 +1442,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -1434,9 +1462,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 933,
-     "output_tokens": 471,
-     "cost_usd": 0.001175
+     "input_tokens": 986,
+     "output_tokens": 527,
+     "cost_usd": 0.001301
     },
     "badges": []
    }
@@ -1874,20 +1902,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
+      "text": "Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 102,
-        "end": 106,
+        "start": 97,
+        "end": 101,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 123,
-        "end": 125,
+        "start": 118,
+        "end": 120,
         "refs": [
          "e2"
         ]
@@ -1895,20 +1923,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
+      "text": "[es · offline] Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 117,
-        "end": 121,
+        "start": 112,
+        "end": 116,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 138,
-        "end": 140,
+        "start": 133,
+        "end": 135,
         "refs": [
          "e2"
         ]
@@ -1918,13 +1946,13 @@
     },
     "casual": {
      "en": {
-      "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "[es · offline] Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1932,13 +1960,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "For Alden Brannholt's fans: Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "[es · offline] For Alden Brannholt's fans: Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1946,13 +1974,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "For Rafa Yaldiran's fans: Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1966,7 +1994,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Rafa Yaldiran scored for Ironvale Athletic: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
       "team_id": "irv",
       "deterministic": "passed",
       "semantic": "passed",
@@ -2170,7 +2198,7 @@
       "outcome": "brief",
       "detail": "angle: A goal worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -2180,7 +2208,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Ironvale Athletic",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -2200,7 +2228,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -2210,7 +2238,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -2230,9 +2258,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1870,
-     "output_tokens": 558,
-     "cost_usd": 0.001584
+     "input_tokens": 1926,
+     "output_tokens": 547,
+     "cost_usd": 0.001576
     },
     "badges": []
    }
@@ -2956,13 +2984,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Half-time: Aurora Rovers 0-1 Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
+      "text": "Half-time: it is 0-1 to Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: Aurora Rovers 0-1 Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
+      "text": "[es · offline] Half-time: it is 0-1 to Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2970,13 +2998,13 @@
     },
     "casual": {
      "en": {
-      "text": "Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "Half-time: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "[es · offline] Half-time: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2984,13 +3012,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "For Alden Brannholt's fans: Half-time: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "[es · offline] For Alden Brannholt's fans: Half-time: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2998,13 +3026,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "For Rafa Yaldiran's fans: Half-time: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Half-time: it is 0-1 to Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3018,7 +3046,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Half-time: Aurora Rovers 0-1 Ironvale Athletic.",
+      "text": "Half-time: it is 0-1 to Ironvale Athletic.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -3306,7 +3334,7 @@
       "outcome": "brief",
       "detail": "angle: A half time worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -3316,7 +3344,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -3336,7 +3364,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -3346,7 +3374,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -3366,9 +3394,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 2953,
-     "output_tokens": 476,
-     "cost_usd": 0.00169
+     "input_tokens": 3009,
+     "output_tokens": 465,
+     "cost_usd": 0.001682
     },
     "badges": []
    }
@@ -3422,20 +3450,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Rafa Yaldiran had the chance for Ironvale Athletic. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
+      "text": "Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 73,
-        "end": 77,
+        "start": 99,
+        "end": 103,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 94,
-        "end": 95,
+        "start": 120,
+        "end": 121,
         "refs": [
          "e2"
         ]
@@ -3443,20 +3471,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Rafa Yaldiran had the chance for Ironvale Athletic. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
+      "text": "[es · offline] Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 88,
-        "end": 92,
+        "start": 114,
+        "end": 118,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 109,
-        "end": 110,
+        "start": 135,
+        "end": 136,
         "refs": [
          "e2"
         ]
@@ -3466,13 +3494,13 @@
     },
     "casual": {
      "en": {
-      "text": "Rafa Yaldiran had the chance for Ironvale Athletic.",
+      "text": "Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Rafa Yaldiran had the chance for Ironvale Athletic.",
+      "text": "[es · offline] Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3480,13 +3508,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Rafa Yaldiran had the chance for Ironvale Athletic.",
+      "text": "For Alden Brannholt's fans: Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Rafa Yaldiran had the chance for Ironvale Athletic.",
+      "text": "[es · offline] For Alden Brannholt's fans: Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3494,13 +3522,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Rafa Yaldiran had the chance for Ironvale Athletic.",
+      "text": "For Rafa Yaldiran's fans: Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Rafa Yaldiran had the chance for Ironvale Athletic.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3514,7 +3542,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Rafa Yaldiran had the chance for Ironvale Athletic.",
+      "text": "Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
       "team_id": "irv",
       "deterministic": "passed",
       "semantic": "passed",
@@ -3551,6 +3579,34 @@
            "from_s": 3009.1,
            "to_s": 3009.1
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "irv",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.0,
+        "unit": "count",
+        "say": "the shot was blocked",
+        "window_start_s": 3009.1,
+        "window_end_s": 3009.1,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           671
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -3693,7 +3749,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -3703,7 +3759,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Ironvale Athletic",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -3723,7 +3779,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -3733,7 +3789,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -3753,9 +3809,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 963,
-     "output_tokens": 481,
-     "cost_usd": 0.001203
+     "input_tokens": 1044,
+     "output_tokens": 541,
+     "cost_usd": 0.001343
     },
     "badges": []
    }
@@ -4150,20 +4206,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.40 xG chance, from 6 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.40 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 93,
+        "end": 97,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 114,
+        "end": 115,
         "refs": [
          "e2"
         ]
@@ -4171,20 +4227,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.40 xG chance, from 6 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.40 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 108,
+        "end": 112,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 129,
+        "end": 130,
         "refs": [
          "e2"
         ]
@@ -4194,13 +4250,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4208,13 +4264,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4222,13 +4278,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4242,7 +4298,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -4279,6 +4335,34 @@
            "from_s": 3232.8,
            "to_s": 3232.8
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.0,
+        "unit": "count",
+        "say": "the shot was blocked",
+        "window_start_s": 3232.8,
+        "window_end_s": 3232.8,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           719
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -4422,7 +4506,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -4432,7 +4516,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -4452,7 +4536,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -4462,7 +4546,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -4482,9 +4566,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 959,
-     "output_tokens": 471,
-     "cost_usd": 0.001182
+     "input_tokens": 1040,
+     "output_tokens": 531,
+     "cost_usd": 0.001322
     },
     "badges": []
    }
@@ -4538,20 +4622,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.35 xG chance, from 7 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 91,
+        "end": 95,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 112,
+        "end": 113,
         "refs": [
          "e2"
         ]
@@ -4559,20 +4643,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.35 xG chance, from 7 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 106,
+        "end": 110,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 127,
+        "end": 128,
         "refs": [
          "e2"
         ]
@@ -4582,13 +4666,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4596,13 +4680,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4610,13 +4694,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4630,7 +4714,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -4667,6 +4751,34 @@
            "from_s": 3381.6,
            "to_s": 3381.6
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "the shot was saved",
+        "window_start_s": 3381.6,
+        "window_end_s": 3381.6,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           754
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -4811,7 +4923,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -4821,7 +4933,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -4841,7 +4953,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -4851,7 +4963,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -4871,9 +4983,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 974,
-     "output_tokens": 471,
-     "cost_usd": 0.001185
+     "input_tokens": 1049,
+     "output_tokens": 527,
+     "cost_usd": 0.001316
     },
     "badges": []
    }
@@ -5664,7 +5776,7 @@
       "outcome": "brief",
       "detail": "angle: A pressure surge worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -5674,7 +5786,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -5694,7 +5806,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -5704,7 +5816,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -5724,9 +5836,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 691,
+     "input_tokens": 687,
      "output_tokens": 486,
-     "cost_usd": 0.001145
+     "cost_usd": 0.001144
     },
     "badges": []
    }
@@ -5780,20 +5892,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.29 xG chance, from 8 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.29 xG chance, from 8 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 91,
+        "end": 95,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 112,
+        "end": 113,
         "refs": [
          "e2"
         ]
@@ -5801,20 +5913,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.29 xG chance, from 8 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.29 xG chance, from 8 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 106,
+        "end": 110,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 127,
+        "end": 128,
         "refs": [
          "e2"
         ]
@@ -5824,13 +5936,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -5838,13 +5950,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -5852,13 +5964,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -5872,7 +5984,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -5909,6 +6021,34 @@
            "from_s": 3871.9,
            "to_s": 3871.9
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "the shot was saved",
+        "window_start_s": 3871.9,
+        "window_end_s": 3871.9,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           885
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -6058,7 +6198,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -6068,7 +6208,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -6088,7 +6228,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -6098,7 +6238,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -6118,9 +6258,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 959,
-     "output_tokens": 471,
-     "cost_usd": 0.001182
+     "input_tokens": 1034,
+     "output_tokens": 527,
+     "cost_usd": 0.001313
     },
     "badges": []
    }
@@ -6174,20 +6314,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.64 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 91,
+        "end": 95,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 112,
+        "end": 113,
         "refs": [
          "e2"
         ]
@@ -6195,20 +6335,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.64 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 106,
+        "end": 110,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 127,
+        "end": 128,
         "refs": [
          "e2"
         ]
@@ -6218,13 +6358,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6232,13 +6372,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6246,13 +6386,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6266,7 +6406,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -6303,6 +6443,34 @@
            "from_s": 3881.3,
            "to_s": 3881.3
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "the shot was saved",
+        "window_start_s": 3881.3,
+        "window_end_s": 3881.3,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           890
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -6453,7 +6621,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -6463,7 +6631,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -6483,7 +6651,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -6493,7 +6661,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -6513,9 +6681,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 954,
-     "output_tokens": 471,
-     "cost_usd": 0.001181
+     "input_tokens": 1029,
+     "output_tokens": 527,
+     "cost_usd": 0.001311
     },
     "badges": []
    }
@@ -6977,7 +7145,7 @@
       "outcome": "brief",
       "detail": "angle: A momentum shift worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -6987,7 +7155,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Momentum shift: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -7007,7 +7175,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -7017,7 +7185,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -7037,9 +7205,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 647,
+     "input_tokens": 643,
      "output_tokens": 425,
-     "cost_usd": 0.001012
+     "cost_usd": 0.001011
     },
     "badges": []
    }
@@ -7093,20 +7261,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.48 xG chance, from 5 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.48 xG chance, from 5 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 93,
+        "end": 97,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 114,
+        "end": 115,
         "refs": [
          "e2"
         ]
@@ -7114,20 +7282,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.48 xG chance, from 5 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.48 xG chance, from 5 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 108,
+        "end": 112,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 129,
+        "end": 130,
         "refs": [
          "e2"
         ]
@@ -7137,13 +7305,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7151,13 +7319,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7165,13 +7333,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7185,7 +7353,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -7222,6 +7390,34 @@
            "from_s": 3969.5,
            "to_s": 3969.5
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.0,
+        "unit": "count",
+        "say": "the shot was blocked",
+        "window_start_s": 3969.5,
+        "window_end_s": 3969.5,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           915
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -7373,7 +7569,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -7383,7 +7579,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -7403,7 +7599,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -7413,7 +7609,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -7433,9 +7629,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 960,
-     "output_tokens": 471,
-     "cost_usd": 0.001182
+     "input_tokens": 1040,
+     "output_tokens": 532,
+     "cost_usd": 0.001324
     },
     "badges": []
    }
@@ -7830,20 +8026,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.39 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 93,
+        "end": 97,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 114,
+        "end": 115,
         "refs": [
          "e2"
         ]
@@ -7851,20 +8047,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.39 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 108,
+        "end": 112,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 129,
+        "end": 130,
         "refs": [
          "e2"
         ]
@@ -7874,13 +8070,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7888,13 +8084,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7902,13 +8098,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7922,7 +8118,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -7959,6 +8155,34 @@
            "from_s": 4017.6,
            "to_s": 4017.6
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.0,
+        "unit": "count",
+        "say": "the shot was blocked",
+        "window_start_s": 4017.6,
+        "window_end_s": 4017.6,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           929
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -8111,7 +8335,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -8121,7 +8345,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -8141,7 +8365,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -8151,7 +8375,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -8171,9 +8395,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 961,
-     "output_tokens": 471,
-     "cost_usd": 0.001182
+     "input_tokens": 1042,
+     "output_tokens": 532,
+     "cost_usd": 0.001324
     },
     "badges": []
    }
@@ -8221,20 +8445,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.39 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 93,
+        "end": 97,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 114,
+        "end": 115,
         "refs": [
          "e2"
         ]
@@ -8242,20 +8466,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.39 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 108,
+        "end": 112,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 129,
+        "end": 130,
         "refs": [
          "e2"
         ]
@@ -8265,13 +8489,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8279,13 +8503,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8293,13 +8517,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8313,7 +8537,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -8350,6 +8574,34 @@
            "from_s": 4023.5,
            "to_s": 4023.5
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.0,
+        "unit": "count",
+        "say": "the shot was blocked",
+        "window_start_s": 4023.5,
+        "window_end_s": 4023.5,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           934
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -8503,7 +8755,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -8513,7 +8765,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -8533,7 +8785,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -8543,7 +8795,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -8563,9 +8815,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 959,
-     "output_tokens": 471,
-     "cost_usd": 0.001182
+     "input_tokens": 1040,
+     "output_tokens": 532,
+     "cost_usd": 0.001324
     },
     "badges": []
    }
@@ -8960,20 +9212,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1. Aurora Rovers: a 0.64 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 96,
-        "end": 100,
+        "start": 70,
+        "end": 74,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 117,
-        "end": 118,
+        "start": 91,
+        "end": 92,
         "refs": [
          "e2"
         ]
@@ -8981,20 +9233,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 1-1. Aurora Rovers: a 0.64 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 111,
-        "end": 115,
+        "start": 85,
+        "end": 89,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 132,
-        "end": 133,
+        "start": 106,
+        "end": 107,
         "refs": [
          "e2"
         ]
@@ -9004,13 +9256,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9018,13 +9270,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9032,13 +9284,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9052,7 +9304,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 1-1 Ironvale Athletic.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -9389,7 +9641,7 @@
       "outcome": "brief",
       "detail": "angle: A goal worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -9399,7 +9651,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -9419,7 +9671,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -9429,7 +9681,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -9449,9 +9701,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1909,
-     "output_tokens": 564,
-     "cost_usd": 0.001605
+     "input_tokens": 1927,
+     "output_tokens": 505,
+     "cost_usd": 0.001492
     },
     "badges": []
    }
@@ -9505,20 +9757,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 6 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.35 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 93,
+        "end": 97,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 114,
+        "end": 115,
         "refs": [
          "e2"
         ]
@@ -9526,20 +9778,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 6 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.35 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 108,
+        "end": 112,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 129,
+        "end": 130,
         "refs": [
          "e2"
         ]
@@ -9549,13 +9801,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9563,13 +9815,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9577,13 +9829,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9597,7 +9849,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -9634,6 +9886,34 @@
            "from_s": 4497.4,
            "to_s": 4497.4
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.0,
+        "unit": "count",
+        "say": "the shot was blocked",
+        "window_start_s": 4497.4,
+        "window_end_s": 4497.4,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           1045
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -9789,7 +10069,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -9799,7 +10079,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -9819,7 +10099,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -9829,7 +10109,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -9849,9 +10129,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 966,
-     "output_tokens": 471,
-     "cost_usd": 0.001184
+     "input_tokens": 1027,
+     "output_tokens": 532,
+     "cost_usd": 0.001321
     },
     "badges": []
    }
@@ -9905,20 +10185,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.34 xG chance, from 6 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot went off target. Aurora Rovers: a 0.34 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 97,
+        "end": 101,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 118,
+        "end": 119,
         "refs": [
          "e2"
         ]
@@ -9926,20 +10206,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.34 xG chance, from 6 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot went off target. Aurora Rovers: a 0.34 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 112,
+        "end": 116,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 133,
+        "end": 134,
         "refs": [
          "e2"
         ]
@@ -9949,13 +10229,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9963,13 +10243,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9977,13 +10257,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -9997,7 +10277,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -10034,6 +10314,34 @@
            "from_s": 4961.7,
            "to_s": 4961.7
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 0.0,
+        "unit": "count",
+        "say": "the shot went off target",
+        "window_start_s": 4961.7,
+        "window_end_s": 4961.7,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           1197
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -10194,7 +10502,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -10204,7 +10512,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -10224,7 +10532,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -10234,7 +10542,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -10254,9 +10562,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 963,
-     "output_tokens": 471,
-     "cost_usd": 0.001183
+     "input_tokens": 1033,
+     "output_tokens": 541,
+     "cost_usd": 0.00134
     },
     "badges": []
    }
@@ -10837,7 +11145,7 @@
       "outcome": "brief",
       "detail": "angle: A chaos spell worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -10847,7 +11155,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Chaos spell: the match",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -10867,7 +11175,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -10877,7 +11185,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -10897,9 +11205,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 758,
+     "input_tokens": 733,
      "output_tokens": 536,
-     "cost_usd": 0.001262
+     "cost_usd": 0.001255
     },
     "badges": []
    }
@@ -10953,20 +11261,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic. Aurora Rovers: a 0.69 xG chance, from 4 m.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers. Aurora Rovers: a 0.69 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 96,
-        "end": 100,
+        "start": 87,
+        "end": 91,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 117,
-        "end": 118,
+        "start": 108,
+        "end": 109,
         "refs": [
          "e2"
         ]
@@ -10974,20 +11282,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic. Aurora Rovers: a 0.69 xG chance, from 4 m.",
+      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers. Aurora Rovers: a 0.69 xG chance, from 4 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 111,
-        "end": 115,
+        "start": 102,
+        "end": 106,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 132,
-        "end": 133,
+        "start": 123,
+        "end": 124,
         "refs": [
          "e2"
         ]
@@ -10997,13 +11305,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11011,13 +11319,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11025,13 +11333,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11045,7 +11353,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt scored for Aurora Rovers: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -11412,7 +11720,7 @@
       "outcome": "brief",
       "detail": "angle: A goal worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -11422,7 +11730,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -11442,7 +11750,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -11452,7 +11760,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -11472,9 +11780,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1919,
-     "output_tokens": 564,
-     "cost_usd": 0.001608
+     "input_tokens": 1967,
+     "output_tokens": 543,
+     "cost_usd": 0.001578
     },
     "badges": []
    }
@@ -11510,13 +11818,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Full-time: Aurora Rovers 2-1 Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
+      "text": "Full-time: it is 2-1 to Aurora Rovers. Rafa Yaldiran scored for Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: Aurora Rovers 2-1 Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
+      "text": "[es · offline] Full-time: it is 2-1 to Aurora Rovers. Rafa Yaldiran scored for Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11524,13 +11832,13 @@
     },
     "casual": {
      "en": {
-      "text": "Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "Full-time: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "[es · offline] Full-time: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11538,13 +11846,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "For Alden Brannholt's fans: Full-time: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "[es · offline] For Alden Brannholt's fans: Full-time: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11552,13 +11860,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "For Rafa Yaldiran's fans: Full-time: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Full-time: it is 2-1 to Aurora Rovers.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11572,7 +11880,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Full-time: Aurora Rovers 2-1 Ironvale Athletic.",
+      "text": "Full-time: it is 2-1 to Aurora Rovers.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -12006,7 +12314,7 @@
       "outcome": "brief",
       "detail": "angle: A full time worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -12016,7 +12324,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Full time: the match",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -12036,7 +12344,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -12046,7 +12354,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -12066,9 +12374,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3631,
-     "output_tokens": 477,
-     "cost_usd": 0.001862
+     "input_tokens": 3665,
+     "output_tokens": 456,
+     "cost_usd": 0.001828
     },
     "badges": []
    }

@@ -34,7 +34,7 @@ POSSESSION = ("possession_change",)
 METRIC_EVENTS: dict[str, tuple[str, ...]] = {
     **dict.fromkeys(("shot_xg", "shot_distance", "xg", "match_xg", "xg_total", "shots", "match_shots",
                      "shots_total", "ended_with_shot", "finish_distance_to_goal", "seconds_to_finish",
-                     "player_goals", "player_shots", "player_xg", "goal_margin"), SHOT),
+                     "player_goals", "player_shots", "player_xg", "goal_margin", "shot_outcome"), SHOT),
     **dict.fromkeys(("pass_completion", "pass_completion_total", "opponent_pass_completion", "field_tilt",
                      "opponent_final_third_passes", "passes_in_move", "metres_gained"), PASS),
     **dict.fromkeys(("possession", "possession_total", "passes_in_spell", "mean_spell", "seconds_since_turnover",

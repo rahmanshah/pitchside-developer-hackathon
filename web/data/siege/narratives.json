@@ -19,10 +19,11 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Xarno Uusitalo had the chance for Westmere Town.",
+     "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
      "team_id": "wst",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -65,56 +66,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Xarno Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
+     "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved. Westmere Town: a 0.51 xG chance, from 5 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Xarno Uusitalo had the chance for Westmere Town.",
+     "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Xarno Uusitalo had the chance for Westmere Town.",
+     "text": "For Hugo Vidrelle's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town.",
+     "text": "For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town. Westmere Town: a 0.51 xG chance, from 5 m.",
+     "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town, and the shot was saved. Westmere Town: a 0.51 xG chance, from 5 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town.",
+     "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Xarno Uusitalo had the chance for Westmere Town.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
      "source": "model",
      "reason": null
     }
@@ -249,6 +250,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "shot_outcome",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "the shot was saved",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "wst",
@@ -309,10 +324,11 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
       "team_id": "wst",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -1676,10 +1692,11 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
      "team_id": "har",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -1722,56 +1739,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Hugo Vidrelle had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
+     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot went off target. Harbourton City: a 0.53 xG chance, from 5 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City. Harbourton City: a 0.53 xG chance, from 5 m.",
+     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City, and the shot went off target. Harbourton City: a 0.53 xG chance, from 5 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
      "source": "model",
      "reason": null
     }
@@ -1906,6 +1923,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "shot_outcome",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "the shot went off target",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "har",
@@ -1966,10 +1997,11 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidrelle had the chance for Harbourton City.",
+      "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
       "team_id": "har",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -2074,10 +2106,11 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
      "team_id": "har",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -2120,56 +2153,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Hugo Vidrelle had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
+     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot was saved. Harbourton City: a 0.71 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City. Harbourton City: a 0.71 xG chance, from 4 m.",
+     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City, and the shot was saved. Harbourton City: a 0.71 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
      "source": "model",
      "reason": null
     }
@@ -2304,6 +2337,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "shot_outcome",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "the shot was saved",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "har",
@@ -2364,10 +2411,11 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidrelle had the chance for Harbourton City.",
+      "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
       "team_id": "har",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -2472,7 +2520,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "text": "Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
      "team_id": "har",
      "refs": [
       "p1",
@@ -2524,56 +2572,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
+     "text": "Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City. Harbourton City: a 0.06 xG chance, from 19 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "text": "Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town. Harbourton City: a 0.06 xG chance, from 19 m.",
+     "text": "[es · offline] Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City. Harbourton City: a 0.06 xG chance, from 19 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "text": "[es · offline] Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     }
@@ -2722,6 +2770,20 @@
      "origin": null
     },
     {
+     "ref": "e11",
+     "metric": "shot_outcome",
+     "team_id": "har",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "the shot went in",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "har",
@@ -2731,7 +2793,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2194.3,
      "baseline": null,
-     "say": "this is Hugo Vidrelle's first goal of the match",
+     "say": "this is Hugo Vidrelle's first goal in this match",
      "source": "player",
      "origin": null
     },
@@ -2894,7 +2956,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
+      "text": "Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
       "team_id": "har",
       "refs": [
        "p1",
@@ -3179,7 +3241,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Half-time: Harbourton City 1-0 Westmere Town.",
+     "text": "Half-time: it is 1-0 to Harbourton City.",
      "team_id": null,
      "refs": [
       "c1"
@@ -3220,56 +3282,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidrelle scored for Harbourton City.",
+     "text": "Half-time: it is 1-0 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Half-time: Harbourton City 1-0 Westmere Town.",
+     "text": "Half-time: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+     "text": "For Hugo Vidrelle's fans: Half-time: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+     "text": "For Xarno Uusitalo's fans: Half-time: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Half-time: Harbourton City 1-0 Westmere Town. Hugo Vidrelle scored for Harbourton City.",
+     "text": "[es · offline] Half-time: it is 1-0 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Half-time: Harbourton City 1-0 Westmere Town.",
+     "text": "[es · offline] Half-time: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Half-time: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: Harbourton City 1-0 Westmere Town.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: it is 1-0 to Harbourton City.",
      "source": "model",
      "reason": null
     }
@@ -3545,6 +3607,20 @@
     },
     {
      "ref": "c20",
+     "metric": "shot_outcome",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "the shot was saved",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c21",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3558,7 +3634,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c21",
+     "ref": "c22",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3572,7 +3648,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c22",
+     "ref": "c23",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -3586,7 +3662,21 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c23",
+     "ref": "c24",
+     "metric": "shot_outcome",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "the shot went off target",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:1"
+    },
+    {
+     "ref": "c25",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3600,7 +3690,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c24",
+     "ref": "c26",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3614,7 +3704,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c25",
+     "ref": "c27",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -3628,7 +3718,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c26",
+     "ref": "c28",
      "metric": "pressures_per_min",
      "team_id": "har",
      "player_id": null,
@@ -3642,7 +3732,7 @@
      "origin": "har_wst_siege_0003:pressure_surge:0"
     },
     {
-     "ref": "c27",
+     "ref": "c29",
      "metric": "tackles_won",
      "team_id": "har",
      "player_id": null,
@@ -3656,7 +3746,7 @@
      "origin": "har_wst_siege_0003:pressure_surge:0"
     },
     {
-     "ref": "c28",
+     "ref": "c30",
      "metric": "opponent_pass_completion",
      "team_id": "wst",
      "player_id": null,
@@ -3670,7 +3760,7 @@
      "origin": "har_wst_siege_0003:pressure_surge:0"
     },
     {
-     "ref": "c29",
+     "ref": "c31",
      "metric": "field_tilt",
      "team_id": "har",
      "player_id": null,
@@ -3684,7 +3774,7 @@
      "origin": "har_wst_siege_0003:siege:0"
     },
     {
-     "ref": "c30",
+     "ref": "c32",
      "metric": "shots",
      "team_id": "har",
      "player_id": null,
@@ -3698,7 +3788,7 @@
      "origin": "har_wst_siege_0003:siege:0"
     },
     {
-     "ref": "c31",
+     "ref": "c33",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -3712,7 +3802,7 @@
      "origin": null
     },
     {
-     "ref": "c32",
+     "ref": "c34",
      "metric": "shots_total",
      "team_id": "har",
      "player_id": null,
@@ -3726,7 +3816,7 @@
      "origin": null
     },
     {
-     "ref": "c33",
+     "ref": "c35",
      "metric": "xg_total",
      "team_id": "har",
      "player_id": null,
@@ -3740,7 +3830,7 @@
      "origin": null
     },
     {
-     "ref": "c34",
+     "ref": "c36",
      "metric": "pass_completion_total",
      "team_id": "har",
      "player_id": null,
@@ -3754,7 +3844,7 @@
      "origin": null
     },
     {
-     "ref": "c35",
+     "ref": "c37",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -3768,7 +3858,7 @@
      "origin": null
     },
     {
-     "ref": "c36",
+     "ref": "c38",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -3782,7 +3872,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c39",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -3796,7 +3886,7 @@
      "origin": null
     },
     {
-     "ref": "c38",
+     "ref": "c40",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -3836,7 +3926,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Half-time: Harbourton City 1-0 Westmere Town.",
+      "text": "Half-time: it is 1-0 to Harbourton City.",
       "team_id": null,
       "refs": [
        "c1"
@@ -4323,7 +4413,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "text": "Xarno Uusitalo scored for Westmere Town: it is 1-1.",
      "team_id": "wst",
      "refs": [
       "p1",
@@ -4370,56 +4460,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
+     "text": "Xarno Uusitalo scored for Westmere Town: it is 1-1. Westmere Town: a 0.63 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "text": "Xarno Uusitalo scored for Westmere Town: it is 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "text": "For Hugo Vidrelle's fans: Xarno Uusitalo scored for Westmere Town: it is 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "text": "For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: it is 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town. Westmere Town: a 0.63 xG chance, from 4 m.",
+     "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: it is 1-1. Westmere Town: a 0.63 xG chance, from 4 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: it is 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Xarno Uusitalo scored for Westmere Town: it is 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: it is 1-1.",
      "source": "model",
      "reason": null
     }
@@ -4568,6 +4658,20 @@
      "origin": null
     },
     {
+     "ref": "e11",
+     "metric": "shot_outcome",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 3220.6,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "the shot went in",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "wst",
@@ -4577,7 +4681,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3220.6,
      "baseline": null,
-     "say": "this is Xarno Uusitalo's first goal of the match",
+     "say": "this is Xarno Uusitalo's first goal in this match",
      "source": "player",
      "origin": null
     },
@@ -4740,7 +4844,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
+      "text": "Xarno Uusitalo scored for Westmere Town: it is 1-1.",
       "team_id": "wst",
       "refs": [
        "p1",
@@ -5090,7 +5194,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "text": "Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
      "team_id": "har",
      "refs": [
       "p1",
@@ -5142,56 +5246,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
+     "text": "Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City. Harbourton City: a 0.04 xG chance, from 22 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "text": "Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "text": "For Hugo Vidrelle's fans: Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "text": "For Xarno Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town. Harbourton City: a 0.04 xG chance, from 22 m.",
+     "text": "[es · offline] Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City. Harbourton City: a 0.04 xG chance, from 22 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "text": "[es · offline] Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     }
@@ -5340,6 +5444,20 @@
      "origin": null
     },
     {
+     "ref": "e11",
+     "metric": "shot_outcome",
+     "team_id": "har",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "the shot went in",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "har",
@@ -5349,7 +5467,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4755.7,
      "baseline": null,
-     "say": "this is Joaquin Quenvara's first goal of the match",
+     "say": "this is Joaquin Quenvara's first goal in this match",
      "source": "player",
      "origin": null
     },
@@ -5512,7 +5630,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
+      "text": "Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
       "team_id": "har",
       "refs": [
        "p1",
@@ -5626,7 +5744,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Full-time: Harbourton City 2-1 Westmere Town.",
+     "text": "Full-time: it is 2-1 to Harbourton City.",
      "team_id": null,
      "refs": [
       "c1"
@@ -5667,56 +5785,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidrelle scored for Harbourton City.",
+     "text": "Full-time: it is 2-1 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Full-time: Harbourton City 2-1 Westmere Town.",
+     "text": "Full-time: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+     "text": "For Hugo Vidrelle's fans: Full-time: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+     "text": "For Xarno Uusitalo's fans: Full-time: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Full-time: Harbourton City 2-1 Westmere Town. Hugo Vidrelle scored for Harbourton City.",
+     "text": "[es · offline] Full-time: it is 2-1 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Full-time: Harbourton City 2-1 Westmere Town.",
+     "text": "[es · offline] Full-time: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Full-time: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: Harbourton City 2-1 Westmere Town.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: it is 2-1 to Harbourton City.",
      "source": "model",
      "reason": null
     }
@@ -6160,6 +6278,20 @@
     },
     {
      "ref": "c32",
+     "metric": "shot_outcome",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "the shot was saved",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c33",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6173,7 +6305,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c33",
+     "ref": "c34",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6187,7 +6319,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c34",
+     "ref": "c35",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -6201,7 +6333,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c35",
+     "ref": "c36",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -6215,7 +6347,7 @@
      "origin": null
     },
     {
-     "ref": "c36",
+     "ref": "c37",
      "metric": "shots_total",
      "team_id": "har",
      "player_id": null,
@@ -6229,7 +6361,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c38",
      "metric": "xg_total",
      "team_id": "har",
      "player_id": null,
@@ -6243,7 +6375,7 @@
      "origin": null
     },
     {
-     "ref": "c38",
+     "ref": "c39",
      "metric": "pass_completion_total",
      "team_id": "har",
      "player_id": null,
@@ -6257,7 +6389,7 @@
      "origin": null
     },
     {
-     "ref": "c39",
+     "ref": "c40",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -6271,7 +6403,7 @@
      "origin": null
     },
     {
-     "ref": "c40",
+     "ref": "c41",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -6285,7 +6417,7 @@
      "origin": null
     },
     {
-     "ref": "c41",
+     "ref": "c42",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -6299,7 +6431,7 @@
      "origin": null
     },
     {
-     "ref": "c42",
+     "ref": "c43",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -6347,7 +6479,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Full-time: Harbourton City 2-1 Westmere Town.",
+      "text": "Full-time: it is 2-1 to Harbourton City.",
       "team_id": null,
       "refs": [
        "c1"

@@ -15,9 +15,9 @@ from pitchside.agents.contracts import ExplainerReply, InterpreterReply, Persona
 from pitchside.agents.faults import FaultInjector, bad_claims_plan, corrupt, demo_plan, parse_faults
 from pitchside.agents.jobs import FindingPoint, RecapPoint, walk_match
 from pitchside.agents.languages import LANGUAGES, resolve_languages
-from pitchside.agents.ledger import FLAG_METRICS
+from pitchside.agents.ledger import FLAG_METRICS, SHOT_OUTCOMES
 from pitchside.agents.prompting import (
-    evidence_lines, explainer_prompt, instructions, interpreter_prompt, personalizer_prompt, personas_for,
+    evidence_lines, explainer_prompt, instructions, interpreter_prompt, moment_line, personalizer_prompt, personas_for,
     prompt_version, rule_brief, to_claims, verifier_prompt,
 )
 from pitchside.agents.roles import LOCAL_TOOL_NAMES
@@ -68,6 +68,22 @@ class PromptTests(unittest.TestCase):
         self.assertTrue(flags)
         for line in flags:
             self.assertIn(line.split(" | ")[3], ("yes", "no"), line)
+        outcomes = [line for line in lines if line.split(" | ")[1] == "shot_outcome"]
+        self.assertTrue(outcomes)
+        for line in outcomes:
+            self.assertIn(line.split(" | ")[3], SHOT_OUTCOMES, line)
+
+    def test_the_moment_line_gives_the_score_as_a_clause_and_the_shots_outcome(self) -> None:
+        # "score Aurora Rovers 0-0 Ironvale Athletic" was pasted into persona texts (decision 24).
+        lines = {job.job_id: moment_line(job) for seed, story in ((1, "comeback"), (3, "end_to_end"))
+                 for job in model_jobs(seed, story)}
+        for job_id, line in lines.items():
+            self.assertRegex(line, r"\| score: it is \d+-\d+(?: to (?:Aurora Rovers|Ironvale Athletic))?$", job_id)
+            self.assertNotRegex(line, r"(?:Rovers|Athletic) \d+-\d+ (?:Aurora|Ironvale)")
+            shot = any(k in job_id for k in (":goal:", ":big_chance:"))
+            self.assertEqual("| outcome: " in line, shot, job_id)
+        goal = next(job for job in model_jobs() if job.label == "goal")  # seed 1: Ironvale open the scoring
+        self.assertTrue(moment_line(goal).endswith("| outcome: goal | score: it is 0-1 to Ironvale Athletic"))
 
 
 class FakeAgentTests(unittest.TestCase):

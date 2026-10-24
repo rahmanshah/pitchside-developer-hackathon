@@ -164,6 +164,23 @@ class FlagClaimTests(unittest.TestCase):
         self.assertEqual(codes(claim(f"Ironvale Athletic: {flag.say}, and scored 29 s later.", refs=(flag.ref, "e6"),
                                      numbers=((29, "e6"),))), [])
 
+    def test_a_shots_outcome_is_cited_in_words(self) -> None:
+        outcome = next(i for i in LEDGER.items if i.metric == "shot_outcome")
+        self.assertEqual(outcome.say, "the shot went in")
+        self.assertEqual(codes(claim(f"{SCORER.name} scored from 21 m, and {outcome.say}.",
+                                     refs=(outcome.ref, "e2", SCORER.ref), numbers=((21, "e2"),))), [])
+
+    def test_no_digit_stands_for_a_word_fact(self) -> None:
+        # A code ("3" for a goal, "1" for yes) is never a number a text may quote (decision 24).
+        outcome = next(i for i in LEDGER.items if i.metric == "shot_outcome")
+        flag = next(i for i in LEDGER.items if i.metric == "possession_won_in_open_play")
+        self.assertEqual(codes(claim("Ironvale Athletic: outcome 3.", refs=(outcome.ref,),
+                                     numbers=((3, outcome.ref),))), ["number_mismatch"])
+        self.assertEqual(codes(claim("Ironvale Athletic won the ball in open play (1).", refs=(flag.ref,),
+                                     numbers=((1, flag.ref),))), ["number_mismatch"])
+        persona = check_text("Ironvale Athletic: outcome 3.", CTX, [outcome.ref])
+        self.assertEqual([r.code for r in persona], ["unlisted_number"])
+
 
 class ScorelineTests(unittest.TestCase):
     MARGIN = next(i for i in LEDGER.items if i.metric == "goal_margin")
@@ -207,7 +224,7 @@ class PastedScorelineTests(unittest.TestCase):
         # balanced_0206 pasted "Aurora Rovers 1-0 Ironvale Athletic (goals 1, ...)": the away club was named last.
         self.assertEqual((self.margin.say, self.tally.say),
                          ("it is 2-1: Aurora Rovers go ahead",
-                          f"{self.scorer.name} has 2 goals in the match, including this one"))
+                          f"{self.scorer.name} has 2 goals in this match, including this one"))
         seconds = round(self.clock.value)
         new = f"{self.scorer.name} scored; {self.margin.say}, {seconds} s after winning the ball; {self.tally.say}."
         self.assertEqual(self.codes(new, [self.scorer.ref, self.margin.ref, "e6", self.tally.ref],

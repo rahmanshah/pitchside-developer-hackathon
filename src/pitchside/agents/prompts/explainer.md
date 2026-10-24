@@ -20,9 +20,14 @@ Rules:
 - For a goal, one claim gives the score after it ("it is 1-1") and cites the `goal_margin` id; the checker rejects
   a goal without one. Any claim saying the club scored, equalised, went ahead, extended or cut a lead cites it too,
   and uses the words its say gives. "His second goal" cites the scorer's `player_goals` id ("Kofi Mendes has 2
-  goals in the match, including this one").
+  goals in this match, including this one").
 - Numbers for both teams are combined figures ("across both teams"), never each team's ("both teams averaged").
   Numbers from the same window name it once ("In this spell, 71% pass completion and 3.0 turnovers per minute").
+- A shot's outcome is its `shot_outcome` id: describe it only as its say puts it (saved, blocked, off target, went
+  in) and cite that id. Never mention the woodwork, a header or a foot, or say a team conceded, unless the evidence
+  says so.
+- The evidence covers this match only: never claim a club, season or career record ("first goal for the club",
+  "debut", "this season"). "This is Kofi Mendes's first goal in this match" is what a tally supports.
 - Only name players listed under PLAYERS, and cite their p* id when you do.
 - No speculation about the future, no causes the evidence does not show, no superlatives like "best ever".
 - `headline`: at most 8 words, no numbers.
@@ -31,12 +36,13 @@ Rules:
   "numbers": [{"value": number, "ref": str}]}]}.
 
 Example 1
-MOMENT: goal | team aur (Aurora Rovers, home) | minute 71 | score Aurora Rovers 1-1 Ironvale Athletic
+MOMENT: goal | team aur (Aurora Rovers, home) | minute 71 | outcome: goal | score: it is 1-1
 EVIDENCE:
 e1 | shot_xg | aur | 0.31 xg | say "a 0.31 xG chance"
 e2 | shot_distance | aur | 11.2 m | say "from 11 m"
 e6 | seconds_since_turnover | aur | 9 s | say "9 s after winning the ball"
 e10 | goal_margin | aur | 0 count | say "it is 1-1: Aurora Rovers equalise"
+e11 | shot_outcome | aur | goal | say "the shot went in"
 p1 | Kofi Mendes | aur | scorer
 Reply: {"headline": "Mendes levels it for Aurora", "claims": [{"text": "Kofi Mendes equalised for Aurora Rovers with a 0.31 xG chance from 11 m.", "team_id": "aur", "refs": ["p1", "e1", "e2", "e10"], "numbers": [{"value": 0.31, "ref": "e1"}, {"value": 11, "ref": "e2"}]}, {"text": "Aurora Rovers scored 9 s after winning the ball, and it is 1-1.", "team_id": "aur", "refs": ["e6", "e10"], "numbers": [{"value": 9, "ref": "e6"}]}]}
 
@@ -45,7 +51,7 @@ FEEDBACK (attempt 2): claim 1: number_mismatch: "78%" does not match e1 (field_t
 Reply: {"headline": "Ironvale camp in Aurora's half", "claims": [{"text": "Ironvale Athletic have 74% field tilt, while Aurora Rovers have 2 passes into the final third.", "team_id": "irv", "refs": ["e1", "e6"], "numbers": [{"value": 74, "ref": "e1"}, {"value": 2, "ref": "e6"}]}]}
 
 Example 3 (recap)
-MOMENT: recap half_time | minute 46 | score Aurora Rovers 0-1 Ironvale Athletic
+MOMENT: recap half_time | minute 46 | score: it is 0-1 to Ironvale Athletic
 EVIDENCE:
 c3 | shots_total | aur | 6 count | say "Aurora Rovers: 6 shots"
 c7 | shots_total | irv | 3 count | say "Ironvale Athletic: 3 shots"

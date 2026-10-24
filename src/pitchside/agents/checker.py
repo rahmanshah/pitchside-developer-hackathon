@@ -31,7 +31,7 @@ from typing import Iterable, Literal, Optional, Sequence
 from ..schema import Score
 from .contracts import Claim, ClaimCheck, GoalAt, Job, Ledger, LedgerItem, MatchFacts, Reason
 from .languages import ENGLISH, Language
-from .ledger import UNIT_DECIMALS
+from .ledger import UNIT_DECIMALS, WORD_METRICS
 
 _SENTENCE_END = re.compile(r"(?<!\d)[.!?;](?!\d)|[!?;]")
 _SCORE = re.compile(r"(?<![\d.,])(\d{1,2})\s*[-–]\s*(\d{1,2})(?!\d|[.,]\d|%)")
@@ -238,8 +238,11 @@ def number_matches(item: LedgerItem, token: _Token) -> bool:
     """True if the written number is the ledger value rounded to the precision written.
 
     The precision may be at most one decimal coarser than the unit's display precision: "0.4 xG" may stand for
-    0.39, but "0 xG" may not stand for 0.048 ("2 m" for 1.7 m and "71%" for 71.4 are fine).
+    0.39, but "0 xG" may not stand for 0.048 ("2 m" for 1.7 m and "71%" for 71.4 are fine). A fact stated in
+    words (a yes/no flag, a shot's outcome) has no number to quote: no digit matches it.
     """
+    if item.metric in WORD_METRICS:
+        return False
     if not token.minutes and token.decimals < UNIT_DECIMALS.get(item.unit, 0) - 1:
         return False
     return abs(token.value - _comparable(item, token)) <= 0.5 * 10 ** (-token.decimals) + 1e-9

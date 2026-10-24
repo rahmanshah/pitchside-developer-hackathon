@@ -25,6 +25,11 @@ MAX_RECAP_CLAIMS = 12
 UNSIGNED_INDEX = frozenset({"pass_difficulty"})  # 0..1 ratings, not -1..+1 swings: no "+" sign
 # Yes/no facts stored as 1/0: quoted in words, never as a digit ("(1)" read as a count in live output).
 FLAG_METRICS = frozenset({"possession_won_in_open_play", "ended_with_shot"})
+# How a shot ended, stored as the index into SHOT_OUTCOMES (decision 24). Live text invented outcomes the evidence
+# did not hold ("rattles the bar" for a blocked shot), so goals and big chances carry the real one.
+SHOT_OUTCOMES = ("off_target", "blocked", "saved", "goal")
+# Facts stated in words: no number in a text can match them (the checker never accepts a digit for one).
+WORD_METRICS = FLAG_METRICS | {"shot_outcome"}
 # Match-wide numbers over the chaos window: without it named, "79% pass completion" reads as the whole match, and
 # "both teams averaged" as each club's figure, so they say "across both teams in this spell" (decisions 21, 23).
 SPELL_WINDOW_METRICS = frozenset({"chaos_index", "turnovers_per_min", "pass_completion", "mean_spell"})
@@ -68,6 +73,8 @@ def say(metric: str, value: float, unit: str, lang: Language = ENGLISH, team_nam
     (a ``PossessionChangeEvent`` reason): a restart or a save is named as such, and its clock reads "after gaining
     possession", not "after winning the ball".
     """
+    if metric == "shot_outcome":
+        return lang.phrases[f"shot_outcome.{word_value(metric, value)}"]
     if metric in FLAG_METRICS:
         key = f"fact.{metric}" if value >= 0.5 else f"fact.{metric}.no"
         if value < 0.5 and metric == "possession_won_in_open_play" and f"possession_from.{cause}" in lang.phrases:
@@ -81,6 +88,15 @@ def say(metric: str, value: float, unit: str, lang: Language = ENGLISH, team_nam
         base = _phrase(lang, f"fact.{metric[:-6]}", value, unit).format(v=v, opponent=team_name)
         return lang.phrases["fact.since_kickoff"].format(phrase=base)
     return (phrase or "{v} " + metric.replace("_", " ")).format(v=v, opponent=team_name)
+
+
+def word_value(metric: str, value: float) -> Optional[str]:
+    """The word a word fact is shown as in prompts ("yes", "saved"); None for a number."""
+    if metric == "shot_outcome":
+        return SHOT_OUTCOMES[int(round(value))]
+    if metric in FLAG_METRICS:
+        return "yes" if value >= 0.5 else "no"
+    return None
 
 
 def window_say(metric: str, value: float, unit: str, window: Window, lang: Language = ENGLISH,
@@ -213,6 +229,13 @@ def finding_ledger(finding: Finding, facts: MatchFacts, events_by_id: dict[int, 
         ledger.add_item("e", metric=ev.metric, team_id=ev.team_id, value=ev.value, unit=ev.unit,
                         window_start_s=ev.window_start_s, window_end_s=ev.window_end_s, baseline=ev.baseline,
                         say=phrase, source="finding")
+    shot = events_by_id.get(finding.event_ids[0]) if finding.event_ids else None
+    if finding.kind in (FindingKind.GOAL, FindingKind.BIG_CHANCE) and isinstance(shot, ShotEvent):
+        # The finding's own shot event, which emitted it: its outcome is known at detection, nothing later.
+        value = float(SHOT_OUTCOMES.index(shot.outcome))
+        ledger.add_item("e", metric="shot_outcome", team_id=shot.team_id, value=value, unit="count",
+                        window_start_s=shot.clock_s, window_end_s=shot.clock_s,
+                        say=say("shot_outcome", value, "count"), source="finding")
     for event_id in finding.event_ids:
         event = events_by_id.get(event_id)
         if isinstance(event, ShotEvent):

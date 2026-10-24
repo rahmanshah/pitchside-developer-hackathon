@@ -9,8 +9,8 @@ from pitchside.agents.contracts import (
 )
 from pitchside.agents.languages import ENGLISH, LANGUAGES, SPANISH, resolve_languages
 from pitchside.agents.ledger import (
-    FLAG_METRICS, SPELL_WINDOW_METRICS, default_featured, finding_ledger, goal_effect, goal_margin_say, number_text,
-    recap_ledger, say,
+    FLAG_METRICS, SHOT_OUTCOMES, SPELL_WINDOW_METRICS, default_featured, finding_ledger, goal_effect, goal_margin_say,
+    number_text, recap_ledger, say, word_value,
 )
 from pitchside.schema import Score
 from pitchside.stats.engine import StatsEngine
@@ -82,8 +82,10 @@ class LedgerTests(unittest.TestCase):
         goal = first("goal")
         ledger = finding_ledger(goal, facts(), events_by_id(), tally_until(1, "comeback", goal.detected_at_s))
         evidence = [i for i in ledger.items if i.source == "finding"]
-        self.assertEqual([i.ref for i in evidence], [f"e{n}" for n in range(1, len(goal.evidence) + 1)])
-        self.assertEqual([i.value for i in evidence], [e.value for e in goal.evidence])
+        # the finding's evidence in order, then the shot's outcome (decision 24)
+        self.assertEqual([i.ref for i in evidence], [f"e{n}" for n in range(1, len(goal.evidence) + 2)])
+        self.assertEqual([i.value for i in evidence[:-1]], [e.value for e in goal.evidence])
+        self.assertEqual((evidence[-1].metric, evidence[-1].say), ("shot_outcome", "the shot went in"))
         [scorer] = ledger.players
         self.assertEqual((scorer.ref, scorer.involvement), ("p1", "scorer"))
         player_goals = next(i for i in ledger.items if i.metric == "player_goals")
@@ -112,7 +114,37 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual(margin.say, "it is 0-1: Ironvale Athletic open the scoring")  # no club named after the score
         scorer = ledger.players[0]
         goals = next(i for i in ledger.items if i.metric == "player_goals" and i.player_id == scorer.player_id)
-        self.assertEqual(goals.say, f"this is {scorer.name}'s first goal of the match")
+        self.assertEqual(goals.say, f"this is {scorer.name}'s first goal in this match")
+
+    def test_every_goal_and_big_chance_carries_its_own_shots_outcome(self) -> None:
+        # Live text called a blocked shot "rattles the bar"; the outcome is now evidence, from the emitting shot.
+        seen = set()
+        for seed, story in ((1, "comeback"), (2, "siege"), (3, "end_to_end"), (4, "balanced")):
+            by_id = events_by_id(seed, story)
+            for f in findings(seed, story):
+                ledger = finding_ledger(f, facts(seed, story), by_id)
+                items = [i for i in ledger.items if i.metric == "shot_outcome"]
+                if f.kind.value not in ("goal", "big_chance"):
+                    self.assertEqual(items, [], f.finding_id)
+                    continue
+                shot = by_id[f.event_ids[0]]
+                [item] = items
+                self.assertEqual(SHOT_OUTCOMES[int(item.value)], shot.outcome, f.finding_id)
+                self.assertEqual((item.team_id, item.window_start_s, item.window_end_s, item.source),
+                                 (shot.team_id, shot.clock_s, shot.clock_s, "finding"))
+                self.assertLessEqual(item.window_end_s, f.detected_at_s)
+                seen.add(shot.outcome)
+        self.assertEqual(seen, set(SHOT_OUTCOMES))
+
+    def test_shot_outcomes_are_words_in_every_language(self) -> None:
+        self.assertEqual([say("shot_outcome", float(n), "count") for n in range(4)],
+                         ["the shot went off target", "the shot was blocked", "the shot was saved", "the shot went in"])
+        self.assertEqual(say("shot_outcome", 2.0, "count", SPANISH), "el portero detuvo el tiro")
+        for lang in LANGUAGES.values():
+            for n in range(4):
+                self.assertNotRegex(say("shot_outcome", float(n), "count", lang), r"\d")
+        self.assertEqual([word_value("shot_outcome", 1.0), word_value("ended_with_shot", 0.0),
+                          word_value("shot_xg", 0.3)], ["blocked", "no", None])
 
     def test_goal_effects_follow_the_margin(self) -> None:
         self.assertEqual([goal_effect(m, n) for m, n in ((1, 1), (0, 2), (1, 3), (2, 2), (-1, 3))],

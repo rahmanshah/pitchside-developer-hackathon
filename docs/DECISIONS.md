@@ -187,3 +187,22 @@ The brief's "between the two teams" became "across both teams": "two" is a numbe
 **Evaluation discipline:** these issues were found by reading seeds 206-210 and the spot checks; nothing was fitted to their numbers. Validated offline on seeds 1-40 (a plumbing check). The next live measurement uses a held-out block not yet read, for example seeds 301-305.
 
 **Rejected:** relaxing attribution for club names inside a scoreline (persona texts have no `team_id` to fall back on, so a misattributed number there would go unchecked); a new `ReasonCode` for the goal rule (a schema change for a job-level rule, which is recorded in the audit step and its feedback instead); showing the rejected persona text in the evidence drawer (a reader could take it for shown output; the audit trail is where it belongs).
+
+
+## 24. A shot's outcome is evidence; the score is a clause; no records beyond the match (2026-10-24)
+
+**Decision:** (1) Every goal and big-chance ledger carries a `shot_outcome` item, read from the finding's own shot event (the event that emitted it, so nothing after `as_of_s` can leak in). It is a word fact like the yes/no flags: stored as an index into off target, blocked, saved, goal; shown to the models as the word ("saved"); labelled "the shot was saved", "the shot was blocked", "the shot went off target", "the shot went in" (Spanish: "el portero detuvo el tiro", "el tiro fue bloqueado", "el tiro se fue fuera", "el tiro acabó en gol"). The MOMENT line of a shot job adds "| outcome: saved", because the personalizer sees only that line and the verified claims. The explainer, personalizer and verifier prompts say an outcome is described only in those words, with no woodwork, header, foot or "conceded" unless the evidence says so. The item is built in the ledger, not the detector, so `findings.json` and every MCP tool result are unchanged.
+
+(2) The checker never matches a digit to a word fact (a flag or an outcome): "outcome 3" or "open play (1)" is now `number_mismatch` in claims and `unlisted_number` in persona texts. Before, a "1" citing a flag would have matched its stored value.
+
+(3) The MOMENT line gives the score as a clause, "score: it is 0-0" or "it is 1-0 to Aurora Rovers" (home goals first), instead of "score Aurora Rovers 0-0 Ironvale Athletic". The scorer's tally reads "this is Rafa Yaldiran's first goal in this match" and "has 2 goals in this match, including this one". The three prompts forbid club, season or career records ("first goal for the club", "debut", "this season"): the evidence covers this match only.
+
+**Why:** a check of the three recorded demo bundles (seeds 7 comeback, 3 siege, 4 end_to_end, live, 2026-10-24). Every cited number recomputed, but the text added what the evidence did not hold: "Rafa rattles the bar" for a blocked shot (a headline), "Westmere Town conceded" after a save, "heads Ironvale in front" (shot events carry no body part), "his first goal for Harbourton City" in a claim the verifier passed and in five persona texts, and "score Harbourton City 0-0 Westmere Town" pasted into all four English texts of a moment.
+
+**Deployment:** client-side only. The MCP server runs the stats engine and tools, which this decision does not touch; the deployed image (built from `90ee028`) can stay.
+
+**Tests:** every goal and big chance on four offline matches carries its shot's outcome, bounded by detection, all four outcomes seen; outcome labels hold no digit in either language; a digit citing a word fact fails in claims and persona texts; the MOMENT line has the score clause and the outcome, and no "Home h-a Away"; exact tally strings. The existing paste-every-label test now covers `shot_outcome`.
+
+**Evaluation discipline:** found by reading the recorded demo bundles, not by tuning on held-out numbers; validated offline on seeds 1-40 (a plumbing check). No live evaluation was run on this change.
+
+**Rejected:** adding the outcome to the detector's evidence (it would change `evidence_lookup` results and need a new server image for one fact the client already has); a numeric outcome the models could quote.

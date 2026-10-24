@@ -51,7 +51,7 @@ class PastedLabelTests(unittest.TestCase):
                 checked.add(item.metric)
         # every kind of label the matches produce was pasted, including the rewritten ones
         for metric in ("goal_margin", "player_goals", "possession_won_in_open_play", "seconds_since_turnover",
-                       "opponent_pass_completion", "turnovers_per_min", "mean_spell", "shots", "xg"):
+                       "opponent_pass_completion", "turnovers_per_min", "mean_spell", "shots", "xg", "shot_outcome"):
             self.assertIn(metric, checked)
 
     def test_a_label_names_at_most_one_window(self) -> None:
@@ -69,15 +69,16 @@ class PastedLabelTests(unittest.TestCase):
 
 class RewrittenLabelTests(unittest.TestCase):
     def test_the_scorers_tally_is_a_clause(self) -> None:
+        # "in this match" (decision 24): live text turned "first goal of the match" into "first goal for the club"
         self.assertEqual(player_say("player_goals", 2, "Rafa Yaldiran", scored_this=True),
-                         "Rafa Yaldiran has 2 goals in the match, including this one")
+                         "Rafa Yaldiran has 2 goals in this match, including this one")
         self.assertEqual(player_say("player_goals", 1, "Rafa Yaldiran", scored_this=True),
-                         "this is Rafa Yaldiran's first goal of the match")
+                         "this is Rafa Yaldiran's first goal in this match")
         self.assertEqual(player_say("player_goals", 1, "Rafa Yaldiran"), "Rafa Yaldiran has 1 goal in the match")
         self.assertEqual(player_say("player_shots", 5, "Rafa Yaldiran"), "Rafa Yaldiran has 5 shots in the match")
         self.assertEqual(player_say("player_xg", 1.524, "Rafa Yaldiran"), "Rafa Yaldiran has 1.52 xG in the match")
         self.assertEqual(player_say("player_goals", 2, "Rafa Yaldiran", SPANISH, scored_this=True),
-                         "Rafa Yaldiran suma 2 goles en el partido, contando este")
+                         "Rafa Yaldiran suma 2 goles en este partido, contando este")
 
     def test_the_score_comes_first_and_no_club_is_named_after_it(self) -> None:
         self.assertEqual(goal_margin_say(0, "Aurora Rovers", Score(home=1, away=1)), "it is 1-1: Aurora Rovers equalise")

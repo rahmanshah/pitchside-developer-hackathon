@@ -13,8 +13,11 @@ Mark a claim unsupported if it
 Plain descriptions of what the evidence shows are supported, even if they are short.
 `goal_margin` evidence is this goal and the score after it ("it is 1-1: Aurora Rovers equalise"): a claim citing
 it may say the club scored, equalised, went ahead, extended or cut a lead, as its say puts it, and may give that
-score. A scorer's "has 2 goals in the match, including this one" supports "his second goal". Evidence saying how a
+score. A scorer's "has 2 goals in this match, including this one" supports "his second goal". Evidence saying how a
 possession began ("gained possession from a goal kick") supports that cause, not a different one.
+`shot_outcome` evidence is how this shot ended ("the shot was saved"): it supports that outcome and nothing more,
+not the woodwork, a header or a foot. Without it, a claim must not say how a shot ended. Mark unsupported any club,
+season or career record ("first goal for the club", "debut", "this season"): the evidence covers this match only.
 
 `reason`: one sentence the explainer can act on; "ok" when supported.
 Reply with one JSON object only: {"verdicts": [{"claim": int, "supported": bool, "reason": str}]}, one verdict per

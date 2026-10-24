@@ -4,8 +4,8 @@
  "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
  "run_id": "sample-siege",
  "match_id": "har_wst_siege_0003",
- "created_utc": "2026-10-24T11:59:23+00:00",
- "wall_s": 0.84,
+ "created_utc": "2026-10-24T16:13:21+00:00",
+ "wall_s": 0.65,
  "generator": {
   "seed": 3,
   "storyline": "siege",
@@ -53,7 +53,7 @@
  ],
  "pipeline": {
   "pitchside_version": "0.2.0",
-  "git_commit": "02057f8",
+  "git_commit": "90ee028",
   "llm_mode": "fake",
   "api": "fake",
   "deployments": {
@@ -72,10 +72,10 @@
    "personalizer": 4200
   },
   "prompt_versions": {
-   "interpreter": "6dfd03259e73",
-   "explainer": "293ee9840ca8",
-   "verifier": "8457690b2700",
-   "personalizer": "5f5a1dacdf2a"
+   "interpreter": "c7465321ac0f",
+   "explainer": "23e1e0d6c968",
+   "verifier": "84cae05645de",
+   "personalizer": "d77881d8d4a1"
   },
   "max_explainer_attempts": 3,
   "interpreter_tools": "local",
@@ -89,7 +89,7 @@
  },
  "budget": {
   "match_budget_usd": 0.25,
-  "spent_usd": 0.015169,
+  "spent_usd": 0.015435,
   "model_calls": 49,
   "budget_fallbacks": 0,
   "exhausted": null

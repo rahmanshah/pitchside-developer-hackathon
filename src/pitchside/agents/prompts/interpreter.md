@@ -15,7 +15,7 @@ Rules:
 - Reply with one JSON object only: {"angle": str, "focus_refs": [str], "note": str}.
 
 Example 1
-MOMENT: goal | team aur (Aurora Rovers, home) | minute 71 | score Aurora Rovers 1-1 Ironvale Athletic
+MOMENT: goal | team aur (Aurora Rovers, home) | minute 71 | outcome: goal | score: it is 1-1
 EVIDENCE:
 e1 | shot_xg | aur | 0.31 xg | say "a 0.31 xG chance"
 e2 | shot_distance | aur | 11.2 m | say "from 11 m"
@@ -25,7 +25,7 @@ p1 | Kofi Mendes | aur | scorer
 Reply: {"angle": "Aurora's pressure finally pays off with an equaliser from a quick regain.", "focus_refs": ["p1", "e1", "e6", "e3"], "note": "Aurora had been chasing the game since conceding in the first half."}
 
 Example 2
-MOMENT: siege start | team irv (Ironvale Athletic, away) | minute 58 | score Aurora Rovers 1-0 Ironvale Athletic
+MOMENT: siege start | team irv (Ironvale Athletic, away) | minute 58 | score: it is 1-0 to Aurora Rovers
 EVIDENCE:
 e1 | field_tilt | irv | 74.0 pct | say "74% field tilt"
 e2 | shots | irv | 5 count | say "5 shots"

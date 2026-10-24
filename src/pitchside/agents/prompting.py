@@ -13,8 +13,8 @@ from importlib import resources
 from typing import Iterable, Optional, Sequence
 
 from .contracts import ANALYST, CASUAL, FAV_PREFIX, Claim, ClaimCheck, ExplainerReply, InterpreterReply, Job, Ledger
-from .languages import Language
-from .ledger import FLAG_METRICS
+from .languages import ENGLISH, Language
+from .ledger import word_value
 
 ROLES = ("interpreter", "explainer", "verifier", "personalizer")
 BOTH_CLUBS = "both clubs"  # the club column of a match-wide number ("match" was copied as "the whole match")
@@ -42,19 +42,28 @@ def clock(seconds: float) -> str:
 # --------------------------------------------------------------------------- #
 
 
-def score_text(job: Job) -> str:
-    f, s = job.facts, job.score
-    return f"{f.home.name} {s.home}-{s.away} {f.away.name}"
+def score_clause(job: Job, lang: Language = ENGLISH) -> str:
+    """The score as a clause a text can quote: "it is 0-0", "it is 1-0 to Aurora Rovers" (home goals first).
+    "score Aurora Rovers 0-0 Ironvale Athletic" was pasted into persona texts (decision 24)."""
+    s = job.score
+    score = f"{s.home}-{s.away}"
+    if s.home == s.away:
+        return lang.phrases["score.clause"].format(score=score)
+    leader = job.facts.home if s.home > s.away else job.facts.away
+    return lang.phrases["score.clause_lead"].format(score=score, team=leader.name)
 
 
 def moment_line(job: Job) -> str:
     if job.kind == "recap":
-        return f"MOMENT: recap {job.label} | minute {job.minute} | score {score_text(job)}"
+        return f"MOMENT: recap {job.label} | minute {job.minute} | score: {score_clause(job)}"
     finding = job.finding
     label = job.label if finding is None or finding.status == "moment" else f"{job.label} {finding.status}"
     team = job.facts.team(job.team_id)
     who = f"team {team.team_id} ({team.name}, {team.side})" if team else "team both"
-    return f"MOMENT: {label} | {who} | minute {job.minute} | score {score_text(job)}"
+    # How the shot ended, for every role: the personalizer sees only this line and the claims (decision 24).
+    outcome = next((f" | outcome: {word_value(i.metric, i.value)}" for i in job.ledger.items
+                    if i.metric == "shot_outcome" and i.source == "finding"), "")
+    return f"MOMENT: {label} | {who} | minute {job.minute}{outcome} | score: {score_clause(job)}"
 
 
 def clubs_line(job: Job) -> str:
@@ -73,7 +82,7 @@ def evidence_lines(ledger: Ledger, refs: Optional[Iterable[str]] = None, windows
         if wanted is not None and item.ref not in wanted:
             continue
         window = f" | {clock(item.window_start_s)}-{clock(item.window_end_s)}" if windows else ""
-        value = ("yes" if item.value >= 0.5 else "no") if item.metric in FLAG_METRICS else f"{item.value:g} {item.unit}"
+        value = word_value(item.metric, item.value) or f"{item.value:g} {item.unit}"
         lines.append(f"{item.ref} | {item.metric} | {item.team_id or BOTH_CLUBS} | {value}{window} "
                      f"| say \"{item.say}\"")
     return lines

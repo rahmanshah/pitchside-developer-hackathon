@@ -17,6 +17,10 @@ Rules:
 - Numbers for both teams stay combined figures ("across both teams"), never each team's ("both teams averaged").
 - A number belongs to the club or player named last before it in its sentence: name the club once, before its
   first number, and again only to switch clubs. Never put a club name between a word and its number.
+- A shot's outcome is the one on the MOMENT line (saved, blocked, off target, goal): describe it only that way.
+  Never mention the woodwork, a header or a foot, or say a team conceded, unless a claim says so.
+- Never claim a club, season or career record ("first goal for the club", "debut", "this season"): the claims
+  cover this match only.
 - Write natural, idiomatic text in each language, not a word-for-word translation.
 - Reply with one JSON object only: {"texts": [{"persona": str, "language": str, "text": str}]}, one entry for every
   persona in every language.

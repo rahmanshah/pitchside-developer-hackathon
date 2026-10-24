@@ -176,21 +176,21 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.44 xG chance, from 6 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.44 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 91,
+        "end": 95,
         "refs": [
          "e1",
          "e3"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 112,
+        "end": 113,
         "refs": [
          "e2"
         ]
@@ -198,21 +198,21 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.44 xG chance, from 6 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.44 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 106,
+        "end": 110,
         "refs": [
          "e1",
          "e3"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 127,
+        "end": 128,
         "refs": [
          "e2"
         ]
@@ -222,13 +222,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -236,13 +236,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -250,13 +250,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -270,7 +270,7 @@
     "claims": [
      {
       "claim_id": "a2c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -307,6 +307,34 @@
            "from_s": 965.2,
            "to_s": 965.2
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "the shot was saved",
+        "window_start_s": 965.2,
+        "window_end_s": 965.2,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           203
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -445,7 +473,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -455,7 +483,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -475,7 +503,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 5,
@@ -495,7 +523,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 7,
@@ -505,7 +533,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 8,
@@ -554,9 +582,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1331,
-     "output_tokens": 587,
-     "cost_usd": 0.001507
+     "input_tokens": 1403,
+     "output_tokens": 651,
+     "cost_usd": 0.001653
     },
     "badges": [
      "retried",
@@ -1126,7 +1154,7 @@
       "outcome": "brief",
       "detail": "angle: A chaos spell worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -1136,7 +1164,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Chaos spell: the match",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -1156,7 +1184,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -1166,7 +1194,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -1186,9 +1214,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 710,
+     "input_tokens": 689,
      "output_tokens": 536,
-     "cost_usd": 0.001249
+     "cost_usd": 0.001244
     },
     "badges": []
    }
@@ -1609,7 +1637,7 @@
       "outcome": "brief",
       "detail": "angle: A pressure surge worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -1619,7 +1647,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -1639,7 +1667,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -1649,7 +1677,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -1669,9 +1697,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 654,
+     "input_tokens": 634,
      "output_tokens": 483,
-     "cost_usd": 0.00113
+     "cost_usd": 0.001125
     },
     "badges": []
    }
@@ -1725,20 +1753,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.35 xG chance, from 7 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 67,
-        "end": 71,
+        "start": 91,
+        "end": 95,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 88,
-        "end": 89,
+        "start": 112,
+        "end": 113,
         "refs": [
          "e2"
         ]
@@ -1746,20 +1774,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.35 xG chance, from 7 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 82,
-        "end": 86,
+        "start": 106,
+        "end": 110,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 103,
-        "end": 104,
+        "start": 127,
+        "end": 128,
         "refs": [
          "e2"
         ]
@@ -1769,13 +1797,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1783,13 +1811,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1797,13 +1825,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -1817,7 +1845,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "skipped",
@@ -1854,6 +1882,34 @@
            "from_s": 2056.2,
            "to_s": 2056.2
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "aur",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "the shot was saved",
+        "window_start_s": 2056.2,
+        "window_end_s": 2056.2,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           487
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -1994,7 +2050,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -2004,7 +2060,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -2024,7 +2080,7 @@
       "outcome": "skipped",
       "detail": "semantic check skipped (verifier timeout: verifier: model service unavailable after 4 attempts: timeout (APITimeoutError: Request timed out.)); accepted on the deterministic check alone",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -2034,7 +2090,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -2062,9 +2118,9 @@
      "errors": 4,
      "refused": 0,
      "transport_retries": 3,
-     "input_tokens": 776,
-     "output_tokens": 431,
-     "cost_usd": 0.001056
+     "input_tokens": 809,
+     "output_tokens": 487,
+     "cost_usd": 0.001176
     },
     "badges": [
      "semantic_check_skipped",
@@ -2496,7 +2552,7 @@
       "outcome": "brief",
       "detail": "angle: A pressure surge worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -2506,7 +2562,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Westmere Town",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -2526,7 +2582,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -2536,7 +2592,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -2556,9 +2612,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 668,
+     "input_tokens": 647,
      "output_tokens": 485,
-     "cost_usd": 0.001137
+     "cost_usd": 0.001132
     },
     "badges": []
    }
@@ -2612,20 +2668,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers. Westmere Town: a 0.15 xG chance, from 12 m.",
+      "text": "Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town. Westmere Town: a 0.15 xG chance, from 12 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 91,
-        "end": 95,
+        "start": 86,
+        "end": 90,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 112,
-        "end": 114,
+        "start": 107,
+        "end": 109,
         "refs": [
          "e2"
         ]
@@ -2633,20 +2689,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers. Westmere Town: a 0.15 xG chance, from 12 m.",
+      "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town. Westmere Town: a 0.15 xG chance, from 12 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 106,
-        "end": 110,
+        "start": 101,
+        "end": 105,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 127,
-        "end": 129,
+        "start": 122,
+        "end": 124,
         "refs": [
          "e2"
         ]
@@ -2656,13 +2712,13 @@
     },
     "casual": {
      "en": {
-      "text": "Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "text": "Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2670,13 +2726,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "text": "For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2684,13 +2740,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2704,7 +2760,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xarno Uusitalo scored for Westmere Town: Westmere Town 1-0 Aurora Rovers.",
+      "text": "Xarno Uusitalo scored for Westmere Town: it is 1-0 to Westmere Town.",
       "team_id": "wst",
       "deterministic": "passed",
       "semantic": "passed",
@@ -2985,7 +3041,7 @@
       "outcome": "brief",
       "detail": "angle: A goal worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -2995,7 +3051,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Westmere Town",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -3015,7 +3071,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -3025,7 +3081,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -3060,9 +3116,9 @@
      "errors": 1,
      "refused": 0,
      "transport_retries": 1,
-     "input_tokens": 1983,
-     "output_tokens": 554,
-     "cost_usd": 0.001604
+     "input_tokens": 2040,
+     "output_tokens": 543,
+     "cost_usd": 0.001596
     },
     "badges": [
      "fault_injected",
@@ -3907,7 +3963,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was blocked.",
       "team_id": "wst",
       "deterministic": "passed",
       "semantic": "passed",
@@ -3944,6 +4000,34 @@
            "from_s": 2613.4,
            "to_s": 2613.4
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 1.0,
+        "unit": "count",
+        "say": "the shot was blocked",
+        "window_start_s": 2613.4,
+        "window_end_s": 2613.4,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           696
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -4084,7 +4168,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -4094,7 +4178,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Westmere Town",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -4114,7 +4198,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -4124,7 +4208,7 @@
       "outcome": "failed",
       "detail": "personalizer server_error: personalizer: model service unavailable after 4 attempts: server_error (InternalServerError: simulated server_error); template texts used",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -4152,9 +4236,9 @@
      "errors": 4,
      "refused": 0,
      "transport_retries": 3,
-     "input_tokens": 825,
-     "output_tokens": 191,
-     "cost_usd": 0.000588
+     "input_tokens": 895,
+     "output_tokens": 199,
+     "cost_usd": 0.000622
     },
     "badges": [
      "persona_template",
@@ -4200,13 +4284,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Half-time: Westmere Town 1-0 Aurora Rovers. Xarno Uusitalo scored for Westmere Town.",
+      "text": "Half-time: it is 1-0 to Westmere Town. Xarno Uusitalo scored for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: Westmere Town 1-0 Aurora Rovers. Xarno Uusitalo scored for Westmere Town.",
+      "text": "[es · offline] Half-time: it is 1-0 to Westmere Town. Xarno Uusitalo scored for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4214,13 +4298,13 @@
     },
     "casual": {
      "en": {
-      "text": "Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "text": "Half-time: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "text": "[es · offline] Half-time: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4228,13 +4312,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "text": "For Xarno Uusitalo's fans: Half-time: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4242,13 +4326,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Half-time: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Half-time: it is 1-0 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4262,7 +4346,7 @@
     "claims": [
      {
       "claim_id": "a2c1",
-      "text": "Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "text": "Half-time: it is 1-0 to Westmere Town.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -4573,7 +4657,7 @@
       "outcome": "brief",
       "detail": "angle: A half time worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -4583,7 +4667,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -4603,7 +4687,7 @@
       "outcome": "rejected",
       "detail": "3 of 3 claim(s) unsupported; retry",
       "next_step": "explain",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -4613,7 +4697,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 6,
@@ -4633,7 +4717,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 8,
@@ -4643,7 +4727,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 9,
@@ -4660,7 +4744,7 @@
      {
       "attempt": 1,
       "claim_id": "a1c1",
-      "text": "Half-time: Westmere Town 1-0 Aurora Rovers.",
+      "text": "Half-time: it is 1-0 to Westmere Town.",
       "layer": "semantic",
       "reasons": [
        {
@@ -4708,9 +4792,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 4652,
-     "output_tokens": 615,
-     "cost_usd": 0.002393
+     "input_tokens": 4822,
+     "output_tokens": 603,
+     "cost_usd": 0.002412
     },
     "badges": [
      "retried",
@@ -4767,20 +4851,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers. Aurora Rovers: a 0.27 xG chance, from 8 m.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1. Aurora Rovers: a 0.27 xG chance, from 8 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 92,
-        "end": 96,
+        "start": 70,
+        "end": 74,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 113,
-        "end": 114,
+        "start": 91,
+        "end": 92,
         "refs": [
          "e2"
         ]
@@ -4788,20 +4872,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers. Aurora Rovers: a 0.27 xG chance, from 8 m.",
+      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 1-1. Aurora Rovers: a 0.27 xG chance, from 8 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 107,
-        "end": 111,
+        "start": 85,
+        "end": 89,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 128,
-        "end": 129,
+        "start": 106,
+        "end": 107,
         "refs": [
          "e2"
         ]
@@ -4811,13 +4895,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4825,13 +4909,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "text": "For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4839,13 +4923,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4859,7 +4943,7 @@
     "claims": [
      {
       "claim_id": "a2c1",
-      "text": "Alden Brannholt scored for Aurora Rovers: Westmere Town 1-1 Aurora Rovers.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -5065,7 +5149,7 @@
       "outcome": "brief",
       "detail": "angle: A goal worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -5075,7 +5159,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -5095,7 +5179,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 5,
@@ -5115,7 +5199,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 7,
@@ -5125,7 +5209,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 8,
@@ -5166,9 +5250,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 2348,
-     "output_tokens": 661,
-     "cost_usd": 0.001909
+     "input_tokens": 2388,
+     "output_tokens": 605,
+     "cost_usd": 0.001807
     },
     "badges": [
      "retried",
@@ -5859,7 +5943,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -5869,7 +5953,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -5889,7 +5973,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 5,
@@ -5909,7 +5993,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 7,
@@ -5946,7 +6030,7 @@
      {
       "attempt": 1,
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "layer": "deterministic",
       "reasons": [
        {
@@ -5998,7 +6082,7 @@
      {
       "attempt": 2,
       "claim_id": "a2c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "layer": "deterministic",
       "reasons": [
        {
@@ -6050,7 +6134,7 @@
      {
       "attempt": 3,
       "claim_id": "a3c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers.",
+      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
       "layer": "deterministic",
       "reasons": [
        {
@@ -6128,9 +6212,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1532,
-     "output_tokens": 380,
-     "cost_usd": 0.001143
+     "input_tokens": 1594,
+     "output_tokens": 404,
+     "cost_usd": 0.001206
     },
     "badges": [
      "template_fallback",
@@ -6188,20 +6272,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Xarno Uusitalo had the chance for Westmere Town. Westmere Town: a 0.38 xG chance, from 6 m.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved. Westmere Town: a 0.38 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 66,
-        "end": 70,
+        "start": 90,
+        "end": 94,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 87,
-        "end": 88,
+        "start": 111,
+        "end": 112,
         "refs": [
          "e2"
         ]
@@ -6209,20 +6293,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town. Westmere Town: a 0.38 xG chance, from 6 m.",
+      "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town, and the shot was saved. Westmere Town: a 0.38 xG chance, from 6 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 81,
-        "end": 85,
+        "start": 105,
+        "end": 109,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 102,
-        "end": 103,
+        "start": 126,
+        "end": 127,
         "refs": [
          "e2"
         ]
@@ -6232,13 +6316,13 @@
     },
     "casual": {
      "en": {
-      "text": "Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6246,13 +6330,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6260,13 +6344,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "For Alden Brannholt's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "[es · offline] For Alden Brannholt's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6280,7 +6364,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xarno Uusitalo had the chance for Westmere Town.",
+      "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
       "team_id": "wst",
       "deterministic": "passed",
       "semantic": "passed",
@@ -6317,6 +6401,34 @@
            "from_s": 3440.9,
            "to_s": 3440.9
           }
+         }
+        ],
+        "known": true
+       },
+       {
+        "ref": "e10",
+        "kind": "number",
+        "metric": "shot_outcome",
+        "team_id": "wst",
+        "player_id": null,
+        "name": null,
+        "involvement": null,
+        "value": 2.0,
+        "unit": "count",
+        "say": "the shot was saved",
+        "window_start_s": 3440.9,
+        "window_end_s": 3440.9,
+        "baseline": null,
+        "source": "finding",
+        "origin": null,
+        "events": [
+         {
+          "relation": "triggering",
+          "event_ids": [
+           1008
+          ],
+          "count": 1,
+          "filter": null
          }
         ],
         "known": true
@@ -6458,7 +6570,7 @@
       "outcome": "brief",
       "detail": "angle: A big chance worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -6468,7 +6580,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Westmere Town",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -6488,7 +6600,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -6498,7 +6610,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -6518,9 +6630,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 967,
-     "output_tokens": 470,
-     "cost_usd": 0.001182
+     "input_tokens": 1024,
+     "output_tokens": 526,
+     "cost_usd": 0.001308
     },
     "badges": []
    }
@@ -6574,20 +6686,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers. Westmere Town: a 0.02 xG chance, from 26 m.",
+      "text": "Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town. Westmere Town: a 0.02 xG chance, from 26 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 89,
-        "end": 93,
+        "start": 84,
+        "end": 88,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 110,
-        "end": 112,
+        "start": 105,
+        "end": 107,
         "refs": [
          "e2"
         ]
@@ -6595,20 +6707,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers. Westmere Town: a 0.02 xG chance, from 26 m.",
+      "text": "[es · offline] Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town. Westmere Town: a 0.02 xG chance, from 26 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 104,
-        "end": 108,
+        "start": 99,
+        "end": 103,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 125,
-        "end": 127,
+        "start": 120,
+        "end": 122,
         "refs": [
          "e2"
         ]
@@ -6618,13 +6730,13 @@
     },
     "casual": {
      "en": {
-      "text": "Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+      "text": "Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+      "text": "[es · offline] Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6632,13 +6744,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+      "text": "For Xarno Uusitalo's fans: Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6646,13 +6758,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -6666,7 +6778,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Niko Okeloro scored for Westmere Town: Westmere Town 2-1 Aurora Rovers.",
+      "text": "Niko Okeloro scored for Westmere Town: it is 2-1 to Westmere Town.",
       "team_id": "wst",
       "deterministic": "passed",
       "semantic": "passed",
@@ -7004,7 +7116,7 @@
       "outcome": "brief",
       "detail": "angle: A goal worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -7014,7 +7126,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Westmere Town",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -7034,7 +7146,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -7044,7 +7156,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -7064,9 +7176,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1875,
-     "output_tokens": 549,
-     "cost_usd": 0.001567
+     "input_tokens": 1931,
+     "output_tokens": 538,
+     "cost_usd": 0.001559
     },
     "badges": []
    }
@@ -8445,20 +8557,20 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers. Aurora Rovers: a 0.06 xG chance, from 18 m.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 2-2. Aurora Rovers: a 0.06 xG chance, from 18 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 92,
-        "end": 96,
+        "start": 70,
+        "end": 74,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 113,
-        "end": 115,
+        "start": 91,
+        "end": 93,
         "refs": [
          "e2"
         ]
@@ -8466,20 +8578,20 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers. Aurora Rovers: a 0.06 xG chance, from 18 m.",
+      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 2-2. Aurora Rovers: a 0.06 xG chance, from 18 m.",
       "source": "model",
       "reason": null,
       "numbers": [
        {
-        "start": 107,
-        "end": 111,
+        "start": 85,
+        "end": 89,
         "refs": [
          "e1"
         ]
        },
        {
-        "start": 128,
-        "end": 130,
+        "start": 106,
+        "end": 108,
         "refs": [
          "e2"
         ]
@@ -8489,13 +8601,13 @@
     },
     "casual": {
      "en": {
-      "text": "Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+      "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8503,13 +8615,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+      "text": "For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Alden Brannholt scored for Aurora Rovers: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8517,13 +8629,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8537,7 +8649,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt scored for Aurora Rovers: Westmere Town 2-2 Aurora Rovers.",
+      "text": "Alden Brannholt scored for Aurora Rovers: it is 2-2.",
       "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
@@ -8747,7 +8859,7 @@
       "outcome": "brief",
       "detail": "angle: A goal worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -8757,7 +8869,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -8777,7 +8889,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -8787,7 +8899,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -8807,9 +8919,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1862,
-     "output_tokens": 539,
-     "cost_usd": 0.001543
+     "input_tokens": 1887,
+     "output_tokens": 490,
+     "cost_usd": 0.001452
     },
     "badges": []
    }
@@ -8846,13 +8958,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Full-time: Westmere Town 2-2 Aurora Rovers. Xarno Uusitalo scored for Westmere Town.",
+      "text": "Full-time: it is 2-2. Xarno Uusitalo scored for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: Westmere Town 2-2 Aurora Rovers. Xarno Uusitalo scored for Westmere Town.",
+      "text": "[es · offline] Full-time: it is 2-2. Xarno Uusitalo scored for Westmere Town.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8860,13 +8972,13 @@
     },
     "casual": {
      "en": {
-      "text": "Full-time: Westmere Town 2-2 Aurora Rovers.",
+      "text": "Full-time: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: Westmere Town 2-2 Aurora Rovers.",
+      "text": "[es · offline] Full-time: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8874,13 +8986,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+      "text": "For Xarno Uusitalo's fans: Full-time: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8888,13 +9000,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: Full-time: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Full-time: Westmere Town 2-2 Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: Full-time: it is 2-2.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -8908,7 +9020,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Full-time: Westmere Town 2-2 Aurora Rovers.",
+      "text": "Full-time: it is 2-2.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -9356,7 +9468,7 @@
       "outcome": "brief",
       "detail": "angle: A full time worth explaining.",
       "next_step": "explain",
-      "prompt_version": "6dfd03259e73"
+      "prompt_version": "c7465321ac0f"
      },
      {
       "seq": 2,
@@ -9366,7 +9478,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Full time: the match",
       "next_step": "check",
-      "prompt_version": "293ee9840ca8"
+      "prompt_version": "23e1e0d6c968"
      },
      {
       "seq": 3,
@@ -9386,7 +9498,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "8457690b2700"
+      "prompt_version": "84cae05645de"
      },
      {
       "seq": 5,
@@ -9396,7 +9508,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "5f5a1dacdf2a"
+      "prompt_version": "d77881d8d4a1"
      },
      {
       "seq": 6,
@@ -9416,9 +9528,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3687,
-     "output_tokens": 465,
-     "cost_usd": 0.001852
+     "input_tokens": 3613,
+     "output_tokens": 416,
+     "cost_usd": 0.001735
     },
     "badges": []
    }

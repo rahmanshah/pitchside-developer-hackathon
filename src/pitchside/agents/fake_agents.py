@@ -20,7 +20,7 @@ from ..llm.config import Role
 from ..llm.fake import ToolCall
 from .checker import scan
 
-_ITEM = re.compile(r"^(?:\w+: )?([ec]\d+) \| (\w+) \| (both clubs|\S+) \| (?:yes|no|-?[\d.e+-]+ \w+)"
+_ITEM = re.compile(r"^(?:\w+: )?([ec]\d+) \| (\w+) \| (both clubs|\S+) \| (?:[a-z_]+|-?[\d.e+-]+ \w+)"
                    r"(?: \| [\d:]+-[\d:]+)? \| say \"(.*)\"$")
 _PLAYER = re.compile(r"^(?:\w+: )?(p\d+) \| (.+?) \| (\w+) \| (\w+)$")
 _TOOL_REF = re.compile(r'"ref":\s*"(c\d+)"')
@@ -139,19 +139,23 @@ def explainer(transcript: str) -> str:
     if not any(r in items for r in focus):
         focus += [r for r in items if r.startswith("e")][:3] or list(items)[:3]
     label = _label(transcript)
-    score = re.search(r"\| score (.+)$", _field(transcript, "MOMENT") or "")
+    score = re.search(r"\| score: (.+)$", _field(transcript, "MOMENT") or "")
     claims = []
     if label in ("half_time", "full_time") and score and items:
         period = "Half-time" if label == "half_time" else "Full-time"
         claims.append({"text": f"{period}: {score.group(1)}.", "team_id": None, "refs": [next(iter(items))],
                        "numbers": []})
     margin = next((i.ref for i in items.values() if i.metric == "goal_margin"), None)
+    outcome = next((i for i in items.values() if i.metric == "shot_outcome"), None)
     for ref in [r for r in focus if r in players][:1]:
         p = players[ref]
         verb = {"scorer": "scored for", "shooter": "had the chance for", "ball_winner": "won the ball for"}.get(
             p.involvement, "featured for")
-        tail = f": {score.group(1)}" if label == "goal" and score else ""
-        refs = [ref, margin] if tail and margin else [ref]  # the score is cited from goal_margin, as the prompt asks
+        tail, refs = "", [ref]
+        if label == "goal" and score and margin:
+            tail, refs = f": {score.group(1)}", [ref, margin]  # the score is cited from goal_margin, as asked
+        elif outcome is not None and p.involvement == "shooter":
+            tail, refs = f", and {outcome.say}", [ref, outcome.ref]  # the outcome only in its own words
         claims.append({"text": f"{p.name} {verb} {clubs.get(p.team, p.team)}{tail}.", "team_id": p.team,
                        "refs": refs, "numbers": []})
     numbered = [items[r] for r in focus if r in items]
