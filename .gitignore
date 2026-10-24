@@ -4,6 +4,7 @@ __pycache__/
 .venv/
 .venv311/
 .env
+.env.bak
 .vscode
 .pytest_cache/
 build/
