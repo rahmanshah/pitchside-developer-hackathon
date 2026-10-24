@@ -222,7 +222,7 @@ In 3 of the 8 shot-outcome cases the job was a goal: the verifier wanted evidenc
 cited items did not include it.
 
 ### Published-run check
-
+- Reviewed by Shah at 24.10.2026
 The three demo matches were recorded live twice, and each recording was checked in full. The first set was recorded
 on `90ee028`. After that check, Commit D (decisions 24-26) changed the prompts, the ledger and the checker. The second
 set, recorded on `77d8c6b`, is the one published in `web/data` (`comeback`, `siege`, `faults-demo`).
