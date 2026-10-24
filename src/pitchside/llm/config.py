@@ -87,11 +87,12 @@ class LLMSettings(BaseModel):
     reasoning_effort: ReasoningEffort = Field(
         "low", description="Responses API reasoning effort for every agent; 'off' sends no reasoning option."
     )
-    # Output caps include reasoning tokens, so they sit well above the size of the JSON each role returns.
+    # Output caps include reasoning tokens, so they sit well above the size of the JSON each role returns: at least
+    # twice the largest output measured live (decision 22: 588 / 1824 / 1138 / 2045 tokens on seeds 201-205).
     max_output_interpreter: int = Field(1500, gt=0, le=32000)
-    max_output_explainer: int = Field(3000, gt=0, le=32000)
-    max_output_verifier: int = Field(1500, gt=0, le=32000)
-    max_output_personalizer: int = Field(4000, gt=0, le=32000)
+    max_output_explainer: int = Field(3700, gt=0, le=32000)
+    max_output_verifier: int = Field(2400, gt=0, le=32000)
+    max_output_personalizer: int = Field(4200, gt=0, le=32000)
     languages: str = Field("en,es", pattern=r"^[a-z]{2}(,[a-z]{2})*$",
                            description="Comma-separated language codes; each needs a phrase table.")
 

@@ -43,24 +43,30 @@ class OptionsTests(unittest.TestCase):
 
 class CapReportTests(unittest.TestCase):
     def setUp(self) -> None:
-        self.settings = load_settings({})  # caps 1500 / 3000 / 1500 / 4000
+        self.settings = load_settings({})  # caps 1500 / 3700 / 2400 / 4200
 
     def test_enough_headroom_is_ok_and_missing_roles_are_named(self) -> None:
         report = smoke.cap_report([row("explainer", 1400, 900), row("explainer", 600)], self.settings)
         self.assertEqual(report.too_tight, {})
         explainer = next(line for line in report.lines if line.startswith("explainer"))
-        self.assertIn("largest output  1400 (reasoning   900) = 47% of the cap  ok", explainer)
+        self.assertIn("largest output  1400 (reasoning   900) = 38% of the cap  ok", explainer)
         self.assertTrue(any(line.startswith("verifier") and "no calls" in line for line in report.lines))
 
+    def test_the_default_caps_fit_the_largest_outputs_measured_live(self) -> None:
+        # Seeds 201-205 (decision 22): the largest output per role, reasoning included, with 2x headroom left.
+        rows = [row("interpreter", 588, 448), row("explainer", 1824, 1600), row("verifier", 1138, 1024),
+                row("personalizer", 2045, 1472)]
+        self.assertEqual(smoke.cap_report(rows, self.settings).too_tight, {})
+
     def test_less_than_twice_the_room_is_too_tight_with_the_variable_to_set(self) -> None:
-        report = smoke.cap_report([row("verifier", 900, 700)], self.settings)
-        self.assertEqual(report.too_tight, {"verifier": 2000})
-        self.assertTrue(any("TOO TIGHT (less than 2x headroom): set PITCHSIDE_MAX_OUTPUT_VERIFIER=2000" in line
+        report = smoke.cap_report([row("verifier", 1300, 1000)], self.settings)
+        self.assertEqual(report.too_tight, {"verifier": 3000})
+        self.assertTrue(any("TOO TIGHT (less than 2x headroom): set PITCHSIDE_MAX_OUTPUT_VERIFIER=3000" in line
                             for line in report.lines))
 
     def test_a_reply_that_hit_the_cap_asks_for_at_least_double(self) -> None:
         report = smoke.cap_report([row("personalizer", 4000, 2500, finish="length")], self.settings)
-        self.assertEqual(report.too_tight, {"personalizer": 8000})
+        self.assertEqual(report.too_tight, {"personalizer": 8400})
         self.assertTrue(any("a reply hit the cap" in line for line in report.lines))
 
     def test_refused_and_usage_free_rows_are_ignored(self) -> None:
@@ -84,7 +90,7 @@ class ExplainerStepTests(unittest.TestCase):
             [r] = rows
             self.assertEqual((r.role, r.step, r.status), ("explainer", "explain", "ok"))
             self.assertEqual(smoke.cap_report(rows, settings).too_tight, {})
-            self.assertEqual(settings.max_output(Role.EXPLAINER), 3000)
+            self.assertEqual(settings.max_output(Role.EXPLAINER), 3700)
 
 
 if __name__ == "__main__":

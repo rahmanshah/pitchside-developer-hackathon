@@ -9,8 +9,9 @@ A claim passes only if
 * each number is attributed to the right club: the club (or player) named nearest to it in its sentence must be
   the club the number belongs to (``team_mismatch``), and the claim's ``team_id`` must be one the evidence is about;
 * every score written ("2-1") is a score the match actually had by then (``score_mismatch``);
-* every match minute written ("71st minute", "71'") lies in the time window of its evidence or of the job
-  (``window_mismatch``);
+* every match minute written ("71st minute", "minute 71", "71'") or clock time ("70:12", "81:01-89:01") lies in
+  the time window of its evidence or of the job (``window_mismatch``); a clock time is never read as numbers or a
+  score, and "71 minutes" counts as the job's own minute when it is that minute (otherwise it is a duration);
 * every player named is a player in the ledger that the claim cites (``unreferenced_player``);
 * no number is joined to the word before it, as in "it is0-1" or "a0.31 xG" (``glued_number``): the number scan
   skips digits that follow a letter, so such a number would otherwise go unchecked. Models do drop spaces
@@ -35,6 +36,7 @@ from .ledger import UNIT_DECIMALS
 _SENTENCE_END = re.compile(r"(?<!\d)[.!?;](?!\d)|[!?;]")
 _SCORE = re.compile(r"(?<![\d.,])(\d{1,2})\s*[-–]\s*(\d{1,2})(?!\d|[.,]\d|%)")
 _STOPPAGE = re.compile(r"\b(\d{2,3})\s*\+\s*(\d{1,2})'")
+_CLOCK = re.compile(r"(?<![\d:.,])(\d{1,3}):([0-5]\d)(?![\d:])")  # match clock "81:01" (minute 82)
 _ORDINAL_SUFFIX = re.compile(r"^(?:st|nd|rd|th|º|ª|\.º)\b")
 _GLUED = re.compile(r"(?<![\w])([A-Za-zÀ-ÿ]+)(\d+(?:[.,]\d+)?(?:\s*[-–]\s*\d+)?)")
 _WINDOW_SLACK_S = 60.0
@@ -51,12 +53,17 @@ class CheckContext:
     window_start_s: float
     window_end_s: float
     extra_players: frozenset[str] = frozenset()  # player ids persona texts may name (featured players)
+    minute: Optional[int] = None  # the job's own match minute: "64 minutes" may name it, not only "64th minute"
 
     @classmethod
     def for_job(cls, job: Job) -> "CheckContext":
         return cls(ledger=job.ledger, facts=job.facts, score=job.score, goals=job.goals,
                    window_start_s=job.window_start_s, window_end_s=job.window_end_s,
-                   extra_players=frozenset(job.featured))
+                   extra_players=frozenset(job.featured), minute=job.minute)
+
+    def own_minute(self, token: "_Token") -> bool:
+        """A whole number followed by a minute word that equals the moment's own minute: the clock, not a count."""
+        return self.minute is not None and token.minutes and token.decimals == 0 and token.value == self.minute
 
     def scores(self) -> set[tuple[int, int]]:
         seen = {(0, 0), (self.score.home, self.score.away)}
@@ -97,9 +104,14 @@ def scan(text: str, lang: Language = ENGLISH) -> _Scan:
     def free(start: int, end: int) -> bool:
         return all(end <= a or start >= b for a, b in taken)
 
-    for m in _STOPPAGE.finditer(text):
-        result.minutes.append((int(m.group(1)) + int(m.group(2)), m.start()))
+    for m in _CLOCK.finditer(text):
+        # A clock time, alone or in a range ("81:01–89:01"): a time to check, not two numbers and a "1-89" score.
+        result.minutes.append((int(m.group(1)) + 1, m.start()))
         taken.append(m.span())
+    for m in _STOPPAGE.finditer(text):
+        if free(*m.span()):
+            result.minutes.append((int(m.group(1)) + int(m.group(2)), m.start()))
+            taken.append(m.span())
     for pattern in lang.compiled_clock_patterns():
         for m in pattern.finditer(text):
             if free(*m.span()):
@@ -307,6 +319,8 @@ def check_claim(claim: Claim, ctx: CheckContext, attempt: int = 1, lang: Languag
         listed = [n for n in claim.numbers if abs(n.value - token.value) <= 1e-6] or [
             n for n in claim.numbers if _same_value(n.value, token)]
         if not listed:
+            if ctx.own_minute(token):
+                continue
             reasons.append(Reason(code="unlisted_number",
                                   detail=f"{_shown(text, token)} appears in the text but not in the claim's numbers"))
             continue
@@ -351,6 +365,8 @@ def check_text(text: str, ctx: CheckContext, refs: Iterable[str], lang: Language
     for token in scanned.numbers:
         matching = [i for i in items if number_matches(i, token)]
         if not matching:
+            if ctx.own_minute(token):
+                continue
             reasons.append(Reason(code="unlisted_number",
                                   detail=f"{_shown(text, token)} is not one of the verified numbers"))
             continue

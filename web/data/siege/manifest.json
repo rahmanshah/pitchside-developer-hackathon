@@ -4,8 +4,8 @@
  "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
  "run_id": "sample-siege",
  "match_id": "har_wst_siege_0003",
- "created_utc": "2026-10-24T08:46:31+00:00",
- "wall_s": 0.67,
+ "created_utc": "2026-10-24T09:00:59+00:00",
+ "wall_s": 0.62,
  "generator": {
   "seed": 3,
   "storyline": "siege",
@@ -53,7 +53,7 @@
  ],
  "pipeline": {
   "pitchside_version": "0.2.0",
-  "git_commit": "0a03664",
+  "git_commit": "803b929",
   "llm_mode": "fake",
   "api": "fake",
   "deployments": {
@@ -67,14 +67,14 @@
   "reasoning_effort": "low",
   "max_output_tokens": {
    "interpreter": 1500,
-   "explainer": 3000,
-   "verifier": 1500,
-   "personalizer": 4000
+   "explainer": 3700,
+   "verifier": 2400,
+   "personalizer": 4200
   },
   "prompt_versions": {
    "interpreter": "6dfd03259e73",
-   "explainer": "fd223ccf6eda",
-   "verifier": "2d4b35846ad4",
+   "explainer": "f7adeba3af68",
+   "verifier": "def299662f35",
    "personalizer": "ed0d5adb6f9b"
   },
   "max_explainer_attempts": 3,
@@ -89,7 +89,7 @@
  },
  "budget": {
   "match_budget_usd": 0.25,
-  "spent_usd": 0.01471,
+  "spent_usd": 0.014896,
   "model_calls": 49,
   "budget_fallbacks": 0,
   "exhausted": null

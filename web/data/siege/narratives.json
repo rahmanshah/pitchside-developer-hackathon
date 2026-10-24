@@ -2475,7 +2475,8 @@
      "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
      "team_id": "har",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -2707,6 +2708,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "goal_margin",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": 0.0,
+     "say": "Harbourton City open the scoring: Harbourton City 1-0 Westmere Town",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "har",
@@ -2716,7 +2731,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2194.3,
      "baseline": null,
-     "say": "Hugo Vidrelle: goals 1",
+     "say": "Hugo Vidrelle: goals 1, including this one",
      "source": "player",
      "origin": null
     },
@@ -2882,7 +2897,8 @@
       "text": "Hugo Vidrelle scored for Harbourton City: Harbourton City 1-0 Westmere Town.",
       "team_id": "har",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -3459,6 +3475,20 @@
     },
     {
      "ref": "c15",
+     "metric": "goal_margin",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": 0.0,
+     "say": "Harbourton City open the scoring: Harbourton City 1-0 Westmere Town",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c16",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3472,7 +3502,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3486,7 +3516,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -3500,7 +3530,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c18",
+     "ref": "c19",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -3514,7 +3544,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c19",
+     "ref": "c20",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3528,7 +3558,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c20",
+     "ref": "c21",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3542,7 +3572,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c21",
+     "ref": "c22",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -3556,7 +3586,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c22",
+     "ref": "c23",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3570,7 +3600,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c23",
+     "ref": "c24",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3584,7 +3614,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c24",
+     "ref": "c25",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -3598,7 +3628,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c25",
+     "ref": "c26",
      "metric": "pressures_per_min",
      "team_id": "har",
      "player_id": null,
@@ -3612,7 +3642,7 @@
      "origin": "har_wst_siege_0003:pressure_surge:0"
     },
     {
-     "ref": "c26",
+     "ref": "c27",
      "metric": "tackles_won",
      "team_id": "har",
      "player_id": null,
@@ -3626,7 +3656,7 @@
      "origin": "har_wst_siege_0003:pressure_surge:0"
     },
     {
-     "ref": "c27",
+     "ref": "c28",
      "metric": "opponent_pass_completion",
      "team_id": "wst",
      "player_id": null,
@@ -3640,7 +3670,7 @@
      "origin": "har_wst_siege_0003:pressure_surge:0"
     },
     {
-     "ref": "c28",
+     "ref": "c29",
      "metric": "field_tilt",
      "team_id": "har",
      "player_id": null,
@@ -3654,7 +3684,7 @@
      "origin": "har_wst_siege_0003:siege:0"
     },
     {
-     "ref": "c29",
+     "ref": "c30",
      "metric": "shots",
      "team_id": "har",
      "player_id": null,
@@ -3668,7 +3698,7 @@
      "origin": "har_wst_siege_0003:siege:0"
     },
     {
-     "ref": "c30",
+     "ref": "c31",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -3682,7 +3712,7 @@
      "origin": null
     },
     {
-     "ref": "c31",
+     "ref": "c32",
      "metric": "shots_total",
      "team_id": "har",
      "player_id": null,
@@ -3696,7 +3726,7 @@
      "origin": null
     },
     {
-     "ref": "c32",
+     "ref": "c33",
      "metric": "xg_total",
      "team_id": "har",
      "player_id": null,
@@ -3710,7 +3740,7 @@
      "origin": null
     },
     {
-     "ref": "c33",
+     "ref": "c34",
      "metric": "pass_completion_total",
      "team_id": "har",
      "player_id": null,
@@ -3724,7 +3754,7 @@
      "origin": null
     },
     {
-     "ref": "c34",
+     "ref": "c35",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -3738,7 +3768,7 @@
      "origin": null
     },
     {
-     "ref": "c35",
+     "ref": "c36",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -3752,7 +3782,7 @@
      "origin": null
     },
     {
-     "ref": "c36",
+     "ref": "c37",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -3766,7 +3796,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c38",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -4296,7 +4326,8 @@
      "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
      "team_id": "wst",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -4523,6 +4554,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "goal_margin",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 3220.6,
+     "window_end_s": 3220.6,
+     "baseline": -1.0,
+     "say": "Westmere Town equalise: Harbourton City 1-1 Westmere Town",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "wst",
@@ -4532,7 +4577,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3220.6,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 1",
+     "say": "Xarno Uusitalo: goals 1, including this one",
      "source": "player",
      "origin": null
     },
@@ -4698,7 +4743,8 @@
       "text": "Xarno Uusitalo scored for Westmere Town: Harbourton City 1-1 Westmere Town.",
       "team_id": "wst",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -5047,7 +5093,8 @@
      "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
      "team_id": "har",
      "refs": [
-      "p1"
+      "p1",
+      "e10"
      ],
      "numbers": []
     },
@@ -5279,6 +5326,20 @@
      "origin": null
     },
     {
+     "ref": "e10",
+     "metric": "goal_margin",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": 0.0,
+     "say": "Harbourton City go ahead: Harbourton City 2-1 Westmere Town",
+     "source": "finding",
+     "origin": null
+    },
+    {
      "ref": "c1",
      "metric": "player_goals",
      "team_id": "har",
@@ -5288,7 +5349,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4755.7,
      "baseline": null,
-     "say": "Joaquin Quenvara: goals 1",
+     "say": "Joaquin Quenvara: goals 1, including this one",
      "source": "player",
      "origin": null
     },
@@ -5454,7 +5515,8 @@
       "text": "Joaquin Quenvara scored for Harbourton City: Harbourton City 2-1 Westmere Town.",
       "team_id": "har",
       "refs": [
-       "p1"
+       "p1",
+       "e10"
       ],
       "numbers": []
      },
@@ -5902,6 +5964,20 @@
     },
     {
      "ref": "c18",
+     "metric": "goal_margin",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": 0.0,
+     "say": "Harbourton City go ahead: Harbourton City 2-1 Westmere Town",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c19",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -5915,7 +5991,7 @@
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c19",
+     "ref": "c20",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -5929,7 +6005,7 @@
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c20",
+     "ref": "c21",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -5943,7 +6019,7 @@
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c21",
+     "ref": "c22",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -5957,7 +6033,21 @@
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c22",
+     "ref": "c23",
+     "metric": "goal_margin",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 3220.6,
+     "window_end_s": 3220.6,
+     "baseline": -1.0,
+     "say": "Westmere Town equalise: Harbourton City 1-1 Westmere Town",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c24",
      "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
@@ -5971,7 +6061,7 @@
      "origin": "har_wst_siege_0003:goal:1"
     },
     {
-     "ref": "c23",
+     "ref": "c25",
      "metric": "shot_distance",
      "team_id": "wst",
      "player_id": null,
@@ -5985,7 +6075,7 @@
      "origin": "har_wst_siege_0003:goal:1"
     },
     {
-     "ref": "c24",
+     "ref": "c26",
      "metric": "match_xg",
      "team_id": "wst",
      "player_id": null,
@@ -5999,7 +6089,21 @@
      "origin": "har_wst_siege_0003:goal:1"
     },
     {
-     "ref": "c25",
+     "ref": "c27",
+     "metric": "goal_margin",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2194.3,
+     "window_end_s": 2194.3,
+     "baseline": 0.0,
+     "say": "Harbourton City open the scoring: Harbourton City 1-0 Westmere Town",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c28",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6013,7 +6117,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c26",
+     "ref": "c29",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6027,7 +6131,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c27",
+     "ref": "c30",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -6041,7 +6145,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c28",
+     "ref": "c31",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -6055,7 +6159,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c29",
+     "ref": "c32",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6069,7 +6173,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c30",
+     "ref": "c33",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6083,7 +6187,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c31",
+     "ref": "c34",
      "metric": "match_xg",
      "team_id": "har",
      "player_id": null,
@@ -6097,7 +6201,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c32",
+     "ref": "c35",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -6111,7 +6215,7 @@
      "origin": null
     },
     {
-     "ref": "c33",
+     "ref": "c36",
      "metric": "shots_total",
      "team_id": "har",
      "player_id": null,
@@ -6125,7 +6229,7 @@
      "origin": null
     },
     {
-     "ref": "c34",
+     "ref": "c37",
      "metric": "xg_total",
      "team_id": "har",
      "player_id": null,
@@ -6139,7 +6243,7 @@
      "origin": null
     },
     {
-     "ref": "c35",
+     "ref": "c38",
      "metric": "pass_completion_total",
      "team_id": "har",
      "player_id": null,
@@ -6153,7 +6257,7 @@
      "origin": null
     },
     {
-     "ref": "c36",
+     "ref": "c39",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -6167,7 +6271,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c40",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -6181,7 +6285,7 @@
      "origin": null
     },
     {
-     "ref": "c38",
+     "ref": "c41",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -6195,7 +6299,7 @@
      "origin": null
     },
     {
-     "ref": "c39",
+     "ref": "c42",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
