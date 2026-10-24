@@ -34,20 +34,38 @@ class NumberFormatTests(unittest.TestCase):
         self.assertEqual(number_text(0.395, "xg", SPANISH), "0,40")
         self.assertEqual(say("field_tilt", 71.4, "pct", SPANISH), "71% de dominio territorial")
         self.assertEqual(say("opponent_pass_completion", 64.0, "pct", ENGLISH, "Ironvale Athletic"),
-                         "Ironvale Athletic completing 64% of their passes")
+                         "Ironvale Athletic are completing 64% of their passes")
 
     def test_flags_are_words_with_no_digit_in_every_language(self) -> None:
         # Live output quoted "ball won in open play (1 = yes): 1" as "(1)"; a flag has nothing to quote now.
-        self.assertEqual(say("possession_won_in_open_play", 1.0, "count"), "ball won in open play")
-        self.assertEqual(say("possession_won_in_open_play", 0.0, "count"), "possession began from a restart or a save")
-        self.assertEqual(say("ended_with_shot", 1.0, "count"), "ended with a shot")
-        self.assertEqual(say("ended_with_shot", 0.0, "count"), "did not end with a shot")
-        self.assertEqual(say("possession_won_in_open_play", 1.0, "count", SPANISH), "balón recuperado en juego")
-        self.assertEqual(say("ended_with_shot", 0.0, "count", SPANISH), "no terminó en tiro")
+        club = "Aurora Rovers"
+        self.assertEqual(say("possession_won_in_open_play", 1.0, "count", team_name=club),
+                         "Aurora Rovers won the ball in open play")
+        self.assertEqual(say("possession_won_in_open_play", 0.0, "count", team_name=club),
+                         "Aurora Rovers gained possession from a restart or a save")  # cause unknown
+        self.assertEqual(say("ended_with_shot", 1.0, "count"), "the move ended with a shot")
+        self.assertEqual(say("ended_with_shot", 0.0, "count"), "the move did not end with a shot")
+        self.assertEqual(say("possession_won_in_open_play", 1.0, "count", SPANISH, club),
+                         "Aurora Rovers recuperó el balón en juego")
+        self.assertEqual(say("ended_with_shot", 0.0, "count", SPANISH), "la jugada no terminó en tiro")
         for lang in LANGUAGES.values():
             for metric in FLAG_METRICS:
                 for value in (0.0, 1.0):
-                    self.assertNotRegex(say(metric, value, "count", lang), r"\d", f"{lang.code} {metric}={value}")
+                    for cause in (None, "kickoff", "goal_kick", "out_of_play", "shot_saved"):
+                        self.assertNotRegex(say(metric, value, "count", lang, club, cause=cause), r"\d",
+                                            f"{lang.code} {metric}={value} {cause}")
+
+    def test_a_restart_is_named_by_its_real_cause_and_timed_from_gaining_possession(self) -> None:
+        club = "Ironvale Athletic"
+        causes = {"kickoff": "Ironvale Athletic gained possession from a kickoff",
+                  "goal_kick": "Ironvale Athletic gained possession from a goal kick",
+                  "out_of_play": "Ironvale Athletic gained possession after the ball went out of play",
+                  "shot_saved": "Ironvale Athletic gained possession from a save by their goalkeeper"}
+        for cause, text in causes.items():
+            self.assertEqual(say("possession_won_in_open_play", 0.0, "count", team_name=club, cause=cause), text)
+            self.assertEqual(say("seconds_since_turnover", 21.2, "s", cause=cause), "21 s after gaining possession")
+        for cause in ("tackle", "interception", "shot_blocked", None):
+            self.assertEqual(say("seconds_since_turnover", 21.2, "s", cause=cause), "21 s after winning the ball")
 
     def test_languages_resolve_with_english_first_and_unknown_codes_fail(self) -> None:
         self.assertEqual([l.code for l in resolve_languages(("es", "en"))], ["en", "es"])
@@ -91,17 +109,16 @@ class LedgerTests(unittest.TestCase):
         goal = first("goal")  # seed 1 comeback: Ironvale Athletic open the scoring, 0-1
         ledger = finding_ledger(goal, facts(), events_by_id(), tally_until(1, "comeback", goal.detected_at_s))
         margin = next(i for i in ledger.items if i.metric == "goal_margin")
-        self.assertEqual(margin.say, "Ironvale Athletic open the scoring: Aurora Rovers 0-1 Ironvale Athletic")
+        self.assertEqual(margin.say, "it is 0-1: Ironvale Athletic open the scoring")  # no club named after the score
         scorer = ledger.players[0]
         goals = next(i for i in ledger.items if i.metric == "player_goals" and i.player_id == scorer.player_id)
-        self.assertEqual(goals.say, f"{scorer.name}: goals 1, including this one")
+        self.assertEqual(goals.say, f"this is {scorer.name}'s first goal of the match")
 
     def test_goal_effects_follow_the_margin(self) -> None:
         self.assertEqual([goal_effect(m, n) for m, n in ((1, 1), (0, 2), (1, 3), (2, 2), (-1, 3))],
                          ["opener", "equaliser", "ahead", "extend", "back"])
-        f = facts()
-        self.assertEqual(goal_margin_say(0, "Ironvale Athletic", Score(home=1, away=1), f, SPANISH),
-                         "Ironvale Athletic empata: Aurora Rovers 1-1 Ironvale Athletic")
+        self.assertEqual(goal_margin_say(0, "Ironvale Athletic", Score(home=1, away=1), SPANISH),
+                         "va 1-1: Ironvale Athletic empata")
 
     def test_match_wide_chaos_numbers_name_their_window(self) -> None:
         # "79% pass completion" alone was written as "match pass completion": it is the spell's window, not the match.
@@ -114,14 +131,24 @@ class LedgerTests(unittest.TestCase):
             self.assertTrue(item.say.endswith(" in this spell"), item.say)
         self.assertEqual(ledger.item("e1").say, f"chaos index {number_text(chaos.evidence[0].value, 'index')} in this spell")
 
+    def test_a_spells_counts_name_the_window_and_its_rates_do_not(self) -> None:
+        # comeback_0209: "Aurora Rovers have 3 shots and 0.85 xG" was a 5-minute window read as match totals.
+        for kind, windowed in (("momentum_shift", {"shots", "xg"}), ("siege", {"shots", "xg", "opponent_final_third_passes"})):
+            ledger = finding_ledger(first(kind, status="start"), facts(), events_by_id())
+            self.assertEqual({i.metric for i in ledger.items if i.say.endswith(" in this spell")}, windowed, kind)
+            for item in ledger.items:
+                self.assertNotIn("minute", item.say.replace("per minute", ""), item.say)  # no "5 minutes" anywhere
+
     def test_a_surge_ledger_names_the_pressed_club_and_no_window(self) -> None:
         surge = first("pressure_surge", status="start")
         f = facts()
         ledger = finding_ledger(surge, f, events_by_id())
         item = next(i for i in ledger.items if i.metric == "opponent_pass_completion")
         self.assertEqual(item.team_id, f.opponent(surge.team_id).team_id)
-        self.assertTrue(item.say.startswith(f"{f.opponent(surge.team_id).name} completing "), item.say)
-        self.assertNotIn("in this spell", " ".join(i.say for i in ledger.items))
+        self.assertTrue(item.say.startswith(f"{f.opponent(surge.team_id).name} are completing "), item.say)
+        # Only the counts read like match totals, so only they name the window; a rate or a share does not.
+        windowed = {i.metric for i in ledger.items if i.say.endswith(" in this spell")}
+        self.assertEqual(windowed, {"tackles_won"})
 
     def test_featured_players_are_each_clubs_striker(self) -> None:
         f = facts()

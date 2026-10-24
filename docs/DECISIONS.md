@@ -150,3 +150,40 @@ Add an entry in the same commit as any change that touches these areas.
 **Why:** the same live run as decision 21. 20 of its 54 semantic rejections were about a score, an equaliser, a winner or a shot's outcome missing from the cited evidence. 5 of 67 goals stated no score at all, and only 13 shown goal claims stated one. 11 of the 12 persona texts replaced for `unlisted_number` had written the job's own minute in a form the checker did not read. One retry failed because "81:01–89:01" was read as numbers and as the score "1-89". The verifier used 76% of its cap.
 **Evaluation discipline:** as in decision 21. Nothing was fitted to seeds 201-205; the caps follow a fixed rule (twice the largest output), not a tuned value. The change is measured once on seeds 206-210.
 **Rejected:** scoreline evidence for big chances and recaps in this change (only goals were in scope; big-chance rejections such as "they still trail 1-0" stay, a follow-up if seeds 206-210 show them); accepting any number before a minute word inside the window as a minute (an invented "20 minutes of pressure" would pass); telling the verifier that every shot in a goal job is the goal (broader than needed, since citing `goal_margin` covers it); raising the interpreter cap (39% used).
+
+## 23. Labels that survive being pasted, a goal must state its score, rejected persona texts kept (2026-10-24)
+
+**Decision:** (1) Ledger labels are written to read right when a model pastes them verbatim, inside a sentence or as one:
+- the scorer's tally is a clause ("Rafa Yaldiran has 2 goals in the match, including this one"; "this is Rafa Yaldiran's first goal of the match"), as are the other player numbers ("has 5 shots in the match");
+- the pressed club's figure reads "Aurora Rovers are completing 73% of their passes";
+- counts of one are singular ("1 pass in the move");
+- a possession that did not begin in open play names its real cause, read from its `PossessionChangeEvent` ("gained possession from a goal kick", "from a kickoff", "after the ball went out of play", "from a save by their goalkeeper"), and its clock reads "after gaining possession", not "after winning the ball".
+
+(2) The scoreline puts the score first: "it is 1-1: Aurora Rovers equalise". The scoring club is the last club named, so a number pasted after it is read as that club's. When two listed numbers have the same value, the checker now prefers the one whose ledger number it matches. A score digit listed under `goal_margin` beside a scorer's tally of the same value no longer takes the tally's place. The chosen listing must still pass every check.
+
+(3) A goal job's shown claims must include one that cites `goal_margin` and states the score. The rule is applied after the checker and again after the verifier, since a dropped claim must not take the score with it. A draft without it goes back with "state the score: … cite e10"; on the last attempt the job falls back to the template, whose claim states the score and now cites `goal_margin`.
+
+(4) The personalizer's rejected text is stored in the audit entry (`data.replaced[].text`). The overlay and the UI never read it.
+
+(5) Window labels:
+- the match-wide chaos numbers are combined figures ("3.0 turnovers per minute across both teams in this spell");
+- one club's rolling counts and sums (`shots`, `xg`, `tackles_won`, final-third passes) name their window in spell findings ("3 shots in this spell");
+- in tool results they name it as "in the last few minutes", or "in that spell" for an earlier finding's numbers.
+
+A label names at most one window, in words. The explainer and personalizer prompts gain one line each on combined figures, and the explainer one line on naming a window once and not listing a score's digits. The club-once rules are unchanged.
+
+**Why:** the read-only analysis and spot check of the live evaluation on seeds 206-210:
+- 61 of 627 shown claims pasted "goals N, including this one" ("it is his goals 2, including this one"), and 20 pasted "restart or a save".
+- One shown claim called a save "restart-originated" (spot check B #12).
+- 5 of the 7 first-draft checker failures came from the new decision-22 phrases: the scoreline named the away club last (balanced_0206, siege_0210), and score digits were listed as numbers (comeback_0208).
+- 10 of 70 goals cited `goal_margin` but gave no score, since nothing checked it.
+- Spot checks B #14 (a 5-minute window's "3 shots and 0.85 xG" read as match totals) and #20 ("both teams averaged") were scope readings, not wrong numbers.
+- The rise in persona `team_mismatch` (decision 21 follow-up) could not be diagnosed because the rejected text was not kept.
+
+The brief's "between the two teams" became "across both teams": "two" is a number word, so the checker would read it as an unlisted 2. For the same reason no label holds a duration.
+
+**Tests:** every ledger label of six offline matches, pasted as a sentence, passes the checker. Exact strings for every rewritten label in both languages. The two live failures as regressions, next to the old shapes, which still fail (`team_mismatch`, `number_mismatch`). The goal rule on the checker, the explainer retry, the last-attempt fallback and a verifier that drops the score claim. The stored rejected text, kept out of the overlay.
+
+**Evaluation discipline:** these issues were found by reading seeds 206-210 and the spot checks; nothing was fitted to their numbers. Validated offline on seeds 1-40 (a plumbing check). The next live measurement uses a held-out block not yet read, for example seeds 301-305.
+
+**Rejected:** relaxing attribution for club names inside a scoreline (persona texts have no `team_id` to fall back on, so a misattributed number there would go unchecked); a new `ReasonCode` for the goal rule (a schema change for a job-level rule, which is recorded in the audit step and its feedback instead); showing the rejected persona text in the evidence drawer (a reader could take it for shown output; the audit trail is where it belongs).

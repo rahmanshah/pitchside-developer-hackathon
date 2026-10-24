@@ -163,7 +163,8 @@ def explainer(transcript: str) -> str:
             chunk = group[start:start + 2]
             parts = []
             for item in chunk:
-                named = any(name in item.say for name in clubs.values()) or ":" in item.say
+                named = (any(name in item.say for name in clubs.values()) or ":" in item.say
+                         or any(p.name in item.say for p in players.values()))
                 prefix = "" if named or item.team is None or parts else f"{clubs.get(item.team, item.team)}: "
                 parts.append(prefix + item.say)
             text = ", ".join(parts)

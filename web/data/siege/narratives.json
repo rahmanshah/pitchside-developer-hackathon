@@ -244,7 +244,7 @@
      "window_start_s": 433.8,
      "window_end_s": 433.8,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Westmere Town won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -258,7 +258,7 @@
      "window_start_s": 0.0,
      "window_end_s": 437.6,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 0",
+     "say": "Xarno Uusitalo has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -272,7 +272,7 @@
      "window_start_s": 0.0,
      "window_end_s": 437.6,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 2",
+     "say": "Xarno Uusitalo has 2 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -286,7 +286,7 @@
      "window_start_s": 0.0,
      "window_end_s": 437.6,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 0.60",
+     "say": "Xarno Uusitalo has 0.60 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -577,7 +577,7 @@
      "window_start_s": 566.9,
      "window_end_s": 566.9,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -591,7 +591,7 @@
      "window_start_s": 0.0,
      "window_end_s": 566.9,
      "baseline": null,
-     "say": "Kofi Uusitalo: goals 0",
+     "say": "Kofi Uusitalo has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -605,7 +605,7 @@
      "window_start_s": 0.0,
      "window_end_s": 566.9,
      "baseline": null,
-     "say": "Kofi Uusitalo: shots 0",
+     "say": "Kofi Uusitalo has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -619,7 +619,7 @@
      "window_start_s": 0.0,
      "window_end_s": 566.9,
      "baseline": null,
-     "say": "Kofi Uusitalo: xG 0.00",
+     "say": "Kofi Uusitalo has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -818,7 +818,7 @@
      "window_start_s": 808.7,
      "window_end_s": 808.7,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -832,7 +832,7 @@
      "window_start_s": 0.0,
      "window_end_s": 808.7,
      "baseline": null,
-     "say": "Niko Halvorsen: goals 0",
+     "say": "Niko Halvorsen has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -846,7 +846,7 @@
      "window_start_s": 0.0,
      "window_end_s": 808.7,
      "baseline": null,
-     "say": "Niko Halvorsen: shots 0",
+     "say": "Niko Halvorsen has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -860,7 +860,7 @@
      "window_start_s": 0.0,
      "window_end_s": 808.7,
      "baseline": null,
-     "say": "Niko Halvorsen: xG 0.00",
+     "say": "Niko Halvorsen has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -918,7 +918,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Harbourton City: 2 shots.",
+     "text": "Harbourton City: 2 shots in this spell.",
      "team_id": "har",
      "refs": [
       "e3"
@@ -936,7 +936,7 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots.",
+     "text": "Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots in this spell.",
      "source": "model",
      "reason": null
     },
@@ -964,7 +964,7 @@
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots.",
+     "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots in this spell.",
      "source": "model",
      "reason": null
     },
@@ -1031,7 +1031,7 @@
      "window_start_s": 1129.6,
      "window_end_s": 1429.6,
      "baseline": 0.0,
-     "say": "2 shots",
+     "say": "2 shots in this spell",
      "source": "finding",
      "origin": null
     },
@@ -1045,7 +1045,7 @@
      "window_start_s": 1129.6,
      "window_end_s": 1429.6,
      "baseline": 0.0,
-     "say": "0.41 xG",
+     "say": "0.41 xG in this spell",
      "source": "finding",
      "origin": null
     },
@@ -1092,7 +1092,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Harbourton City: 2 shots.",
+      "text": "Harbourton City: 2 shots in this spell.",
       "team_id": "har",
       "refs": [
        "e3"
@@ -1158,7 +1158,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Harbourton City: 88% field tilt, 2 shots.",
+     "text": "Harbourton City: 88% field tilt, 2 shots in this spell.",
      "team_id": "har",
      "refs": [
       "e1",
@@ -1177,7 +1177,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Harbourton City: 0.41 xG.",
+     "text": "Harbourton City: 0.41 xG in this spell.",
      "team_id": "har",
      "refs": [
       "e3"
@@ -1195,56 +1195,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Harbourton City: 88% field tilt, 2 shots. Harbourton City: 0.41 xG.",
+     "text": "Harbourton City: 88% field tilt, 2 shots in this spell. Harbourton City: 0.41 xG in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Harbourton City: 88% field tilt, 2 shots.",
+     "text": "Harbourton City: 88% field tilt, 2 shots in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots.",
+     "text": "For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+     "text": "For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots. Harbourton City: 0.41 xG.",
+     "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots in this spell. Harbourton City: 0.41 xG in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots.",
+     "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
      "source": "model",
      "reason": null
     }
@@ -1276,7 +1276,7 @@
      "window_start_s": 1137.7,
      "window_end_s": 1437.7,
      "baseline": 0.0,
-     "say": "2 shots",
+     "say": "2 shots in this spell",
      "source": "finding",
      "origin": null
     },
@@ -1290,7 +1290,7 @@
      "window_start_s": 1137.7,
      "window_end_s": 1437.7,
      "baseline": 0.0,
-     "say": "0.41 xG",
+     "say": "0.41 xG in this spell",
      "source": "finding",
      "origin": null
     },
@@ -1332,7 +1332,7 @@
      "window_start_s": 1137.7,
      "window_end_s": 1437.7,
      "baseline": null,
-     "say": "Westmere Town with 2 passes into the final third",
+     "say": "Westmere Town have made 2 passes into the final third in this spell",
      "source": "finding",
      "origin": null
     }
@@ -1346,7 +1346,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Harbourton City: 88% field tilt, 2 shots.",
+      "text": "Harbourton City: 88% field tilt, 2 shots in this spell.",
       "team_id": "har",
       "refs": [
        "e1",
@@ -1365,7 +1365,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Harbourton City: 0.41 xG.",
+      "text": "Harbourton City: 0.41 xG in this spell.",
       "team_id": "har",
       "refs": [
        "e3"
@@ -1431,7 +1431,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
      "team_id": "har",
      "refs": [
       "e1",
@@ -1450,7 +1450,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Westmere Town completing 79% of their passes.",
+     "text": "Westmere Town are completing 79% of their passes.",
      "team_id": "wst",
      "refs": [
       "e3"
@@ -1468,56 +1468,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won. Westmere Town completing 79% of their passes.",
+     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell. Westmere Town are completing 79% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "text": "For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "text": "For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won. Westmere Town completing 79% of their passes.",
+     "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell. Westmere Town are completing 79% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
      "source": "model",
      "reason": null
     }
@@ -1549,7 +1549,7 @@
      "window_start_s": 1199.6,
      "window_end_s": 1499.6,
      "baseline": null,
-     "say": "0 tackles won",
+     "say": "0 tackles won in this spell",
      "source": "finding",
      "origin": null
     },
@@ -1563,7 +1563,7 @@
      "window_start_s": 1199.6,
      "window_end_s": 1499.6,
      "baseline": 80.7,
-     "say": "Westmere Town completing 79% of their passes",
+     "say": "Westmere Town are completing 79% of their passes",
      "source": "finding",
      "origin": null
     },
@@ -1591,7 +1591,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
       "team_id": "har",
       "refs": [
        "e1",
@@ -1610,7 +1610,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Westmere Town completing 79% of their passes.",
+      "text": "Westmere Town are completing 79% of their passes.",
       "team_id": "wst",
       "refs": [
        "e3"
@@ -1901,7 +1901,7 @@
      "window_start_s": 1777.3,
      "window_end_s": 1777.3,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Harbourton City won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -1915,7 +1915,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1807.4,
      "baseline": null,
-     "say": "Hugo Vidrelle: goals 0",
+     "say": "Hugo Vidrelle has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -1929,7 +1929,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1807.4,
      "baseline": null,
-     "say": "Hugo Vidrelle: shots 5",
+     "say": "Hugo Vidrelle has 5 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -1943,7 +1943,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1807.4,
      "baseline": null,
-     "say": "Hugo Vidrelle: xG 1.27",
+     "say": "Hugo Vidrelle has 1.27 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -2299,7 +2299,7 @@
      "window_start_s": 2053.4,
      "window_end_s": 2053.4,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Harbourton City won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -2313,7 +2313,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2098.9,
      "baseline": null,
-     "say": "Hugo Vidrelle: goals 0",
+     "say": "Hugo Vidrelle has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -2327,7 +2327,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2098.9,
      "baseline": null,
-     "say": "Hugo Vidrelle: shots 6",
+     "say": "Hugo Vidrelle has 6 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -2341,7 +2341,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2098.9,
      "baseline": null,
-     "say": "Hugo Vidrelle: xG 1.98",
+     "say": "Hugo Vidrelle has 1.98 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -2661,7 +2661,7 @@
      "window_start_s": 2177.6,
      "window_end_s": 2194.3,
      "baseline": null,
-     "say": "17 s after winning the ball",
+     "say": "17 s after gaining possession",
      "source": "finding",
      "origin": null
     },
@@ -2675,7 +2675,7 @@
      "window_start_s": 2177.6,
      "window_end_s": 2194.3,
      "baseline": null,
-     "say": "1 passes in the move",
+     "say": "1 pass in the move",
      "source": "finding",
      "origin": null
     },
@@ -2703,7 +2703,7 @@
      "window_start_s": 2177.6,
      "window_end_s": 2177.6,
      "baseline": null,
-     "say": "possession began from a restart or a save",
+     "say": "Harbourton City gained possession after the ball went out of play",
      "source": "finding",
      "origin": null
     },
@@ -2717,7 +2717,7 @@
      "window_start_s": 2194.3,
      "window_end_s": 2194.3,
      "baseline": 0.0,
-     "say": "Harbourton City open the scoring: Harbourton City 1-0 Westmere Town",
+     "say": "it is 1-0: Harbourton City open the scoring",
      "source": "finding",
      "origin": null
     },
@@ -2731,7 +2731,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2194.3,
      "baseline": null,
-     "say": "Hugo Vidrelle: goals 1, including this one",
+     "say": "this is Hugo Vidrelle's first goal of the match",
      "source": "player",
      "origin": null
     },
@@ -2745,7 +2745,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2194.3,
      "baseline": null,
-     "say": "Hugo Vidrelle: shots 7",
+     "say": "Hugo Vidrelle has 7 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -2759,7 +2759,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2194.3,
      "baseline": null,
-     "say": "Hugo Vidrelle: xG 2.04",
+     "say": "Hugo Vidrelle has 2.04 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -3121,7 +3121,7 @@
      "window_start_s": 2394.7,
      "window_end_s": 2694.7,
      "baseline": null,
-     "say": "2 tackles won",
+     "say": "2 tackles won in this spell",
      "source": "finding",
      "origin": null
     },
@@ -3135,7 +3135,7 @@
      "window_start_s": 2394.7,
      "window_end_s": 2694.7,
      "baseline": 82.8,
-     "say": "Westmere Town completing 90% of their passes",
+     "say": "Westmere Town are completing 90% of their passes",
      "source": "finding",
      "origin": null
     },
@@ -3399,7 +3399,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Hugo Vidrelle: goals 1",
+     "say": "Hugo Vidrelle has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -3413,7 +3413,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Hugo Vidrelle: shots 8",
+     "say": "Hugo Vidrelle has 8 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -3427,7 +3427,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Hugo Vidrelle: xG 2.10",
+     "say": "Hugo Vidrelle has 2.10 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -3441,7 +3441,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 0",
+     "say": "Xarno Uusitalo has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -3455,7 +3455,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 3",
+     "say": "Xarno Uusitalo has 3 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -3469,7 +3469,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 0.79",
+     "say": "Xarno Uusitalo has 0.79 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -3483,7 +3483,7 @@
      "window_start_s": 2194.3,
      "window_end_s": 2194.3,
      "baseline": 0.0,
-     "say": "Harbourton City open the scoring: Harbourton City 1-0 Westmere Town",
+     "say": "it is 1-0: Harbourton City open the scoring",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:0"
     },
@@ -3651,7 +3651,7 @@
      "window_start_s": 1199.6,
      "window_end_s": 1499.6,
      "baseline": null,
-     "say": "0 tackles won",
+     "say": "0 tackles won in this spell",
      "source": "claim",
      "origin": "har_wst_siege_0003:pressure_surge:0"
     },
@@ -3665,7 +3665,7 @@
      "window_start_s": 1199.6,
      "window_end_s": 1499.6,
      "baseline": 80.7,
-     "say": "Westmere Town completing 79% of their passes",
+     "say": "Westmere Town are completing 79% of their passes",
      "source": "claim",
      "origin": "har_wst_siege_0003:pressure_surge:0"
     },
@@ -3693,7 +3693,7 @@
      "window_start_s": 1137.7,
      "window_end_s": 1437.7,
      "baseline": 0.0,
-     "say": "2 shots",
+     "say": "2 shots in this spell",
      "source": "claim",
      "origin": "har_wst_siege_0003:siege:0"
     },
@@ -4052,7 +4052,7 @@
      "window_start_s": 2741.9,
      "window_end_s": 3041.9,
      "baseline": 1.0,
-     "say": "2 shots",
+     "say": "2 shots in this spell",
      "source": "finding",
      "origin": null
     },
@@ -4066,7 +4066,7 @@
      "window_start_s": 2741.9,
      "window_end_s": 3041.9,
      "baseline": 0.018,
-     "say": "0.34 xG",
+     "say": "0.34 xG in this spell",
      "source": "finding",
      "origin": null
     },
@@ -4108,7 +4108,7 @@
      "window_start_s": 2741.9,
      "window_end_s": 3041.9,
      "baseline": null,
-     "say": "Westmere Town with 18 passes into the final third",
+     "say": "Westmere Town have made 18 passes into the final third in this spell",
      "source": "finding",
      "origin": null
     }
@@ -4265,7 +4265,7 @@
      "window_start_s": 2817.7,
      "window_end_s": 3117.7,
      "baseline": 1.0,
-     "say": "0 shots",
+     "say": "0 shots in this spell",
      "source": "finding",
      "origin": null
     },
@@ -4279,7 +4279,7 @@
      "window_start_s": 2817.7,
      "window_end_s": 3117.7,
      "baseline": 0.018,
-     "say": "0.00 xG",
+     "say": "0.00 xG in this spell",
      "source": "finding",
      "origin": null
     },
@@ -4549,7 +4549,7 @@
      "window_start_s": 3175.1,
      "window_end_s": 3175.1,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Westmere Town won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -4563,7 +4563,7 @@
      "window_start_s": 3220.6,
      "window_end_s": 3220.6,
      "baseline": -1.0,
-     "say": "Westmere Town equalise: Harbourton City 1-1 Westmere Town",
+     "say": "it is 1-1: Westmere Town equalise",
      "source": "finding",
      "origin": null
     },
@@ -4577,7 +4577,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3220.6,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 1, including this one",
+     "say": "this is Xarno Uusitalo's first goal of the match",
      "source": "player",
      "origin": null
     },
@@ -4591,7 +4591,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3220.6,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 4",
+     "say": "Xarno Uusitalo has 4 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -4605,7 +4605,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3220.6,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 1.42",
+     "say": "Xarno Uusitalo has 1.42 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -5009,7 +5009,7 @@
      "window_start_s": 4236.1,
      "window_end_s": 4236.1,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -5023,7 +5023,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4236.1,
      "baseline": null,
-     "say": "Arman Ibarra: goals 0",
+     "say": "Arman Ibarra has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -5037,7 +5037,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4236.1,
      "baseline": null,
-     "say": "Arman Ibarra: shots 0",
+     "say": "Arman Ibarra has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -5051,7 +5051,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4236.1,
      "baseline": null,
-     "say": "Arman Ibarra: xG 0.00",
+     "say": "Arman Ibarra has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -5321,7 +5321,7 @@
      "window_start_s": 4752.9,
      "window_end_s": 4752.9,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Harbourton City won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -5335,7 +5335,7 @@
      "window_start_s": 4755.7,
      "window_end_s": 4755.7,
      "baseline": 0.0,
-     "say": "Harbourton City go ahead: Harbourton City 2-1 Westmere Town",
+     "say": "it is 2-1: Harbourton City go ahead",
      "source": "finding",
      "origin": null
     },
@@ -5349,7 +5349,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4755.7,
      "baseline": null,
-     "say": "Joaquin Quenvara: goals 1, including this one",
+     "say": "this is Joaquin Quenvara's first goal of the match",
      "source": "player",
      "origin": null
     },
@@ -5363,7 +5363,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4755.7,
      "baseline": null,
-     "say": "Joaquin Quenvara: shots 1",
+     "say": "Joaquin Quenvara has 1 shot in the match",
      "source": "player",
      "origin": null
     },
@@ -5377,7 +5377,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4755.7,
      "baseline": null,
-     "say": "Joaquin Quenvara: xG 0.04",
+     "say": "Joaquin Quenvara has 0.04 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -5846,7 +5846,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Hugo Vidrelle: goals 1",
+     "say": "Hugo Vidrelle has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -5860,7 +5860,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Hugo Vidrelle: shots 14",
+     "say": "Hugo Vidrelle has 14 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -5874,7 +5874,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Hugo Vidrelle: xG 2.80",
+     "say": "Hugo Vidrelle has 2.80 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -5888,7 +5888,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 1",
+     "say": "Xarno Uusitalo has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -5902,7 +5902,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 6",
+     "say": "Xarno Uusitalo has 6 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -5916,7 +5916,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 1.50",
+     "say": "Xarno Uusitalo has 1.50 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -5930,7 +5930,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Joaquin Quenvara: goals 1",
+     "say": "Joaquin Quenvara has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -5944,7 +5944,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Joaquin Quenvara: shots 1",
+     "say": "Joaquin Quenvara has 1 shot in the match",
      "source": "player",
      "origin": null
     },
@@ -5958,7 +5958,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Joaquin Quenvara: xG 0.04",
+     "say": "Joaquin Quenvara has 0.04 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -5972,7 +5972,7 @@
      "window_start_s": 4755.7,
      "window_end_s": 4755.7,
      "baseline": 0.0,
-     "say": "Harbourton City go ahead: Harbourton City 2-1 Westmere Town",
+     "say": "it is 2-1: Harbourton City go ahead",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:2"
     },
@@ -6042,7 +6042,7 @@
      "window_start_s": 3220.6,
      "window_end_s": 3220.6,
      "baseline": -1.0,
-     "say": "Westmere Town equalise: Harbourton City 1-1 Westmere Town",
+     "say": "it is 1-1: Westmere Town equalise",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:1"
     },
@@ -6098,7 +6098,7 @@
      "window_start_s": 2194.3,
      "window_end_s": 2194.3,
      "baseline": 0.0,
-     "say": "Harbourton City open the scoring: Harbourton City 1-0 Westmere Town",
+     "say": "it is 1-0: Harbourton City open the scoring",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:0"
     },

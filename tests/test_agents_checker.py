@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import unittest
 
-from pitchside.agents.checker import CheckContext, check_claim, check_text, scan
+from pitchside.agents.checker import CheckContext, check_claim, check_text, missing_goal_score, scan
 from pitchside.agents.contracts import Claim, ClaimNumber, GoalAt
 from pitchside.agents.languages import SPANISH
 from pitchside.agents.ledger import finding_ledger
@@ -177,6 +177,74 @@ class ScorelineTests(unittest.TestCase):
     def test_a_wrong_score_is_still_rejected_even_when_the_scoreline_is_cited(self) -> None:
         self.assertEqual(codes(claim("Ironvale Athletic go ahead: it is 2-0.", refs=(self.MARGIN.ref,))),
                          ["score_mismatch"])
+
+
+def _brace_job():
+    """Seed 1 comeback goal:2: Aurora Rovers (home) go 2-1 up, the scorer's second goal."""
+    from test_agents_fakes_faults import model_jobs
+    return next(j for j in model_jobs() if j.job_id.endswith(":goal:2"))
+
+
+class PastedScorelineTests(unittest.TestCase):
+    """Two live failures (seeds 206-210, decision 23), and that the checks they hit are as strict as before."""
+
+    @classmethod
+    def setUpClass(cls) -> None:
+        cls.job = _brace_job()
+        cls.ctx = CheckContext.for_job(cls.job)
+        led = cls.job.ledger
+        cls.scorer = led.players[0]
+        cls.margin = next(i for i in led.items if i.metric == "goal_margin")
+        cls.tally = next(i for i in led.items if i.metric == "player_goals" and i.player_id == cls.scorer.player_id)
+        cls.clock = led.item("e6")  # seconds_since_turnover
+
+    def codes(self, text: str, refs, numbers) -> list[str]:
+        c = Claim(claim_id="k1", text=text, team_id="aur", refs=list(refs),
+                  numbers=[ClaimNumber(value=v, ref=r) for v, r in numbers])
+        return [r.code for r in check_claim(c, self.ctx).reasons]
+
+    def test_the_numbers_after_a_pasted_scoreline_belong_to_the_scorer(self) -> None:
+        # balanced_0206 pasted "Aurora Rovers 1-0 Ironvale Athletic (goals 1, ...)": the away club was named last.
+        self.assertEqual((self.margin.say, self.tally.say),
+                         ("it is 2-1: Aurora Rovers go ahead",
+                          f"{self.scorer.name} has 2 goals in the match, including this one"))
+        seconds = round(self.clock.value)
+        new = f"{self.scorer.name} scored; {self.margin.say}, {seconds} s after winning the ball; {self.tally.say}."
+        self.assertEqual(self.codes(new, [self.scorer.ref, self.margin.ref, "e6", self.tally.ref],
+                                    [(seconds, "e6"), (2, self.tally.ref)]), [])
+        old = f"{self.scorer.name} scored; Aurora Rovers 2-1 Ironvale Athletic, {seconds} s after winning the ball."
+        self.assertEqual(self.codes(old, [self.scorer.ref, "e6"], [(seconds, "e6")]), ["team_mismatch"])  # unchanged
+
+    def test_a_score_digit_listed_beside_the_tally_does_not_take_its_place(self) -> None:
+        # comeback_0208 listed the score's 2 and 1 under goal_margin, so the tally's "2" was matched to goal_margin.
+        text = f"{self.scorer.name} put Aurora Rovers 2-1 ahead; {self.tally.say}."
+        refs = [self.scorer.ref, self.margin.ref, self.tally.ref]
+        self.assertEqual(self.codes(text, refs, [(2, self.margin.ref), (1, self.margin.ref), (2, self.tally.ref)]), [])
+        wrong = text.replace("has 2 goals", "has 3 goals")
+        self.assertEqual(self.codes(wrong, refs, [(3, self.tally.ref)]), ["number_mismatch"])
+        other_club = f"Ironvale Athletic have 2 goals in the match; {self.scorer.name} scored."
+        self.assertIn("team_mismatch", self.codes(other_club, refs, [(2, self.tally.ref)]))
+
+
+class GoalScoreRuleTests(unittest.TestCase):
+    def test_a_goal_needs_a_claim_that_cites_goal_margin_and_states_the_score(self) -> None:
+        job = _brace_job()
+        margin = next(i.ref for i in job.ledger.items if i.metric == "goal_margin")
+        say_it = Claim(claim_id="a", text="It is 2-1: Aurora Rovers go ahead.", team_id="aur", refs=[margin])
+        no_cite = Claim(claim_id="b", text="Aurora Rovers lead 2-1.", team_id="aur", refs=["e1"])
+        no_score = Claim(claim_id="c", text="Aurora Rovers go ahead.", team_id="aur", refs=[margin])
+        wrong_score = Claim(claim_id="d", text="Aurora Rovers go ahead at 1-0.", team_id="aur", refs=[margin])
+        self.assertIsNone(missing_goal_score(job, [no_score, say_it]))
+        for claims in ([no_cite], [no_score], [wrong_score], [no_cite, no_score]):
+            problem = missing_goal_score(job, claims)
+            self.assertTrue(problem.startswith("state the score:"), problem)
+            self.assertIn('"it is 2-1"', problem)
+            self.assertIn(margin, problem)
+
+    def test_other_jobs_have_no_score_rule(self) -> None:
+        from test_agents_fakes_faults import model_jobs
+        other = next(j for j in model_jobs() if j.label != "goal")
+        self.assertIsNone(missing_goal_score(other, []))
 
 
 class MinuteTests(unittest.TestCase):

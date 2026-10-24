@@ -24,7 +24,7 @@ from ..llm.factory import ModelClients
 from ..stats import tools as stats_tools
 from ..stats.timeline import TimelineView
 from .contracts import Job, Ledger
-from .ledger import say
+from .ledger import SPELL_WINDOW_METRICS, WINDOW_COUNT_METRICS, say, window_say
 from .prompting import instructions
 
 if TYPE_CHECKING:
@@ -102,7 +102,13 @@ class LedgerRecorder(FunctionMiddleware):
         shown, refs = [], []
         for entry in items:
             team = state.job.facts.team(entry.get("team_id"))
-            phrase = say(entry["metric"], entry["value"], entry["unit"])
+            metric = entry["metric"]
+            if metric in WINDOW_COUNT_METRICS or (metric in SPELL_WINDOW_METRICS and team is None):
+                # A rolling number: name its window, the last few minutes or an earlier finding's spell.
+                recent = abs(entry["window_end_s"] - state.job.clock_s) <= 1.0
+                phrase = window_say(metric, entry["value"], entry["unit"], "recent" if recent else "earlier")
+            else:
+                phrase = say(metric, entry["value"], entry["unit"])
             item = state.ledger.add_item("c", metric=entry["metric"], team_id=entry.get("team_id"),
                                          value=entry["value"], unit=entry["unit"],
                                          window_start_s=entry["window_start_s"], window_end_s=entry["window_end_s"],

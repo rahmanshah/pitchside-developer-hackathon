@@ -3,18 +3,21 @@
 from __future__ import annotations
 
 import asyncio
+import json
+import re
 import tempfile
 import unittest
 from pathlib import Path
 from typing import Optional
 
+from pitchside.agents.checker import missing_goal_score
 from pitchside.agents.contracts import JobRecord
 from pitchside.agents.fake_agents import RESPONDERS
 from pitchside.agents.faults import FaultInjector, parse_faults
 from pitchside.agents.languages import resolve_languages
 from pitchside.agents.roles import build_agents
 from pitchside.agents.workflow import RunFlags, run_job, workflow_mermaid
-from pitchside.llm import load_settings
+from pitchside.llm import Role, load_settings
 from pitchside.llm.factory import build_clients
 from pitchside.llm.guard import call_context
 
@@ -34,12 +37,13 @@ class WorkflowTestCase(unittest.TestCase):
     def tearDown(self) -> None:
         self.tmp.cleanup()
 
-    def run_job(self, job=GOAL, faults: str = "", flags: Optional[RunFlags] = None, **env) -> JobRecord:
+    def run_job(self, job=GOAL, faults: str = "", flags: Optional[RunFlags] = None, responders=None,
+                **env) -> JobRecord:
         settings = load_settings({"PITCHSIDE_USAGE_LOG": str(self.usage), **env})
         self.injector = FaultInjector(parse_faults(faults)) if faults else None
         middleware = (lambda role: [self.injector.middleware(role.value)]) if self.injector else ()
-        self.models = build_clients(settings, fake_responders=RESPONDERS, backoff_base_s=0, backoff_cap_s=0,
-                                    extra_middleware=middleware)
+        self.models = build_clients(settings, fake_responders={**RESPONDERS, **(responders or {})}, backoff_base_s=0,
+                                    backoff_cap_s=0, extra_middleware=middleware)
         if self.injector:
             self.injector.register(job)
         agents = build_agents(self.models)
@@ -131,6 +135,62 @@ class VerifierLoopTests(WorkflowTestCase):
         self.assertIn("semantic verifier rejected every claim", record.narrative.reason)
 
 
+SCORE = re.compile(r"\d+-\d+")
+
+
+def explainer_without_score(always: bool):
+    """The offline explainer, minus the claim that states the score: on the first draft only, or on every draft."""
+    def respond(transcript: str) -> str:
+        reply = json.loads(RESPONDERS[Role.EXPLAINER](transcript))
+        if always or "FEEDBACK" not in transcript:
+            reply["claims"] = [c for c in reply["claims"] if not SCORE.search(c["text"])]
+        return json.dumps(reply)
+    return {Role.EXPLAINER: respond}
+
+
+def verifier_rejecting_the_score() -> dict:
+    def respond(transcript: str) -> str:
+        reply = json.loads(RESPONDERS[Role.VERIFIER](transcript))
+        lines = {int(m.group(1)): m.group(2) for m in re.finditer(r"^(\d+)\. \[[^\]]*\] (.*)$", transcript, re.M)}
+        for v in reply["verdicts"]:
+            if SCORE.search(lines.get(v["claim"], "")):
+                v.update(supported=False, reason="Says more than the evidence shows.")
+        return json.dumps(reply)
+    return {Role.VERIFIER: respond}
+
+
+class GoalScoreTests(WorkflowTestCase):
+    """A goal's shown claims must include one that cites goal_margin and states the score (decision 23)."""
+
+    def test_a_draft_without_the_score_is_sent_back_and_the_retry_states_it(self) -> None:
+        record = self.run_job(responders=explainer_without_score(always=False))
+        self.assertEqual((record.narrative.source, len(record.drafts)), ("model", 2))
+        check = next(a for a in record.audit if a.step == "check")
+        self.assertEqual((check.outcome, check.detail), ("rejected", "no claim states the score with goal_margin; retry"))
+        retry = [a for a in record.audit if a.step == "explain"][1]
+        self.assertTrue(any("state the score" in f for f in retry.data["feedback"]), retry.data["feedback"])
+        self.assertIsNone(missing_goal_score(GOAL, record.narrative.claims))
+
+    def test_a_goal_that_never_states_the_score_falls_back_to_the_template_which_does(self) -> None:
+        record = self.run_job(responders=explainer_without_score(always=True))
+        n = record.narrative
+        self.assertEqual((n.source, len(record.drafts)), ("template", 3))
+        self.assertTrue(n.reason.startswith("checker rejected the goal claims after 3 attempt(s)"), n.reason)
+        self.assertIsNone(missing_goal_score(GOAL, n.claims))
+
+    def test_the_verifier_dropping_the_score_claim_cannot_leave_a_goal_without_it(self) -> None:
+        record = self.run_job(responders=verifier_rejecting_the_score())
+        n = record.narrative
+        self.assertEqual(n.source, "template")
+        self.assertTrue(n.reason.startswith("semantic verifier rejected the score claim"), n.reason)
+        retry = [a for a in record.audit if a.step == "explain"][1]
+        self.assertTrue(any("state the score" in f for f in retry.data["feedback"]))
+
+    def test_other_jobs_are_untouched(self) -> None:
+        record = self.run_job(RECAP, responders=explainer_without_score(always=True))
+        self.assertEqual((record.narrative.source, len(record.drafts)), ("model", 1))
+
+
 class FailureRecoveryTests(WorkflowTestCase):
     def test_a_rate_limit_is_retried_by_the_guard_and_nothing_changes(self) -> None:
         record = self.run_job(faults="explainer:rate_limit")
@@ -165,6 +225,13 @@ class FailureRecoveryTests(WorkflowTestCase):
         self.assertEqual(sources.count("template"), 1)
         bad = next(t for t in record.narrative.texts if t.source == "template")
         self.assertIn("unlisted_number", bad.reason)
+        # The rejected text is kept in the audit trail (decision 23), never in what is shown.
+        personalize = next(a for a in record.audit if a.step == "personalize")
+        [replaced] = personalize.data["replaced"]
+        self.assertEqual((replaced["persona"], replaced["language"], replaced["reason"]),
+                         (bad.persona, bad.language, bad.reason))
+        self.assertTrue(replaced["text"].endswith("They had 99 corners."), replaced["text"])
+        self.assertFalse(any("99 corners" in t.text for t in record.narrative.texts))
 
     def test_interpreter_failure_uses_a_rule_based_brief(self) -> None:
         record = self.run_job(faults="interpreter:malformedx2")

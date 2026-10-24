@@ -27,7 +27,7 @@ from pydantic import BaseModel, ConfigDict, Field
 from ..llm.config import Role
 from ..llm.errors import BudgetExhausted, LLMError
 from ..llm.guard import call_context
-from .checker import CheckContext, check_claim, check_text
+from .checker import CheckContext, check_claim, check_text, missing_goal_score
 from .contracts import (
     AuditEntry, Claim, ClaimCheck, Draft, ExplainerReply, InterpreterReply, Job, JobRecord, Ledger, Narrative,
     PersonalizerReply, PersonaText, Reason, VerifierReply,
@@ -229,15 +229,24 @@ class CheckStep(_Step):
         rejected = len(draft.claims) - len(passed)
         feedback = feedback_lines(draft.claims, checks) or (
             [] if draft.claims else ["the reply had no claims: write 1 to 3 claims"])
-        if draft.claims and not rejected:
+        # A goal must keep one claim that cites goal_margin and states the score (decision 23).
+        score_gap = missing_goal_score(work.view(), passed) if passed else None
+        if draft.claims and not rejected and score_gap is None:
             out: Union[Revise, ToVerify, Fallback] = ToVerify(attempt=message.attempt, claims=passed)
             outcome, detail, nxt = "passed", f"all {len(passed)} claim(s) passed", "verify"
         elif message.attempt < self.max_attempts:
+            feedback = feedback + ([f"all claims: {score_gap}"] if score_gap else [])
             out = Revise(attempt=message.attempt + 1, feedback=feedback)
-            outcome, detail, nxt = "rejected", f"{rejected} of {len(draft.claims)} claim(s) rejected; retry", "explain"
-        elif passed:
+            detail = (f"{rejected} of {len(draft.claims)} claim(s) rejected; retry" if rejected
+                      else "no claim states the score with goal_margin; retry")
+            outcome, nxt = "rejected", "explain"
+        elif passed and score_gap is None:
             out = ToVerify(attempt=message.attempt, claims=passed)
             outcome, detail, nxt = "partial", f"last attempt: keeping {len(passed)} claim(s), dropping {rejected}", "verify"
+        elif passed:
+            out = Fallback(reason=f"checker rejected the goal claims after {message.attempt} attempt(s): none "
+                                  "stated the score")
+            outcome, detail, nxt = "rejected", out.reason, "fallback"
         else:
             out = Fallback(reason=f"checker rejected every claim after {message.attempt} attempt(s)")
             outcome, detail, nxt = "rejected", out.reason, "fallback"
@@ -277,17 +286,23 @@ class VerifyStep(_Step):
         work.checks += checks
         supported = [c for c, k in zip(claims, checks) if k.ok]
         rejected = len(claims) - len(supported)
+        # Dropping an unsupported claim must not drop a goal's score (decision 23).
+        score_gap = missing_goal_score(work.view(), supported) if supported else None
         if not rejected:
             work.semantic_check = "passed"
             out: Union[Revise, Verified, Fallback] = Verified(claims=supported)
             outcome, detail, nxt = "passed", f"all {len(supported)} claim(s) supported", "personalize"
         elif message.attempt < self.max_attempts:
-            out = Revise(attempt=message.attempt + 1, feedback=feedback_lines(claims, checks))
+            feedback = feedback_lines(claims, checks) + ([f"all claims: {score_gap}"] if score_gap else [])
+            out = Revise(attempt=message.attempt + 1, feedback=feedback)
             outcome, detail, nxt = "rejected", f"{rejected} of {len(claims)} claim(s) unsupported; retry", "explain"
-        elif supported:
+        elif supported and score_gap is None:
             work.semantic_check = "passed"
             out = Verified(claims=supported)
             outcome, detail, nxt = "partial", f"last attempt: keeping {len(supported)}, dropping {rejected}", "personalize"
+        elif supported:
+            out = Fallback(reason=f"semantic verifier rejected the score claim after {message.attempt} attempt(s)")
+            outcome, detail, nxt = "rejected", out.reason, "fallback"
         else:
             out = Fallback(reason=f"semantic verifier rejected every claim after {message.attempt} attempt(s)")
             outcome, detail, nxt = "rejected", out.reason, "fallback"
@@ -308,7 +323,7 @@ class PersonalizeStep(_Step):
         context = CheckContext.for_job(job)
         refs = [r for c in claims for r in c.refs]
         prompt = personalizer_prompt(job, claims, personas, self.languages)
-        replaced: list[dict[str, str]] = []
+        replaced: list[dict[str, Optional[str]]] = []
         templates: Optional[dict[tuple[str, str], PersonaText]] = None
 
         def template_text(persona: str, lang: Language, reason: str) -> PersonaText:
@@ -334,7 +349,8 @@ class PersonalizeStep(_Step):
                         continue
                     reason = "persona text rejected: " + "; ".join(f"{r.code}: {r.detail}" for r in problems)
                 texts.append(template_text(persona, lang, reason))
-                replaced.append({"persona": persona, "language": lang.code, "reason": reason})
+                # The rejected text stays in the audit trail only (decision 23): never shown, never in the overlay.
+                replaced.append({"persona": persona, "language": lang.code, "reason": reason, "text": text})
             outcome = "texts" if not replaced else "texts_partly_template"
             detail = f"{len(texts) - len(replaced)} of {len(texts)} text(s) from the model"
             work.log("personalize", "pitchside-personalizer", outcome, detail, attempt=1, next_step="publish",

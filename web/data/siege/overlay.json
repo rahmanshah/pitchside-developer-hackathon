@@ -454,7 +454,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Westmere Town",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -474,7 +474,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -484,7 +484,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -504,9 +504,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 871,
+     "input_tokens": 905,
      "output_tokens": 469,
-     "cost_usd": 0.001156
+     "cost_usd": 0.001164
     },
     "badges": []
    }
@@ -1240,7 +1240,7 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots.",
+      "text": "Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1268,7 +1268,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots.",
+      "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1599,7 +1599,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Harbourton City: 2 shots.",
+      "text": "Harbourton City: 2 shots in this spell.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -1614,7 +1614,7 @@
         "involvement": null,
         "value": 2.0,
         "unit": "count",
-        "say": "2 shots",
+        "say": "2 shots in this spell",
         "window_start_s": 1129.6,
         "window_end_s": 1429.6,
         "baseline": 0.0,
@@ -1667,7 +1667,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Momentum shift: Harbourton City",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -1687,7 +1687,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -1697,7 +1697,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -1717,9 +1717,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 604,
-     "output_tokens": 420,
-     "cost_usd": 0.000991
+     "input_tokens": 629,
+     "output_tokens": 430,
+     "cost_usd": 0.001017
     },
     "badges": []
    }
@@ -1771,7 +1771,7 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Harbourton City: 88% field tilt, 2 shots. Harbourton City: 0.41 xG.",
+      "text": "Harbourton City: 88% field tilt, 2 shots in this spell. Harbourton City: 0.41 xG in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1790,8 +1790,8 @@
         ]
        },
        {
-        "start": 59,
-        "end": 63,
+        "start": 73,
+        "end": 77,
         "refs": [
          "e3"
         ]
@@ -1799,7 +1799,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots. Harbourton City: 0.41 xG.",
+      "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots in this spell. Harbourton City: 0.41 xG in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1818,8 +1818,8 @@
         ]
        },
        {
-        "start": 74,
-        "end": 78,
+        "start": 88,
+        "end": 92,
         "refs": [
          "e3"
         ]
@@ -1829,7 +1829,7 @@
     },
     "casual": {
      "en": {
-      "text": "Harbourton City: 88% field tilt, 2 shots.",
+      "text": "Harbourton City: 88% field tilt, 2 shots in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1850,7 +1850,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots.",
+      "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1873,7 +1873,7 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "text": "For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1894,7 +1894,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1917,7 +1917,7 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "text": "For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1938,7 +1938,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -1967,7 +1967,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Harbourton City: 88% field tilt, 2 shots.",
+      "text": "Harbourton City: 88% field tilt, 2 shots in this spell.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -2050,7 +2050,7 @@
         "involvement": null,
         "value": 2.0,
         "unit": "count",
-        "say": "2 shots",
+        "say": "2 shots in this spell",
         "window_start_s": 1137.7,
         "window_end_s": 1437.7,
         "baseline": 0.0,
@@ -2081,7 +2081,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Harbourton City: 0.41 xG.",
+      "text": "Harbourton City: 0.41 xG in this spell.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -2096,7 +2096,7 @@
         "involvement": null,
         "value": 0.41,
         "unit": "xg",
-        "say": "0.41 xG",
+        "say": "0.41 xG in this spell",
         "window_start_s": 1137.7,
         "window_end_s": 1437.7,
         "baseline": 0.0,
@@ -2149,7 +2149,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Siege: Harbourton City",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -2169,7 +2169,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -2179,7 +2179,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -2199,9 +2199,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 645,
-     "output_tokens": 400,
-     "cost_usd": 0.000961
+     "input_tokens": 690,
+     "output_tokens": 442,
+     "cost_usd": 0.001056
     },
     "badges": []
    }
@@ -2253,7 +2253,7 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won. Westmere Town completing 79% of their passes.",
+      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell. Westmere Town are completing 79% of their passes.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -2272,8 +2272,8 @@
         ]
        },
        {
-        "start": 83,
-        "end": 85,
+        "start": 101,
+        "end": 103,
         "refs": [
          "e3"
         ]
@@ -2281,7 +2281,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won. Westmere Town completing 79% of their passes.",
+      "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell. Westmere Town are completing 79% of their passes.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -2300,8 +2300,8 @@
         ]
        },
        {
-        "start": 98,
-        "end": 100,
+        "start": 116,
+        "end": 118,
         "refs": [
          "e3"
         ]
@@ -2311,7 +2311,7 @@
     },
     "casual": {
      "en": {
-      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -2332,7 +2332,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -2355,7 +2355,7 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -2376,7 +2376,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -2399,7 +2399,7 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -2420,7 +2420,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -2449,7 +2449,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won.",
+      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
       "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
@@ -2513,7 +2513,7 @@
         "involvement": null,
         "value": 0.0,
         "unit": "count",
-        "say": "0 tackles won",
+        "say": "0 tackles won in this spell",
         "window_start_s": 1199.6,
         "window_end_s": 1499.6,
         "baseline": null,
@@ -2543,7 +2543,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Westmere Town completing 79% of their passes.",
+      "text": "Westmere Town are completing 79% of their passes.",
       "team_id": "wst",
       "deterministic": "passed",
       "semantic": "passed",
@@ -2558,7 +2558,7 @@
         "involvement": null,
         "value": 78.6,
         "unit": "pct",
-        "say": "Westmere Town completing 79% of their passes",
+        "say": "Westmere Town are completing 79% of their passes",
         "window_start_s": 1199.6,
         "window_end_s": 1499.6,
         "baseline": 80.7,
@@ -2624,7 +2624,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Harbourton City",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -2644,7 +2644,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -2654,7 +2654,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -2674,9 +2674,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 660,
-     "output_tokens": 455,
-     "cost_usd": 0.001075
+     "input_tokens": 682,
+     "output_tokens": 489,
+     "cost_usd": 0.001148
     },
     "badges": []
    }
@@ -3011,7 +3011,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Harbourton City",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -3031,7 +3031,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -3041,7 +3041,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -3061,9 +3061,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 915,
+     "input_tokens": 949,
      "output_tokens": 474,
-     "cost_usd": 0.001177
+     "cost_usd": 0.001185
     },
     "badges": []
    }
@@ -3399,7 +3399,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Harbourton City",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -3419,7 +3419,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -3429,7 +3429,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -3449,9 +3449,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 916,
+     "input_tokens": 950,
      "output_tokens": 474,
-     "cost_usd": 0.001177
+     "cost_usd": 0.001185
     },
     "badges": []
    }
@@ -3648,7 +3648,7 @@
         "involvement": null,
         "value": 1.0,
         "unit": "count",
-        "say": "Harbourton City open the scoring: Harbourton City 1-0 Westmere Town",
+        "say": "it is 1-0: Harbourton City open the scoring",
         "window_start_s": 2194.3,
         "window_end_s": 2194.3,
         "baseline": 0.0,
@@ -3892,7 +3892,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Harbourton City",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -3912,7 +3912,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -3922,7 +3922,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -3942,9 +3942,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1889,
+     "input_tokens": 1912,
      "output_tokens": 563,
-     "cost_usd": 0.001598
+     "cost_usd": 0.001604
     },
     "badges": []
    }
@@ -4797,7 +4797,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -4817,7 +4817,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -4827,7 +4827,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -4847,9 +4847,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3300,
+     "input_tokens": 3402,
      "output_tokens": 470,
-     "cost_usd": 0.001765
+     "cost_usd": 0.00179
     },
     "badges": []
    }
@@ -5938,7 +5938,7 @@
         "involvement": null,
         "value": 0.0,
         "unit": "count",
-        "say": "Westmere Town equalise: Harbourton City 1-1 Westmere Town",
+        "say": "it is 1-1: Westmere Town equalise",
         "window_start_s": 3220.6,
         "window_end_s": 3220.6,
         "baseline": -1.0,
@@ -6105,7 +6105,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Westmere Town",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -6125,7 +6125,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -6135,7 +6135,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -6155,9 +6155,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1829,
+     "input_tokens": 1846,
      "output_tokens": 540,
-     "cost_usd": 0.001537
+     "cost_usd": 0.001542
     },
     "badges": []
    }
@@ -6695,7 +6695,7 @@
         "involvement": null,
         "value": 1.0,
         "unit": "count",
-        "say": "Harbourton City go ahead: Harbourton City 2-1 Westmere Town",
+        "say": "it is 2-1: Harbourton City go ahead",
         "window_start_s": 4755.7,
         "window_end_s": 4755.7,
         "baseline": 0.0,
@@ -6985,7 +6985,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Harbourton City",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -7005,7 +7005,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -7015,7 +7015,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -7035,9 +7035,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1893,
+     "input_tokens": 1911,
      "output_tokens": 569,
-     "cost_usd": 0.001611
+     "cost_usd": 0.001616
     },
     "badges": []
    }
@@ -7544,7 +7544,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Full time: the match",
       "next_step": "check",
-      "prompt_version": "f7adeba3af68"
+      "prompt_version": "293ee9840ca8"
      },
      {
       "seq": 3,
@@ -7564,7 +7564,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "def299662f35"
+      "prompt_version": "8457690b2700"
      },
      {
       "seq": 5,
@@ -7574,7 +7574,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "ed0d5adb6f9b"
+      "prompt_version": "5f5a1dacdf2a"
      },
      {
       "seq": 6,
@@ -7594,9 +7594,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3622,
+     "input_tokens": 3673,
      "output_tokens": 471,
-     "cost_usd": 0.001847
+     "cost_usd": 0.00186
     },
     "badges": []
    }
