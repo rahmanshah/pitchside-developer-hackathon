@@ -11,11 +11,11 @@ no credentials (`uv run pitchside serve --open`, see the README).
      static-web-app.yml ─────────────────────────────┐ deploy token (repository secret)
                                                      ▼
  rg-pitchside ─────────────────────────────────────────────────────────────────────────────
- │ Static Web App (Free, westeurope)         web/ + recorded run bundles ◄── judges (public)
+ │ Static Web App (Free, eastus2)            web/ + recorded run bundles ◄── judges (public)
  │ Container Apps env (Consumption, swedencentral)
  │   └─ pitchside-mcp  0.25 vCPU / 0.5 GiB, 0..1 replicas, IP allow-list, rate limit
  │        ▲  Streamable HTTP /mcp (PITCHSIDE_MCP_URL)
- │ Log Analytics (container logs, 1 GB/day cap)       Budget (e-mail alerts)
+ │ Log Analytics (container logs, 1 GB/day cap)       Budget (25 EUR/month, e-mail alerts)
  │ Microsoft Foundry: gpt-5-mini deployments (created in the portal, same group recommended)
  └──────────────────────────────────────────────────────────────────────────────────────────
           ▲                                   ▲
@@ -26,6 +26,9 @@ The live recordings run on your machine under `az login`: the interpreter reache
 **deployed** MCP server, the agents call the model deployments with Entra ID, and the run bundle records the server
 URL (`pipeline.mcp_server`, shown in the UI's run info). The bundles are then published to the Static Web App.
 
+The Static Web App is in `eastus2` because `westeurope`, the first choice, was refused for this subscription ("not
+accepting new customers") when it was deployed (decision 27). The other resources stay in `swedencentral`.
+
 The model is **gpt-5-mini** for now: the trial subscription has 0 quota for GPT-6 Luna, the target model, which
 replaces it if quota is granted (decision 19). Only the deployments and `PITCHSIDE_PRICE_MODEL` change.
 
@@ -33,10 +36,10 @@ replaces it if quota is granted (decision 19). Only the deployments and `PITCHSI
 
 | Service | Status | Why |
 |---|---|---|
-| Azure Static Web Apps, Free | In the template | Hosts the UI and recorded runs at $0; no server needed |
+| Azure Static Web Apps, Free | Deployed, in `eastus2` | Hosts the UI and recorded runs at $0; no server needed |
 | Azure Container Apps, Consumption | In the template | Hosts the read-only MCP server; scales to zero |
 | Log Analytics (Azure Monitor) | In the template | Container logs, one JSON line per MCP request |
-| Cost Management budget | In the template | E-mail at 50% and 100% of actual, 100% of forecast |
+| Cost Management budget | Deployed: 25 EUR a month on the resource group | E-mail at 50% and 100% of actual cost, and at 100% of forecast cost |
 | Microsoft Foundry (gpt-5-mini) | Created by you in the portal | Model names and quota are account-specific; not guessed in code |
 | Managed identity + cloud recorder | **Planned** | The production path: a Container Apps Job running the pipeline with a user-assigned identity holding Cognitive Services OpenAI User (`5e0bd9bd-7b93-4f28-af87-19fc36ad61bd`) on the Foundry account, writing bundles to Blob Storage. Not built: nothing deployed calls a model today, so an identity would be unused privilege |
 | Entra ID built-in auth on the MCP server | **Planned** | The production way to protect it (app registration, app roles checked in code). Today: IP allow-list + rate limit, no keys |
@@ -93,7 +96,7 @@ Each step says what it does. No command here deletes anything except `teardown.p
    ```
    Stages: `preflight` (CLI, sign-in, inputs), `providers` (registers Microsoft.App, OperationalInsights, Web and
    Consumption if needed; checks with `az provider show` that Container Apps is offered in `swedencentral` and Static
-   Web Apps in `westeurope`, and stops if not), `group` (creates or updates `rg-pitchside` with tags), `deploy`
+   Web Apps in `eastus2`, and stops if not), `group` (creates or updates `rg-pitchside` with tags), `deploy`
    (`az deployment group what-if`, then `az deployment group create --parameters infra/main.bicepparam`), `verify`
    (waits for `/healthz`, writes `infra/.deploy-outputs.json`, git-ignored). Every stage is idempotent: if one fails,
    fix the cause and re-run with `-FromStage <stage>`; re-running the whole script is also safe.
@@ -165,7 +168,8 @@ billing (all read 2026-10-23). Measured numbers replace these after the deployme
 | Foundry, gpt-5-mini (Global Standard, Sweden Central) | $0.25 in / $0.03 cached / $2.00 out per 1M tokens (Azure OpenAI pricing page in EUR, at 1 USD = 0.88 EUR) | About $0.12-0.13 per storyline match with the MCP tools, about $2.10-2.30 for the 20-match live evaluation (estimates, decision 19); measured cost goes here after the runs |
 | Foundry, GPT-6 Luna (if quota is granted) | $0.10 in / $0.01 cached / $0.50 out per 1M tokens | About $0.04 per storyline match (estimate, decision 14) |
 
-The budget defaults to 10 (in your billing currency); change it with `-BudgetAmount`.
+The budget defaults to 25 in the billing currency, the amount deployed (25 EUR a month on the resource group, with
+e-mail alerts at 50% and 100% of actual cost and at 100% of forecast cost); change it with `-BudgetAmount`.
 
 ## After Nov 10
 
@@ -187,5 +191,6 @@ repository public.
 - `deploy.ps1` and `teardown.ps1` parse, and their input checks were exercised without Azure. **No `az` command was run
   while building this**; the first real run is step 6.
 - Not verifiable offline: region availability (checked live by `deploy.ps1`), provider registration, quota, and the
-  Static Web Apps region list (no official list is published; the template's `westeurope` appears in Microsoft's own
-  Bicep sample, and `deploy.ps1` checks it against `az provider show` before deploying).
+  Static Web Apps region list (no official list is published; `deploy.ps1` checks the chosen region against
+  `az provider show` before deploying). A listed region can still refuse a subscription: `westeurope` was refused at
+  deployment ("not accepting new customers"), so the default is now `eastus2`, where the Static Web App was deployed.

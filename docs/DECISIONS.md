@@ -247,3 +247,11 @@ Each language holds its own list in `languages.py`; club names are filled in per
 **Tests:** live inventions caught in both languages, near misses passing ("headed into the break", "para el club de …", "first goal in this match"), no phrase of the tables tripping it, claims and persona texts rejected with the reason, an invented headline sent back and fixed, one invented on every draft replaced by the template's, an invented persona text replaced.
 
 **Evaluation discipline:** the word list comes from the demo bundles and the live evaluations' text, not tuned on held-out numbers; validated offline on seeds 1-40. No live evaluation was run on it.
+
+## 27. The Static Web App runs in eastus2 (2026-10-24)
+
+**Decision:** the Static Web App is deployed in `eastus2`, and `infra/deploy.ps1` and `infra/main.bicepparam` now default to it. The other resources stay in `swedencentral`, next to the Foundry deployment. The budget defaults now match what is deployed: 25 in the billing currency (EUR), with e-mail alerts at 50% and 100% of actual cost and at 100% of forecast cost.
+
+**Why:** at deployment, `westeurope` (the default in decision 18) refused a new Static Web App for this subscription ("not accepting new customers"). This is a subscription-level refusal, so a region can be offered for `Microsoft.Web/staticSites` and still refuse a subscription; `deploy.ps1`'s region check only confirms the region is offered. `eastus2` was accepted.
+
+**Not changed:** `infra/main.bicep` keeps its own parameter defaults (`westeurope`, 10). `deploy.ps1` always passes both values through `main.bicepparam`, so the template's defaults apply only when `main.bicep` is deployed without the parameter file.

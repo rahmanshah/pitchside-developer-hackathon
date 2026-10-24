@@ -7,5 +7,7 @@ param mcpImage = readEnvironmentVariable('PITCHSIDE_MCP_IMAGE')
 param allowedIpRanges = split(readEnvironmentVariable('PITCHSIDE_ALLOWED_IPS'), ',')
 param budgetContactEmails = split(readEnvironmentVariable('PITCHSIDE_BUDGET_EMAIL'), ',')
 param location = readEnvironmentVariable('PITCHSIDE_LOCATION', 'swedencentral')
-param staticWebAppLocation = readEnvironmentVariable('PITCHSIDE_SWA_LOCATION', 'westeurope')
-param budgetAmount = int(readEnvironmentVariable('PITCHSIDE_BUDGET_AMOUNT', '10'))
+// eastus2, as deployed: westeurope refused new Static Web Apps for this subscription (decision 27).
+param staticWebAppLocation = readEnvironmentVariable('PITCHSIDE_SWA_LOCATION', 'eastus2')
+// 25 in the billing currency (EUR here), as deployed.
+param budgetAmount = int(readEnvironmentVariable('PITCHSIDE_BUDGET_AMOUNT', '25'))

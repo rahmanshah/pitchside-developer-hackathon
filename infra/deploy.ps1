@@ -17,6 +17,15 @@
     Nothing here stores a secret: the image, your IP and the alert e-mail are passed as environment variables
     that main.bicepparam reads, for this process only. See docs/AZURE.md for the full order of steps.
 
+.PARAMETER StaticWebAppLocation
+    Region of the Static Web App. Defaults to eastus2: westeurope was refused for this subscription ("not accepting
+    new customers"), so the Static Web App was deployed in eastus2 (decision 27). The providers stage checks that
+    the chosen region is offered for Microsoft.Web/staticSites.
+
+.PARAMETER BudgetAmount
+    Monthly budget for the resource group, in the billing currency (EUR for this subscription). Defaults to 25, the
+    budget actually deployed; alerts go out at 50% and 100% of actual cost and at 100% of forecast cost.
+
 .EXAMPLE
     ./infra/deploy.ps1 -Image ghcr.io/you/pitchside-mcp:<sha> -AllowedIp 203.0.113.7 -BudgetEmail you@example.com
 
@@ -30,8 +39,10 @@ param(
     [Parameter(Mandatory = $true)][string]$BudgetEmail,
     [string]$ResourceGroup = "rg-pitchside",
     [string]$Location = "swedencentral",
-    [string]$StaticWebAppLocation = "westeurope",
-    [int]$BudgetAmount = 10,
+    # eastus2: westeurope refused new Static Web Apps for this subscription (decision 27)
+    [string]$StaticWebAppLocation = "eastus2",
+    # the deployed budget: 25 in the billing currency (EUR here)
+    [int]$BudgetAmount = 25,
     [ValidateSet("preflight", "providers", "group", "deploy", "verify")][string]$FromStage = "preflight",
     [switch]$Yes
 )
