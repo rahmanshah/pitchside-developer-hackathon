@@ -325,8 +325,11 @@ def check_claim(claim: Claim, ctx: CheckContext, attempt: int = 1, lang: Languag
                                   detail=f"{_shown(text, token)} appears in the text but not in the claim's numbers"))
             continue
         given_to, how = _attributed_team(text, token, found, claim.team_id)
-        # Equal values ("4 shots each"): use the number that belongs to the club the text names.
-        listed.sort(key=lambda n: (getattr(ctx.ledger.item(n.ref), "team_id", None) != given_to))
+        # Equal values listed twice ("4 shots each", or a score digit listed beside a tally): use a listing whose
+        # ledger number it matches, then the one that belongs to the club the text names. The chosen listing must
+        # still pass every check below.
+        listed.sort(key=lambda n: (not _listing_matches(ctx, n.ref, token),
+                                   getattr(ctx.ledger.item(n.ref), "team_id", None) != given_to))
         number = listed[0]
         if number.ref not in claim.refs:
             reasons.append(Reason(code="number_not_cited",
@@ -378,6 +381,25 @@ def check_text(text: str, ctx: CheckContext, refs: Iterable[str], lang: Language
     allowed = {p.player_id for p in ctx.ledger.players} | set(ctx.extra_players)
     windows = [(i.window_start_s, i.window_end_s) for i in items] + [(ctx.window_start_s, ctx.window_end_s)]
     return reasons + _common_checks(text, scanned, ctx, lang, windows, allowed)
+
+
+def missing_goal_score(job: Job, claims: Sequence[Claim]) -> Optional[str]:
+    """For a goal job: feedback if no claim both cites the ``goal_margin`` evidence and states the score after the
+    goal (decision 23); None when one does, or for any other job."""
+    margin = next((i.ref for i in job.ledger.items if i.metric == "goal_margin"), None)
+    if job.label != "goal" or margin is None:
+        return None
+    want = {(job.score.home, job.score.away), (job.score.away, job.score.home)}
+    for claim in claims:
+        if margin in claim.refs and any((a, b) in want for a, b, _ in scan(claim.text).scores):
+            return None
+    return (f"state the score: one claim must give the score after this goal (\"it is "
+            f"{job.score.home}-{job.score.away}\") and cite {margin}")
+
+
+def _listing_matches(ctx: CheckContext, ref: str, token: _Token) -> bool:
+    item = ctx.ledger.item(ref)
+    return item is not None and number_matches(item, token)
 
 
 def _name(ctx: CheckContext, team_id: Optional[str]) -> str:

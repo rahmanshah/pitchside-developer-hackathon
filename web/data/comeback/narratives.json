@@ -19,7 +19,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
+     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
      "team_id": null,
      "refs": [
       "e1",
@@ -38,7 +38,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "71% pass completion in this spell.",
+     "text": "71% pass completion for both teams combined in this spell.",
      "team_id": null,
      "refs": [
       "e3"
@@ -56,56 +56,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell. 71% pass completion in this spell.",
+     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell. 71% pass completion for both teams combined in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
+     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
+     "text": "For Alden Brannholt's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
+     "text": "For Rafa Yaldiran's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell. 71% pass completion in this spell.",
+     "text": "[es · offline] Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell. 71% pass completion for both teams combined in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
+     "text": "[es · offline] Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
+     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     }
@@ -137,7 +137,7 @@
      "window_start_s": 0.0,
      "window_end_s": 395.9,
      "baseline": 1.8,
-     "say": "2.7 turnovers per minute in this spell",
+     "say": "2.7 turnovers per minute across both teams in this spell",
      "source": "finding",
      "origin": null
     },
@@ -151,7 +151,7 @@
      "window_start_s": 0.0,
      "window_end_s": 395.9,
      "baseline": 84.0,
-     "say": "71% pass completion in this spell",
+     "say": "71% pass completion for both teams combined in this spell",
      "source": "finding",
      "origin": null
     },
@@ -165,7 +165,7 @@
      "window_start_s": 0.0,
      "window_end_s": 395.9,
      "baseline": 32.0,
-     "say": "possessions lasting 17 s on average in this spell",
+     "say": "possessions lasting 17 s on average across both teams in this spell",
      "source": "finding",
      "origin": null
     }
@@ -179,7 +179,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
+      "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
       "team_id": null,
       "refs": [
        "e1",
@@ -198,7 +198,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "71% pass completion in this spell.",
+      "text": "71% pass completion for both teams combined in this spell.",
       "team_id": null,
       "refs": [
        "e3"
@@ -424,7 +424,7 @@
      "window_start_s": 468.7,
      "window_end_s": 468.7,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -438,7 +438,7 @@
      "window_start_s": 0.0,
      "window_end_s": 468.7,
      "baseline": null,
-     "say": "Tomas Okeloro: goals 0",
+     "say": "Tomas Okeloro has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -452,7 +452,7 @@
      "window_start_s": 0.0,
      "window_end_s": 468.7,
      "baseline": null,
-     "say": "Tomas Okeloro: shots 0",
+     "say": "Tomas Okeloro has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -466,7 +466,7 @@
      "window_start_s": 0.0,
      "window_end_s": 468.7,
      "baseline": null,
-     "say": "Tomas Okeloro: xG 0.00",
+     "say": "Tomas Okeloro has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -730,7 +730,7 @@
      "window_start_s": 461.1,
      "window_end_s": 461.1,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -744,7 +744,7 @@
      "window_start_s": 0.0,
      "window_end_s": 492.5,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -758,7 +758,7 @@
      "window_start_s": 0.0,
      "window_end_s": 492.5,
      "baseline": null,
-     "say": "Alden Brannholt: shots 2",
+     "say": "Alden Brannholt has 2 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -772,7 +772,7 @@
      "window_start_s": 0.0,
      "window_end_s": 492.5,
      "baseline": null,
-     "say": "Alden Brannholt: xG 0.53",
+     "say": "Alden Brannholt has 0.53 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -1016,7 +1016,7 @@
      "window_start_s": 269.79999999999995,
      "window_end_s": 749.8,
      "baseline": 1.8,
-     "say": "2.0 turnovers per minute in this spell",
+     "say": "2.0 turnovers per minute across both teams in this spell",
      "source": "finding",
      "origin": null
     },
@@ -1030,7 +1030,7 @@
      "window_start_s": 269.79999999999995,
      "window_end_s": 749.8,
      "baseline": 84.0,
-     "say": "83% pass completion in this spell",
+     "say": "83% pass completion for both teams combined in this spell",
      "source": "finding",
      "origin": null
     },
@@ -1044,7 +1044,7 @@
      "window_start_s": 269.79999999999995,
      "window_end_s": 749.8,
      "baseline": 32.0,
-     "say": "possessions lasting 32 s on average in this spell",
+     "say": "possessions lasting 32 s on average across both teams in this spell",
      "source": "finding",
      "origin": null
     }
@@ -1258,7 +1258,7 @@
      "window_start_s": 1550.4,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "38 s after winning the ball",
+     "say": "38 s after gaining possession",
      "source": "finding",
      "origin": null
     },
@@ -1300,7 +1300,7 @@
      "window_start_s": 1550.4,
      "window_end_s": 1550.4,
      "baseline": null,
-     "say": "possession began from a restart or a save",
+     "say": "Ironvale Athletic gained possession after the ball went out of play",
      "source": "finding",
      "origin": null
     },
@@ -1314,7 +1314,7 @@
      "window_start_s": 1588.9,
      "window_end_s": 1588.9,
      "baseline": 0.0,
-     "say": "Ironvale Athletic open the scoring: Aurora Rovers 0-1 Ironvale Athletic",
+     "say": "it is 0-1: Ironvale Athletic open the scoring",
      "source": "finding",
      "origin": null
     },
@@ -1328,7 +1328,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "Rafa Yaldiran: goals 1, including this one",
+     "say": "this is Rafa Yaldiran's first goal of the match",
      "source": "player",
      "origin": null
     },
@@ -1342,7 +1342,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "Rafa Yaldiran: shots 2",
+     "say": "Rafa Yaldiran has 2 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -1356,7 +1356,7 @@
      "window_start_s": 0.0,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "Rafa Yaldiran: xG 0.23",
+     "say": "Rafa Yaldiran has 0.23 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -1760,7 +1760,7 @@
      "window_start_s": 2456.1,
      "window_end_s": 2456.1,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -1774,7 +1774,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2456.1,
      "baseline": null,
-     "say": "Tomas Okeloro: goals 0",
+     "say": "Tomas Okeloro has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -1788,7 +1788,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2456.1,
      "baseline": null,
-     "say": "Tomas Okeloro: shots 0",
+     "say": "Tomas Okeloro has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -1802,7 +1802,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2456.1,
      "baseline": null,
-     "say": "Tomas Okeloro: xG 0.00",
+     "say": "Tomas Okeloro has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -2001,7 +2001,7 @@
      "window_start_s": 2481.8,
      "window_end_s": 2481.8,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -2015,7 +2015,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2481.8,
      "baseline": null,
-     "say": "Finn Esposito: goals 0",
+     "say": "Finn Esposito has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -2029,7 +2029,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2481.8,
      "baseline": null,
-     "say": "Finn Esposito: shots 0",
+     "say": "Finn Esposito has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -2043,7 +2043,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2481.8,
      "baseline": null,
-     "say": "Finn Esposito: xG 0.00",
+     "say": "Finn Esposito has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -2302,7 +2302,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Rafa Yaldiran: goals 1",
+     "say": "Rafa Yaldiran has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -2316,7 +2316,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Rafa Yaldiran: shots 4",
+     "say": "Rafa Yaldiran has 4 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -2330,7 +2330,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Rafa Yaldiran: xG 0.42",
+     "say": "Rafa Yaldiran has 0.42 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -2344,7 +2344,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -2358,7 +2358,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brannholt: shots 3",
+     "say": "Alden Brannholt has 3 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -2372,7 +2372,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brannholt: xG 0.58",
+     "say": "Alden Brannholt has 0.58 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -2386,7 +2386,7 @@
      "window_start_s": 1588.9,
      "window_end_s": 1588.9,
      "baseline": 0.0,
-     "say": "Ironvale Athletic open the scoring: Aurora Rovers 0-1 Ironvale Athletic",
+     "say": "it is 0-1: Ironvale Athletic open the scoring",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:0"
     },
@@ -2498,7 +2498,7 @@
      "window_start_s": 0.0,
      "window_end_s": 395.9,
      "baseline": 1.8,
-     "say": "2.7 turnovers per minute in this spell",
+     "say": "2.7 turnovers per minute across both teams in this spell",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:chaos_spell:0"
     },
@@ -2512,7 +2512,7 @@
      "window_start_s": 0.0,
      "window_end_s": 395.9,
      "baseline": 84.0,
-     "say": "71% pass completion in this spell",
+     "say": "71% pass completion for both teams combined in this spell",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:chaos_spell:0"
     },
@@ -2955,7 +2955,7 @@
      "window_start_s": 2995.2,
      "window_end_s": 3009.1,
      "baseline": null,
-     "say": "1 passes in the move",
+     "say": "1 pass in the move",
      "source": "finding",
      "origin": null
     },
@@ -2983,7 +2983,7 @@
      "window_start_s": 2995.2,
      "window_end_s": 2995.2,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Ironvale Athletic won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -2997,7 +2997,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3009.1,
      "baseline": null,
-     "say": "Rafa Yaldiran: goals 1",
+     "say": "Rafa Yaldiran has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -3011,7 +3011,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3009.1,
      "baseline": null,
-     "say": "Rafa Yaldiran: shots 5",
+     "say": "Rafa Yaldiran has 5 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -3025,7 +3025,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3009.1,
      "baseline": null,
-     "say": "Rafa Yaldiran: xG 0.71",
+     "say": "Rafa Yaldiran has 0.71 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -3316,7 +3316,7 @@
      "window_start_s": 3044.2,
      "window_end_s": 3044.2,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -3330,7 +3330,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3044.2,
      "baseline": null,
-     "say": "Gael Garrido: goals 0",
+     "say": "Gael Garrido has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -3344,7 +3344,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3044.2,
      "baseline": null,
-     "say": "Gael Garrido: shots 0",
+     "say": "Gael Garrido has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -3358,7 +3358,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3044.2,
      "baseline": null,
-     "say": "Gael Garrido: xG 0.00",
+     "say": "Gael Garrido has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -3622,7 +3622,7 @@
      "window_start_s": 3208.8,
      "window_end_s": 3208.8,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -3636,7 +3636,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3232.8,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -3650,7 +3650,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3232.8,
      "baseline": null,
-     "say": "Alden Brannholt: shots 6",
+     "say": "Alden Brannholt has 6 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -3664,7 +3664,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3232.8,
      "baseline": null,
-     "say": "Alden Brannholt: xG 1.15",
+     "say": "Alden Brannholt has 1.15 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -3978,7 +3978,7 @@
      "window_start_s": 3332.8,
      "window_end_s": 3381.6,
      "baseline": null,
-     "say": "49 s after winning the ball",
+     "say": "49 s after gaining possession",
      "source": "finding",
      "origin": null
     },
@@ -4020,7 +4020,7 @@
      "window_start_s": 3332.8,
      "window_end_s": 3332.8,
      "baseline": null,
-     "say": "possession began from a restart or a save",
+     "say": "Aurora Rovers gained possession after the ball went out of play",
      "source": "finding",
      "origin": null
     },
@@ -4034,7 +4034,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3381.6,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -4048,7 +4048,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3381.6,
      "baseline": null,
-     "say": "Alden Brannholt: shots 7",
+     "say": "Alden Brannholt has 7 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -4062,7 +4062,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3381.6,
      "baseline": null,
-     "say": "Alden Brannholt: xG 1.50",
+     "say": "Alden Brannholt has 1.50 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -4307,7 +4307,7 @@
      "window_start_s": 3175.0,
      "window_end_s": 3475.0,
      "baseline": 0.0,
-     "say": "2 shots",
+     "say": "2 shots in this spell",
      "source": "finding",
      "origin": null
     },
@@ -4321,7 +4321,7 @@
      "window_start_s": 3175.0,
      "window_end_s": 3475.0,
      "baseline": 0.0,
-     "say": "0.75 xG",
+     "say": "0.75 xG in this spell",
      "source": "finding",
      "origin": null
     },
@@ -4363,7 +4363,7 @@
      "window_start_s": 3175.0,
      "window_end_s": 3475.0,
      "baseline": null,
-     "say": "Ironvale Athletic with 3 passes into the final third",
+     "say": "Ironvale Athletic have made 3 passes into the final third in this spell",
      "source": "finding",
      "origin": null
     }
@@ -4393,7 +4393,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "team_id": "aur",
      "refs": [
       "e1",
@@ -4412,7 +4412,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Ironvale Athletic completing 75% of their passes.",
+     "text": "Ironvale Athletic are completing 75% of their passes.",
      "team_id": "irv",
      "refs": [
       "e3"
@@ -4430,56 +4430,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won. Ironvale Athletic completing 75% of their passes.",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell. Ironvale Athletic are completing 75% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "For Rafa Yaldiran's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackles won. Ironvale Athletic completing 75% of their passes.",
+     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell. Ironvale Athletic are completing 75% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     }
@@ -4511,7 +4511,7 @@
      "window_start_s": 3235.9,
      "window_end_s": 3535.9,
      "baseline": null,
-     "say": "1 tackles won",
+     "say": "1 tackle won in this spell",
      "source": "finding",
      "origin": null
     },
@@ -4525,7 +4525,7 @@
      "window_start_s": 3235.9,
      "window_end_s": 3535.9,
      "baseline": 73.7,
-     "say": "Ironvale Athletic completing 75% of their passes",
+     "say": "Ironvale Athletic are completing 75% of their passes",
      "source": "finding",
      "origin": null
     },
@@ -4553,7 +4553,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+      "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
       "team_id": "aur",
       "refs": [
        "e1",
@@ -4572,7 +4572,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Ironvale Athletic completing 75% of their passes.",
+      "text": "Ironvale Athletic are completing 75% of their passes.",
       "team_id": "irv",
       "refs": [
        "e3"
@@ -4835,7 +4835,7 @@
      "window_start_s": 3861.1,
      "window_end_s": 3871.9,
      "baseline": null,
-     "say": "1 passes in the move",
+     "say": "1 pass in the move",
      "source": "finding",
      "origin": null
     },
@@ -4863,7 +4863,7 @@
      "window_start_s": 3861.1,
      "window_end_s": 3861.1,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -4877,7 +4877,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3871.9,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -4891,7 +4891,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3871.9,
      "baseline": null,
-     "say": "Alden Brannholt: shots 10",
+     "say": "Alden Brannholt has 10 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -4905,7 +4905,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3871.9,
      "baseline": null,
-     "say": "Alden Brannholt: xG 2.08",
+     "say": "Alden Brannholt has 2.08 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -5261,7 +5261,7 @@
      "window_start_s": 3878.1,
      "window_end_s": 3878.1,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -5275,7 +5275,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3881.3,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -5289,7 +5289,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3881.3,
      "baseline": null,
-     "say": "Alden Brannholt: shots 11",
+     "say": "Alden Brannholt has 11 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -5303,7 +5303,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3881.3,
      "baseline": null,
-     "say": "Alden Brannholt: xG 2.73",
+     "say": "Alden Brannholt has 2.73 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -5453,7 +5453,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Aurora Rovers: 5 shots.",
+     "text": "Aurora Rovers: 5 shots in this spell.",
      "team_id": "aur",
      "refs": [
       "e3"
@@ -5471,7 +5471,7 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Aurora Rovers: momentum +0.71, 87% field tilt. Aurora Rovers: 5 shots.",
+     "text": "Aurora Rovers: momentum +0.71, 87% field tilt. Aurora Rovers: 5 shots in this spell.",
      "source": "model",
      "reason": null
     },
@@ -5499,7 +5499,7 @@
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: momentum +0.71, 87% field tilt. Aurora Rovers: 5 shots.",
+     "text": "[es · offline] Aurora Rovers: momentum +0.71, 87% field tilt. Aurora Rovers: 5 shots in this spell.",
      "source": "model",
      "reason": null
     },
@@ -5566,7 +5566,7 @@
      "window_start_s": 3588.8,
      "window_end_s": 3888.8,
      "baseline": 0.0,
-     "say": "5 shots",
+     "say": "5 shots in this spell",
      "source": "finding",
      "origin": null
     },
@@ -5580,7 +5580,7 @@
      "window_start_s": 3588.8,
      "window_end_s": 3888.8,
      "baseline": 0.0,
-     "say": "1.25 xG",
+     "say": "1.25 xG in this spell",
      "source": "finding",
      "origin": null
     },
@@ -5627,7 +5627,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Aurora Rovers: 5 shots.",
+      "text": "Aurora Rovers: 5 shots in this spell.",
       "team_id": "aur",
       "refs": [
        "e3"
@@ -5918,7 +5918,7 @@
      "window_start_s": 3938.9,
      "window_end_s": 3938.9,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -5932,7 +5932,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3969.5,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -5946,7 +5946,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3969.5,
      "baseline": null,
-     "say": "Alden Brannholt: shots 12",
+     "say": "Alden Brannholt has 12 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -5960,7 +5960,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3969.5,
      "baseline": null,
-     "say": "Alden Brannholt: xG 3.21",
+     "say": "Alden Brannholt has 3.21 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -6251,7 +6251,7 @@
      "window_start_s": 4007.0,
      "window_end_s": 4007.0,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -6265,7 +6265,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4007.0,
      "baseline": null,
-     "say": "Idris Zielmark: goals 0",
+     "say": "Idris Zielmark has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -6279,7 +6279,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4007.0,
      "baseline": null,
-     "say": "Idris Zielmark: shots 0",
+     "say": "Idris Zielmark has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -6293,7 +6293,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4007.0,
      "baseline": null,
-     "say": "Idris Zielmark: xG 0.00",
+     "say": "Idris Zielmark has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -6557,7 +6557,7 @@
      "window_start_s": 3997.8,
      "window_end_s": 3997.8,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -6571,7 +6571,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4017.6,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -6585,7 +6585,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4017.6,
      "baseline": null,
-     "say": "Alden Brannholt: shots 13",
+     "say": "Alden Brannholt has 13 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -6599,7 +6599,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4017.6,
      "baseline": null,
-     "say": "Alden Brannholt: xG 3.59",
+     "say": "Alden Brannholt has 3.59 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -6955,7 +6955,7 @@
      "window_start_s": 4020.9,
      "window_end_s": 4020.9,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -6969,7 +6969,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4023.5,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -6983,7 +6983,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4023.5,
      "baseline": null,
-     "say": "Alden Brannholt: shots 14",
+     "say": "Alden Brannholt has 14 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -6997,7 +6997,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4023.5,
      "baseline": null,
-     "say": "Alden Brannholt: xG 3.98",
+     "say": "Alden Brannholt has 3.98 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -7288,7 +7288,7 @@
      "window_start_s": 4280.1,
      "window_end_s": 4280.1,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -7302,7 +7302,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4280.1,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -7316,7 +7316,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4280.1,
      "baseline": null,
-     "say": "Alden Brannholt: shots 14",
+     "say": "Alden Brannholt has 14 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -7330,7 +7330,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4280.1,
      "baseline": null,
-     "say": "Alden Brannholt: xG 3.98",
+     "say": "Alden Brannholt has 3.98 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -7600,7 +7600,7 @@
      "window_start_s": 4270.9,
      "window_end_s": 4270.9,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -7614,7 +7614,7 @@
      "window_start_s": 4285.4,
      "window_end_s": 4285.4,
      "baseline": -1.0,
-     "say": "Aurora Rovers equalise: Aurora Rovers 1-1 Ironvale Athletic",
+     "say": "it is 1-1: Aurora Rovers equalise",
      "source": "finding",
      "origin": null
     },
@@ -7628,7 +7628,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4285.4,
      "baseline": null,
-     "say": "Alden Brannholt: goals 1, including this one",
+     "say": "this is Alden Brannholt's first goal of the match",
      "source": "player",
      "origin": null
     },
@@ -7642,7 +7642,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4285.4,
      "baseline": null,
-     "say": "Alden Brannholt: shots 15",
+     "say": "Alden Brannholt has 15 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -7656,7 +7656,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4285.4,
      "baseline": null,
-     "say": "Alden Brannholt: xG 4.62",
+     "say": "Alden Brannholt has 4.62 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -8130,7 +8130,7 @@
      "window_start_s": 4440.8,
      "window_end_s": 4440.8,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -8144,7 +8144,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4497.4,
      "baseline": null,
-     "say": "Alden Brannholt: goals 1",
+     "say": "Alden Brannholt has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -8158,7 +8158,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4497.4,
      "baseline": null,
-     "say": "Alden Brannholt: shots 16",
+     "say": "Alden Brannholt has 16 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -8172,7 +8172,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4497.4,
      "baseline": null,
-     "say": "Alden Brannholt: xG 4.97",
+     "say": "Alden Brannholt has 4.97 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -8500,7 +8500,7 @@
      "window_start_s": 4952.2,
      "window_end_s": 4961.7,
      "baseline": null,
-     "say": "1 passes in the move",
+     "say": "1 pass in the move",
      "source": "finding",
      "origin": null
     },
@@ -8528,7 +8528,7 @@
      "window_start_s": 4952.2,
      "window_end_s": 4952.2,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -8542,7 +8542,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4961.7,
      "baseline": null,
-     "say": "Alden Brannholt: goals 1",
+     "say": "Alden Brannholt has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -8556,7 +8556,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4961.7,
      "baseline": null,
-     "say": "Alden Brannholt: shots 21",
+     "say": "Alden Brannholt has 21 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -8570,7 +8570,7 @@
      "window_start_s": 0.0,
      "window_end_s": 4961.7,
      "baseline": null,
-     "say": "Alden Brannholt: xG 5.72",
+     "say": "Alden Brannholt has 5.72 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -8701,7 +8701,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
+     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
      "team_id": null,
      "refs": [
       "e1",
@@ -8720,7 +8720,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "78% pass completion in this spell.",
+     "text": "78% pass completion for both teams combined in this spell.",
      "team_id": null,
      "refs": [
       "e3"
@@ -8738,56 +8738,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell. 78% pass completion in this spell.",
+     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell. 78% pass completion for both teams combined in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
+     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
+     "text": "For Alden Brannholt's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
+     "text": "For Rafa Yaldiran's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell. 78% pass completion in this spell.",
+     "text": "[es · offline] Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell. 78% pass completion for both teams combined in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
+     "text": "[es · offline] Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
+     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     }
@@ -8819,7 +8819,7 @@
      "window_start_s": 4539.2,
      "window_end_s": 5019.2,
      "baseline": 1.8,
-     "say": "3.5 turnovers per minute in this spell",
+     "say": "3.5 turnovers per minute across both teams in this spell",
      "source": "finding",
      "origin": null
     },
@@ -8833,7 +8833,7 @@
      "window_start_s": 4539.2,
      "window_end_s": 5019.2,
      "baseline": 84.0,
-     "say": "78% pass completion in this spell",
+     "say": "78% pass completion for both teams combined in this spell",
      "source": "finding",
      "origin": null
     },
@@ -8847,7 +8847,7 @@
      "window_start_s": 4539.2,
      "window_end_s": 5019.2,
      "baseline": 32.0,
-     "say": "possessions lasting 17 s on average in this spell",
+     "say": "possessions lasting 17 s on average across both teams in this spell",
      "source": "finding",
      "origin": null
     }
@@ -8861,7 +8861,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
+      "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
       "team_id": null,
       "refs": [
        "e1",
@@ -8880,7 +8880,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "78% pass completion in this spell.",
+      "text": "78% pass completion for both teams combined in this spell.",
       "team_id": null,
       "refs": [
        "e3"
@@ -9177,7 +9177,7 @@
      "window_start_s": 5193.6,
      "window_end_s": 5193.6,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -9191,7 +9191,7 @@
      "window_start_s": 5197.9,
      "window_end_s": 5197.9,
      "baseline": 0.0,
-     "say": "Aurora Rovers go ahead: Aurora Rovers 2-1 Ironvale Athletic",
+     "say": "it is 2-1: Aurora Rovers go ahead",
      "source": "finding",
      "origin": null
     },
@@ -9205,7 +9205,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5197.9,
      "baseline": null,
-     "say": "Alden Brannholt: goals 2, including this one",
+     "say": "Alden Brannholt has 2 goals in the match, including this one",
      "source": "player",
      "origin": null
     },
@@ -9219,7 +9219,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5197.9,
      "baseline": null,
-     "say": "Alden Brannholt: shots 22",
+     "say": "Alden Brannholt has 22 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -9233,7 +9233,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5197.9,
      "baseline": null,
-     "say": "Alden Brannholt: xG 6.41",
+     "say": "Alden Brannholt has 6.41 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -10162,7 +10162,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Rafa Yaldiran: goals 1",
+     "say": "Rafa Yaldiran has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -10176,7 +10176,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Rafa Yaldiran: shots 7",
+     "say": "Rafa Yaldiran has 7 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -10190,7 +10190,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Rafa Yaldiran: xG 0.86",
+     "say": "Rafa Yaldiran has 0.86 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -10204,7 +10204,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brannholt: goals 2",
+     "say": "Alden Brannholt has 2 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -10218,7 +10218,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brannholt: shots 22",
+     "say": "Alden Brannholt has 22 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -10232,7 +10232,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brannholt: xG 6.41",
+     "say": "Alden Brannholt has 6.41 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -10246,7 +10246,7 @@
      "window_start_s": 5197.9,
      "window_end_s": 5197.9,
      "baseline": 0.0,
-     "say": "Aurora Rovers go ahead: Aurora Rovers 2-1 Ironvale Athletic",
+     "say": "it is 2-1: Aurora Rovers go ahead",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:2"
     },
@@ -10316,7 +10316,7 @@
      "window_start_s": 4285.4,
      "window_end_s": 4285.4,
      "baseline": -1.0,
-     "say": "Aurora Rovers equalise: Aurora Rovers 1-1 Ironvale Athletic",
+     "say": "it is 1-1: Aurora Rovers equalise",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:1"
     },
@@ -10386,7 +10386,7 @@
      "window_start_s": 1588.9,
      "window_end_s": 1588.9,
      "baseline": 0.0,
-     "say": "Ironvale Athletic open the scoring: Aurora Rovers 0-1 Ironvale Athletic",
+     "say": "it is 0-1: Ironvale Athletic open the scoring",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:0"
     },
@@ -10456,7 +10456,7 @@
      "window_start_s": 4539.2,
      "window_end_s": 5019.2,
      "baseline": 1.8,
-     "say": "3.5 turnovers per minute in this spell",
+     "say": "3.5 turnovers per minute across both teams in this spell",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:chaos_spell:2"
     },
@@ -10470,7 +10470,7 @@
      "window_start_s": 4539.2,
      "window_end_s": 5019.2,
      "baseline": 84.0,
-     "say": "78% pass completion in this spell",
+     "say": "78% pass completion for both teams combined in this spell",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:chaos_spell:2"
     },

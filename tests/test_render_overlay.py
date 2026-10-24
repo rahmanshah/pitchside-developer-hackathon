@@ -24,6 +24,25 @@ def lower(doc: OverlayDocument) -> list[tuple[float, float, str]]:
                   if p.anchor == "lower_third")
 
 
+class RejectedPersonaTextTests(unittest.TestCase):
+    def test_a_rejected_persona_text_is_in_the_audit_trail_but_never_in_the_overlay(self) -> None:
+        # Decision 23: the audit keeps what the personalizer wrote and why it was replaced; the UI shows neither.
+        import tempfile
+
+        from pitchside.agents.bundle import write_bundle
+        from pitchside.agents.faults import parse_faults
+        from test_agents_pipeline import run
+
+        result = run(seed=7, storyline="comeback", faults=parse_faults("personalizer:corrupt_persona@goal.1"),
+                     run_id="test-rejected-persona")
+        with tempfile.TemporaryDirectory() as tmp:
+            path = write_bundle(result, Path(tmp))
+            stored = [r["text"] for line in (path / "audit.jsonl").read_text(encoding="utf-8").splitlines()
+                      for r in json.loads(line).get("data", {}).get("replaced", [])]
+            self.assertTrue(any(t and t.endswith("They had 99 corners.") for t in stored), stored)
+            self.assertNotIn("99 corners", (path / OVERLAY_FILE).read_text(encoding="utf-8"))
+
+
 class TimelineTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls) -> None:

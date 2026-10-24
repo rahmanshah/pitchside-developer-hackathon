@@ -174,7 +174,7 @@
      "window_start_s": 0.0,
      "window_end_s": 965.2,
      "baseline": 1.0,
-     "say": "1 shots in the match",
+     "say": "1 shot in the match",
      "source": "finding",
      "origin": null
     },
@@ -244,7 +244,7 @@
      "window_start_s": 914.8,
      "window_end_s": 914.8,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -258,7 +258,7 @@
      "window_start_s": 0.0,
      "window_end_s": 965.2,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -272,7 +272,7 @@
      "window_start_s": 0.0,
      "window_end_s": 965.2,
      "baseline": null,
-     "say": "Alden Brannholt: shots 1",
+     "say": "Alden Brannholt has 1 shot in the match",
      "source": "player",
      "origin": null
     },
@@ -286,7 +286,7 @@
      "window_start_s": 0.0,
      "window_end_s": 965.2,
      "baseline": null,
-     "say": "Alden Brannholt: xG 0.44",
+     "say": "Alden Brannholt has 0.44 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -499,7 +499,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell.",
      "team_id": null,
      "refs": [
       "e1",
@@ -518,7 +518,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "65% pass completion in this spell.",
+     "text": "65% pass completion for both teams combined in this spell.",
      "team_id": null,
      "refs": [
       "e3"
@@ -536,56 +536,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell. 65% pass completion in this spell.",
+     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell. 65% pass completion for both teams combined in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+     "text": "For Xarno Uusitalo's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+     "text": "For Alden Brannholt's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell. 65% pass completion in this spell.",
+     "text": "[es · offline] Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell. 65% pass completion for both teams combined in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+     "text": "[es · offline] Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell.",
      "source": "model",
      "reason": null
     }
@@ -617,7 +617,7 @@
      "window_start_s": 1509.7,
      "window_end_s": 1989.7,
      "baseline": 1.8,
-     "say": "3.9 turnovers per minute in this spell",
+     "say": "3.9 turnovers per minute across both teams in this spell",
      "source": "finding",
      "origin": null
     },
@@ -631,7 +631,7 @@
      "window_start_s": 1509.7,
      "window_end_s": 1989.7,
      "baseline": 84.0,
-     "say": "65% pass completion in this spell",
+     "say": "65% pass completion for both teams combined in this spell",
      "source": "finding",
      "origin": null
     },
@@ -645,7 +645,7 @@
      "window_start_s": 1509.7,
      "window_end_s": 1989.7,
      "baseline": 32.0,
-     "say": "possessions lasting 15 s on average in this spell",
+     "say": "possessions lasting 15 s on average across both teams in this spell",
      "source": "finding",
      "origin": null
     }
@@ -659,7 +659,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
+      "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute across both teams in this spell.",
       "team_id": null,
       "refs": [
        "e1",
@@ -678,7 +678,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "65% pass completion in this spell.",
+      "text": "65% pass completion for both teams combined in this spell.",
       "team_id": null,
       "refs": [
        "e3"
@@ -744,7 +744,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "team_id": "aur",
      "refs": [
       "e1",
@@ -763,7 +763,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Westmere Town completing 52% of their passes.",
+     "text": "Westmere Town are completing 52% of their passes.",
      "team_id": "wst",
      "refs": [
       "e3"
@@ -781,56 +781,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won. Westmere Town completing 52% of their passes.",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell. Westmere Town are completing 52% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "For Xarno Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackles won. Westmere Town completing 52% of their passes.",
+     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell. Westmere Town are completing 52% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+     "text": "[es · offline] For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
      "source": "model",
      "reason": null
     }
@@ -862,7 +862,7 @@
      "window_start_s": 1706.2,
      "window_end_s": 2006.2,
      "baseline": null,
-     "say": "1 tackles won",
+     "say": "1 tackle won in this spell",
      "source": "finding",
      "origin": null
     },
@@ -876,7 +876,7 @@
      "window_start_s": 1706.2,
      "window_end_s": 2006.2,
      "baseline": 76.6,
-     "say": "Westmere Town completing 52% of their passes",
+     "say": "Westmere Town are completing 52% of their passes",
      "source": "finding",
      "origin": null
     },
@@ -904,7 +904,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackles won.",
+      "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
       "team_id": "aur",
       "refs": [
        "e1",
@@ -923,7 +923,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Westmere Town completing 52% of their passes.",
+      "text": "Westmere Town are completing 52% of their passes.",
       "team_id": "wst",
       "refs": [
        "e3"
@@ -1214,7 +1214,7 @@
      "window_start_s": 2035.9,
      "window_end_s": 2035.9,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -1228,7 +1228,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2056.2,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -1242,7 +1242,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2056.2,
      "baseline": null,
-     "say": "Alden Brannholt: shots 3",
+     "say": "Alden Brannholt has 3 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -1256,7 +1256,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2056.2,
      "baseline": null,
-     "say": "Alden Brannholt: xG 0.85",
+     "say": "Alden Brannholt has 0.85 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -1366,7 +1366,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell.",
      "team_id": "wst",
      "refs": [
       "e1",
@@ -1385,7 +1385,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Aurora Rovers completing 72% of their passes.",
+     "text": "Aurora Rovers are completing 72% of their passes.",
      "team_id": "aur",
      "refs": [
       "e3"
@@ -1403,56 +1403,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won. Aurora Rovers completing 72% of their passes.",
+     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell. Aurora Rovers are completing 72% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "For Xarno Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "For Alden Brannholt's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Westmere Town: 4.7 pressures per minute, 5 tackles won. Aurora Rovers completing 72% of their passes.",
+     "text": "[es · offline] Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell. Aurora Rovers are completing 72% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "[es · offline] Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+     "text": "[es · offline] For Alden Brannholt's fans: Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell.",
      "source": "model",
      "reason": null
     }
@@ -1484,7 +1484,7 @@
      "window_start_s": 1773.5,
      "window_end_s": 2073.5,
      "baseline": null,
-     "say": "5 tackles won",
+     "say": "5 tackles won in this spell",
      "source": "finding",
      "origin": null
     },
@@ -1498,7 +1498,7 @@
      "window_start_s": 1773.5,
      "window_end_s": 2073.5,
      "baseline": 78.5,
-     "say": "Aurora Rovers completing 72% of their passes",
+     "say": "Aurora Rovers are completing 72% of their passes",
      "source": "finding",
      "origin": null
     },
@@ -1526,7 +1526,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won.",
+      "text": "Westmere Town: 4.7 pressures per minute, 5 tackles won in this spell.",
       "team_id": "wst",
       "refs": [
        "e1",
@@ -1545,7 +1545,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Aurora Rovers completing 72% of their passes.",
+      "text": "Aurora Rovers are completing 72% of their passes.",
       "team_id": "aur",
       "refs": [
        "e3"
@@ -1800,7 +1800,7 @@
      "window_start_s": 2060.4,
      "window_end_s": 2079.7,
      "baseline": null,
-     "say": "19 s after winning the ball",
+     "say": "19 s after gaining possession",
      "source": "finding",
      "origin": null
     },
@@ -1842,7 +1842,7 @@
      "window_start_s": 2060.4,
      "window_end_s": 2060.4,
      "baseline": null,
-     "say": "possession began from a restart or a save",
+     "say": "Westmere Town gained possession from a save by their goalkeeper",
      "source": "finding",
      "origin": null
     },
@@ -1856,7 +1856,7 @@
      "window_start_s": 2079.7,
      "window_end_s": 2079.7,
      "baseline": 0.0,
-     "say": "Westmere Town open the scoring: Westmere Town 1-0 Aurora Rovers",
+     "say": "it is 1-0: Westmere Town open the scoring",
      "source": "finding",
      "origin": null
     },
@@ -1870,7 +1870,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2079.7,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 1, including this one",
+     "say": "this is Xarno Uusitalo's first goal of the match",
      "source": "player",
      "origin": null
     },
@@ -1884,7 +1884,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2079.7,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 2",
+     "say": "Xarno Uusitalo has 2 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -1898,7 +1898,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2079.7,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 0.37",
+     "say": "Xarno Uusitalo has 0.37 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -2307,7 +2307,7 @@
      "window_start_s": 2209.7,
      "window_end_s": 2209.7,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -2321,7 +2321,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2209.7,
      "baseline": null,
-     "say": "Tomas Okeloro: goals 0",
+     "say": "Tomas Okeloro has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -2335,7 +2335,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2209.7,
      "baseline": null,
-     "say": "Tomas Okeloro: shots 0",
+     "say": "Tomas Okeloro has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -2349,7 +2349,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2209.7,
      "baseline": null,
-     "say": "Tomas Okeloro: xG 0.00",
+     "say": "Tomas Okeloro has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -2548,7 +2548,7 @@
      "window_start_s": 2519.9,
      "window_end_s": 2519.9,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -2562,7 +2562,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2519.9,
      "baseline": null,
-     "say": "Ilmari Abara: goals 0",
+     "say": "Ilmari Abara has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -2576,7 +2576,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2519.9,
      "baseline": null,
-     "say": "Ilmari Abara: shots 0",
+     "say": "Ilmari Abara has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -2590,7 +2590,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2519.9,
      "baseline": null,
-     "say": "Ilmari Abara: xG 0.00",
+     "say": "Ilmari Abara has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -2812,7 +2812,7 @@
      "window_start_s": 2589.2,
      "window_end_s": 2613.4,
      "baseline": null,
-     "say": "24 s after winning the ball",
+     "say": "24 s after gaining possession",
      "source": "finding",
      "origin": null
     },
@@ -2854,7 +2854,7 @@
      "window_start_s": 2589.2,
      "window_end_s": 2589.2,
      "baseline": null,
-     "say": "possession began from a restart or a save",
+     "say": "Westmere Town gained possession after the ball went out of play",
      "source": "finding",
      "origin": null
     },
@@ -2868,7 +2868,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2613.4,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 1",
+     "say": "Xarno Uusitalo has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -2882,7 +2882,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2613.4,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 3",
+     "say": "Xarno Uusitalo has 3 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -2896,7 +2896,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2613.4,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 1.03",
+     "say": "Xarno Uusitalo has 1.03 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -3247,7 +3247,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 1",
+     "say": "Xarno Uusitalo has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -3261,7 +3261,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 3",
+     "say": "Xarno Uusitalo has 3 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -3275,7 +3275,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 1.03",
+     "say": "Xarno Uusitalo has 1.03 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -3289,7 +3289,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brannholt: goals 0",
+     "say": "Alden Brannholt has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -3303,7 +3303,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brannholt: shots 3",
+     "say": "Alden Brannholt has 3 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -3317,7 +3317,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2700.0,
      "baseline": null,
-     "say": "Alden Brannholt: xG 0.85",
+     "say": "Alden Brannholt has 0.85 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -3331,7 +3331,7 @@
      "window_start_s": 2079.7,
      "window_end_s": 2079.7,
      "baseline": 0.0,
-     "say": "Westmere Town open the scoring: Westmere Town 1-0 Aurora Rovers",
+     "say": "it is 1-0: Westmere Town open the scoring",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:0"
     },
@@ -3457,7 +3457,7 @@
      "window_start_s": 1773.5,
      "window_end_s": 2073.5,
      "baseline": null,
-     "say": "5 tackles won",
+     "say": "5 tackles won in this spell",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:pressure_surge:1"
     },
@@ -3471,7 +3471,7 @@
      "window_start_s": 1773.5,
      "window_end_s": 2073.5,
      "baseline": 78.5,
-     "say": "Aurora Rovers completing 72% of their passes",
+     "say": "Aurora Rovers are completing 72% of their passes",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:pressure_surge:1"
     },
@@ -3541,7 +3541,7 @@
      "window_start_s": 1706.2,
      "window_end_s": 2006.2,
      "baseline": null,
-     "say": "1 tackles won",
+     "say": "1 tackle won in this spell",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:pressure_surge:0"
     },
@@ -4113,7 +4113,7 @@
      "window_start_s": 2805.3,
      "window_end_s": 2805.3,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -4127,7 +4127,7 @@
      "window_start_s": 2823.7,
      "window_end_s": 2823.7,
      "baseline": -1.0,
-     "say": "Aurora Rovers equalise: Westmere Town 1-1 Aurora Rovers",
+     "say": "it is 1-1: Aurora Rovers equalise",
      "source": "finding",
      "origin": null
     },
@@ -4141,7 +4141,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2823.7,
      "baseline": null,
-     "say": "Alden Brannholt: goals 1, including this one",
+     "say": "this is Alden Brannholt's first goal of the match",
      "source": "player",
      "origin": null
     },
@@ -4155,7 +4155,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2823.7,
      "baseline": null,
-     "say": "Alden Brannholt: shots 4",
+     "say": "Alden Brannholt has 4 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -4169,7 +4169,7 @@
      "window_start_s": 0.0,
      "window_end_s": 2823.7,
      "baseline": null,
-     "say": "Alden Brannholt: xG 1.13",
+     "say": "Alden Brannholt has 1.13 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -4648,7 +4648,7 @@
      "window_start_s": 3208.1,
      "window_end_s": 3208.1,
      "baseline": null,
-     "say": "did not end with a shot",
+     "say": "the move did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -4662,7 +4662,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3208.1,
      "baseline": null,
-     "say": "Idris Zielmark: goals 0",
+     "say": "Idris Zielmark has 0 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -4676,7 +4676,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3208.1,
      "baseline": null,
-     "say": "Idris Zielmark: shots 0",
+     "say": "Idris Zielmark has 0 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -4690,7 +4690,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3208.1,
      "baseline": null,
-     "say": "Idris Zielmark: xG 0.00",
+     "say": "Idris Zielmark has 0.00 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -4941,7 +4941,7 @@
      "window_start_s": 3248.5,
      "window_end_s": 3248.5,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -4955,7 +4955,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3258.4,
      "baseline": null,
-     "say": "Alden Brannholt: goals 1",
+     "say": "Alden Brannholt has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -4969,7 +4969,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3258.4,
      "baseline": null,
-     "say": "Alden Brannholt: shots 5",
+     "say": "Alden Brannholt has 5 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -4983,7 +4983,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3258.4,
      "baseline": null,
-     "say": "Alden Brannholt: xG 1.50",
+     "say": "Alden Brannholt has 1.50 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -5444,7 +5444,7 @@
      "window_start_s": 3406.2,
      "window_end_s": 3440.9,
      "baseline": null,
-     "say": "35 s after winning the ball",
+     "say": "35 s after gaining possession",
      "source": "finding",
      "origin": null
     },
@@ -5486,7 +5486,7 @@
      "window_start_s": 3406.2,
      "window_end_s": 3406.2,
      "baseline": null,
-     "say": "possession began from a restart or a save",
+     "say": "Westmere Town gained possession after the ball went out of play",
      "source": "finding",
      "origin": null
     },
@@ -5500,7 +5500,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3440.9,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 1",
+     "say": "Xarno Uusitalo has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -5514,7 +5514,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3440.9,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 4",
+     "say": "Xarno Uusitalo has 4 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -5528,7 +5528,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3440.9,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 1.42",
+     "say": "Xarno Uusitalo has 1.42 xG in the match",
      "source": "player",
      "origin": null
     }
@@ -5890,7 +5890,7 @@
      "window_start_s": 3547.6,
      "window_end_s": 3547.6,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Westmere Town won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -5904,7 +5904,7 @@
      "window_start_s": 3566.5,
      "window_end_s": 3566.5,
      "baseline": 0.0,
-     "say": "Westmere Town go ahead: Westmere Town 2-1 Aurora Rovers",
+     "say": "it is 2-1: Westmere Town go ahead",
      "source": "finding",
      "origin": null
     },
@@ -5918,7 +5918,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3566.5,
      "baseline": null,
-     "say": "Niko Okeloro: goals 1, including this one",
+     "say": "this is Niko Okeloro's first goal of the match",
      "source": "player",
      "origin": null
     },
@@ -5932,7 +5932,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3566.5,
      "baseline": null,
-     "say": "Niko Okeloro: shots 1",
+     "say": "Niko Okeloro has 1 shot in the match",
      "source": "player",
      "origin": null
     },
@@ -5946,7 +5946,7 @@
      "window_start_s": 0.0,
      "window_end_s": 3566.5,
      "baseline": null,
-     "say": "Niko Okeloro: xG 0.02",
+     "say": "Niko Okeloro has 0.02 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -6308,7 +6308,7 @@
      "window_start_s": 3514.6,
      "window_end_s": 3814.6,
      "baseline": null,
-     "say": "2 tackles won",
+     "say": "2 tackles won in this spell",
      "source": "finding",
      "origin": null
     },
@@ -6322,7 +6322,7 @@
      "window_start_s": 3514.6,
      "window_end_s": 3814.6,
      "baseline": 72.6,
-     "say": "Aurora Rovers completing 90% of their passes",
+     "say": "Aurora Rovers are completing 90% of their passes",
      "source": "finding",
      "origin": null
     },
@@ -6479,7 +6479,7 @@
      "window_start_s": 3536.2,
      "window_end_s": 3836.2,
      "baseline": null,
-     "say": "0 tackles won",
+     "say": "0 tackles won in this spell",
      "source": "finding",
      "origin": null
     },
@@ -6493,7 +6493,7 @@
      "window_start_s": 3536.2,
      "window_end_s": 3836.2,
      "baseline": 73.1,
-     "say": "Westmere Town completing 82% of their passes",
+     "say": "Westmere Town are completing 82% of their passes",
      "source": "finding",
      "origin": null
     },
@@ -6650,7 +6650,7 @@
      "window_start_s": 3623.2,
      "window_end_s": 4103.2,
      "baseline": 1.8,
-     "say": "2.0 turnovers per minute in this spell",
+     "say": "2.0 turnovers per minute across both teams in this spell",
      "source": "finding",
      "origin": null
     },
@@ -6664,7 +6664,7 @@
      "window_start_s": 3623.2,
      "window_end_s": 4103.2,
      "baseline": 84.0,
-     "say": "81% pass completion in this spell",
+     "say": "81% pass completion for both teams combined in this spell",
      "source": "finding",
      "origin": null
     },
@@ -6678,7 +6678,7 @@
      "window_start_s": 3623.2,
      "window_end_s": 4103.2,
      "baseline": 32.0,
-     "say": "possessions lasting 28 s on average in this spell",
+     "say": "possessions lasting 28 s on average across both teams in this spell",
      "source": "finding",
      "origin": null
     }
@@ -6934,7 +6934,7 @@
      "window_start_s": 5006.1,
      "window_end_s": 5006.1,
      "baseline": null,
-     "say": "ball won in open play",
+     "say": "Aurora Rovers won the ball in open play",
      "source": "finding",
      "origin": null
     },
@@ -6948,7 +6948,7 @@
      "window_start_s": 5010.1,
      "window_end_s": 5010.1,
      "baseline": -1.0,
-     "say": "Aurora Rovers equalise: Westmere Town 2-2 Aurora Rovers",
+     "say": "it is 2-2: Aurora Rovers equalise",
      "source": "finding",
      "origin": null
     },
@@ -6962,7 +6962,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5010.1,
      "baseline": null,
-     "say": "Alden Brannholt: goals 2, including this one",
+     "say": "Alden Brannholt has 2 goals in the match, including this one",
      "source": "player",
      "origin": null
     },
@@ -6976,7 +6976,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5010.1,
      "baseline": null,
-     "say": "Alden Brannholt: shots 8",
+     "say": "Alden Brannholt has 8 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -6990,7 +6990,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5010.1,
      "baseline": null,
-     "say": "Alden Brannholt: xG 1.69",
+     "say": "Alden Brannholt has 1.69 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -7454,7 +7454,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: goals 1",
+     "say": "Xarno Uusitalo has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -7468,7 +7468,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: shots 5",
+     "say": "Xarno Uusitalo has 5 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -7482,7 +7482,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Xarno Uusitalo: xG 1.56",
+     "say": "Xarno Uusitalo has 1.56 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -7496,7 +7496,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brannholt: goals 2",
+     "say": "Alden Brannholt has 2 goals in the match",
      "source": "player",
      "origin": null
     },
@@ -7510,7 +7510,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brannholt: shots 9",
+     "say": "Alden Brannholt has 9 shots in the match",
      "source": "player",
      "origin": null
     },
@@ -7524,7 +7524,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Alden Brannholt: xG 1.71",
+     "say": "Alden Brannholt has 1.71 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -7538,7 +7538,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Niko Okeloro: goals 1",
+     "say": "Niko Okeloro has 1 goal in the match",
      "source": "player",
      "origin": null
     },
@@ -7552,7 +7552,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Niko Okeloro: shots 1",
+     "say": "Niko Okeloro has 1 shot in the match",
      "source": "player",
      "origin": null
     },
@@ -7566,7 +7566,7 @@
      "window_start_s": 0.0,
      "window_end_s": 5400.0,
      "baseline": null,
-     "say": "Niko Okeloro: xG 0.02",
+     "say": "Niko Okeloro has 0.02 xG in the match",
      "source": "player",
      "origin": null
     },
@@ -7580,7 +7580,7 @@
      "window_start_s": 5010.1,
      "window_end_s": 5010.1,
      "baseline": -1.0,
-     "say": "Aurora Rovers equalise: Westmere Town 2-2 Aurora Rovers",
+     "say": "it is 2-2: Aurora Rovers equalise",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:3"
     },
@@ -7636,7 +7636,7 @@
      "window_start_s": 3566.5,
      "window_end_s": 3566.5,
      "baseline": 0.0,
-     "say": "Westmere Town go ahead: Westmere Town 2-1 Aurora Rovers",
+     "say": "it is 2-1: Westmere Town go ahead",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:2"
     },
@@ -7706,7 +7706,7 @@
      "window_start_s": 2823.7,
      "window_end_s": 2823.7,
      "baseline": -1.0,
-     "say": "Aurora Rovers equalise: Westmere Town 1-1 Aurora Rovers",
+     "say": "it is 1-1: Aurora Rovers equalise",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:1"
     },
@@ -7762,7 +7762,7 @@
      "window_start_s": 2079.7,
      "window_end_s": 2079.7,
      "baseline": 0.0,
-     "say": "Westmere Town open the scoring: Westmere Town 1-0 Aurora Rovers",
+     "say": "it is 1-0: Westmere Town open the scoring",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:0"
     },

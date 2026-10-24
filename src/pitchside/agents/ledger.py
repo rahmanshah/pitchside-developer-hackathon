@@ -7,13 +7,14 @@ earlier in the match, plus the totals and player numbers at the whistle.
 
 from __future__ import annotations
 
-from typing import Iterable, Optional, Sequence
+from typing import Iterable, Literal, Optional, Sequence
 
 from ..schema import (
     Event, MatchStartEvent, PassEvent, PossessionChangeEvent, PressureEvent, Score, ShotEvent, TackleEvent,
 )
+from ..stats.detector import DetectorConfig
 from ..stats.engine import Snapshot
-from ..stats.findings import Finding, FindingKind
+from ..stats.findings import SPELL_KINDS, Finding, FindingKind
 from .contracts import EarlierClaim, JobRecord, Ledger, MatchFacts, PlayerRef, PlayerStats, TeamRef
 from .languages import ENGLISH, Language
 
@@ -24,8 +25,15 @@ MAX_RECAP_CLAIMS = 12
 UNSIGNED_INDEX = frozenset({"pass_difficulty"})  # 0..1 ratings, not -1..+1 swings: no "+" sign
 # Yes/no facts stored as 1/0: quoted in words, never as a digit ("(1)" read as a count in live output).
 FLAG_METRICS = frozenset({"possession_won_in_open_play", "ended_with_shot"})
-# Match-wide numbers over the chaos window: without it named, "79% pass completion" reads as the whole match.
+# Match-wide numbers over the chaos window: without it named, "79% pass completion" reads as the whole match, and
+# "both teams averaged" as each club's figure, so they say "across both teams in this spell" (decisions 21, 23).
 SPELL_WINDOW_METRICS = frozenset({"chaos_index", "turnovers_per_min", "pass_completion", "mean_spell"})
+# One club's counts and sums over a rolling window: "3 shots" alone reads as a match total (decision 23).
+WINDOW_COUNT_METRICS = frozenset({"shots", "xg", "tackles_won", "opponent_final_third_passes", "final_third_passes",
+                                  "passes", "pressures"})
+# Possessions that begin this way were won in open play; the others began with a restart or a save.
+OPEN_PLAY_REGAINS = frozenset(DetectorConfig().counter_regains)
+Window = Literal["spell", "recent", "earlier"]
 
 
 def number_text(value: float, unit: str, lang: Language = ENGLISH, metric: str = "") -> str:
@@ -44,20 +52,53 @@ def number_text(value: float, unit: str, lang: Language = ENGLISH, metric: str =
     return lang.number(value, UNIT_DECIMALS.get(unit, 2))
 
 
-def say(metric: str, value: float, unit: str, lang: Language = ENGLISH, team_name: str = "") -> str:
-    """A short phrase quoting the number, e.g. "71% field tilt" or "Ironvale completing 64% of their passes".
+def _phrase(lang: Language, key: str, value: float, unit: str) -> Optional[str]:
+    """The phrase for ``key``, in the singular when the count is 1 ("1 pass in the move")."""
+    if unit == "count" and value == 1 and f"{key}.one" in lang.phrases:
+        return lang.phrases[f"{key}.one"]
+    return lang.phrases.get(key)
+
+
+def say(metric: str, value: float, unit: str, lang: Language = ENGLISH, team_name: str = "",
+        cause: Optional[str] = None) -> str:
+    """A short phrase quoting the number, e.g. "71% field tilt" or "Ironvale are completing 64% of their passes".
 
     Since-kick-off metrics end in ``_total``; those without their own phrase reuse the base metric's phrase. Flags
-    are words with no number ("ball won in open play").
+    are clauses with no number ("Aurora Rovers won the ball in open play"). ``cause`` is how the possession began
+    (a ``PossessionChangeEvent`` reason): a restart or a save is named as such, and its clock reads "after gaining
+    possession", not "after winning the ball".
     """
     if metric in FLAG_METRICS:
-        return lang.phrases[f"fact.{metric}" if value >= 0.5 else f"fact.{metric}.no"]
+        key = f"fact.{metric}" if value >= 0.5 else f"fact.{metric}.no"
+        if value < 0.5 and metric == "possession_won_in_open_play" and f"possession_from.{cause}" in lang.phrases:
+            key = f"possession_from.{cause}"
+        return lang.phrases[key].format(team=team_name).strip()
     v = number_text(value, unit, lang, metric)
-    phrase = lang.phrases.get(f"fact.{metric}")
+    if metric == "seconds_since_turnover" and cause is not None and cause not in OPEN_PLAY_REGAINS:
+        metric = "seconds_since_possession"
+    phrase = _phrase(lang, f"fact.{metric}", value, unit)
     if phrase is None and metric.endswith("_total") and f"fact.{metric[:-6]}" in lang.phrases:
-        base = lang.phrases[f"fact.{metric[:-6]}"].format(v=v, opponent=team_name)
+        base = _phrase(lang, f"fact.{metric[:-6]}", value, unit).format(v=v, opponent=team_name)
         return lang.phrases["fact.since_kickoff"].format(phrase=base)
     return (phrase or "{v} " + metric.replace("_", " ")).format(v=v, opponent=team_name)
+
+
+def window_say(metric: str, value: float, unit: str, window: Window, lang: Language = ENGLISH,
+               team_name: str = "") -> str:
+    """A rolling number with its window named once, in words: "3 shots in this spell", or for the match-wide chaos
+    numbers "3.0 turnovers per minute across both teams in this spell"."""
+    where = lang.phrases[f"window.{window}"]
+    if metric in SPELL_WINDOW_METRICS:
+        return lang.phrases[f"combined.{metric}"].format(v=number_text(value, unit, lang, metric), window=where)
+    return f"{say(metric, value, unit, lang, team_name)} {where}"
+
+
+def player_say(metric: str, value: float, player: str, lang: Language = ENGLISH, scored_this: bool = False) -> str:
+    """A player's number since kick-off as a clause: "Rafa Yaldiran has 2 goals in the match, including this one"."""
+    unit = "xg" if metric == "player_xg" else "count"
+    key = {"player_goals": "player.goals_this" if scored_this else "player.goals", "player_shots": "player.shots",
+           "player_xg": "player.xg"}[metric]
+    return _phrase(lang, key, value, unit).format(player=player, v=number_text(value, unit, lang))
 
 
 def goal_effect(margin_after: float, goals_in_match: int) -> str:
@@ -71,13 +112,11 @@ def goal_effect(margin_after: float, goals_in_match: int) -> str:
     return "extend" if margin_after > 1 else "back"
 
 
-def goal_margin_say(margin_after: float, team_name: str, score: Score, facts: MatchFacts,
-                    lang: Language = ENGLISH) -> str:
-    """The scoreline after a goal, with what it did: "Aurora Rovers equalise: Aurora Rovers 1-1 Ironvale Athletic"."""
+def goal_margin_say(margin_after: float, team_name: str, score: Score, lang: Language = ENGLISH) -> str:
+    """The score after a goal, then what it did: "it is 1-1: Aurora Rovers equalise". The scoring club is the last
+    club named, so a number pasted after it is read as that club's (with "Home 1-1 Away" it was the away club's)."""
     effect = lang.phrases[f"goal_effect.{goal_effect(margin_after, score.home + score.away)}"].format(team=team_name)
-    line = lang.phrases["score"].format(home=facts.home.name, home_goals=score.home, away_goals=score.away,
-                                        away=facts.away.name)
-    return lang.phrases["goal_margin.line"].format(effect=effect, score=line)
+    return lang.phrases["goal_margin.line"].format(score=f"{score.home}-{score.away}", effect=effect)
 
 
 # --------------------------------------------------------------------------- #
@@ -143,13 +182,10 @@ def _add_player_numbers(ledger: Ledger, stats: PlayerStats, clock_s: float, fact
                                                        team_id=stats.team_id, position="CM")).name
     for metric, value, unit in (("player_goals", stats.goals, "count"), ("player_shots", stats.shots, "count"),
                                 ("player_xg", stats.xg, "xg")):
-        phrase = say(metric, value, unit)
-        if metric == "player_goals" and scored_this:
-            # The tally's window ends at this goal's second; say so, or "his second goal" reads as unsupported.
-            phrase = ENGLISH.phrases["fact.player_goals_this"].format(v=number_text(value, unit))
+        # The scorer's tally ends at this goal's second; it says so, or "his second goal" reads as unsupported.
+        phrase = player_say(metric, value, name, scored_this=scored_this and metric == "player_goals")
         ledger.add_item("c", metric=metric, team_id=stats.team_id, player_id=stats.player_id, value=float(value),
-                        unit=unit, window_start_s=0.0, window_end_s=clock_s,
-                        say=f"{name}: {phrase}", source="player")
+                        unit=unit, window_start_s=0.0, window_end_s=clock_s, say=phrase, source="player")
 
 
 # --------------------------------------------------------------------------- #
@@ -160,13 +196,20 @@ def _add_player_numbers(ledger: Ledger, stats: PlayerStats, clock_s: float, fact
 def finding_ledger(finding: Finding, facts: MatchFacts, events_by_id: dict[int, Event],
                    tally: Optional[PlayerTally] = None) -> Ledger:
     ledger = Ledger()
+    spell = finding.kind in SPELL_KINDS
     for ev in finding.evidence:
         team = facts.team(ev.team_id)
-        phrase = say(ev.metric, ev.value, ev.unit, ENGLISH, team.name if team else "")
+        name = team.name if team else ""
         if ev.metric in SPELL_WINDOW_METRICS and ev.team_id is None:
-            phrase = ENGLISH.phrases["fact.in_this_spell"].format(phrase=phrase)
+            phrase = window_say(ev.metric, ev.value, ev.unit, "spell")
+        elif spell and ev.metric in WINDOW_COUNT_METRICS and team is not None:
+            phrase = window_say(ev.metric, ev.value, ev.unit, "spell", team_name=name)
         elif ev.metric == "goal_margin" and team is not None:
-            phrase = goal_margin_say(ev.value, team.name, finding.score, facts)
+            phrase = goal_margin_say(ev.value, name, finding.score)
+        else:
+            cause = (_possession_cause(events_by_id, ev.team_id, ev.window_start_s)
+                     if ev.metric in ("possession_won_in_open_play", "seconds_since_turnover") else None)
+            phrase = say(ev.metric, ev.value, ev.unit, ENGLISH, name, cause=cause)
         ledger.add_item("e", metric=ev.metric, team_id=ev.team_id, value=ev.value, unit=ev.unit,
                         window_start_s=ev.window_start_s, window_end_s=ev.window_end_s, baseline=ev.baseline,
                         say=phrase, source="finding")
@@ -178,6 +221,15 @@ def finding_ledger(finding: Finding, facts: MatchFacts, events_by_id: dict[int, 
         elif isinstance(event, PossessionChangeEvent) and event.player_id and finding.kind is FindingKind.COUNTER_ATTACK:
             _involve(ledger, facts, event.player_id, "ball_winner", event.clock_s, tally, finding.detected_at_s)
     return ledger
+
+
+def _possession_cause(events_by_id: dict[int, Event], team_id: Optional[str], start_s: float) -> Optional[str]:
+    """How the possession that began at ``start_s`` started (its ``PossessionChangeEvent`` reason), from the events
+    seen so far; None if it is not among them."""
+    for event in reversed(list(events_by_id.values())):
+        if isinstance(event, PossessionChangeEvent) and event.team_id == team_id and event.clock_s == start_s:
+            return event.reason
+    return None
 
 
 def _involve(ledger: Ledger, facts: MatchFacts, player_id: str, involvement: str, clock_s: float,

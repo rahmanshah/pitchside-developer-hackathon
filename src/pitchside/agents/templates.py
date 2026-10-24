@@ -109,7 +109,9 @@ def _shot(b: _Builder, kind: str) -> TemplateOutput:
             phrase = lang.phrases.get(f"{kind}.{variant}") or lang.phrases[f"{kind}.casual"]
             b.add(fav_persona(player_id), lang, phrase.format(player=name, **values))
         if lang.code == "en":
-            b.claim(analyst, [xg, dist, shots, mxg], team_id=team)
+            # A goal's claim states the score and cites goal_margin, as the model's must (decision 23).
+            margin = b.item("goal_margin", team) if kind == "goal" else None
+            b.claim(analyst, [xg, dist, shots, mxg, *([margin] if margin else [])], team_id=team)
     return b.output(next(t.text for t in b.texts if t.persona == CASUAL))
 
 
