@@ -9,7 +9,7 @@ from pitchside.agents.contracts import (
 )
 from pitchside.agents.languages import ENGLISH, LANGUAGES, SPANISH, resolve_languages
 from pitchside.agents.ledger import (
-    default_featured, finding_ledger, number_text, recap_ledger, say,
+    FLAG_METRICS, SPELL_WINDOW_METRICS, default_featured, finding_ledger, number_text, recap_ledger, say,
 )
 from pitchside.stats.engine import StatsEngine
 
@@ -34,6 +34,19 @@ class NumberFormatTests(unittest.TestCase):
         self.assertEqual(say("opponent_pass_completion", 64.0, "pct", ENGLISH, "Ironvale Athletic"),
                          "Ironvale Athletic completing 64% of their passes")
 
+    def test_flags_are_words_with_no_digit_in_every_language(self) -> None:
+        # Live output quoted "ball won in open play (1 = yes): 1" as "(1)"; a flag has nothing to quote now.
+        self.assertEqual(say("possession_won_in_open_play", 1.0, "count"), "ball won in open play")
+        self.assertEqual(say("possession_won_in_open_play", 0.0, "count"), "possession began from a restart or a save")
+        self.assertEqual(say("ended_with_shot", 1.0, "count"), "ended with a shot")
+        self.assertEqual(say("ended_with_shot", 0.0, "count"), "did not end with a shot")
+        self.assertEqual(say("possession_won_in_open_play", 1.0, "count", SPANISH), "balón recuperado en juego")
+        self.assertEqual(say("ended_with_shot", 0.0, "count", SPANISH), "no terminó en tiro")
+        for lang in LANGUAGES.values():
+            for metric in FLAG_METRICS:
+                for value in (0.0, 1.0):
+                    self.assertNotRegex(say(metric, value, "count", lang), r"\d", f"{lang.code} {metric}={value}")
+
     def test_languages_resolve_with_english_first_and_unknown_codes_fail(self) -> None:
         self.assertEqual([l.code for l in resolve_languages(("es", "en"))], ["en", "es"])
         with self.assertRaises(ValueError):
@@ -55,6 +68,26 @@ class LedgerTests(unittest.TestCase):
         self.assertEqual((scorer.ref, scorer.involvement), ("p1", "scorer"))
         player_goals = next(i for i in ledger.items if i.metric == "player_goals")
         self.assertEqual((player_goals.player_id, player_goals.value), (scorer.player_id, 1.0))
+
+    def test_match_wide_chaos_numbers_name_their_window(self) -> None:
+        # "79% pass completion" alone was written as "match pass completion": it is the spell's window, not the match.
+        chaos = first("chaos_spell", status="start")
+        ledger = finding_ledger(chaos, facts(), events_by_id())
+        windowed = [i for i in ledger.items if i.metric in SPELL_WINDOW_METRICS]
+        self.assertEqual({i.metric for i in windowed}, set(SPELL_WINDOW_METRICS))
+        for item in windowed:
+            self.assertIsNone(item.team_id)
+            self.assertTrue(item.say.endswith(" in this spell"), item.say)
+        self.assertEqual(ledger.item("e1").say, f"chaos index {number_text(chaos.evidence[0].value, 'index')} in this spell")
+
+    def test_a_surge_ledger_names_the_pressed_club_and_no_window(self) -> None:
+        surge = first("pressure_surge", status="start")
+        f = facts()
+        ledger = finding_ledger(surge, f, events_by_id())
+        item = next(i for i in ledger.items if i.metric == "opponent_pass_completion")
+        self.assertEqual(item.team_id, f.opponent(surge.team_id).team_id)
+        self.assertTrue(item.say.startswith(f"{f.opponent(surge.team_id).name} completing "), item.say)
+        self.assertNotIn("in this spell", " ".join(i.say for i in ledger.items))
 
     def test_featured_players_are_each_clubs_striker(self) -> None:
         f = facts()

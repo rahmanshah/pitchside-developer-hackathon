@@ -20,7 +20,8 @@ from ..llm.config import Role
 from ..llm.fake import ToolCall
 from .checker import scan
 
-_ITEM = re.compile(r"^(?:\w+: )?([ec]\d+) \| (\w+) \| (\S+) \| (-?[\d.e+-]+) (\w+)(?: \| [\d:]+-[\d:]+)? \| say \"(.*)\"$")
+_ITEM = re.compile(r"^(?:\w+: )?([ec]\d+) \| (\w+) \| (both clubs|\S+) \| (?:yes|no|-?[\d.e+-]+ \w+)"
+                   r"(?: \| [\d:]+-[\d:]+)? \| say \"(.*)\"$")
 _PLAYER = re.compile(r"^(?:\w+: )?(p\d+) \| (.+?) \| (\w+) \| (\w+)$")
 _TOOL_REF = re.compile(r'"ref":\s*"(c\d+)"')
 OVERCLAIM_WORDS = ("certainly", "surely", "will win", "guaranteed", "best ever", "always", "never")
@@ -74,7 +75,7 @@ def _items(transcript: str) -> list[_Item]:
     for line in _lines(transcript):
         m = _ITEM.match(line)
         if m:
-            found.append(_Item(m.group(1), m.group(2), None if m.group(3) == "match" else m.group(3), m.group(6)))
+            found.append(_Item(m.group(1), m.group(2), None if m.group(3) == "both clubs" else m.group(3), m.group(4)))
     return found
 
 

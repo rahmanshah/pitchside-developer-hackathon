@@ -4,8 +4,8 @@
  "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output",
  "run_id": "sample-siege",
  "match_id": "har_wst_siege_0003",
- "created_utc": "2026-10-23T12:09:29+00:00",
- "wall_s": 0.57,
+ "created_utc": "2026-10-24T08:46:31+00:00",
+ "wall_s": 0.67,
  "generator": {
   "seed": 3,
   "storyline": "siege",
@@ -53,7 +53,7 @@
  ],
  "pipeline": {
   "pitchside_version": "0.2.0",
-  "git_commit": "20941d9",
+  "git_commit": "0a03664",
   "llm_mode": "fake",
   "api": "fake",
   "deployments": {
@@ -62,8 +62,8 @@
    "verifier": "fake",
    "personalizer": "fake"
   },
-  "price_model": "gpt-6-luna",
-  "price_table_version": "2026-10-18",
+  "price_model": "gpt-5-mini",
+  "price_table_version": "2026-10-23",
   "reasoning_effort": "low",
   "max_output_tokens": {
    "interpreter": 1500,
@@ -73,9 +73,9 @@
   },
   "prompt_versions": {
    "interpreter": "6dfd03259e73",
-   "explainer": "ddb820308421",
+   "explainer": "fd223ccf6eda",
    "verifier": "2d4b35846ad4",
-   "personalizer": "e813b633439d"
+   "personalizer": "ed0d5adb6f9b"
   },
   "max_explainer_attempts": 3,
   "interpreter_tools": "local",
@@ -89,7 +89,7 @@
  },
  "budget": {
   "match_budget_usd": 0.25,
-  "spent_usd": 0.004299,
+  "spent_usd": 0.01471,
   "model_calls": 49,
   "budget_fallbacks": 0,
   "exhausted": null

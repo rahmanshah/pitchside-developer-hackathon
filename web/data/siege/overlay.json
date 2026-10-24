@@ -454,7 +454,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Westmere Town",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -484,7 +484,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -504,9 +504,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 879,
+     "input_tokens": 871,
      "output_tokens": 469,
-     "cost_usd": 0.000322
+     "cost_usd": 0.001156
     },
     "badges": []
    }
@@ -1667,7 +1667,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Momentum shift: Harbourton City",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -1697,7 +1697,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -1719,7 +1719,7 @@
      "transport_retries": 0,
      "input_tokens": 604,
      "output_tokens": 420,
-     "cost_usd": 0.00027
+     "cost_usd": 0.000991
     },
     "badges": []
    }
@@ -2149,7 +2149,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Siege: Harbourton City",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -2179,7 +2179,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -2201,7 +2201,7 @@
      "transport_retries": 0,
      "input_tokens": 645,
      "output_tokens": 400,
-     "cost_usd": 0.000264
+     "cost_usd": 0.000961
     },
     "badges": []
    }
@@ -2624,7 +2624,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Harbourton City",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -2654,7 +2654,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -2676,7 +2676,7 @@
      "transport_retries": 0,
      "input_tokens": 660,
      "output_tokens": 455,
-     "cost_usd": 0.000294
+     "cost_usd": 0.001075
     },
     "badges": []
    }
@@ -3011,7 +3011,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Harbourton City",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -3041,7 +3041,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -3061,9 +3061,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 923,
+     "input_tokens": 915,
      "output_tokens": 474,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001177
     },
     "badges": []
    }
@@ -3399,7 +3399,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Harbourton City",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -3429,7 +3429,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -3449,9 +3449,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 925,
+     "input_tokens": 916,
      "output_tokens": 474,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001177
     },
     "badges": []
    }
@@ -3864,7 +3864,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Harbourton City",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -3894,7 +3894,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -3914,9 +3914,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1757,
+     "input_tokens": 1760,
      "output_tokens": 561,
-     "cost_usd": 0.000456
+     "cost_usd": 0.001562
     },
     "badges": []
    }
@@ -4769,7 +4769,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -4799,7 +4799,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -4821,7 +4821,7 @@
      "transport_retries": 0,
      "input_tokens": 3213,
      "output_tokens": 470,
-     "cost_usd": 0.000556
+     "cost_usd": 0.001743
     },
     "badges": []
    }
@@ -6049,7 +6049,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Westmere Town",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -6079,7 +6079,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -6099,9 +6099,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1724,
+     "input_tokens": 1710,
      "output_tokens": 538,
-     "cost_usd": 0.000441
+     "cost_usd": 0.001504
     },
     "badges": []
    }
@@ -6901,7 +6901,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Harbourton City",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -6931,7 +6931,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -6951,9 +6951,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1785,
+     "input_tokens": 1770,
      "output_tokens": 568,
-     "cost_usd": 0.000463
+     "cost_usd": 0.001579
     },
     "badges": []
    }
@@ -7460,7 +7460,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Full time: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -7490,7 +7490,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -7512,7 +7512,7 @@
      "transport_retries": 0,
      "input_tokens": 3378,
      "output_tokens": 471,
-     "cost_usd": 0.000573
+     "cost_usd": 0.001786
     },
     "badges": []
    }

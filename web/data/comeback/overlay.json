@@ -161,7 +161,7 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Chaos index +0.79, 2.7 turnovers per minute. 71% pass completion.",
+      "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell. 71% pass completion in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -173,15 +173,15 @@
         ]
        },
        {
-        "start": 19,
-        "end": 22,
+        "start": 33,
+        "end": 36,
         "refs": [
          "e2"
         ]
        },
        {
-        "start": 45,
-        "end": 47,
+        "start": 73,
+        "end": 75,
         "refs": [
          "e3"
         ]
@@ -189,7 +189,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Chaos index +0.79, 2.7 turnovers per minute. 71% pass completion.",
+      "text": "[es · offline] Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell. 71% pass completion in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -201,15 +201,15 @@
         ]
        },
        {
-        "start": 34,
-        "end": 37,
+        "start": 48,
+        "end": 51,
         "refs": [
          "e2"
         ]
        },
        {
-        "start": 60,
-        "end": 62,
+        "start": 88,
+        "end": 90,
         "refs": [
          "e3"
         ]
@@ -219,7 +219,7 @@
     },
     "casual": {
      "en": {
-      "text": "Chaos index +0.79, 2.7 turnovers per minute.",
+      "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -231,8 +231,8 @@
         ]
        },
        {
-        "start": 19,
-        "end": 22,
+        "start": 33,
+        "end": 36,
         "refs": [
          "e2"
         ]
@@ -240,7 +240,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Chaos index +0.79, 2.7 turnovers per minute.",
+      "text": "[es · offline] Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -252,8 +252,8 @@
         ]
        },
        {
-        "start": 34,
-        "end": 37,
+        "start": 48,
+        "end": 51,
         "refs": [
          "e2"
         ]
@@ -263,7 +263,7 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Chaos index +0.79, 2.7 turnovers per minute.",
+      "text": "For Alden Brannholt's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -275,8 +275,8 @@
         ]
        },
        {
-        "start": 47,
-        "end": 50,
+        "start": 61,
+        "end": 64,
         "refs": [
          "e2"
         ]
@@ -284,7 +284,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.79, 2.7 turnovers per minute.",
+      "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -296,8 +296,8 @@
         ]
        },
        {
-        "start": 62,
-        "end": 65,
+        "start": 76,
+        "end": 79,
         "refs": [
          "e2"
         ]
@@ -307,7 +307,7 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Chaos index +0.79, 2.7 turnovers per minute.",
+      "text": "For Rafa Yaldiran's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -319,8 +319,8 @@
         ]
        },
        {
-        "start": 45,
-        "end": 48,
+        "start": 59,
+        "end": 62,
         "refs": [
          "e2"
         ]
@@ -328,7 +328,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.79, 2.7 turnovers per minute.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -340,8 +340,8 @@
         ]
        },
        {
-        "start": 60,
-        "end": 63,
+        "start": 74,
+        "end": 77,
         "refs": [
          "e2"
         ]
@@ -357,7 +357,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +0.79, 2.7 turnovers per minute.",
+      "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute in this spell.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -372,7 +372,7 @@
         "involvement": null,
         "value": 0.793,
         "unit": "index",
-        "say": "chaos index +0.79",
+        "say": "chaos index +0.79 in this spell",
         "window_start_s": 0.0,
         "window_end_s": 395.9,
         "baseline": null,
@@ -486,7 +486,7 @@
         "involvement": null,
         "value": 2.728,
         "unit": "per_min",
-        "say": "2.7 turnovers per minute",
+        "say": "2.7 turnovers per minute in this spell",
         "window_start_s": 0.0,
         "window_end_s": 395.9,
         "baseline": 1.8,
@@ -534,7 +534,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "71% pass completion.",
+      "text": "71% pass completion in this spell.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -549,7 +549,7 @@
         "involvement": null,
         "value": 70.7,
         "unit": "pct",
-        "say": "71% pass completion",
+        "say": "71% pass completion in this spell",
         "window_start_s": 0.0,
         "window_end_s": 395.9,
         "baseline": 84.0,
@@ -659,7 +659,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Chaos spell: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -689,7 +689,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -709,9 +709,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 577,
-     "output_tokens": 404,
-     "cost_usd": 0.00026
+     "input_tokens": 650,
+     "output_tokens": 477,
+     "cost_usd": 0.001116
     },
     "badges": []
    }
@@ -1384,7 +1384,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -1414,7 +1414,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -1434,9 +1434,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 907,
+     "input_tokens": 899,
      "output_tokens": 471,
-     "cost_usd": 0.000326
+     "cost_usd": 0.001167
     },
     "badges": []
    }
@@ -2152,7 +2152,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Ironvale Athletic",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -2182,7 +2182,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -2202,9 +2202,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1712,
+     "input_tokens": 1714,
      "output_tokens": 556,
-     "cost_usd": 0.000449
+     "cost_usd": 0.00154
     },
     "badges": []
    }
@@ -3288,7 +3288,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -3318,7 +3318,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -3338,9 +3338,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 2674,
+     "input_tokens": 2749,
      "output_tokens": 476,
-     "cost_usd": 0.000505
+     "cost_usd": 0.001639
     },
     "badges": []
    }
@@ -3675,7 +3675,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Ironvale Athletic",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -3705,7 +3705,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -3725,9 +3725,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 938,
+     "input_tokens": 929,
      "output_tokens": 481,
-     "cost_usd": 0.000334
+     "cost_usd": 0.001194
     },
     "badges": []
    }
@@ -4404,7 +4404,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -4434,7 +4434,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -4454,9 +4454,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 935,
+     "input_tokens": 927,
      "output_tokens": 471,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001174
     },
     "badges": []
    }
@@ -4793,7 +4793,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -4823,7 +4823,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -4843,9 +4843,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 937,
+     "input_tokens": 938,
      "output_tokens": 471,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001177
     },
     "badges": []
    }
@@ -5646,7 +5646,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -5676,7 +5676,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -5698,7 +5698,7 @@
      "transport_retries": 0,
      "input_tokens": 670,
      "output_tokens": 454,
-     "cost_usd": 0.000294
+     "cost_usd": 0.001076
     },
     "badges": []
    }
@@ -6040,7 +6040,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -6070,7 +6070,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -6090,9 +6090,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 936,
+     "input_tokens": 927,
      "output_tokens": 471,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001174
     },
     "badges": []
    }
@@ -6435,7 +6435,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -6465,7 +6465,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -6485,9 +6485,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 930,
+     "input_tokens": 922,
      "output_tokens": 471,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001172
     },
     "badges": []
    }
@@ -6959,7 +6959,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Momentum shift: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -6989,7 +6989,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -7011,7 +7011,7 @@
      "transport_retries": 0,
      "input_tokens": 623,
      "output_tokens": 414,
-     "cost_usd": 0.000269
+     "cost_usd": 0.000984
     },
     "badges": []
    }
@@ -7355,7 +7355,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -7385,7 +7385,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -7405,9 +7405,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 935,
+     "input_tokens": 927,
      "output_tokens": 471,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001174
     },
     "badges": []
    }
@@ -8093,7 +8093,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -8123,7 +8123,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -8143,9 +8143,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 937,
+     "input_tokens": 929,
      "output_tokens": 471,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001174
     },
     "badges": []
    }
@@ -8485,7 +8485,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -8515,7 +8515,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -8535,9 +8535,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 935,
+     "input_tokens": 927,
      "output_tokens": 471,
-     "cost_usd": 0.000329
+     "cost_usd": 0.001174
     },
     "badges": []
    }
@@ -9343,7 +9343,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -9373,7 +9373,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -9393,9 +9393,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1784,
+     "input_tokens": 1771,
      "output_tokens": 562,
-     "cost_usd": 0.000459
+     "cost_usd": 0.001567
     },
     "badges": []
    }
@@ -9743,7 +9743,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -9773,7 +9773,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -9793,9 +9793,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 942,
+     "input_tokens": 934,
      "output_tokens": 471,
-     "cost_usd": 0.00033
+     "cost_usd": 0.001176
     },
     "badges": []
    }
@@ -10148,7 +10148,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -10178,7 +10178,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -10198,9 +10198,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 941,
+     "input_tokens": 933,
      "output_tokens": 471,
-     "cost_usd": 0.00033
+     "cost_usd": 0.001175
     },
     "badges": []
    }
@@ -10239,7 +10239,7 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Chaos index +0.78, 3.5 turnovers per minute. 78% pass completion.",
+      "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell. 78% pass completion in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -10251,15 +10251,15 @@
         ]
        },
        {
-        "start": 19,
-        "end": 22,
+        "start": 33,
+        "end": 36,
         "refs": [
          "e2"
         ]
        },
        {
-        "start": 45,
-        "end": 47,
+        "start": 73,
+        "end": 75,
         "refs": [
          "e3"
         ]
@@ -10267,7 +10267,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Chaos index +0.78, 3.5 turnovers per minute. 78% pass completion.",
+      "text": "[es · offline] Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell. 78% pass completion in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -10279,15 +10279,15 @@
         ]
        },
        {
-        "start": 34,
-        "end": 37,
+        "start": 48,
+        "end": 51,
         "refs": [
          "e2"
         ]
        },
        {
-        "start": 60,
-        "end": 62,
+        "start": 88,
+        "end": 90,
         "refs": [
          "e3"
         ]
@@ -10297,7 +10297,7 @@
     },
     "casual": {
      "en": {
-      "text": "Chaos index +0.78, 3.5 turnovers per minute.",
+      "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -10309,8 +10309,8 @@
         ]
        },
        {
-        "start": 19,
-        "end": 22,
+        "start": 33,
+        "end": 36,
         "refs": [
          "e2"
         ]
@@ -10318,7 +10318,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] Chaos index +0.78, 3.5 turnovers per minute.",
+      "text": "[es · offline] Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -10330,8 +10330,8 @@
         ]
        },
        {
-        "start": 34,
-        "end": 37,
+        "start": 48,
+        "end": 51,
         "refs": [
          "e2"
         ]
@@ -10341,7 +10341,7 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Chaos index +0.78, 3.5 turnovers per minute.",
+      "text": "For Alden Brannholt's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -10353,8 +10353,8 @@
         ]
        },
        {
-        "start": 47,
-        "end": 50,
+        "start": 61,
+        "end": 64,
         "refs": [
          "e2"
         ]
@@ -10362,7 +10362,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.78, 3.5 turnovers per minute.",
+      "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -10374,8 +10374,8 @@
         ]
        },
        {
-        "start": 62,
-        "end": 65,
+        "start": 76,
+        "end": 79,
         "refs": [
          "e2"
         ]
@@ -10385,7 +10385,7 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Chaos index +0.78, 3.5 turnovers per minute.",
+      "text": "For Rafa Yaldiran's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -10397,8 +10397,8 @@
         ]
        },
        {
-        "start": 45,
-        "end": 48,
+        "start": 59,
+        "end": 62,
         "refs": [
          "e2"
         ]
@@ -10406,7 +10406,7 @@
       ]
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.78, 3.5 turnovers per minute.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
       "source": "model",
       "reason": null,
       "numbers": [
@@ -10418,8 +10418,8 @@
         ]
        },
        {
-        "start": 60,
-        "end": 63,
+        "start": 74,
+        "end": 77,
         "refs": [
          "e2"
         ]
@@ -10435,7 +10435,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +0.78, 3.5 turnovers per minute.",
+      "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute in this spell.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -10450,7 +10450,7 @@
         "involvement": null,
         "value": 0.777,
         "unit": "index",
-        "say": "chaos index +0.78",
+        "say": "chaos index +0.78 in this spell",
         "window_start_s": 4539.2,
         "window_end_s": 5019.2,
         "baseline": null,
@@ -10591,7 +10591,7 @@
         "involvement": null,
         "value": 3.5,
         "unit": "per_min",
-        "say": "3.5 turnovers per minute",
+        "say": "3.5 turnovers per minute in this spell",
         "window_start_s": 4539.2,
         "window_end_s": 5019.2,
         "baseline": 1.8,
@@ -10648,7 +10648,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "78% pass completion.",
+      "text": "78% pass completion in this spell.",
       "team_id": null,
       "deterministic": "passed",
       "semantic": "passed",
@@ -10663,7 +10663,7 @@
         "involvement": null,
         "value": 77.9,
         "unit": "pct",
-        "say": "78% pass completion",
+        "say": "78% pass completion in this spell",
         "window_start_s": 4539.2,
         "window_end_s": 5019.2,
         "baseline": 84.0,
@@ -10791,7 +10791,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Chaos spell: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -10821,7 +10821,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -10841,9 +10841,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 623,
-     "output_tokens": 404,
-     "cost_usd": 0.000264
+     "input_tokens": 697,
+     "output_tokens": 477,
+     "cost_usd": 0.001128
     },
     "badges": []
    }
@@ -11338,7 +11338,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -11368,7 +11368,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -11388,9 +11388,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 1787,
+     "input_tokens": 1773,
      "output_tokens": 562,
-     "cost_usd": 0.00046
+     "cost_usd": 0.001567
     },
     "badges": []
    }
@@ -11932,7 +11932,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Full time: the match",
       "next_step": "check",
-      "prompt_version": "ddb820308421"
+      "prompt_version": "fd223ccf6eda"
      },
      {
       "seq": 3,
@@ -11962,7 +11962,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "e813b633439d"
+      "prompt_version": "ed0d5adb6f9b"
      },
      {
       "seq": 6,
@@ -11982,9 +11982,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3230,
+     "input_tokens": 3305,
      "output_tokens": 477,
-     "cost_usd": 0.000562
+     "cost_usd": 0.00178
     },
     "badges": []
    }

@@ -244,7 +244,7 @@
      "window_start_s": 914.8,
      "window_end_s": 914.8,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -420,11 +420,11 @@
      },
      {
       "code": "team_mismatch",
-      "detail": "\"0.44\" (e1) belongs to Aurora Rovers, but the text gives it to Westmere Town; name the club right before its number"
+      "detail": "\"0.44\" (e1) belongs to Aurora Rovers, but the club named last before it in this sentence is Westmere Town; name Aurora Rovers before this number (once per sentence)"
      },
      {
       "code": "team_mismatch",
-      "detail": "\"6\" (e2) belongs to Aurora Rovers, but the text gives it to Westmere Town; name the club right before its number"
+      "detail": "\"6\" (e2) belongs to Aurora Rovers, but the club named last before it in this sentence is Westmere Town; name Aurora Rovers before this number (once per sentence)"
      }
     ]
    },
@@ -499,7 +499,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
      "team_id": null,
      "refs": [
       "e1",
@@ -518,7 +518,7 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "65% pass completion.",
+     "text": "65% pass completion in this spell.",
      "team_id": null,
      "refs": [
       "e3"
@@ -536,56 +536,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Chaos index +1.00, 3.9 turnovers per minute. 65% pass completion.",
+     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell. 65% pass completion in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "For Xarno Uusitalo's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "For Alden Brannholt's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Chaos index +1.00, 3.9 turnovers per minute. 65% pass completion.",
+     "text": "[es · offline] Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell. 65% pass completion in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "[es · offline] Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +1.00, 3.9 turnovers per minute.",
+     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
      "source": "model",
      "reason": null
     }
@@ -603,7 +603,7 @@
      "window_start_s": 1509.7,
      "window_end_s": 1989.7,
      "baseline": null,
-     "say": "chaos index +1.00",
+     "say": "chaos index +1.00 in this spell",
      "source": "finding",
      "origin": null
     },
@@ -617,7 +617,7 @@
      "window_start_s": 1509.7,
      "window_end_s": 1989.7,
      "baseline": 1.8,
-     "say": "3.9 turnovers per minute",
+     "say": "3.9 turnovers per minute in this spell",
      "source": "finding",
      "origin": null
     },
@@ -631,7 +631,7 @@
      "window_start_s": 1509.7,
      "window_end_s": 1989.7,
      "baseline": 84.0,
-     "say": "65% pass completion",
+     "say": "65% pass completion in this spell",
      "source": "finding",
      "origin": null
     },
@@ -645,7 +645,7 @@
      "window_start_s": 1509.7,
      "window_end_s": 1989.7,
      "baseline": 32.0,
-     "say": "possessions lasting 15 s on average",
+     "say": "possessions lasting 15 s on average in this spell",
      "source": "finding",
      "origin": null
     }
@@ -659,7 +659,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +1.00, 3.9 turnovers per minute.",
+      "text": "Chaos index +1.00 in this spell, 3.9 turnovers per minute in this spell.",
       "team_id": null,
       "refs": [
        "e1",
@@ -678,7 +678,7 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "65% pass completion.",
+      "text": "65% pass completion in this spell.",
       "team_id": null,
       "refs": [
        "e3"
@@ -1214,7 +1214,7 @@
      "window_start_s": 2035.9,
      "window_end_s": 2035.9,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -1841,7 +1841,7 @@
      "window_start_s": 2060.4,
      "window_end_s": 2060.4,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 0",
+     "say": "possession began from a restart or a save",
      "source": "finding",
      "origin": null
     },
@@ -2291,7 +2291,7 @@
      "window_start_s": 2209.7,
      "window_end_s": 2209.7,
      "baseline": null,
-     "say": "ended with a shot (1 = yes): 0",
+     "say": "did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -2532,7 +2532,7 @@
      "window_start_s": 2519.9,
      "window_end_s": 2519.9,
      "baseline": null,
-     "say": "ended with a shot (1 = yes): 0",
+     "say": "did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -2838,7 +2838,7 @@
      "window_start_s": 2589.2,
      "window_end_s": 2589.2,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 0",
+     "say": "possession began from a restart or a save",
      "source": "finding",
      "origin": null
     },
@@ -4082,7 +4082,7 @@
      "window_start_s": 2805.3,
      "window_end_s": 2805.3,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -4601,7 +4601,7 @@
      "window_start_s": 3208.1,
      "window_end_s": 3208.1,
      "baseline": null,
-     "say": "ended with a shot (1 = yes): 0",
+     "say": "did not end with a shot",
      "source": "finding",
      "origin": null
     },
@@ -4894,7 +4894,7 @@
      "window_start_s": 3248.5,
      "window_end_s": 3248.5,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -5439,7 +5439,7 @@
      "window_start_s": 3406.2,
      "window_end_s": 3406.2,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 0",
+     "say": "possession began from a restart or a save",
      "source": "finding",
      "origin": null
     },
@@ -5842,7 +5842,7 @@
      "window_start_s": 3547.6,
      "window_end_s": 3547.6,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },
@@ -6573,7 +6573,7 @@
      "window_start_s": 3623.2,
      "window_end_s": 4103.2,
      "baseline": null,
-     "say": "chaos index +0.19",
+     "say": "chaos index +0.19 in this spell",
      "source": "finding",
      "origin": null
     },
@@ -6587,7 +6587,7 @@
      "window_start_s": 3623.2,
      "window_end_s": 4103.2,
      "baseline": 1.8,
-     "say": "2.0 turnovers per minute",
+     "say": "2.0 turnovers per minute in this spell",
      "source": "finding",
      "origin": null
     },
@@ -6601,7 +6601,7 @@
      "window_start_s": 3623.2,
      "window_end_s": 4103.2,
      "baseline": 84.0,
-     "say": "81% pass completion",
+     "say": "81% pass completion in this spell",
      "source": "finding",
      "origin": null
     },
@@ -6615,7 +6615,7 @@
      "window_start_s": 3623.2,
      "window_end_s": 4103.2,
      "baseline": 32.0,
-     "say": "possessions lasting 28 s on average",
+     "say": "possessions lasting 28 s on average in this spell",
      "source": "finding",
      "origin": null
     }
@@ -6870,7 +6870,7 @@
      "window_start_s": 5006.1,
      "window_end_s": 5006.1,
      "baseline": null,
-     "say": "ball won in open play (1 = yes): 1",
+     "say": "ball won in open play",
      "source": "finding",
      "origin": null
     },

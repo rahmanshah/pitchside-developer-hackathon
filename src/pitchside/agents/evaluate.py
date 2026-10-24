@@ -386,7 +386,7 @@ def spotcheck(runs: Sequence[MatchRun], n: int = 20, seed: int = 1) -> str:
         for ref in claim.refs:
             item, player = record.ledger.item(ref), record.ledger.player(ref)
             if item:
-                lines.append(f"- `{ref}` {item.metric} = {item.value:g} {item.unit} ({item.team_id or 'match'}, "
+                lines.append(f"- `{ref}` {item.metric} = {item.value:g} {item.unit} ({item.team_id or 'both clubs'}, "
                              f"{item.window_start_s:.0f}-{item.window_end_s:.0f} s): {item.say}")
             elif player:
                 lines.append(f"- `{ref}` {player.name} ({player.team_id}, {player.involvement})")

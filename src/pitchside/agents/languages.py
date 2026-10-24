@@ -120,8 +120,10 @@ ENGLISH = Language(
         "fact.passes_in_move": "{v} passes in the move",
         "fact.regain_distance_from_own_goal": "ball won {v} from their own goal",
         "fact.finish_distance_to_goal": "finished {v} from goal",
-        "fact.ended_with_shot": "ended with a shot (1 = yes): {v}",
-        "fact.possession_won_in_open_play": "ball won in open play (1 = yes): {v}",
+        "fact.ended_with_shot": "ended with a shot",
+        "fact.ended_with_shot.no": "did not end with a shot",
+        "fact.possession_won_in_open_play": "ball won in open play",
+        "fact.possession_won_in_open_play.no": "possession began from a restart or a save",
         "fact.player_goals": "goals {v}",
         "fact.player_shots": "shots {v}",
         "fact.player_xg": "xG {v}",
@@ -135,6 +137,7 @@ ENGLISH = Language(
         "fact.goals": "{v} goals",
         "fact.pressures": "{v} pressures",
         "fact.since_kickoff": "{phrase} in the match",
+        "fact.in_this_spell": "{phrase} in this spell",
     },
 )
 
@@ -210,8 +213,10 @@ SPANISH = Language(
         "fact.passes_in_move": "{v} pases en la jugada",
         "fact.regain_distance_from_own_goal": "balón recuperado a {v} de su portería",
         "fact.finish_distance_to_goal": "remate a {v} de la portería",
-        "fact.ended_with_shot": "terminó en tiro (1 = sí): {v}",
-        "fact.possession_won_in_open_play": "balón recuperado en juego (1 = sí): {v}",
+        "fact.ended_with_shot": "terminó en tiro",
+        "fact.ended_with_shot.no": "no terminó en tiro",
+        "fact.possession_won_in_open_play": "balón recuperado en juego",
+        "fact.possession_won_in_open_play.no": "posesión iniciada a balón parado o tras una parada",
         "fact.player_goals": "goles {v}",
         "fact.player_shots": "tiros {v}",
         "fact.player_xg": "xG {v}",
@@ -225,6 +230,7 @@ SPANISH = Language(
         "fact.goals": "{v} goles",
         "fact.pressures": "{v} presiones",
         "fact.since_kickoff": "{phrase} en el partido",
+        "fact.in_this_spell": "{phrase} en esta fase",
     },
 )
 

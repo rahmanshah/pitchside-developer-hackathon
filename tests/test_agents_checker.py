@@ -118,6 +118,53 @@ class BadClaimTests(unittest.TestCase):
         self.assertEqual(codes(claim("Ironvale Athletic scored (e1).")), [])
 
 
+class AttributionTests(unittest.TestCase):
+    """The prompts ask for the club once per sentence (decision 21); the check itself must stay as strict."""
+
+    def reasons(self, text: str, numbers=((0.05, "e1"), (21, "e2")), refs=("e1", "e2"), team_id="irv"):
+        return check_claim(claim(text, refs=refs, numbers=numbers, team_id=team_id), CTX).reasons
+
+    def test_a_club_named_once_covers_the_numbers_after_it(self) -> None:
+        self.assertEqual(self.reasons("Ironvale Athletic scored with a 0.05 xG chance from 21 m."), [])
+
+    def test_a_named_player_carries_their_club(self) -> None:
+        text = f"{SCORER.name} scored with a 0.05 xG chance from 21 m."
+        self.assertEqual(self.reasons(text, refs=("e1", "e2", SCORER.ref)), [])
+
+    def test_with_no_club_named_the_claims_team_id_decides(self) -> None:
+        self.assertEqual(self.reasons("A 0.05 xG chance from 21 m was enough."), [])
+        reasons = self.reasons("A 0.05 xG chance from 21 m was enough.", team_id="aur")
+        self.assertEqual([r.code for r in reasons], ["team_mismatch"] * 3)  # the claim, then both numbers
+        self.assertIn("no club is named in its sentence, and the claim's team_id is Aurora Rovers", reasons[1].detail)
+
+    def test_the_other_club_named_nearer_still_fails(self) -> None:
+        reasons = self.reasons("Ironvale Athletic scored after Aurora Rovers allowed a 0.05 xG chance from 21 m.")
+        self.assertEqual([r.code for r in reasons], ["team_mismatch", "team_mismatch"])
+        self.assertEqual(reasons[0].detail,
+                         '"0.05" (e1) belongs to Ironvale Athletic, but the club named last before it in this sentence '
+                         'is Aurora Rovers; name Ironvale Athletic before this number (once per sentence)')
+
+    def test_the_other_club_named_only_after_the_number_still_fails(self) -> None:
+        reasons = self.reasons("A 0.05 xG chance from 21 m went to Aurora Rovers.")
+        self.assertEqual([r.code for r in reasons], ["team_mismatch", "team_mismatch"])
+        self.assertIn("no club is named before it, and the club named after it is Aurora Rovers", reasons[0].detail)
+
+    def test_persona_texts_follow_the_same_rule(self) -> None:
+        refs = ["e1", "e2"]
+        self.assertEqual(check_text("For Aurora Rovers, a blow: Ironvale Athletic scored from 21 m.", CTX, refs), [])
+        self.assertEqual([r.code for r in check_text("For Aurora Rovers, a blow from 21 m.", CTX, refs)],
+                         ["team_mismatch"])
+
+
+class FlagClaimTests(unittest.TestCase):
+    def test_a_flag_is_cited_without_a_number(self) -> None:
+        flag = next(i for i in LEDGER.items if i.metric == "possession_won_in_open_play")
+        self.assertNotRegex(flag.say, r"\d")
+        self.assertEqual(codes(claim(f"Ironvale Athletic: {flag.say}.", refs=(flag.ref,))), [])
+        self.assertEqual(codes(claim(f"Ironvale Athletic: {flag.say}, and scored 29 s later.", refs=(flag.ref, "e6"),
+                                     numbers=((29, "e6"),))), [])
+
+
 class PersonaTextTests(unittest.TestCase):
     def test_spanish_text_with_verified_numbers_passes(self) -> None:
         text = f"¡{SCORER.name} marca para Ironvale Athletic con una ocasión de 0,05 xG! Aurora Rovers 0-1 Ironvale Athletic."
