@@ -482,7 +482,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Westmere Town",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -502,7 +502,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -512,7 +512,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -1695,7 +1695,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Momentum shift: Harbourton City",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -1715,7 +1715,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -1725,7 +1725,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -2177,7 +2177,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Siege: Harbourton City",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -2197,7 +2197,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -2207,7 +2207,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -2652,7 +2652,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Harbourton City",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -2672,7 +2672,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -2682,7 +2682,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -3067,7 +3067,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Harbourton City",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -3087,7 +3087,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -3097,7 +3097,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -3483,7 +3483,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Harbourton City",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -3503,7 +3503,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -3513,7 +3513,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -3976,7 +3976,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Harbourton City",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -3996,7 +3996,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -4006,7 +4006,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -4516,13 +4516,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Half-time: it is 1-0 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
+      "text": "It is 1-0 at half-time: Harbourton City lead. Hugo Vidrelle scored for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: it is 1-0 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
+      "text": "[es · offline] It is 1-0 at half-time: Harbourton City lead. Hugo Vidrelle scored for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4530,13 +4530,13 @@
     },
     "casual": {
      "en": {
-      "text": "Half-time: it is 1-0 to Harbourton City.",
+      "text": "It is 1-0 at half-time: Harbourton City lead.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: it is 1-0 to Harbourton City.",
+      "text": "[es · offline] It is 1-0 at half-time: Harbourton City lead.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4544,13 +4544,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidrelle's fans: Half-time: it is 1-0 to Harbourton City.",
+      "text": "For Hugo Vidrelle's fans: It is 1-0 at half-time: Harbourton City lead.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidrelle's fans: Half-time: it is 1-0 to Harbourton City.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: It is 1-0 at half-time: Harbourton City lead.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4558,13 +4558,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Half-time: it is 1-0 to Harbourton City.",
+      "text": "For Xarno Uusitalo's fans: It is 1-0 at half-time: Harbourton City lead.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: it is 1-0 to Harbourton City.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: It is 1-0 at half-time: Harbourton City lead.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -4578,22 +4578,22 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Half-time: it is 1-0 to Harbourton City.",
-      "team_id": null,
+      "text": "It is 1-0 at half-time: Harbourton City lead.",
+      "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
       "evidence": [
        {
         "ref": "c1",
         "kind": "number",
-        "metric": "possession_total",
+        "metric": "recap_score",
         "team_id": "har",
         "player_id": null,
         "name": null,
         "involvement": null,
-        "value": 50.7,
-        "unit": "pct",
-        "say": "Harbourton City: 51% possession",
+        "value": 1.0,
+        "unit": "count",
+        "say": "it is 1-0 at half-time: Harbourton City lead",
         "window_start_s": 0.0,
         "window_end_s": 2700.0,
         "baseline": null,
@@ -4603,60 +4603,19 @@
          {
           "relation": "in_window",
           "event_ids": [
-           2,
-           8,
-           24,
-           31,
-           36,
-           53,
-           66,
-           84,
-           92,
-           98,
-           106,
-           112,
-           119,
-           137,
-           156,
-           173,
-           182,
-           196,
-           226,
-           231,
-           246,
-           263,
-           270,
-           280,
-           288,
-           294,
-           310,
-           337,
-           356,
-           382,
-           392,
-           410,
-           430,
-           438,
-           451,
-           469,
-           507,
-           525,
-           532,
-           537,
-           544,
-           549,
-           563,
-           578,
-           590,
-           604,
-           617,
-           644,
-           655
+           73,
+           206,
+           274,
+           317,
+           443,
+           515,
+           546,
+           585
           ],
-          "count": 49,
+          "count": 8,
           "filter": {
            "types": [
-            "possession_change"
+            "shot"
            ],
            "team_id": "har",
            "player_id": null,
@@ -4729,7 +4688,7 @@
       "semantic": "passed",
       "evidence": [
        {
-        "ref": "c1",
+        "ref": "c2",
         "kind": "number",
         "metric": "possession_total",
         "team_id": "har",
@@ -4813,7 +4772,7 @@
         "known": true
        },
        {
-        "ref": "c2",
+        "ref": "c3",
         "kind": "number",
         "metric": "shots_total",
         "team_id": "har",
@@ -4881,7 +4840,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -4901,7 +4860,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -4911,7 +4870,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -4931,9 +4890,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3536,
-     "output_tokens": 459,
-     "cost_usd": 0.001802
+     "input_tokens": 3037,
+     "output_tokens": 470,
+     "cost_usd": 0.001699
     },
     "badges": []
    }
@@ -6189,7 +6148,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Westmere Town",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -6209,7 +6168,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -6219,7 +6178,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -7069,7 +7028,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Harbourton City",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -7089,7 +7048,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -7099,7 +7058,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -7158,13 +7117,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Full-time: it is 2-1 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
+      "text": "It ends 2-1: Harbourton City win. Hugo Vidrelle scored for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: it is 2-1 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
+      "text": "[es · offline] It ends 2-1: Harbourton City win. Hugo Vidrelle scored for Harbourton City.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7172,13 +7131,13 @@
     },
     "casual": {
      "en": {
-      "text": "Full-time: it is 2-1 to Harbourton City.",
+      "text": "It ends 2-1: Harbourton City win.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: it is 2-1 to Harbourton City.",
+      "text": "[es · offline] It ends 2-1: Harbourton City win.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7186,13 +7145,13 @@
     },
     "fav:har_09": {
      "en": {
-      "text": "For Hugo Vidrelle's fans: Full-time: it is 2-1 to Harbourton City.",
+      "text": "For Hugo Vidrelle's fans: It ends 2-1: Harbourton City win.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Hugo Vidrelle's fans: Full-time: it is 2-1 to Harbourton City.",
+      "text": "[es · offline] For Hugo Vidrelle's fans: It ends 2-1: Harbourton City win.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7200,13 +7159,13 @@
     },
     "fav:wst_09": {
      "en": {
-      "text": "For Xarno Uusitalo's fans: Full-time: it is 2-1 to Harbourton City.",
+      "text": "For Xarno Uusitalo's fans: It ends 2-1: Harbourton City win.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: it is 2-1 to Harbourton City.",
+      "text": "[es · offline] For Xarno Uusitalo's fans: It ends 2-1: Harbourton City win.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -7220,22 +7179,22 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Full-time: it is 2-1 to Harbourton City.",
-      "team_id": null,
+      "text": "It ends 2-1: Harbourton City win.",
+      "team_id": "har",
       "deterministic": "passed",
       "semantic": "passed",
       "evidence": [
        {
         "ref": "c1",
         "kind": "number",
-        "metric": "possession_total",
+        "metric": "recap_score",
         "team_id": "har",
         "player_id": null,
         "name": null,
         "involvement": null,
-        "value": 50.8,
-        "unit": "pct",
-        "say": "Harbourton City: 51% possession",
+        "value": 1.0,
+        "unit": "count",
+        "say": "it ends 2-1: Harbourton City win",
         "window_start_s": 0.0,
         "window_end_s": 5400.0,
         "baseline": null,
@@ -7245,106 +7204,26 @@
          {
           "relation": "in_window",
           "event_ids": [
-           2,
-           8,
-           24,
-           31,
-           36,
-           53,
-           66,
-           84,
-           92,
-           98,
-           106,
-           112,
-           119,
-           137,
-           156,
-           173,
-           182,
-           196,
-           226,
-           231,
-           246,
-           263,
-           270,
-           280,
-           288,
-           294,
-           310,
-           337,
-           356,
-           382,
-           392,
-           410,
-           430,
-           438,
-           451,
-           469,
-           507,
-           525,
-           532,
-           537,
-           544,
-           549,
-           563,
-           578,
-           590,
-           604,
-           617,
-           644,
-           655,
-           670,
-           682,
-           688,
-           703,
-           729,
-           739,
-           762,
-           774,
-           789,
-           793,
-           813,
-           822,
-           826,
-           838,
-           844,
-           867,
-           881,
-           904,
-           910,
-           926,
-           943,
-           954,
-           971,
-           986,
-           1000,
-           1005,
-           1016,
-           1029,
-           1035,
-           1063,
-           1079,
-           1094,
-           1102,
-           1112,
-           1121,
-           1131,
-           1144,
-           1154,
-           1160,
-           1169,
-           1180,
-           1192,
-           1196,
-           1205,
-           1218,
-           1230
+           73,
+           206,
+           274,
+           317,
+           443,
+           515,
+           546,
+           585,
+           678,
+           685,
+           801,
+           934,
+           1095,
+           1126,
+           1135
           ],
-          "count": 95,
+          "count": 15,
           "filter": {
            "types": [
-            "possession_change"
+            "shot"
            ],
            "team_id": "har",
            "player_id": null,
@@ -7423,7 +7302,7 @@
       "semantic": "passed",
       "evidence": [
        {
-        "ref": "c1",
+        "ref": "c2",
         "kind": "number",
         "metric": "possession_total",
         "team_id": "har",
@@ -7553,7 +7432,7 @@
         "known": true
        },
        {
-        "ref": "c2",
+        "ref": "c3",
         "kind": "number",
         "metric": "shots_total",
         "team_id": "har",
@@ -7628,7 +7507,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Full time: the match",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -7648,7 +7527,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -7658,7 +7537,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -7678,9 +7557,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3707,
-     "output_tokens": 459,
-     "cost_usd": 0.001845
+     "input_tokens": 3778,
+     "output_tokens": 444,
+     "cost_usd": 0.001832
     },
     "badges": []
    }

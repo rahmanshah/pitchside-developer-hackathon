@@ -659,7 +659,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Chaos spell: the match",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -679,7 +679,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -689,7 +689,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -1412,7 +1412,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -1432,7 +1432,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -1442,7 +1442,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -2208,7 +2208,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Ironvale Athletic",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -2228,7 +2228,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -2238,7 +2238,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -2984,13 +2984,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Half-time: it is 0-1 to Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
+      "text": "It is 0-1 at half-time: Ironvale Athletic lead. Rafa Yaldiran scored for Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: it is 0-1 to Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
+      "text": "[es · offline] It is 0-1 at half-time: Ironvale Athletic lead. Rafa Yaldiran scored for Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -2998,13 +2998,13 @@
     },
     "casual": {
      "en": {
-      "text": "Half-time: it is 0-1 to Ironvale Athletic.",
+      "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Half-time: it is 0-1 to Ironvale Athletic.",
+      "text": "[es · offline] It is 0-1 at half-time: Ironvale Athletic lead.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3012,13 +3012,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Half-time: it is 0-1 to Ironvale Athletic.",
+      "text": "For Alden Brannholt's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Half-time: it is 0-1 to Ironvale Athletic.",
+      "text": "[es · offline] For Alden Brannholt's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3026,13 +3026,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Half-time: it is 0-1 to Ironvale Athletic.",
+      "text": "For Rafa Yaldiran's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Half-time: it is 0-1 to Ironvale Athletic.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -3046,22 +3046,22 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Half-time: it is 0-1 to Ironvale Athletic.",
-      "team_id": null,
+      "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
+      "team_id": "irv",
       "deterministic": "passed",
       "semantic": "passed",
       "evidence": [
        {
         "ref": "c1",
         "kind": "number",
-        "metric": "possession_total",
-        "team_id": "aur",
+        "metric": "recap_score",
+        "team_id": "irv",
         "player_id": null,
         "name": null,
         "involvement": null,
-        "value": 59.0,
-        "unit": "pct",
-        "say": "Aurora Rovers: 59% possession",
+        "value": -1.0,
+        "unit": "count",
+        "say": "it is 0-1 at half-time: Ironvale Athletic lead",
         "window_start_s": 0.0,
         "window_end_s": 2700.0,
         "baseline": null,
@@ -3071,64 +3071,17 @@
          {
           "relation": "in_window",
           "event_ids": [
-           2,
-           12,
-           22,
-           29,
-           35,
-           40,
-           48,
-           52,
-           65,
-           77,
-           100,
-           107,
-           118,
-           136,
-           149,
-           175,
-           183,
-           201,
-           207,
-           217,
-           231,
-           249,
-           256,
-           264,
-           269,
-           289,
-           302,
-           329,
-           335,
-           341,
-           348,
-           360,
-           380,
-           390,
-           419,
-           446,
-           451,
-           472,
-           479,
-           492,
-           502,
-           509,
-           517,
-           531,
-           541,
-           551,
-           560,
-           574,
-           584,
-           597,
-           603
+           263,
+           359,
+           516,
+           540
           ],
-          "count": 51,
+          "count": 4,
           "filter": {
            "types": [
-            "possession_change"
+            "shot"
            ],
-           "team_id": "aur",
+           "team_id": "irv",
            "player_id": null,
            "from_s": 0.0,
            "to_s": 2700.0
@@ -3195,7 +3148,7 @@
       "semantic": "passed",
       "evidence": [
        {
-        "ref": "c1",
+        "ref": "c2",
         "kind": "number",
         "metric": "possession_total",
         "team_id": "aur",
@@ -3281,7 +3234,7 @@
         "known": true
        },
        {
-        "ref": "c2",
+        "ref": "c3",
         "kind": "number",
         "metric": "shots_total",
         "team_id": "aur",
@@ -3344,7 +3297,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Half time: the match",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -3364,7 +3317,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -3374,7 +3327,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -3394,9 +3347,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3009,
-     "output_tokens": 465,
-     "cost_usd": 0.001682
+     "input_tokens": 2526,
+     "output_tokens": 476,
+     "cost_usd": 0.001584
     },
     "badges": []
    }
@@ -3759,7 +3712,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Ironvale Athletic",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -3779,7 +3732,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -3789,7 +3742,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -4516,7 +4469,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -4536,7 +4489,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -4546,7 +4499,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -4933,7 +4886,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -4953,7 +4906,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -4963,7 +4916,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -5786,7 +5739,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Pressure surge: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -5806,7 +5759,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -5816,7 +5769,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -6208,7 +6161,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -6228,7 +6181,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -6238,7 +6191,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -6631,7 +6584,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -6651,7 +6604,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -6661,7 +6614,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -7155,7 +7108,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Momentum shift: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -7175,7 +7128,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -7185,7 +7138,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -7579,7 +7532,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -7599,7 +7552,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -7609,7 +7562,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -8345,7 +8298,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -8365,7 +8318,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -8375,7 +8328,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -8765,7 +8718,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -8785,7 +8738,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -8795,7 +8748,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -9651,7 +9604,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -9671,7 +9624,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -9681,7 +9634,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -10079,7 +10032,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -10099,7 +10052,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -10109,7 +10062,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -10512,7 +10465,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Big chance: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -10532,7 +10485,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -10542,7 +10495,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -11155,7 +11108,7 @@
       "outcome": "draft",
       "detail": "2 claim(s): Chaos spell: the match",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -11175,7 +11128,7 @@
       "outcome": "passed",
       "detail": "all 2 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -11185,7 +11138,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -11730,7 +11683,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Goal: Aurora Rovers",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -11750,7 +11703,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -11760,7 +11713,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -11818,13 +11771,13 @@
    "texts": {
     "analyst": {
      "en": {
-      "text": "Full-time: it is 2-1 to Aurora Rovers. Rafa Yaldiran scored for Ironvale Athletic.",
+      "text": "It ends 2-1: Aurora Rovers win. Rafa Yaldiran scored for Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: it is 2-1 to Aurora Rovers. Rafa Yaldiran scored for Ironvale Athletic.",
+      "text": "[es · offline] It ends 2-1: Aurora Rovers win. Rafa Yaldiran scored for Ironvale Athletic.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11832,13 +11785,13 @@
     },
     "casual": {
      "en": {
-      "text": "Full-time: it is 2-1 to Aurora Rovers.",
+      "text": "It ends 2-1: Aurora Rovers win.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] Full-time: it is 2-1 to Aurora Rovers.",
+      "text": "[es · offline] It ends 2-1: Aurora Rovers win.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11846,13 +11799,13 @@
     },
     "fav:aur_09": {
      "en": {
-      "text": "For Alden Brannholt's fans: Full-time: it is 2-1 to Aurora Rovers.",
+      "text": "For Alden Brannholt's fans: It ends 2-1: Aurora Rovers win.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Alden Brannholt's fans: Full-time: it is 2-1 to Aurora Rovers.",
+      "text": "[es · offline] For Alden Brannholt's fans: It ends 2-1: Aurora Rovers win.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11860,13 +11813,13 @@
     },
     "fav:irv_09": {
      "en": {
-      "text": "For Rafa Yaldiran's fans: Full-time: it is 2-1 to Aurora Rovers.",
+      "text": "For Rafa Yaldiran's fans: It ends 2-1: Aurora Rovers win.",
       "source": "model",
       "reason": null,
       "numbers": []
      },
      "es": {
-      "text": "[es · offline] For Rafa Yaldiran's fans: Full-time: it is 2-1 to Aurora Rovers.",
+      "text": "[es · offline] For Rafa Yaldiran's fans: It ends 2-1: Aurora Rovers win.",
       "source": "model",
       "reason": null,
       "numbers": []
@@ -11880,22 +11833,22 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Full-time: it is 2-1 to Aurora Rovers.",
-      "team_id": null,
+      "text": "It ends 2-1: Aurora Rovers win.",
+      "team_id": "aur",
       "deterministic": "passed",
       "semantic": "passed",
       "evidence": [
        {
         "ref": "c1",
         "kind": "number",
-        "metric": "possession_total",
+        "metric": "recap_score",
         "team_id": "aur",
         "player_id": null,
         "name": null,
         "involvement": null,
-        "value": 58.5,
-        "unit": "pct",
-        "say": "Aurora Rovers: 58% possession",
+        "value": 1.0,
+        "unit": "count",
+        "say": "it ends 2-1: Aurora Rovers win",
         "window_start_s": 0.0,
         "window_end_s": 5400.0,
         "baseline": null,
@@ -11905,123 +11858,35 @@
          {
           "relation": "in_window",
           "event_ids": [
-           2,
-           12,
-           22,
-           29,
-           35,
-           40,
-           48,
-           52,
-           65,
-           77,
-           100,
-           107,
-           118,
-           136,
-           149,
-           175,
-           183,
-           201,
-           207,
-           217,
-           231,
-           249,
-           256,
-           264,
-           269,
-           289,
-           302,
-           329,
-           335,
-           341,
-           348,
-           360,
-           380,
-           390,
-           419,
-           446,
-           451,
-           472,
-           479,
-           492,
-           502,
-           509,
-           517,
-           531,
-           541,
-           551,
-           560,
-           574,
-           584,
-           597,
-           603,
-           614,
-           619,
-           647,
-           654,
-           672,
-           685,
-           696,
-           702,
-           715,
-           727,
-           735,
-           747,
-           761,
-           772,
-           794,
-           802,
-           819,
-           833,
-           842,
-           854,
-           866,
-           883,
-           889,
-           910,
-           926,
-           933,
-           940,
-           953,
-           960,
-           967,
-           984,
-           1000,
-           1014,
-           1022,
-           1036,
-           1049,
-           1054,
-           1069,
-           1083,
-           1091,
-           1113,
-           1124,
-           1131,
-           1137,
-           1160,
-           1167,
-           1174,
-           1181,
-           1190,
-           1195,
-           1211,
-           1240,
-           1253,
-           1271,
-           1276,
-           1284,
-           1291,
-           1296,
-           1302,
-           1309,
-           1335
+           7,
+           113,
+           138,
+           615,
+           648,
+           719,
+           754,
+           797,
+           820,
+           838,
+           860,
+           885,
+           890,
+           915,
+           929,
+           934,
+           1003,
+           1045,
+           1061,
+           1075,
+           1175,
+           1191,
+           1197,
+           1277
           ],
-          "count": 112,
+          "count": 24,
           "filter": {
            "types": [
-            "possession_change"
+            "shot"
            ],
            "team_id": "aur",
            "player_id": null,
@@ -12093,7 +11958,7 @@
       "semantic": "passed",
       "evidence": [
        {
-        "ref": "c1",
+        "ref": "c2",
         "kind": "number",
         "metric": "possession_total",
         "team_id": "aur",
@@ -12240,7 +12105,7 @@
         "known": true
        },
        {
-        "ref": "c2",
+        "ref": "c3",
         "kind": "number",
         "metric": "shots_total",
         "team_id": "aur",
@@ -12324,7 +12189,7 @@
       "outcome": "draft",
       "detail": "3 claim(s): Full time: the match",
       "next_step": "check",
-      "prompt_version": "23e1e0d6c968"
+      "prompt_version": "0200aa8956af"
      },
      {
       "seq": 3,
@@ -12344,7 +12209,7 @@
       "outcome": "passed",
       "detail": "all 3 claim(s) supported",
       "next_step": "personalize",
-      "prompt_version": "84cae05645de"
+      "prompt_version": "e688ea1a6647"
      },
      {
       "seq": 5,
@@ -12354,7 +12219,7 @@
       "outcome": "texts",
       "detail": "8 of 8 text(s) from the model",
       "next_step": "publish",
-      "prompt_version": "d77881d8d4a1"
+      "prompt_version": "9296cd0ea327"
      },
      {
       "seq": 6,
@@ -12374,9 +12239,9 @@
      "errors": 0,
      "refused": 0,
      "transport_retries": 0,
-     "input_tokens": 3665,
-     "output_tokens": 456,
-     "cost_usd": 0.001828
+     "input_tokens": 3574,
+     "output_tokens": 441,
+     "cost_usd": 0.001775
     },
     "badges": []
    }

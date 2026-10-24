@@ -21,6 +21,8 @@ Rules:
   Never mention the woodwork, a header or a foot, or say a team conceded, unless a claim says so.
 - Never claim a club, season or career record ("first goal for the club", "debut", "this season"): the claims
   cover this match only.
+- In a recap, give the score as it stands at the whistle ("lead 1-0 at half-time", "won 2-1", "drew 2-2"); tell
+  an earlier goal in the past ("made it 1-0"), never as if it just happened ("puts ... ahead").
 - Write natural, idiomatic text in each language, not a word-for-word translation.
 - Reply with one JSON object only: {"texts": [{"persona": str, "language": str, "text": str}]}, one entry for every
   persona in every language.

@@ -126,7 +126,8 @@ def finding_job(finding: Finding, *, facts: MatchFacts, events_by_id: dict[int, 
 def recap_job(kind: RecapKind, *, facts: MatchFacts, snapshot: Snapshot, tally: PlayerTally, score: Score,
               goals: Sequence[GoalAt], featured: Sequence[str], records: Sequence[JobRecord],
               as_of_event_id: Optional[int] = None) -> Job:
-    ledger, earlier = recap_ledger(snapshot, facts, tally, featured, [g.player_id for g in goals], records)
+    ledger, earlier = recap_ledger(snapshot, facts, tally, featured, [g.player_id for g in goals], records,
+                                   goals=goals, kind=kind)
     return Job(
         job_id=recap_job_id(facts.match_id, kind), kind="recap", label=kind, match_id=facts.match_id,
         team_id=None, clock_s=snapshot.clock_s, as_of_event_id=as_of_event_id, window_start_s=0.0,

@@ -15,7 +15,9 @@ from ..schema import (
 from ..stats.detector import DetectorConfig
 from ..stats.engine import Snapshot
 from ..stats.findings import SPELL_KINDS, Finding, FindingKind
-from .contracts import EarlierClaim, JobRecord, Ledger, MatchFacts, PlayerRef, PlayerStats, TeamRef
+from .contracts import (
+    EarlierClaim, GoalAt, JobRecord, Ledger, LedgerItem, MatchFacts, PlayerRef, PlayerStats, TeamRef,
+)
 from .languages import ENGLISH, Language
 
 UNIT_DECIMALS = {"pct": 0, "xg": 2, "index": 2, "per_min": 1, "s": 0, "m": 0, "count": 0}
@@ -28,8 +30,14 @@ FLAG_METRICS = frozenset({"possession_won_in_open_play", "ended_with_shot"})
 # How a shot ended, stored as the index into SHOT_OUTCOMES (decision 24). Live text invented outcomes the evidence
 # did not hold ("rattles the bar" for a blocked shot), so goals and big chances carry the real one.
 SHOT_OUTCOMES = ("off_target", "blocked", "saved", "goal")
-# Facts stated in words: no number in a text can match them (the checker never accepts a digit for one).
-WORD_METRICS = FLAG_METRICS | {"shot_outcome"}
+# Facts stated in words: no number in a text can match them (the checker never accepts a digit for one). A recap's
+# own score ("it is 1-0 at half-time: Aurora Rovers lead") is one too: a score is never a number.
+WORD_METRICS = FLAG_METRICS | {"shot_outcome", "recap_score"}
+# Numbers fixed at one moment (a shot, a goal, how its possession began): still true at the whistle, so a recap may
+# repeat an earlier claim built only from these. Window figures, totals so far and player tallies are not: a recap
+# recomputes its own at the whistle (decision 25).
+POINT_METRICS = frozenset({"shot_xg", "shot_distance", "goal_margin", "shot_outcome", "seconds_since_turnover",
+                           "passes_in_spell", "metres_gained", "possession_won_in_open_play"})
 # Match-wide numbers over the chaos window: without it named, "79% pass completion" reads as the whole match, and
 # "both teams averaged" as each club's figure, so they say "across both teams in this spell" (decisions 21, 23).
 SPELL_WINDOW_METRICS = frozenset({"chaos_index", "turnovers_per_min", "pass_completion", "mean_spell"})
@@ -94,6 +102,8 @@ def word_value(metric: str, value: float) -> Optional[str]:
     """The word a word fact is shown as in prompts ("yes", "saved"); None for a number."""
     if metric == "shot_outcome":
         return SHOT_OUTCOMES[int(round(value))]
+    if metric == "recap_score":
+        return "score"
     if metric in FLAG_METRICS:
         return "yes" if value >= 0.5 else "no"
     return None
@@ -128,11 +138,25 @@ def goal_effect(margin_after: float, goals_in_match: int) -> str:
     return "extend" if margin_after > 1 else "back"
 
 
-def goal_margin_say(margin_after: float, team_name: str, score: Score, lang: Language = ENGLISH) -> str:
+def goal_margin_say(margin_after: float, team_name: str, score: Score, lang: Language = ENGLISH,
+                    past: bool = False) -> str:
     """The score after a goal, then what it did: "it is 1-1: Aurora Rovers equalise". The scoring club is the last
-    club named, so a number pasted after it is read as that club's (with "Home 1-1 Away" it was the away club's)."""
-    effect = lang.phrases[f"goal_effect.{goal_effect(margin_after, score.home + score.away)}"].format(team=team_name)
-    return lang.phrases["goal_margin.line"].format(score=f"{score.home}-{score.away}", effect=effect)
+    club named, so a number pasted after it is read as that club's (with "Home 1-1 Away" it was the away club's).
+    ``past`` is how a recap tells an earlier goal: "made it 1-0: Aurora Rovers opened the scoring"."""
+    tense = "goal_effect_past" if past else "goal_effect"
+    effect = lang.phrases[f"{tense}.{goal_effect(margin_after, score.home + score.away)}"].format(team=team_name)
+    line = "goal_margin.past" if past else "goal_margin.line"
+    return lang.phrases[line].format(score=f"{score.home}-{score.away}", effect=effect)
+
+
+def recap_score_say(kind: str, score: Score, facts: MatchFacts, lang: Language = ENGLISH) -> tuple[Optional[str], str]:
+    """The score at the whistle and who it favours: "it is 1-0 at half-time: Aurora Rovers lead", "it ends 2-2: a
+    draw". Returns (leading team_id or None, phrase)."""
+    text = f"{score.home}-{score.away}"
+    if score.home == score.away:
+        return None, lang.phrases[f"recap_score.{kind}"].format(score=text)
+    leader = facts.home if score.home > score.away else facts.away
+    return leader.team_id, lang.phrases[f"recap_score.{kind}.lead"].format(score=text, team=leader.name)
 
 
 # --------------------------------------------------------------------------- #
@@ -286,9 +310,22 @@ def totals_items(ledger: Ledger, snapshot: Snapshot, facts: MatchFacts) -> list[
 
 
 def recap_ledger(snapshot: Snapshot, facts: MatchFacts, tally: PlayerTally, featured: Sequence[str],
-                 goals_scorers: Iterable[str], records: Sequence[JobRecord]) -> tuple[Ledger, list[EarlierClaim]]:
-    """Totals, player numbers (scorers, each club's top xG, featured players) and earlier verified claims."""
+                 goals_scorers: Iterable[str], records: Sequence[JobRecord], goals: Sequence[GoalAt] = (),
+                 kind: Optional[str] = None) -> tuple[Ledger, list[EarlierClaim]]:
+    """The score at the whistle (when ``kind`` is given), totals, player numbers (scorers, each club's top xG,
+    featured players) and the earlier verified claims that are still true at the whistle.
+
+    Everything that changes over a match is recomputed here, at the whistle. An earlier claim is repeated only if
+    every number it cites is fixed at its own moment (``POINT_METRICS``); its goal score is retold in the past
+    tense. Live recaps quoted a spell's 88% field tilt as a half's, a scorer's "2 shots" from minute 35 at the
+    break, and "it is 1-0" at 1-1 (decision 25).
+    """
     ledger = Ledger()
+    if kind is not None:
+        score = goals[-1].score if goals else Score(home=0, away=0)
+        leader, phrase = recap_score_say(kind, score, facts)
+        ledger.add_item("c", metric="recap_score", team_id=leader, value=float(score.home - score.away), unit="count",
+                        window_start_s=0.0, window_end_s=snapshot.clock_s, say=phrase, source="context")
     totals_items(ledger, snapshot, facts)
     stats = {s.player_id: s for s in tally.all()}
     chosen: list[tuple[str, str]] = [(pid, "scorer") for pid in dict.fromkeys(goals_scorers)]
@@ -314,12 +351,20 @@ def recap_ledger(snapshot: Snapshot, facts: MatchFacts, tally: PlayerTally, feat
         for claim in record.narrative.claims:
             if len(earlier) >= MAX_RECAP_CLAIMS:
                 break
+            items = [i for r in claim.refs if (i := record.ledger.item(r)) is not None]
+            if any(i.metric not in POINT_METRICS for i in items):
+                continue  # a number that has moved on since: the recap has its own
+            past = {i.ref: _goal_margin_past(i, goals, facts) for i in items if i.metric == "goal_margin"}
+            if None in past.values():
+                continue  # the goal is not in this recap's score history: its score cannot be retold
             refs = []
             for ref in claim.refs:
                 item = record.ledger.item(ref)
                 if item is not None:
-                    copy = ledger.add_item("c", **{**item.model_dump(exclude={"ref", "source", "origin"}),
-                                                   "source": "claim", "origin": record.job_id})
+                    fields = item.model_dump(exclude={"ref", "source", "origin"})
+                    if ref in past:
+                        fields["say"] = past[ref]
+                    copy = ledger.add_item("c", **{**fields, "source": "claim", "origin": record.job_id})
                     refs.append(copy.ref)
                 elif (fact := record.ledger.player(ref)) is not None:
                     refs.append(ledger.add_player(**fact.model_dump(exclude={"ref"})).ref)
@@ -327,6 +372,15 @@ def recap_ledger(snapshot: Snapshot, facts: MatchFacts, tally: PlayerTally, feat
                                         label=record.label, text=claim.text, refs=refs))
     earlier.sort(key=lambda c: (c.minute, c.job_id))
     return ledger, earlier
+
+
+def _goal_margin_past(item: LedgerItem, goals: Sequence[GoalAt], facts: MatchFacts) -> Optional[str]:
+    """An earlier goal's scoreline in the past tense, from the score its own goal made; None if it is not found."""
+    goal = next((g for g in goals if g.team_id == item.team_id and abs(g.clock_s - item.window_start_s) < 1e-6), None)
+    team = facts.team(item.team_id)
+    if goal is None or team is None:
+        return None
+    return goal_margin_say(item.value, team.name, goal.score, past=True)
 
 
 def ledger_has_player(ledger: Ledger, player_id: str) -> bool:

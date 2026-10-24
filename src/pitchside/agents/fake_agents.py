@@ -141,10 +141,12 @@ def explainer(transcript: str) -> str:
     label = _label(transcript)
     score = re.search(r"\| score: (.+)$", _field(transcript, "MOMENT") or "")
     claims = []
-    if label in ("half_time", "full_time") and score and items:
-        period = "Half-time" if label == "half_time" else "Full-time"
-        claims.append({"text": f"{period}: {score.group(1)}.", "team_id": None, "refs": [next(iter(items))],
-                       "numbers": []})
+    recap_score = next((i for i in items.values() if i.metric == "recap_score"), None)
+    if label in ("half_time", "full_time") and recap_score is not None:
+        # the score at the whistle, in its own words (decision 25)
+        claims.append({"text": recap_score.say[:1].upper() + recap_score.say[1:] + ".", "team_id": recap_score.team,
+                       "refs": [recap_score.ref], "numbers": []})
+        focus = [r for r in focus if r != recap_score.ref]
     margin = next((i.ref for i in items.values() if i.metric == "goal_margin"), None)
     outcome = next((i for i in items.values() if i.metric == "shot_outcome"), None)
     for ref in [r for r in focus if r in players][:1]:

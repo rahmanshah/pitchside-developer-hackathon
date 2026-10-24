@@ -2112,8 +2112,8 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Half-time: it is 0-1 to Ironvale Athletic.",
-     "team_id": null,
+     "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
+     "team_id": "irv",
      "refs": [
       "c1"
      ],
@@ -2133,17 +2133,17 @@
      "text": "Aurora Rovers: 59% possession, Aurora Rovers: 3 shots.",
      "team_id": "aur",
      "refs": [
-      "c1",
-      "c2"
+      "c2",
+      "c3"
      ],
      "numbers": [
       {
        "value": 59.0,
-       "ref": "c1"
+       "ref": "c2"
       },
       {
        "value": 3.0,
-       "ref": "c2"
+       "ref": "c3"
       }
      ]
     }
@@ -2153,56 +2153,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Half-time: it is 0-1 to Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
+     "text": "It is 0-1 at half-time: Ironvale Athletic lead. Rafa Yaldiran scored for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Half-time: it is 0-1 to Ironvale Athletic.",
+     "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Half-time: it is 0-1 to Ironvale Athletic.",
+     "text": "For Alden Brannholt's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Half-time: it is 0-1 to Ironvale Athletic.",
+     "text": "For Rafa Yaldiran's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Half-time: it is 0-1 to Ironvale Athletic. Rafa Yaldiran scored for Ironvale Athletic.",
+     "text": "[es · offline] It is 0-1 at half-time: Ironvale Athletic lead. Rafa Yaldiran scored for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Half-time: it is 0-1 to Ironvale Athletic.",
+     "text": "[es · offline] It is 0-1 at half-time: Ironvale Athletic lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Half-time: it is 0-1 to Ironvale Athletic.",
+     "text": "[es · offline] For Alden Brannholt's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Half-time: it is 0-1 to Ironvale Athletic.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
      "source": "model",
      "reason": null
     }
@@ -2212,6 +2212,20 @@
    "items": [
     {
      "ref": "c1",
+     "metric": "recap_score",
+     "team_id": "irv",
+     "player_id": null,
+     "value": -1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "it is 0-1 at half-time: Ironvale Athletic lead",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -2225,7 +2239,7 @@
      "origin": null
     },
     {
-     "ref": "c2",
+     "ref": "c3",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -2239,7 +2253,7 @@
      "origin": null
     },
     {
-     "ref": "c3",
+     "ref": "c4",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -2253,7 +2267,7 @@
      "origin": null
     },
     {
-     "ref": "c4",
+     "ref": "c5",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -2267,7 +2281,7 @@
      "origin": null
     },
     {
-     "ref": "c5",
+     "ref": "c6",
      "metric": "possession_total",
      "team_id": "irv",
      "player_id": null,
@@ -2281,7 +2295,7 @@
      "origin": null
     },
     {
-     "ref": "c6",
+     "ref": "c7",
      "metric": "shots_total",
      "team_id": "irv",
      "player_id": null,
@@ -2295,7 +2309,7 @@
      "origin": null
     },
     {
-     "ref": "c7",
+     "ref": "c8",
      "metric": "xg_total",
      "team_id": "irv",
      "player_id": null,
@@ -2309,7 +2323,7 @@
      "origin": null
     },
     {
-     "ref": "c8",
+     "ref": "c9",
      "metric": "pass_completion_total",
      "team_id": "irv",
      "player_id": null,
@@ -2323,7 +2337,7 @@
      "origin": null
     },
     {
-     "ref": "c9",
+     "ref": "c10",
      "metric": "player_goals",
      "team_id": "irv",
      "player_id": "irv_09",
@@ -2337,7 +2351,7 @@
      "origin": null
     },
     {
-     "ref": "c10",
+     "ref": "c11",
      "metric": "player_shots",
      "team_id": "irv",
      "player_id": "irv_09",
@@ -2351,7 +2365,7 @@
      "origin": null
     },
     {
-     "ref": "c11",
+     "ref": "c12",
      "metric": "player_xg",
      "team_id": "irv",
      "player_id": "irv_09",
@@ -2365,7 +2379,7 @@
      "origin": null
     },
     {
-     "ref": "c12",
+     "ref": "c13",
      "metric": "player_goals",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -2379,7 +2393,7 @@
      "origin": null
     },
     {
-     "ref": "c13",
+     "ref": "c14",
      "metric": "player_shots",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -2393,7 +2407,7 @@
      "origin": null
     },
     {
-     "ref": "c14",
+     "ref": "c15",
      "metric": "player_xg",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -2407,7 +2421,7 @@
      "origin": null
     },
     {
-     "ref": "c15",
+     "ref": "c16",
      "metric": "goal_margin",
      "team_id": "irv",
      "player_id": null,
@@ -2416,12 +2430,12 @@
      "window_start_s": 1588.9,
      "window_end_s": 1588.9,
      "baseline": 0.0,
-     "say": "it is 0-1: Ironvale Athletic open the scoring",
+     "say": "made it 0-1: Ironvale Athletic opened the scoring",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "shot_xg",
      "team_id": "irv",
      "player_id": null,
@@ -2435,7 +2449,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "shot_distance",
      "team_id": "irv",
      "player_id": null,
@@ -2445,20 +2459,6 @@
      "window_end_s": 1588.9,
      "baseline": null,
      "say": "from 15 m",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:0"
-    },
-    {
-     "ref": "c18",
-     "metric": "match_xg",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 0.232,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": 0.584,
-     "say": "0.23 xG in the match",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:0"
     },
@@ -2506,62 +2506,6 @@
     },
     {
      "ref": "c22",
-     "metric": "match_xg",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 0.525,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 492.5,
-     "baseline": 0.0,
-     "say": "0.53 xG in the match",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:big_chance:0"
-    },
-    {
-     "ref": "c23",
-     "metric": "chaos_index",
-     "team_id": null,
-     "player_id": null,
-     "value": 0.793,
-     "unit": "index",
-     "window_start_s": 0.0,
-     "window_end_s": 395.9,
-     "baseline": null,
-     "say": "chaos index +0.79 in this spell",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:chaos_spell:0"
-    },
-    {
-     "ref": "c24",
-     "metric": "turnovers_per_min",
-     "team_id": null,
-     "player_id": null,
-     "value": 2.728,
-     "unit": "per_min",
-     "window_start_s": 0.0,
-     "window_end_s": 395.9,
-     "baseline": 1.8,
-     "say": "2.7 turnovers per minute across both teams in this spell",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:chaos_spell:0"
-    },
-    {
-     "ref": "c25",
-     "metric": "pass_completion",
-     "team_id": null,
-     "player_id": null,
-     "value": 70.7,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 395.9,
-     "baseline": 84.0,
-     "say": "71% pass completion for both teams combined in this spell",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:chaos_spell:0"
-    },
-    {
-     "ref": "c26",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -2575,7 +2519,7 @@
      "origin": null
     },
     {
-     "ref": "c27",
+     "ref": "c23",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -2589,7 +2533,7 @@
      "origin": null
     },
     {
-     "ref": "c28",
+     "ref": "c24",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -2603,7 +2547,7 @@
      "origin": null
     },
     {
-     "ref": "c29",
+     "ref": "c25",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -2617,7 +2561,7 @@
      "origin": null
     },
     {
-     "ref": "c30",
+     "ref": "c26",
      "metric": "possession_total",
      "team_id": "irv",
      "player_id": null,
@@ -2631,7 +2575,7 @@
      "origin": null
     },
     {
-     "ref": "c31",
+     "ref": "c27",
      "metric": "shots_total",
      "team_id": "irv",
      "player_id": null,
@@ -2645,7 +2589,7 @@
      "origin": null
     },
     {
-     "ref": "c32",
+     "ref": "c28",
      "metric": "xg_total",
      "team_id": "irv",
      "player_id": null,
@@ -2659,7 +2603,7 @@
      "origin": null
     },
     {
-     "ref": "c33",
+     "ref": "c29",
      "metric": "pass_completion_total",
      "team_id": "irv",
      "player_id": null,
@@ -2699,8 +2643,8 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Half-time: it is 0-1 to Ironvale Athletic.",
-      "team_id": null,
+      "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
+      "team_id": "irv",
       "refs": [
        "c1"
       ],
@@ -2720,17 +2664,17 @@
       "text": "Aurora Rovers: 59% possession, Aurora Rovers: 3 shots.",
       "team_id": "aur",
       "refs": [
-       "c1",
-       "c2"
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
         "value": 59.0,
-        "ref": "c1"
+        "ref": "c2"
        },
        {
         "value": 3.0,
-        "ref": "c2"
+        "ref": "c3"
        }
       ]
      }
@@ -10174,8 +10118,8 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Full-time: it is 2-1 to Aurora Rovers.",
-     "team_id": null,
+     "text": "It ends 2-1: Aurora Rovers win.",
+     "team_id": "aur",
      "refs": [
       "c1"
      ],
@@ -10195,17 +10139,17 @@
      "text": "Aurora Rovers: 58% possession, Aurora Rovers: 24 shots.",
      "team_id": "aur",
      "refs": [
-      "c1",
-      "c2"
+      "c2",
+      "c3"
      ],
      "numbers": [
       {
        "value": 58.0,
-       "ref": "c1"
+       "ref": "c2"
       },
       {
        "value": 24.0,
-       "ref": "c2"
+       "ref": "c3"
       }
      ]
     }
@@ -10215,56 +10159,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Full-time: it is 2-1 to Aurora Rovers. Rafa Yaldiran scored for Ironvale Athletic.",
+     "text": "It ends 2-1: Aurora Rovers win. Rafa Yaldiran scored for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Full-time: it is 2-1 to Aurora Rovers.",
+     "text": "It ends 2-1: Aurora Rovers win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Full-time: it is 2-1 to Aurora Rovers.",
+     "text": "For Alden Brannholt's fans: It ends 2-1: Aurora Rovers win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Full-time: it is 2-1 to Aurora Rovers.",
+     "text": "For Rafa Yaldiran's fans: It ends 2-1: Aurora Rovers win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Full-time: it is 2-1 to Aurora Rovers. Rafa Yaldiran scored for Ironvale Athletic.",
+     "text": "[es · offline] It ends 2-1: Aurora Rovers win. Rafa Yaldiran scored for Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Full-time: it is 2-1 to Aurora Rovers.",
+     "text": "[es · offline] It ends 2-1: Aurora Rovers win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Full-time: it is 2-1 to Aurora Rovers.",
+     "text": "[es · offline] For Alden Brannholt's fans: It ends 2-1: Aurora Rovers win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Full-time: it is 2-1 to Aurora Rovers.",
+     "text": "[es · offline] For Rafa Yaldiran's fans: It ends 2-1: Aurora Rovers win.",
      "source": "model",
      "reason": null
     }
@@ -10274,6 +10218,20 @@
    "items": [
     {
      "ref": "c1",
+     "metric": "recap_score",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "it ends 2-1: Aurora Rovers win",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -10287,7 +10245,7 @@
      "origin": null
     },
     {
-     "ref": "c2",
+     "ref": "c3",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -10301,7 +10259,7 @@
      "origin": null
     },
     {
-     "ref": "c3",
+     "ref": "c4",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -10315,7 +10273,7 @@
      "origin": null
     },
     {
-     "ref": "c4",
+     "ref": "c5",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -10329,7 +10287,7 @@
      "origin": null
     },
     {
-     "ref": "c5",
+     "ref": "c6",
      "metric": "possession_total",
      "team_id": "irv",
      "player_id": null,
@@ -10343,7 +10301,7 @@
      "origin": null
     },
     {
-     "ref": "c6",
+     "ref": "c7",
      "metric": "shots_total",
      "team_id": "irv",
      "player_id": null,
@@ -10357,7 +10315,7 @@
      "origin": null
     },
     {
-     "ref": "c7",
+     "ref": "c8",
      "metric": "xg_total",
      "team_id": "irv",
      "player_id": null,
@@ -10371,7 +10329,7 @@
      "origin": null
     },
     {
-     "ref": "c8",
+     "ref": "c9",
      "metric": "pass_completion_total",
      "team_id": "irv",
      "player_id": null,
@@ -10385,7 +10343,7 @@
      "origin": null
     },
     {
-     "ref": "c9",
+     "ref": "c10",
      "metric": "player_goals",
      "team_id": "irv",
      "player_id": "irv_09",
@@ -10399,7 +10357,7 @@
      "origin": null
     },
     {
-     "ref": "c10",
+     "ref": "c11",
      "metric": "player_shots",
      "team_id": "irv",
      "player_id": "irv_09",
@@ -10413,7 +10371,7 @@
      "origin": null
     },
     {
-     "ref": "c11",
+     "ref": "c12",
      "metric": "player_xg",
      "team_id": "irv",
      "player_id": "irv_09",
@@ -10427,7 +10385,7 @@
      "origin": null
     },
     {
-     "ref": "c12",
+     "ref": "c13",
      "metric": "player_goals",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -10441,7 +10399,7 @@
      "origin": null
     },
     {
-     "ref": "c13",
+     "ref": "c14",
      "metric": "player_shots",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -10455,7 +10413,7 @@
      "origin": null
     },
     {
-     "ref": "c14",
+     "ref": "c15",
      "metric": "player_xg",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -10469,7 +10427,7 @@
      "origin": null
     },
     {
-     "ref": "c15",
+     "ref": "c16",
      "metric": "goal_margin",
      "team_id": "aur",
      "player_id": null,
@@ -10478,12 +10436,12 @@
      "window_start_s": 5197.9,
      "window_end_s": 5197.9,
      "baseline": 0.0,
-     "say": "it is 2-1: Aurora Rovers go ahead",
+     "say": "made it 2-1: Aurora Rovers went ahead",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10497,7 +10455,7 @@
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10511,35 +10469,7 @@
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c18",
-     "metric": "match_xg",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 6.452,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": 0.863,
-     "say": "6.45 xG in the match",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:2"
-    },
-    {
      "ref": "c19",
-     "metric": "possession_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 59.2,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 59% possession",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:2"
-    },
-    {
-     "ref": "c20",
      "metric": "goal_margin",
      "team_id": "aur",
      "player_id": null,
@@ -10548,12 +10478,12 @@
      "window_start_s": 4285.4,
      "window_end_s": 4285.4,
      "baseline": -1.0,
-     "say": "it is 1-1: Aurora Rovers equalise",
+     "say": "made it 1-1: Aurora Rovers equalised",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c21",
+     "ref": "c20",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10567,7 +10497,7 @@
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c22",
+     "ref": "c21",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10581,35 +10511,7 @@
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c23",
-     "metric": "match_xg",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 4.662,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": 0.833,
-     "say": "4.66 xG in the match",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:1"
-    },
-    {
-     "ref": "c24",
-     "metric": "possession_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 59.7,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Aurora Rovers: 60% possession",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:1"
-    },
-    {
-     "ref": "c25",
+     "ref": "c22",
      "metric": "goal_margin",
      "team_id": "irv",
      "player_id": null,
@@ -10618,12 +10520,12 @@
      "window_start_s": 1588.9,
      "window_end_s": 1588.9,
      "baseline": 0.0,
-     "say": "it is 0-1: Ironvale Athletic open the scoring",
+     "say": "made it 0-1: Ironvale Athletic opened the scoring",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c26",
+     "ref": "c23",
      "metric": "shot_xg",
      "team_id": "irv",
      "player_id": null,
@@ -10637,7 +10539,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c27",
+     "ref": "c24",
      "metric": "shot_distance",
      "team_id": "irv",
      "player_id": null,
@@ -10651,63 +10553,7 @@
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
-     "ref": "c28",
-     "metric": "match_xg",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 0.232,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": 0.584,
-     "say": "0.23 xG in the match",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:0"
-    },
-    {
-     "ref": "c29",
-     "metric": "chaos_index",
-     "team_id": null,
-     "player_id": null,
-     "value": 0.777,
-     "unit": "index",
-     "window_start_s": 4539.2,
-     "window_end_s": 5019.2,
-     "baseline": null,
-     "say": "chaos index +0.78 in this spell",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:chaos_spell:2"
-    },
-    {
-     "ref": "c30",
-     "metric": "turnovers_per_min",
-     "team_id": null,
-     "player_id": null,
-     "value": 3.5,
-     "unit": "per_min",
-     "window_start_s": 4539.2,
-     "window_end_s": 5019.2,
-     "baseline": 1.8,
-     "say": "3.5 turnovers per minute across both teams in this spell",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:chaos_spell:2"
-    },
-    {
-     "ref": "c31",
-     "metric": "pass_completion",
-     "team_id": null,
-     "player_id": null,
-     "value": 77.9,
-     "unit": "pct",
-     "window_start_s": 4539.2,
-     "window_end_s": 5019.2,
-     "baseline": 84.0,
-     "say": "78% pass completion for both teams combined in this spell",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:chaos_spell:2"
-    },
-    {
-     "ref": "c32",
+     "ref": "c25",
      "metric": "shot_outcome",
      "team_id": "aur",
      "player_id": null,
@@ -10721,7 +10567,119 @@
      "origin": "aur_irv_comeback_0007:big_chance:10"
     },
     {
+     "ref": "c26",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.342,
+     "unit": "xg",
+     "window_start_s": 4961.7,
+     "window_end_s": 4961.7,
+     "baseline": null,
+     "say": "a 0.34 xG chance",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:10"
+    },
+    {
+     "ref": "c27",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 5.7,
+     "unit": "m",
+     "window_start_s": 4961.7,
+     "window_end_s": 4961.7,
+     "baseline": null,
+     "say": "from 6 m",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:10"
+    },
+    {
+     "ref": "c28",
+     "metric": "shot_outcome",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4497.4,
+     "window_end_s": 4497.4,
+     "baseline": null,
+     "say": "the shot was blocked",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:9"
+    },
+    {
+     "ref": "c29",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.355,
+     "unit": "xg",
+     "window_start_s": 4497.4,
+     "window_end_s": 4497.4,
+     "baseline": null,
+     "say": "a 0.35 xG chance",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:9"
+    },
+    {
+     "ref": "c30",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 6.5,
+     "unit": "m",
+     "window_start_s": 4497.4,
+     "window_end_s": 4497.4,
+     "baseline": null,
+     "say": "from 6 m",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:9"
+    },
+    {
+     "ref": "c31",
+     "metric": "shot_outcome",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4023.5,
+     "window_end_s": 4023.5,
+     "baseline": null,
+     "say": "the shot was blocked",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:8"
+    },
+    {
+     "ref": "c32",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.385,
+     "unit": "xg",
+     "window_start_s": 4023.5,
+     "window_end_s": 4023.5,
+     "baseline": null,
+     "say": "a 0.39 xG chance",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:8"
+    },
+    {
      "ref": "c33",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 6.3,
+     "unit": "m",
+     "window_start_s": 4023.5,
+     "window_end_s": 4023.5,
+     "baseline": null,
+     "say": "from 6 m",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:8"
+    },
+    {
+     "ref": "c34",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -10735,7 +10693,7 @@
      "origin": null
     },
     {
-     "ref": "c34",
+     "ref": "c35",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -10749,7 +10707,7 @@
      "origin": null
     },
     {
-     "ref": "c35",
+     "ref": "c36",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -10763,7 +10721,7 @@
      "origin": null
     },
     {
-     "ref": "c36",
+     "ref": "c37",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -10777,7 +10735,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c38",
      "metric": "possession_total",
      "team_id": "irv",
      "player_id": null,
@@ -10791,7 +10749,7 @@
      "origin": null
     },
     {
-     "ref": "c38",
+     "ref": "c39",
      "metric": "shots_total",
      "team_id": "irv",
      "player_id": null,
@@ -10805,7 +10763,7 @@
      "origin": null
     },
     {
-     "ref": "c39",
+     "ref": "c40",
      "metric": "xg_total",
      "team_id": "irv",
      "player_id": null,
@@ -10819,7 +10777,7 @@
      "origin": null
     },
     {
-     "ref": "c40",
+     "ref": "c41",
      "metric": "pass_completion_total",
      "team_id": "irv",
      "player_id": null,
@@ -10859,8 +10817,8 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Full-time: it is 2-1 to Aurora Rovers.",
-      "team_id": null,
+      "text": "It ends 2-1: Aurora Rovers win.",
+      "team_id": "aur",
       "refs": [
        "c1"
       ],
@@ -10880,17 +10838,17 @@
       "text": "Aurora Rovers: 58% possession, Aurora Rovers: 24 shots.",
       "team_id": "aur",
       "refs": [
-       "c1",
-       "c2"
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
         "value": 58.0,
-        "ref": "c1"
+        "ref": "c2"
        },
        {
         "value": 24.0,
-        "ref": "c2"
+        "ref": "c3"
        }
       ]
      }

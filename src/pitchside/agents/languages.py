@@ -28,6 +28,9 @@ class Language:
     away_words: tuple[str, ...]
     # Template phrases; see ``templates.py`` for the keys and their placeholders.
     phrases: dict[str, str] = field(default_factory=dict)
+    # Regexes whose two groups are a score given as the current one ("it is 1-0"); in a recap it must be the score
+    # at the whistle, an earlier goal "made it 1-0" (decision 25).
+    present_score_patterns: tuple[str, ...] = ()
 
     def possessive(self, name: str) -> str:
         """English possessive ("Aurora Rovers'", "Westmere Town's"); other languages do not use it."""
@@ -162,6 +165,17 @@ ENGLISH = Language(
         # The score as a clause, for the MOMENT line: "score Aurora Rovers 0-0 Ironvale Athletic" was pasted.
         "score.clause": "it is {score}",
         "score.clause_lead": "it is {score} to {team}",
+        # A recap's own score, at the whistle; an earlier goal is told in the past tense (decision 25).
+        "recap_score.half_time": "it is {score} at half-time",
+        "recap_score.half_time.lead": "it is {score} at half-time: {team} lead",
+        "recap_score.full_time": "it ends {score}: a draw",
+        "recap_score.full_time.lead": "it ends {score}: {team} win",
+        "goal_margin.past": "made it {score}: {effect}",
+        "goal_effect_past.opener": "{team} opened the scoring",
+        "goal_effect_past.equaliser": "{team} equalised",
+        "goal_effect_past.ahead": "{team} went ahead",
+        "goal_effect_past.extend": "{team} extended their lead",
+        "goal_effect_past.back": "{team} pulled one back",
         "fact.possession_total": "{v} possession",
         "fact.shots_total": "{v} shots",
         "fact.shots_total.one": "{v} shot",
@@ -186,6 +200,7 @@ ENGLISH = Language(
         "combined.pass_completion": "{v} pass completion for both teams combined {window}",
         "combined.mean_spell": "possessions lasting {v} on average across both teams {window}",
     },
+    present_score_patterns=(r"\b(?:it is|it's|it stands at|now)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})(?!\d)",),
 )
 
 SPANISH = Language(
@@ -297,6 +312,16 @@ SPANISH = Language(
         "shot_outcome.off_target": "el tiro se fue fuera",
         "score.clause": "va {score}",
         "score.clause_lead": "va {score} a favor de {team}",
+        "recap_score.half_time": "va {score} al descanso",
+        "recap_score.half_time.lead": "va {score} al descanso: {team} gana",
+        "recap_score.full_time": "termina {score}: empate",
+        "recap_score.full_time.lead": "termina {score}: gana {team}",
+        "goal_margin.past": "puso el {score}: {effect}",
+        "goal_effect_past.opener": "{team} abrió el marcador",
+        "goal_effect_past.equaliser": "{team} empató",
+        "goal_effect_past.ahead": "{team} se puso por delante",
+        "goal_effect_past.extend": "{team} amplió su ventaja",
+        "goal_effect_past.back": "{team} recortó distancias",
         "fact.possession_total": "{v} de posesión",
         "fact.shots_total": "{v} tiros",
         "fact.shots_total.one": "{v} tiro",
@@ -320,6 +345,7 @@ SPANISH = Language(
         "combined.pass_completion": "{v} de pases completados entre ambos equipos {window}",
         "combined.mean_spell": "posesiones de {v} de media entre ambos equipos {window}",
     },
+    present_score_patterns=(r"\b(?:va|está|ahora)\s+(\d{1,2})\s*[-–]\s*(\d{1,2})(?!\d)",),
 )
 
 LANGUAGES: dict[str, Language] = {lang.code: lang for lang in (ENGLISH, SPANISH)}

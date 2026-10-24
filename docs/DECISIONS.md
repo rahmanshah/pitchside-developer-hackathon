@@ -206,3 +206,23 @@ The brief's "between the two teams" became "across both teams": "two" is a numbe
 **Evaluation discipline:** found by reading the recorded demo bundles, not by tuning on held-out numbers; validated offline on seeds 1-40 (a plumbing check). No live evaluation was run on this change.
 
 **Rejected:** adding the outcome to the detector's evidence (it would change `evidence_lookup` results and need a new server image for one fact the client already has); a numeric outcome the models could quote.
+
+## 25. A recap says what is true at the whistle (2026-10-24)
+
+**Decision:** (1) A recap repeats an earlier verified claim only if every number it cites is fixed at its own moment: a shot's xG, distance and outcome, the goal's margin, the time since gaining possession, passes in the move, metres gained, how the possession began (`POINT_METRICS`). Claims citing window figures (field tilt, possession, momentum, pressures, tackles, a spell's shots and xG, the chaos figures, the pressed club's pass completion), totals so far or player tallies are left out of EARLIER and their numbers are not copied. The recap's own totals and player numbers are computed at the whistle, as before.
+
+(2) A copied goal margin is retold in the past tense: "made it 1-0: Harbourton City opened the scoring" (Spanish "puso el 1-0: …").
+
+(3) Each recap ledger starts with a `recap_score` item, the score at the whistle as a word fact: "it is 1-0 at half-time: Harbourton City lead", "it is 1-1 at half-time", "it ends 2-1: Harbourton City win", "it ends 2-2: a draw".
+
+(4) The checker: in a recap, a score given as the current one ("it is 1-0", "it's", "now 1-0"; Spanish "va", "está", "ahora") must be the score at the whistle, else `score_mismatch` with the feedback "at the whistle it is 1-1; an earlier goal \"made it 1-0\"". Claims and persona texts alike; other jobs are unchanged. The explainer, personalizer and verifier prompts say the same, and the personalizer is told not to narrate an earlier goal as if it just happened ("puts … ahead"); that last part is a prompt rule only.
+
+**Why:** the check of the three recorded demo bundles: the siege half-time recap gave the 19'-24' siege window's 88% field tilt and 72% possession as the half's (first-half possession was 50.7%); the end-to-end half-time recap said "Xarno Uusitalo has 2 shots and 0.37 xG", his numbers at 35' (3 and 1.03 at the break); and the 301-305 evaluation found 3 of 46 recap claims giving an earlier goal's "it is 1-0" as the current score.
+
+**Deployment:** client-side only (ledger, checker, prompts); the deployed MCP server image can stay.
+
+**Tests:** the three demo matches replayed offline (same seeds, storylines and clubs, so the same events): recap ledgers hold only point facts from earlier claims, player numbers end at the whistle, goal margins are told in the past, and each recap's own score is right; the siege half-time has no spell figures; the end-to-end half-time gives the scorer 3 shots and 1.03 xG. The checker rule for claims and persona texts in both languages, its feedback, and that it does not apply outside recaps; an explainer draft with a stale "it is 0-0" is sent back and fixed.
+
+**Evaluation discipline:** found by reading the recorded demo bundles and the 301-305 evaluation; validated offline on seeds 1-40 (a plumbing check). No live evaluation was run on this change.
+
+**Rejected:** recomputing an earlier claim's window figures at the whistle (a spell's numbers have no meaning at the whistle; the recap's own totals say what is true then); a deterministic check for "puts … ahead" (tone, not a number or a score).

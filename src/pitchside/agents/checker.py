@@ -8,7 +8,8 @@ A claim passes only if
   for 71.4, "0.4" for 0.39, "6 minutes" for 360 seconds, but "0" may not stand for 0.39;
 * each number is attributed to the right club: the club (or player) named nearest to it in its sentence must be
   the club the number belongs to (``team_mismatch``), and the claim's ``team_id`` must be one the evidence is about;
-* every score written ("2-1") is a score the match actually had by then (``score_mismatch``);
+* every score written ("2-1") is a score the match actually had by then (``score_mismatch``), and in a recap a
+  score given as the current one ("it is 1-0", "now 1-0") is the score at the whistle;
 * every match minute written ("71st minute", "minute 71", "71'") or clock time ("70:12", "81:01-89:01") lies in
   the time window of its evidence or of the job (``window_mismatch``); a clock time is never read as numbers or a
   score, and "71 minutes" counts as the job's own minute when it is that minute (otherwise it is a duration);
@@ -54,12 +55,13 @@ class CheckContext:
     window_end_s: float
     extra_players: frozenset[str] = frozenset()  # player ids persona texts may name (featured players)
     minute: Optional[int] = None  # the job's own match minute: "64 minutes" may name it, not only "64th minute"
+    recap: bool = False  # a half-time or full-time recap: a score given as current must be the one at the whistle
 
     @classmethod
     def for_job(cls, job: Job) -> "CheckContext":
         return cls(ledger=job.ledger, facts=job.facts, score=job.score, goals=job.goals,
                    window_start_s=job.window_start_s, window_end_s=job.window_end_s,
-                   extra_players=frozenset(job.featured), minute=job.minute)
+                   extra_players=frozenset(job.featured), minute=job.minute, recap=job.kind == "recap")
 
     def own_minute(self, token: "_Token") -> bool:
         """A whole number followed by a minute word that equals the moment's own minute: the clock, not a count."""
@@ -274,6 +276,12 @@ def _common_checks(text: str, scanned: _Scan, ctx: CheckContext, lang: Language,
     for a, b, _ in scanned.scores:
         if (a, b) not in valid_scores and (b, a) not in valid_scores:
             reasons.append(Reason(code="score_mismatch", detail=f"{a}-{b} is not a score this match has had"))
+        elif ctx.recap and _given_as_current(text, a, b, lang) and {(a, b), (b, a)}.isdisjoint(
+                {(ctx.score.home, ctx.score.away)}):
+            now = f"{ctx.score.home}-{ctx.score.away}"
+            reasons.append(Reason(code="score_mismatch",
+                                  detail=f"{a}-{b} is given as the score now, but at the whistle it is {now}; "
+                                         f"an earlier goal \"made it {a}-{b}\""))
     for minute, _ in scanned.minutes:
         if not _minute_ok(minute, windows):
             span = ", ".join(f"{int(s // 60) + 1}'-{int(math.ceil(e / 60))}'" for s, e in windows)
@@ -285,6 +293,15 @@ def _common_checks(text: str, scanned: _Scan, ctx: CheckContext, lang: Language,
             reasons.append(Reason(code="unreferenced_player",
                                   detail=f"{name} is named but is not a player in the cited evidence"))
     return reasons
+
+
+def _given_as_current(text: str, a: int, b: int, lang: Language) -> bool:
+    """True if the text gives the score a-b as the current one ("it is 1-0", "now 1-0")."""
+    for pattern in lang.present_score_patterns:
+        for m in re.finditer(pattern, text, re.IGNORECASE):
+            if (int(m.group(1)), int(m.group(2))) == (a, b):
+                return True
+    return False
 
 
 def check_claim(claim: Claim, ctx: CheckContext, attempt: int = 1, lang: Language = ENGLISH) -> ClaimCheck:

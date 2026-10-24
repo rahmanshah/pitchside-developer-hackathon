@@ -28,6 +28,9 @@ Rules:
   says so.
 - The evidence covers this match only: never claim a club, season or career record ("first goal for the club",
   "debut", "this season"). "This is Kofi Mendes's first goal in this match" is what a tally supports.
+- In a recap, the `recap_score` id is the score at the whistle ("it is 1-0 at half-time: Aurora Rovers lead"):
+  only that score is "it is". An earlier goal "made it 1-0", as its say puts it. Totals and player numbers are the
+  ones listed for the whistle; earlier moments' numbers are not current.
 - Only name players listed under PLAYERS, and cite their p* id when you do.
 - No speculation about the future, no causes the evidence does not show, no superlatives like "best ever".
 - `headline`: at most 8 words, no numbers.
@@ -51,10 +54,12 @@ FEEDBACK (attempt 2): claim 1: number_mismatch: "78%" does not match e1 (field_t
 Reply: {"headline": "Ironvale camp in Aurora's half", "claims": [{"text": "Ironvale Athletic have 74% field tilt, while Aurora Rovers have 2 passes into the final third.", "team_id": "irv", "refs": ["e1", "e6"], "numbers": [{"value": 74, "ref": "e1"}, {"value": 2, "ref": "e6"}]}]}
 
 Example 3 (recap)
-MOMENT: recap half_time | minute 46 | score: it is 0-1 to Ironvale Athletic
+MOMENT: recap half_time | minute 46 | score: it is 1-1
 EVIDENCE:
-c3 | shots_total | aur | 6 count | say "Aurora Rovers: 6 shots"
-c7 | shots_total | irv | 3 count | say "Ironvale Athletic: 3 shots"
+c1 | recap_score | both clubs | score | say "it is 1-1 at half-time"
+c4 | shots_total | aur | 6 count | say "Aurora Rovers: 6 shots"
+c8 | shots_total | irv | 3 count | say "Ironvale Athletic: 3 shots"
 c9 | shot_xg | irv | 0.05 xg | say "a 0.05 xG chance"
+c10 | goal_margin | irv | 1 count | say "made it 0-1: Ironvale Athletic opened the scoring"
 p2 | Hugo Lind | irv | scorer
-Reply: {"headline": "Ironvale lead despite fewer shots", "claims": [{"text": "Ironvale Athletic lead 0-1 at the break through Hugo Lind's 0.05 xG chance.", "team_id": "irv", "refs": ["p2", "c9"], "numbers": [{"value": 0.05, "ref": "c9"}]}, {"text": "Aurora Rovers had 6 shots, Ironvale Athletic 3.", "team_id": null, "refs": ["c3", "c7"], "numbers": [{"value": 6, "ref": "c3"}, {"value": 3, "ref": "c7"}]}]}
+Reply: {"headline": "Level at the break", "claims": [{"text": "It is 1-1 at half-time.", "team_id": null, "refs": ["c1"], "numbers": []}, {"text": "Hugo Lind's 0.05 xG chance made it 0-1: Ironvale Athletic opened the scoring.", "team_id": "irv", "refs": ["p2", "c9", "c10"], "numbers": [{"value": 0.05, "ref": "c9"}]}, {"text": "Aurora Rovers had 6 shots, Ironvale Athletic 3.", "team_id": null, "refs": ["c4", "c8"], "numbers": [{"value": 6, "ref": "c4"}, {"value": 3, "ref": "c8"}]}]}

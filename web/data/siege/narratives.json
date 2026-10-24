@@ -3241,8 +3241,8 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Half-time: it is 1-0 to Harbourton City.",
-     "team_id": null,
+     "text": "It is 1-0 at half-time: Harbourton City lead.",
+     "team_id": "har",
      "refs": [
       "c1"
      ],
@@ -3262,17 +3262,17 @@
      "text": "Harbourton City: 51% possession, Harbourton City: 8 shots.",
      "team_id": "har",
      "refs": [
-      "c1",
-      "c2"
+      "c2",
+      "c3"
      ],
      "numbers": [
       {
        "value": 51.0,
-       "ref": "c1"
+       "ref": "c2"
       },
       {
        "value": 8.0,
-       "ref": "c2"
+       "ref": "c3"
       }
      ]
     }
@@ -3282,56 +3282,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Half-time: it is 1-0 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
+     "text": "It is 1-0 at half-time: Harbourton City lead. Hugo Vidrelle scored for Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Half-time: it is 1-0 to Harbourton City.",
+     "text": "It is 1-0 at half-time: Harbourton City lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Half-time: it is 1-0 to Harbourton City.",
+     "text": "For Hugo Vidrelle's fans: It is 1-0 at half-time: Harbourton City lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Half-time: it is 1-0 to Harbourton City.",
+     "text": "For Xarno Uusitalo's fans: It is 1-0 at half-time: Harbourton City lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Half-time: it is 1-0 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
+     "text": "[es · offline] It is 1-0 at half-time: Harbourton City lead. Hugo Vidrelle scored for Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Half-time: it is 1-0 to Harbourton City.",
+     "text": "[es · offline] It is 1-0 at half-time: Harbourton City lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Half-time: it is 1-0 to Harbourton City.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: It is 1-0 at half-time: Harbourton City lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: it is 1-0 to Harbourton City.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: It is 1-0 at half-time: Harbourton City lead.",
      "source": "model",
      "reason": null
     }
@@ -3341,6 +3341,20 @@
    "items": [
     {
      "ref": "c1",
+     "metric": "recap_score",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "it is 1-0 at half-time: Harbourton City lead",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -3354,7 +3368,7 @@
      "origin": null
     },
     {
-     "ref": "c2",
+     "ref": "c3",
      "metric": "shots_total",
      "team_id": "har",
      "player_id": null,
@@ -3368,7 +3382,7 @@
      "origin": null
     },
     {
-     "ref": "c3",
+     "ref": "c4",
      "metric": "xg_total",
      "team_id": "har",
      "player_id": null,
@@ -3382,7 +3396,7 @@
      "origin": null
     },
     {
-     "ref": "c4",
+     "ref": "c5",
      "metric": "pass_completion_total",
      "team_id": "har",
      "player_id": null,
@@ -3396,7 +3410,7 @@
      "origin": null
     },
     {
-     "ref": "c5",
+     "ref": "c6",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -3410,7 +3424,7 @@
      "origin": null
     },
     {
-     "ref": "c6",
+     "ref": "c7",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -3424,7 +3438,7 @@
      "origin": null
     },
     {
-     "ref": "c7",
+     "ref": "c8",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -3438,7 +3452,7 @@
      "origin": null
     },
     {
-     "ref": "c8",
+     "ref": "c9",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -3452,7 +3466,7 @@
      "origin": null
     },
     {
-     "ref": "c9",
+     "ref": "c10",
      "metric": "player_goals",
      "team_id": "har",
      "player_id": "har_09",
@@ -3466,7 +3480,7 @@
      "origin": null
     },
     {
-     "ref": "c10",
+     "ref": "c11",
      "metric": "player_shots",
      "team_id": "har",
      "player_id": "har_09",
@@ -3480,7 +3494,7 @@
      "origin": null
     },
     {
-     "ref": "c11",
+     "ref": "c12",
      "metric": "player_xg",
      "team_id": "har",
      "player_id": "har_09",
@@ -3494,7 +3508,7 @@
      "origin": null
     },
     {
-     "ref": "c12",
+     "ref": "c13",
      "metric": "player_goals",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -3508,7 +3522,7 @@
      "origin": null
     },
     {
-     "ref": "c13",
+     "ref": "c14",
      "metric": "player_shots",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -3522,7 +3536,7 @@
      "origin": null
     },
     {
-     "ref": "c14",
+     "ref": "c15",
      "metric": "player_xg",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -3536,7 +3550,7 @@
      "origin": null
     },
     {
-     "ref": "c15",
+     "ref": "c16",
      "metric": "goal_margin",
      "team_id": "har",
      "player_id": null,
@@ -3545,12 +3559,12 @@
      "window_start_s": 2194.3,
      "window_end_s": 2194.3,
      "baseline": 0.0,
-     "say": "it is 1-0: Harbourton City open the scoring",
+     "say": "made it 1-0: Harbourton City opened the scoring",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3564,7 +3578,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3578,35 +3592,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c18",
-     "metric": "match_xg",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.04,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": 0.788,
-     "say": "2.04 xG in the match",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
      "ref": "c19",
-     "metric": "possession_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 49.9,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Harbourton City: 50% possession",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
-     "ref": "c20",
      "metric": "shot_outcome",
      "team_id": "har",
      "player_id": null,
@@ -3620,7 +3606,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c21",
+     "ref": "c20",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3634,7 +3620,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c22",
+     "ref": "c21",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3648,21 +3634,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c23",
-     "metric": "match_xg",
-     "team_id": "har",
-     "player_id": null,
-     "value": 1.982,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2098.9,
-     "baseline": 0.788,
-     "say": "1.98 xG in the match",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:2"
-    },
-    {
-     "ref": "c24",
+     "ref": "c22",
      "metric": "shot_outcome",
      "team_id": "har",
      "player_id": null,
@@ -3676,7 +3648,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c25",
+     "ref": "c23",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3690,7 +3662,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c26",
+     "ref": "c24",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3704,91 +3676,49 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c27",
-     "metric": "match_xg",
-     "team_id": "har",
-     "player_id": null,
-     "value": 1.27,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 1807.4,
-     "baseline": 0.788,
-     "say": "1.27 xG in the match",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:1"
-    },
-    {
-     "ref": "c28",
-     "metric": "pressures_per_min",
-     "team_id": "har",
-     "player_id": null,
-     "value": 4.667,
-     "unit": "per_min",
-     "window_start_s": 1319.6,
-     "window_end_s": 1499.6,
-     "baseline": 1.455,
-     "say": "4.7 pressures per minute",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:pressure_surge:0"
-    },
-    {
-     "ref": "c29",
-     "metric": "tackles_won",
-     "team_id": "har",
-     "player_id": null,
-     "value": 0.0,
-     "unit": "count",
-     "window_start_s": 1199.6,
-     "window_end_s": 1499.6,
-     "baseline": null,
-     "say": "0 tackles won in this spell",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:pressure_surge:0"
-    },
-    {
-     "ref": "c30",
-     "metric": "opponent_pass_completion",
+     "ref": "c25",
+     "metric": "shot_outcome",
      "team_id": "wst",
-     "player_id": null,
-     "value": 78.6,
-     "unit": "pct",
-     "window_start_s": 1199.6,
-     "window_end_s": 1499.6,
-     "baseline": 80.7,
-     "say": "Westmere Town are completing 79% of their passes",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:pressure_surge:0"
-    },
-    {
-     "ref": "c31",
-     "metric": "field_tilt",
-     "team_id": "har",
-     "player_id": null,
-     "value": 88.2,
-     "unit": "pct",
-     "window_start_s": 1137.7,
-     "window_end_s": 1437.7,
-     "baseline": 50.0,
-     "say": "88% field tilt",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:siege:0"
-    },
-    {
-     "ref": "c32",
-     "metric": "shots",
-     "team_id": "har",
      "player_id": null,
      "value": 2.0,
      "unit": "count",
-     "window_start_s": 1137.7,
-     "window_end_s": 1437.7,
-     "baseline": 0.0,
-     "say": "2 shots in this spell",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "the shot was saved",
      "source": "claim",
-     "origin": "har_wst_siege_0003:siege:0"
+     "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
-     "ref": "c33",
+     "ref": "c26",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.505,
+     "unit": "xg",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "a 0.51 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
+    },
+    {
+     "ref": "c27",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 5.1,
+     "unit": "m",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "from 5 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
+    },
+    {
+     "ref": "c28",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -3802,7 +3732,7 @@
      "origin": null
     },
     {
-     "ref": "c34",
+     "ref": "c29",
      "metric": "shots_total",
      "team_id": "har",
      "player_id": null,
@@ -3816,7 +3746,7 @@
      "origin": null
     },
     {
-     "ref": "c35",
+     "ref": "c30",
      "metric": "xg_total",
      "team_id": "har",
      "player_id": null,
@@ -3830,7 +3760,7 @@
      "origin": null
     },
     {
-     "ref": "c36",
+     "ref": "c31",
      "metric": "pass_completion_total",
      "team_id": "har",
      "player_id": null,
@@ -3844,7 +3774,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c32",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -3858,7 +3788,7 @@
      "origin": null
     },
     {
-     "ref": "c38",
+     "ref": "c33",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -3872,7 +3802,7 @@
      "origin": null
     },
     {
-     "ref": "c39",
+     "ref": "c34",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -3886,7 +3816,7 @@
      "origin": null
     },
     {
-     "ref": "c40",
+     "ref": "c35",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -3926,8 +3856,8 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Half-time: it is 1-0 to Harbourton City.",
-      "team_id": null,
+      "text": "It is 1-0 at half-time: Harbourton City lead.",
+      "team_id": "har",
       "refs": [
        "c1"
       ],
@@ -3947,17 +3877,17 @@
       "text": "Harbourton City: 51% possession, Harbourton City: 8 shots.",
       "team_id": "har",
       "refs": [
-       "c1",
-       "c2"
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
         "value": 51.0,
-        "ref": "c1"
+        "ref": "c2"
        },
        {
         "value": 8.0,
-        "ref": "c2"
+        "ref": "c3"
        }
       ]
      }
@@ -5744,8 +5674,8 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Full-time: it is 2-1 to Harbourton City.",
-     "team_id": null,
+     "text": "It ends 2-1: Harbourton City win.",
+     "team_id": "har",
      "refs": [
       "c1"
      ],
@@ -5765,17 +5695,17 @@
      "text": "Harbourton City: 51% possession, Harbourton City: 15 shots.",
      "team_id": "har",
      "refs": [
-      "c1",
-      "c2"
+      "c2",
+      "c3"
      ],
      "numbers": [
       {
        "value": 51.0,
-       "ref": "c1"
+       "ref": "c2"
       },
       {
        "value": 15.0,
-       "ref": "c2"
+       "ref": "c3"
       }
      ]
     }
@@ -5785,56 +5715,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Full-time: it is 2-1 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
+     "text": "It ends 2-1: Harbourton City win. Hugo Vidrelle scored for Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Full-time: it is 2-1 to Harbourton City.",
+     "text": "It ends 2-1: Harbourton City win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Full-time: it is 2-1 to Harbourton City.",
+     "text": "For Hugo Vidrelle's fans: It ends 2-1: Harbourton City win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Full-time: it is 2-1 to Harbourton City.",
+     "text": "For Xarno Uusitalo's fans: It ends 2-1: Harbourton City win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Full-time: it is 2-1 to Harbourton City. Hugo Vidrelle scored for Harbourton City.",
+     "text": "[es · offline] It ends 2-1: Harbourton City win. Hugo Vidrelle scored for Harbourton City.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Full-time: it is 2-1 to Harbourton City.",
+     "text": "[es · offline] It ends 2-1: Harbourton City win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Full-time: it is 2-1 to Harbourton City.",
+     "text": "[es · offline] For Hugo Vidrelle's fans: It ends 2-1: Harbourton City win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: it is 2-1 to Harbourton City.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: It ends 2-1: Harbourton City win.",
      "source": "model",
      "reason": null
     }
@@ -5844,6 +5774,20 @@
    "items": [
     {
      "ref": "c1",
+     "metric": "recap_score",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "it ends 2-1: Harbourton City win",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -5857,7 +5801,7 @@
      "origin": null
     },
     {
-     "ref": "c2",
+     "ref": "c3",
      "metric": "shots_total",
      "team_id": "har",
      "player_id": null,
@@ -5871,7 +5815,7 @@
      "origin": null
     },
     {
-     "ref": "c3",
+     "ref": "c4",
      "metric": "xg_total",
      "team_id": "har",
      "player_id": null,
@@ -5885,7 +5829,7 @@
      "origin": null
     },
     {
-     "ref": "c4",
+     "ref": "c5",
      "metric": "pass_completion_total",
      "team_id": "har",
      "player_id": null,
@@ -5899,7 +5843,7 @@
      "origin": null
     },
     {
-     "ref": "c5",
+     "ref": "c6",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -5913,7 +5857,7 @@
      "origin": null
     },
     {
-     "ref": "c6",
+     "ref": "c7",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -5927,7 +5871,7 @@
      "origin": null
     },
     {
-     "ref": "c7",
+     "ref": "c8",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -5941,7 +5885,7 @@
      "origin": null
     },
     {
-     "ref": "c8",
+     "ref": "c9",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -5955,7 +5899,7 @@
      "origin": null
     },
     {
-     "ref": "c9",
+     "ref": "c10",
      "metric": "player_goals",
      "team_id": "har",
      "player_id": "har_09",
@@ -5969,7 +5913,7 @@
      "origin": null
     },
     {
-     "ref": "c10",
+     "ref": "c11",
      "metric": "player_shots",
      "team_id": "har",
      "player_id": "har_09",
@@ -5983,7 +5927,7 @@
      "origin": null
     },
     {
-     "ref": "c11",
+     "ref": "c12",
      "metric": "player_xg",
      "team_id": "har",
      "player_id": "har_09",
@@ -5997,7 +5941,7 @@
      "origin": null
     },
     {
-     "ref": "c12",
+     "ref": "c13",
      "metric": "player_goals",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -6011,7 +5955,7 @@
      "origin": null
     },
     {
-     "ref": "c13",
+     "ref": "c14",
      "metric": "player_shots",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -6025,7 +5969,7 @@
      "origin": null
     },
     {
-     "ref": "c14",
+     "ref": "c15",
      "metric": "player_xg",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -6039,7 +5983,7 @@
      "origin": null
     },
     {
-     "ref": "c15",
+     "ref": "c16",
      "metric": "player_goals",
      "team_id": "har",
      "player_id": "har_11",
@@ -6053,7 +5997,7 @@
      "origin": null
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "player_shots",
      "team_id": "har",
      "player_id": "har_11",
@@ -6067,7 +6011,7 @@
      "origin": null
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "player_xg",
      "team_id": "har",
      "player_id": "har_11",
@@ -6081,7 +6025,7 @@
      "origin": null
     },
     {
-     "ref": "c18",
+     "ref": "c19",
      "metric": "goal_margin",
      "team_id": "har",
      "player_id": null,
@@ -6090,12 +6034,12 @@
      "window_start_s": 4755.7,
      "window_end_s": 4755.7,
      "baseline": 0.0,
-     "say": "it is 2-1: Harbourton City go ahead",
+     "say": "made it 2-1: Harbourton City went ahead",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c19",
+     "ref": "c20",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6109,7 +6053,7 @@
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c20",
+     "ref": "c21",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6123,35 +6067,7 @@
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c21",
-     "metric": "match_xg",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.666,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": 1.532,
-     "say": "2.67 xG in the match",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:2"
-    },
-    {
      "ref": "c22",
-     "metric": "possession_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 49.2,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Harbourton City: 49% possession",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:2"
-    },
-    {
-     "ref": "c23",
      "metric": "goal_margin",
      "team_id": "wst",
      "player_id": null,
@@ -6160,12 +6076,12 @@
      "window_start_s": 3220.6,
      "window_end_s": 3220.6,
      "baseline": -1.0,
-     "say": "it is 1-1: Westmere Town equalise",
+     "say": "made it 1-1: Westmere Town equalised",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:1"
     },
     {
-     "ref": "c24",
+     "ref": "c23",
      "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
@@ -6179,7 +6095,7 @@
      "origin": "har_wst_siege_0003:goal:1"
     },
     {
-     "ref": "c25",
+     "ref": "c24",
      "metric": "shot_distance",
      "team_id": "wst",
      "player_id": null,
@@ -6193,21 +6109,7 @@
      "origin": "har_wst_siege_0003:goal:1"
     },
     {
-     "ref": "c26",
-     "metric": "match_xg",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 1.451,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": 2.446,
-     "say": "1.45 xG in the match",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:1"
-    },
-    {
-     "ref": "c27",
+     "ref": "c25",
      "metric": "goal_margin",
      "team_id": "har",
      "player_id": null,
@@ -6216,12 +6118,12 @@
      "window_start_s": 2194.3,
      "window_end_s": 2194.3,
      "baseline": 0.0,
-     "say": "it is 1-0: Harbourton City open the scoring",
+     "say": "made it 1-0: Harbourton City opened the scoring",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c28",
+     "ref": "c26",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6235,7 +6137,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c29",
+     "ref": "c27",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6249,35 +6151,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c30",
-     "metric": "match_xg",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.04,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": 0.788,
-     "say": "2.04 xG in the match",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
-     "ref": "c31",
-     "metric": "possession_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 49.9,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Harbourton City: 50% possession",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
-     "ref": "c32",
+     "ref": "c28",
      "metric": "shot_outcome",
      "team_id": "har",
      "player_id": null,
@@ -6291,7 +6165,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c33",
+     "ref": "c29",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6305,7 +6179,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c34",
+     "ref": "c30",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6319,21 +6193,91 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c35",
-     "metric": "match_xg",
+     "ref": "c31",
+     "metric": "shot_outcome",
      "team_id": "har",
      "player_id": null,
-     "value": 1.982,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2098.9,
-     "baseline": 0.788,
-     "say": "1.98 xG in the match",
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "the shot went off target",
      "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:2"
+     "origin": "har_wst_siege_0003:big_chance:1"
+    },
+    {
+     "ref": "c32",
+     "metric": "shot_xg",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.527,
+     "unit": "xg",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "a 0.53 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:1"
+    },
+    {
+     "ref": "c33",
+     "metric": "shot_distance",
+     "team_id": "har",
+     "player_id": null,
+     "value": 4.9,
+     "unit": "m",
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
+     "baseline": null,
+     "say": "from 5 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:1"
+    },
+    {
+     "ref": "c34",
+     "metric": "shot_outcome",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "the shot was saved",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
+    },
+    {
+     "ref": "c35",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.505,
+     "unit": "xg",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "a 0.51 xG chance",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
      "ref": "c36",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 5.1,
+     "unit": "m",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
+     "baseline": null,
+     "say": "from 5 m",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
+    },
+    {
+     "ref": "c37",
      "metric": "possession_total",
      "team_id": "har",
      "player_id": null,
@@ -6347,7 +6291,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c38",
      "metric": "shots_total",
      "team_id": "har",
      "player_id": null,
@@ -6361,7 +6305,7 @@
      "origin": null
     },
     {
-     "ref": "c38",
+     "ref": "c39",
      "metric": "xg_total",
      "team_id": "har",
      "player_id": null,
@@ -6375,7 +6319,7 @@
      "origin": null
     },
     {
-     "ref": "c39",
+     "ref": "c40",
      "metric": "pass_completion_total",
      "team_id": "har",
      "player_id": null,
@@ -6389,7 +6333,7 @@
      "origin": null
     },
     {
-     "ref": "c40",
+     "ref": "c41",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -6403,7 +6347,7 @@
      "origin": null
     },
     {
-     "ref": "c41",
+     "ref": "c42",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -6417,7 +6361,7 @@
      "origin": null
     },
     {
-     "ref": "c42",
+     "ref": "c43",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -6431,7 +6375,7 @@
      "origin": null
     },
     {
-     "ref": "c43",
+     "ref": "c44",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -6479,8 +6423,8 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Full-time: it is 2-1 to Harbourton City.",
-      "team_id": null,
+      "text": "It ends 2-1: Harbourton City win.",
+      "team_id": "har",
       "refs": [
        "c1"
       ],
@@ -6500,17 +6444,17 @@
       "text": "Harbourton City: 51% possession, Harbourton City: 15 shots.",
       "team_id": "har",
       "refs": [
-       "c1",
-       "c2"
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
         "value": 51.0,
-        "ref": "c1"
+        "ref": "c2"
        },
        {
         "value": 15.0,
-        "ref": "c2"
+        "ref": "c3"
        }
       ]
      }

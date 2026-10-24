@@ -4,8 +4,8 @@
  "label": "Offline run (fake model client): narratives are deterministic stand-ins, not model output (faults were deliberately injected to show recovery)",
  "run_id": "sample-faults-demo",
  "match_id": "wst_aur_end_to_end_0004",
- "created_utc": "2026-10-24T16:13:22+00:00",
- "wall_s": 0.85,
+ "created_utc": "2026-10-24T16:40:31+00:00",
+ "wall_s": 0.82,
  "generator": {
   "seed": 4,
   "storyline": "end_to_end",
@@ -53,7 +53,7 @@
  ],
  "pipeline": {
   "pitchside_version": "0.2.0",
-  "git_commit": "90ee028",
+  "git_commit": "96efd98",
   "llm_mode": "fake",
   "api": "fake",
   "deployments": {
@@ -73,9 +73,9 @@
   },
   "prompt_versions": {
    "interpreter": "c7465321ac0f",
-   "explainer": "23e1e0d6c968",
-   "verifier": "84cae05645de",
-   "personalizer": "d77881d8d4a1"
+   "explainer": "0200aa8956af",
+   "verifier": "e688ea1a6647",
+   "personalizer": "9296cd0ea327"
   },
   "max_explainer_attempts": 3,
   "interpreter_tools": "local",
@@ -211,7 +211,7 @@
  },
  "budget": {
   "match_budget_usd": 0.25,
-  "spent_usd": 0.020026,
+  "spent_usd": 0.019895,
   "model_calls": 74,
   "budget_fallbacks": 0,
   "exhausted": null

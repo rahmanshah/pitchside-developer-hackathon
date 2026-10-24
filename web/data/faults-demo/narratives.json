@@ -3090,8 +3090,8 @@
    "claims": [
     {
      "claim_id": "a2c1",
-     "text": "Half-time: it is 1-0 to Westmere Town.",
-     "team_id": null,
+     "text": "It is 1-0 at half-time: Westmere Town lead.",
+     "team_id": "wst",
      "refs": [
       "c1"
      ],
@@ -3111,17 +3111,17 @@
      "text": "Westmere Town: 53% possession, Westmere Town: 3 shots.",
      "team_id": "wst",
      "refs": [
-      "c1",
-      "c2"
+      "c2",
+      "c3"
      ],
      "numbers": [
       {
        "value": 53.0,
-       "ref": "c1"
+       "ref": "c2"
       },
       {
        "value": 3.0,
-       "ref": "c2"
+       "ref": "c3"
       }
      ]
     }
@@ -3131,56 +3131,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Half-time: it is 1-0 to Westmere Town. Xarno Uusitalo scored for Westmere Town.",
+     "text": "It is 1-0 at half-time: Westmere Town lead. Xarno Uusitalo scored for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Half-time: it is 1-0 to Westmere Town.",
+     "text": "It is 1-0 at half-time: Westmere Town lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Half-time: it is 1-0 to Westmere Town.",
+     "text": "For Xarno Uusitalo's fans: It is 1-0 at half-time: Westmere Town lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Half-time: it is 1-0 to Westmere Town.",
+     "text": "For Alden Brannholt's fans: It is 1-0 at half-time: Westmere Town lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Half-time: it is 1-0 to Westmere Town. Xarno Uusitalo scored for Westmere Town.",
+     "text": "[es · offline] It is 1-0 at half-time: Westmere Town lead. Xarno Uusitalo scored for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Half-time: it is 1-0 to Westmere Town.",
+     "text": "[es · offline] It is 1-0 at half-time: Westmere Town lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Half-time: it is 1-0 to Westmere Town.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: It is 1-0 at half-time: Westmere Town lead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Half-time: it is 1-0 to Westmere Town.",
+     "text": "[es · offline] For Alden Brannholt's fans: It is 1-0 at half-time: Westmere Town lead.",
      "source": "model",
      "reason": null
     }
@@ -3190,6 +3190,20 @@
    "items": [
     {
      "ref": "c1",
+     "metric": "recap_score",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 2700.0,
+     "baseline": null,
+     "say": "it is 1-0 at half-time: Westmere Town lead",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -3203,7 +3217,7 @@
      "origin": null
     },
     {
-     "ref": "c2",
+     "ref": "c3",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -3217,7 +3231,7 @@
      "origin": null
     },
     {
-     "ref": "c3",
+     "ref": "c4",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -3231,7 +3245,7 @@
      "origin": null
     },
     {
-     "ref": "c4",
+     "ref": "c5",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -3245,7 +3259,7 @@
      "origin": null
     },
     {
-     "ref": "c5",
+     "ref": "c6",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -3259,7 +3273,7 @@
      "origin": null
     },
     {
-     "ref": "c6",
+     "ref": "c7",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -3273,7 +3287,7 @@
      "origin": null
     },
     {
-     "ref": "c7",
+     "ref": "c8",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -3287,7 +3301,7 @@
      "origin": null
     },
     {
-     "ref": "c8",
+     "ref": "c9",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -3301,7 +3315,7 @@
      "origin": null
     },
     {
-     "ref": "c9",
+     "ref": "c10",
      "metric": "player_goals",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -3315,7 +3329,7 @@
      "origin": null
     },
     {
-     "ref": "c10",
+     "ref": "c11",
      "metric": "player_shots",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -3329,7 +3343,7 @@
      "origin": null
     },
     {
-     "ref": "c11",
+     "ref": "c12",
      "metric": "player_xg",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -3343,7 +3357,7 @@
      "origin": null
     },
     {
-     "ref": "c12",
+     "ref": "c13",
      "metric": "player_goals",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -3357,7 +3371,7 @@
      "origin": null
     },
     {
-     "ref": "c13",
+     "ref": "c14",
      "metric": "player_shots",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -3371,7 +3385,7 @@
      "origin": null
     },
     {
-     "ref": "c14",
+     "ref": "c15",
      "metric": "player_xg",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -3385,7 +3399,7 @@
      "origin": null
     },
     {
-     "ref": "c15",
+     "ref": "c16",
      "metric": "goal_margin",
      "team_id": "wst",
      "player_id": null,
@@ -3394,12 +3408,12 @@
      "window_start_s": 2079.7,
      "window_end_s": 2079.7,
      "baseline": 0.0,
-     "say": "it is 1-0: Westmere Town open the scoring",
+     "say": "made it 1-0: Westmere Town opened the scoring",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:0"
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
@@ -3413,7 +3427,7 @@
      "origin": "wst_aur_end_to_end_0004:goal:0"
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "shot_distance",
      "team_id": "wst",
      "player_id": null,
@@ -3427,35 +3441,7 @@
      "origin": "wst_aur_end_to_end_0004:goal:0"
     },
     {
-     "ref": "c18",
-     "metric": "match_xg",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 0.374,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2079.7,
-     "baseline": 0.853,
-     "say": "0.37 xG in the match",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:goal:0"
-    },
-    {
      "ref": "c19",
-     "metric": "possession_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 50.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2079.7,
-     "baseline": null,
-     "say": "Westmere Town: 50% possession",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:goal:0"
-    },
-    {
-     "ref": "c20",
      "metric": "shot_outcome",
      "team_id": "wst",
      "player_id": null,
@@ -3469,7 +3455,7 @@
      "origin": "wst_aur_end_to_end_0004:big_chance:2"
     },
     {
-     "ref": "c21",
+     "ref": "c20",
      "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
@@ -3483,7 +3469,7 @@
      "origin": "wst_aur_end_to_end_0004:big_chance:2"
     },
     {
-     "ref": "c22",
+     "ref": "c21",
      "metric": "shot_distance",
      "team_id": "wst",
      "player_id": null,
@@ -3497,63 +3483,7 @@
      "origin": "wst_aur_end_to_end_0004:big_chance:2"
     },
     {
-     "ref": "c23",
-     "metric": "match_xg",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 1.031,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2613.4,
-     "baseline": 0.853,
-     "say": "1.03 xG in the match",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:big_chance:2"
-    },
-    {
-     "ref": "c24",
-     "metric": "pressures_per_min",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 4.667,
-     "unit": "per_min",
-     "window_start_s": 1893.5,
-     "window_end_s": 2073.5,
-     "baseline": 0.951,
-     "say": "4.7 pressures per minute",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:pressure_surge:1"
-    },
-    {
-     "ref": "c25",
-     "metric": "tackles_won",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 5.0,
-     "unit": "count",
-     "window_start_s": 1773.5,
-     "window_end_s": 2073.5,
-     "baseline": null,
-     "say": "5 tackles won in this spell",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:pressure_surge:1"
-    },
-    {
-     "ref": "c26",
-     "metric": "opponent_pass_completion",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 72.0,
-     "unit": "pct",
-     "window_start_s": 1773.5,
-     "window_end_s": 2073.5,
-     "baseline": 78.5,
-     "say": "Aurora Rovers are completing 72% of their passes",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:pressure_surge:1"
-    },
-    {
-     "ref": "c27",
+     "ref": "c22",
      "metric": "shot_outcome",
      "team_id": "aur",
      "player_id": null,
@@ -3567,7 +3497,7 @@
      "origin": "wst_aur_end_to_end_0004:big_chance:1"
     },
     {
-     "ref": "c28",
+     "ref": "c23",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -3581,7 +3511,7 @@
      "origin": "wst_aur_end_to_end_0004:big_chance:1"
     },
     {
-     "ref": "c29",
+     "ref": "c24",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -3595,49 +3525,49 @@
      "origin": "wst_aur_end_to_end_0004:big_chance:1"
     },
     {
-     "ref": "c30",
-     "metric": "match_xg",
+     "ref": "c25",
+     "metric": "shot_outcome",
      "team_id": "aur",
      "player_id": null,
-     "value": 0.853,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2056.2,
-     "baseline": 0.223,
-     "say": "0.85 xG in the match",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:big_chance:1"
-    },
-    {
-     "ref": "c31",
-     "metric": "pressures_per_min",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 4.333,
-     "unit": "per_min",
-     "window_start_s": 1826.2,
-     "window_end_s": 2006.2,
-     "baseline": 0.789,
-     "say": "4.3 pressures per minute",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:pressure_surge:0"
-    },
-    {
-     "ref": "c32",
-     "metric": "tackles_won",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 1.0,
+     "value": 2.0,
      "unit": "count",
-     "window_start_s": 1706.2,
-     "window_end_s": 2006.2,
+     "window_start_s": 965.2,
+     "window_end_s": 965.2,
      "baseline": null,
-     "say": "1 tackle won in this spell",
+     "say": "the shot was saved",
      "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:pressure_surge:0"
+     "origin": "wst_aur_end_to_end_0004:big_chance:0"
     },
     {
-     "ref": "c33",
+     "ref": "c26",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.439,
+     "unit": "xg",
+     "window_start_s": 965.2,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "a 0.44 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:0"
+    },
+    {
+     "ref": "c27",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 5.7,
+     "unit": "m",
+     "window_start_s": 965.2,
+     "window_end_s": 965.2,
+     "baseline": null,
+     "say": "from 6 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:0"
+    },
+    {
+     "ref": "c28",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -3651,7 +3581,7 @@
      "origin": null
     },
     {
-     "ref": "c34",
+     "ref": "c29",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -3665,7 +3595,7 @@
      "origin": null
     },
     {
-     "ref": "c35",
+     "ref": "c30",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -3679,7 +3609,7 @@
      "origin": null
     },
     {
-     "ref": "c36",
+     "ref": "c31",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -3693,7 +3623,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c32",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -3707,7 +3637,7 @@
      "origin": null
     },
     {
-     "ref": "c38",
+     "ref": "c33",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -3721,7 +3651,7 @@
      "origin": null
     },
     {
-     "ref": "c39",
+     "ref": "c34",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -3735,7 +3665,7 @@
      "origin": null
     },
     {
-     "ref": "c40",
+     "ref": "c35",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -3775,8 +3705,8 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Half-time: it is 1-0 to Westmere Town.",
-      "team_id": null,
+      "text": "It is 1-0 at half-time: Westmere Town lead.",
+      "team_id": "wst",
       "refs": [
        "c1"
       ],
@@ -3796,17 +3726,17 @@
       "text": "Westmere Town: 53% possession, Westmere Town: 3 shots.",
       "team_id": "wst",
       "refs": [
-       "c1",
-       "c2"
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
         "value": 53.0,
-        "ref": "c1"
+        "ref": "c2"
        },
        {
         "value": 3.0,
-        "ref": "c2"
+        "ref": "c3"
        }
       ]
      }
@@ -3818,8 +3748,8 @@
     "claims": [
      {
       "claim_id": "a2c1",
-      "text": "Half-time: it is 1-0 to Westmere Town.",
-      "team_id": null,
+      "text": "It is 1-0 at half-time: Westmere Town lead.",
+      "team_id": "wst",
       "refs": [
        "c1"
       ],
@@ -3839,17 +3769,17 @@
       "text": "Westmere Town: 53% possession, Westmere Town: 3 shots.",
       "team_id": "wst",
       "refs": [
-       "c1",
-       "c2"
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
         "value": 53.0,
-        "ref": "c1"
+        "ref": "c2"
        },
        {
         "value": 3.0,
-        "ref": "c2"
+        "ref": "c3"
        }
       ]
      }
@@ -7397,7 +7327,7 @@
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Full-time: it is 2-2.",
+     "text": "It ends 2-2: a draw.",
      "team_id": null,
      "refs": [
       "c1"
@@ -7418,17 +7348,17 @@
      "text": "Westmere Town: 50% possession, Westmere Town: 6 shots.",
      "team_id": "wst",
      "refs": [
-      "c1",
-      "c2"
+      "c2",
+      "c3"
      ],
      "numbers": [
       {
        "value": 50.0,
-       "ref": "c1"
+       "ref": "c2"
       },
       {
        "value": 6.0,
-       "ref": "c2"
+       "ref": "c3"
       }
      ]
     }
@@ -7438,56 +7368,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Full-time: it is 2-2. Xarno Uusitalo scored for Westmere Town.",
+     "text": "It ends 2-2: a draw. Xarno Uusitalo scored for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Full-time: it is 2-2.",
+     "text": "It ends 2-2: a draw.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Full-time: it is 2-2.",
+     "text": "For Xarno Uusitalo's fans: It ends 2-2: a draw.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Full-time: it is 2-2.",
+     "text": "For Alden Brannholt's fans: It ends 2-2: a draw.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Full-time: it is 2-2. Xarno Uusitalo scored for Westmere Town.",
+     "text": "[es · offline] It ends 2-2: a draw. Xarno Uusitalo scored for Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Full-time: it is 2-2.",
+     "text": "[es · offline] It ends 2-2: a draw.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Full-time: it is 2-2.",
+     "text": "[es · offline] For Xarno Uusitalo's fans: It ends 2-2: a draw.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Full-time: it is 2-2.",
+     "text": "[es · offline] For Alden Brannholt's fans: It ends 2-2: a draw.",
      "source": "model",
      "reason": null
     }
@@ -7497,6 +7427,20 @@
    "items": [
     {
      "ref": "c1",
+     "metric": "recap_score",
+     "team_id": null,
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 0.0,
+     "window_end_s": 5400.0,
+     "baseline": null,
+     "say": "it ends 2-2: a draw",
+     "source": "context",
+     "origin": null
+    },
+    {
+     "ref": "c2",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -7510,7 +7454,7 @@
      "origin": null
     },
     {
-     "ref": "c2",
+     "ref": "c3",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -7524,7 +7468,7 @@
      "origin": null
     },
     {
-     "ref": "c3",
+     "ref": "c4",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -7538,7 +7482,7 @@
      "origin": null
     },
     {
-     "ref": "c4",
+     "ref": "c5",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -7552,7 +7496,7 @@
      "origin": null
     },
     {
-     "ref": "c5",
+     "ref": "c6",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -7566,7 +7510,7 @@
      "origin": null
     },
     {
-     "ref": "c6",
+     "ref": "c7",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -7580,7 +7524,7 @@
      "origin": null
     },
     {
-     "ref": "c7",
+     "ref": "c8",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -7594,7 +7538,7 @@
      "origin": null
     },
     {
-     "ref": "c8",
+     "ref": "c9",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -7608,7 +7552,7 @@
      "origin": null
     },
     {
-     "ref": "c9",
+     "ref": "c10",
      "metric": "player_goals",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -7622,7 +7566,7 @@
      "origin": null
     },
     {
-     "ref": "c10",
+     "ref": "c11",
      "metric": "player_shots",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -7636,7 +7580,7 @@
      "origin": null
     },
     {
-     "ref": "c11",
+     "ref": "c12",
      "metric": "player_xg",
      "team_id": "wst",
      "player_id": "wst_09",
@@ -7650,7 +7594,7 @@
      "origin": null
     },
     {
-     "ref": "c12",
+     "ref": "c13",
      "metric": "player_goals",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -7664,7 +7608,7 @@
      "origin": null
     },
     {
-     "ref": "c13",
+     "ref": "c14",
      "metric": "player_shots",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -7678,7 +7622,7 @@
      "origin": null
     },
     {
-     "ref": "c14",
+     "ref": "c15",
      "metric": "player_xg",
      "team_id": "aur",
      "player_id": "aur_09",
@@ -7692,7 +7636,7 @@
      "origin": null
     },
     {
-     "ref": "c15",
+     "ref": "c16",
      "metric": "player_goals",
      "team_id": "wst",
      "player_id": "wst_07",
@@ -7706,7 +7650,7 @@
      "origin": null
     },
     {
-     "ref": "c16",
+     "ref": "c17",
      "metric": "player_shots",
      "team_id": "wst",
      "player_id": "wst_07",
@@ -7720,7 +7664,7 @@
      "origin": null
     },
     {
-     "ref": "c17",
+     "ref": "c18",
      "metric": "player_xg",
      "team_id": "wst",
      "player_id": "wst_07",
@@ -7734,7 +7678,7 @@
      "origin": null
     },
     {
-     "ref": "c18",
+     "ref": "c19",
      "metric": "goal_margin",
      "team_id": "aur",
      "player_id": null,
@@ -7743,12 +7687,12 @@
      "window_start_s": 5010.1,
      "window_end_s": 5010.1,
      "baseline": -1.0,
-     "say": "it is 2-2: Aurora Rovers equalise",
+     "say": "made it 2-2: Aurora Rovers equalised",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:3"
     },
     {
-     "ref": "c19",
+     "ref": "c20",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -7762,7 +7706,7 @@
      "origin": "wst_aur_end_to_end_0004:goal:3"
     },
     {
-     "ref": "c20",
+     "ref": "c21",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -7776,20 +7720,6 @@
      "origin": "wst_aur_end_to_end_0004:goal:3"
     },
     {
-     "ref": "c21",
-     "metric": "match_xg",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 1.694,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 5010.1,
-     "baseline": 1.435,
-     "say": "1.69 xG in the match",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:goal:3"
-    },
-    {
      "ref": "c22",
      "metric": "goal_margin",
      "team_id": "wst",
@@ -7799,7 +7729,7 @@
      "window_start_s": 3566.5,
      "window_end_s": 3566.5,
      "baseline": 0.0,
-     "say": "it is 2-1: Westmere Town go ahead",
+     "say": "made it 2-1: Westmere Town went ahead",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:2"
     },
@@ -7833,34 +7763,6 @@
     },
     {
      "ref": "c25",
-     "metric": "match_xg",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 1.435,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 3566.5,
-     "baseline": 1.504,
-     "say": "1.44 xG in the match",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:goal:2"
-    },
-    {
-     "ref": "c26",
-     "metric": "possession_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 52.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 3566.5,
-     "baseline": null,
-     "say": "Westmere Town: 52% possession",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:goal:2"
-    },
-    {
-     "ref": "c27",
      "metric": "goal_margin",
      "team_id": "aur",
      "player_id": null,
@@ -7869,12 +7771,12 @@
      "window_start_s": 2823.7,
      "window_end_s": 2823.7,
      "baseline": -1.0,
-     "say": "it is 1-1: Aurora Rovers equalise",
+     "say": "made it 1-1: Aurora Rovers equalised",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:1"
     },
     {
-     "ref": "c28",
+     "ref": "c26",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -7888,7 +7790,7 @@
      "origin": "wst_aur_end_to_end_0004:goal:1"
     },
     {
-     "ref": "c29",
+     "ref": "c27",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -7902,21 +7804,7 @@
      "origin": "wst_aur_end_to_end_0004:goal:1"
     },
     {
-     "ref": "c30",
-     "metric": "match_xg",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 1.126,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2823.7,
-     "baseline": 1.031,
-     "say": "1.13 xG in the match",
-     "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:goal:1"
-    },
-    {
-     "ref": "c31",
+     "ref": "c28",
      "metric": "goal_margin",
      "team_id": "wst",
      "player_id": null,
@@ -7925,12 +7813,12 @@
      "window_start_s": 2079.7,
      "window_end_s": 2079.7,
      "baseline": 0.0,
-     "say": "it is 1-0: Westmere Town open the scoring",
+     "say": "made it 1-0: Westmere Town opened the scoring",
      "source": "claim",
      "origin": "wst_aur_end_to_end_0004:goal:0"
     },
     {
-     "ref": "c32",
+     "ref": "c29",
      "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
@@ -7944,7 +7832,7 @@
      "origin": "wst_aur_end_to_end_0004:goal:0"
     },
     {
-     "ref": "c33",
+     "ref": "c30",
      "metric": "shot_distance",
      "team_id": "wst",
      "player_id": null,
@@ -7958,35 +7846,91 @@
      "origin": "wst_aur_end_to_end_0004:goal:0"
     },
     {
-     "ref": "c34",
-     "metric": "match_xg",
+     "ref": "c31",
+     "metric": "shot_outcome",
      "team_id": "wst",
      "player_id": null,
-     "value": 0.374,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2079.7,
-     "baseline": 0.853,
-     "say": "0.37 xG in the match",
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 3440.9,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "the shot was saved",
      "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:goal:0"
+     "origin": "wst_aur_end_to_end_0004:big_chance:4"
+    },
+    {
+     "ref": "c32",
+     "metric": "shot_xg",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.384,
+     "unit": "xg",
+     "window_start_s": 3440.9,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "a 0.38 xG chance",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:4"
+    },
+    {
+     "ref": "c33",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 6.4,
+     "unit": "m",
+     "window_start_s": 3440.9,
+     "window_end_s": 3440.9,
+     "baseline": null,
+     "say": "from 6 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:4"
+    },
+    {
+     "ref": "c34",
+     "metric": "shot_outcome",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2613.4,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "the shot was blocked",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:2"
     },
     {
      "ref": "c35",
-     "metric": "possession_total",
+     "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
-     "value": 50.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2079.7,
+     "value": 0.657,
+     "unit": "xg",
+     "window_start_s": 2613.4,
+     "window_end_s": 2613.4,
      "baseline": null,
-     "say": "Westmere Town: 50% possession",
+     "say": "a 0.66 xG chance",
      "source": "claim",
-     "origin": "wst_aur_end_to_end_0004:goal:0"
+     "origin": "wst_aur_end_to_end_0004:big_chance:2"
     },
     {
      "ref": "c36",
+     "metric": "shot_distance",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 3.8,
+     "unit": "m",
+     "window_start_s": 2613.4,
+     "window_end_s": 2613.4,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "claim",
+     "origin": "wst_aur_end_to_end_0004:big_chance:2"
+    },
+    {
+     "ref": "c37",
      "metric": "possession_total",
      "team_id": "wst",
      "player_id": null,
@@ -8000,7 +7944,7 @@
      "origin": null
     },
     {
-     "ref": "c37",
+     "ref": "c38",
      "metric": "shots_total",
      "team_id": "wst",
      "player_id": null,
@@ -8014,7 +7958,7 @@
      "origin": null
     },
     {
-     "ref": "c38",
+     "ref": "c39",
      "metric": "xg_total",
      "team_id": "wst",
      "player_id": null,
@@ -8028,7 +7972,7 @@
      "origin": null
     },
     {
-     "ref": "c39",
+     "ref": "c40",
      "metric": "pass_completion_total",
      "team_id": "wst",
      "player_id": null,
@@ -8042,7 +7986,7 @@
      "origin": null
     },
     {
-     "ref": "c40",
+     "ref": "c41",
      "metric": "possession_total",
      "team_id": "aur",
      "player_id": null,
@@ -8056,7 +8000,7 @@
      "origin": null
     },
     {
-     "ref": "c41",
+     "ref": "c42",
      "metric": "shots_total",
      "team_id": "aur",
      "player_id": null,
@@ -8070,7 +8014,7 @@
      "origin": null
     },
     {
-     "ref": "c42",
+     "ref": "c43",
      "metric": "xg_total",
      "team_id": "aur",
      "player_id": null,
@@ -8084,7 +8028,7 @@
      "origin": null
     },
     {
-     "ref": "c43",
+     "ref": "c44",
      "metric": "pass_completion_total",
      "team_id": "aur",
      "player_id": null,
@@ -8132,7 +8076,7 @@
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Full-time: it is 2-2.",
+      "text": "It ends 2-2: a draw.",
       "team_id": null,
       "refs": [
        "c1"
@@ -8153,17 +8097,17 @@
       "text": "Westmere Town: 50% possession, Westmere Town: 6 shots.",
       "team_id": "wst",
       "refs": [
-       "c1",
-       "c2"
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
         "value": 50.0,
-        "ref": "c1"
+        "ref": "c2"
        },
        {
         "value": 6.0,
-        "ref": "c2"
+        "ref": "c3"
        }
       ]
      }

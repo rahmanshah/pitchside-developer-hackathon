@@ -18,6 +18,8 @@ possession began ("gained possession from a goal kick") supports that cause, not
 `shot_outcome` evidence is how this shot ended ("the shot was saved"): it supports that outcome and nothing more,
 not the woodwork, a header or a foot. Without it, a claim must not say how a shot ended. Mark unsupported any club,
 season or career record ("first goal for the club", "debut", "this season"): the evidence covers this match only.
+In a recap, `recap_score` is the score at the whistle; an earlier goal's score given as the current one is
+unsupported.
 
 `reason`: one sentence the explainer can act on; "ok" when supported.
 Reply with one JSON object only: {"verdicts": [{"claim": int, "supported": bool, "reason": str}]}, one verdict per
