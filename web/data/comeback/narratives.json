@@ -15,15 +15,16 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Chaos spell: the match",
+   "headline": "Early chaos in midfield",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
+     "text": "Chaos index +0.79, 2.7 turnovers per minute and 71% pass completion in this spell.",
      "team_id": null,
      "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e3"
      ],
      "numbers": [
       {
@@ -33,20 +34,24 @@
       {
        "value": 2.7,
        "ref": "e2"
+      },
+      {
+       "value": 71.0,
+       "ref": "e3"
       }
      ]
     },
     {
      "claim_id": "a1c2",
-     "text": "71% pass completion for both teams combined in this spell.",
+     "text": "Possessions lasted 17 s on average across both teams in this spell.",
      "team_id": null,
      "refs": [
-      "e3"
+      "e4"
      ],
      "numbers": [
       {
-       "value": 71.0,
-       "ref": "e3"
+       "value": 17.0,
+       "ref": "e4"
       }
      ]
     }
@@ -56,56 +61,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell. 71% pass completion for both teams combined in this spell.",
+     "text": "Chaos spell: chaos index +0.79, 2.7 turnovers per minute and 71% pass completion across both teams; possessions averaged 17 s in this spell, score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
+     "text": "A frantic 0-0 spell with both teams locked in and the ball slipping away constantly!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
+     "text": "For Aurora Rovers, this chaos spell means intense pressure: a chaos index of +0.79 with 2.7 turnovers per minute and possessions averaging 17 s, score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
+     "text": "For Ironvale Athletic, the game turned turbulent—chaos index +0.79, 2.7 turnovers per minute and 71% pass completion across both teams while possessions averaged 17 s, score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell. 71% pass completion for both teams combined in this spell.",
+     "text": "Ráfaga caótica: índice de caos +0,79, 2,7 pérdidas por minuto y 71% de pases completados entre ambos equipos; las posesiones duraron de media 17 s en este periodo, marcador 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
+     "text": "¡Un tramo frenético y 0-0, con el balón cambiando de dueño sin descanso!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
+     "text": "Para Aurora Rovers, esta ráfaga significa presión intensa: índice de caos +0,79, 2,7 pérdidas por minuto y posesiones de media 17 s, marcador 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
+     "text": "Para Ironvale Athletic, el partido se volvió turbulento: índice de caos +0,79, 2,7 pérdidas por minuto y 71% de pases completados entre ambos equipos, con posesiones de media 17 s, marcador 0-0.",
      "source": "model",
      "reason": null
     }
@@ -175,15 +180,16 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Chaos spell: the match",
+    "headline": "Early chaos in midfield",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +0.79 in this spell, 2.7 turnovers per minute across both teams in this spell.",
+      "text": "Chaos index +0.79, 2.7 turnovers per minute and 71% pass completion in this spell.",
       "team_id": null,
       "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e3"
       ],
       "numbers": [
        {
@@ -193,20 +199,24 @@
        {
         "value": 2.7,
         "ref": "e2"
+       },
+       {
+        "value": 71.0,
+        "ref": "e3"
        }
       ]
      },
      {
       "claim_id": "a1c2",
-      "text": "71% pass completion for both teams combined in this spell.",
+      "text": "Possessions lasted 17 s on average across both teams in this spell.",
       "team_id": null,
       "refs": [
-       "e3"
+       "e4"
       ],
       "numbers": [
        {
-        "value": 71.0,
-        "ref": "e3"
+        "value": 17.0,
+        "ref": "e4"
        }
       ]
      }
@@ -501,25 +511,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt denied from close range",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt had a 0.47 xG chance from 5 m that was saved.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.47 xG chance, from 5 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -533,16 +535,47 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 0.53 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers won the ball in open play and shot 31 s after winning it, in a move of 4 passes that gained 34 m.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "e9",
+      "e6",
+      "e7",
+      "e8"
      ],
      "numbers": [
       {
+       "value": 31.0,
+       "ref": "e6"
+      },
+      {
+       "value": 4.0,
+       "ref": "e7"
+      },
+      {
+       "value": 34.0,
+       "ref": "e8"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Alden Brannholt has 2 shots and 0.53 xG in the match.",
+     "team_id": "aur",
+     "refs": [
+      "p1",
+      "c2",
+      "c3"
+     ],
+     "numbers": [
+      {
+       "value": 2.0,
+       "ref": "c2"
+      },
+      {
        "value": 0.53,
-       "ref": "e3"
+       "ref": "c3"
       }
      ]
     }
@@ -552,56 +585,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.47 xG chance, from 5 m.",
+     "text": "Aurora Rovers had a big chance saved: Alden Brannholt's 0.47 xG shot from 5 m was saved; he has 2 shots and 0.53 xG in the match. Aurora Rovers won the ball in open play and shot 31 s after winning it in a 4-pass move that gained 34 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt rattles the keeper with a 0.47 xG chance but it's saved!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt saw his 0.47 xG effort from 5 m saved, and he now has 2 shots and 0.53 xG in the match.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Rafa Yaldiran's Ironvale Athletic were rattled when Aurora Rovers won the ball in open play and shot 31 s after in a 4-pass move that gained 34 m, but Alden Brannholt's 0.47 xG shot was saved.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.47 xG chance, from 5 m.",
+     "text": "Aurora Rovers tuvo una gran ocasión parada: el disparo de Alden Brannholt de 5 m, 0,47 xG, fue detenido; Brannholt suma 2 remates y 0,53 xG en el partido. Aurora Rovers ganó el balón en juego abierto y disparó 31 s después de ganarlo en una acción de 4 pases que ganó 34 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "¡Alden Brannholt prueba al portero con una ocasión de 0,47 xG, pero la salva!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt vio cómo su disparo de 5 m y 0,47 xG fue detenido; ahora tiene 2 remates y 0,53 xG en el partido.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran pasó apuros cuando Aurora Rovers ganó el balón en juego abierto y disparó 31 s después en una acción de 4 pases que ganó 34 m, pero el tiro de Alden Brannholt de 0,47 xG fue detenido.",
      "source": "model",
      "reason": null
     }
@@ -806,25 +839,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt denied from close range",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+      "text": "Alden Brannholt had a 0.47 xG chance from 5 m that was saved.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.47 xG chance, from 5 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -838,16 +863,47 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 0.53 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers won the ball in open play and shot 31 s after winning it, in a move of 4 passes that gained 34 m.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "e9",
+       "e6",
+       "e7",
+       "e8"
       ],
       "numbers": [
        {
+        "value": 31.0,
+        "ref": "e6"
+       },
+       {
+        "value": 4.0,
+        "ref": "e7"
+       },
+       {
+        "value": 34.0,
+        "ref": "e8"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Alden Brannholt has 2 shots and 0.53 xG in the match.",
+      "team_id": "aur",
+      "refs": [
+       "p1",
+       "c2",
+       "c3"
+      ],
+      "numbers": [
+       {
+        "value": 2.0,
+        "ref": "c2"
+       },
+       {
         "value": 0.53,
-        "ref": "e3"
+        "ref": "c3"
        }
       ]
      }
@@ -1086,25 +1142,19 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Goal: Ironvale Athletic",
+   "headline": "Ironvale take the lead",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic with a 0.09 xG chance from 15 m; this is Rafa Yaldiran's first goal in this match and it is 0-1: Ironvale Athletic open the scoring.",
      "team_id": "irv",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Ironvale Athletic: a 0.09 xG chance, from 15 m.",
-     "team_id": "irv",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "c1",
+      "e11",
+      "e10"
      ],
      "numbers": [
       {
@@ -1114,20 +1164,35 @@
       {
        "value": 15.0,
        "ref": "e2"
+      },
+      {
+       "value": 1.0,
+       "ref": "c1"
       }
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Ironvale Athletic: 0.23 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Ironvale Athletic's goal came 38 s after gaining possession, from a 4-pass move that gained 56 m after the ball went out of play.",
      "team_id": "irv",
      "refs": [
-      "e3"
+      "e6",
+      "e7",
+      "e8",
+      "e9"
      ],
      "numbers": [
       {
-       "value": 0.23,
-       "ref": "e3"
+       "value": 38.0,
+       "ref": "e6"
+      },
+      {
+       "value": 4.0,
+       "ref": "e7"
+      },
+      {
+       "value": 56.0,
+       "ref": "e8"
       }
      ]
     }
@@ -1137,56 +1202,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic with a 0.09 xG chance from 15 m. Ironvale Athletic's goal came 38 s after gaining possession, from a 4-pass move that gained 56 m after the ball went out of play; Ironvale Athletic lead 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
+     "text": "Rafa Yaldiran puts Ironvale Athletic 0-1 after a slick move.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
+     "text": "Aurora Rovers trail 0-1 after Rafa Yaldiran's 0.09 xG finish from 15 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
+     "text": "Rafa Yaldiran opens the scoring for Ironvale Athletic with a 0.09 xG finish from 15 m; Ironvale Athletic lead 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic. Ironvale Athletic: a 0.09 xG chance, from 15 m.",
+     "text": "Rafa Yaldiran marcó para Ironvale Athletic con una ocasión de 0,09 xG desde 15 m. El gol de Ironvale Athletic llegó 38 s después de recuperar la posesión, en un movimiento de 4 pases que ganó 56 m tras salir el balón del juego; Ironvale Athletic manda 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
+     "text": "¡Rafa Yaldiran pone a Ironvale Athletic 0-1 tras una jugada rápida!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
+     "text": "Aurora Rovers van 0-1 abajo tras el tanto de Rafa Yaldiran, un disparo de 0,09 xG desde 15 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
+     "text": "Rafa Yaldiran abre el marcador para Ironvale Athletic con un disparo de 0,09 xG desde 15 m; Ironvale Athletic 0-1.",
      "source": "model",
      "reason": null
     }
@@ -1389,118 +1454,6 @@
      "say": "Rafa Yaldiran has 0.23 xG in the match",
      "source": "player",
      "origin": null
-    },
-    {
-     "ref": "c4",
-     "metric": "possession_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 66.6,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 67% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c5",
-     "metric": "shots_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 3.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 3 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c6",
-     "metric": "xg_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 0.584,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 0.58 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c7",
-     "metric": "pass_completion_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 82.6,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 83% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c8",
-     "metric": "possession_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 33.4,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "Ironvale Athletic: 33% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c9",
-     "metric": "shots_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 2.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "Ironvale Athletic: 2 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c10",
-     "metric": "xg_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 0.232,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "Ironvale Athletic: 0.23 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c11",
-     "metric": "pass_completion_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 65.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "Ironvale Athletic: 65% pass completion",
-     "source": "context",
-     "origin": null
     }
    ],
    "players": [
@@ -1517,25 +1470,19 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Goal: Ironvale Athletic",
+    "headline": "Ironvale take the lead",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Rafa Yaldiran scored for Ironvale Athletic: it is 0-1 to Ironvale Athletic.",
+      "text": "Rafa Yaldiran scored for Ironvale Athletic with a 0.09 xG chance from 15 m; this is Rafa Yaldiran's first goal in this match and it is 0-1: Ironvale Athletic open the scoring.",
       "team_id": "irv",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Ironvale Athletic: a 0.09 xG chance, from 15 m.",
-      "team_id": "irv",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "c1",
+       "e11",
+       "e10"
       ],
       "numbers": [
        {
@@ -1545,20 +1492,35 @@
        {
         "value": 15.0,
         "ref": "e2"
+       },
+       {
+        "value": 1.0,
+        "ref": "c1"
        }
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Ironvale Athletic: 0.23 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Ironvale Athletic's goal came 38 s after gaining possession, from a 4-pass move that gained 56 m after the ball went out of play.",
       "team_id": "irv",
       "refs": [
-       "e3"
+       "e6",
+       "e7",
+       "e8",
+       "e9"
       ],
       "numbers": [
        {
-        "value": 0.23,
-        "ref": "e3"
+        "value": 38.0,
+        "ref": "e6"
+       },
+       {
+        "value": 4.0,
+        "ref": "e7"
+       },
+       {
+        "value": 56.0,
+        "ref": "e8"
        }
       ]
      }
@@ -1581,13 +1543,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -1596,13 +1551,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -2108,33 +2056,24 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Half time: the match",
+   "headline": "Ironvale lead despite Aurora control",
    "claims": [
     {
-     "claim_id": "a1c1",
+     "claim_id": "a2c1",
      "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
-     "team_id": "irv",
+     "team_id": null,
      "refs": [
       "c1"
      ],
      "numbers": []
     },
     {
-     "claim_id": "a1c2",
-     "text": "Rafa Yaldiran scored for Ironvale Athletic.",
-     "team_id": "irv",
-     "refs": [
-      "p1"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 59% possession, Aurora Rovers: 3 shots.",
+     "claim_id": "a2c2",
+     "text": "Aurora Rovers have 59% possession and 0.58 xG.",
      "team_id": "aur",
      "refs": [
       "c2",
-      "c3"
+      "c4"
      ],
      "numbers": [
       {
@@ -2142,8 +2081,38 @@
        "ref": "c2"
       },
       {
-       "value": 3.0,
-       "ref": "c3"
+       "value": 0.58,
+       "ref": "c4"
+      }
+     ]
+    },
+    {
+     "claim_id": "a2c3",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic; Ironvale Athletic's goal came 38 s after gaining possession from a 4-pass move that gained 56 m, and Rafa Yaldiran has 1 goal in the match.",
+     "team_id": "irv",
+     "refs": [
+      "p1",
+      "c16",
+      "c17",
+      "c18",
+      "c10"
+     ],
+     "numbers": [
+      {
+       "value": 38.0,
+       "ref": "c16"
+      },
+      {
+       "value": 4.0,
+       "ref": "c17"
+      },
+      {
+       "value": 56.0,
+       "ref": "c18"
+      },
+      {
+       "value": 1.0,
+       "ref": "c10"
       }
      ]
     }
@@ -2153,56 +2122,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "It is 0-1 at half-time: Ironvale Athletic lead. Rafa Yaldiran scored for Ironvale Athletic.",
+     "text": "Ironvale Athletic lead 0-1 at half-time; Aurora Rovers have 59% possession and 0.58 xG. Ironvale Athletic's goal came 38 s after gaining possession from a 4-pass move that gained 56 m, and Rafa Yaldiran has 1 goal.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
+     "text": "Ironvale Athletic lead 0-1 at half-time after Rafa Yaldiran's strike!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
+     "text": "Alden Brannholt: Aurora Rovers have 59% possession and 0.58 xG but trail 0-1 at half-time.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
+     "text": "Rafa Yaldiran scored for Ironvale Athletic; Ironvale Athletic's goal came 38 s after gaining possession from a 4-pass move that gained 56 m, and Rafa Yaldiran has 1 goal — Ironvale Athletic lead 0-1 at half-time.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] It is 0-1 at half-time: Ironvale Athletic lead. Rafa Yaldiran scored for Ironvale Athletic.",
+     "text": "Ironvale Athletic manda 0-1 al descanso; Aurora Rovers tienen 59% de posesión y 0,58 xG. El gol de Ironvale Athletic llegó 38 s tras recuperar la posesión en una acción de 4 pases que ganó 56 m, y Rafa Yaldiran tiene 1 gol.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] It is 0-1 at half-time: Ironvale Athletic lead.",
+     "text": "¡Ironvale Athletic 0-1 al descanso tras el gol de Rafa Yaldiran!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
+     "text": "Alden Brannholt: Aurora Rovers tienen 59% de posesión y 0,58 xG pero van 0-1 abajo al descanso.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: It is 0-1 at half-time: Ironvale Athletic lead.",
+     "text": "Rafa Yaldiran marcó para Ironvale Athletic; el gol de Ironvale Athletic llegó 38 s tras recuperar la posesión en una jugada de 4 pases que ganó 56 m, y Rafa Yaldiran tiene 1 gol — Ironvale Athletic manda 0-1 al descanso.",
      "source": "model",
      "reason": null
     }
@@ -2422,59 +2391,59 @@
     },
     {
      "ref": "c16",
-     "metric": "goal_margin",
+     "metric": "seconds_since_turnover",
      "team_id": "irv",
      "player_id": null,
-     "value": 1.0,
-     "unit": "count",
-     "window_start_s": 1588.9,
+     "value": 38.5,
+     "unit": "s",
+     "window_start_s": 1550.4,
      "window_end_s": 1588.9,
-     "baseline": 0.0,
-     "say": "made it 0-1: Ironvale Athletic opened the scoring",
+     "baseline": null,
+     "say": "38 s after gaining possession",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
      "ref": "c17",
-     "metric": "shot_xg",
+     "metric": "passes_in_spell",
      "team_id": "irv",
      "player_id": null,
-     "value": 0.089,
-     "unit": "xg",
-     "window_start_s": 1588.9,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 1550.4,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "a 0.09 xG chance",
+     "say": "4 passes in the move",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
      "ref": "c18",
-     "metric": "shot_distance",
+     "metric": "metres_gained",
      "team_id": "irv",
      "player_id": null,
-     "value": 15.4,
+     "value": 55.9,
      "unit": "m",
-     "window_start_s": 1588.9,
+     "window_start_s": 1550.4,
      "window_end_s": 1588.9,
      "baseline": null,
-     "say": "from 15 m",
+     "say": "56 m gained",
      "source": "claim",
      "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
      "ref": "c19",
-     "metric": "shot_outcome",
-     "team_id": "aur",
+     "metric": "possession_won_in_open_play",
+     "team_id": "irv",
      "player_id": null,
-     "value": 2.0,
+     "value": 0.0,
      "unit": "count",
-     "window_start_s": 492.5,
-     "window_end_s": 492.5,
+     "window_start_s": 1550.4,
+     "window_end_s": 1550.4,
      "baseline": null,
-     "say": "the shot was saved",
+     "say": "Ironvale Athletic gained possession after the ball went out of play",
      "source": "claim",
-     "origin": "aur_irv_comeback_0007:big_chance:0"
+     "origin": "aur_irv_comeback_0007:goal:0"
     },
     {
      "ref": "c20",
@@ -2506,115 +2475,73 @@
     },
     {
      "ref": "c22",
-     "metric": "possession_total",
+     "metric": "shot_outcome",
      "team_id": "aur",
      "player_id": null,
-     "value": 59.0,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 492.5,
+     "window_end_s": 492.5,
      "baseline": null,
-     "say": "Aurora Rovers: 59% possession",
-     "source": "context",
-     "origin": null
+     "say": "the shot was saved",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:0"
     },
     {
      "ref": "c23",
-     "metric": "shots_total",
+     "metric": "possession_won_in_open_play",
      "team_id": "aur",
      "player_id": null,
-     "value": 3.0,
+     "value": 1.0,
      "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
+     "window_start_s": 461.1,
+     "window_end_s": 461.1,
      "baseline": null,
-     "say": "Aurora Rovers: 3 shots",
-     "source": "context",
-     "origin": null
+     "say": "Aurora Rovers won the ball in open play",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:0"
     },
     {
      "ref": "c24",
-     "metric": "xg_total",
+     "metric": "seconds_since_turnover",
      "team_id": "aur",
      "player_id": null,
-     "value": 0.584,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
+     "value": 31.4,
+     "unit": "s",
+     "window_start_s": 461.1,
+     "window_end_s": 492.5,
      "baseline": null,
-     "say": "Aurora Rovers: 0.58 xG",
-     "source": "context",
-     "origin": null
+     "say": "31 s after winning the ball",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:0"
     },
     {
      "ref": "c25",
-     "metric": "pass_completion_total",
+     "metric": "passes_in_spell",
      "team_id": "aur",
-     "player_id": null,
-     "value": 81.7,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
-     "baseline": null,
-     "say": "Aurora Rovers: 82% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c26",
-     "metric": "possession_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 41.0,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
-     "baseline": null,
-     "say": "Ironvale Athletic: 41% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c27",
-     "metric": "shots_total",
-     "team_id": "irv",
      "player_id": null,
      "value": 4.0,
      "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
+     "window_start_s": 461.1,
+     "window_end_s": 492.5,
      "baseline": null,
-     "say": "Ironvale Athletic: 4 shots",
-     "source": "context",
-     "origin": null
+     "say": "4 passes in the move",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:0"
     },
     {
-     "ref": "c28",
-     "metric": "xg_total",
-     "team_id": "irv",
+     "ref": "c26",
+     "metric": "metres_gained",
+     "team_id": "aur",
      "player_id": null,
-     "value": 0.423,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
+     "value": 33.6,
+     "unit": "m",
+     "window_start_s": 461.1,
+     "window_end_s": 492.5,
      "baseline": null,
-     "say": "Ironvale Athletic: 0.42 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c29",
-     "metric": "pass_completion_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 73.5,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
-     "baseline": null,
-     "say": "Ironvale Athletic: 74% pass completion",
-     "source": "context",
-     "origin": null
+     "say": "34 m gained",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:0"
     }
    ],
    "players": [
@@ -2639,12 +2566,12 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Half time: the match",
+    "headline": "Ironvale lead at the break",
     "claims": [
      {
       "claim_id": "a1c1",
       "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
-      "team_id": "irv",
+      "team_id": null,
       "refs": [
        "c1"
       ],
@@ -2652,20 +2579,11 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Rafa Yaldiran scored for Ironvale Athletic.",
-      "team_id": "irv",
-      "refs": [
-       "p1"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 59% possession, Aurora Rovers: 3 shots.",
+      "text": "Aurora Rovers have 59% possession and 0.58 xG at the break.",
       "team_id": "aur",
       "refs": [
        "c2",
-       "c3"
+       "c4"
       ],
       "numbers": [
        {
@@ -2673,8 +2591,99 @@
         "ref": "c2"
        },
        {
-        "value": 3.0,
-        "ref": "c3"
+        "value": 0.58,
+        "ref": "c4"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Rafa Yaldiran's goal came 38 s after gaining possession from a 4-pass move that gained 56 m after the ball went out of play; Rafa Yaldiran has 1 goal in the match.",
+      "team_id": "irv",
+      "refs": [
+       "p1",
+       "c16",
+       "c17",
+       "c18",
+       "c19",
+       "c10"
+      ],
+      "numbers": [
+       {
+        "value": 38.0,
+        "ref": "c16"
+       },
+       {
+        "value": 4.0,
+        "ref": "c17"
+       },
+       {
+        "value": 56.0,
+        "ref": "c18"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "attempt": 2,
+    "headline": "Ironvale lead despite Aurora control",
+    "claims": [
+     {
+      "claim_id": "a2c1",
+      "text": "It is 0-1 at half-time: Ironvale Athletic lead.",
+      "team_id": null,
+      "refs": [
+       "c1"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a2c2",
+      "text": "Aurora Rovers have 59% possession and 0.58 xG.",
+      "team_id": "aur",
+      "refs": [
+       "c2",
+       "c4"
+      ],
+      "numbers": [
+       {
+        "value": 59.0,
+        "ref": "c2"
+       },
+       {
+        "value": 0.58,
+        "ref": "c4"
+       }
+      ]
+     },
+     {
+      "claim_id": "a2c3",
+      "text": "Rafa Yaldiran scored for Ironvale Athletic; Ironvale Athletic's goal came 38 s after gaining possession from a 4-pass move that gained 56 m, and Rafa Yaldiran has 1 goal in the match.",
+      "team_id": "irv",
+      "refs": [
+       "p1",
+       "c16",
+       "c17",
+       "c18",
+       "c10"
+      ],
+      "numbers": [
+       {
+        "value": 38.0,
+        "ref": "c16"
+       },
+       {
+        "value": 4.0,
+        "ref": "c17"
+       },
+       {
+        "value": 56.0,
+        "ref": "c18"
+       },
+       {
+        "value": 1.0,
+        "ref": "c10"
        }
       ]
      }
@@ -2700,26 +2709,52 @@
     "claim_id": "a1c3",
     "attempt": 1,
     "layer": "deterministic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unlisted_number",
+      "detail": "\"1\" appears in the text but not in the claim's numbers"
+     }
+    ]
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "deterministic",
     "ok": true,
     "reasons": []
    },
    {
-    "claim_id": "a1c1",
-    "attempt": 1,
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
     "layer": "semantic",
     "ok": true,
     "reasons": []
    },
    {
-    "claim_id": "a1c2",
-    "attempt": 1,
+    "claim_id": "a2c2",
+    "attempt": 2,
     "layer": "semantic",
     "ok": true,
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
+    "claim_id": "a2c3",
+    "attempt": 2,
     "layer": "semantic",
     "ok": true,
     "reasons": []
@@ -2742,25 +2777,18 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Ironvale Athletic",
+   "headline": "Near miss for Ironvale",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
+     "text": "Rafa Yaldiran had a 0.29 xG chance from 8 m, 14 s after winning the ball; the shot was blocked.",
      "team_id": "irv",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Ironvale Athletic: a 0.29 xG chance, from 8 m.",
-     "team_id": "irv",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e6",
+      "e10"
      ],
      "numbers": [
       {
@@ -2770,20 +2798,35 @@
       {
        "value": 8.0,
        "ref": "e2"
+      },
+      {
+       "value": 14.0,
+       "ref": "e6"
       }
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Ironvale Athletic: 0.71 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Rafa Yaldiran has 1 goal in the match, 5 shots and 0.71 xG in the match.",
      "team_id": "irv",
      "refs": [
-      "e3"
+      "p1",
+      "c1",
+      "c2",
+      "c3"
      ],
      "numbers": [
       {
+       "value": 1.0,
+       "ref": "c1"
+      },
+      {
+       "value": 5.0,
+       "ref": "c2"
+      },
+      {
        "value": 0.71,
-       "ref": "e3"
+       "ref": "c3"
       }
      ]
     }
@@ -2793,56 +2836,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
+     "text": "Rafa Yaldiran has 1 goal, 5 shots and 0.71 xG in the match; he had a 0.29 xG chance from 8 m that was blocked 14 s after winning the ball, and Ironvale Athletic lead 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
+     "text": "Rafa Yaldiran rattled a big chance off a block as Ironvale Athletic lead 0-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
+     "text": "Aurora Rovers trail 0-1 after Rafa Yaldiran had a 0.29 xG chance from 8 m that was blocked.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
+     "text": "Rafa Yaldiran has 1 goal, 5 shots and 0.71 xG, and he saw a 0.29 xG chance from 8 m blocked 14 s after winning the ball while Ironvale Athletic lead 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked. Ironvale Athletic: a 0.29 xG chance, from 8 m.",
+     "text": "Rafa Yaldiran tiene 1 gol, 5 tiros y 0,71 xG en el partido; tuvo una ocasión de 0,29 xG desde 8 m que fue bloqueada 14 s después de ganar el balón, y Ironvale Athletic manda 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
+     "text": "¡Rafa Yaldiran tuvo una gran ocasión bloqueada mientras Ironvale Athletic domina 0-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
-     "source": "model",
-     "reason": null
+     "text": "Ironvale Athletic roza el gol, pero el equipo de Alden Brannholt se salva.",
+     "source": "template",
+     "reason": "persona text rejected: team_mismatch: \"0,29\" is given to Aurora Rovers, but that number belongs to Ironvale Athletic; team_mismatch: \"8\" is given to Aurora Rovers, but that number belongs to Ironvale Athletic"
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
+     "text": "Rafa Yaldiran tiene 1 gol, 5 tiros y 0,71 xG; vio cómo una ocasión de 0,29 xG desde 8 m fue bloqueada 14 s después de ganar el balón mientras Ironvale Athletic manda 0-1.",
      "source": "model",
      "reason": null
     }
@@ -3047,25 +3090,18 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Ironvale Athletic",
+    "headline": "Near miss for Ironvale",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Rafa Yaldiran had the chance for Ironvale Athletic, and the shot was blocked.",
+      "text": "Rafa Yaldiran had a 0.29 xG chance from 8 m, 14 s after winning the ball; the shot was blocked.",
       "team_id": "irv",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Ironvale Athletic: a 0.29 xG chance, from 8 m.",
-      "team_id": "irv",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e6",
+       "e10"
       ],
       "numbers": [
        {
@@ -3075,20 +3111,35 @@
        {
         "value": 8.0,
         "ref": "e2"
+       },
+       {
+        "value": 14.0,
+        "ref": "e6"
        }
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Ironvale Athletic: 0.71 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Rafa Yaldiran has 1 goal in the match, 5 shots and 0.71 xG in the match.",
       "team_id": "irv",
       "refs": [
-       "e3"
+       "p1",
+       "c1",
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
+        "value": 1.0,
+        "ref": "c1"
+       },
+       {
+        "value": 5.0,
+        "ref": "c2"
+       },
+       {
         "value": 0.71,
-        "ref": "e3"
+        "ref": "c3"
        }
       ]
      }
@@ -3111,13 +3162,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -3126,13 +3170,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -3397,25 +3434,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt's close-range chance blocked",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt had a 0.40 xG chance from 6 m that was blocked.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.40 xG chance, from 6 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -3429,16 +3458,18 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 1.15 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers won the ball in open play and 24 s after winning the ball they fired the blocked shot.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "e9",
+      "e6",
+      "e10"
      ],
      "numbers": [
       {
-       "value": 1.15,
-       "ref": "e3"
+       "value": 24.0,
+       "ref": "e6"
       }
      ]
     }
@@ -3448,58 +3479,58 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.40 xG chance, from 6 m.",
+     "text": "Alden Brannholt had a 0.40 xG chance from 6 m that was blocked; Aurora Rovers won the ball in open play and, 24 s after winning it, produced the blocked shot while trailing 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt smashed a big chance but it was blocked and Aurora Rovers stay 0-1 down.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt saw a 0.40 xG chance from 6 m blocked; it came after Aurora Rovers won the ball and, 24 s later, they tested the defence but remain 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Rafa Yaldiran’s Ironvale Athletic lead 0-1 after Alden Brannholt’s 0.40 xG chance from 6 m was blocked; Aurora Rovers had won the ball and 24 s later fired the blocked shot.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.40 xG chance, from 6 m.",
+     "text": "Alden Brannholt tuvo una ocasión de 0,40 xG desde 6 m que fue bloqueada; Aurora Rovers ganó el balón en juego y, 24 s después de ganarlo, lanzó el disparo bloqueado mientras perdían 0-1 contra Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt tuvo una gran ocasión pero fue bloqueada y Aurora Rovers siguen 0-1 abajo.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt vio cómo una ocasión de 0,40 xG desde 6 m fue bloqueada; llegó tras una recuperación de Aurora Rovers y, 24 s después, probaron suerte pero siguen 0-1 frente a Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
-     "source": "model",
-     "reason": null
+     "text": "Aurora Rovers roza el gol, pero el equipo de Rafa Yaldiran se salva.",
+     "source": "template",
+     "reason": "persona text rejected: team_mismatch: \"0,40\" is given to Ironvale Athletic, but that number belongs to Aurora Rovers"
     }
    ]
   },
@@ -3702,25 +3733,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt's close-range chance blocked",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+      "text": "Alden Brannholt had a 0.40 xG chance from 6 m that was blocked.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.40 xG chance, from 6 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -3734,16 +3757,18 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 1.15 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers won the ball in open play and 24 s after winning the ball they fired the blocked shot.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "e9",
+       "e6",
+       "e10"
       ],
       "numbers": [
        {
-        "value": 1.15,
-        "ref": "e3"
+        "value": 24.0,
+        "ref": "e6"
        }
       ]
      }
@@ -3766,13 +3791,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -3781,13 +3799,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -3811,25 +3822,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt denied from close range",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt for Aurora Rovers had a 0.35 xG chance from 7 m and the shot was saved.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.35 xG chance, from 7 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -3843,16 +3846,51 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 1.50 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers built the move with 6 passes, 49 s after gaining possession, covering 59 m.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "e7",
+      "e6",
+      "e8"
      ],
      "numbers": [
       {
+       "value": 6.0,
+       "ref": "e7"
+      },
+      {
+       "value": 49.0,
+       "ref": "e6"
+      },
+      {
+       "value": 59.0,
+       "ref": "e8"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Alden Brannholt has 0 goals, 7 shots and 1.50 xG in the match.",
+     "team_id": "aur",
+     "refs": [
+      "p1",
+      "c1",
+      "c2",
+      "c3"
+     ],
+     "numbers": [
+      {
+       "value": 0.0,
+       "ref": "c1"
+      },
+      {
+       "value": 7.0,
+       "ref": "c2"
+      },
+      {
        "value": 1.5,
-       "ref": "e3"
+       "ref": "c3"
       }
      ]
     }
@@ -3862,56 +3900,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+     "text": "Alden Brannholt had a 0.35 xG chance from 7 m for Aurora Rovers but the shot was saved; Aurora Rovers built the move with 6 passes, 49 s after gaining possession, covering 59 m, as it stays 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt forced a save but Aurora Rovers are still 0-1 down!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt saw his 0.35 xG effort from 7 m saved; he has 0 goals, 7 shots and 1.50 xG in the match, and Aurora Rovers’ move came after 6 passes, 49 s after gaining possession covering 59 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Rafa Yaldiran’s Ironvale Athletic remain 0-1 up after Alden Brannholt’s 0.35 xG shot from 7 m was saved following a 6-pass, 59 m build 49 s after the turnover.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.35 xG chance, from 7 m.",
+     "text": "Alden Brannholt tuvo una ocasión de 0,35 xG desde 7 m para Aurora Rovers, pero el disparo fue detenido; Aurora Rovers construyó la jugada con 6 pases, 49 s tras recuperar el balón, recorriendo 59 m, y sigue 0-1 para Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt obligó a una parada pero Aurora Rovers sigue 0-1 abajo.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt vio su disparo de 0,35 xG desde 7 m detenido; tiene 0 goles, 7 disparos y 1,50 xG en el partido, y Aurora Rovers armó la jugada con 6 pases, 49 s tras recuperar el balón recorriendo 59 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran sigue 0-1 arriba tras el disparo detenido de Alden Brannholt de 0,35 xG desde 7 m, que llegó después de una construcción de 6 pases y 59 m, 49 s tras la recuperación.",
      "source": "model",
      "reason": null
     }
@@ -4116,25 +4154,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt denied from close range",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+      "text": "Alden Brannholt for Aurora Rovers had a 0.35 xG chance from 7 m and the shot was saved.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.35 xG chance, from 7 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -4148,16 +4178,51 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 1.50 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers built the move with 6 passes, 49 s after gaining possession, covering 59 m.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "e7",
+       "e6",
+       "e8"
       ],
       "numbers": [
        {
+        "value": 6.0,
+        "ref": "e7"
+       },
+       {
+        "value": 49.0,
+        "ref": "e6"
+       },
+       {
+        "value": 59.0,
+        "ref": "e8"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Alden Brannholt has 0 goals, 7 shots and 1.50 xG in the match.",
+      "team_id": "aur",
+      "refs": [
+       "p1",
+       "c1",
+       "c2",
+       "c3"
+      ],
+      "numbers": [
+       {
+        "value": 0.0,
+        "ref": "c1"
+       },
+       {
+        "value": 7.0,
+        "ref": "c2"
+       },
+       {
         "value": 1.5,
-        "ref": "e3"
+        "ref": "c3"
        }
       ]
      }
@@ -4425,15 +4490,15 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Pressure surge: Aurora Rovers",
+   "headline": "Aurora turn up the pressure",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
+     "text": "Aurora Rovers have registered 4.3 pressures per minute and momentum +0.46 in this spell.",
      "team_id": "aur",
      "refs": [
       "e1",
-      "e2"
+      "e4"
      ],
      "numbers": [
       {
@@ -4441,22 +4506,22 @@
        "ref": "e1"
       },
       {
-       "value": 1.0,
-       "ref": "e2"
+       "value": 0.46,
+       "ref": "e4"
       }
      ]
     },
     {
      "claim_id": "a1c2",
-     "text": "Ironvale Athletic are completing 75% of their passes.",
-     "team_id": "irv",
+     "text": "Aurora Rovers won 1 tackle in this spell.",
+     "team_id": "aur",
      "refs": [
-      "e3"
+      "e2"
      ],
      "numbers": [
       {
-       "value": 75.0,
-       "ref": "e3"
+       "value": 1.0,
+       "ref": "e2"
       }
      ]
     }
@@ -4466,56 +4531,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell. Ironvale Athletic are completing 75% of their passes.",
+     "text": "Aurora Rovers registered 4.3 pressures/min and momentum +0.46 in this spell and won 1 tackle; score 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
+     "text": "Aurora Rovers are piling on the pressure but still trail 0-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
+     "text": "Alden Brannholt's Aurora Rovers have pushed forward with 4.3 pressures/min and momentum +0.46, winning 1 tackle while down 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
+     "text": "Rafa Yaldiran's Ironvale Athletic lead 0-1; Aurora Rovers registered 4.3 pressures/min and momentum +0.46 and won 1 tackle in the spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell. Ironvale Athletic are completing 75% of their passes.",
+     "text": "Aurora Rovers registró 4,3 pressures/min y momentum +0,46 en esta fase y ganó 1 entrada; marcador 0-1 a favor de Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
+     "text": "¡Aurora Rovers aprietan pero siguen perdiendo 0-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
+     "text": "El Aurora Rovers de Alden Brannholt ha aumentado la presión con 4,3 pressures/min y momentum +0,46, ganando 1 entrada mientras están 0-1 abajo.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran manda 0-1; Aurora Rovers registró 4,3 pressures/min y momentum +0,46 y ganó 1 entrada en la fase.",
      "source": "model",
      "reason": null
     }
@@ -4585,15 +4650,15 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Pressure surge: Aurora Rovers",
+    "headline": "Aurora turn up the pressure",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Aurora Rovers: 4.3 pressures per minute, 1 tackle won in this spell.",
+      "text": "Aurora Rovers have registered 4.3 pressures per minute and momentum +0.46 in this spell.",
       "team_id": "aur",
       "refs": [
        "e1",
-       "e2"
+       "e4"
       ],
       "numbers": [
        {
@@ -4601,22 +4666,22 @@
         "ref": "e1"
        },
        {
-        "value": 1.0,
-        "ref": "e2"
+        "value": 0.46,
+        "ref": "e4"
        }
       ]
      },
      {
       "claim_id": "a1c2",
-      "text": "Ironvale Athletic are completing 75% of their passes.",
-      "team_id": "irv",
+      "text": "Aurora Rovers won 1 tackle in this spell.",
+      "team_id": "aur",
       "refs": [
-       "e3"
+       "e2"
       ],
       "numbers": [
        {
-        "value": 75.0,
-        "ref": "e3"
+        "value": 1.0,
+        "ref": "e2"
        }
       ]
      }
@@ -4670,25 +4735,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt denied from big chance",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt's 0.29 xG chance from 8 m was saved.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.29 xG chance, from 8 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -4702,16 +4759,22 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 2.13 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "The chance came 11 s after winning the ball and featured 1 pass in the move.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "e6",
+      "e7",
+      "e9"
      ],
      "numbers": [
       {
-       "value": 2.13,
-       "ref": "e3"
+       "value": 11.0,
+       "ref": "e6"
+      },
+      {
+       "value": 1.0,
+       "ref": "e7"
       }
      ]
     }
@@ -4721,56 +4784,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.29 xG chance, from 8 m.",
+     "text": "Alden Brannholt had a 0.29 xG chance from 8 m saved; the chance came 11 s after Aurora Rovers won the ball and featured 1 pass, and it is 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt saw his shot saved and Aurora Rovers remain 0-1 to Ironvale Athletic!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt had a 0.29 xG chance from 8 m saved. It came 11 s after Aurora Rovers won the ball and featured 1 pass, with the score 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Rafa Yaldiran's Ironvale Athletic stay 0-1 as Alden Brannholt's 0.29 xG chance from 8 m was saved, which came 11 s after Aurora Rovers won the ball and featured 1 pass.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.29 xG chance, from 8 m.",
+     "text": "Alden Brannholt tuvo una ocasión de 0,29 xG desde 8 m que fue atajada; la ocasión llegó 11 s después de que Aurora Rovers ganara el balón y tuvo 1 pase, y el marcador es 0-1 a favor de Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt vio su disparo atajado y Aurora Rovers siguen 0-1 frente a Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt tuvo una ocasión de 0,29 xG desde 8 m que fue atajada. Llegó 11 s después de que Aurora Rovers ganara el balón y contó con 1 pase, y el marcador es 0-1 para Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran sigue 0-1 tras la ocasión de Alden Brannholt, una oportunidad de 0,29 xG desde 8 m que fue atajada y que llegó 11 s después de que Aurora Rovers ganara el balón y contó con 1 pase.",
      "source": "model",
      "reason": null
     }
@@ -4975,25 +5038,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt denied from big chance",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+      "text": "Alden Brannholt's 0.29 xG chance from 8 m was saved.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.29 xG chance, from 8 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -5007,16 +5062,22 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 2.13 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "The chance came 11 s after winning the ball and featured 1 pass in the move.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "e6",
+       "e7",
+       "e9"
       ],
       "numbers": [
        {
-        "value": 2.13,
-        "ref": "e3"
+        "value": 11.0,
+        "ref": "e6"
+       },
+       {
+        "value": 1.0,
+        "ref": "e7"
        }
       ]
      }
@@ -5039,13 +5100,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -5054,13 +5108,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -5084,25 +5131,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt denied from close range",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt was denied with a 0.64 xG chance from 4 m; the shot was saved.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.64 xG chance, from 4 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -5116,16 +5155,51 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 2.77 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "The chance came 3 s after Aurora Rovers won the ball in open play; the move featured 0 passes and 0 m gained.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "e6",
+      "e9",
+      "e7",
+      "e8"
      ],
      "numbers": [
       {
+       "value": 3.0,
+       "ref": "e6"
+      },
+      {
+       "value": 0.0,
+       "ref": "e7"
+      },
+      {
+       "value": 0.0,
+       "ref": "e8"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Aurora Rovers have 13 shots and 2.77 xG in the match, with momentum +0.71.",
+     "team_id": "aur",
+     "refs": [
+      "e4",
+      "e3",
+      "e5"
+     ],
+     "numbers": [
+      {
+       "value": 13.0,
+       "ref": "e4"
+      },
+      {
        "value": 2.77,
        "ref": "e3"
+      },
+      {
+       "value": 0.71,
+       "ref": "e5"
       }
      ]
     }
@@ -5135,56 +5209,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+     "text": "Alden Brannholt was denied with a 0.64 xG chance from 4 m; the shot was saved. Aurora Rovers have 13 shots and 2.77 xG in the match, with momentum +0.71, and the chance came 3 s after Aurora Rovers won the ball in open play from a move with 0 passes and 0 m gained.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt lashes a 0.64 xG chance at goal but it’s saved — what a let-off for the game!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt was denied with a 0.64 xG chance from 4 m as the shot was saved. Aurora Rovers have 13 shots and 2.77 xG, momentum +0.71, and the chance arrived 3 s after Aurora Rovers won the ball in open play from a move with 0 passes and 0 m gained.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Rafa Yaldiran's Ironvale Athletic see Alden Brannholt's 0.64 xG attempt from 4 m saved, after the chance came 3 s following Aurora Rovers' win of the ball in open play from a move with 0 passes and 0 m gained.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+     "text": "Alden Brannholt fue detenido con una ocasión de 0,64 xG desde 4 m; el disparo fue atajado. Aurora Rovers tienen 13 disparos y 2,77 xG en el partido, con momentum +0,71, y la ocasión llegó 3 s después de que Aurora Rovers ganara el balón en juego, en una acción con 0 pases y 0 m ganados.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt manda una ocasión de 0,64 xG al guardameta y la atajan: ¡menudo momento para Aurora Rovers!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "Alden Brannholt fue detenido con una ocasión de 0,64 xG desde 4 m y el disparo fue atajado. Aurora Rovers cuentan con 13 disparos y 2,77 xG, momentum +0,71, y la ocasión llegó 3 s después de que Aurora Rovers ganara el balón en juego en una acción con 0 pases y 0 m ganados.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran ve cómo Alden Brannholt prueba una ocasión de 0,64 xG desde 4 m que es atajada, tras una jugada que llegó 3 s después de que Aurora Rovers ganara el balón en juego con 0 pases y 0 m ganados.",
      "source": "model",
      "reason": null
     }
@@ -5389,25 +5463,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt denied from close range",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was saved.",
+      "text": "Alden Brannholt was denied with a 0.64 xG chance from 4 m; the shot was saved.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.64 xG chance, from 4 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -5421,16 +5487,51 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 2.77 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "The chance came 3 s after Aurora Rovers won the ball in open play; the move featured 0 passes and 0 m gained.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "e6",
+       "e9",
+       "e7",
+       "e8"
       ],
       "numbers": [
        {
+        "value": 3.0,
+        "ref": "e6"
+       },
+       {
+        "value": 0.0,
+        "ref": "e7"
+       },
+       {
+        "value": 0.0,
+        "ref": "e8"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Aurora Rovers have 13 shots and 2.77 xG in the match, with momentum +0.71.",
+      "team_id": "aur",
+      "refs": [
+       "e4",
+       "e3",
+       "e5"
+      ],
+      "numbers": [
+       {
+        "value": 13.0,
+        "ref": "e4"
+       },
+       {
         "value": 2.77,
         "ref": "e3"
+       },
+       {
+        "value": 0.71,
+        "ref": "e5"
        }
       ]
      }
@@ -5498,11 +5599,35 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Momentum shift: Aurora Rovers",
+   "headline": "Aurora mounting strong spell",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "Aurora Rovers have 5 shots and 1.25 xG in this spell, and are registering 3.2 pressures per minute.",
+     "team_id": "aur",
+     "refs": [
+      "e3",
+      "e4",
+      "e5"
+     ],
+     "numbers": [
+      {
+       "value": 5.0,
+       "ref": "e3"
+      },
+      {
+       "value": 1.25,
+       "ref": "e4"
+      },
+      {
+       "value": 3.2,
+       "ref": "e5"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers' momentum is +0.71 with 87% field tilt.",
      "team_id": "aur",
      "refs": [
       "e1",
@@ -5518,20 +5643,6 @@
        "ref": "e2"
       }
      ]
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: 5 shots in this spell.",
-     "team_id": "aur",
-     "refs": [
-      "e3"
-     ],
-     "numbers": [
-      {
-       "value": 5.0,
-       "ref": "e3"
-      }
-     ]
     }
    ],
    "semantic_check": "passed",
@@ -5539,56 +5650,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Aurora Rovers: momentum +0.71, 87% field tilt. Aurora Rovers: 5 shots in this spell.",
-     "source": "model",
-     "reason": null
+     "text": "Aurora Rovers begin a spell on top: momentum +0.71, 87% field tilt, 5 shots, 1.25 xG.",
+     "source": "template",
+     "reason": "persona text rejected: team_mismatch: \"+0.71\" is given to Ironvale Athletic, but that number belongs to Aurora Rovers; team_mismatch: \"87\" is given to Ironvale Athletic, but that number belongs to Aurora Rovers"
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "Aurora Rovers are piling on the pressure and threatening to turn the game around — it's 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "For Alden Brannholt's Aurora Rovers this spell sees 5 shots and 1.25 xG, with 3.2 pressures per minute and a momentum of +0.71 with 87% field tilt as they chase the 0-1 scoreline.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "For Rafa Yaldiran's Ironvale Athletic it's a 0-1 lead as Aurora Rovers have 5 shots and 1.25 xG in the spell, registering 3.2 pressures per minute and a momentum of +0.71 with 87% field tilt.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: momentum +0.71, 87% field tilt. Aurora Rovers: 5 shots in this spell.",
-     "source": "model",
-     "reason": null
+     "text": "Aurora Rovers inicia una racha de dominio: impulso de +0,71, 87% de dominio territorial, 5 tiros, 1,25 xG.",
+     "source": "template",
+     "reason": "persona text rejected: team_mismatch: \"+0,71\" is given to Ironvale Athletic, but that number belongs to Aurora Rovers; team_mismatch: \"87\" is given to Ironvale Athletic, but that number belongs to Aurora Rovers"
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "Aurora Rovers aprietan y buscan la remontada, pero sigue 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "Para Alden Brannholt y su Aurora Rovers, este periodo suma 5 disparos y 1,25 xG, con 3,2 presiones por minuto y un momentum de +0,71 con 87% de field tilt mientras persiguen el 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Aurora Rovers: momentum +0.71, 87% field tilt.",
+     "text": "Para Rafa Yaldiran y su Ironvale Athletic es un 0-1 mientras Aurora Rovers tienen 5 disparos y 1,25 xG en el periodo, registrando 3,2 presiones por minuto y un momentum de +0,71 con 87% de field tilt.",
      "source": "model",
      "reason": null
     }
@@ -5672,11 +5783,35 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Momentum shift: Aurora Rovers",
+    "headline": "Aurora mounting strong spell",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Aurora Rovers: momentum +0.71, 87% field tilt.",
+      "text": "Aurora Rovers have 5 shots and 1.25 xG in this spell, and are registering 3.2 pressures per minute.",
+      "team_id": "aur",
+      "refs": [
+       "e3",
+       "e4",
+       "e5"
+      ],
+      "numbers": [
+       {
+        "value": 5.0,
+        "ref": "e3"
+       },
+       {
+        "value": 1.25,
+        "ref": "e4"
+       },
+       {
+        "value": 3.2,
+        "ref": "e5"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers' momentum is +0.71 with 87% field tilt.",
       "team_id": "aur",
       "refs": [
        "e1",
@@ -5690,20 +5825,6 @@
        {
         "value": 87.0,
         "ref": "e2"
-       }
-      ]
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: 5 shots in this spell.",
-      "team_id": "aur",
-      "refs": [
-       "e3"
-      ],
-      "numbers": [
-       {
-        "value": 5.0,
-        "ref": "e3"
        }
       ]
      }
@@ -5757,25 +5878,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt's big chance blocked",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt had a 0.48 xG chance from 5 m but the shot was blocked.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.48 xG chance, from 5 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -5789,16 +5902,41 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 3.25 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers won the ball in open play and struck 31 s after winning it during a momentum +0.79 spell.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "e9",
+      "e6",
+      "e5"
+     ],
+     "numbers": [
+      {
+       "value": 31.0,
+       "ref": "e6"
+      },
+      {
+       "value": 0.79,
+       "ref": "e5"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Aurora Rovers have 3.25 xG in the match and 14 shots.",
+     "team_id": "aur",
+     "refs": [
+      "e3",
+      "e4"
      ],
      "numbers": [
       {
        "value": 3.25,
        "ref": "e3"
+      },
+      {
+       "value": 14.0,
+       "ref": "e4"
       }
      ]
     }
@@ -5808,56 +5946,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.48 xG chance, from 5 m.",
+     "text": "Aurora Rovers had a big chance: Alden Brannholt had a 0.48 xG chance from 5 m but the shot was blocked. Aurora Rovers won the ball and struck 31 s after winning it during a momentum +0.79 spell; Aurora Rovers have 3.25 xG and 14 shots, score 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt saw a great chance blocked as Aurora pushed after winning the ball, but it’s still 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt had a 0.48 xG chance from 5 m but it was blocked; Aurora Rovers struck 31 s after winning the ball during a momentum +0.79 spell and have 3.25 xG and 14 shots, yet trail 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Rafa Yaldiran's Ironvale Athletic remain 0-1; Aurora Rovers had a 0.48 xG chance from 5 m blocked after winning the ball and striking 31 s later, and Aurora Rovers have 3.25 xG and 14 shots.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.48 xG chance, from 5 m.",
+     "text": "Aurora Rovers tuvo una gran ocasión: Alden Brannholt dispuso de una ocasión de 0,48 xG desde 5 m pero el disparo fue bloqueado. Aurora Rovers ganó el balón y remató 31 s después de ganarlo durante un periodo de momentum +0,79; Aurora Rovers tienen 3,25 xG y 14 disparos, marcador 0-1 para Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt tuvo una gran oportunidad bloqueada cuando Aurora apretaba tras recuperar el balón, pero sigue 0-1 para Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt tuvo una ocasión de 0,48 xG desde 5 m que fue bloqueada; Aurora Rovers remató 31 s después de recuperar el balón durante un periodo de momentum +0,79 y tienen 3,25 xG y 14 disparos, aunque van perdiendo 0-1 ante Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran sigue 0-1; Aurora Rovers tuvo una ocasión de 0,48 xG desde 5 m bloqueada tras ganar el balón y rematar 31 s después, y Aurora Rovers tienen 3,25 xG y 14 disparos.",
      "source": "model",
      "reason": null
     }
@@ -6062,25 +6200,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt's big chance blocked",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+      "text": "Alden Brannholt had a 0.48 xG chance from 5 m but the shot was blocked.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.48 xG chance, from 5 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -6094,16 +6224,41 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 3.25 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers won the ball in open play and struck 31 s after winning it during a momentum +0.79 spell.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "e9",
+       "e6",
+       "e5"
+      ],
+      "numbers": [
+       {
+        "value": 31.0,
+        "ref": "e6"
+       },
+       {
+        "value": 0.79,
+        "ref": "e5"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Aurora Rovers have 3.25 xG in the match and 14 shots.",
+      "team_id": "aur",
+      "refs": [
+       "e3",
+       "e4"
       ],
       "numbers": [
        {
         "value": 3.25,
         "ref": "e3"
+       },
+       {
+        "value": 14.0,
+        "ref": "e4"
        }
       ]
      }
@@ -6412,25 +6567,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Aurora's big chance blocked",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt had a 0.39 xG chance from 6 m that was blocked.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.39 xG chance, from 6 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -6444,16 +6591,22 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 3.63 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers won the ball in open play, had momentum +0.78, and the shot came 20 s after winning the ball.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "e9",
+      "e5",
+      "e6"
      ],
      "numbers": [
       {
-       "value": 3.63,
-       "ref": "e3"
+       "value": 0.78,
+       "ref": "e5"
+      },
+      {
+       "value": 20.0,
+       "ref": "e6"
       }
      ]
     }
@@ -6463,58 +6616,58 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "Aurora Rovers won the ball in open play and had momentum +0.78; Alden Brannholt's 0.39 xG chance from 6 m was blocked 20 s after Aurora Rovers won the ball, score 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt sees a big chance blocked as Aurora Rovers chase a 0-1 scoreline.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt had a 0.39 xG chance from 6 m that was blocked; Aurora Rovers won the ball in open play, had momentum +0.78, and the shot came 20 s after Aurora Rovers won the ball.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Rafa Yaldiran's Ironvale Athletic lead 0-1 after Alden Brannholt's 0.39 xG chance from 6 m was blocked; Aurora Rovers won the ball in open play and had momentum +0.78, and the shot came 20 s after Aurora Rovers won the ball.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "Aurora Rovers ganó el balón en juego abierto y tuvo momentum +0,78; Alden Brannholt tuvo una ocasión de 0,39 xG desde 6 m que fue bloqueada 20 s después de que Aurora Rovers ganara el balón, marcador 0-1 a favor de Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt ve su gran ocasión bloqueada mientras Aurora Rovers siguen 0-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt tuvo una ocasión de 0,39 xG desde 6 m que fue bloqueada; Aurora Rovers ganó el balón en juego abierto, tuvo momentum +0,78, y el disparo llegó 20 s después de que Aurora Rovers ganara el balón.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
-     "source": "model",
-     "reason": null
+     "text": "Aurora Rovers roza el gol, pero el equipo de Rafa Yaldiran se salva.",
+     "source": "template",
+     "reason": "persona text rejected: team_mismatch: \"0,39\" is given to Ironvale Athletic, but that number belongs to Aurora Rovers"
     }
    ]
   },
@@ -6717,25 +6870,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Aurora's big chance blocked",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+      "text": "Alden Brannholt had a 0.39 xG chance from 6 m that was blocked.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.39 xG chance, from 6 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -6749,16 +6894,22 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 3.63 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers won the ball in open play, had momentum +0.78, and the shot came 20 s after winning the ball.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "e9",
+       "e5",
+       "e6"
       ],
       "numbers": [
        {
-        "value": 3.63,
-        "ref": "e3"
+        "value": 0.78,
+        "ref": "e5"
+       },
+       {
+        "value": 20.0,
+        "ref": "e6"
        }
       ]
      }
@@ -6781,13 +6932,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -6796,13 +6940,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -6826,25 +6963,33 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt's big chance blocked",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Aurora Rovers have momentum +0.80.",
      "team_id": "aur",
      "refs": [
-      "p1",
-      "e10"
+      "e5"
      ],
-     "numbers": []
+     "numbers": [
+      {
+       "value": 0.8,
+       "ref": "e5"
+      }
+     ]
     },
     {
      "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "Alden Brannholt had a 0.39 xG chance from 6 m, 3 s after winning the ball; the shot was blocked.",
      "team_id": "aur",
      "refs": [
+      "p1",
       "e1",
-      "e2"
+      "e2",
+      "e6",
+      "e9",
+      "e10"
      ],
      "numbers": [
       {
@@ -6854,20 +6999,10 @@
       {
        "value": 6.0,
        "ref": "e2"
-      }
-     ]
-    },
-    {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 4.02 xG in the match.",
-     "team_id": "aur",
-     "refs": [
-      "e3"
-     ],
-     "numbers": [
+      },
       {
-       "value": 4.02,
-       "ref": "e3"
+       "value": 3.0,
+       "ref": "e6"
       }
      ]
     }
@@ -6877,58 +7012,58 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "Aurora Rovers have momentum +0.80. Alden Brannholt had a 0.39 xG chance from 6 m, 3 s after winning the ball; the shot was blocked and it is 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt rattles a big chance but it's blocked as it stays 0-1 to Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt saw his 0.39 xG chance from 6 m blocked, 3 s after winning the ball. Aurora Rovers have momentum +0.80.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Ironvale Athletic remain 0-1 up after Alden Brannholt’s 0.39 xG attempt from 6 m was blocked; Aurora Rovers have momentum +0.80.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.39 xG chance, from 6 m.",
+     "text": "Aurora Rovers tienen momentum +0,80. Alden Brannholt tuvo una ocasión de 0,39 xG desde 6 m, 3 s después de ganar el balón; el disparo fue bloqueado y el marcador es 0-1 a favor de Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt ve su gran ocasión bloqueada y sigue 0-1 para Ironvale Athletic.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt tuvo una ocasión de 0,39 xG desde 6 m que fue bloqueada, 3 s después de recuperar el balón. Aurora Rovers tienen momentum +0,80.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
-     "source": "model",
-     "reason": null
+     "text": "Aurora Rovers roza el gol, pero el equipo de Rafa Yaldiran se salva.",
+     "source": "template",
+     "reason": "persona text rejected: team_mismatch: \"0,39\" is given to Ironvale Athletic, but that number belongs to Aurora Rovers"
     }
    ]
   },
@@ -7131,25 +7266,33 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt's big chance blocked",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+      "text": "Aurora Rovers have momentum +0.80.",
       "team_id": "aur",
       "refs": [
-       "p1",
-       "e10"
+       "e5"
       ],
-      "numbers": []
+      "numbers": [
+       {
+        "value": 0.8,
+        "ref": "e5"
+       }
+      ]
      },
      {
       "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.39 xG chance, from 6 m.",
+      "text": "Alden Brannholt had a 0.39 xG chance from 6 m, 3 s after winning the ball; the shot was blocked.",
       "team_id": "aur",
       "refs": [
+       "p1",
        "e1",
-       "e2"
+       "e2",
+       "e6",
+       "e9",
+       "e10"
       ],
       "numbers": [
        {
@@ -7159,20 +7302,10 @@
        {
         "value": 6.0,
         "ref": "e2"
-       }
-      ]
-     },
-     {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 4.02 xG in the match.",
-      "team_id": "aur",
-      "refs": [
-       "e3"
-      ],
-      "numbers": [
+       },
        {
-        "value": 4.02,
-        "ref": "e3"
+        "value": 3.0,
+        "ref": "e6"
        }
       ]
      }
@@ -7195,13 +7328,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -7210,13 +7336,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -7481,25 +7600,18 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Goal: Aurora Rovers",
+   "headline": "Brannholt levels for Aurora",
    "claims": [
     {
-     "claim_id": "a1c1",
-     "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1.",
+     "claim_id": "a3c1",
+     "text": "Alden Brannholt equalised for Aurora Rovers with a 0.64 xG chance from 4 m; the shot went in and it is 1-1.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.64 xG chance, from 4 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e11",
+      "e10"
      ],
      "numbers": [
       {
@@ -7513,21 +7625,28 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 4.66 xG in the match, Aurora Rovers: 60% possession.",
+     "claim_id": "a3c2",
+     "text": "Aurora Rovers won the ball in open play and, 14 s later, a 2-pass break gained 44 m to finish with the goal.",
      "team_id": "aur",
      "refs": [
-      "e3",
-      "c4"
+      "e9",
+      "e6",
+      "e7",
+      "e8",
+      "e11"
      ],
      "numbers": [
       {
-       "value": 4.66,
-       "ref": "e3"
+       "value": 14.0,
+       "ref": "e6"
       },
       {
-       "value": 60.0,
-       "ref": "c4"
+       "value": 2.0,
+       "ref": "e7"
+      },
+      {
+       "value": 44.0,
+       "ref": "e8"
       }
      ]
     }
@@ -7537,56 +7656,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+     "text": "Alden Brannholt equalises for Aurora Rovers, converting a 0.64 xG chance from 4 m to make it 1-1. Aurora Rovers won the ball in open play and, 14 s later, a 2-pass break gained 44 m to finish with the goal.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1.",
+     "text": "Alden Brannholt drags Aurora Rovers level, 1-1, after a quick break!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
+     "text": "Alden Brannholt equalises for Aurora Rovers with a 0.64 xG chance from 4 m. Aurora Rovers won the ball in open play and, 14 s later, a 2-pass break gained 44 m to finish with the goal.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
+     "text": "Rafa Yaldiran's Ironvale Athletic are pegged back to 1-1 after Alden Brannholt's goal.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 1-1. Aurora Rovers: a 0.64 xG chance, from 4 m.",
+     "text": "Alden Brannholt empata para Aurora Rovers, convirtiendo una ocasión de 0,64 xG desde 4 m para poner el 1-1. Aurora Rovers ganó el balón en juego y, 14 s después, una jugada de 2 pases ganó 44 m para acabar en gol.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 1-1.",
+     "text": "¡Alden Brannholt iguala para Aurora Rovers, 1-1, tras una contra rápida!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
+     "text": "Alden Brannholt empata para Aurora Rovers con una ocasión de 0,64 xG desde 4 m. Aurora Rovers ganó el balón en juego y, 14 s después, una jugada de 2 pases ganó 44 m para acabar en gol.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: it is 1-1.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran queda igualado 1-1 tras el gol de Alden Brannholt.",
      "source": "model",
      "reason": null
     }
@@ -7789,118 +7908,6 @@
      "say": "Alden Brannholt has 4.62 xG in the match",
      "source": "player",
      "origin": null
-    },
-    {
-     "ref": "c4",
-     "metric": "possession_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 59.7,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Aurora Rovers: 60% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c5",
-     "metric": "shots_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 17.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Aurora Rovers: 17 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c6",
-     "metric": "xg_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 4.662,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Aurora Rovers: 4.66 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c7",
-     "metric": "pass_completion_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 83.8,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Aurora Rovers: 84% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c8",
-     "metric": "possession_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 40.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Ironvale Athletic: 40% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c9",
-     "metric": "shots_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 6.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Ironvale Athletic: 6 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c10",
-     "metric": "xg_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 0.833,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Ironvale Athletic: 0.83 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c11",
-     "metric": "pass_completion_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 75.0,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4285.4,
-     "baseline": null,
-     "say": "Ironvale Athletic: 75% pass completion",
-     "source": "context",
-     "origin": null
     }
    ],
    "players": [
@@ -7917,25 +7924,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Goal: Aurora Rovers",
+    "headline": "Brannholt levels for Aurora",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt scored for Aurora Rovers: it is 1-1.",
+      "text": "Alden Brannholt equalised for Aurora Rovers with a 0.64 xG chance from 4 m, and it is 1-1: Aurora Rovers equalise.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.64 xG chance, from 4 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -7949,21 +7948,154 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 4.66 xG in the match, Aurora Rovers: 60% possession.",
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers won the ball in open play and, 14 s later, finished the break after gaining 44 m with 2 passes in the move.",
       "team_id": "aur",
       "refs": [
-       "e3",
-       "c4"
+       "e9",
+       "e6",
+       "e8",
+       "e7"
       ],
       "numbers": [
        {
-        "value": 4.66,
-        "ref": "e3"
+        "value": 14.0,
+        "ref": "e6"
        },
        {
-        "value": 60.0,
-        "ref": "c4"
+        "value": 44.0,
+        "ref": "e8"
+       },
+       {
+        "value": 2.0,
+        "ref": "e7"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "This is Alden Brannholt's first goal in this match.",
+      "team_id": "aur",
+      "refs": [
+       "p1",
+       "c1"
+      ],
+      "numbers": []
+     }
+    ]
+   },
+   {
+    "attempt": 2,
+    "headline": "Brannholt levels for Aurora",
+    "claims": [
+     {
+      "claim_id": "a2c1",
+      "text": "Alden Brannholt equalised for Aurora Rovers with a 0.64 xG chance from 4 m; the shot went in and it is 1-1.",
+      "team_id": "aur",
+      "refs": [
+       "p1",
+       "e1",
+       "e2",
+       "e11",
+       "e10"
+      ],
+      "numbers": [
+       {
+        "value": 0.64,
+        "ref": "e1"
+       },
+       {
+        "value": 4.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a2c2",
+      "text": "Aurora Rovers won the ball in open play and scored 14 s after winning it, with 2 passes in the move and 44 m gained.",
+      "team_id": "aur",
+      "refs": [
+       "e9",
+       "e6",
+       "e7",
+       "e8"
+      ],
+      "numbers": [
+       {
+        "value": 14.0,
+        "ref": "e6"
+       },
+       {
+        "value": 2.0,
+        "ref": "e7"
+       },
+       {
+        "value": 44.0,
+        "ref": "e8"
+       }
+      ]
+     },
+     {
+      "claim_id": "a2c3",
+      "text": "This is Alden Brannholt's first goal in this match.",
+      "team_id": "aur",
+      "refs": [
+       "p1",
+       "c1"
+      ],
+      "numbers": []
+     }
+    ]
+   },
+   {
+    "attempt": 3,
+    "headline": "Brannholt levels for Aurora",
+    "claims": [
+     {
+      "claim_id": "a3c1",
+      "text": "Alden Brannholt equalised for Aurora Rovers with a 0.64 xG chance from 4 m; the shot went in and it is 1-1.",
+      "team_id": "aur",
+      "refs": [
+       "p1",
+       "e1",
+       "e2",
+       "e11",
+       "e10"
+      ],
+      "numbers": [
+       {
+        "value": 0.64,
+        "ref": "e1"
+       },
+       {
+        "value": 4.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a3c2",
+      "text": "Aurora Rovers won the ball in open play and, 14 s later, a 2-pass break gained 44 m to finish with the goal.",
+      "team_id": "aur",
+      "refs": [
+       "e9",
+       "e6",
+       "e7",
+       "e8",
+       "e11"
+      ],
+      "numbers": [
+       {
+        "value": 14.0,
+        "ref": "e6"
+       },
+       {
+        "value": 2.0,
+        "ref": "e7"
+       },
+       {
+        "value": 44.0,
+        "ref": "e8"
        }
       ]
      }
@@ -8003,12 +8135,92 @@
     "claim_id": "a1c2",
     "attempt": 1,
     "layer": "semantic",
-    "ok": true,
-    "reasons": []
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "The cited evidence shows the turnover, time elapsed, metres gained and passes, but does not show that the break was finished (no shot/goal outcome is cited)."
+     }
+    ]
    },
    {
     "claim_id": "a1c3",
     "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "No cited evidence shows a goal or that the move ended with a score; the cited items only show possession won, time since turnover, passes and metres gained."
+     }
+    ]
+   },
+   {
+    "claim_id": "a2c3",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a3c1",
+    "attempt": 3,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a3c2",
+    "attempt": 3,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a3c1",
+    "attempt": 3,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a3c2",
+    "attempt": 3,
     "layer": "semantic",
     "ok": true,
     "reasons": []
@@ -8031,25 +8243,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt's effort blocked",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt missed a big chance for Aurora Rovers with a 0.35 xG effort from 6 m that was blocked.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.35 xG chance, from 6 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -8063,16 +8267,27 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 5.02 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Aurora Rovers won the ball in open play and, in an 8-pass move that gained 20 m, had momentum +0.54.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "e9",
+      "e7",
+      "e8",
+      "e5"
      ],
      "numbers": [
       {
-       "value": 5.02,
-       "ref": "e3"
+       "value": 8.0,
+       "ref": "e7"
+      },
+      {
+       "value": 20.0,
+       "ref": "e8"
+      },
+      {
+       "value": 0.54,
+       "ref": "e5"
       }
      ]
     }
@@ -8082,56 +8297,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.35 xG chance, from 6 m.",
+     "text": "Alden Brannholt missed a big chance for Aurora Rovers — 0.35 xG from 6 m — blocked; the score is 1-1. Aurora Rovers won the ball in open play and, in an 8-pass move that gained 20 m, had momentum +0.54.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt had a big chance blocked as Aurora Rovers stay 1-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt saw a 0.35 xG effort from 6 m for Aurora Rovers blocked; Aurora Rovers had won the ball and in an 8-pass move gained 20 m with momentum +0.54.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Ironvale Athletic remain 1-1 after Alden Brannholt had a 0.35 xG effort from 6 m for Aurora Rovers that was blocked; Aurora Rovers won the ball and in an 8-pass move gained 20 m with momentum +0.54.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked. Aurora Rovers: a 0.35 xG chance, from 6 m.",
+     "text": "Alden Brannholt desperdició una gran ocasión para Aurora Rovers — 0,35 xG desde 6 m — bloqueada; el marcador es 1-1. Aurora Rovers recuperó el balón en juego y, en un movimiento de 8 pases que avanzó 20 m, tuvo momentum +0,54.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "¡Alden Brannholt tuvo una gran ocasión bloqueada y Aurora Rovers siguen 1-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "Alden Brannholt lanzó un intento de 0,35 xG desde 6 m para Aurora Rovers que fue bloqueado; Aurora Rovers había recuperado el balón y en un movimiento de 8 pases avanzó 20 m con momentum +0,54.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+     "text": "El Ironvale Athletic sigue 1-1 tras el intento de Alden Brannholt de 0,35 xG desde 6 m para Aurora Rovers que fue bloqueado; Aurora Rovers recuperó el balón y en un movimiento de 8 pases avanzó 20 m con momentum +0,54.",
      "source": "model",
      "reason": null
     }
@@ -8336,25 +8551,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt's effort blocked",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot was blocked.",
+      "text": "Alden Brannholt missed a big chance for Aurora Rovers with a 0.35 xG effort from 6 m that was blocked.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.35 xG chance, from 6 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -8368,16 +8575,27 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 5.02 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Aurora Rovers won the ball in open play and, in an 8-pass move that gained 20 m, had momentum +0.54.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "e9",
+       "e7",
+       "e8",
+       "e5"
       ],
       "numbers": [
        {
-        "value": 5.02,
-        "ref": "e3"
+        "value": 8.0,
+        "ref": "e7"
+       },
+       {
+        "value": 20.0,
+        "ref": "e8"
+       },
+       {
+        "value": 0.54,
+        "ref": "e5"
        }
       ]
      }
@@ -8400,13 +8618,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -8415,13 +8626,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -8445,25 +8649,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Aurora Rovers",
+   "headline": "Brannholt misses close-range chance",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
+     "text": "Alden Brannholt had a 0.34 xG chance from 6 m that went off target.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.34 xG chance, from 6 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -8477,16 +8673,22 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 5.77 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Alden Brannholt has 21 shots and 5.72 xG in the match.",
      "team_id": "aur",
      "refs": [
-      "e3"
+      "p1",
+      "c2",
+      "c3"
      ],
      "numbers": [
       {
-       "value": 5.77,
-       "ref": "e3"
+       "value": 21.0,
+       "ref": "c2"
+      },
+      {
+       "value": 5.72,
+       "ref": "c3"
       }
      ]
     }
@@ -8496,56 +8698,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot went off target. Aurora Rovers: a 0.34 xG chance, from 6 m.",
+     "text": "Alden Brannholt had a 0.34 xG chance from 6 m that went off target as the match stood 1-1. Brannholt has 21 shots and 5.72 xG in the match.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
+     "text": "Alden Brannholt flashes a big chance off target as the game stays 1-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
+     "text": "Alden Brannholt missed a 0.34 xG chance from 6 m that went off target; he has 21 shots and 5.72 xG in the match.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
+     "text": "Rafa Yaldiran's Ironvale Athletic remain 1-1 after Alden Brannholt's off-target 0.34 xG chance.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot went off target. Aurora Rovers: a 0.34 xG chance, from 6 m.",
+     "text": "Alden Brannholt tuvo una ocasión de 0,34 xG desde 6 m que se fue fuera y el partido iba 1-1. Brannholt suma 21 remates y 5,72 xG en el partido.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
+     "text": "¡Alden Brannholt falla una gran ocasión y el partido sigue 1-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
+     "text": "Alden Brannholt falló una ocasión de 0,34 xG desde 6 m que se fue fuera; tiene 21 remates y 5,72 xG en el partido.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
+     "text": "Rafa Yaldiran y su Ironvale Athletic siguen 1-1 tras la ocasión que Alden Brannholt mandó fuera con 0,34 xG.",
      "source": "model",
      "reason": null
     }
@@ -8750,25 +8952,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Aurora Rovers",
+    "headline": "Brannholt misses close-range chance",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt had the chance for Aurora Rovers, and the shot went off target.",
+      "text": "Alden Brannholt had a 0.34 xG chance from 6 m that went off target.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.34 xG chance, from 6 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -8782,16 +8976,22 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 5.77 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Alden Brannholt has 21 shots and 5.72 xG in the match.",
       "team_id": "aur",
       "refs": [
-       "e3"
+       "p1",
+       "c2",
+       "c3"
       ],
       "numbers": [
        {
-        "value": 5.77,
-        "ref": "e3"
+        "value": 21.0,
+        "ref": "c2"
+       },
+       {
+        "value": 5.72,
+        "ref": "c3"
        }
       ]
      }
@@ -8814,13 +9014,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -8829,13 +9022,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -8859,15 +9045,16 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Chaos spell: the match",
+   "headline": "Chaos grips match late on",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
+     "text": "Chaos index +0.78 in this spell, with 3.5 turnovers per minute and 78% pass completion across both teams.",
      "team_id": null,
      "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e3"
      ],
      "numbers": [
       {
@@ -8877,20 +9064,24 @@
       {
        "value": 3.5,
        "ref": "e2"
+      },
+      {
+       "value": 78.0,
+       "ref": "e3"
       }
      ]
     },
     {
      "claim_id": "a1c2",
-     "text": "78% pass completion for both teams combined in this spell.",
+     "text": "Possessions lasting 17 s on average in this spell.",
      "team_id": null,
      "refs": [
-      "e3"
+      "e4"
      ],
      "numbers": [
       {
-       "value": 78.0,
-       "ref": "e3"
+       "value": 17.0,
+       "ref": "e4"
       }
      ]
     }
@@ -8900,56 +9091,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell. 78% pass completion for both teams combined in this spell.",
+     "text": "Chaos index +0.78 in the spell, with 3.5 turnovers per minute and 78% pass completion across both teams. Possessions averaged 17 s; score 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
+     "text": "Chaos all over the place and the game remains 1-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
+     "text": "Alden Brannholt's Aurora Rovers are caught up in the turmoil. Chaos index +0.78, 3.5 turnovers per minute and 78% pass completion across both teams, possessions averaged 17 s; score 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
+     "text": "Rafa Yaldiran's Ironvale Athletic are stuck in a chaotic spell. Chaos index +0.78, 3.5 turnovers per minute and 78% pass completion across both teams, possessions averaged 17 s; score 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell. 78% pass completion for both teams combined in this spell.",
+     "text": "Índice de caos +0,78 en ese periodo, con 3,5 pérdidas por minuto y 78% de pases completados entre ambos equipos. Las posesiones duraron de media 17 s; marcador 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
+     "text": "¡Caos total y el partido sigue 1-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
+     "text": "El Aurora Rovers de Alden Brannholt está inmerso en el caos. Índice de caos +0,78, 3,5 pérdidas por minuto y 78% de pases completados entre ambos equipos, posesiones de 17 s de media; marcador 1-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran vive un periodo caótico. Índice de caos +0,78, 3,5 pérdidas por minuto y 78% de pases completados entre ambos equipos, posesiones de 17 s de media; marcador 1-1.",
      "source": "model",
      "reason": null
     }
@@ -9019,15 +9210,16 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Chaos spell: the match",
+    "headline": "Chaos grips match late on",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Chaos index +0.78 in this spell, 3.5 turnovers per minute across both teams in this spell.",
+      "text": "Chaos index +0.78 in this spell, with 3.5 turnovers per minute and 78% pass completion across both teams.",
       "team_id": null,
       "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e3"
       ],
       "numbers": [
        {
@@ -9037,20 +9229,24 @@
        {
         "value": 3.5,
         "ref": "e2"
+       },
+       {
+        "value": 78.0,
+        "ref": "e3"
        }
       ]
      },
      {
       "claim_id": "a1c2",
-      "text": "78% pass completion for both teams combined in this spell.",
+      "text": "Possessions lasting 17 s on average in this spell.",
       "team_id": null,
       "refs": [
-       "e3"
+       "e4"
       ],
       "numbers": [
        {
-        "value": 78.0,
-        "ref": "e3"
+        "value": 17.0,
+        "ref": "e4"
        }
       ]
      }
@@ -9104,25 +9300,19 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Goal: Aurora Rovers",
+   "headline": "Brannholt gives Aurora a late lead",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
+     "text": "Alden Brannholt pounced on a quick turnover and scored for Aurora Rovers with a 0.69 xG chance from 4 m, 4 s after winning the ball.",
      "team_id": "aur",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Aurora Rovers: a 0.69 xG chance, from 4 m.",
-     "team_id": "aur",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e6",
+      "e9",
+      "e11"
      ],
      "numbers": [
       {
@@ -9132,25 +9322,34 @@
       {
        "value": 4.0,
        "ref": "e2"
+      },
+      {
+       "value": 4.0,
+       "ref": "e6"
       }
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 6.45 xG in the match, Aurora Rovers: 59% possession.",
+     "claim_id": "a1c2",
+     "text": "It is 2-1: Aurora Rovers go ahead.",
      "team_id": "aur",
      "refs": [
-      "e3",
-      "c4"
+      "e10"
+     ],
+     "numbers": []
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Alden Brannholt has 2 goals in this match, including this one.",
+     "team_id": "aur",
+     "refs": [
+      "p1",
+      "c1"
      ],
      "numbers": [
       {
-       "value": 6.45,
-       "ref": "e3"
-      },
-      {
-       "value": 59.0,
-       "ref": "c4"
+       "value": 2.0,
+       "ref": "c1"
       }
      ]
     }
@@ -9160,56 +9359,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers. Aurora Rovers: a 0.69 xG chance, from 4 m.",
+     "text": "Aurora Rovers go 2-1: Alden Brannholt pounced on a quick turnover and scored for Aurora Rovers with a 0.69 xG chance from 4 m, 4 s after winning the ball. Alden Brannholt has 2 goals in the match.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
+     "text": "Alden Brannholt puts Aurora Rovers 2-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
+     "text": "Alden Brannholt pounced on a quick turnover and scored a 0.69 xG chance from 4 m, 4 s after winning the ball; Alden Brannholt now has 2 goals as Aurora Rovers go 2-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
+     "text": "Rafa Yaldiran's Ironvale Athletic see Aurora Rovers go 2-1 after Alden Brannholt pounced on a quick turnover and scored with a 0.69 xG chance from 4 m, 4 s after winning the ball.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers. Aurora Rovers: a 0.69 xG chance, from 4 m.",
+     "text": "Aurora Rovers pasa 2-1: Alden Brannholt aprovechó una pérdida rápida y marcó para Aurora Rovers con una ocasión de 0,69 xG desde 4 m, 4 s tras recuperar el balón. Alden Brannholt tiene 2 goles en el partido.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
+     "text": "¡Alden Brannholt pone a Aurora Rovers 2-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
+     "text": "Alden Brannholt aprovechó una pérdida rápida y marcó con una ocasión de 0,69 xG desde 4 m, 4 s tras recuperar el balón; Alden Brannholt suma 2 goles mientras Aurora Rovers pasan 2-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran ve cómo Aurora Rovers pasan 2-1 tras un gol de Alden Brannholt, que aprovechó una pérdida rápida y marcó con una ocasión de 0,69 xG desde 4 m, 4 s tras recuperar el balón.",
      "source": "model",
      "reason": null
     }
@@ -9412,118 +9611,6 @@
      "say": "Alden Brannholt has 6.41 xG in the match",
      "source": "player",
      "origin": null
-    },
-    {
-     "ref": "c4",
-     "metric": "possession_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 59.2,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 59% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c5",
-     "metric": "shots_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 24.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 24 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c6",
-     "metric": "xg_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 6.452,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 6.45 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c7",
-     "metric": "pass_completion_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 82.9,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Aurora Rovers: 83% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c8",
-     "metric": "possession_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 40.8,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Ironvale Athletic: 41% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c9",
-     "metric": "shots_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 7.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Ironvale Athletic: 7 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c10",
-     "metric": "xg_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 0.863,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Ironvale Athletic: 0.86 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c11",
-     "metric": "pass_completion_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 76.2,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5197.9,
-     "baseline": null,
-     "say": "Ironvale Athletic: 76% pass completion",
-     "source": "context",
-     "origin": null
     }
    ],
    "players": [
@@ -9540,25 +9627,19 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Goal: Aurora Rovers",
+    "headline": "Brannholt gives Aurora a late lead",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Alden Brannholt scored for Aurora Rovers: it is 2-1 to Aurora Rovers.",
+      "text": "Alden Brannholt pounced on a quick turnover and scored for Aurora Rovers with a 0.69 xG chance from 4 m, 4 s after winning the ball.",
       "team_id": "aur",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Aurora Rovers: a 0.69 xG chance, from 4 m.",
-      "team_id": "aur",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e6",
+       "e9",
+       "e11"
       ],
       "numbers": [
        {
@@ -9568,25 +9649,34 @@
        {
         "value": 4.0,
         "ref": "e2"
+       },
+       {
+        "value": 4.0,
+        "ref": "e6"
        }
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 6.45 xG in the match, Aurora Rovers: 59% possession.",
+      "claim_id": "a1c2",
+      "text": "It is 2-1: Aurora Rovers go ahead.",
       "team_id": "aur",
       "refs": [
-       "e3",
-       "c4"
+       "e10"
+      ],
+      "numbers": []
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Alden Brannholt has 2 goals in this match, including this one.",
+      "team_id": "aur",
+      "refs": [
+       "p1",
+       "c1"
       ],
       "numbers": [
        {
-        "value": 6.45,
-        "ref": "e3"
-       },
-       {
-        "value": 59.0,
-        "ref": "c4"
+        "value": 2.0,
+        "ref": "c1"
        }
       ]
      }
@@ -10114,12 +10204,12 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Full time: the match",
+   "headline": "Brannholt seals Aurora comeback",
    "claims": [
     {
      "claim_id": "a1c1",
      "text": "It ends 2-1: Aurora Rovers win.",
-     "team_id": "aur",
+     "team_id": null,
      "refs": [
       "c1"
      ],
@@ -10127,29 +10217,36 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Rafa Yaldiran scored for Ironvale Athletic.",
-     "team_id": "irv",
-     "refs": [
-      "p1"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c3",
-     "text": "Aurora Rovers: 58% possession, Aurora Rovers: 24 shots.",
+     "text": "Aurora Rovers had 24 shots and 6.45 xG.",
      "team_id": "aur",
      "refs": [
-      "c2",
-      "c3"
+      "c3",
+      "c4"
      ],
      "numbers": [
       {
-       "value": 58.0,
-       "ref": "c2"
-      },
-      {
        "value": 24.0,
        "ref": "c3"
+      },
+      {
+       "value": 6.45,
+       "ref": "c4"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Alden Brannholt scored 4 s after winning the ball, and made it 2-1: Aurora Rovers went ahead.",
+     "team_id": "aur",
+     "refs": [
+      "p2",
+      "c18",
+      "c21"
+     ],
+     "numbers": [
+      {
+       "value": 4.0,
+       "ref": "c18"
       }
      ]
     }
@@ -10159,56 +10256,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "It ends 2-1: Aurora Rovers win. Rafa Yaldiran scored for Ironvale Athletic.",
+     "text": "Aurora Rovers win 2-1; they had 24 shots and 6.45 xG. Alden Brannholt scored 4 s after winning the ball to make it 2-1 and put Aurora Rovers ahead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "It ends 2-1: Aurora Rovers win.",
+     "text": "Alden Brannholt's quick strike settles it and Aurora Rovers take a 2-1 win!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "en",
-     "text": "For Alden Brannholt's fans: It ends 2-1: Aurora Rovers win.",
+     "text": "Alden Brannholt scored 4 s after winning the ball to make it 2-1 and give Aurora Rovers the win.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "en",
-     "text": "For Rafa Yaldiran's fans: It ends 2-1: Aurora Rovers win.",
+     "text": "Rafa Yaldiran's Ironvale Athletic lose 2-1 as Aurora Rovers win 2-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] It ends 2-1: Aurora Rovers win. Rafa Yaldiran scored for Ironvale Athletic.",
+     "text": "Aurora Rovers gana 2-1; tuvieron 24 disparos y 6,45 xG. Alden Brannholt marcó 4 s después de recuperar el balón y hizo el 2-1 para poner por delante a Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] It ends 2-1: Aurora Rovers win.",
+     "text": "¡Alden Brannholt decide la jugada y Aurora Rovers ganan 2-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:aur_09",
      "language": "es",
-     "text": "[es · offline] For Alden Brannholt's fans: It ends 2-1: Aurora Rovers win.",
+     "text": "Alden Brannholt marcó 4 s después de ganar el balón y hizo el 2-1 para dar la victoria a Aurora Rovers.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:irv_09",
      "language": "es",
-     "text": "[es · offline] For Rafa Yaldiran's fans: It ends 2-1: Aurora Rovers win.",
+     "text": "El Ironvale Athletic de Rafa Yaldiran pierde 2-1 frente a Aurora Rovers.",
      "source": "model",
      "reason": null
     }
@@ -10428,20 +10525,6 @@
     },
     {
      "ref": "c16",
-     "metric": "goal_margin",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 1.0,
-     "unit": "count",
-     "window_start_s": 5197.9,
-     "window_end_s": 5197.9,
-     "baseline": 0.0,
-     "say": "made it 2-1: Aurora Rovers went ahead",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:2"
-    },
-    {
-     "ref": "c17",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10455,7 +10538,7 @@
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c18",
+     "ref": "c17",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10469,21 +10552,63 @@
      "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
-     "ref": "c19",
-     "metric": "goal_margin",
+     "ref": "c18",
+     "metric": "seconds_since_turnover",
      "team_id": "aur",
      "player_id": null,
-     "value": 0.0,
-     "unit": "count",
-     "window_start_s": 4285.4,
-     "window_end_s": 4285.4,
-     "baseline": -1.0,
-     "say": "made it 1-1: Aurora Rovers equalised",
+     "value": 4.3,
+     "unit": "s",
+     "window_start_s": 5193.6,
+     "window_end_s": 5197.9,
+     "baseline": null,
+     "say": "4 s after winning the ball",
      "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:1"
+     "origin": "aur_irv_comeback_0007:goal:2"
+    },
+    {
+     "ref": "c19",
+     "metric": "possession_won_in_open_play",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 5193.6,
+     "window_end_s": 5193.6,
+     "baseline": null,
+     "say": "Aurora Rovers won the ball in open play",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:2"
     },
     {
      "ref": "c20",
+     "metric": "shot_outcome",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 5197.9,
+     "window_end_s": 5197.9,
+     "baseline": null,
+     "say": "the shot went in",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:2"
+    },
+    {
+     "ref": "c21",
+     "metric": "goal_margin",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 5197.9,
+     "window_end_s": 5197.9,
+     "baseline": 0.0,
+     "say": "made it 2-1: Aurora Rovers went ahead",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:2"
+    },
+    {
+     "ref": "c22",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10497,7 +10622,7 @@
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c21",
+     "ref": "c23",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10511,63 +10636,161 @@
      "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
-     "ref": "c22",
-     "metric": "goal_margin",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 1.0,
-     "unit": "count",
-     "window_start_s": 1588.9,
-     "window_end_s": 1588.9,
-     "baseline": 0.0,
-     "say": "made it 0-1: Ironvale Athletic opened the scoring",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:0"
-    },
-    {
-     "ref": "c23",
-     "metric": "shot_xg",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 0.089,
-     "unit": "xg",
-     "window_start_s": 1588.9,
-     "window_end_s": 1588.9,
-     "baseline": null,
-     "say": "a 0.09 xG chance",
-     "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:0"
-    },
-    {
      "ref": "c24",
-     "metric": "shot_distance",
-     "team_id": "irv",
+     "metric": "shot_outcome",
+     "team_id": "aur",
      "player_id": null,
-     "value": 15.4,
-     "unit": "m",
-     "window_start_s": 1588.9,
-     "window_end_s": 1588.9,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 4285.4,
+     "window_end_s": 4285.4,
      "baseline": null,
-     "say": "from 15 m",
+     "say": "the shot went in",
      "source": "claim",
-     "origin": "aur_irv_comeback_0007:goal:0"
+     "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
      "ref": "c25",
-     "metric": "shot_outcome",
+     "metric": "goal_margin",
      "team_id": "aur",
      "player_id": null,
      "value": 0.0,
      "unit": "count",
-     "window_start_s": 4961.7,
-     "window_end_s": 4961.7,
-     "baseline": null,
-     "say": "the shot went off target",
+     "window_start_s": 4285.4,
+     "window_end_s": 4285.4,
+     "baseline": -1.0,
+     "say": "made it 1-1: Aurora Rovers equalised",
      "source": "claim",
-     "origin": "aur_irv_comeback_0007:big_chance:10"
+     "origin": "aur_irv_comeback_0007:goal:1"
     },
     {
      "ref": "c26",
+     "metric": "possession_won_in_open_play",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4270.9,
+     "window_end_s": 4270.9,
+     "baseline": null,
+     "say": "Aurora Rovers won the ball in open play",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:1"
+    },
+    {
+     "ref": "c27",
+     "metric": "seconds_since_turnover",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 14.5,
+     "unit": "s",
+     "window_start_s": 4270.9,
+     "window_end_s": 4285.4,
+     "baseline": null,
+     "say": "14 s after winning the ball",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:1"
+    },
+    {
+     "ref": "c28",
+     "metric": "passes_in_spell",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 4270.9,
+     "window_end_s": 4285.4,
+     "baseline": null,
+     "say": "2 passes in the move",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:1"
+    },
+    {
+     "ref": "c29",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 43.6,
+     "unit": "m",
+     "window_start_s": 4270.9,
+     "window_end_s": 4285.4,
+     "baseline": null,
+     "say": "44 m gained",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:1"
+    },
+    {
+     "ref": "c30",
+     "metric": "shot_outcome",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 3.0,
+     "unit": "count",
+     "window_start_s": 4285.4,
+     "window_end_s": 4285.4,
+     "baseline": null,
+     "say": "the shot went in",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:1"
+    },
+    {
+     "ref": "c31",
+     "metric": "seconds_since_turnover",
+     "team_id": "irv",
+     "player_id": null,
+     "value": 38.5,
+     "unit": "s",
+     "window_start_s": 1550.4,
+     "window_end_s": 1588.9,
+     "baseline": null,
+     "say": "38 s after gaining possession",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:0"
+    },
+    {
+     "ref": "c32",
+     "metric": "passes_in_spell",
+     "team_id": "irv",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "count",
+     "window_start_s": 1550.4,
+     "window_end_s": 1588.9,
+     "baseline": null,
+     "say": "4 passes in the move",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:0"
+    },
+    {
+     "ref": "c33",
+     "metric": "metres_gained",
+     "team_id": "irv",
+     "player_id": null,
+     "value": 55.9,
+     "unit": "m",
+     "window_start_s": 1550.4,
+     "window_end_s": 1588.9,
+     "baseline": null,
+     "say": "56 m gained",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:0"
+    },
+    {
+     "ref": "c34",
+     "metric": "possession_won_in_open_play",
+     "team_id": "irv",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 1550.4,
+     "window_end_s": 1550.4,
+     "baseline": null,
+     "say": "Ironvale Athletic gained possession after the ball went out of play",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:goal:0"
+    },
+    {
+     "ref": "c35",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10581,7 +10804,7 @@
      "origin": "aur_irv_comeback_0007:big_chance:10"
     },
     {
-     "ref": "c27",
+     "ref": "c36",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10595,21 +10818,21 @@
      "origin": "aur_irv_comeback_0007:big_chance:10"
     },
     {
-     "ref": "c28",
+     "ref": "c37",
      "metric": "shot_outcome",
      "team_id": "aur",
      "player_id": null,
-     "value": 1.0,
+     "value": 0.0,
      "unit": "count",
-     "window_start_s": 4497.4,
-     "window_end_s": 4497.4,
+     "window_start_s": 4961.7,
+     "window_end_s": 4961.7,
      "baseline": null,
-     "say": "the shot was blocked",
+     "say": "the shot went off target",
      "source": "claim",
-     "origin": "aur_irv_comeback_0007:big_chance:9"
+     "origin": "aur_irv_comeback_0007:big_chance:10"
     },
     {
-     "ref": "c29",
+     "ref": "c38",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10623,7 +10846,7 @@
      "origin": "aur_irv_comeback_0007:big_chance:9"
     },
     {
-     "ref": "c30",
+     "ref": "c39",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10637,21 +10860,21 @@
      "origin": "aur_irv_comeback_0007:big_chance:9"
     },
     {
-     "ref": "c31",
+     "ref": "c40",
      "metric": "shot_outcome",
      "team_id": "aur",
      "player_id": null,
      "value": 1.0,
      "unit": "count",
-     "window_start_s": 4023.5,
-     "window_end_s": 4023.5,
+     "window_start_s": 4497.4,
+     "window_end_s": 4497.4,
      "baseline": null,
      "say": "the shot was blocked",
      "source": "claim",
-     "origin": "aur_irv_comeback_0007:big_chance:8"
+     "origin": "aur_irv_comeback_0007:big_chance:9"
     },
     {
-     "ref": "c32",
+     "ref": "c41",
      "metric": "shot_xg",
      "team_id": "aur",
      "player_id": null,
@@ -10665,7 +10888,7 @@
      "origin": "aur_irv_comeback_0007:big_chance:8"
     },
     {
-     "ref": "c33",
+     "ref": "c42",
      "metric": "shot_distance",
      "team_id": "aur",
      "player_id": null,
@@ -10679,116 +10902,228 @@
      "origin": "aur_irv_comeback_0007:big_chance:8"
     },
     {
-     "ref": "c34",
-     "metric": "possession_total",
+     "ref": "c43",
+     "metric": "seconds_since_turnover",
      "team_id": "aur",
      "player_id": null,
-     "value": 58.5,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
+     "value": 2.6,
+     "unit": "s",
+     "window_start_s": 4020.9,
+     "window_end_s": 4023.5,
      "baseline": null,
-     "say": "Aurora Rovers: 58% possession",
-     "source": "context",
-     "origin": null
+     "say": "3 s after winning the ball",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:8"
     },
     {
-     "ref": "c35",
-     "metric": "shots_total",
+     "ref": "c44",
+     "metric": "possession_won_in_open_play",
      "team_id": "aur",
      "player_id": null,
-     "value": 24.0,
+     "value": 1.0,
      "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
+     "window_start_s": 4020.9,
+     "window_end_s": 4020.9,
      "baseline": null,
-     "say": "Aurora Rovers: 24 shots",
-     "source": "context",
-     "origin": null
+     "say": "Aurora Rovers won the ball in open play",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:8"
     },
     {
-     "ref": "c36",
-     "metric": "xg_total",
+     "ref": "c45",
+     "metric": "shot_outcome",
      "team_id": "aur",
      "player_id": null,
-     "value": 6.452,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
-     "baseline": null,
-     "say": "Aurora Rovers: 6.45 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c37",
-     "metric": "pass_completion_total",
-     "team_id": "aur",
-     "player_id": null,
-     "value": 82.0,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
-     "baseline": null,
-     "say": "Aurora Rovers: 82% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c38",
-     "metric": "possession_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 41.5,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
-     "baseline": null,
-     "say": "Ironvale Athletic: 42% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c39",
-     "metric": "shots_total",
-     "team_id": "irv",
-     "player_id": null,
-     "value": 7.0,
+     "value": 1.0,
      "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
+     "window_start_s": 4023.5,
+     "window_end_s": 4023.5,
      "baseline": null,
-     "say": "Ironvale Athletic: 7 shots",
-     "source": "context",
-     "origin": null
+     "say": "the shot was blocked",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:8"
     },
     {
-     "ref": "c40",
-     "metric": "xg_total",
-     "team_id": "irv",
+     "ref": "c46",
+     "metric": "shot_xg",
+     "team_id": "aur",
      "player_id": null,
-     "value": 0.863,
+     "value": 0.385,
      "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
+     "window_start_s": 4017.6,
+     "window_end_s": 4017.6,
      "baseline": null,
-     "say": "Ironvale Athletic: 0.86 xG",
-     "source": "context",
-     "origin": null
+     "say": "a 0.39 xG chance",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:7"
     },
     {
-     "ref": "c41",
-     "metric": "pass_completion_total",
-     "team_id": "irv",
+     "ref": "c47",
+     "metric": "shot_distance",
+     "team_id": "aur",
      "player_id": null,
-     "value": 76.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
+     "value": 6.3,
+     "unit": "m",
+     "window_start_s": 4017.6,
+     "window_end_s": 4017.6,
      "baseline": null,
-     "say": "Ironvale Athletic: 76% pass completion",
-     "source": "context",
-     "origin": null
+     "say": "from 6 m",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:7"
+    },
+    {
+     "ref": "c48",
+     "metric": "shot_outcome",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4017.6,
+     "window_end_s": 4017.6,
+     "baseline": null,
+     "say": "the shot was blocked",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:7"
+    },
+    {
+     "ref": "c49",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.481,
+     "unit": "xg",
+     "window_start_s": 3969.5,
+     "window_end_s": 3969.5,
+     "baseline": null,
+     "say": "a 0.48 xG chance",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:6"
+    },
+    {
+     "ref": "c50",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 5.2,
+     "unit": "m",
+     "window_start_s": 3969.5,
+     "window_end_s": 3969.5,
+     "baseline": null,
+     "say": "from 5 m",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:6"
+    },
+    {
+     "ref": "c51",
+     "metric": "shot_outcome",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 3969.5,
+     "window_end_s": 3969.5,
+     "baseline": null,
+     "say": "the shot was blocked",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:6"
+    },
+    {
+     "ref": "c52",
+     "metric": "shot_xg",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.64,
+     "unit": "xg",
+     "window_start_s": 3881.3,
+     "window_end_s": 3881.3,
+     "baseline": null,
+     "say": "a 0.64 xG chance",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:5"
+    },
+    {
+     "ref": "c53",
+     "metric": "shot_distance",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 4.0,
+     "unit": "m",
+     "window_start_s": 3881.3,
+     "window_end_s": 3881.3,
+     "baseline": null,
+     "say": "from 4 m",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:5"
+    },
+    {
+     "ref": "c54",
+     "metric": "shot_outcome",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 3881.3,
+     "window_end_s": 3881.3,
+     "baseline": null,
+     "say": "the shot was saved",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:5"
+    },
+    {
+     "ref": "c55",
+     "metric": "seconds_since_turnover",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 3.2,
+     "unit": "s",
+     "window_start_s": 3878.1,
+     "window_end_s": 3881.3,
+     "baseline": null,
+     "say": "3 s after winning the ball",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:5"
+    },
+    {
+     "ref": "c56",
+     "metric": "possession_won_in_open_play",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 3878.1,
+     "window_end_s": 3878.1,
+     "baseline": null,
+     "say": "Aurora Rovers won the ball in open play",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:5"
+    },
+    {
+     "ref": "c57",
+     "metric": "passes_in_spell",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 3878.1,
+     "window_end_s": 3881.3,
+     "baseline": null,
+     "say": "0 passes in the move",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:5"
+    },
+    {
+     "ref": "c58",
+     "metric": "metres_gained",
+     "team_id": "aur",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "m",
+     "window_start_s": 3878.1,
+     "window_end_s": 3881.3,
+     "baseline": null,
+     "say": "0 m gained",
+     "source": "claim",
+     "origin": "aur_irv_comeback_0007:big_chance:5"
     }
    ],
    "players": [
@@ -10813,12 +11148,12 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Full time: the match",
+    "headline": "Brannholt seals Aurora comeback",
     "claims": [
      {
       "claim_id": "a1c1",
       "text": "It ends 2-1: Aurora Rovers win.",
-      "team_id": "aur",
+      "team_id": null,
       "refs": [
        "c1"
       ],
@@ -10826,29 +11161,36 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Rafa Yaldiran scored for Ironvale Athletic.",
-      "team_id": "irv",
-      "refs": [
-       "p1"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c3",
-      "text": "Aurora Rovers: 58% possession, Aurora Rovers: 24 shots.",
+      "text": "Aurora Rovers had 24 shots and 6.45 xG.",
       "team_id": "aur",
       "refs": [
-       "c2",
-       "c3"
+       "c3",
+       "c4"
       ],
       "numbers": [
        {
-        "value": 58.0,
-        "ref": "c2"
-       },
-       {
         "value": 24.0,
         "ref": "c3"
+       },
+       {
+        "value": 6.45,
+        "ref": "c4"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Alden Brannholt scored 4 s after winning the ball, and made it 2-1: Aurora Rovers went ahead.",
+      "team_id": "aur",
+      "refs": [
+       "p2",
+       "c18",
+       "c21"
+      ],
+      "numbers": [
+       {
+        "value": 4.0,
+        "ref": "c18"
        }
       ]
      }

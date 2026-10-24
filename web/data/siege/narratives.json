@@ -15,25 +15,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Westmere Town",
+   "headline": "Early big chance for Westmere",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
+     "text": "Xarno Uusitalo had a 0.51 xG chance from 5 m that was saved.",
      "team_id": "wst",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Westmere Town: a 0.51 xG chance, from 5 m.",
-     "team_id": "wst",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -47,16 +39,37 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Westmere Town: 0.60 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Westmere Town won the ball in open play 4 s before the shot.",
      "team_id": "wst",
      "refs": [
-      "e3"
+      "e9",
+      "e6"
      ],
      "numbers": [
       {
+       "value": 4.0,
+       "ref": "e6"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Xarno Uusitalo has 2 shots and 0.60 xG in the match.",
+     "team_id": "wst",
+     "refs": [
+      "p1",
+      "c2",
+      "c3"
+     ],
+     "numbers": [
+      {
+       "value": 2.0,
+       "ref": "c2"
+      },
+      {
        "value": 0.6,
-       "ref": "e3"
+       "ref": "c3"
       }
      ]
     }
@@ -66,56 +79,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved. Westmere Town: a 0.51 xG chance, from 5 m.",
+     "text": "Xarno Uusitalo had a 0.51 xG chance from 5 m that was saved; Westmere Town won the ball in open play 4 s before the shot. Uusitalo has 2 shots and 0.60 xG in the match.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
+     "text": "Xarno Uusitalo came close with a 0.51 xG chance but it was saved after Westmere Town won the ball.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
+     "text": "Harbourton City survived a scare as Xarno Uusitalo saw a 0.51 xG chance from 5 m saved, after Westmere Town won the ball 4 s earlier.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
+     "text": "Xarno Uusitalo had a 0.51 xG chance from 5 m that was saved after Westmere Town won the ball 4 s before the shot; he has 2 shots and 0.60 xG in the match.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town, and the shot was saved. Westmere Town: a 0.51 xG chance, from 5 m.",
+     "text": "Xarno Uusitalo tuvo una ocasión de 0,51 xG desde 5 m que fue parada; Westmere Town ganó el balón en juego 4 s antes del disparo. Uusitalo suma 2 disparos y 0,60 xG en el partido.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
+     "text": "Xarno Uusitalo estuvo cerca con una ocasión de 0,51 xG pero la pararon tras la recuperación de Westmere Town.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
+     "text": "El Harbourton City sufrió un susto: Xarno Uusitalo vio cómo una ocasión de 0,51 xG desde 5 m fue parada, después de que Westmere Town ganara el balón 4 s antes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
+     "text": "Xarno Uusitalo tuvo una ocasión de 0,51 xG desde 5 m que fue parada tras un balón ganado por Westmere Town 4 s antes; suma 2 disparos y 0,60 xG en el partido.",
      "source": "model",
      "reason": null
     }
@@ -320,25 +333,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Westmere Town",
+    "headline": "Early big chance for Westmere",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xarno Uusitalo had the chance for Westmere Town, and the shot was saved.",
+      "text": "Xarno Uusitalo had a 0.51 xG chance from 5 m that was saved.",
       "team_id": "wst",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Westmere Town: a 0.51 xG chance, from 5 m.",
-      "team_id": "wst",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -352,16 +357,37 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Westmere Town: 0.60 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Westmere Town won the ball in open play 4 s before the shot.",
       "team_id": "wst",
       "refs": [
-       "e3"
+       "e9",
+       "e6"
       ],
       "numbers": [
        {
+        "value": 4.0,
+        "ref": "e6"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Xarno Uusitalo has 2 shots and 0.60 xG in the match.",
+      "team_id": "wst",
+      "refs": [
+       "p1",
+       "c2",
+       "c3"
+      ],
+      "numbers": [
+       {
+        "value": 2.0,
+        "ref": "c2"
+       },
+       {
         "value": 0.6,
-        "ref": "e3"
+        "ref": "c3"
        }
       ]
      }
@@ -911,11 +937,11 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Momentum shift: Harbourton City",
+   "headline": "Harbourton seize momentum",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Harbourton City: momentum +0.63, 89% field tilt.",
+     "text": "Harbourton City have momentum +0.63 and 89% field tilt.",
      "team_id": "har",
      "refs": [
       "e1",
@@ -934,15 +960,34 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Harbourton City: 2 shots in this spell.",
+     "text": "Harbourton City have 2 shots and 0.41 xG in this spell.",
      "team_id": "har",
      "refs": [
-      "e3"
+      "e3",
+      "e4"
      ],
      "numbers": [
       {
        "value": 2.0,
        "ref": "e3"
+      },
+      {
+       "value": 0.41,
+       "ref": "e4"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Harbourton City are pressing at 2.8 pressures per minute.",
+     "team_id": "har",
+     "refs": [
+      "e5"
+     ],
+     "numbers": [
+      {
+       "value": 2.8,
+       "ref": "e5"
       }
      ]
     }
@@ -952,56 +997,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots in this spell.",
+     "text": "Harbourton City have momentum +0.63 and 89% field tilt; they have 2 shots and 0.41 xG in this spell while pressing at 2.8 pressures per minute, score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Harbourton City: momentum +0.63, 89% field tilt.",
+     "text": "Harbourton City are dominating possession with 89% field tilt — it's 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+     "text": "For Hugo Vidrelle's Harbourton City, the team have momentum +0.63 and 89% field tilt, plus 2 shots and 0.41 xG while pressing at 2.8 pressures per minute, score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+     "text": "For Xarno Uusitalo's Westmere Town, Harbourton City have momentum +0.63 and 89% field tilt, with 2 shots and 0.41 xG in the spell and 2.8 pressures per minute, score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt. Harbourton City: 2 shots in this spell.",
+     "text": "Harbourton City tienen momentum +0,63 y 89% de field tilt; registran 2 disparos y 0,41 xG en este tramo y presionan a 2,8 presiones por minuto, marcador 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Harbourton City: momentum +0.63, 89% field tilt.",
+     "text": "Harbourton City domina el juego con 89% de field tilt; 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+     "text": "Para Hugo Vidrelle y su Harbourton City, el equipo tiene momentum +0,63 y 89% de field tilt, además de 2 disparos y 0,41 xG y 2,8 presiones por minuto, marcador 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: momentum +0.63, 89% field tilt.",
+     "text": "Para Xarno Uusitalo y su Westmere Town, Harbourton City presenta momentum +0,63 y 89% de field tilt, con 2 disparos y 0,41 xG en el tramo y 2,8 presiones por minuto, marcador 0-0.",
      "source": "model",
      "reason": null
     }
@@ -1085,11 +1130,11 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Momentum shift: Harbourton City",
+    "headline": "Harbourton seize momentum",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Harbourton City: momentum +0.63, 89% field tilt.",
+      "text": "Harbourton City have momentum +0.63 and 89% field tilt.",
       "team_id": "har",
       "refs": [
        "e1",
@@ -1108,15 +1153,34 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Harbourton City: 2 shots in this spell.",
+      "text": "Harbourton City have 2 shots and 0.41 xG in this spell.",
       "team_id": "har",
       "refs": [
-       "e3"
+       "e3",
+       "e4"
       ],
       "numbers": [
        {
         "value": 2.0,
         "ref": "e3"
+       },
+       {
+        "value": 0.41,
+        "ref": "e4"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City are pressing at 2.8 pressures per minute.",
+      "team_id": "har",
+      "refs": [
+       "e5"
+      ],
+      "numbers": [
+       {
+        "value": 2.8,
+        "ref": "e5"
        }
       ]
      }
@@ -1139,6 +1203,13 @@
     "reasons": []
    },
    {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -1147,6 +1218,13 @@
    },
    {
     "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -1170,20 +1248,39 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Siege: Harbourton City",
+   "headline": "Harbourton mounting heavy pressure",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Harbourton City: 88% field tilt, 2 shots in this spell.",
+     "text": "Harbourton City have 88% field tilt and 72% possession in this spell.",
      "team_id": "har",
      "refs": [
       "e1",
-      "e2"
+      "e4"
      ],
      "numbers": [
       {
        "value": 88.0,
        "ref": "e1"
+      },
+      {
+       "value": 72.0,
+       "ref": "e4"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c2",
+     "text": "Harbourton City have 0.41 xG and 2 shots in this spell.",
+     "team_id": "har",
+     "refs": [
+      "e3",
+      "e2"
+     ],
+     "numbers": [
+      {
+       "value": 0.41,
+       "ref": "e3"
       },
       {
        "value": 2.0,
@@ -1192,16 +1289,16 @@
      ]
     },
     {
-     "claim_id": "a1c2",
-     "text": "Harbourton City: 0.41 xG in this spell.",
-     "team_id": "har",
+     "claim_id": "a1c3",
+     "text": "Westmere Town have made 2 passes into the final third in this spell.",
+     "team_id": "wst",
      "refs": [
-      "e3"
+      "e6"
      ],
      "numbers": [
       {
-       "value": 0.41,
-       "ref": "e3"
+       "value": 2.0,
+       "ref": "e6"
       }
      ]
     }
@@ -1211,56 +1308,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Harbourton City: 88% field tilt, 2 shots in this spell. Harbourton City: 0.41 xG in this spell.",
+     "text": "Harbourton City register 88% field tilt and 72% possession in this spell, and Harbourton City have 0.41 xG from 2 shots; Westmere Town have made 2 passes into the final third.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Harbourton City: 88% field tilt, 2 shots in this spell.",
-     "source": "model",
-     "reason": null
+     "text": "Harbourton City have Westmere Town pinned in their own half.",
+     "source": "template",
+     "reason": "persona text rejected: team_mismatch: \"72\" is given to Westmere Town, but that number belongs to Harbourton City"
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
+     "text": "Hugo Vidrelle: Harbourton City are dominating possession with 88% field tilt and 72% possession, generating 0.41 xG from 2 shots.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
+     "text": "Xarno Uusitalo: Westmere Town have managed only 2 passes into the final third during this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots in this spell. Harbourton City: 0.41 xG in this spell.",
+     "text": "Harbourton City registra 88% de field tilt y 72% de posesión en esta fase, y Harbourton City tiene 0,41 xG de 2 disparos; Westmere Town ha realizado 2 pases al último tercio.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Harbourton City: 88% field tilt, 2 shots in this spell.",
-     "source": "model",
-     "reason": null
+     "text": "Harbourton City encierra a Westmere Town en su campo.",
+     "source": "template",
+     "reason": "persona text rejected: team_mismatch: \"72\" is given to Westmere Town, but that number belongs to Harbourton City"
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
+     "text": "Hugo Vidrelle: Harbourton City domina con 88% de field tilt y 72% de posesión, generando 0,41 xG de 2 disparos.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 88% field tilt, 2 shots in this spell.",
+     "text": "Xarno Uusitalo: Westmere Town solo ha completado 2 pases al último tercio en esta fase.",
      "source": "model",
      "reason": null
     }
@@ -1358,20 +1455,39 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Siege: Harbourton City",
+    "headline": "Harbourton mounting heavy pressure",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Harbourton City: 88% field tilt, 2 shots in this spell.",
+      "text": "Harbourton City have 88% field tilt and 72% possession in this spell.",
       "team_id": "har",
       "refs": [
        "e1",
-       "e2"
+       "e4"
       ],
       "numbers": [
        {
         "value": 88.0,
         "ref": "e1"
+       },
+       {
+        "value": 72.0,
+        "ref": "e4"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c2",
+      "text": "Harbourton City have 0.41 xG and 2 shots in this spell.",
+      "team_id": "har",
+      "refs": [
+       "e3",
+       "e2"
+      ],
+      "numbers": [
+       {
+        "value": 0.41,
+        "ref": "e3"
        },
        {
         "value": 2.0,
@@ -1380,16 +1496,16 @@
       ]
      },
      {
-      "claim_id": "a1c2",
-      "text": "Harbourton City: 0.41 xG in this spell.",
-      "team_id": "har",
+      "claim_id": "a1c3",
+      "text": "Westmere Town have made 2 passes into the final third in this spell.",
+      "team_id": "wst",
       "refs": [
-       "e3"
+       "e6"
       ],
       "numbers": [
        {
-        "value": 0.41,
-        "ref": "e3"
+        "value": 2.0,
+        "ref": "e6"
        }
       ]
      }
@@ -1412,6 +1528,13 @@
     "reasons": []
    },
    {
+    "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -1420,6 +1543,13 @@
    },
    {
     "claim_id": "a1c2",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -1443,17 +1573,22 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Pressure surge: Harbourton City",
+   "headline": "Harbourton on the front foot",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
+     "text": "Harbourton City have momentum +0.55 and are registering 4.7 pressures per minute, but have 0 tackles won in this spell.",
      "team_id": "har",
      "refs": [
+      "e4",
       "e1",
       "e2"
      ],
      "numbers": [
+      {
+       "value": 0.55,
+       "ref": "e4"
+      },
       {
        "value": 4.7,
        "ref": "e1"
@@ -1484,56 +1619,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell. Westmere Town are completing 79% of their passes.",
+     "text": "Harbourton City have momentum +0.55, are registering 4.7 pressures per minute and have 0 tackles won in this spell; Westmere Town are completing 79% of their passes — score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
+     "text": "Tense stuff at 0-0 as Harbourton City turn up the heat.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
+     "text": "Hugo Vidrelle's Harbourton City are on the front foot with momentum +0.55, 4.7 pressures per minute and 0 tackles won in this spell.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
+     "text": "Xarno Uusitalo's Westmere Town are holding firm, completing 79% of their passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell. Westmere Town are completing 79% of their passes.",
+     "text": "Harbourton City tiene momentum +0,55, registra 4,7 presiones por minuto y tiene 0 entradas ganadas en esta fase; Westmere Town completa el 79% de sus pases — marcador 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
+     "text": "0-0 y Harbourton City apretando la maquinaria.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
+     "text": "Hugo Vidrelle y Harbourton City están con momentum +0,55, 4,7 presiones por minuto y 0 entradas ganadas en esta fase.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
+     "text": "Xarno Uusitalo y Westmere Town mantienen control con un 79% de pases completados.",
      "source": "model",
      "reason": null
     }
@@ -1603,17 +1738,22 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Pressure surge: Harbourton City",
+    "headline": "Harbourton on the front foot",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Harbourton City: 4.7 pressures per minute, 0 tackles won in this spell.",
+      "text": "Harbourton City have momentum +0.55 and are registering 4.7 pressures per minute, but have 0 tackles won in this spell.",
       "team_id": "har",
       "refs": [
+       "e4",
        "e1",
        "e2"
       ],
       "numbers": [
+       {
+        "value": 0.55,
+        "ref": "e4"
+       },
        {
         "value": 4.7,
         "ref": "e1"
@@ -1688,25 +1828,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Harbourton City",
+   "headline": "Harbourton miss gilt-edged chance",
    "claims": [
     {
-     "claim_id": "a1c1",
-     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
+     "claim_id": "a3c1",
+     "text": "Hugo Vidrelle had a 0.53 xG chance from 5 m that went off target.",
      "team_id": "har",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Harbourton City: a 0.53 xG chance, from 5 m.",
-     "team_id": "har",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -1718,20 +1850,6 @@
        "ref": "e2"
       }
      ]
-    },
-    {
-     "claim_id": "a1c3",
-     "text": "Harbourton City: 1.27 xG in the match.",
-     "team_id": "har",
-     "refs": [
-      "e3"
-     ],
-     "numbers": [
-      {
-       "value": 1.27,
-       "ref": "e3"
-      }
-     ]
     }
    ],
    "semantic_check": "passed",
@@ -1739,56 +1857,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot went off target. Harbourton City: a 0.53 xG chance, from 5 m.",
+     "text": "Harbourton City remain 0-0: Hugo Vidrelle had a 0.53 xG chance from 5 m that went off target.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
+     "text": "Hugo Vidrelle wasted a big chance for Harbourton City as it flies off target — 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
+     "text": "Hugo Vidrelle missed a 0.53 xG chance from 5 m for Harbourton City, with the score still 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
+     "text": "Westmere Town stay 0-0 after Harbourton City's Hugo Vidrelle saw a 0.53 xG attempt from 5 m go off target.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City, and the shot went off target. Harbourton City: a 0.53 xG chance, from 5 m.",
+     "text": "Harbourton City siguen 0-0: Hugo Vidrelle tuvo una ocasión de 0,53 xG desde 5 m que salió fuera.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
+     "text": "Hugo Vidrelle falló una gran oportunidad para Harbourton City y la mandó fuera — 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
+     "text": "Hugo Vidrelle falló una ocasión de 0,53 xG desde 5 m para Harbourton City; el marcador sigue 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
+     "text": "Westmere Town siguen 0-0 tras Harbourton City's Hugo Vidrelle, que tuvo una ocasión de 0,53 xG desde 5 m que salió fuera.",
      "source": "model",
      "reason": null
     }
@@ -1993,25 +2111,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Harbourton City",
+    "headline": "Harbourton waste gilt-edged chance",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot went off target.",
+      "text": "Hugo Vidrelle had a 0.53 xG chance from 5 m that went off target.",
       "team_id": "har",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Harbourton City: a 0.53 xG chance, from 5 m.",
-      "team_id": "har",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -2025,16 +2135,137 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Harbourton City: 1.27 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "The chance came 30 s after winning the ball and followed a 4-pass move that gained 13 m.",
       "team_id": "har",
       "refs": [
-       "e3"
+       "e6",
+       "e9",
+       "e7",
+       "e8"
       ],
       "numbers": [
        {
-        "value": 1.27,
-        "ref": "e3"
+        "value": 30.0,
+        "ref": "e6"
+       },
+       {
+        "value": 4.0,
+        "ref": "e7"
+       },
+       {
+        "value": 13.0,
+        "ref": "e8"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Hugo Vidrelle has 5 shots in the match.",
+      "team_id": "har",
+      "refs": [
+       "p1",
+       "c2"
+      ],
+      "numbers": [
+       {
+        "value": 5.0,
+        "ref": "c2"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "attempt": 2,
+    "headline": "Harbourton miss gilt-edged chance",
+    "claims": [
+     {
+      "claim_id": "a2c1",
+      "text": "Hugo Vidrelle had a 0.53 xG big chance from 5 m that went off target.",
+      "team_id": "har",
+      "refs": [
+       "p1",
+       "e1",
+       "e2",
+       "e10"
+      ],
+      "numbers": [
+       {
+        "value": 0.53,
+        "ref": "e1"
+       },
+       {
+        "value": 5.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a2c2",
+      "text": "Harbourton City won the ball and, 30 s after winning it, produced a 4-pass move that sustained pressure leading to the chance, and the score remains 0-0.",
+      "team_id": "har",
+      "refs": [
+       "e9",
+       "e6",
+       "e7"
+      ],
+      "numbers": [
+       {
+        "value": 30.0,
+        "ref": "e6"
+       },
+       {
+        "value": 4.0,
+        "ref": "e7"
+       }
+      ]
+     }
+    ]
+   },
+   {
+    "attempt": 3,
+    "headline": "Harbourton miss gilt-edged chance",
+    "claims": [
+     {
+      "claim_id": "a3c1",
+      "text": "Hugo Vidrelle had a 0.53 xG chance from 5 m that went off target.",
+      "team_id": "har",
+      "refs": [
+       "p1",
+       "e1",
+       "e2",
+       "e10"
+      ],
+      "numbers": [
+       {
+        "value": 0.53,
+        "ref": "e1"
+       },
+       {
+        "value": 5.0,
+        "ref": "e2"
+       }
+      ]
+     },
+     {
+      "claim_id": "a3c2",
+      "text": "The shot came 30 s after Harbourton City won the ball in open play, following a 4-pass move, and it is 0-0.",
+      "team_id": "har",
+      "refs": [
+       "e6",
+       "e9",
+       "e7",
+       "c1"
+      ],
+      "numbers": [
+       {
+        "value": 30.0,
+        "ref": "e6"
+       },
+       {
+        "value": 4.0,
+        "ref": "e7"
        }
       ]
      }
@@ -2081,8 +2312,79 @@
     "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "The shot count evidence covers 0:00–30:07 only; it does not support asserting his total for the entire match."
+     }
+    ]
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "deterministic",
     "ok": true,
     "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "Evidence supports they won the ball, the ~30 s gap and a 4-pass move and the score being 0-0, but does not show that the move ‘sustained pressure’ (an interpretive claim)."
+     }
+    ]
+   },
+   {
+    "claim_id": "a3c1",
+    "attempt": 3,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a3c2",
+    "attempt": 3,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a3c1",
+    "attempt": 3,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a3c2",
+    "attempt": 3,
+    "layer": "semantic",
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "Evidence supports the timing after a turnover, that possession was won in open play and a 4-pass move, but none of the cited evidence shows the match score is 0-0."
+     }
+    ]
    }
   ]
  },
@@ -2102,25 +2404,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Big chance: Harbourton City",
+   "headline": "Vidrelle gilt-edged chance saved",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
+     "text": "Hugo Vidrelle's 0.71 xG chance from 4 m was saved.",
      "team_id": "har",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Harbourton City: a 0.71 xG chance, from 4 m.",
-     "team_id": "har",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -2134,16 +2428,41 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Harbourton City: 1.98 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Harbourton City won the ball in open play and, 46 s later, after 7 passes and 39 m gained, created the chance.",
      "team_id": "har",
      "refs": [
-      "e3"
+      "e9",
+      "e6",
+      "e7",
+      "e8"
      ],
      "numbers": [
       {
-       "value": 1.98,
-       "ref": "e3"
+       "value": 46.0,
+       "ref": "e6"
+      },
+      {
+       "value": 7.0,
+       "ref": "e7"
+      },
+      {
+       "value": 39.0,
+       "ref": "e8"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Hugo Vidrelle has 0 goals in the match.",
+     "team_id": "har",
+     "refs": [
+      "c1"
+     ],
+     "numbers": [
+      {
+       "value": 0.0,
+       "ref": "c1"
       }
      ]
     }
@@ -2153,56 +2472,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot was saved. Harbourton City: a 0.71 xG chance, from 4 m.",
+     "text": "Harbourton City won the ball in open play and, 46 s later, after 7 passes and 39 m gained, created a chance; Hugo Vidrelle's 0.71 xG from 4 m was saved, score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
+     "text": "Hugo Vidrelle rattles a huge chance but it's saved — 0-0!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
+     "text": "Hugo Vidrelle saw his 0.71 xG chance from 4 m saved; he still has 0 goals and Harbourton City had built the chance 46 s after winning the ball with 7 passes and 39 m gained.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
+     "text": "Westmere Town remain level as Harbourton City carved out a chance 46 s after winning the ball, but Hugo Vidrelle's 0.71 xG effort from 4 m was saved — score 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City, and the shot was saved. Harbourton City: a 0.71 xG chance, from 4 m.",
+     "text": "Harbourton City ganó el balón en juego abierto y, 46 s después, tras 7 pases y 39 m ganados, creó la ocasión; el disparo de Hugo Vidrelle de 0,71 xG desde 4 m fue parado, 0-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
+     "text": "¡Hugo Vidrelle tuvo una gran oportunidad pero fue parada, 0-0!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
+     "text": "Hugo Vidrelle vio cómo su ocasión de 0,71 xG desde 4 m fue parada; tiene 0 goles y Harbourton City generó la jugada 46 s después de recuperar el balón con 7 pases y 39 m ganados.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
+     "text": "El Westmere Town sigue igualado: Harbourton City creó la ocasión 46 s tras ganar el balón, pero el disparo de Hugo Vidrelle de 0,71 xG desde 4 m fue parado, 0-0.",
      "source": "model",
      "reason": null
     }
@@ -2407,25 +2726,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Big chance: Harbourton City",
+    "headline": "Vidrelle gilt-edged chance saved",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidrelle had the chance for Harbourton City, and the shot was saved.",
+      "text": "Hugo Vidrelle's 0.71 xG chance from 4 m was saved.",
       "team_id": "har",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Harbourton City: a 0.71 xG chance, from 4 m.",
-      "team_id": "har",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -2439,16 +2750,41 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Harbourton City: 1.98 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Harbourton City won the ball in open play and, 46 s later, after 7 passes and 39 m gained, created the chance.",
       "team_id": "har",
       "refs": [
-       "e3"
+       "e9",
+       "e6",
+       "e7",
+       "e8"
       ],
       "numbers": [
        {
-        "value": 1.98,
-        "ref": "e3"
+        "value": 46.0,
+        "ref": "e6"
+       },
+       {
+        "value": 7.0,
+        "ref": "e7"
+       },
+       {
+        "value": 39.0,
+        "ref": "e8"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Hugo Vidrelle has 0 goals in the match.",
+      "team_id": "har",
+      "refs": [
+       "c1"
+      ],
+      "numbers": [
+       {
+        "value": 0.0,
+        "ref": "c1"
        }
       ]
      }
@@ -2516,25 +2852,19 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Goal: Harbourton City",
+   "headline": "Vidrelle puts Harbourton ahead",
    "claims": [
     {
-     "claim_id": "a1c1",
-     "text": "Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
+     "claim_id": "a2c1",
+     "text": "Hugo Vidrelle scored for Harbourton City with a 0.06 xG chance from 19 m, and this is his first goal in this match; it is 1-0.",
      "team_id": "har",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Harbourton City: a 0.06 xG chance, from 19 m.",
-     "team_id": "har",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e11",
+      "c1",
+      "e10"
      ],
      "numbers": [
       {
@@ -2544,25 +2874,35 @@
       {
        "value": 19.0,
        "ref": "e2"
+      },
+      {
+       "value": 1.0,
+       "ref": "c1"
       }
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Harbourton City: 2.04 xG in the match, Harbourton City: 50% possession.",
+     "claim_id": "a2c2",
+     "text": "Harbourton City scored 17 s after gaining possession from a 1-pass move that gained 41 m.",
      "team_id": "har",
      "refs": [
-      "e3",
-      "c4"
+      "e6",
+      "e7",
+      "e8",
+      "e10"
      ],
      "numbers": [
       {
-       "value": 2.04,
-       "ref": "e3"
+       "value": 17.0,
+       "ref": "e6"
       },
       {
-       "value": 50.0,
-       "ref": "c4"
+       "value": 1.0,
+       "ref": "e7"
+      },
+      {
+       "value": 41.0,
+       "ref": "e8"
       }
      ]
     }
@@ -2572,56 +2912,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City. Harbourton City: a 0.06 xG chance, from 19 m.",
+     "text": "Hugo Vidrelle scored with a 0.06 xG chance from 19 m for Harbourton City; it is his first goal in the match and makes it 1-0. Harbourton City scored 17 s after gaining possession from a 1-pass move that gained 41 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
+     "text": "Hugo Vidrelle puts Harbourton City 1-0 up!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
+     "text": "Hugo Vidrelle scored with a 0.06 xG chance from 19 m; it is his first goal in the match and gives Harbourton City a 1-0 lead. Harbourton City’s goal came 17 s after gaining possession from a 1-pass move that gained 41 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
+     "text": "Xarno Uusitalo's Westmere Town are 1-0 down after Hugo Vidrelle scored with a 0.06 xG chance from 19 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City. Harbourton City: a 0.06 xG chance, from 19 m.",
+     "text": "Hugo Vidrelle marcó con una ocasión de 0,06 xG desde 19 m para Harbourton City; es su primer gol en el partido y deja el marcador 1-0. Harbourton City marcó 17 s después de ganar la posesión con una jugada de 1 pase que avanzó 41 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
+     "text": "¡Hugo Vidrelle pone a Harbourton City 1-0!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
+     "text": "Hugo Vidrelle marcó con una ocasión de 0,06 xG desde 19 m; es su primer gol en el partido y da a Harbourton City el 1-0. Harbourton City anotó 17 s después de ganar la posesión tras una jugada de 1 pase que ganó 41 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
+     "text": "El Westmere Town de Xarno Uusitalo va 1-0 abajo después de que Hugo Vidrelle marcara con una ocasión de 0,06 xG desde 19 m.",
      "source": "model",
      "reason": null
     }
@@ -2824,118 +3164,6 @@
      "say": "Hugo Vidrelle has 2.04 xG in the match",
      "source": "player",
      "origin": null
-    },
-    {
-     "ref": "c4",
-     "metric": "possession_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 49.9,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Harbourton City: 50% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c5",
-     "metric": "shots_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 7.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Harbourton City: 7 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c6",
-     "metric": "xg_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.04,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Harbourton City: 2.04 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c7",
-     "metric": "pass_completion_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 82.4,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Harbourton City: 82% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c8",
-     "metric": "possession_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 50.1,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Westmere Town: 50% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c9",
-     "metric": "shots_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 3.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Westmere Town: 3 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c10",
-     "metric": "xg_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 0.788,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Westmere Town: 0.79 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c11",
-     "metric": "pass_completion_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 81.9,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "Westmere Town: 82% pass completion",
-     "source": "context",
-     "origin": null
     }
    ],
    "players": [
@@ -2952,25 +3180,44 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Goal: Harbourton City",
+    "headline": "Vidrelle opens scoring for Harbourton",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Hugo Vidrelle scored for Harbourton City: it is 1-0 to Harbourton City.",
+      "text": "Harbourton's short, direct move featured 1 pass and gained 41 m, and they scored 17 s after gaining possession.",
       "team_id": "har",
       "refs": [
-       "p1",
+       "e7",
+       "e8",
+       "e6",
        "e10"
       ],
-      "numbers": []
+      "numbers": [
+       {
+        "value": 1.0,
+        "ref": "e7"
+       },
+       {
+        "value": 41.0,
+        "ref": "e8"
+       },
+       {
+        "value": 17.0,
+        "ref": "e6"
+       }
+      ]
      },
      {
       "claim_id": "a1c2",
-      "text": "Harbourton City: a 0.06 xG chance, from 19 m.",
+      "text": "Hugo Vidrelle scored from a 0.06 xG chance from 19 m; this is Hugo Vidrelle's first goal in this match and it is 1-0: Harbourton City open the scoring.",
       "team_id": "har",
       "refs": [
+       "p1",
        "e1",
-       "e2"
+       "e2",
+       "c1",
+       "e10",
+       "e11"
       ],
       "numbers": [
        {
@@ -2982,23 +3229,62 @@
         "ref": "e2"
        }
       ]
-     },
+     }
+    ]
+   },
+   {
+    "attempt": 2,
+    "headline": "Vidrelle puts Harbourton ahead",
+    "claims": [
      {
-      "claim_id": "a1c3",
-      "text": "Harbourton City: 2.04 xG in the match, Harbourton City: 50% possession.",
+      "claim_id": "a2c1",
+      "text": "Hugo Vidrelle scored for Harbourton City with a 0.06 xG chance from 19 m, and this is his first goal in this match; it is 1-0.",
       "team_id": "har",
       "refs": [
-       "e3",
-       "c4"
+       "p1",
+       "e1",
+       "e2",
+       "e11",
+       "c1",
+       "e10"
       ],
       "numbers": [
        {
-        "value": 2.04,
-        "ref": "e3"
+        "value": 0.06,
+        "ref": "e1"
        },
        {
-        "value": 50.0,
-        "ref": "c4"
+        "value": 19.0,
+        "ref": "e2"
+       },
+       {
+        "value": 1.0,
+        "ref": "c1"
+       }
+      ]
+     },
+     {
+      "claim_id": "a2c2",
+      "text": "Harbourton City scored 17 s after gaining possession from a 1-pass move that gained 41 m.",
+      "team_id": "har",
+      "refs": [
+       "e6",
+       "e7",
+       "e8",
+       "e10"
+      ],
+      "numbers": [
+       {
+        "value": 17.0,
+        "ref": "e6"
+       },
+       {
+        "value": 1.0,
+        "ref": "e7"
+       },
+       {
+        "value": 41.0,
+        "ref": "e8"
        }
       ]
      }
@@ -3021,18 +3307,16 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
-    "ok": true,
-    "reasons": []
+    "ok": false,
+    "reasons": [
+     {
+      "code": "unsupported",
+      "detail": "The evidence supports 1 pass, 41 m gained and scoring 17 s after gaining possession, but does not support calling the move ‘short’ (41 m gained is not shown to be short)."
+     }
+    ]
    },
    {
     "claim_id": "a1c2",
@@ -3042,8 +3326,29 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c1",
+    "attempt": 2,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a2c2",
+    "attempt": 2,
     "layer": "semantic",
     "ok": true,
     "reasons": []
@@ -3237,12 +3542,12 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Half time: the match",
+   "headline": "Harbourton lead at the break",
    "claims": [
     {
      "claim_id": "a1c1",
      "text": "It is 1-0 at half-time: Harbourton City lead.",
-     "team_id": "har",
+     "team_id": null,
      "refs": [
       "c1"
      ],
@@ -3250,29 +3555,45 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Hugo Vidrelle scored for Harbourton City.",
+     "text": "Harbourton City have 2.10 xG and 8 shots so far.",
      "team_id": "har",
      "refs": [
-      "p1"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c3",
-     "text": "Harbourton City: 51% possession, Harbourton City: 8 shots.",
-     "team_id": "har",
-     "refs": [
-      "c2",
+      "c4",
       "c3"
      ],
      "numbers": [
       {
-       "value": 51.0,
-       "ref": "c2"
+       "value": 2.1,
+       "ref": "c4"
       },
       {
        "value": 8.0,
        "ref": "c3"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Harbourton City scored 17 s after gaining possession from a 1 pass move that gained 41 m, and made it 1-0.",
+     "team_id": "har",
+     "refs": [
+      "c16",
+      "c17",
+      "c18",
+      "c19"
+     ],
+     "numbers": [
+      {
+       "value": 17.0,
+       "ref": "c16"
+      },
+      {
+       "value": 1.0,
+       "ref": "c17"
+      },
+      {
+       "value": 41.0,
+       "ref": "c18"
       }
      ]
     }
@@ -3282,56 +3603,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "It is 1-0 at half-time: Harbourton City lead. Hugo Vidrelle scored for Harbourton City.",
+     "text": "Harbourton City lead 1-0 at half-time. Harbourton City have 2.10 xG and 8 shots, and scored 17 s after gaining possession from a 1 pass move that gained 41 m to make it 1-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "It is 1-0 at half-time: Harbourton City lead.",
+     "text": "Harbourton City head into the break 1-0 after a smart, quick move.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: It is 1-0 at half-time: Harbourton City lead.",
+     "text": "Hugo Vidrelle scored to make it 1-0 for Harbourton City; Harbourton City have 2.10 xG and 8 shots so far.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: It is 1-0 at half-time: Harbourton City lead.",
+     "text": "Xarno Uusitalo's Westmere Town trail 1-0 at half-time as Harbourton City, who have 2.10 xG and 8 shots, scored 17 s after gaining possession from a 1 pass move that gained 41 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] It is 1-0 at half-time: Harbourton City lead. Hugo Vidrelle scored for Harbourton City.",
+     "text": "Harbourton City gana 1-0 al descanso. Harbourton City tiene 2,10 xG y 8 disparos, y marcó 17 s después de recuperar el balón tras una jugada de 1 pase que ganó 41 m para hacer el 1-0.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] It is 1-0 at half-time: Harbourton City lead.",
+     "text": "Harbourton City se va al descanso 1-0 tras una jugada rápida y efectiva.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: It is 1-0 at half-time: Harbourton City lead.",
+     "text": "Hugo Vidrelle marcó para poner a Harbourton City 1-0; Harbourton City tiene 2,10 xG y 8 disparos hasta ahora.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: It is 1-0 at half-time: Harbourton City lead.",
+     "text": "El Westmere Town de Xarno Uusitalo va perdiendo 1-0 al descanso; Harbourton City, que tiene 2,10 xG y 8 disparos, marcó 17 s después de recuperar el balón tras una jugada de 1 pase que ganó 41 m.",
      "source": "model",
      "reason": null
     }
@@ -3551,6 +3872,48 @@
     },
     {
      "ref": "c16",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 16.7,
+     "unit": "s",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "17 s after gaining possession",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c17",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "1 pass in the move",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c18",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 41.1,
+     "unit": "m",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "41 m gained",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c19",
      "metric": "goal_margin",
      "team_id": "har",
      "player_id": null,
@@ -3562,48 +3925,6 @@
      "say": "made it 1-0: Harbourton City opened the scoring",
      "source": "claim",
      "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
-     "ref": "c17",
-     "metric": "shot_xg",
-     "team_id": "har",
-     "player_id": null,
-     "value": 0.058,
-     "unit": "xg",
-     "window_start_s": 2194.3,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "a 0.06 xG chance",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
-     "ref": "c18",
-     "metric": "shot_distance",
-     "team_id": "har",
-     "player_id": null,
-     "value": 19.0,
-     "unit": "m",
-     "window_start_s": 2194.3,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "from 19 m",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
-     "ref": "c19",
-     "metric": "shot_outcome",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.0,
-     "unit": "count",
-     "window_start_s": 2098.9,
-     "window_end_s": 2098.9,
-     "baseline": null,
-     "say": "the shot was saved",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
      "ref": "c20",
@@ -3638,17 +3959,73 @@
      "metric": "shot_outcome",
      "team_id": "har",
      "player_id": null,
-     "value": 0.0,
+     "value": 2.0,
      "unit": "count",
-     "window_start_s": 1807.4,
-     "window_end_s": 1807.4,
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
      "baseline": null,
-     "say": "the shot went off target",
+     "say": "the shot was saved",
      "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:1"
+     "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
      "ref": "c23",
+     "metric": "possession_won_in_open_play",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2053.4,
+     "window_end_s": 2053.4,
+     "baseline": null,
+     "say": "Harbourton City won the ball in open play",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c24",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 45.5,
+     "unit": "s",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "46 s after winning the ball",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c25",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 7.0,
+     "unit": "count",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "7 passes in the move",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c26",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 38.8,
+     "unit": "m",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "39 m gained",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c27",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -3662,7 +4039,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c24",
+     "ref": "c28",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -3676,21 +4053,21 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c25",
+     "ref": "c29",
      "metric": "shot_outcome",
-     "team_id": "wst",
+     "team_id": "har",
      "player_id": null,
-     "value": 2.0,
+     "value": 0.0,
      "unit": "count",
-     "window_start_s": 437.6,
-     "window_end_s": 437.6,
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
      "baseline": null,
-     "say": "the shot was saved",
+     "say": "the shot went off target",
      "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:0"
+     "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c26",
+     "ref": "c30",
      "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
@@ -3704,7 +4081,7 @@
      "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
-     "ref": "c27",
+     "ref": "c31",
      "metric": "shot_distance",
      "team_id": "wst",
      "player_id": null,
@@ -3718,116 +4095,46 @@
      "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
-     "ref": "c28",
-     "metric": "possession_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 50.7,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
-     "baseline": null,
-     "say": "Harbourton City: 51% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c29",
-     "metric": "shots_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 8.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
-     "baseline": null,
-     "say": "Harbourton City: 8 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c30",
-     "metric": "xg_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.101,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
-     "baseline": null,
-     "say": "Harbourton City: 2.10 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c31",
-     "metric": "pass_completion_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 82.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
-     "baseline": null,
-     "say": "Harbourton City: 82% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
      "ref": "c32",
-     "metric": "possession_total",
+     "metric": "shot_outcome",
      "team_id": "wst",
      "player_id": null,
-     "value": 49.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
+     "value": 2.0,
+     "unit": "count",
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
      "baseline": null,
-     "say": "Westmere Town: 49% possession",
-     "source": "context",
-     "origin": null
+     "say": "the shot was saved",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
      "ref": "c33",
-     "metric": "shots_total",
+     "metric": "possession_won_in_open_play",
      "team_id": "wst",
      "player_id": null,
-     "value": 4.0,
+     "value": 1.0,
      "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
+     "window_start_s": 433.8,
+     "window_end_s": 433.8,
      "baseline": null,
-     "say": "Westmere Town: 4 shots",
-     "source": "context",
-     "origin": null
+     "say": "Westmere Town won the ball in open play",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
      "ref": "c34",
-     "metric": "xg_total",
+     "metric": "seconds_since_turnover",
      "team_id": "wst",
      "player_id": null,
-     "value": 0.806,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
+     "value": 3.8,
+     "unit": "s",
+     "window_start_s": 433.8,
+     "window_end_s": 437.6,
      "baseline": null,
-     "say": "Westmere Town: 0.81 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c35",
-     "metric": "pass_completion_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 82.9,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 2700.0,
-     "baseline": null,
-     "say": "Westmere Town: 83% pass completion",
-     "source": "context",
-     "origin": null
+     "say": "4 s after winning the ball",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
     }
    ],
    "players": [
@@ -3852,12 +4159,12 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Half time: the match",
+    "headline": "Harbourton lead at the break",
     "claims": [
      {
       "claim_id": "a1c1",
       "text": "It is 1-0 at half-time: Harbourton City lead.",
-      "team_id": "har",
+      "team_id": null,
       "refs": [
        "c1"
       ],
@@ -3865,29 +4172,45 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Hugo Vidrelle scored for Harbourton City.",
+      "text": "Harbourton City have 2.10 xG and 8 shots so far.",
       "team_id": "har",
       "refs": [
-       "p1"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c3",
-      "text": "Harbourton City: 51% possession, Harbourton City: 8 shots.",
-      "team_id": "har",
-      "refs": [
-       "c2",
+       "c4",
        "c3"
       ],
       "numbers": [
        {
-        "value": 51.0,
-        "ref": "c2"
+        "value": 2.1,
+        "ref": "c4"
        },
        {
         "value": 8.0,
         "ref": "c3"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Harbourton City scored 17 s after gaining possession from a 1 pass move that gained 41 m, and made it 1-0.",
+      "team_id": "har",
+      "refs": [
+       "c16",
+       "c17",
+       "c18",
+       "c19"
+      ],
+      "numbers": [
+       {
+        "value": 17.0,
+        "ref": "c16"
+       },
+       {
+        "value": 1.0,
+        "ref": "c17"
+       },
+       {
+        "value": 41.0,
+        "ref": "c18"
        }
       ]
      }
@@ -4339,25 +4662,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Goal: Westmere Town",
+   "headline": "Uusitalo levels for Westmere",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Xarno Uusitalo scored for Westmere Town: it is 1-1.",
+     "text": "Xarno Uusitalo equalised for Westmere Town with a 0.63 xG chance from 4 m, and it is 1-1.",
      "team_id": "wst",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Westmere Town: a 0.63 xG chance, from 4 m.",
-     "team_id": "wst",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e10"
      ],
      "numbers": [
       {
@@ -4371,16 +4686,27 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Westmere Town: 1.45 xG in the match.",
+     "claim_id": "a1c2",
+     "text": "Westmere Town won the ball in open play and, 46 s later, completed an 8-pass move that gained 76 m to set up the finish.",
      "team_id": "wst",
      "refs": [
-      "e3"
+      "e9",
+      "e6",
+      "e7",
+      "e8"
      ],
      "numbers": [
       {
-       "value": 1.45,
-       "ref": "e3"
+       "value": 46.0,
+       "ref": "e6"
+      },
+      {
+       "value": 8.0,
+       "ref": "e7"
+      },
+      {
+       "value": 76.0,
+       "ref": "e8"
       }
      ]
     }
@@ -4390,56 +4716,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Xarno Uusitalo scored for Westmere Town: it is 1-1. Westmere Town: a 0.63 xG chance, from 4 m.",
+     "text": "Westmere Town equalise 1-1: Xarno Uusitalo converts a 0.63 xG chance from 4 m after Westmere Town won the ball in open play and, 46 s later, completed an 8-pass move that gained 76 m to set up the finish.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Xarno Uusitalo scored for Westmere Town: it is 1-1.",
+     "text": "Xarno Uusitalo levels it for Westmere Town, 1-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Xarno Uusitalo scored for Westmere Town: it is 1-1.",
+     "text": "Hugo Vidrelle's Harbourton City are pegged back to 1-1 after Xarno Uusitalo equalised with a 0.63 xG finish from 4 m, following Westmere Town winning the ball in open play and, 46 s later, completing an 8-pass move that gained 76 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: it is 1-1.",
+     "text": "Xarno Uusitalo equalises for Westmere Town, 1-1, converting a 0.63 xG chance from 4 m after Westmere Town won the ball and, 46 s later, completed an 8-pass move that gained 76 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: it is 1-1. Westmere Town: a 0.63 xG chance, from 4 m.",
+     "text": "Westmere Town empata 1-1: Xarno Uusitalo convierte una ocasión de 0,63 xG desde 4 m tras Westmere Town ganar el balón en juego y, 46 s después, completar una jugada de 8 pases que ganó 76 m para preparar el remate.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Xarno Uusitalo scored for Westmere Town: it is 1-1.",
+     "text": "¡Xarno Uusitalo empata para Westmere Town, 1-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Xarno Uusitalo scored for Westmere Town: it is 1-1.",
+     "text": "Hugo Vidrelle y su Harbourton City quedan 1-1 tras el empate de Xarno Uusitalo, que convirtió una ocasión de 0,63 xG desde 4 m después de que Westmere Town ganara el balón y, 46 s después, completara una jugada de 8 pases que ganó 76 m.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Xarno Uusitalo scored for Westmere Town: it is 1-1.",
+     "text": "Xarno Uusitalo empata para Westmere Town, 1-1, al transformar una ocasión de 0,63 xG desde 4 m tras el robo y la jugada de Westmere Town que, 46 s después, completó 8 pases y ganó 76 m.",
      "source": "model",
      "reason": null
     }
@@ -4642,118 +4968,6 @@
      "say": "Xarno Uusitalo has 1.42 xG in the match",
      "source": "player",
      "origin": null
-    },
-    {
-     "ref": "c4",
-     "metric": "possession_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 49.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": null,
-     "say": "Harbourton City: 49% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c5",
-     "metric": "shots_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 10.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": null,
-     "say": "Harbourton City: 10 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c6",
-     "metric": "xg_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.446,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": null,
-     "say": "Harbourton City: 2.45 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c7",
-     "metric": "pass_completion_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 82.6,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": null,
-     "say": "Harbourton City: 83% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c8",
-     "metric": "possession_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 50.7,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": null,
-     "say": "Westmere Town: 51% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c9",
-     "metric": "shots_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 6.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": null,
-     "say": "Westmere Town: 6 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c10",
-     "metric": "xg_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 1.451,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": null,
-     "say": "Westmere Town: 1.45 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c11",
-     "metric": "pass_completion_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 83.9,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 3220.6,
-     "baseline": null,
-     "say": "Westmere Town: 84% pass completion",
-     "source": "context",
-     "origin": null
     }
    ],
    "players": [
@@ -4770,25 +4984,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Goal: Westmere Town",
+    "headline": "Uusitalo levels for Westmere",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Xarno Uusitalo scored for Westmere Town: it is 1-1.",
+      "text": "Xarno Uusitalo equalised for Westmere Town with a 0.63 xG chance from 4 m, and it is 1-1.",
       "team_id": "wst",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Westmere Town: a 0.63 xG chance, from 4 m.",
-      "team_id": "wst",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e10"
       ],
       "numbers": [
        {
@@ -4802,16 +5008,27 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Westmere Town: 1.45 xG in the match.",
+      "claim_id": "a1c2",
+      "text": "Westmere Town won the ball in open play and, 46 s later, completed an 8-pass move that gained 76 m to set up the finish.",
       "team_id": "wst",
       "refs": [
-       "e3"
+       "e9",
+       "e6",
+       "e7",
+       "e8"
       ],
       "numbers": [
        {
-        "value": 1.45,
-        "ref": "e3"
+        "value": 46.0,
+        "ref": "e6"
+       },
+       {
+        "value": 8.0,
+        "ref": "e7"
+       },
+       {
+        "value": 76.0,
+        "ref": "e8"
        }
       ]
      }
@@ -4834,13 +5051,6 @@
     "reasons": []
    },
    {
-    "claim_id": "a1c3",
-    "attempt": 1,
-    "layer": "deterministic",
-    "ok": true,
-    "reasons": []
-   },
-   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -4849,13 +5059,6 @@
    },
    {
     "claim_id": "a1c2",
-    "attempt": 1,
-    "layer": "semantic",
-    "ok": true,
-    "reasons": []
-   },
-   {
-    "claim_id": "a1c3",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,
@@ -5120,25 +5323,17 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Goal: Harbourton City",
+   "headline": "Quenvara puts Harbourton back ahead",
    "claims": [
     {
      "claim_id": "a1c1",
-     "text": "Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
+     "text": "Joaquin Quenvara scored with a 0.04 xG chance from 22 m; the shot went in.",
      "team_id": "har",
      "refs": [
       "p1",
-      "e10"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c2",
-     "text": "Harbourton City: a 0.04 xG chance, from 22 m.",
-     "team_id": "har",
-     "refs": [
       "e1",
-      "e2"
+      "e2",
+      "e11"
      ],
      "numbers": [
       {
@@ -5152,21 +5347,38 @@
      ]
     },
     {
-     "claim_id": "a1c3",
-     "text": "Harbourton City: 2.67 xG in the match, Harbourton City: 49% possession.",
+     "claim_id": "a1c2",
+     "text": "Harbourton City won the ball in open play and scored 3 s after winning it, with 0 passes in the move, and it is 2-1: Harbourton City go ahead.",
      "team_id": "har",
      "refs": [
-      "e3",
-      "c4"
+      "e9",
+      "e6",
+      "e7",
+      "e10"
      ],
      "numbers": [
       {
-       "value": 2.67,
-       "ref": "e3"
+       "value": 3.0,
+       "ref": "e6"
       },
       {
-       "value": 49.0,
-       "ref": "c4"
+       "value": 0.0,
+       "ref": "e7"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "This is Joaquin Quenvara's 1 goal in this match.",
+     "team_id": "har",
+     "refs": [
+      "p1",
+      "c1"
+     ],
+     "numbers": [
+      {
+       "value": 1.0,
+       "ref": "c1"
       }
      ]
     }
@@ -5176,56 +5388,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City. Harbourton City: a 0.04 xG chance, from 22 m.",
+     "text": "Joaquin Quenvara scored with a 0.04 xG chance from 22 m and the shot went in; this is Joaquin Quenvara's 1 goal in this match. Harbourton City won the ball in open play and, 3 s after winning it, scored with 0 passes to make it 2-1 as Harbourton City go ahead.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
+     "text": "Joaquin Quenvara fires Harbourton City ahead 2-1 after a lightning turnover!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
+     "text": "Harbourton City go ahead 2-1 thanks to Joaquin Quenvara, who scored with a 0.04 xG chance from 22 m; Harbourton City won the ball in open play and scored 3 s after winning it with 0 passes.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
+     "text": "Xarno Uusitalo's Westmere Town find themselves 2-1 down after Joaquin Quenvara's goal.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City. Harbourton City: a 0.04 xG chance, from 22 m.",
+     "text": "Joaquin Quenvara marcó con una ocasión de 0,04 xG desde 22 m y el disparo entró; este es el 1 gol de Joaquin Quenvara en este partido. Harbourton City ganó el balón en juego abierto y, 3 s después de ganarlo, marcó con 0 pases para poner el 2-1 y Harbourton City se ponen por delante.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
+     "text": "¡Joaquin Quenvara pone a Harbourton City 2-1 con un gol tras una recuperación rapidísima!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
+     "text": "Harbourton City se ponen 2-1 por delante gracias a Joaquin Quenvara, que anotó con una ocasión de 0,04 xG desde 22 m; Harbourton City ganó el balón en juego abierto y marcó 3 s después con 0 pases.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
+     "text": "El Westmere Town de Xarno Uusitalo se queda 2-1 por detrás tras el gol de Joaquin Quenvara.",
      "source": "model",
      "reason": null
     }
@@ -5428,118 +5640,6 @@
      "say": "Joaquin Quenvara has 0.04 xG in the match",
      "source": "player",
      "origin": null
-    },
-    {
-     "ref": "c4",
-     "metric": "possession_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 49.2,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Harbourton City: 49% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c5",
-     "metric": "shots_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 13.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Harbourton City: 13 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c6",
-     "metric": "xg_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.666,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Harbourton City: 2.67 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c7",
-     "metric": "pass_completion_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 82.8,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Harbourton City: 83% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c8",
-     "metric": "possession_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 50.8,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Westmere Town: 51% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c9",
-     "metric": "shots_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 8.0,
-     "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Westmere Town: 8 shots",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c10",
-     "metric": "xg_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 1.532,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Westmere Town: 1.53 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c11",
-     "metric": "pass_completion_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 83.5,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 4755.7,
-     "baseline": null,
-     "say": "Westmere Town: 84% pass completion",
-     "source": "context",
-     "origin": null
     }
    ],
    "players": [
@@ -5556,25 +5656,17 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Goal: Harbourton City",
+    "headline": "Quenvara puts Harbourton back ahead",
     "claims": [
      {
       "claim_id": "a1c1",
-      "text": "Joaquin Quenvara scored for Harbourton City: it is 2-1 to Harbourton City.",
+      "text": "Joaquin Quenvara scored with a 0.04 xG chance from 22 m; the shot went in.",
       "team_id": "har",
       "refs": [
        "p1",
-       "e10"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c2",
-      "text": "Harbourton City: a 0.04 xG chance, from 22 m.",
-      "team_id": "har",
-      "refs": [
        "e1",
-       "e2"
+       "e2",
+       "e11"
       ],
       "numbers": [
        {
@@ -5588,21 +5680,38 @@
       ]
      },
      {
-      "claim_id": "a1c3",
-      "text": "Harbourton City: 2.67 xG in the match, Harbourton City: 49% possession.",
+      "claim_id": "a1c2",
+      "text": "Harbourton City won the ball in open play and scored 3 s after winning it, with 0 passes in the move, and it is 2-1: Harbourton City go ahead.",
       "team_id": "har",
       "refs": [
-       "e3",
-       "c4"
+       "e9",
+       "e6",
+       "e7",
+       "e10"
       ],
       "numbers": [
        {
-        "value": 2.67,
-        "ref": "e3"
+        "value": 3.0,
+        "ref": "e6"
        },
        {
-        "value": 49.0,
-        "ref": "c4"
+        "value": 0.0,
+        "ref": "e7"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "This is Joaquin Quenvara's 1 goal in this match.",
+      "team_id": "har",
+      "refs": [
+       "p1",
+       "c1"
+      ],
+      "numbers": [
+       {
+        "value": 1.0,
+        "ref": "c1"
        }
       ]
      }
@@ -5670,12 +5779,12 @@
   "narrative": {
    "source": "model",
    "reason": null,
-   "headline": "Full time: the match",
+   "headline": "Harbourton seal late scramble winner",
    "claims": [
     {
      "claim_id": "a1c1",
      "text": "It ends 2-1: Harbourton City win.",
-     "team_id": "har",
+     "team_id": null,
      "refs": [
       "c1"
      ],
@@ -5683,29 +5792,72 @@
     },
     {
      "claim_id": "a1c2",
-     "text": "Hugo Vidrelle scored for Harbourton City.",
-     "team_id": "har",
+     "text": "Harbourton City had 2.85 xG and 15 shots, Westmere Town had 1.53 xG and 8 shots.",
+     "team_id": null,
      "refs": [
-      "p1"
-     ],
-     "numbers": []
-    },
-    {
-     "claim_id": "a1c3",
-     "text": "Harbourton City: 51% possession, Harbourton City: 15 shots.",
-     "team_id": "har",
-     "refs": [
-      "c2",
-      "c3"
+      "c4",
+      "c3",
+      "c8",
+      "c7"
      ],
      "numbers": [
       {
-       "value": 51.0,
-       "ref": "c2"
+       "value": 2.85,
+       "ref": "c4"
       },
       {
        "value": 15.0,
        "ref": "c3"
+      },
+      {
+       "value": 1.53,
+       "ref": "c8"
+      },
+      {
+       "value": 8.0,
+       "ref": "c7"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c3",
+     "text": "Joaquin Quenvara scored for Harbourton City with a 0.04 xG chance from 22 m and the shot went in.",
+     "team_id": "har",
+     "refs": [
+      "p3",
+      "c19",
+      "c20",
+      "c21"
+     ],
+     "numbers": [
+      {
+       "value": 0.04,
+       "ref": "c19"
+      },
+      {
+       "value": 22.0,
+       "ref": "c20"
+      }
+     ]
+    },
+    {
+     "claim_id": "a1c4",
+     "text": "Harbourton City won the ball in open play and scored 3 s after winning it with 0 passes in the move, and it made it 2-1.",
+     "team_id": "har",
+     "refs": [
+      "c22",
+      "c23",
+      "c24",
+      "c25"
+     ],
+     "numbers": [
+      {
+       "value": 3.0,
+       "ref": "c23"
+      },
+      {
+       "value": 0.0,
+       "ref": "c24"
       }
      ]
     }
@@ -5715,56 +5867,56 @@
     {
      "persona": "analyst",
      "language": "en",
-     "text": "It ends 2-1: Harbourton City win. Hugo Vidrelle scored for Harbourton City.",
+     "text": "Harbourton City win 2-1: Joaquin Quenvara's 0.04 xG chance from 22 m went in. Harbourton City had 2.85 xG and 15 shots, Westmere Town had 1.53 xG and 8 shots; Harbourton scored 3 s after winning the ball in open play with 0 passes to make it 2-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "en",
-     "text": "It ends 2-1: Harbourton City win.",
+     "text": "Joaquin Quenvara's strike settles it and Harbourton City win 2-1!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "en",
-     "text": "For Hugo Vidrelle's fans: It ends 2-1: Harbourton City win.",
+     "text": "For Hugo Vidrelle's Harbourton City, Joaquin Quenvara's goal — a 0.04 xG effort from 22 m that went in — and a quick finish 3 s after regaining possession with 0 passes secured a 2-1 win; Harbourton City finished with 2.85 xG and 15 shots.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "en",
-     "text": "For Xarno Uusitalo's fans: It ends 2-1: Harbourton City win.",
+     "text": "For Xarno Uusitalo's Westmere Town, Harbourton City scored 3 s after winning the ball in open play with 0 passes to make it 2-1; Westmere Town registered 1.53 xG and 8 shots.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "analyst",
      "language": "es",
-     "text": "[es · offline] It ends 2-1: Harbourton City win. Hugo Vidrelle scored for Harbourton City.",
+     "text": "Harbourton City gana 2-1: el disparo de Joaquin Quenvara de 0,04 xG desde 22 m entró. Harbourton City tuvo 2,85 xG y 15 tiros, Westmere Town tuvo 1,53 xG y 8 tiros; Harbourton marcó 3 s tras recuperar el balón en juego abierto con 0 pases para poner el 2-1.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "casual",
      "language": "es",
-     "text": "[es · offline] It ends 2-1: Harbourton City win.",
+     "text": "¡El gol de Joaquin Quenvara da la victoria 2-1 a Harbourton City!",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:har_09",
      "language": "es",
-     "text": "[es · offline] For Hugo Vidrelle's fans: It ends 2-1: Harbourton City win.",
+     "text": "Para Hugo Vidrelle y Harbourton City, el gol de Joaquin Quenvara —una ocasión de 0,04 xG desde 22 m que entró— y el tanto 3 s tras recuperar el balón en juego abierto con 0 pases aseguraron el 2-1; Harbourton City terminó con 2,85 xG y 15 tiros.",
      "source": "model",
      "reason": null
     },
     {
      "persona": "fav:wst_09",
      "language": "es",
-     "text": "[es · offline] For Xarno Uusitalo's fans: It ends 2-1: Harbourton City win.",
+     "text": "Para Xarno Uusitalo y Westmere Town, Harbourton City marcó 3 s tras ganar el balón en juego abierto con 0 pases para el 2-1; Westmere Town sumó 1,53 xG y 8 tiros.",
      "source": "model",
      "reason": null
     }
@@ -6026,20 +6178,6 @@
     },
     {
      "ref": "c19",
-     "metric": "goal_margin",
-     "team_id": "har",
-     "player_id": null,
-     "value": 1.0,
-     "unit": "count",
-     "window_start_s": 4755.7,
-     "window_end_s": 4755.7,
-     "baseline": 0.0,
-     "say": "made it 2-1: Harbourton City went ahead",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:2"
-    },
-    {
-     "ref": "c20",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6053,7 +6191,7 @@
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c21",
+     "ref": "c20",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6067,21 +6205,77 @@
      "origin": "har_wst_siege_0003:goal:2"
     },
     {
-     "ref": "c22",
-     "metric": "goal_margin",
-     "team_id": "wst",
+     "ref": "c21",
+     "metric": "shot_outcome",
+     "team_id": "har",
      "player_id": null,
-     "value": 0.0,
+     "value": 3.0,
      "unit": "count",
-     "window_start_s": 3220.6,
-     "window_end_s": 3220.6,
-     "baseline": -1.0,
-     "say": "made it 1-1: Westmere Town equalised",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "the shot went in",
      "source": "claim",
-     "origin": "har_wst_siege_0003:goal:1"
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c22",
+     "metric": "possession_won_in_open_play",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4752.9,
+     "window_end_s": 4752.9,
+     "baseline": null,
+     "say": "Harbourton City won the ball in open play",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
     },
     {
      "ref": "c23",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 2.8,
+     "unit": "s",
+     "window_start_s": 4752.9,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "3 s after winning the ball",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c24",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 4752.9,
+     "window_end_s": 4755.7,
+     "baseline": null,
+     "say": "0 passes in the move",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c25",
+     "metric": "goal_margin",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 4755.7,
+     "window_end_s": 4755.7,
+     "baseline": 0.0,
+     "say": "made it 2-1: Harbourton City went ahead",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:2"
+    },
+    {
+     "ref": "c26",
      "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
@@ -6095,7 +6289,7 @@
      "origin": "har_wst_siege_0003:goal:1"
     },
     {
-     "ref": "c24",
+     "ref": "c27",
      "metric": "shot_distance",
      "team_id": "wst",
      "player_id": null,
@@ -6109,7 +6303,119 @@
      "origin": "har_wst_siege_0003:goal:1"
     },
     {
-     "ref": "c25",
+     "ref": "c28",
+     "metric": "goal_margin",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 0.0,
+     "unit": "count",
+     "window_start_s": 3220.6,
+     "window_end_s": 3220.6,
+     "baseline": -1.0,
+     "say": "made it 1-1: Westmere Town equalised",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c29",
+     "metric": "possession_won_in_open_play",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 3175.1,
+     "window_end_s": 3175.1,
+     "baseline": null,
+     "say": "Westmere Town won the ball in open play",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c30",
+     "metric": "seconds_since_turnover",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 45.5,
+     "unit": "s",
+     "window_start_s": 3175.1,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "46 s after winning the ball",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c31",
+     "metric": "passes_in_spell",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 8.0,
+     "unit": "count",
+     "window_start_s": 3175.1,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "8 passes in the move",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c32",
+     "metric": "metres_gained",
+     "team_id": "wst",
+     "player_id": null,
+     "value": 76.4,
+     "unit": "m",
+     "window_start_s": 3175.1,
+     "window_end_s": 3220.6,
+     "baseline": null,
+     "say": "76 m gained",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:1"
+    },
+    {
+     "ref": "c33",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 16.7,
+     "unit": "s",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "17 s after gaining possession",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c34",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "1 pass in the move",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c35",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 41.1,
+     "unit": "m",
+     "window_start_s": 2177.6,
+     "window_end_s": 2194.3,
+     "baseline": null,
+     "say": "41 m gained",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:goal:0"
+    },
+    {
+     "ref": "c36",
      "metric": "goal_margin",
      "team_id": "har",
      "player_id": null,
@@ -6123,49 +6429,7 @@
      "origin": "har_wst_siege_0003:goal:0"
     },
     {
-     "ref": "c26",
-     "metric": "shot_xg",
-     "team_id": "har",
-     "player_id": null,
-     "value": 0.058,
-     "unit": "xg",
-     "window_start_s": 2194.3,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "a 0.06 xG chance",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
-     "ref": "c27",
-     "metric": "shot_distance",
-     "team_id": "har",
-     "player_id": null,
-     "value": 19.0,
-     "unit": "m",
-     "window_start_s": 2194.3,
-     "window_end_s": 2194.3,
-     "baseline": null,
-     "say": "from 19 m",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:goal:0"
-    },
-    {
-     "ref": "c28",
-     "metric": "shot_outcome",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.0,
-     "unit": "count",
-     "window_start_s": 2098.9,
-     "window_end_s": 2098.9,
-     "baseline": null,
-     "say": "the shot was saved",
-     "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:2"
-    },
-    {
-     "ref": "c29",
+     "ref": "c37",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6179,7 +6443,7 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c30",
+     "ref": "c38",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6193,21 +6457,77 @@
      "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c31",
+     "ref": "c39",
      "metric": "shot_outcome",
      "team_id": "har",
      "player_id": null,
-     "value": 0.0,
+     "value": 2.0,
      "unit": "count",
-     "window_start_s": 1807.4,
-     "window_end_s": 1807.4,
+     "window_start_s": 2098.9,
+     "window_end_s": 2098.9,
      "baseline": null,
-     "say": "the shot went off target",
+     "say": "the shot was saved",
      "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:1"
+     "origin": "har_wst_siege_0003:big_chance:2"
     },
     {
-     "ref": "c32",
+     "ref": "c40",
+     "metric": "possession_won_in_open_play",
+     "team_id": "har",
+     "player_id": null,
+     "value": 1.0,
+     "unit": "count",
+     "window_start_s": 2053.4,
+     "window_end_s": 2053.4,
+     "baseline": null,
+     "say": "Harbourton City won the ball in open play",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c41",
+     "metric": "seconds_since_turnover",
+     "team_id": "har",
+     "player_id": null,
+     "value": 45.5,
+     "unit": "s",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "46 s after winning the ball",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c42",
+     "metric": "passes_in_spell",
+     "team_id": "har",
+     "player_id": null,
+     "value": 7.0,
+     "unit": "count",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "7 passes in the move",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c43",
+     "metric": "metres_gained",
+     "team_id": "har",
+     "player_id": null,
+     "value": 38.8,
+     "unit": "m",
+     "window_start_s": 2053.4,
+     "window_end_s": 2098.9,
+     "baseline": null,
+     "say": "39 m gained",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:2"
+    },
+    {
+     "ref": "c44",
      "metric": "shot_xg",
      "team_id": "har",
      "player_id": null,
@@ -6221,7 +6541,7 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c33",
+     "ref": "c45",
      "metric": "shot_distance",
      "team_id": "har",
      "player_id": null,
@@ -6235,21 +6555,21 @@
      "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c34",
+     "ref": "c46",
      "metric": "shot_outcome",
-     "team_id": "wst",
+     "team_id": "har",
      "player_id": null,
-     "value": 2.0,
+     "value": 0.0,
      "unit": "count",
-     "window_start_s": 437.6,
-     "window_end_s": 437.6,
+     "window_start_s": 1807.4,
+     "window_end_s": 1807.4,
      "baseline": null,
-     "say": "the shot was saved",
+     "say": "the shot went off target",
      "source": "claim",
-     "origin": "har_wst_siege_0003:big_chance:0"
+     "origin": "har_wst_siege_0003:big_chance:1"
     },
     {
-     "ref": "c35",
+     "ref": "c47",
      "metric": "shot_xg",
      "team_id": "wst",
      "player_id": null,
@@ -6263,7 +6583,7 @@
      "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
-     "ref": "c36",
+     "ref": "c48",
      "metric": "shot_distance",
      "team_id": "wst",
      "player_id": null,
@@ -6277,116 +6597,46 @@
      "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
-     "ref": "c37",
-     "metric": "possession_total",
-     "team_id": "har",
+     "ref": "c49",
+     "metric": "shot_outcome",
+     "team_id": "wst",
      "player_id": null,
-     "value": 50.8,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
-     "baseline": null,
-     "say": "Harbourton City: 51% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c38",
-     "metric": "shots_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 15.0,
+     "value": 2.0,
      "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
+     "window_start_s": 437.6,
+     "window_end_s": 437.6,
      "baseline": null,
-     "say": "Harbourton City: 15 shots",
-     "source": "context",
-     "origin": null
+     "say": "the shot was saved",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
-     "ref": "c39",
-     "metric": "xg_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 2.845,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
-     "baseline": null,
-     "say": "Harbourton City: 2.85 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c40",
-     "metric": "pass_completion_total",
-     "team_id": "har",
-     "player_id": null,
-     "value": 82.3,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
-     "baseline": null,
-     "say": "Harbourton City: 82% pass completion",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c41",
-     "metric": "possession_total",
+     "ref": "c50",
+     "metric": "possession_won_in_open_play",
      "team_id": "wst",
      "player_id": null,
-     "value": 49.2,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
-     "baseline": null,
-     "say": "Westmere Town: 49% possession",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c42",
-     "metric": "shots_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 8.0,
+     "value": 1.0,
      "unit": "count",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
+     "window_start_s": 433.8,
+     "window_end_s": 433.8,
      "baseline": null,
-     "say": "Westmere Town: 8 shots",
-     "source": "context",
-     "origin": null
+     "say": "Westmere Town won the ball in open play",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
     },
     {
-     "ref": "c43",
-     "metric": "xg_total",
+     "ref": "c51",
+     "metric": "seconds_since_turnover",
      "team_id": "wst",
      "player_id": null,
-     "value": 1.532,
-     "unit": "xg",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
+     "value": 3.8,
+     "unit": "s",
+     "window_start_s": 433.8,
+     "window_end_s": 437.6,
      "baseline": null,
-     "say": "Westmere Town: 1.53 xG",
-     "source": "context",
-     "origin": null
-    },
-    {
-     "ref": "c44",
-     "metric": "pass_completion_total",
-     "team_id": "wst",
-     "player_id": null,
-     "value": 82.5,
-     "unit": "pct",
-     "window_start_s": 0.0,
-     "window_end_s": 5400.0,
-     "baseline": null,
-     "say": "Westmere Town: 82% pass completion",
-     "source": "context",
-     "origin": null
+     "say": "4 s after winning the ball",
+     "source": "claim",
+     "origin": "har_wst_siege_0003:big_chance:0"
     }
    ],
    "players": [
@@ -6419,12 +6669,12 @@
   "drafts": [
    {
     "attempt": 1,
-    "headline": "Full time: the match",
+    "headline": "Harbourton seal late scramble winner",
     "claims": [
      {
       "claim_id": "a1c1",
       "text": "It ends 2-1: Harbourton City win.",
-      "team_id": "har",
+      "team_id": null,
       "refs": [
        "c1"
       ],
@@ -6432,29 +6682,72 @@
      },
      {
       "claim_id": "a1c2",
-      "text": "Hugo Vidrelle scored for Harbourton City.",
-      "team_id": "har",
+      "text": "Harbourton City had 2.85 xG and 15 shots, Westmere Town had 1.53 xG and 8 shots.",
+      "team_id": null,
       "refs": [
-       "p1"
-      ],
-      "numbers": []
-     },
-     {
-      "claim_id": "a1c3",
-      "text": "Harbourton City: 51% possession, Harbourton City: 15 shots.",
-      "team_id": "har",
-      "refs": [
-       "c2",
-       "c3"
+       "c4",
+       "c3",
+       "c8",
+       "c7"
       ],
       "numbers": [
        {
-        "value": 51.0,
-        "ref": "c2"
+        "value": 2.85,
+        "ref": "c4"
        },
        {
         "value": 15.0,
         "ref": "c3"
+       },
+       {
+        "value": 1.53,
+        "ref": "c8"
+       },
+       {
+        "value": 8.0,
+        "ref": "c7"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c3",
+      "text": "Joaquin Quenvara scored for Harbourton City with a 0.04 xG chance from 22 m and the shot went in.",
+      "team_id": "har",
+      "refs": [
+       "p3",
+       "c19",
+       "c20",
+       "c21"
+      ],
+      "numbers": [
+       {
+        "value": 0.04,
+        "ref": "c19"
+       },
+       {
+        "value": 22.0,
+        "ref": "c20"
+       }
+      ]
+     },
+     {
+      "claim_id": "a1c4",
+      "text": "Harbourton City won the ball in open play and scored 3 s after winning it with 0 passes in the move, and it made it 2-1.",
+      "team_id": "har",
+      "refs": [
+       "c22",
+       "c23",
+       "c24",
+       "c25"
+      ],
+      "numbers": [
+       {
+        "value": 3.0,
+        "ref": "c23"
+       },
+       {
+        "value": 0.0,
+        "ref": "c24"
        }
       ]
      }
@@ -6484,6 +6777,13 @@
     "reasons": []
    },
    {
+    "claim_id": "a1c4",
+    "attempt": 1,
+    "layer": "deterministic",
+    "ok": true,
+    "reasons": []
+   },
+   {
     "claim_id": "a1c1",
     "attempt": 1,
     "layer": "semantic",
@@ -6499,6 +6799,13 @@
    },
    {
     "claim_id": "a1c3",
+    "attempt": 1,
+    "layer": "semantic",
+    "ok": true,
+    "reasons": []
+   },
+   {
+    "claim_id": "a1c4",
     "attempt": 1,
     "layer": "semantic",
     "ok": true,

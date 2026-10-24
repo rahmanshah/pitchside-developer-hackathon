@@ -255,8 +255,17 @@ class HonestyTests(JsCase):
 
     def test_source_labels_never_call_fake_text_model_output(self) -> None:
         roles = ["interpreter", "explainer", "verifier", "personalizer"]
-        fake = json.loads((WEB / "data" / "comeback" / "manifest.json").read_text(encoding="utf-8"))
+        fake = {"label": "F", "pipeline": {"llm_mode": "fake", "deployments": dict.fromkeys(roles, "fake")}}
         self.assertEqual(self.badge(fake)["sourceLabels"], dict.fromkeys(roles, "Offline stand-in"))
+        # Every published run is labelled by what produced it: deployment names for live runs, the stand-in label
+        # for offline samples, never "model" for fake text.
+        for path in sorted((WEB / "data").glob("*/manifest.json")):
+            published = json.loads(path.read_text(encoding="utf-8"))
+            mode = published["pipeline"]["llm_mode"]
+            labels = self.badge(published)["sourceLabels"]
+            expected = (dict.fromkeys(roles, "Offline stand-in") if mode == "fake"
+                        else {r: published["pipeline"]["deployments"][r] for r in roles})
+            self.assertEqual(labels, expected, path.parent.name)
         live = {"label": "L", "pipeline": {"llm_mode": "foundry",
                                            "deployments": {"explainer": "luna-eu", "personalizer": "luna-eu-2"}}}
         labels = self.badge(live)["sourceLabels"]
