@@ -1,143 +1,94 @@
 # Pitchside
 
-Turn a live stream of synthetic football events into **explainable match intelligence**: key moments, *why they matter*, and a different experience for an analyst than for a casual fan.
+**Synthetic football events in, verified match insights out: every number checked, every claim traceable.**
 
-Built for the **Inside the Game: Developer Hackathon**. Everything here is synthetic. All clubs and players are invented, no real match data is used, and no Premier League names or marks appear anywhere.
+[![CI](https://github.com/rahmanshah/pitchside-developer-hackathon/actions/workflows/ci.yml/badge.svg)](https://github.com/rahmanshah/pitchside-developer-hackathon/actions/workflows/ci.yml)
 
-## Status
+**[Live demo](https://green-cliff-068ccc50f.3.azurestaticapps.net)** · Demo video: coming soon <!-- DEMO_VIDEO_URL -->
+· [Architecture](docs/ARCHITECTURE.md) · [Live evaluation](docs/LIVE_EVAL.md) · [Azure](docs/AZURE.md)
+· [MCP server](docs/MCP.md) · [Overlay contract](docs/OVERLAY.md) · [Decision log](docs/DECISIONS.md)
 
-| Pipeline stage | Component | Status |
-|---|---|---|
-| Ingest | Seeded match generator, event schema, live replay | **Done** |
-| Interpret | Deterministic stats engine and key-moment detector (no LLM) | **Built (v0.2.0)**: goals found 100%, but some key-moment recall is below our 80% bar on held-out seeds, see [results](#stats-engine-and-how-well-it-works) |
-| (model access) | Agent Framework chat clients for Foundry model deployments (Entra ID), offline fake client, token and cost log, budget, concurrency and retry guard | **Built**: tested offline only; not yet run against a live Foundry deployment, see [model client](#model-client-and-cost-controls) |
-| Explain | Interpreter, explainer and two-layer verifier (deterministic checker + semantic check) as an Agent Framework workflow, with recaps and an audit trail | **Built (offline-tested)**: runs end to end on the fake model client; **no live model run yet**, so there are no model-quality numbers, see [agents](#agents-explain-verify-personalize) |
-| (tools) | The stats engine as a read-only **MCP server** (`pitchside mcp`, stdio and Streamable HTTP) that the interpreter can use | **Built (offline-tested)**; not deployed, see [MCP server](#stats-engine-as-an-mcp-server) |
-| Render | Timed overlay contract (`overlay.json`) built from each run bundle; a static web UI that replays recorded runs (broadcast view, analyst dashboard, evidence drawer) | **Built (offline)**: replays offline sample runs from the fake model client; replay engine unit-tested, browser end-to-end smoke tests pass locally (Chromium); not deployed yet, see [web UI](#web-ui-replay-a-recorded-run) |
-| Personalize | Analyst / casual fan / favourite-player views, English and Spanish, one model call per moment | **Built (offline-tested)**; offline translations are tagged placeholders, not real translations |
-| Deploy (Azure) | Bicep template for one resource group: Static Web Apps (Free) for the UI and recorded runs, Container Apps for the MCP server (IP allow-list, rate limit, scale to zero), Log Analytics, a budget alert; staged deploy and guarded teardown scripts; container image and Static Web Apps workflows | **Planned: written and validated offline, not deployed yet** (`bicep build`/`lint` clean, image built and smoke-tested locally), see [docs/AZURE.md](docs/AZURE.md) |
+Built for the **Inside the Game: Developer Hackathon**, challenge "The Synthetic Match Insights Engine for Premier
+League Studio". Every club, player and match is invented and generated from a seed. No real match data, names or logos.
 
-**Try it without Azure, in one command** (no credentials, no cost; [uv](https://docs.astral.sh/uv/) installs everything
-on first run):
+## What it does
 
-```bash
-uv run pitchside serve --open
-```
+| Stage | Pitchside |
+|---|---|
+| **Ingest** | A seeded generator streams typed events (pass, shot, tackle, pressure, possession change). `(seed, clubs, storyline)` fully determines a match, and an answer key lists the phases and goals that were planted. |
+| **Interpret** | A deterministic stats engine (no LLM) keeps rolling and cumulative possession, field tilt, pressure, pass difficulty, shots and xG, momentum and a control-vs-chaos index, and emits typed findings (goal, big chance, momentum shift, pressure surge, siege, chaos spell, counter-attack), each with its evidence numbers and time window. |
+| **Explain** | Four Microsoft Agent Framework agents (interpreter, explainer, verifier, personalizer) and a deterministic checker, in one graph workflow per moment, plus half-time and full-time recaps. |
+| **Render** | A timed overlay contract (`overlay.json`) and a static web UI: broadcast view, analyst dashboard, evidence drawer. |
+| **Personalize** | Analyst, casual fan and favourite-player views, in English and Spanish, written in one personalizer call per moment. Every language is re-checked. |
 
-That serves the web UI with the recorded runs in `web/data`. The whole pipeline also runs offline on the fake model
-client, e.g. `uv run pitchside run --seed 7 --storyline comeback`, which writes a new run bundle.
+**Numbers first, words second.** The stats engine computes every figure. Agents only write words around figures it
+computed, citing each one by its evidence id. A claim reaches the screen only after the deterministic checker and the
+semantic verifier pass it. If a model fails or every draft is rejected, a template built from the same numbers is
+shown instead, labelled "Template".
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the target design and [docs/DECISIONS.md](docs/DECISIONS.md)
-for the decision log (what we chose, why, and what we rejected).
+![Broadcast view: 72nd-minute goal lower third with its gpt-5-mini, checked and verified chips](docs/img/broadcast.png)
 
-## Quick start
+![Evidence drawer: a big chance whose semantic check was skipped by an injected verifier timeout, with each claim's ledger numbers and triggering events](docs/img/evidence-drawer.png)
 
-Uses [uv](https://docs.astral.sh/uv/). `uv sync` creates the virtualenv and installs everything, including dev tools.
+![Analyst dashboard: key-moment timeline, pitch, live stats, and the analyst, casual and favourite-player texts side by side](docs/img/analyst.png)
+
+*Captured from the published live runs by `uv run python scripts/capture_screenshots.py` at 1920 x 1080.*
+
+## Try it in 2 minutes
+
+### a) The live site, no setup
+
+The site replays **recorded runs that the live pipeline generated** (gpt-5-mini on Microsoft Foundry, stats tools on
+the cloud MCP server). The page itself calls no model, and every run is labelled "Recorded run generated by the live
+pipeline". The cloud MCP server accepts only the author's IP address, so judges cannot re-run the cloud path. The
+recordings and their Run info panel are the evidence.
+
+| Open | What you see |
+|---|---|
+| [Comeback, 87' winner](https://green-cliff-068ccc50f.3.azurestaticapps.net/?run=comeback&view=broadcast&t=86:15&speed=4&autoplay=1&persona=casual&lang=en) | Plays from 86:15 at 4x. Aurora Rovers go 2-1 up, and the goal lower third shows its checked and verified chips. |
+| [Siege, casual fan](https://green-cliff-068ccc50f.3.azurestaticapps.net/?run=siege&view=broadcast&t=36:40&persona=casual&lang=en) | The 37' opener for Harbourton City, told for a casual fan. Switch persona or language from the controls. |
+| [Recovery demo, faults injected](https://green-cliff-068ccc50f.3.azurestaticapps.net/?run=faults-demo&view=broadcast&t=47:10&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:goal:1) | The "Faults injected · 17 fired" chip. The drawer's audit trail shows a corrupted first draft rejected by the checker (`number_mismatch`) and the retry that passed. |
+
+What to look for:
+
+- **Evidence drawer** (`E`, or *Evidence ›* on any overlay): the shown text, the claims it was written from, each
+  claim's ledger numbers with metric and window, the events behind them, and the audit trail (drafts, rejections,
+  retries, fallbacks, model calls).
+- **EN / ES** (`L`): the personalizer's own Spanish, from the same call as the English.
+- **Run info** (`I`): model deployments, prompt versions, budget, and the stats tools used (`mcp`).
+- **Faults chip**: only `faults-demo` has faults, injected on purpose to show recovery. The other two runs are clean.
+- Other keys: `Space` play or pause, `N`/`B` next or previous moment, `2` analyst dashboard.
+
+### b) Run it locally, offline
+
+Needs [uv](https://docs.astral.sh/uv/). No Azure account, no credentials, no cost. Without a `.env` file everything
+runs on a deterministic fake model client, and its output is labelled "Offline run (fake model client)".
 
 ```bash
 uv sync
-
-uv run pitchside storylines                                  # list scripted storylines
-uv run pitchside generate --seed 7 --storyline comeback      # writes matches/<id>.jsonl + .key.json
-uv run pitchside summary matches/aur_irv_comeback_0007.jsonl
-uv run pitchside replay matches/aur_irv_comeback_0007.jsonl --speed 60   # 90 min in 90 s
-uv run pitchside findings matches/aur_irv_comeback_0007.jsonl            # key moments, with their numbers
-uv run pitchside eval-stats --seeds 201-220                              # score the stats engine against answer keys
-uv run pitchside mcp                                                     # the stats engine as a read-only MCP server (stdio)
-uv run pitchside run --seed 7 --storyline comeback                       # stats engine + agents (offline), writes a run bundle
-uv run pitchside run --seed 7 --storyline comeback --tools mcp           # same, the interpreter's tools served over MCP
-uv run pitchside run --seed 7 --storyline end_to_end --inject-faults demo # same, with deliberate failures to show recovery
-uv run pitchside eval-agents --seeds 1-3                                 # score agent runs against answer keys (offline: plumbing check)
-uv run pitchside serve --open                                            # web UI: replay the recorded runs in web/data (http://127.0.0.1:8000)
-uv run pitchside demo-data                                               # regenerate the offline sample runs in web/data
-uv run pitchside overlay <bundle-dir>                                    # rebuild a bundle's overlay.json
-uv run pitchside cost --by role                                          # model token usage and cost from the usage log
-uv run pitchside schema > docs/event.schema.json             # regenerate the event JSON Schema
-uv run pitchside schema --findings > docs/finding.schema.json  # and the findings JSON Schema
-uv run pitchside schema --bundle > docs/run_bundle.schema.json # and the run bundle JSON Schema
-uv run pitchside schema --overlay > docs/overlay.schema.json   # and the overlay contract JSON Schema
-
-uv run pytest
+uv run pitchside serve --open      # the web UI with the same recorded runs, http://127.0.0.1:8000
+uv run pitchside generate --seed 7 --storyline comeback              # matches/aur_irv_comeback_0007.jsonl + answer key
+uv run pitchside findings matches/aur_irv_comeback_0007.jsonl        # key moments with their evidence numbers
+uv run pitchside run --seed 7 --storyline comeback                   # whole pipeline, writes runs/bundles/<run>/
+uv run pitchside run --seed 7 --storyline comeback --tools mcp       # same, stats tools served over MCP (in-process)
+uv run pitchside run --seed 4 --storyline end_to_end --home wst --away aur --inject-faults demo   # recovery paths
+uv run pitchside eval-agents --seeds 1-3 --inject-bad 0.3            # offline plumbing check, not model quality
+uv run pytest                                                        # the test suite (a few minutes)
 ```
 
-## What the generator produces
+Live mode needs `PITCHSIDE_LLM=foundry`, a Foundry project and `--live` on top, so a stray command never spends money
+([LIVE_EVAL.md](docs/LIVE_EVAL.md)).
 
-One JSON object per line, validated by pydantic models in [`schema.py`](src/pitchside/schema.py)
-([JSON Schema](docs/event.schema.json)):
+## Architecture
 
-`match_start` · `period_start` · `pass` · `shot` · `tackle` · `possession_change` · `pressure` · `period_end` · `match_end`
+```
+generator ──events──► stats engine ──findings──► director (code) ──one job per moment──► agent workflow
+                          │                                                        │
+                          └── read-only MCP server (12 tools, as_of_s bound) ◄─────┘ interpreter's stats tools
+agent workflow ──► run bundle (events, stats, findings, narratives, audit, usage) ──► overlay.json ──► web UI
+```
 
-- Coordinates are metres on a 105 × 68 pitch. The clock is match seconds.
-- Passes carry distance, ball speed, pressure on the passer and a 0–1 difficulty rating. Shots carry xG and shot speed.
-- Possession changes carry the reason and the length of the spell just ended.
-- A match is fully determined by `(seed, clubs, storyline)`, so runs are reproducible.
-
-### Storylines and the answer key
-
-A storyline plants real patterns into a match: tactical phases (a pressing surge, a low block, a chaotic spell)
-and scripted goals. Each generated match also writes a `.key.json` listing exactly what was planted, so
-agent output can be *scored* against ground truth instead of eyeballed.
-
-| Storyline | Planted pattern | Measured effect (mean of 10 seeds) |
-|---|---|---|
-| `comeback` | Away lead and low block; home press surge from 55'; frantic finish; 0–1 becomes 2–1 | Home shots/min 0.10 → 0.41; pass completion 82% → 72% in the finish |
-| `siege` | Home besiege a low block, away score on a counter | Home shots/min 0.09 → 0.45 during the siege |
-| `end_to_end` | Open, error-prone game, goals trade | Pass completion 82% → 68%; pressure events 1.7 → 6.7 per minute |
-| `balanced` | Control match, natural scoring | ~83% pass completion, ~23 shots, 0–5 goals |
-
-## Stats engine and how well it works
-
-`src/pitchside/stats/` turns events into numbers and typed **findings**, with no LLM involved. `StatsEngine.ingest(event)`
-updates rolling (5 min; 8 min for the match-wide chaos numbers) and since-kick-off numbers for possession, field tilt, pressure, pass completion and difficulty,
-shots and xG, tempo and a momentum and a control-vs-chaos index, and returns any new findings. A finding
-(`goal`, `big_chance`, `momentum_shift`, `pressure_surge`, `siege`, `chaos_spell`, `counter_attack`) always carries the
-evidence numbers behind it and their time window ([JSON Schema](docs/finding.schema.json)). Later, agents may only
-narrate those numbers and a verifier checks them.
-
-It is scored against the answer keys the generator writes (`pitchside eval-stats`). A planted phase is **detected** if a
-matching finding fires from 1 minute before to 8 minutes after the phase starts (counter-attacks: from the phase start
-to 1 minute after it ends); a detection 1-2 minutes early is counted as premature, not as a hit. The `low_block`
-phases are not scored. The bar for each storyline is 80% recall, and for `balanced` at most 1.0 spell finding per match.
-Thresholds were tuned on seeds 1-6 (momentum, pressure surge, siege) and 1-40 (counter-attack and chaos rules). They were
-**not** tuned on the seeds below.
-
-| Run | What it is | Comeback | End-to-end | Siege (siege / counter-attack) | Balanced spell findings per match | Goals found |
-|---|---|---|---|---|---|---|
-| Seeds 101-120 | **First held-out run** (first counter-attack rule, first chaos rule) | 85% | 85% | 65% (100% / 30%) | 0.70 | 100% |
-| Seeds 101-120 | Same seeds, after the counter-attack retune, first chaos rule (no longer pristine) | 85% | 85% | **62%** (100% / 25%) | 0.70 | 100% |
-| Seeds 201-220 | Fresh seeds, run once after the counter-attack retune, first chaos rule | **78%** | **75%** | **75%** (95% / 55%) | **1.10** | 100% |
-| Seeds 101-120 | Re-run after the chaos retune (no longer pristine) | **78%** (chaos 65%) | **70%** (chaos 70%) | **62%** (100% / 25%) | 0.50 | 100% |
-| Seeds 201-220 | Re-run after the chaos retune (no longer pristine) | **78%** (chaos 70%) | **75%** (chaos 75%) | **75%** (95% / 55%) | 0.50 | 100% |
-| Seeds 301-320 | **Fresh seeds, run once after the chaos retune** | **78%** (chaos 60%) | 80% (chaos 80%) | **65%** (100% / 30%) | 0.45 | 100% |
-
-Bold means below the bar (80% recall, or at most 1.0 spell findings per balanced match). Plainly:
-
-- **The 80% recall bar is met in 1 of the 9 latest held-out checks** (end-to-end on seeds 301-320, at exactly 80%).
-  The other eight storyline results are 62-78%.
-- **Goals are found exactly**, every time. The balanced spell-finding cap is met on all three ranges (0.45-0.50 per match).
-- **Siege and momentum shifts are found reliably** (siege 95-100%, momentum shift 85-95%), typically 3-6 minutes after the
-  phase starts, because the windows need time to fill. The median lag is +3 to +6 minutes and the worst +8.
-- **Counter-attacks are weak**: 25%, 55% and 30% on the three held-out ranges (about 37% pooled). On a per-event basis the
-  planted counters look like ordinary quick transitions, so a rule that finds more of them also fires about 3 times per
-  balanced match outside the planted windows. We did not loosen the bar or the matching rules. Counter-attack findings are
-  therefore kept as low-severity context (severity 0.1 to 0.3) and never trigger a model call on their own; a counter that
-  scores is narrated through its goal finding, which says how the possession began (seconds since the turnover, passes,
-  metres gained).
-- **Chaos spells** are found 60-80% of the time (comeback 60-70%, end-to-end 70-80%). The chaos retune used an 8-minute
-  window to stop chaos firing on balanced play, which worked (balanced spell findings 0.70 and 1.10 down to 0.50 and 0.50),
-  but it cost recall: on seeds 101-120 and 201-220 combined, comeback chaos fell from 75% to 68% and end-to-end chaos
-  from 80% to 73%, and detection is slower (median +4 to +6 minutes).
-
-The held-out recall tests in [tests/test_stats_heldout.py](tests/test_stats_heldout.py) mark each shortfall above as an
-expected failure with its measured numbers; every other bar is a normal assertion. The full reasoning and the options we
-did not take are in [docs/DECISIONS.md](docs/DECISIONS.md).
-
-## Agents: explain, verify, personalize
-
-`src/pitchside/agents/` narrates the stats engine's findings with four **Microsoft Agent Framework** agents, each on
-its own guarded chat client. Every model-eligible finding (goals, big chances, the start of a siege, surge,
-momentum shift or chaotic spell, with severity at least 0.5), plus a **half-time and a full-time recap**, runs
-through its own Agent Framework **graph workflow** with typed handoffs:
+Each moment runs through its own Agent Framework graph workflow (`WorkflowBuilder`) with typed handoffs:
 
 ```mermaid
 flowchart LR
@@ -154,178 +105,152 @@ flowchart LR
   fallback --> publish
 ```
 
-- **Numbers first.** Every number a model may use has an id in an evidence ledger (finding evidence, stats-tool
-  results, player numbers). Claims must cite ids and list each number they use.
-- **Two-layer verifier.** A deterministic checker rejects a claim whose number does not match its evidence (to the
-  precision written), gives a number to the wrong club, states a score the match never had, puts a minute outside
-  the evidence window, or names a player the evidence does not include. Only then does the verifier agent judge
-  overclaiming and unsupported causes. Rejection reasons go back to the explainer; at most three drafts.
-- **Failure recovery.** Interpreter down: rule-based brief. Explainer down, or every claim rejected: a template
-  narrative marked `source: template` with the reason. Verifier down: claims accepted on the deterministic check
-  alone, flagged `semantic_check: skipped: <reason>`. Personalizer down, or one of its texts fails the checks:
-  template text for those personas. Over budget: later moments go straight to templates, and the run says so.
-- **Recaps** at half-time and full-time are built from the claims already verified during the match, plus totals and
-  player numbers (scorers, each club's top xG, the featured players), through the same flow.
-- **Personalization in one call per moment**: analyst, casual fan and a favourite-player view for one featured player
-  per club, in every configured language (`PITCHSIDE_LANGUAGES=en,es`), with numbers kept as digits so the checker
-  verifies every language. Adding a language is one phrase table in `languages.py` plus a config entry.
-- **Audit trail.** Every step records its prompt version and digest, the claims, each verdict with its reason code,
-  the feedback, retries and fallbacks; usage rows link each model call to its job, step and attempt.
-- **Run bundles** (`pitchside run`): events, 30-second stats, findings, narratives with overlay timing, audit trail and
-  usage as plain JSON ([schema](docs/run_bundle.schema.json)), labelled honestly ("Recorded run generated by the live
-  pipeline", or an offline label; injected faults are always announced). Milestone 5 replays them.
-- **No coordinator agent.** Routing has one correct answer that code can compute, so a plain-code director does it;
-  see [decision 13](docs/DECISIONS.md).
+| Part | Kind | Job | If it fails |
+|---|---|---|---|
+| Interpreter | Agent | Picks the angle and the evidence; calls the stats tools (local functions or MCP) | Rule-based brief |
+| Explainer | Agent | Writes structured claims; each cites evidence ids and lists every number it uses | After 3 rejected drafts or an outage: template narrative with its reason |
+| Checker | Code | Rejects a number that does not match its evidence, a figure given to the wrong club, a score the match never had, a minute outside the window, a player the evidence does not include, invented details (woodwork, body parts, records) | It is the gate; nothing bypasses it |
+| Verifier | Agent | Judges overclaiming and unsupported causes; reasons go back to the explainer | Claims shown on the checker alone, flagged "semantic check skipped" |
+| Personalizer / translator | Agent | Analyst, casual and favourite-player texts in every language, one call; each text re-checked | Template text for that persona |
+| Director | Code | Picks which findings get model calls (no coordinator agent: routing has one correct answer) | — |
+| Evidence ledger | Shared state | Every number a model may use has an id (`e*` finding, `c*` tool result, `p*` player) | — |
+| Audit trail | Record | Prompt version and digest, claims, verdicts with reason codes, feedback, retries, fallbacks, one usage row per call | — |
+| Run bundle | Files | Plain JSON per run ([schema](docs/run_bundle.schema.json)); the site replays these | — |
+| MCP server | Service | The stats engine as 12 read-only tools; every stats tool requires `as_of_s`, and the host overwrites it so a model cannot see later play | — |
 
-### Offline evaluation: a plumbing check, not model quality
+Reasons for each choice, and what was rejected: [docs/DECISIONS.md](docs/DECISIONS.md) (13-15 for the agents and MCP).
 
-`uv run pitchside eval-agents --seeds 1-3` runs every storyline through the whole pipeline on the **fake model
-client** and scores the output against the answer keys. The fake agents are deterministic and correct by
-construction (they build claims only from the evidence phrases, and their Spanish is a tagged placeholder), so these
-numbers show that the pipeline is wired end to end. **They say nothing about how well a real model writes.** The
-interesting offline numbers come from deliberately injected faults:
+## Microsoft technology: what is deployed, what is not
 
-| Offline run (seeds 1-3, 12 matches) | Result |
+| Technology | Status | Used for |
+|---|---|---|
+| Microsoft Foundry, gpt-5-mini (Global Standard, Sweden Central) | Deployed | Every agent role, through the Responses API, reasoning effort `low`. GPT-6 Luna is the target, but the trial subscription has no Luna quota ([decision 19](docs/DECISIONS.md)) |
+| Microsoft Agent Framework (agent-framework-core 1.22.0, agent-framework-openai 1.17.0) | Used | Four `Agent`s, a `WorkflowBuilder` graph per moment, function tools, MCP client tools, chat and function middleware (budget, concurrency, deadline, retry, usage log) |
+| Microsoft Entra ID (`DefaultAzureCredential`, azure-identity 1.26.0) and Azure AI Projects SDK 2.9.0 | Used | Signing in to the Foundry project for the live recordings; no API keys |
+| Azure Container Apps (Consumption) | Deployed | The MCP stats server: 0.25 vCPU / 0.5 GiB, scales to zero (0-1 replicas), IP allow-list, in-app rate limit (120 requests per minute per client, 300 overall) |
+| Azure Static Web Apps (Free, eastus2) | Deployed | The web UI and the recorded runs |
+| Log Analytics (Azure Monitor) | Deployed | Container logs, one JSON line per MCP request (1 GB/day cap) |
+| Cost Management budget | Deployed | 25 EUR a month on the resource group; e-mail at 50% and 100% of actual cost and 100% of forecast |
+| Bicep, GitHub Actions, GitHub Container Registry | Used | One template ([infra/main.bicep](infra/main.bicep)); workflows build the image and publish the site |
+| Managed identity + cloud recorder job | **Planned, not built** | The live recordings ran on the author's machine under `az login`, calling the deployed MCP server |
+| Entra ID authentication on the MCP server | **Planned, not built** | Today: IP allow-list and rate limit |
+| Application Insights | **Planned, not built** | Logs and platform metrics cover the demo |
+
+Model Context Protocol: Python SDK 1.30.0, pinned below 2 because Agent Framework 1.22.0 requires `mcp<2`
+([decision 15](docs/DECISIONS.md)). Deployment steps and protection: [docs/AZURE.md](docs/AZURE.md).
+
+## Evaluation and honesty
+
+### Live agents: three blocks of 20 matches
+
+Run on 24 October 2026 on gpt-5-mini (5 seeds × 4 storylines each, match budget $0.25). Full tables, method and
+error classes: [docs/LIVE_EVAL.md](docs/LIVE_EVAL.md), section 4.
+
+| | Seeds 201-205 | Seeds 206-210 | **Seeds 301-305 (clean block)** |
+|---|---|---|---|
+| Goals whose score is stated in a shown claim | 13 of 67 | 60 of 70 | 69 of 69 |
+| First-draft claims passing the deterministic checker | 99% of 586 | 99% of 629 | 100% of 632 |
+| Claims the semantic verifier rejected | 8% | 5% | 5% |
+| Model jobs needing a retry | 48 of 264 (18%) | 37 of 276 (13%) | 37 of 263 (14%) |
+| Model jobs ending in a template | 0 | 0 | 0 |
+| Persona texts replaced by a template | 50 of 2112 (2.4%) | 79 of 2208 (3.6%) | 45 of 2104 (2.1%) |
+| Spot check: shown claims judged supported | 19 of 20 | 16 of 20 | 19 of 20 |
+| Logged cost per match, mean / max | $0.101 / $0.139 | $0.104 / $0.180 | $0.098 / $0.157 |
+
+How to read it:
+
+- **Only 301-305 is unbiased.** Prompt wording was tuned after reading the output of 201-210. Seeds 301-305 were not
+  read before they were measured, on commit `2a208c4`. One block of 20 matches is all there is.
+- **Small samples.** About 265 model jobs and 20 spot-checked claims per block. Matches of the same seed can share
+  events, so 20 matches are fewer than 20 independent samples.
+- **Spot checks.** Claude Code drafted the labels by recomputing every cited number from the event stream. The
+  owner's review on 24 October is recorded in each block's `spotcheck.md` header. All 6 unsupported claims of 60 quote
+  their numbers correctly; each fails on what the numbers are said to mean (the error classes are in LIVE_EVAL.md).
+- **Cost** figures are logged estimates from token counts and the price table, including a worst-case charge for
+  timed-out calls, not the Azure bill. No match exceeded its $0.25 budget.
+- **No new full evaluation after the freeze.** Decisions 24-26 changed prompts, ledger and checker after these blocks.
+  They were validated offline only.
+
+### The published runs
+
+Recorded through the deployed MCP server on commit `77d8c6b`, after the first set of recordings had been checked
+(so they were not chosen blind). Figures from each run's `manifest.json`:
+
+| Run | Score | Model calls | Logged cost | Budget fallbacks | Notes |
+|---|---|---|---|---|---|
+| `comeback` | 2-1 | 85 | $0.150687 | 0 | |
+| `siege` | 2-1 | 50 | $0.088172 | 0 | |
+| `faults-demo` | 2-2 | 72 | $0.112342 | 0 | 17 faults fired; 1 model job ended in a template |
+
+Every headline, shown claim, recap and English persona text, plus the Spanish analyst and casual texts, was checked
+against the event stream. Unsupported texts went from 24 in the first recording to **2** in the published one. Both
+remain, and the published-run check in [LIVE_EVAL.md](docs/LIVE_EVAL.md) lists them, with the wording residuals:
+
+- the comeback headline "Early chaos in midfield" (match-wide chaos given a location);
+- the siege 24' casual text that calls 89% field tilt "possession";
+- in Spanish, "recuperar la posesión" for possessions that began with a restart or a save, "pressures/min" left in
+  English, and "recuperaciones" for tackles won; the checker does not check how possession began;
+- tone words in casual texts ("rattles", "wasted", "spurn").
+
+Each match was recorded once on this code, and the model is not deterministic: a re-recording can differ.
+
+### Stats engine and how well it works
+
+Thresholds were tuned on seeds 1-40 only and checked on held-out seeds 101-120, 201-220 and 301-320. Goals are found
+100% of the time, sieges 95-100%, momentum shifts 85-95%, chaos spells 60-80% and counter-attacks 25-55%. Our own 80%
+recall bar is met in 1 of 9 storyline results. The false-alarm cap on balanced matches (at most 1.0 spell finding per
+match) is met everywhere, at 0.45-0.50. Counter-attacks are therefore low-severity context only and never trigger a
+model call on their own. Each shortfall is an `xfail(strict=True)` in
+[tests/test_stats_heldout.py](tests/test_stats_heldout.py); the reasoning is in decisions 7-9.
+
+### Offline: a plumbing check, not model quality
+
+On the fake client (seeds 1-3, 12 matches), with 30% of first drafts deliberately corrupted, the checker catches 42 of
+42 and 28% of jobs need a retry ([decision 14](docs/DECISIONS.md)). The fake agents are correct by construction, so
+these numbers show the wiring, nothing about how well a model writes.
+
+## Safeguards
+
+- **Synthetic data only.** Clubs, players and crests are generated; `scripts/check_submission.py` fails on the
+  league's name or a listed real club or player name in the UI, pitch or published runs.
+- **Spending caps checked before every call:** $0.25 and 200 calls per match, $10 across the usage log, at most 4
+  calls in flight. A refused call is never sent; an unknown price fails closed.
+- **Timeouts and retries:** 20 s per attempt, up to 3 retries with backoff for rate limits, timeouts, connection and
+  server errors. A timed-out call is charged its worst case.
+- **Output caps per role** (interpreter 1500, explainer 3700, verifier 2400, personalizer 4200 tokens, reasoning
+  included); a truncated reply is retried once at twice the cap, then falls back to a template.
+- **Honest labels.** The badge says "Recorded run generated by the live pipeline" only for a Foundry run. Each text
+  is tagged with what wrote it (the deployment name, "Template", or "Offline stand-in"), and injected faults have
+  their own chip, also in clean mode.
+- **Public demo costs nothing to click:** a static site with no model calls; the MCP server is IP-restricted and
+  rate-limited.
+
+## Repository
+
+| Path | What |
 |---|---|
-| Clean | Planted phases the stats engine detected: 13 of 13 narrated, naming the right club (10 by a model narrative, 3 by a template because their finding fell below the severity floor); goals: 35 of 35 narrated with the scoring club and the score; 24 of 24 recaps; 0 fallbacks |
-| `--inject-bad 0.3` (first explainer draft of 30% of jobs corrupted: wrong number, wrong club, no evidence, unknown id, unlisted number, minute outside the window, impossible score) | 42 of 42 corrupted drafts caught; 28% of jobs needed a retry; 0 shown claims fail a fresh re-check |
-| `--inject-faults demo` (rate limit, malformed reply, verifier timeout, personalizer outage, claims rejected on every draft, semantic rejection) | every recovery path taken; 5% of model jobs ended in a template, each with its reason |
+| [src/pitchside/](src/pitchside/) | Event schema, generator, storylines, replay, CLI |
+| [src/pitchside/stats/](src/pitchside/stats/) | Stats engine, detector, timeline (`as_of` bound), evaluation against answer keys |
+| [src/pitchside/llm/](src/pitchside/llm/) | Agent Framework chat clients (Foundry or fake), guard middleware, usage and cost log |
+| [src/pitchside/agents/](src/pitchside/agents/) | Roles, workflow, checker, ledger, prompts, templates, fault injection, run bundles |
+| [src/pitchside/render/](src/pitchside/render/) | Overlay contract, provenance, demo data |
+| [src/pitchside/mcp_server.py](src/pitchside/mcp_server.py) | MCP server; rate limit in [ratelimit.py](src/pitchside/ratelimit.py) |
+| [web/](web/) | Static UI, no build step; `web/data` holds the published runs |
+| [infra/](infra/) | Bicep template, staged deploy script, guarded teardown |
+| [tests/](tests/) · [scripts/](scripts/) · [docs/](docs/) | Tests, screenshot and submission checks, design docs |
 
-The live evaluation (`--live`, run manually) reports the same metrics for a real model, plus a `spotcheck.md` of
-shown claims for a person to judge. See [docs/LIVE_EVAL.md](docs/LIVE_EVAL.md). **Not run yet.**
+**Tests and CI.** `uv run pytest` runs offline with outbound network blocked. Measured on 2026-10-25 in a fresh
+clone: 538 passed, 1 skipped, 8 xfailed (the recall shortfalls above). CI runs it on Python 3.11 and 3.13, fails on stale JSON
+Schemas, builds and lints the Bicep template, and runs the Playwright browser tests (`uv run pytest -m e2e`,
+non-blocking).
 
-**Estimated** cost at gpt-5-mini prices ($0.25 in / $2.00 out per 1M tokens, reasoning tokens billed as output), to
-be replaced by measured cost: about 5 model calls per moment, about $0.0083 per moment, so about $0.05 per balanced
-match and $0.12 per storyline match (12-13 moments plus 2 recaps), plus about $0.01 when the interpreter uses the MCP
-tools. The same token plan was estimated at about $0.0023 per moment at GPT-6 Luna prices. The default match budget,
-`PITCHSIDE_MATCH_BUDGET_USD=0.25`, is about twice a storyline match, so no moment in a recorded run is downgraded to a
-template for budget reasons; the bundle manifest counts budget fallbacks (should be 0). See
-[decision 19](docs/DECISIONS.md).
+**Setup.** Python 3.11+ and [uv](https://docs.astral.sh/uv/): `uv sync` installs the locked versions from `uv.lock`.
+Live configuration is in [.env.example](.env.example).
 
-## Web UI: replay a recorded run
+**Availability.** The Static Web App and the MCP server stay online through the judging period, until at least
+2026-11-10 (the `expires` tag on every resource); `infra/teardown.ps1` refuses to run before 2026-11-11.
 
-`uv run pitchside serve --open` serves `web/`, a static site (plain HTML, CSS and ES modules, no build step and no
-server-side code) that replays the run bundles in `web/data` at adjustable speed. Nothing on the page calls a model:
-every text, check and number was produced when the run was recorded.
+## Credits
 
-![Broadcast view in clean mode: scoreboard, honesty label, moments feed and the 72nd-minute goal lower third](docs/img/broadcast.png)
-
-![Analyst dashboard: key-moment timeline, pitch with the last two minutes of events, live stats, three personas side by side, model usage](docs/img/analyst.png)
-
-![Evidence drawer for a moment whose semantic check was skipped by an injected verifier timeout: checked claims, ledger numbers, triggering events](docs/img/evidence-drawer.png)
-
-*Screenshots from the offline sample runs (fake model client: the texts are deterministic stand-ins, labelled as
-such), captured by `uv run python scripts/capture_screenshots.py` at 1920 x 1080.*
-
-- **Broadcast view:** a 16:9 simulated match feed with scoreboard, clock, a moments feed and lower thirds timed by the
-  overlay contract. The ball path is drawn from event locations; there is no tracking data. When the replay runs faster
-  than real time it holds briefly at each lower third so it can be read.
-- **Analyst dashboard:** a 2D pitch with the last two minutes of events, live stats strips (possession, field tilt,
-  pressures), momentum and control-vs-chaos sparklines drawn only up to the current moment, the current moment for the
-  analyst, casual fan and favourite-player personas side by side, model usage so far, and a key-moment timeline.
-- **Personalization:** analyst, casual fan, and a favourite-player view for each club's featured player (their events
-  are highlighted), in English or Spanish. The broadcast view shows one audience at a time, as a real broadcast would;
-  the dashboard shows three side by side so the difference is visible in one frame.
-- **Evidence drawer:** click any overlay, feed card or checked figure (amber tick) to see the chain behind it: shown
-  text, the claims it was written from ("verified" only when the deterministic checker and the semantic verifier both
-  passed; "checked" when the semantic check was skipped or not run), each claim's ledger numbers with metric and time
-  window, and the
-  events they come from, with *triggering* events kept apart from *events in the window*. Below that, the audit trail:
-  every step, rejected drafts with the checker's reasons, injected faults, skipped semantic checks, fallbacks and model
-  calls.
-- **Honesty labels** come from the bundle manifest: "Recorded run generated by the live pipeline" only for a Foundry
-  run, "Offline demo (fake model client)" for the fake client, and a badge whenever faults were injected. Each text is
-  tagged with what produced it: "Offline stand-in" for the fake client, the deployment name for a live run, or
-  "Template". The current samples are all offline runs; one of them has faults injected on purpose, and the run
-  picker says so.
-- **URL parameters** for the demo video: `run`, `view=broadcast|analyst`, `persona=analyst|casual|fav|fav:<player>`,
-  `lang=en|es`, `speed`, `autoplay=1`, `t=<seconds>` or `t=63:20` (match clock), `clean=1` (controls hidden; the honesty
-  label stays), `drawer=<overlay id>`, `motion=0`. Keyboard: Space, arrows, N/B (next/previous moment), [ ], 1/2, P, L, E.
-
-The overlay contract is documented in [docs/OVERLAY.md](docs/OVERLAY.md) (times are on a replay timeline with a
-half-time break, not the raw match clock). The replay engine (clock, holds, seeking, time to overlays, score and stats
-at any moment, honesty labels) is unit-tested inside `uv run pytest` by running the JavaScript modules in V8. A small
-Playwright suite (`uv run pytest -m e2e`, Chromium, a separate non-blocking CI job) checks the honesty label for each
-model mode, playback, overlay show and hide times, persona and language switching, the evidence drawer's chain, the
-faults badge, scrubbing backwards and that the dashboard fits a 1080p screen. Status: built and tested locally; the
-Azure Static Web Apps deployment is milestone 6.
-
-## Stats engine as an MCP server
-
-`uv run pitchside mcp` serves the deterministic stats engine over the [Model Context Protocol](https://modelcontextprotocol.io)
-as twelve **read-only tools** with typed schemas: possession, field tilt, pressure, passing, shots and xG, momentum,
-control vs chaos, key moments, evidence lookup, match totals, recent window and a match list. Transports: stdio (local
-clients) and Streamable HTTP (`--transport streamable-http`), which is the shape a Container Apps deployment will use.
-Full reference, client notes and the deployment plan: [docs/MCP.md](docs/MCP.md).
-
-- **No future leakage.** Every stats tool requires `as_of_s` (match seconds) and computes only from events at or before it,
-  enforced server-side in one place. The tests replace everything after the bound with another match's events and require
-  identical answers from every tool, over the real protocol, and check that no timestamp in any response is later than
-  `as_of_s`; deliberately breaking the bound makes them fail.
-- **The interpreter can use it.** `PITCHSIDE_TOOLS=mcp` (default `local`) gives the interpreter the MCP tools through Agent
-  Framework's `MCPStreamableHTTPTool`: by default the real server runs in-process behind the real Streamable HTTP
-  transport, or `PITCHSIDE_MCP_URL` points at a deployed one. The host sets the time bound on every call, whatever the
-  model passes, and every number a tool returns gets an evidence id before the model sees it, so claims that use tool
-  numbers are checked like any other. A test runs the same matches in both modes and requires identical ledgers,
-  narratives and audit trails.
-- **Not deployed yet.** The container image, the Container Apps template (IP allow-list, in-app rate limit of 120
-  requests per minute per client, `/healthz`, scale 0..1) and the deployment steps are ready
-  ([docs/MCP.md](docs/MCP.md), [docs/AZURE.md](docs/AZURE.md)); the image was built and smoke-tested locally with the
-  same arguments (421 for a wrong host, 429 after a burst). Only Agent Framework's MCP clients and the SDK's in-memory
-  client are tested; other MCP clients are untested here.
-- **SDK version.** The MCP Python SDK is pinned below 2 (`mcp>=1.24,<2`): the latest Agent Framework (1.22.0) declares
-  `mcp<2` and fails against SDK 2.x. See [decision 15](docs/DECISIONS.md).
-
-## Model client and cost controls
-
-`src/pitchside/llm/` gives each agent role (interpreter, explainer, verifier, personalizer) its own chat client,
-which the agents above use.
-
-- **Offline by default.** `PITCHSIDE_LLM=fake` (the default) uses a deterministic fake client, so everything runs with
-  no Azure account and no cost. Tests can script failures: rate limits, timeouts, connection and server errors,
-  auth failures, malformed output.
-- **Live mode** (`PITCHSIDE_LLM=foundry`) calls model deployments in a Microsoft Foundry project, authenticated with
-  Microsoft Entra ID (`az login` locally, no API keys). Configure it from [.env.example](.env.example). Every role
-  uses the same model: gpt-5-mini (Global Standard, Sweden Central) while our trial subscription has no GPT-6 Luna
-  quota, and Luna if that quota is granted ([decision 19](docs/DECISIONS.md)).
-- **Every call is logged** to `runs/llm_usage.jsonl`: role, match, finding, deployment, model, tokens (input, cached,
-  output), cost and latency. `uv run pitchside cost` summarises the log.
-- **Spending caps** are checked *before* each call: $0.25 and 200 calls per match, $10 across the log, at most 4 calls
-  at once. A refused call is never sent. Prices fail closed, and a timed-out call is charged the worst case.
-- **Failures** are retried with backoff where that can help; otherwise the caller gets a typed error and (from
-  milestone 3) falls back to a template narrative built from the stats engine's numbers.
-
-Status: tested offline, including the real Agent Framework clients against canned HTTP responses. It has **not yet
-been run against a live Foundry deployment**. The manual check for that is
-`uv run python scripts/smoke_foundry.py` (after `az login`), which reports the API path that works and the model
-the service returns.
-
-## Technology
-
-Current: Python 3.11+, pydantic v2; the web UI is plain HTML, CSS and JavaScript modules with self-hosted OFL fonts
-(no framework, no build step). Agents and model access (built and tested offline, not yet run live):
-**Microsoft Agent Framework** (Python: `Agent`, graph workflows with `WorkflowBuilder`, function tools, MCP client tools,
-chat and function middleware), the **Model Context Protocol** Python SDK (the stats server), the **Azure AI Projects SDK** for the Microsoft Foundry project endpoint, and **Azure Identity**
-(Microsoft Entra ID, `DefaultAzureCredential`).
-
-Azure hosting, **planned (template written and validated, not deployed yet)**: Azure Static Web Apps (Free), Azure
-Container Apps (Consumption), Log Analytics, Cost Management budgets, defined in **Bicep** with GitHub Actions for the
-image (GitHub Container Registry) and the site; see [docs/AZURE.md](docs/AZURE.md). Further options (managed identity
-with a cloud recorder, Entra ID auth on the MCP server, Application Insights) are listed there as planned.
-
-## Development
-
-```bash
-uv run pytest                # ~2.5 min: generator, schema, stats engine, held-out answer-key bars (known recall shortfalls are xfail, see above), model client, agents, MCP server, overlay contract and the web replay engine (offline, fake client)
-docker build -t pitchside-mcp .      # the MCP server image (as deployed on Container Apps)
-uv run playwright install chromium   # once, for the browser tests and screenshots
-uv run pytest -m e2e         # ~15 s: browser end-to-end smoke tests of the web UI (excluded from the default run)
-uv run python scripts/capture_screenshots.py   # regenerate docs/img/ (fixed runs, fixed times, 1920 x 1080)
-uv run python scripts/check_submission.py      # before tagging submission-v1: placeholders, live runs, labels, links, names
-uv run python scripts/smoke_foundry.py   # manual, live, costs a few cents at most: not part of the test suite
-uv run pitchside eval-agents --seeds 201-205 --live   # manual live evaluation, see docs/LIVE_EVAL.md
-uv add <package>             # add a dependency (updates pyproject.toml and uv.lock)
-```
-
-Commit `uv.lock` so everyone, including CI and the judges, gets identical versions.
-Tests also run under plain `python -m unittest discover -s tests` with `PYTHONPATH=src`.
+Built by Shah Rahman as a solo entry. Fonts: Barlow Condensed, IBM Plex Sans and IBM Plex Mono, self-hosted under
+the SIL Open Font License 1.1 ([web/fonts/](web/fonts/README.md)).
