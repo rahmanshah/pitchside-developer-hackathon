@@ -4,7 +4,7 @@
 
 [![CI](https://github.com/rahmanshah/pitchside-developer-hackathon/actions/workflows/ci.yml/badge.svg)](https://github.com/rahmanshah/pitchside-developer-hackathon/actions/workflows/ci.yml)
 
-**[Live demo](https://green-cliff-068ccc50f.3.azurestaticapps.net)** · Demo video: coming soon <!-- DEMO_VIDEO_URL -->
+**[Live demo](https://green-cliff-068ccc50f.3.azurestaticapps.net)** · **[Demo video (1:53)](https://www.youtube.com/watch?v=VqwtphDpU5Q)**
 · [Architecture](docs/ARCHITECTURE.md) · [Live evaluation](docs/LIVE_EVAL.md) · [Azure](docs/AZURE.md)
 · [MCP server](docs/MCP.md) · [Overlay contract](docs/OVERLAY.md) · [Decision log](docs/DECISIONS.md)
 

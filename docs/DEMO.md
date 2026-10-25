@@ -2,7 +2,8 @@
 
 The video must run under 2 minutes, and judges may judge from it alone, so the best moment comes first. The plan below
 runs 1:45: about 100 seconds of narration (about 230 words) and a 5-second end card. That leaves 15 seconds of slack
-under the limit. If a take runs long, cut a shot rather than read faster.
+under the limit. If a take runs long, cut a shot rather than read faster. The recorded video runs 1:53, under the
+2:00 limit.
 
 Every shot is a URL on the web UI, so each take can be repeated exactly. Append the query string to the base URL:
 
@@ -149,9 +150,8 @@ Not deployed:
 
 Work through it in order. Status on 2026-10-24: the three live bundles are recorded through the deployed MCP server
 and published (commit `2ba3e38`), the tests pass and the screenshots are re-captured. Status on 2026-10-25: the
-README, `docs/ARCHITECTURE.md` and `docs/AZURE.md` are updated. The walk-through on the deployed site, the video,
-`CLAUDE.md`, the decision-log cost update and `docs/PITCH.md` are still to do. The MCP server URL stays public (decided
-2026-10-24).
+README, `docs/ARCHITECTURE.md` and `docs/AZURE.md` are updated. `CLAUDE.md`, the decision-log cost update and
+`docs/PITCH.md` are still to do. The MCP server URL stays public (decided 2026-10-24).
 
 ### 1. Bundles in `web/data`
 
@@ -194,11 +194,12 @@ README, `docs/ARCHITECTURE.md` and `docs/AZURE.md` are updated. The walk-through
       Check every image for subscription ids, e-mails, tenant names, keys and Azure portal resource names before
       committing (the MCP server URL may show, as decided above). Done 2026-10-24: the drawer shot shows the skipped
       semantic check, and none of the three images shows any of these.
-- [ ] Walk through the shot list on the deployed site. The "On screen" notes were updated from the published data on
+- [x] Walk through the shot list on the deployed site. The "On screen" notes were updated from the published data on
       2026-10-24 (shot 2's chips, real Spanish in shot 4, 17 faults and the 2.41 draft in shot 5, the rejection codes
-      in shot 6); confirm them in the browser and record the date of the check.
-- [ ] Record the video from the deployed site, reading the LIVE and "Deployed" lines. Keep it under 2:00 and upload
-      it to a public URL.
+      in shot 6); confirm them in the browser and record the date of the check. Done 2026-10-25.
+- [x] Record the video from the deployed site, reading the LIVE and "Deployed" lines. Keep it under 2:00 and upload
+      it to a public URL. Recorded 2026-10-25, 1:53, unlisted on YouTube:
+      https://www.youtube.com/watch?v=VqwtphDpU5Q
 
 ### 4. README claims (only what is deployed or measured)
 
@@ -214,8 +215,8 @@ Done 2026-10-25 by the README rewrite (commit `c05999a`), which replaced these s
       **not yet been run against a live Foundry deployment**".
 - [x] "Technology": move the deployed services out of "planned". Managed identity with a cloud recorder, Entra ID auth
       on the MCP server and Application Insights stay planned.
-- [ ] Add the demo URL and the video link near the top. The demo URL is in; the video link is still a placeholder
-      (`<!-- DEMO_VIDEO_URL -->`).
+- [x] Add the demo URL and the video link near the top. Both are in; the video link replaced the placeholder on
+      2026-10-25.
 
 ### 5. Other docs
 
