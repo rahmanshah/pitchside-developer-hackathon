@@ -165,7 +165,7 @@ billing (all read 2026-10-23). Measured numbers replace these after the deployme
 | Log Analytics | First 5 GB/month per billing account free, 31 days retention included | $0 (megabytes of logs; capped at 1 GB/day) |
 | Budget alerts | No charge | $0 |
 | GHCR (public package) | Free for public packages | $0 |
-| Foundry, gpt-5-mini (Global Standard, Sweden Central) | $0.25 in / $0.03 cached / $2.00 out per 1M tokens (Azure OpenAI pricing page in EUR, at 1 USD = 0.88 EUR) | About $0.12-0.13 per storyline match with the MCP tools, about $2.10-2.30 for the 20-match live evaluation (estimates, decision 19); measured cost goes here after the runs |
+| Foundry, gpt-5-mini (Global Standard, Sweden Central) | $0.25 in / $0.03 cached / $2.00 out per 1M tokens (Azure OpenAI pricing page in EUR, at 1 USD = 0.88 EUR) | Estimated about $0.12-0.13 per storyline match with the MCP tools (decision 19). Logged in the three live evaluations: $1.9664-2.0888 per 20-match block, $0.101 mean / $0.180 max per match, $6.0738 for all 60 matches ([LIVE_EVAL.md](LIVE_EVAL.md) section 4; logged estimates from token counts, not the bill) |
 | Foundry, GPT-6 Luna (if quota is granted) | $0.10 in / $0.01 cached / $0.50 out per 1M tokens | About $0.04 per storyline match (estimate, decision 14) |
 
 The budget defaults to 25 in the billing currency, the amount deployed (25 EUR a month on the resource group, with

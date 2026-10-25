@@ -84,8 +84,9 @@ directory set to this repository (for example the `servers` entry of a VS Code `
 
 ## Deploying on Azure Container Apps
 
-The image ([`Dockerfile`](../Dockerfile)) and the template ([`infra/main.bicep`](../infra/main.bicep)) are written and
-validated offline; deployment steps are in [AZURE.md](AZURE.md). Until you have deployed, treat this section as the plan.
+The server is deployed on Azure Container Apps (Consumption, `swedencentral`) with the settings below, from the image
+([`Dockerfile`](../Dockerfile)) built from `90ee028` and the template ([`infra/main.bicep`](../infra/main.bicep)). The
+three published runs were recorded through it. Deployment steps are in [AZURE.md](AZURE.md).
 
 | Setting | Why |
 |---|---|

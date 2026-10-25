@@ -76,6 +76,10 @@ uv run pitchside eval-agents --seeds 1-3 --inject-bad 0.3            # offline p
 uv run pytest                                                        # the test suite (a few minutes)
 ```
 
+How many faults fire with `--inject-faults demo` varies by run: some faults repeat on every model call of their job, up
+to a limit, and the number of calls depends on the model. 16 fired in an offline run of this command, 17 in the
+published `faults-demo` recording.
+
 Live mode needs `PITCHSIDE_LLM=foundry`, a Foundry project and `--live` on top, so a stray command never spends money
 ([LIVE_EVAL.md](docs/LIVE_EVAL.md)).
 
@@ -196,11 +200,13 @@ Each match was recorded once on this code, and the model is not deterministic: a
 
 ### Stats engine and how well it works
 
-Thresholds were tuned on seeds 1-40 only and checked on held-out seeds 101-120, 201-220 and 301-320. Goals are found
-100% of the time, sieges 95-100%, momentum shifts 85-95%, chaos spells 60-80% and counter-attacks 25-55%. Our own 80%
-recall bar is met in 1 of 9 storyline results. The false-alarm cap on balanced matches (at most 1.0 spell finding per
-match) is met everywhere, at 0.45-0.50. Counter-attacks are therefore low-severity context only and never trigger a
-model call on their own. Each shortfall is an `xfail(strict=True)` in
+Thresholds were tuned on seeds 1-40, which are not held out. They were then checked on held-out seeds 101-120,
+201-220 and 301-320. On those seeds, goals are found 100% of the time, sieges 95-100%, momentum shifts 85-95%, chaos
+spells 60-80% and counter-attacks 25-55%. Our own 80% recall bar is met in 1 of 9 storyline results. The false-alarm
+cap on balanced matches (at most 1.0 spell finding per match) is met everywhere, at 0.45-0.50. Counter-attacks are
+therefore low-severity context only and never trigger a model call on their own. The full table and the commands that
+reproduce it (`uv run pitchside eval-stats --seeds 301-320`, and likewise for the other ranges) are in
+[decision 28](docs/DECISIONS.md). Each shortfall is an `xfail(strict=True)` in
 [tests/test_stats_heldout.py](tests/test_stats_heldout.py); the reasoning is in decisions 7-9.
 
 ### Offline: a plumbing check, not model quality

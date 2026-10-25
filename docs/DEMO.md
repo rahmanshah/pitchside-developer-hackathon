@@ -148,8 +148,9 @@ Not deployed:
 ## Checklist: what to redo once the live runs and the Azure deployment exist
 
 Work through it in order. Status on 2026-10-24: the three live bundles are recorded through the deployed MCP server
-and published (commit `2ba3e38`), the tests pass and the screenshots are re-captured. The walk-through on the deployed
-site, the video, the README and the other docs are still to do. The MCP server URL stays public (decided
+and published (commit `2ba3e38`), the tests pass and the screenshots are re-captured. Status on 2026-10-25: the
+README, `docs/ARCHITECTURE.md` and `docs/AZURE.md` are updated. The walk-through on the deployed site, the video,
+`CLAUDE.md`, the decision-log cost update and `docs/PITCH.md` are still to do. The MCP server URL stays public (decided
 2026-10-24).
 
 ### 1. Bundles in `web/data`
@@ -201,23 +202,26 @@ site, the video, the README and the other docs are still to do. The MCP server U
 
 ### 4. README claims (only what is deployed or measured)
 
-- [ ] Status table: the Explain, tools, Render, Personalize and Deploy rows ("no live model run yet", "not deployed",
+Done 2026-10-25 by the README rewrite (commit `c05999a`), which replaced these sections:
+
+- [x] Status table: the Explain, tools, Render, Personalize and Deploy rows ("no live model run yet", "not deployed",
       "replays offline sample runs", "offline translations are tagged placeholders", "Planned").
-- [ ] "Offline evaluation": replace "**Not run yet.**" with the live numbers, labelled live, with the seeds; replace
+- [x] "Offline evaluation": replace "**Not run yet.**" with the live numbers, labelled live, with the seeds; replace
       the **Estimated** cost paragraph with the measured cost per match.
-- [ ] "Web UI": the screenshot caption ("Screenshots from the offline sample runs") and the honesty-labels bullet
+- [x] "Web UI": the screenshot caption ("Screenshots from the offline sample runs") and the honesty-labels bullet
       ("The current samples are all offline runs").
-- [ ] "Stats engine as an MCP server": the "**Not deployed yet.**" bullet. "Model client and cost controls": "has
+- [x] "Stats engine as an MCP server": the "**Not deployed yet.**" bullet. "Model client and cost controls": "has
       **not yet been run against a live Foundry deployment**".
-- [ ] "Technology": move the deployed services out of "planned". Managed identity with a cloud recorder, Entra ID auth
+- [x] "Technology": move the deployed services out of "planned". Managed identity with a cloud recorder, Entra ID auth
       on the MCP server and Application Insights stay planned.
-- [ ] Add the demo URL and the video link near the top.
+- [ ] Add the demo URL and the video link near the top. The demo URL is in; the video link is still a placeholder
+      (`<!-- DEMO_VIDEO_URL -->`).
 
 ### 5. Other docs
 
 - [ ] `CLAUDE.md`: the status table and the roadmap notes for milestones 2, 3, 5 and 6.
-- [ ] `docs/ARCHITECTURE.md`: "not deployed" and "live run pending" in the diagram and headings.
-- [ ] `docs/AZURE.md`: the "What is deployed" table and the measured costs in the cost table.
+- [x] `docs/ARCHITECTURE.md`: "not deployed" and "live run pending" in the diagram and headings.
+- [x] `docs/AZURE.md`: the "What is deployed" table and the measured costs in the cost table.
 - [ ] `docs/DECISIONS.md`: the API path and measured cost from the smoke test ([LIVE_EVAL.md](LIVE_EVAL.md) step 1),
       and the measured cost per match in place of the estimate in decision 14.
 - [ ] `docs/PITCH.md`: fill every placeholder and resolve every PENDING marker in place, so no double brace is left.

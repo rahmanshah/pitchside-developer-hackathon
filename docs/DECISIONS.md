@@ -255,3 +255,33 @@ Each language holds its own list in `languages.py`; club names are filled in per
 **Why:** at deployment, `westeurope` (the default in decision 18) refused a new Static Web App for this subscription ("not accepting new customers"). This is a subscription-level refusal, so a region can be offered for `Microsoft.Web/staticSites` and still refuse a subscription; `deploy.ps1`'s region check only confirms the region is offered. `eastus2` was accepted.
 
 The template, its parameter file, the script and `docs/AZURE.md` now all match the deployment; only the defaults changed, not the template's logic.
+
+## 28. Held-out stats-engine results, recorded with the commands that reproduce them (2026-10-25)
+
+**Decision:** the README's stats-engine figures cite this entry. Until now they lived only in an older README table, which the submission README replaced. The figures below were re-run on 2026-10-25 on commit `c05999a` (no stats-engine change since the chaos retune in decision 9) and match that table:
+
+```powershell
+uv run pitchside eval-stats --seeds 101-120
+uv run pitchside eval-stats --seeds 201-220
+uv run pitchside eval-stats --seeds 301-320
+```
+
+Each command exits with code 1 because some bars fail; that is expected. Thresholds were tuned on seeds 1-40, which are not held out: surge, siege and momentum on seeds 1-6, counter-attack and chaos on 1-40 (decision 5). None of the three ranges below was used for tuning. Seeds 101-120 and 201-220 were each run more than once during development (decisions 7 and 9), so they are no longer pristine. Seeds 301-320 were first run once, on the frozen rules.
+
+| Recall (hit: a matching finding from 1 min before to 8 min after the phase starts; counter-attacks from the phase start to 1 min after it ends) | 101-120 | 201-220 | 301-320 |
+|---|---|---|---|
+| Comeback, all scored phases | 78% (31 of 40) | 78% (31 of 40) | 78% (31 of 40) |
+| ... chaos spell | 65% | 70% | 60% |
+| ... momentum shift | 90% | 85% | 95% |
+| End-to-end, all scored phases (chaos spell) | 70% | 75% | 80% |
+| Siege, all scored phases | 62% (25 of 40) | 75% (30 of 40) | 65% (26 of 40) |
+| ... siege | 100% | 95% | 100% |
+| ... counter-attack | 25% | 55% | 30% |
+| Goals found, all four storylines | 257 of 257 | 265 of 265 | 273 of 273 |
+| Balanced: spell findings per match (cap 1.0) | 0.50 | 0.50 | 0.45 |
+
+The 80% recall bar is met in 1 of these 9 storyline results (end-to-end on 301-320, at exactly 80%). Low-block phases are not scored. `tests/test_stats_heldout.py` holds each shortfall as `xfail(strict=True)` with the same figures.
+
+**Why:** every figure in the README must be traceable to a file that stays in the repo.
+
+**Rejected:** citing the git history of the README; re-tuning anything (this is a re-run for the record, with no threshold, window or matching rule changed).

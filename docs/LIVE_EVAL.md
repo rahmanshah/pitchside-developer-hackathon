@@ -278,5 +278,6 @@ sum the three matches. For other English personas and Spanish, only the flagged 
 - **The guard has only offline evidence.** The `invented_detail` guard (decision 26) fired 0 times in these runs. Its
   only evidence is the offline replay over earlier live runs' stored texts, where it found 36 genuine invented details
   (and one false positive, since excluded).
-- **No reviewer has checked these verdicts.** Claude Code drafted them by recomputing from the event stream. They are
-  recorded only in this section, not in a `spotcheck.md`, and no human review of them is recorded.
+- **Who checked the verdicts.** Claude Code drafted them by recomputing from the event stream. The note at the top of
+  this section records a review by Shah on 24.10.2026 (commit `09eddd7`). They are recorded only in this section, not
+  in a `spotcheck.md`.
