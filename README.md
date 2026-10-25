@@ -1,6 +1,6 @@
 # Pitchside
 
-**Synthetic football events in, verified match insights out: every number checked, every claim traceable.**
+**Synthetic football events in, match insights out: numbers checked by code, claims traced to their evidence.**
 
 [![CI](https://github.com/rahmanshah/pitchside-developer-hackathon/actions/workflows/ci.yml/badge.svg)](https://github.com/rahmanshah/pitchside-developer-hackathon/actions/workflows/ci.yml)
 
@@ -19,18 +19,20 @@ League Studio". Every club, player and match is invented and generated from a se
 | **Interpret** | A deterministic stats engine (no LLM) keeps rolling and cumulative possession, field tilt, pressure, pass difficulty, shots and xG, momentum and a control-vs-chaos index, and emits typed findings (goal, big chance, momentum shift, pressure surge, siege, chaos spell, counter-attack), each with its evidence numbers and time window. |
 | **Explain** | Four Microsoft Agent Framework agents (interpreter, explainer, verifier, personalizer) and a deterministic checker, in one graph workflow per moment, plus half-time and full-time recaps. |
 | **Render** | A timed overlay contract (`overlay.json`) and a static web UI: broadcast view, analyst dashboard, evidence drawer. |
-| **Personalize** | Analyst, casual fan and favourite-player views, in English and Spanish, written in one personalizer call per moment. Every language is re-checked. |
+| **Personalize** | Analyst, casual fan and favourite-player views, in English and Spanish, written in one personalizer call per moment. Every text, in every language, is re-checked by the deterministic checker (not by the semantic verifier). |
 
 **Numbers first, words second.** The stats engine computes every figure. Agents only write words around figures it
-computed, citing each one by its evidence id. A claim reaches the screen only after the deterministic checker and the
-semantic verifier pass it. If a model fails or every draft is rejected, a template built from the same numbers is
-shown instead, labelled "Template".
+computed, citing each one by its evidence id. Narrative claims are shown only after the deterministic checker and the
+semantic verifier both pass them. If the verifier is unavailable, claims are shown on the checker alone and flagged
+"semantic check skipped". Persona texts, English and Spanish, are re-checked by the deterministic checker only, not by
+the verifier. Headlines get only the checker's invented-detail test. If a model fails or every draft is rejected, a
+template built from the same numbers is shown instead, labelled "Template".
 
-![Broadcast view: 72nd-minute goal lower third with its gpt-5-mini, checked and verified chips](docs/img/broadcast.png)
+![Broadcast view, comeback run at 71:30 in clean mode: the 72' equaliser lower third (casual-fan text) with its "gpt-5-mini", "checked" and "verified" chips, and the 72' counter-attack in the moments feed](docs/img/broadcast.png)
 
-![Evidence drawer: a big chance whose semantic check was skipped by an injected verifier timeout, with each claim's ledger numbers and triggering events](docs/img/evidence-drawer.png)
+![Evidence drawer, faults-demo run at 34:20: the 35' Aurora Rovers big chance, whose semantic check was skipped after an injected verifier timeout; written from 2 checked claims, with their ledger numbers and the triggering shot](docs/img/evidence-drawer.png)
 
-![Analyst dashboard: key-moment timeline, pitch, live stats, and the analyst, casual and favourite-player texts side by side](docs/img/analyst.png)
+![Analyst dashboard, comeback run at 71:35: key-moment timeline with siege, pressing-surge, momentum and chaos bands, the last 120 s of events, live stats, the 72' goal for analyst, casual fan and favourite player (Alden Brannholt) side by side, and model usage](docs/img/analyst.png)
 
 *Captured from the published live runs by `uv run python scripts/capture_screenshots.py` at 1920 x 1080.*
 
@@ -115,7 +117,7 @@ flowchart LR
 | Explainer | Agent | Writes structured claims; each cites evidence ids and lists every number it uses | After 3 rejected drafts or an outage: template narrative with its reason |
 | Checker | Code | Rejects a number that does not match its evidence, a figure given to the wrong club, a score the match never had, a minute outside the window, a player the evidence does not include, invented details (woodwork, body parts, records) | It is the gate; nothing bypasses it |
 | Verifier | Agent | Judges overclaiming and unsupported causes; reasons go back to the explainer | Claims shown on the checker alone, flagged "semantic check skipped" |
-| Personalizer / translator | Agent | Analyst, casual and favourite-player texts in every language, one call; each text re-checked | Template text for that persona |
+| Personalizer / translator | Agent | Analyst, casual and favourite-player texts in every language, one call; each text re-checked by the deterministic checker only (no semantic verifier) | Template text for that persona |
 | Director | Code | Picks which findings get model calls (no coordinator agent: routing has one correct answer) | — |
 | Evidence ledger | Shared state | Every number a model may use has an id (`e*` finding, `c*` tool result, `p*` player) | — |
 | Audit trail | Record | Prompt version and digest, claims, verdicts with reason codes, feedback, retries, fallbacks, one usage row per call | — |
@@ -167,13 +169,15 @@ How to read it:
   read before they were measured, on commit `2a208c4`. One block of 20 matches is all there is.
 - **Small samples.** About 265 model jobs and 20 spot-checked claims per block. Matches of the same seed can share
   events, so 20 matches are fewer than 20 independent samples.
-- **Spot checks.** Claude Code drafted the labels by recomputing every cited number from the event stream. The
-  owner's review on 24 October is recorded in each block's `spotcheck.md` header. All 6 unsupported claims of 60 quote
-  their numbers correctly; each fails on what the numbers are said to mean (the error classes are in LIVE_EVAL.md).
+- **Spot checks.** Claude Code drafted the labels by recomputing every cited number from the event stream, and the
+  owner reviewed them on 24 October ([LIVE_EVAL.md](docs/LIVE_EVAL.md), "How to read these numbers"). The spot-check
+  files themselves (`spotcheck.md`, one per block) are kept locally, not in the repo: `runs/` is git-ignored. All 6
+  unsupported claims of 60 quote their numbers correctly; each fails on what the numbers are said to mean (the error
+  classes are in LIVE_EVAL.md).
 - **Cost** figures are logged estimates from token counts and the price table, including a worst-case charge for
   timed-out calls, not the Azure bill. No match exceeded its $0.25 budget.
 - **No new full evaluation after the freeze.** Decisions 24-26 changed prompts, ledger and checker after these blocks.
-  They were validated offline only.
+  They were validated offline (seeds 1-40) and on the three published recordings (commit `77d8c6b`, below) only.
 
 ### The published runs
 
@@ -187,8 +191,8 @@ Recorded through the deployed MCP server on commit `77d8c6b`, after the first se
 | `faults-demo` | 2-2 | 72 | $0.112342 | 0 | 17 faults fired; 1 model job ended in a template |
 
 Every headline, shown claim, recap and English persona text, plus the Spanish analyst and casual texts, was checked
-against the event stream. Unsupported texts went from 24 in the first recording to **2** in the published one. Both
-remain, and the published-run check in [LIVE_EVAL.md](docs/LIVE_EVAL.md) lists them, with the wording residuals:
+against the event stream. Unsupported texts went from 24 in the first recording to **2** in the published one. That
+compares two single recordings of the same three matches, so it is not a measured rate. Both remain, and the published-run check in [LIVE_EVAL.md](docs/LIVE_EVAL.md) lists them, with the wording residuals:
 
 - the comeback headline "Early chaos in midfield" (match-wide chaos given a location);
 - the siege 24' casual text that calls 89% field tilt "possession";
@@ -202,7 +206,10 @@ Each match was recorded once on this code, and the model is not deterministic: a
 
 Thresholds were tuned on seeds 1-40, which are not held out. They were then checked on held-out seeds 101-120,
 201-220 and 301-320. On those seeds, goals are found 100% of the time, sieges 95-100%, momentum shifts 85-95%, chaos
-spells 60-80% and counter-attacks 25-55%. Our own 80% recall bar is met in 1 of 9 storyline results. The false-alarm
+spells 60-80% and counter-attacks 25-55%. Our own bar is 80% recall over all the scored phases a storyline plants
+(comeback: chaos and momentum shift; end-to-end: chaos; siege: siege and counter-attack); goals are scored separately.
+Three storylines on three seed ranges make 9 results, and the bar is met in 1 of them: end-to-end on 301-320, at
+exactly 80%. The other 8 are 62-78%, held down by chaos spells and counter-attacks. The false-alarm
 cap on balanced matches (at most 1.0 spell finding per match) is met everywhere, at 0.45-0.50. Counter-attacks are
 therefore low-severity context only and never trigger a model call on their own. The full table and the commands that
 reproduce it (`uv run pitchside eval-stats --seeds 301-320`, and likewise for the other ranges) are in
