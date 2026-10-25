@@ -73,15 +73,15 @@ Check `manifest.json`: `budget.budget_fallbacks` must be 0 and `label` must read
 
 Three live evaluations ran on 24 October 2026, each covering 20 matches (5 seeds × 4 storylines). Every role ran on
 gpt-5-mini through Microsoft Foundry, with reasoning effort `low` and a match budget of $0.25. Seeds 301-305 are the
-last block measured, on commit `2a208c4` (decision 23). Commit D (decisions 24-26: a shot's outcome as evidence, recaps
+last block measured, on commit `5c1ea69` (decision 23). Commit D (decisions 24-26: a shot's outcome as evidence, recaps
 that say what is true at the whistle, a guard against invented details) changed prompts, ledger and checker after the
 check of the recorded demo bundles; it was validated offline only, and no full live evaluation was run on it. The
-deployed MCP server image is still the one built from `90ee028`; Commit D is client-side only.
+deployed MCP server image is still the one built from `e6fbcc0`; Commit D is client-side only.
 
 | | Seeds 201-205 | Seeds 206-210 | Seeds 301-305 |
 |---|---|---|---|
 | Eval id | `20261024T063706Z-f0cd52` | `20261024T095425Z-7f0ec5` | `20261024T121448Z-cf60a3` |
-| Code | `0a03664`, before decisions 21-23 | `02057f8` (`c706a90` plus a `.gitignore` change), decisions 21-22 | `2a208c4`, decisions 21-23 (last evaluated) |
+| Code | `479ef92`, before decisions 21-23 | `fb92381` (`c5b7484` plus a `.gitignore` change), decisions 21-22 | `5c1ea69`, decisions 21-23 (last evaluated) |
 | Output caps: interpreter / explainer / verifier / personalizer | 1500 / 3000 / 1500 / 4000 | 1500 / 3700 / 2400 / 4200 | 1500 / 3700 / 2400 / 4200 |
 
 **How to read these numbers**
@@ -89,7 +89,7 @@ deployed MCP server image is still the one built from `90ee028`; Commit D is cli
 - **Tuned blocks.** The wording was tuned after reading the output of 201-210. Decisions 21 and 22 came from reading
   201-205, and decision 23 from reading 206-210. Those two blocks no longer test the wording without bias.
 - **The clean block.** Seeds 301-305 had not been read before decision 23 was measured on them. They are the only
-  unbiased measure of the code as of `2a208c4`, and one block of 20 matches is all there is.
+  unbiased measure of the code as of `5c1ea69`, and one block of 20 matches is all there is.
 - **The stats engine was not tuned.** None of its thresholds changed; they are still tuned on seeds 1-40 only.
 - **Spot-check labels.** Each block's `spotcheck.md` samples 20 shown claims, 60 in all. Claude Code drafted the
   labels by recomputing every cited number from the event stream, using a stats-engine replay stopped at the cited
@@ -190,7 +190,7 @@ Notes on the classes:
   spell") was drafted as NEEDS HUMAN and labelled supported in review. The 66.2% is a 5-minute share (their match
   possession was 52.7%), and only the sentence-final "in this spell" names the window.
 
-**Known residuals** (as measured on `2a208c4`)
+**Known residuals** (as measured on `5c1ea69`)
 
 - **Possession cause in Spanish persona texts.** In 301-305, 55 of 670 cause mentions in persona texts are wrong and
   Spanish: the personalizer writes "recuperar la posesión" (won the ball back) for restarts, and "fuera de juego"
@@ -224,8 +224,9 @@ cited items did not include it.
 ### Published-run check
 - Reviewed by Shah at 24.10.2026
 The three demo matches were recorded live twice, and each recording was checked in full. The first set was recorded
-on `90ee028`. After that check, Commit D (decisions 24-26) changed the prompts, the ledger and the checker. The second
-set, recorded on `77d8c6b`, is the one published in `web/data` (`comeback`, `siege`, `faults-demo`).
+on `e6fbcc0`. After that check, Commit D (decisions 24-26) changed the prompts, the ledger and the checker. The second
+set, recorded on `5fd72d0`, is the one published in `web/data` (`comeback`, `siege`, `faults-demo`). Their manifests
+show `git_commit` `77d8c6b`, the id of `5fd72d0` before the history rewrite.
 
 What each check covered:
 
@@ -279,5 +280,5 @@ sum the three matches. For other English personas and Spanish, only the flagged 
   only evidence is the offline replay over earlier live runs' stored texts, where it found 36 genuine invented details
   (and one false positive, since excluded).
 - **Who checked the verdicts.** Claude Code drafted them by recomputing from the event stream. The note at the top of
-  this section records a review by Shah on 24.10.2026 (commit `09eddd7`). They are recorded only in this section, not
+  this section records a review by Shah on 24.10.2026 (commit `b6204fe`). They are recorded only in this section, not
   in a `spotcheck.md`.

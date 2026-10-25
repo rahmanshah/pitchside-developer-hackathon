@@ -149,7 +149,7 @@ Not deployed:
 ## Checklist: what to redo once the live runs and the Azure deployment exist
 
 Work through it in order. Status on 2026-10-24: the three live bundles are recorded through the deployed MCP server
-and published (commit `2ba3e38`), the tests pass and the screenshots are re-captured. Status on 2026-10-25: the
+and published (commit `920c7ed`), the tests pass and the screenshots are re-captured. Status on 2026-10-25: the
 README, `docs/ARCHITECTURE.md` and `docs/AZURE.md` are updated. `CLAUDE.md`, the decision-log cost update and
 `docs/PITCH.md` are still to do. The MCP server URL stays public (decided 2026-10-24).
 
@@ -203,7 +203,7 @@ README, `docs/ARCHITECTURE.md` and `docs/AZURE.md` are updated. `CLAUDE.md`, the
 
 ### 4. README claims (only what is deployed or measured)
 
-Done 2026-10-25 by the README rewrite (commit `c05999a`), which replaced these sections:
+Done 2026-10-25 by the README rewrite (commit `58b4d08`), which replaced these sections:
 
 - [x] Status table: the Explain, tools, Render, Personalize and Deploy rows ("no live model run yet", "not deployed",
       "replays offline sample runs", "offline translations are tagged placeholders", "Planned").

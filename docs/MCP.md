@@ -85,8 +85,9 @@ directory set to this repository (for example the `servers` entry of a VS Code `
 ## Deploying on Azure Container Apps
 
 The server is deployed on Azure Container Apps (Consumption, `swedencentral`) with the settings below, from the image
-([`Dockerfile`](../Dockerfile)) built from `90ee028` and the template ([`infra/main.bicep`](../infra/main.bicep)). The
-three published runs were recorded through it. Deployment steps are in [AZURE.md](AZURE.md).
+([`Dockerfile`](../Dockerfile)) built from `e6fbcc0` (image tag `90ee028…`, that commit's id before the history
+rewrite) and the template ([`infra/main.bicep`](../infra/main.bicep)). The three published runs were recorded through
+it. Deployment steps are in [AZURE.md](AZURE.md).
 
 | Setting | Why |
 |---|---|

@@ -166,7 +166,7 @@ error classes: [docs/LIVE_EVAL.md](docs/LIVE_EVAL.md), section 4.
 How to read it:
 
 - **Only 301-305 is unbiased.** Prompt wording was tuned after reading the output of 201-210. Seeds 301-305 were not
-  read before they were measured, on commit `2a208c4`. One block of 20 matches is all there is.
+  read before they were measured, on commit `5c1ea69`. One block of 20 matches is all there is.
 - **Small samples.** About 265 model jobs and 20 spot-checked claims per block. Matches of the same seed can share
   events, so 20 matches are fewer than 20 independent samples.
 - **Spot checks.** Claude Code drafted the labels by recomputing every cited number from the event stream, and the
@@ -177,11 +177,11 @@ How to read it:
 - **Cost** figures are logged estimates from token counts and the price table, including a worst-case charge for
   timed-out calls, not the Azure bill. No match exceeded its $0.25 budget.
 - **No new full evaluation after the freeze.** Decisions 24-26 changed prompts, ledger and checker after these blocks.
-  They were validated offline (seeds 1-40) and on the three published recordings (commit `77d8c6b`, below) only.
+  They were validated offline (seeds 1-40) and on the three published recordings (commit `5fd72d0`, below) only.
 
 ### The published runs
 
-Recorded through the deployed MCP server on commit `77d8c6b`, after the first set of recordings had been checked
+Recorded through the deployed MCP server on commit `5fd72d0`, after the first set of recordings had been checked
 (so they were not chosen blind). Figures from each run's `manifest.json`:
 
 | Run | Score | Model calls | Logged cost | Budget fallbacks | Notes |
