@@ -174,12 +174,13 @@ e-mail alerts at 50% and 100% of actual cost and at 100% of forecast cost); chan
 
 ## After the judging period
 
-Not before 2026-11-11. The Official Rules require the demo to stay available, free and unrestricted, until the
-Judging Period ends on 2026-11-10 at 23:59 PT, which is 2026-11-11 at 09:59 Helsinki. Winners are announced by
-2026-11-20, so if the budget allows, wait until then ([decision 29](DECISIONS.md)).
+Not before 2026-11-11 12:00 Helsinki time (UTC+2, which is 10:00 UTC). The Official Rules require the demo to stay
+available, free and unrestricted, until the Judging Period ends on 2026-11-10 at 23:59 PT, which is 2026-11-11 at
+09:59 Helsinki; the script's guard holds until that absolute time, about two hours later, whatever the machine's time
+zone. Winners are announced by 2026-11-20, so if the budget allows, wait until then ([decision 29](DECISIONS.md)).
 
 ```powershell
-./infra/teardown.ps1     # refuses before 2026-11-11 unless -Force; lists resources; asks you to type the name
+./infra/teardown.ps1     # refuses before 2026-11-11 12:00 +02:00 unless -Force; lists resources; asks you to type the name
 ```
 It runs `az group delete --name rg-pitchside --yes`, which also removes Foundry if it is in the same group. Then, by
 hand: delete the GHCR package (Package settings > Delete) and the `AZURE_STATIC_WEB_APPS_API_TOKEN` secret. Keep the

@@ -100,8 +100,8 @@ System, Best Azure Cloud Native Integration, Best Enterprise Solution (transpare
   `src/pitchside/ratelimit.py` (per-client + global token buckets, 429, JSON access log; DECISIONS 18), has `/healthz`,
   and `--generate SEED:STORYLINE:HOME:AWAY` loads matches with non-default clubs
 - `infra/` (milestone 6, DECISIONS 18): `main.bicep` (+ `main.bicepparam`, which reads image/IP/e-mail from env vars;
-  `bicepconfig.json`), `deploy.ps1` (staged, idempotent, `-FromStage`), `teardown.ps1` (refuses before 2026-11-11).
-  `Dockerfile` (uv pattern, non-root). Workflows: `container.yml` (GHCR image), `static-web-app.yml` (manual deploy of
+  `bicepconfig.json`), `deploy.ps1` (staged, idempotent, `-FromStage`), `teardown.ps1` (refuses before 2026-11-11
+  12:00 +02:00). `Dockerfile` (uv pattern, non-root). Workflows: `container.yml` (GHCR image), `static-web-app.yml` (manual deploy of
   `web/`), `ci.yml` job `infra` (Bicep build + lint via `tests/test_infra.py`). Never run `az` commands that create,
   change or delete resources from here; the owner deploys (`docs/AZURE.md`)
 - `src/pitchside/render/` (milestone 5, DECISIONS 16-17): `overlay.py` (the overlay contract `overlay.json`, built from a
@@ -223,9 +223,9 @@ and do not push unless asked.
 - The public demo serves **recorded runs** by default (see "Recorded demo mode"); live generation is off or sits
   behind a small rate limit. Judges clicking around must not burn the budget.
 - Keep deployment token quotas low. Set an Azure budget alert.
-- Teardown: not before 2026-11-11 (the judging period ends 2026-11-10 23:59 PT, 2026-11-11 09:59 Helsinki), and
-  preferably after the winners are announced (by 2026-11-20) if the budget allows (DECISIONS 29). Then delete the whole
-  resource group (`./infra/teardown.ps1`, which runs `az group delete`). Keep the repo public.
+- Teardown: not before 2026-11-11 12:00 +02:00 (the judging period ends 2026-11-10 23:59 PT, 2026-11-11 09:59
+  Helsinki), and preferably after the winners are announced (by 2026-11-20) if the budget allows (DECISIONS 29). Then
+  delete the whole resource group (`./infra/teardown.ps1`, which runs `az group delete`). Keep the repo public.
   Anything billed hourly (for example Event Hubs, if used) can be removed right after submission.
 
 ## Recorded demo mode

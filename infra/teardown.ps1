@@ -4,7 +4,9 @@
 
 .DESCRIPTION
     The Official Rules require the project to stay accessible to judges until the end of the Judging Period on
-    November 10, 2026, so this script refuses to run before 2026-11-11 unless you pass -Force.
+    2026-11-10 23:59 PT (2026-11-11 09:59 Helsinki), so this script refuses to run before 2026-11-11 12:00 Helsinki
+    time (UTC+2, which is 10:00 UTC) unless you pass -Force. That instant is absolute, whatever this machine's time
+    zone, and leaves about two hours of margin.
     It lists what will be deleted, asks you to type the resource group name, then runs `az group delete`.
     If the Foundry resource was created in the same resource group (docs/AZURE.md recommends it), it goes too.
     Not deleted here (manual, see docs/AZURE.md "After the judging period"): the GHCR image and the GitHub secret.
@@ -21,11 +23,14 @@ param(
 
 $ErrorActionPreference = "Stop"
 Set-StrictMode -Version 3.0
-$JudgingEnds = [datetime]"2026-11-11"
+# Judging ends 2026-11-10 23:59 PT = 2026-11-11 09:59 Helsinki; the guard adds about two hours. A DateTimeOffset
+# compares instants, so the machine's own time zone does not matter.
+$TeardownFrom = [DateTimeOffset]::new(2026, 11, 11, 12, 0, 0, [TimeSpan]::FromHours(2))  # Helsinki, UTC+2
 
-if ((Get-Date) -lt $JudgingEnds -and -not $Force) {
-    throw "Judging runs until 2026-11-10 and the demo must stay up until then (Official Rules 4.8). " +
-          "Re-run after $($JudgingEnds.ToString('yyyy-MM-dd')), or pass -Force if you really mean it."
+if ([DateTimeOffset]::UtcNow -lt $TeardownFrom -and -not $Force) {
+    throw "Judging runs until 2026-11-10 23:59 PT (2026-11-11 09:59 Helsinki) and the demo must stay up until then " +
+          "(Official Rules 4.8). Re-run after $($TeardownFrom.ToString('yyyy-MM-dd HH:mm zzz')) " +
+          "($($TeardownFrom.UtcDateTime.ToString('HH:mm')) UTC), or pass -Force if you really mean it."
 }
 if (-not (Get-Command az -ErrorAction SilentlyContinue)) { throw "Azure CLI (az) not found." }
 

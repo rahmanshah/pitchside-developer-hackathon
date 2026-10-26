@@ -243,4 +243,4 @@ Done 2026-10-25 by the README rewrite (commit `58b4d08`), which replaced these s
 - [ ] Tag `submission-v1`, then freeze `main` (later work goes on a branch).
 - [ ] Keep the Static Web App and the repository up until the judging period ends (2026-11-10 23:59 PT, 2026-11-11
       09:59 Helsinki), and if the budget allows until the winners are announced (by 2026-11-20; decision 29).
-      `infra/teardown.ps1` refuses before 2026-11-11.
+      `infra/teardown.ps1` refuses before 2026-11-11 12:00 +02:00.

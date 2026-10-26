@@ -261,7 +261,7 @@ non-blocking).
 Live configuration is in [.env.example](.env.example).
 
 **Availability.** The Static Web App and the MCP server stay online through the judging period, until at least
-2026-11-10 (the `expires` tag on every resource); `infra/teardown.ps1` refuses to run before 2026-11-11.
+2026-11-10 (the `expires` tag on every resource); `infra/teardown.ps1` refuses to run before 2026-11-11 12:00 +02:00.
 
 ## Credits
 

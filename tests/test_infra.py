@@ -11,6 +11,7 @@ import re
 import shutil
 import subprocess
 import unittest
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from pitchside.cli import build_parser
@@ -98,8 +99,18 @@ class TemplateTests(unittest.TestCase):
 class ScriptTests(unittest.TestCase):
     def test_teardown_refuses_to_run_before_the_judging_period_ends(self) -> None:
         script = (INFRA / "teardown.ps1").read_text(encoding="utf-8")
-        self.assertIn('[datetime]"2026-11-11"', script)
-        self.assertIn("-not $Force", script)
+        # An absolute instant with its offset, compared against UtcNow, never local midnight.
+        m = re.search(r"\$TeardownFrom = \[DateTimeOffset\]::new\((\d+), (\d+), (\d+), (\d+), (\d+), (\d+), "
+                      r"\[TimeSpan\]::FromHours\((-?\d+)\)\)", script)
+        self.assertIsNotNone(m, "the guard must be a DateTimeOffset with an explicit offset")
+        *parts, hours = map(int, m.groups())
+        guard = datetime(*parts, tzinfo=timezone(timedelta(hours=hours)))
+        judging_ends = datetime(2026, 11, 10, 23, 59, tzinfo=timezone(timedelta(hours=-8)))  # PST
+        self.assertEqual(guard, datetime(2026, 11, 11, 12, 0, tzinfo=timezone(timedelta(hours=2))))
+        self.assertGreaterEqual(guard - judging_ends, timedelta(hours=2))
+        self.assertIn("[DateTimeOffset]::UtcNow -lt $TeardownFrom -and -not $Force", script)
+        self.assertNotIn("[datetime]", script)
+        self.assertNotIn("Get-Date", script)
 
     def test_deploy_is_staged_and_resumable(self) -> None:
         script = (INFRA / "deploy.ps1").read_text(encoding="utf-8")
