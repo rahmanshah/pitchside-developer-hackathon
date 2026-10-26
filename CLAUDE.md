@@ -14,10 +14,21 @@ The challenge asks for one pipeline with five stages. Our mapping:
 |---|---|---|
 | Ingest | Seeded match generator, event schema, replay | **Built** (v0.1.0) |
 | Interpret | Deterministic stats engine + key-moment detector | **Built** (v0.2.0); some recall below the 80% bar on held-out seeds, see README |
-| Explain | Interpreter, explainer, two-layer verifier (deterministic checker + semantic agent), recaps, audit trail | **Built offline** (milestone 3); live run pending, so no model-quality numbers yet |
-| Render | Timed, machine-readable overlay JSON + simple web UI | **Built offline** (milestone 5): `overlay.json` contract, static web UI replaying offline sample runs, e2e smoke tests and README screenshots; deploy pending (milestone 6) |
-| Personalize | Analyst / casual fan / favourite-player modes, multiple languages | **Built offline**: en + es in one personalizer call per moment |
-| (hosting) | Azure: Static Web Apps + Container Apps (MCP server) + Log Analytics + budget, one Bicep template | **Written and validated offline** (milestone 6); **not deployed** until the owner runs `infra/deploy.ps1` |
+| Explain | Interpreter, explainer, two-layer verifier (deterministic checker + semantic agent), recaps, audit trail | **Built and run live** (milestone 3, v0.3.0): gpt-5-mini on Microsoft Foundry; three live evaluation blocks of 20 matches on 2026-10-24 (`docs/LIVE_EVAL.md` section 4) |
+| Render | Timed, machine-readable overlay JSON + simple web UI | **Deployed** (milestone 5): `overlay.json` contract, static web UI on Azure Static Web Apps replaying the three recorded live runs in `web/data`, e2e smoke tests and README screenshots |
+| Personalize | Analyst / casual fan / favourite-player modes, multiple languages | **Built and run live**: en + es in one personalizer call per moment |
+| (hosting) | Azure: Static Web Apps + Container Apps (MCP server) + Log Analytics + budget, one Bicep template | **Deployed** (milestone 6, 2026-10-24): Static Web App in eastus2, the rest in swedencentral; the recorded runs went through the cloud MCP server |
+
+**Status on 2026-10-26.** The live site (https://green-cliff-068ccc50f.3.azurestaticapps.net/) replays three recorded
+live runs, the demo video is published (https://www.youtube.com/watch?v=VqwtphDpU5Q, 1:53), `docs/PITCH.md` is
+filled and `LICENSE` is MIT. Tags `v0.1.0`, `v0.2.0` and `v0.3.0` exist on origin (`v0.3.0` at `e6fbcc0`).
+`submission-v1` is not tagged yet: the owner tags it after the final check. Remaining: the GitHub About box, the
+project page, tag `submission-v1`, freeze `main`, submit, and the teardown after the judging period (see "Cost
+controls").
+
+**History rewrite (2026-10-25).** The author e-mail of every commit was replaced by the GitHub noreply address, so
+every commit id changed and the tags were re-pointed. Docs cite the new ids. The deployed MCP server image keeps its
+original GHCR tag: the old full id of `e6fbcc0` (`90ee028…`).
 
 ## Hard constraints (from the Official Rules, do not violate)
 
@@ -27,7 +38,7 @@ The challenge asks for one pipeline with five stages. Our mapping:
 - **Public GitHub repo** is required for the entry. Never commit secrets (`.env` is git-ignored; keep `.env.example` current).
 - **Demo video** under 2 minutes, public URL; judges may judge from the video and text alone, so the first 30 seconds must show the best moment.
 - **Pitch/description must name the Microsoft and Azure technologies actually used.** The README may only claim what is built. Mark anything else "planned".
-- **The project must stay accessible to judges, free and unrestricted, until the Judging Period ends on Nov 10** (Rules 4.8), and must work as shown in the video (Rules 4.3). Judges may skip testing and judge from the video and text alone. We satisfy this with a near-zero-cost static demo of recorded runs plus a one-command local run (see "Recorded demo mode"). Do not tear the demo down before Nov 10.
+- **The project must stay accessible to judges, free and unrestricted, until the Judging Period ends on Nov 10, 23:59 PT (Nov 11, 09:59 Helsinki)** (Rules 4.8), and must work as shown in the video (Rules 4.3). Judges may skip testing and judge from the video and text alone. We satisfy this with a near-zero-cost static demo of recorded runs plus a one-command local run (see "Recorded demo mode"). Do not tear the demo down before Nov 11; winners are announced by Nov 20, so keep it up until then if the budget allows (DECISIONS 29).
 - After tagging `submission-v1`, **freeze `main`** (do any later work on a branch).
 
 ## How we are judged (5 equal criteria, 20% each)
@@ -178,7 +189,7 @@ and do not push unless asked.
   in EUR, Sweden Central Global, at 1 USD = 0.88 EUR); Luna $0.10 / $0.01 / $0.50 (short context, Global Standard;
   Microsoft's Foundry blog and Azure OpenAI pricing page, Oct 2026). gpt-5-mini accepts reasoning effort `minimal`,
   `low`, `medium` or `high`, not `none`; the default is `low`. Name the model in docs only where it is true;
-  `docs/PITCH.md` uses `{{model_name}}`, filled in from the recorded runs.
+  `docs/PITCH.md` names GPT-5 mini, taken from the recorded runs' manifests.
   Use Global, not Data Zone (Data Zone costs more and our data is synthetic).
 - **Auth:** Microsoft Entra ID via `DefaultAzureCredential`, no API keys in code or git.
   `FOUNDRY_ENDPOINT` is the Foundry *project* endpoint (`https://<resource>.services.ai.azure.com/api/projects/<project>`).
@@ -193,9 +204,9 @@ and do not push unless asked.
   and the in-app rate limit; Log Analytics; a budget. Image on GHCR (public package). **Planned, not built:** managed
   identity + cloud recorder job, Entra ID auth on the MCP server, Application Insights. **Not used:** Cosmos DB,
   Event Grid, Event Hubs, Functions, Translator, Speech, AKS, ACR, Foundry Agent Service.
-- **Unconfirmed, check before relying on them:** that the gpt-5-mini deployments serve the Responses API with our
-  structured output and reasoning option (`scripts/smoke_foundry.py`), whether Luna quota will be granted, and any
-  Agent Service charges.
+- **Confirmed live:** the gpt-5-mini deployments serve the Responses API with our structured output and reasoning
+  option (`scripts/smoke_foundry.py` on 2026-10-23, DECISIONS 20; the live evaluations on 2026-10-24). **Unconfirmed:** whether Luna quota will be
+  granted, and any Agent Service charges.
 
 ## Cost controls (build these in)
 
@@ -206,10 +217,15 @@ and do not push unless asked.
   with `can_trigger_model_call`; spell ends always get a template), plus 2 recaps (half-time, full-time). Each goes
   through about 5 model calls. Estimated at gpt-5-mini prices (DECISIONS 19): about $0.0083 per moment, $0.05 per
   balanced and $0.12 per storyline match, so the default match budget is $0.25; never lower it to $0.10 for live runs.
+  Measured (DECISIONS 29): $0.101 mean / $0.180 max per match over 60 live matches; $6.81 logged in total ($6.60
+  without worst-case timeout charges) against an Azure bill of EUR 5.83 (actual cost, 2026-10-23 to 2026-10-26). The
+  bill is the authoritative figure.
 - The public demo serves **recorded runs** by default (see "Recorded demo mode"); live generation is off or sits
   behind a small rate limit. Judges clicking around must not burn the budget.
 - Keep deployment token quotas low. Set an Azure budget alert.
-- After Nov 10: delete the whole resource group (`az group delete --name <rg> --yes`). Keep the repo public.
+- Teardown: not before 2026-11-11 (the judging period ends 2026-11-10 23:59 PT, 2026-11-11 09:59 Helsinki), and
+  preferably after the winners are announced (by 2026-11-20) if the budget allows (DECISIONS 29). Then delete the whole
+  resource group (`./infra/teardown.ps1`, which runs `az group delete`). Keep the repo public.
   Anything billed hourly (for example Event Hubs, if used) can be removed right after submission.
 
 ## Recorded demo mode
@@ -241,31 +257,34 @@ club logos or real names. Redact or recrop anything sensitive.
    the weak spots), recorded in the README and `docs/DECISIONS.md` rather than hidden.
 2. **Model client and accounting:** interface, Foundry client (Entra auth), fake client, token/cost logger, per-role
    model config (see Model and Azure plan).
-   **Done offline, live run pending:** `src/pitchside/llm/`, tested offline only. Run `scripts/smoke_foundry.py` once
-   the Foundry project and the gpt-5-mini deployments exist; record the API path and the measured cost.
+   **Done and run live:** `src/pitchside/llm/`. The smoke test ran on the gpt-5-mini deployments through the Responses
+   API (DECISIONS 20); measured cost in DECISIONS 29. The smoke test's own cost is not recorded in the repo.
 3. **Agents** (Agent Framework): interpreter, explainer, verifier (retry with feedback, rejects unsupported
    claims), personalizer/translator. Shared state, explicit handoffs, failure recovery. An evaluation script
    scores output against the answer key. Tag `v0.3.0`.
-   **Built and tested offline, live run pending; not tagged yet.** Offline evaluation passes (a plumbing check).
-   Remaining: the smoke test and one manual live evaluation (`docs/LIVE_EVAL.md`); tag `v0.3.0` only after the owner
-   has reviewed the evaluation results. Recorded runs use `PITCHSIDE_MATCH_BUDGET_USD=0.25`.
+   **Done, run live and tagged `v0.3.0`** (at `e6fbcc0`; re-pointed on 2026-10-25 after the history rewrite). Three
+   live evaluation blocks of 20 matches on 2026-10-24, spot checks reviewed by the owner (`docs/LIVE_EVAL.md` section
+   4). Decisions 24-26 came after the tag and were validated offline and on the three published recordings only.
+   Recorded runs use `PITCHSIDE_MATCH_BUDGET_USD=0.25`.
 4. **MCP server** exposing the stats engine as tools (possession, pressure, momentum, key moments).
-   **Done offline:** `uv run pitchside mcp` (stdio and Streamable HTTP), `PITCHSIDE_TOOLS=local|mcp` for the interpreter;
-   not deployed (milestone 6). SDK pinned `mcp>=1.24,<2` because Agent Framework 1.22 breaks on mcp 2.x (DECISIONS 15).
+   **Done and deployed:** `uv run pitchside mcp` (stdio and Streamable HTTP), `PITCHSIDE_TOOLS=local|mcp` for the
+   interpreter; runs on Azure Container Apps (milestone 6), and the recorded runs used it. SDK pinned `mcp>=1.24,<2` because Agent Framework 1.22 breaks on mcp 2.x (DECISIONS 15).
 5. **Overlay renderer and web UI** (`web/`): timed overlay JSON schema plus a simple front end showing overlays on a
    simulated match feed. Three personas side by side (analyst, casual fan, favourite-player mode), multi-language.
    Optional spoken commentary via Speech. The UI must be able to replay a **run bundle** (see "Recorded demo mode").
-   **Built offline:** contract, UI (broadcast, analyst, evidence drawer, honesty labels, URL params), offline samples,
-   Playwright e2e suite (`uv run pytest -m e2e`, non-blocking CI job), `scripts/capture_screenshots.py` -> `docs/img/`.
-   Re-run the screenshot script when the live bundles replace the samples (milestone 6).
+   **Built and deployed:** contract, UI (broadcast, analyst, evidence drawer, honesty labels, URL params), Playwright
+   e2e suite (`uv run pytest -m e2e`, non-blocking CI job), `scripts/capture_screenshots.py` -> `docs/img/`.
+   `web/data` holds the three recorded live runs (since 2026-10-24); the screenshots were re-captured from them.
 6. **Azure deployment** (`infra/`, Bicep): Container Apps, Static Web Apps, cost controls, the
    recorded demo mode as the public default. Verify a clean deploy from scratch, then record the final run bundles
    and the demo video from the deployed system.
-   **Written and validated offline** (Bicep build/lint clean, image built and smoke-tested locally); the owner deploys
-   on Oct 24 following `docs/AZURE.md`, records the live runs through the cloud MCP server on Oct 24-25, video Oct 25,
-   submission Oct 26. The README may claim only services actually deployed.
+   **Deployed** (2026-10-24, following `docs/AZURE.md`): the three live runs were recorded through the cloud MCP server
+   and published, and the video was recorded from the deployed site on 2026-10-25. The README may claim only services
+   actually deployed.
 7. **Submission:** honest README with architecture diagram, pitch naming real Microsoft/Azure tech, demo video
    (under 2 minutes), repo link added to the project page, tag `submission-v1`, freeze `main`.
+   **In progress:** README, pitch, video and `LICENSE` are done. Remaining: the GitHub About box, the project page,
+   tag `submission-v1` (the owner), freeze `main`, submit.
 
 ## Definition of done for any change
 

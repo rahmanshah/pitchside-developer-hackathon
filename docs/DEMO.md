@@ -151,7 +151,8 @@ Not deployed:
 Work through it in order. Status on 2026-10-24: the three live bundles are recorded through the deployed MCP server
 and published (commit `920c7ed`), the tests pass and the screenshots are re-captured. Status on 2026-10-25: the
 README, `docs/ARCHITECTURE.md` and `docs/AZURE.md` are updated. `CLAUDE.md`, the decision-log cost update and
-`docs/PITCH.md` are still to do. Status on 2026-10-26: `docs/PITCH.md` is filled. The MCP server URL stays public
+`docs/PITCH.md` are still to do. Status on 2026-10-26: `docs/PITCH.md` and `CLAUDE.md` are done, and
+the decision log has the measured cost (decision 29). The MCP server URL stays public
 (decided 2026-10-24).
 
 ### 1. Bundles in `web/data`
@@ -221,21 +222,25 @@ Done 2026-10-25 by the README rewrite (commit `58b4d08`), which replaced these s
 
 ### 5. Other docs
 
-- [ ] `CLAUDE.md`: the status table and the roadmap notes for milestones 2, 3, 5 and 6.
+- [x] `CLAUDE.md`: the status table and the roadmap notes for milestones 2, 3, 5 and 6. Done 2026-10-26.
 - [x] `docs/ARCHITECTURE.md`: "not deployed" and "live run pending" in the diagram and headings.
 - [x] `docs/AZURE.md`: the "What is deployed" table and the measured costs in the cost table.
 - [ ] `docs/DECISIONS.md`: the API path and measured cost from the smoke test ([LIVE_EVAL.md](LIVE_EVAL.md) step 1),
-      and the measured cost per match in place of the estimate in decision 14.
+      and the measured cost per match in place of the estimate in decision 14. Partly done 2026-10-26: the measured
+      cost is in decision 29 (and noted under decision 19, whose gpt-5-mini estimate it replaces; decision 14's
+      estimate is at Luna prices, which never ran). The smoke test's cost is not recorded.
 - [x] `docs/PITCH.md`: fill every placeholder and resolve every PENDING marker in place, so no double brace is left.
       Done 2026-10-26.
 
 ### 6. Submission
 
-- [ ] Tag `v0.3.0` only after the owner has reviewed the live evaluation.
+- [x] Tag `v0.3.0` only after the owner has reviewed the live evaluation. Done: `v0.3.0` exists on origin, at
+      `e6fbcc0` (re-pointed on 2026-10-25 after the history rewrite).
 - [ ] `uv run python scripts/check_submission.py` passes. It fails on any placeholder left in the pitch or README,
       published runs that are not live, README deployment or live-model claims the manifests do not back, labels that
       disagree between index, manifest and overlay, broken relative links, and "Premier League" or real club or
       player names. Read every line it reports: the README claim detection is a heuristic.
 - [ ] Tag `submission-v1`, then freeze `main` (later work goes on a branch).
-- [ ] Keep the Static Web App and the repository up until the judging period ends on Nov 10. `infra/teardown.ps1`
-      refuses before 2026-11-11.
+- [ ] Keep the Static Web App and the repository up until the judging period ends (2026-11-10 23:59 PT, 2026-11-11
+      09:59 Helsinki), and if the budget allows until the winners are announced (by 2026-11-20; decision 29).
+      `infra/teardown.ps1` refuses before 2026-11-11.

@@ -7,7 +7,7 @@
     November 10, 2026, so this script refuses to run before 2026-11-11 unless you pass -Force.
     It lists what will be deleted, asks you to type the resource group name, then runs `az group delete`.
     If the Foundry resource was created in the same resource group (docs/AZURE.md recommends it), it goes too.
-    Not deleted here (manual, see docs/AZURE.md "After Nov 10"): the GHCR image and the GitHub secret.
+    Not deleted here (manual, see docs/AZURE.md "After the judging period"): the GHCR image and the GitHub secret.
 
 .EXAMPLE
     ./infra/teardown.ps1

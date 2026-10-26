@@ -71,7 +71,7 @@ The template creates no role assignments, so User Access Administrator is not ne
 
 ## Steps, in order (planned for Oct 24)
 
-Each step says what it does. No command here deletes anything except `teardown.ps1`, after Nov 10.
+Each step says what it does. No command here deletes anything except `teardown.ps1`, after the judging period (see "After the judging period").
 
 1. **Install the Azure CLI** (Microsoft's documented WinGet package), then open a new terminal:
    ```powershell
@@ -166,13 +166,17 @@ billing (all read 2026-10-23). Measured numbers replace these after the deployme
 | Log Analytics | First 5 GB/month per billing account free, 31 days retention included | $0 (megabytes of logs; capped at 1 GB/day) |
 | Budget alerts | No charge | $0 |
 | GHCR (public package) | Free for public packages | $0 |
-| Foundry, gpt-5-mini (Global Standard, Sweden Central) | $0.25 in / $0.03 cached / $2.00 out per 1M tokens (Azure OpenAI pricing page in EUR, at 1 USD = 0.88 EUR) | Estimated about $0.12-0.13 per storyline match with the MCP tools (decision 19). Logged in the three live evaluations: $1.9664-2.0888 per 20-match block, $0.101 mean / $0.180 max per match, $6.0738 for all 60 matches ([LIVE_EVAL.md](LIVE_EVAL.md) section 4; logged estimates from token counts, not the bill) |
+| Foundry, gpt-5-mini (Global Standard, Sweden Central) | $0.25 in / $0.03 cached / $2.00 out per 1M tokens (Azure OpenAI pricing page in EUR, at 1 USD = 0.88 EUR) | Estimated about $0.12-0.13 per storyline match with the MCP tools (decision 19). Logged in the three live evaluations: $1.9664-2.0888 per 20-match block, $0.101 mean / $0.180 max per match, $6.0738 for all 60 matches ([LIVE_EVAL.md](LIVE_EVAL.md) section 4; logged estimates from token counts, not the bill). The bill (actual cost, 2026-10-23 to 2026-10-26) is EUR 5.83 against $6.81 logged for every live call ([decision 29](DECISIONS.md)) |
 | Foundry, GPT-6 Luna (if quota is granted) | $0.10 in / $0.01 cached / $0.50 out per 1M tokens | About $0.04 per storyline match (estimate, decision 14) |
 
 The budget defaults to 25 in the billing currency, the amount deployed (25 EUR a month on the resource group, with
 e-mail alerts at 50% and 100% of actual cost and at 100% of forecast cost); change it with `-BudgetAmount`.
 
-## After Nov 10
+## After the judging period
+
+Not before 2026-11-11. The Official Rules require the demo to stay available, free and unrestricted, until the
+Judging Period ends on 2026-11-10 at 23:59 PT, which is 2026-11-11 at 09:59 Helsinki. Winners are announced by
+2026-11-20, so if the budget allows, wait until then ([decision 29](DECISIONS.md)).
 
 ```powershell
 ./infra/teardown.ps1     # refuses before 2026-11-11 unless -Force; lists resources; asks you to type the name
