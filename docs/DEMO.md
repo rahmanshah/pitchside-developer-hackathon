@@ -8,7 +8,7 @@ under the limit. If a take runs long, cut a shot rather than read faster. The re
 Every shot is a URL on the web UI, so each take can be repeated exactly. Append the query string to the base URL:
 
 - local: `uv run pitchside serve`, then `http://127.0.0.1:8000/` + the query;
-- deployed: `{{static_web_app_url}}` + the query (once the Static Web App exists, see [AZURE.md](AZURE.md)).
+- deployed: `https://green-cliff-068ccc50f.3.azurestaticapps.net/` + the query (see [AZURE.md](AZURE.md)).
 
 The URLs below use the three runs in `web/data` (`comeback`, `faults-demo`, `siege`). Since 2026-10-24 these are the
 **recorded live runs** (GPT-5 mini on Microsoft Foundry, stats tools on the cloud MCP server). The "On screen" notes
@@ -38,7 +38,7 @@ model-written texts differ. `uv run pytest tests/test_demo_doc.py` checks every 
 | 5 | 0:54-1:08 | `?run=faults-demo&view=broadcast&t=47:10&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:goal:1` | Hold on the header for a second, then scroll to "Audit trail" and "Rejected claims (1)" | The "Faults injected · 17 fired" badge stays visible in the header beside the drawer. Chips "Explainer retried", "Fault injected on purpose"; audit: explain #1 → check rejected → explain #2 → check passed → verify passed; struck-through draft "Alden Brannholt equalised for Aurora Rovers with a 2.41 xG chance from 8 m." with `number_mismatch`: does not match e1 (`shot_xg = 0.273 xg`; write "a 0.27 xG chance") |
 | 6 | 1:08-1:20 | `?run=faults-demo&view=broadcast&t=54:20&persona=analyst&lang=en&drawer=wst_aur_end_to_end_0004:big_chance:3` | Scroll to the audit trail | Chip "Template narrative: checker rejected every claim after 3 attempt(s)"; three explainer drafts rejected (`no_evidence`, `unlisted_number`, `unreferenced_player`), then fallback → template; the shown text is the template: "Big chance for Aurora Rovers: a 0.38 xG shot from 6 m, not converted. Aurora Rovers have 5 shots and 1.50 xG so far." |
 | 7 | 1:20-1:40 | the README's agent workflow diagram on GitHub (rendered Mermaid), then a title card | Slow zoom on the diagram; cut to the card | Card text: the technologies in the narration for this shot, and nothing that is not deployed on recording day. A cropped Azure portal view of the resource list is optional (see "Honesty" below) |
-| 8 | 1:40-1:45 | end card | none | "Pitchside", `{{repo_url}}`, `{{static_web_app_url}}`, "All clubs, players and matches are synthetic." |
+| 8 | 1:40-1:45 | end card | none | "Pitchside", `https://github.com/rahmanshah/pitchside-developer-hackathon`, `https://green-cliff-068ccc50f.3.azurestaticapps.net/`, "All clubs, players and matches are synthetic." |
 
 Notes on the shots:
 
@@ -151,7 +151,8 @@ Not deployed:
 Work through it in order. Status on 2026-10-24: the three live bundles are recorded through the deployed MCP server
 and published (commit `920c7ed`), the tests pass and the screenshots are re-captured. Status on 2026-10-25: the
 README, `docs/ARCHITECTURE.md` and `docs/AZURE.md` are updated. `CLAUDE.md`, the decision-log cost update and
-`docs/PITCH.md` are still to do. The MCP server URL stays public (decided 2026-10-24).
+`docs/PITCH.md` are still to do. Status on 2026-10-26: `docs/PITCH.md` is filled. The MCP server URL stays public
+(decided 2026-10-24).
 
 ### 1. Bundles in `web/data`
 
@@ -225,7 +226,8 @@ Done 2026-10-25 by the README rewrite (commit `58b4d08`), which replaced these s
 - [x] `docs/AZURE.md`: the "What is deployed" table and the measured costs in the cost table.
 - [ ] `docs/DECISIONS.md`: the API path and measured cost from the smoke test ([LIVE_EVAL.md](LIVE_EVAL.md) step 1),
       and the measured cost per match in place of the estimate in decision 14.
-- [ ] `docs/PITCH.md`: fill every placeholder and resolve every PENDING marker in place, so no double brace is left.
+- [x] `docs/PITCH.md`: fill every placeholder and resolve every PENDING marker in place, so no double brace is left.
+      Done 2026-10-26.
 
 ### 6. Submission
 
